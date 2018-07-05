@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Freelancer-98/Hackathon-Website.git"
+    "url": "git+https://github.com/Freelancer-98/Hackathon.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Freelancer-98/Hackathon-Website/issues"
+    "url": "https://github.com/Freelancer-98/Hackathon/issues"
   },
-  "homepage": "https://github.com/Freelancer-98/Hackathon-Website#readme",
+  "homepage": "https://github.com/Freelancer-98/Hackathon#readme",
   "devDependencies": {
     "css-loader": "^0.28.11",
     "node-sass": "^4.9.1",
