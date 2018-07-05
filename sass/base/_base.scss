@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+:root {
+    --color-primary: #f56a6a;
+    --color-secondary: #6a6af5;
+    --color-white: #fff;
+    --color-black: #222;
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
