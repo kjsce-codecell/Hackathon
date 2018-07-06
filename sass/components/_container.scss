@@ -1,63 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+//Colors Variables
+$primary: #5C6BC0; // blue
+$success: #8BC34A; // green
+$danger: #F44336; // red
+$warning: #FFB74D; // yellow
+$mainBgc: #03002E;
+
+// Container and shapes dimentions
+$containerDimentions: 30px;
+$shapeDimentions: 10px;
+
+// custom translation for each shape in an animation
+@mixin customTranslate ($shape, $tx, $ty) {
+  @if  $shape == 1 {
+    transform: translate($tx, $ty);
+  } @else if $shape == 2 {
+    transform: translate(-$ty, $tx);
+  } @else if $shape == 3 {
+    transform: translate($ty, -$tx);
+  } @else if $shape == 4 {
+    transform: translate(-$tx, -$ty);
+  }
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: $mainBgc;
+}
+
+body {
+  font-family: "Open Sans";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  
+}
+.content {
+  max-width: 600px;
+  margin: auto;
+  padding: 5px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  .column {
+    width: calc(33.33% - 10px);
+    height: 170px;
+    background-color: lighten($mainBgc, 2%);
+    margin: 5px;
+    border: 1px solid transparentize(white, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .container {
-    width: 100vw;
-    height: 100vh;
-    background: var(--color-gray);
-    position: relative;
-    border: .5rem solid var(--color-black);
-
-    &__button{
-        display: inline-block;
-        background-color: var(--color-primary);
-        color: var(--color-white);
-        padding: .5rem 5rem;
-        border-radius: 3rem;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        cursor: pointer;
-        transition: all .5s ease-in-out;
-        margin-bottom: 1rem;
-
-        &:hover{
-            box-shadow: 0rem .5rem .5rem -0.2rem var(--color-black);
-            transform: translate(-50%, calc(-50% - .5rem));
-        }
+  width: $containerDimentions;
+  height: $containerDimentions;
+  position: relative;
+  &.animation-1 {
+    transform: rotate(45deg);
+  }
+  &.animation-2, &.animation-4 {
+    transform: rotate(10deg);
+    .shape {
+      border-radius: $shapeDimentions/2;
+    }    
+  }
+  &.animation-2, &.animation-3, &.animation-4 {
+    animation: rotation 1s infinite;
+  }
+  &.animation-3,
+  {
+    .shape1 { border-top-left-radius: $shapeDimentions; }
+    .shape2 { border-top-right-radius: $shapeDimentions; }
+    .shape3 { border-bottom-left-radius: $shapeDimentions; }
+    .shape4 { border-bottom-right-radius: $shapeDimentions; }
+  }
+  &.animation-4, &.animation-5 {
+    transform: rotate(45deg);
+  }
+  &.animation-5 {
+    .shape {
+      width: 15px;
+      height: 15px;
     }
-
-    &__heading{
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        margin-bottom: 1rem;
-
-        &--text{
-            padding: .5rem 0;
-            text-align: center;
-            transition: all .5s ease-in-out;
-        }
-
-        &--overline{
-            width: 60%;
-            margin: 0 auto;
-            background: linear-gradient(-90deg, var(--color-primary),var(--color-primary-dark),var(--color-primary));
-            height: .5rem;
-            border-radius: .5rem;
-            transition: all .5s ease-in-out;
-        }
-
-        &:hover{
-            &>.container__heading--overline{
-                width: 100%;
-                transform: translateY(2rem);
-            }
-
-            &>.container__heading--text{
-                transform: translateY(-1rem);
-            }
-        }
+  }
+  &.animation-6 {
+    .shape {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
     }
+    animation: rotation 1s infinite;
+  }
+  .shape {
+    position: absolute;
+    width: $shapeDimentions;
+    height: $shapeDimentions;
+    border-radius: 1px;
+    &.shape1{
+      left: 0;
+      background-color: $primary;
+    }
+    &.shape2 {
+      right: 0;
+      background-color: $success;
+    }
+    &.shape3 {
+      bottom: 0;
+      background-color: $warning;
+    }
+    &.shape4 {
+      bottom: 0;
+      right: 0;
+      background-color: $danger;
+    }
+  }
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+@for $i from 1 through 6 {
+  @for $j from 1 through 4 {
+    
+    $duration: 0.5s;
+    $timing: ease;
+    $delay: 0s;
+    $direction: alternate;
+    
+    $a: null;
+    @if $i==1 {
+      $a: 16px;
+    }
+    @else if $i==2 {
+      $a: 20px;
+    }
+    @else if $i==3 {
+      $a: 5px;
+    }
+    @else if $i==4 {
+      $a: 5px;
+      $duration: 0.3s;
+      @if $j == 2 or $j == 3 {
+        $delay: 0.3s;
+      }
+    }
+    @else if $i==5 {
+      $a: 15px;
+      $duration: 2s;
+      $direction: reverse;
+    }
+    @else if $i==6 {
+      $a: 18px;
+      $timing:linear;
+      $duration: 2s;
+      $direction: normal;
+    }
+    
+    .animation-#{$i} {
+      .shape#{$j} {
+        animation: animation#{$i}shape#{$j}
+          $duration
+          $timing 
+          $delay
+          infinite
+          $direction;
+      }
+    }
+    @if $i == 5 or $i == 6 {
+      @keyframes animation#{$i}shape#{$j} {
+        0% { transform: translate(0, 0) }
+        25% { @include customTranslate($j, 0, $a) }
+        50% { @include customTranslate($j, $a, $a) }
+        75% { @include customTranslate($j, $a, 0) }
+      }
+    } @else {
+      @keyframes animation#{$i}shape#{$j} {
+        from { transform: translate(0, 0) }
+        to { @include customTranslate($j, $a, $a) }
+      }
+    }
+  }
+}
+
+// Responsive Content
+.content {
+  @media screen and (max-width: 600px) {
+    align-content: flex-start;
+    .column {
+      width: calc(50% - 30px);
+    }
+  }
+  @media screen and (max-width: 400px) {
+    align-content: flex-start;
+    .column {
+      width: calc(100% - 30px);
+    }
+  }
+}
+
+// Copyrights
+footer {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  p {
+    text-align: center;
+    margin: 0;
+    line-height: 20px;
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+    a {
+      color: $warning;
+    }
+  }
 }
