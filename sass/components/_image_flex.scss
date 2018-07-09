@@ -1,0 +1,129 @@
+.ffont {
+    text-align: center;
+    margin-top: 10px;
+    font-family: Times, serif;
+    font-style: bold;
+    font-size: 15px;
+    color: black;
+}
+
+main {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+.flexbox img {
+	width: 100%;
+	height: auto;
+}
+
+
+@media screen and (min-width: 651px) {
+	.col-1 ,.col-2{
+        width: 15%;
+        height: 100px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+	}
+	.col-3 {
+        width: 20%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+	}
+}
+
+
+//variables
+$basic-dark-color: #212121;
+$basic-light-color: #fff;
+$fb-color: #3b5998;
+$tw-color: #00aced;
+$insta: #bc2a8d;
+$github: #212121;
+$border-radius: 10px;
+$font-size: 25px;
+
+/*common styles !!!YOU DON'T NEED THEM */
+.imgcontainer {
+  margin: 0px auto 0px auto;
+  text-align: center;
+}
+
+.effect {
+  width: 100%;
+  padding: 50px 0px 70px 0px;
+  background-color: $basic-light-color;
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+a {
+    
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+/*common link styles !!!YOU NEED THEM*/
+.effect {
+  /*display: flex; !!!uncomment this line !!!*/
+  
+  a {
+    text-decoration: none !important;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    margin-right: 20px;
+    font-size: 25px;
+    overflow: hidden;
+    position: relative;
+    
+    i {
+      position: relative;
+      z-index: 3;
+    }
+    
+    &.fb {
+      background-color: $fb-color;
+    }
+    
+    &.tw {
+      background-color: $tw-color;
+    }  
+    &.insta {
+      background-color: $insta;
+    }
+    
+    &.in {
+      background-color: $github;
+    }
+  }
+}
+.effect.laertes {
+  
+  a {
+    transition: all 0.2s linear 0s;
+    
+    i {
+      transition: all 0.2s linear 0s;
+    }
+   
+    &:hover {
+      border-radius: 50%/20%;      
+      i {
+        transform: scale(1.1);
+        text-shadow: 0 0 12px rgba($basic-dark-color, 0.6);
+      }
+    }
+  }
+}
