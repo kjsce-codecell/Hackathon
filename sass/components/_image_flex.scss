@@ -20,20 +20,31 @@ main {
 }
 
 
-@media screen and (min-width: 651px) {
+@media screen and (min-device-width: 651px) {
 	.col-1 ,.col-2{
-        width: 15%;
+        width: 225px;
         height: 100px;
         margin-bottom: 20px;
         margin-left: 20px;
 	}
 	.col-3 {
-        width: 20%;
+        width: 300px;
         margin-top: 25px;
         margin-bottom: 25px;
 	}
 }
-
+@media screen and (max-device-width: 650px) {
+	.col-1 ,.col-2{
+        width: 100px;
+        height: 50px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+	}
+	.col-3 {
+        width: 150px;
+        margin-bottom: 20px;
+	}
+}
 
 //variables
 $basic-dark-color: #212121;
