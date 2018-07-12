@@ -7,10 +7,10 @@ $temp1: #8BC34A; // green
 $even: #5153F8; // blue
 $even_grad: linear-gradient(-90deg, #5153F8,#4126C8,#5153F8);
 $temp2: #FFB74D; // yellow
-$back: #F0F0F0;
+$back: #FFFFFF;
 
-.container{
-  max-width:1000px;
+.fcontainer{
+  max-width:1100px;
   height:100%;
   padding-bottom:50px;
   background-color:$back;
@@ -23,7 +23,7 @@ $back: #F0F0F0;
   .qa{
     position: relative; 
     top:50px;
-    padding-left:25px;
+    padding-left:100px;
     width:50%;
     float:left;
     padding-bottom:25px;
@@ -124,7 +124,7 @@ $back: #F0F0F0;
 }
 
 // Responsive Content
-.container {
+.fcontainer {
   @media screen and (max-width: 700px) {
     align-content: flex-start;
     .qa {
@@ -138,4 +138,5 @@ $back: #F0F0F0;
     }
   }
 }
+
 
