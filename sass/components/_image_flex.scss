@@ -22,26 +22,26 @@ main {
 
 @media screen and (min-device-width: 651px) {
 	.col-1 ,.col-2{
-        width: 17%;
+        width: 25%;
         height: 100px;
-        margin-bottom: 20px;
-        margin-left: 20px;
+        margin-bottom: 40px;
+        margin-left: 50px;
 	}
 	.col-3 {
-        width: 20%;
-        margin-top: 25px;
-        margin-bottom: 25px;
+        width: 25%;
+        margin-top: 20px;
+        margin-bottom: 20px;
 	}
 }
 @media screen and (max-device-width: 650px) {
 	.col-1 ,.col-2{
-        width: 27%;
-        margin-bottom: 25px;
-        margin-left: 15px;   
+        width: 35%;
+        margin-bottom: 20px;
+        margin-left: 20px;   
 	}
 	.col-3 {
-        width: 100px;
-        margin-bottom: 20px;
+        width: 35%;
+        margin-bottom: 10px;
 	}
 }
 
