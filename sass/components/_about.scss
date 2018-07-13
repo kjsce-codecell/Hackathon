@@ -25,7 +25,7 @@
 
                     td{
                         text-align:center;
-                        padding:5px;
+                        padding:3px;
                     }
                 }
                 
@@ -41,7 +41,40 @@
            padding-left:5px;
 
 }
-@media only screen and (min-width: 400px)
+@media only screen and (min-width: 300px) and (max-width: 350px)
+        {
+           .im{
+           padding-left:0px;
+           padding-top:50px;
+           }
+           td{
+              text-align:center;
+              padding:0px;
+             }
+        }
+@media only screen and (min-width: 350px) and (max-width: 400px)
+        {
+           .im{
+           padding-left:5%;
+           padding-top:50px;
+           }
+        }
+
+@media only screen and (min-width: 400px) and (max-width: 699px)
+        {
+           .im{
+           padding-left:10%;
+           padding-top:50px;
+           }
+        }   
+@media only screen and (min-width: 700px) and (max-width: 1000px)
+        {
+           .im{
+           padding-left:30%;
+           padding-top:50px;
+           }
+        }
+@media only screen and (min-width: 1010px)
         {
            .im{
            padding-left:35%;
