@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Freelancer-98/Hackathon#readme",
   "devDependencies": {
     "css-loader": "^0.28.11",
-    "node-sass": "^4.9.1",
+    "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.15.0",
