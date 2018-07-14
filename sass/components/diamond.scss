@@ -1,0 +1,106 @@
+
+.closed {
+  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-135deg);
+  }
+  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-135deg);
+    opacity: 1;
+  }
+}
+.opened {
+  opacity: 1;
+  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(45deg);
+  }
+  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.even {
+
+.horizontal {
+    position: absolute;
+    background-color: $even;
+    width: 10px;
+    height: 2px;
+    left: 50%;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -1px;
+    
+}
+.vertical {
+    position: absolute;
+    background-color: $even;
+    width: 2px;
+    height: 10px;
+    left: 50%;
+    margin-left: -1px;
+    top: 50%;
+    margin-top: -5px;
+    
+}
+
+.shape{
+      width:30px;
+      height:30px;
+      margin:auto;
+      background-color: $back;
+      border:5px solid $odd;
+      text-align:center;
+      transform: rotate(45deg);
+      float:left;
+}
+.ans{
+  border-left: 5px solid $even;
+}
+}
+
+.odd {
+
+.horizontal {
+    position: absolute;
+    background-color: $odd;
+    width: 10px;
+    height: 2px;
+    left: 50%;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -1px;
+    
+}
+.vertical {
+    position: absolute;
+    background-color: $odd;
+    width: 2px;
+    height: 10px;
+    left: 50%;
+    margin-left: -1px;
+    top: 50%;
+    margin-top: -5px;
+    
+}
+
+.shape{
+      width:30px;
+      height:30px;
+      margin:auto;
+      background-color: $back;
+      border:5px solid $even;
+      text-align:center;
+      transform: rotate(45deg);
+      float:left;
+}
+
+.ans{
+  border-left: 5px solid $odd;
+}
+
+}
