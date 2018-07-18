@@ -11,15 +11,24 @@ $back: #FFFFFF;
 
 .fcontainer{
   max-width:1100px;
+  width: 90%;
   height:100%;
-  padding-bottom:50px;
-  background-color:$back;
+  padding-bottom:70px;
+  background-color:rgba(255,255,255,0.5);
+  border: .05rem solid var(--color-gray);
+  border-radius:.3rem;
+  box-shadow: -.15rem .25rem .6rem -0.2rem #222;
   align:center;
-  margin:auto;
+  margin: 0 auto 50px auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
+  transition: all .25s ease-in-out;
+  &:hover{
+    box-shadow: -.18rem .35rem .85rem -0.2rem var(--color-black);
+    transform: translate(0, -0.8%);
+  }
   .qa{
     position: relative; 
     top:50px;

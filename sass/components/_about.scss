@@ -1,0 +1,61 @@
+.about{
+    width: 100%;
+    background-image: url('/Sponsors/H2.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--color-white);
+    overflow-x: hidden;
+    border: .5rem solid var(--color-black);
+    
+    &__content{
+        max-width: 750px;
+        padding-top: 3rem;
+        margin:0 auto;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    &__pics{
+        padding: 4rem;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        
+        &__card{
+            margin: 1rem;
+            img{
+                height: 75px;
+                width: auto;
+            }
+        }
+
+        &__title{
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-device-width: 650px) {
+    .about{
+        &__content{
+            max-width: 300px;
+            padding-top: 0;
+        }
+
+        &__pics{
+            padding: 2rem;
+            &__card{
+                img{
+                    height: 40px;
+                }
+            }
+
+
+            &__title{
+                font-size: .5rem;
+            }
+        }
+    }
+    
+}

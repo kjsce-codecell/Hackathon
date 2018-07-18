@@ -1,0 +1,25 @@
+.backanimation{
+    z-index: -1;
+    position: fixed;
+
+    &__rectangle{
+        &--1{
+            top: 30%;
+            left: 30%;
+            width: 10vw;
+            height: 10vw;
+            background-color: var(--color-secondary);
+        }
+    }
+
+    &__circle{
+        &--1{
+            top: 50%;
+            left: 70%;
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+        }
+    }
+}
