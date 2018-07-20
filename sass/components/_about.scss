@@ -7,11 +7,11 @@
     border: .5rem solid var(--color-black);
     
     &__content{
-        max-width: 750px;
+        max-width: 75rem;
         padding-top: 3rem;
         margin:0 auto;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     &__pics{
@@ -30,7 +30,7 @@
 
         &__title{
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -52,7 +52,7 @@
 
 
             &__title{
-                font-size: .5rem;
+                font-size: 1rem;
             }
         }
     }

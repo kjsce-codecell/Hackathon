@@ -19,3 +19,11 @@ $(window).scroll(function() {
   $('.backanimation__circle--3').css({ transform: 'rotate(' + (theta-100) + 'rad)' });
   // $('#rightgear').css({ transform: 'rotate(-' + theta + 'rad)' });
   });
+
+  // TODO
+  // 1. Convert JQuery to JS
+  // 2. Navbar fixed
+  // 3. hamburger for mobile
+  // 4. Footer, social media links
+  // 5. Maps?
+  // 6. Shadow Depth

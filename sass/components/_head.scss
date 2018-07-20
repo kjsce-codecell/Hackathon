@@ -1,6 +1,8 @@
 .head{
+    height: 100vh;
+    width: 100vw;
     background-size: cover;
-
+    
     &__nav{
         display: flex;
         justify-content: space-between;
@@ -10,17 +12,17 @@
             justify-content: center;
             align-items: center;
             :last-child{
-                margin-right: 10px;
+                margin-right: 1rem;
             }
             &--name{
-                padding: 10px;
-                font-size: 1rem;
+                padding: 1rem;
+                font-size: 1.5rem;
                 text-align: center;
                 cursor: pointer;
 
                 &:hover{
                     color: var(--color-white);
-                    background-color: var(--color-black);
+                    background-color: var(--color-secondary);
                     transition: all .3s linear;
                 }
             }
@@ -36,17 +38,47 @@
         "button gallery";
 
         &--title{
+            position: relative;
             grid-area: title;
-            background-color: red;
-            // min-height: 100%;
-            // min-width: 100%;
+
+            div{
+                position: absolute;
+                text-align: center;
+                left:50%;
+                bottom: 1rem;
+                transform: translate(-50%,0);
+                font-size: 3rem;
+            }
         }
 
         &--button{
             grid-area: button;
-            background-color: blue;
-            // min-height: 100%;
-            // min-width: 100%;
+            position: relative;
+            
+            &--main{
+                display: inline-block;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%,0%);
+                margin: 4rem auto 1rem auto;
+                padding: 1rem 5rem;
+                cursor: pointer;
+                color: var(--color-white);
+                font-size: 3rem;
+                background-color: var(--color-primary);
+                border-radius: 3rem;
+                transition: all .5s ease-in-out;
+        
+                &:hover{
+                    box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
+                    transform: translate(-50%, -.5rem);
+                }
+            }
+
+            &--link{
+                font-size: 1.2rem;
+                text-align: center;
+            }
         }
 
         &--gallery{
@@ -57,20 +89,22 @@
             position: relative;
 
             img{
-                box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+                box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
                 position: absolute;
-                width: 350px;
+                width: 300px;
                 transform: translate(-50%,-50%);
                 transition: all .2s linear;
-                outline-offset: 20px;
+                outline-offset: 2rem;
+                filter: grayscale(100%);
 
                 &:nth-child(1){
                     top: 50%;
                     left: 50%;
-                    transform: translate(calc(-50%),calc(-50% + 100px));
+                    transform: translate(calc(-50%),calc(-50% + 10rem));
                     z-index: 2;
                     &:hover{
-                        transform: translate(calc(-50%),calc(-50% + 100px)) scale(1.2);
+                        transform: translate(calc(-50%),calc(-50% + 10rem)) scale(1.2);
+                        // outline: 1.5rem solid var(--color-primary);
                     }
                 }
 
@@ -78,27 +112,29 @@
                     top: 50%;
                     left: 50%;
                     z-index: 3;
-                    transform: translate(calc(-50% + 100px), -50%);
+                    transform: translate(calc(-50% + 10rem), -50%);
                     &:hover{
-                        transform: translate(calc(-50% + 100px),-50%) scale(1.2);
+                        transform: translate(calc(-50% + 10rem),-50%) scale(1.2);
+                        // outline: 1.5rem solid var(--color-secondary);
                     }
                 }
 
                 &:nth-child(3){
                     top: 50%;
                     left: 50%;
-                    transform: translate(calc(-50% - 100px),calc(-50% - 100px));
+                    transform: translate(calc(-50% - 5rem),calc(-50% - 10rem));
                     z-index: 1;
 
                     &:hover{
-                        transform: translate(calc(-50% - 100px),calc(-50% - 100px)) scale(1.2);
+                        transform: translate(calc(-50% - 5rem),calc(-50% - 10rem)) scale(1.2);
+                        // outline: 1.5rem solid var(--color-primary);
                     }
                 }
 
                 &:hover{
                     z-index: 10;
-                    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
-                    outline: 15px solid var(--color-primary);
+                    box-shadow: 0 2.5rem 4rem rgba(0,0,0,0.5);
+                    filter: none;
                 }
 
             }
@@ -129,7 +165,7 @@
             width: 100vw;
 
             img{
-                max-width: 100px;
+                max-width: 150px;
             }
         }
     }

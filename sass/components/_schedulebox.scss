@@ -1,7 +1,6 @@
 .schedulebox{
     width: 100vw;
     overflow: hidden;
-    
     // background: var(--color-white);
     position: relative;
 
@@ -30,7 +29,7 @@
 
     .scheduleholder{
         width:90%;
-        margin:0 auto 50px auto;
+        margin:0 auto 5rem auto;
         overflow:hidden;
         &--days{
             width: 43%;
@@ -91,7 +90,7 @@
             margin-left:.6rem;
             position: relative;
             width: 100%;
-            font-size:1rem;
+            font-size:1.2rem;
             text-align:left;
             float:left;
         }
