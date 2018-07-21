@@ -1,27 +1,28 @@
 .pasthackathon{
     width: 100vw;
-    height: 40vh;
+    height: 50vh;
     background-size: cover;
     border: .5rem solid var(--color-black);
     background-attachment: fixed;
+    position: relative;
 
     &__button{
         display: inline-block;
-        background-color: var(--color-primary);
-        color: var(--color-white);
-        padding: .5rem 5rem;
-        border-radius: 3rem;
-        position: relative;
-        top: 50%;
+        position: absolute;
         left: 50%;
+        top: 50%;
         transform: translate(-50%,-50%);
+        padding: 1rem 5rem;
         cursor: pointer;
+        color: var(--color-white);
+        font-size: 2rem;
+        background-color: var(--color-primary);
+        border-radius: 3rem;
         transition: all .5s ease-in-out;
-        margin-bottom: 1rem;
 
         &:hover{
-            box-shadow: 0rem .5rem .5rem -0.2rem var(--color-black);
-            transform: translate(-50%, calc(-50% - .5rem));
+            box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
+            transform: translate(-50%,calc(-50% - .5rem));
         }
     }
 }

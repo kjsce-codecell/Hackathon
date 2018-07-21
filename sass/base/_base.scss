@@ -17,11 +17,11 @@
     --color-gray: #ccc;
     background-color: var(--color-white);
     color: var(--color-black);
-    font-size: 62.5%;
+    font-size: 75%;
   }
   @media screen and (max-device-width: 650px){
       :root {
-          font-size: 50%;
+          font-size: 60%;
       }
   }
 body {

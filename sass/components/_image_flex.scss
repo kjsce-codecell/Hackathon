@@ -69,10 +69,10 @@ $font-size: 25px;
 
 .effect {
   width: 100%;
-  padding: 50px 0px 70px 0px;
+  // padding: 50px 0px 70px 0px;
 
 .buttons {
-    margin-top: 50px;
+    margin: 4rem auto;
     display: flex;
     justify-content: center;
   }
@@ -140,5 +140,35 @@ a {
         text-shadow: 0 0 12px rgba($basic-dark-color, 0.6);
       }
     }
+  }
+}
+
+.sponsor{
+  margin: 2rem auto;
+
+  &__button{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0%);
+    padding: 1rem 5rem;
+    margin: 1rem auto;
+    cursor: pointer;
+    color: var(--color-white);
+    font-size: 2rem;
+    background-color: var(--color-primary);
+    border-radius: 3rem;
+    transition: all .5s ease-in-out;
+
+    &:hover{
+        box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
+        transform: translate(-50%,-.5rem);
+    }
+  }
+
+  &__link{
+    text-align: center;
+    font-size: 1.2rem;
+    // padding: 2rem;
   }
 }
