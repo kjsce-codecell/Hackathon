@@ -64,13 +64,11 @@ $font-size: 25px;
 /*common styles !!!YOU DON'T NEED THEM */
 .imgcontainer {
   margin: 0px auto 0px auto;
-  text-align: center;
+  text-align: center; 
 }
 
 .effect {
   width: 100%;
-  // padding: 50px 0px 70px 0px;
-
 .buttons {
     margin: 4rem auto;
     display: flex;
@@ -97,31 +95,18 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: $border-radius;
     margin-right: 20px;
     font-size: 25px;
     overflow: hidden;
     position: relative;
     
-    i {
-      position: relative;
-      z-index: 3;
+    img {
+      width: 45px;
+      height: 45px;
+      fill: #fff;
+      color: #fff
     }
-    
-    &.fb {
-      background-color: $fb-color;
-    }
-    
-    &.tw {
-      background-color: $tw-color;
-    }  
-    &.insta {
-      background-color: $insta;
-    }
-    
-    &.in {
-      background-color: $github;
-    }
+  
   }
 }
 .effect.laertes {
@@ -134,7 +119,7 @@ a {
     }
    
     &:hover {
-      border-radius: 50%/20%;      
+      border-radius: 10%;
       i {
         transform: scale(1.1);
         text-shadow: 0 0 12px rgba($basic-dark-color, 0.6);
