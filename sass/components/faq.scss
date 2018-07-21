@@ -18,7 +18,7 @@ $back: #FFFFFF;
   // border: .05rem solid var(--color-gray);
   // border-radius:.3rem;
   // box-shadow: -.15rem .25rem .6rem -0.2rem #222;
-  align:center;
+  // text-align:center;
   margin: 0 auto 50px auto;
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@ $back: #FFFFFF;
     padding-left:75px;
     width:50%;
     float:left;
-    padding-bottom:25px;
+    // padding-bottom:25px;
 
     .q{
       cursor: pointer; 
@@ -81,7 +81,7 @@ $back: #FFFFFF;
 .header{
   max-width:1000px;
   background-color:$back;
-  align:center;
+  // text-align:center;
   margin:auto;
   display: flex;
   justify-content: center;

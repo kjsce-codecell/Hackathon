@@ -1,4 +1,11 @@
-// // s
+$('.q').hover (function(){
+    $(this).children('.shape').toggleClass('hovered');
+  })
+  
+  $('.q').on('click', function(){
+    $(this).children('.shape').toggleClass('opened');
+    $(this).siblings().children('.ans').toggleClass('show');
+  })
 
 // var window = document.getElementsByTagName("window")[0];
 // var rect1 = document.getElementsByClassName("backanimation__rectangle--1")[0];
