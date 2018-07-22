@@ -1,9 +1,8 @@
-.backanimation{
+.backanimation {
     z-index: -1;
     position: fixed;
-
-    &__rectangle{
-        &--1{
+    &__rectangle {
+        &--1 {
             top: 30%;
             left: 30%;
             width: 100px;
@@ -11,7 +10,7 @@
             border: 1rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
-        &--2{
+        &--2 {
             top: 50%;
             left: 42.5%;
             width: 30px;
@@ -19,7 +18,7 @@
             border: 1rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
-        &--3{
+        &--3 {
             top: 20%;
             left: 60%;
             width: 20px;
@@ -27,7 +26,7 @@
             border: 1rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
-        &--4{
+        &--4 {
             top: 45%;
             left: 60%;
             width: 30px;
@@ -36,9 +35,8 @@
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
     }
-
-    &__circle{
-        &--1{
+    &__circle {
+        &--1 {
             top: 50%;
             left: 30%;
             width: 20px;
@@ -47,8 +45,7 @@
             border: 1rem solid var(--color-secondary-light);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
         }
-
-        &--2{
+        &--2 {
             top: 50%;
             left: 50%;
             width: 75px;
@@ -57,8 +54,7 @@
             border: 1rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
         }
-
-        &--3{
+        &--3 {
             top: 60%;
             left: 25%;
             width: 30px;
@@ -67,7 +63,7 @@
             border: 1rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
         }
-        &--4{
+        &--4 {
             top: 60%;
             left: 70%;
             width: 30px;
@@ -79,41 +75,41 @@
     }
 }
 
-@keyframes animate1{
-    0%{
+@keyframes animate1 {
+    0% {
         border-color: var(--color-primary);
         border-radius: 0%;
     }
-    35%{
+    35% {
         border-color: var(--color-secondary);
     }
-    50%{
+    50% {
         border-radius: 50%;
     }
-    70%{
+    70% {
         border-color: var(--color-primary);
     }
-    100%{
+    100% {
         border-color: var(--color-primary);
         border-radius: 0%;
     }
 }
 
-@keyframes animate2{
-    0%{
+@keyframes animate2 {
+    0% {
         border-color: var(--color-primary-dark);
         border-radius: 50%;
     }
-    35%{
+    35% {
         border-color: var(--color-secondary-light);
     }
-    50%{
+    50% {
         border-radius: 0%;
     }
-    70%{
+    70% {
         border-color: var(--color-primary-dark);
     }
-    100%{
+    100% {
         border-color: var(--color-primary-dark);
         border-radius: 50%;
     }

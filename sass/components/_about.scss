@@ -1,34 +1,30 @@
-.about{
+.about {
     width: 100%;
     background-size: cover;
     background-attachment: fixed;
     color: var(--color-white);
     overflow-x: hidden;
     border: .5rem solid var(--color-black);
-    
-    &__content{
+    &__content {
         max-width: 75rem;
         padding-top: 3rem;
-        margin:0 auto;
+        margin: 0 auto;
         text-align: center;
         font-size: 1.5rem;
     }
-
-    &__pics{
+    &__pics {
         padding: 4rem;
         display: flex;
         align-content: center;
         justify-content: center;
-        
-        &__card{
+        &__card {
             margin: 1rem;
-            img{
+            img {
                 height: 75px;
                 width: auto;
             }
         }
-
-        &__title{
+        &__title {
             text-align: center;
             font-size: 1.2rem;
         }
@@ -36,25 +32,21 @@
 }
 
 @media screen and (max-device-width: 650px) {
-    .about{
-        &__content{
+    .about {
+        &__content {
             max-width: 300px;
             padding-top: 0;
         }
-
-        &__pics{
+        &__pics {
             padding: 2rem;
-            &__card{
-                img{
+            &__card {
+                img {
                     height: 40px;
                 }
             }
-
-
-            &__title{
+            &__title {
                 font-size: 1rem;
             }
         }
     }
-    
 }

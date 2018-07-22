@@ -1,28 +1,29 @@
 .ffont {
-    text-align: center;
-    margin-top: 10px;
-    font-family: Times, serif;
-    font-style: bold;
-    font-size: 15px;
-    color: black;
+  text-align: center;
+  margin-top: 10px;
+  font-family: Times, serif;
+  font-style: bold;
+  font-size: 15px;
+  color: black;
 }
 
 main {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .flexbox img {
   max-width: 250px;
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .flexbox {
   padding: 10px;
 }
+
 // @media screen and (min-device-width: 651px) {
 // 	.col-1 ,.col-2{
 //         width: 25%;
@@ -37,16 +38,16 @@ main {
 // 	}
 // }
 @media screen and (max-device-width: 650px) {
-	// .col-1 ,.col-2{
+  // .col-1 ,.col-2{
   //       width: 35%;
   //       margin-bottom: 20px;
   //       margin-left: 20px;   
-	// }
-	// .col-3 {
+  // }
+  // .col-3 {
   //       width: 35%;
   //       margin-bottom: 10px;
   // }
-  .flexbox img{
+  .flexbox img {
     max-width: 150px;
   }
 }
@@ -60,23 +61,21 @@ $insta: #bc2a8d;
 $github: #212121;
 $border-radius: 10px;
 $font-size: 25px;
-
 /*common styles !!!YOU DON'T NEED THEM */
+
 .imgcontainer {
   margin: 0px auto 0px auto;
-  text-align: center; 
+  text-align: center;
 }
 
 .effect {
   width: 100%;
-.buttons {
+  .buttons {
     margin: 4rem auto;
     display: flex;
     justify-content: center;
   }
-  
-a {
-    
+  a {
     &:last-child {
       margin-right: 0px;
     }
@@ -84,9 +83,9 @@ a {
 }
 
 /*common link styles !!!YOU NEED THEM*/
+
 .effect {
   /*display: flex; !!!uncomment this line !!!*/
-  
   a {
     text-decoration: none !important;
     color: white;
@@ -99,43 +98,22 @@ a {
     font-size: 25px;
     overflow: hidden;
     position: relative;
-    
     img {
       width: 45px;
       height: 45px;
       fill: #fff;
       color: #fff
     }
-  
-  }
-}
-.effect.laertes {
-  
-  a {
-    transition: all 0.2s linear 0s;
-    
-    i {
-      transition: all 0.2s linear 0s;
-    }
-   
-    &:hover {
-      border-radius: 10%;
-      i {
-        transform: scale(1.1);
-        text-shadow: 0 0 12px rgba($basic-dark-color, 0.6);
-      }
-    }
   }
 }
 
-.sponsor{
+.sponsor {
   margin: 2rem auto;
-
-  &__button{
+  &__button {
     display: inline-block;
     position: relative;
     left: 50%;
-    transform: translate(-50%,0%);
+    transform: translate(-50%, 0%);
     padding: 1rem 5rem;
     margin: 1rem auto;
     cursor: pointer;
@@ -144,16 +122,13 @@ a {
     background-color: var(--color-primary);
     border-radius: 3rem;
     transition: all .5s ease-in-out;
-
-    &:hover{
-        box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
-        transform: translate(-50%,-.5rem);
+    &:hover {
+      box-shadow: 0rem .5rem 1rem -0.2rem rgba(0, 0, 0, 0.5);
+      transform: translate(-50%, -.5rem);
     }
   }
-
-  &__link{
+  &__link {
     text-align: center;
-    font-size: 1.2rem;
-    // padding: 2rem;
+    font-size: 1.2rem; // padding: 2rem;
   }
 }
