@@ -12,11 +12,13 @@ var rect1 = document.getElementsByClassName("backanimation__rectangle--1")[0];
 var rect2 = document.getElementsByClassName("backanimation__rectangle--2")[0];
 var rect3 = document.getElementsByClassName("backanimation__rectangle--3")[0];
 var rect4 = document.getElementsByClassName("backanimation__rectangle--4")[0];
+var rect5 = document.getElementsByClassName("backanimation__rectangle--5")[0];
 
 var circ1 = document.getElementsByClassName("backanimation__circle--1")[0];
 var circ2 = document.getElementsByClassName("backanimation__circle--2")[0];
 var circ3 = document.getElementsByClassName("backanimation__circle--3")[0];
 var circ4 = document.getElementsByClassName("backanimation__circle--4")[0];
+var circ5 = document.getElementsByClassName("backanimation__circle--5")[0];
 
 (window).addEventListener("scroll",function() {
   var theta = (window).scrollY / 100 % Math.PI;
@@ -28,10 +30,13 @@ var circ4 = document.getElementsByClassName("backanimation__circle--4")[0];
   rect2.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   rect3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   rect4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  rect5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+
   circ1.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ2.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  circ5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   
 });
 
