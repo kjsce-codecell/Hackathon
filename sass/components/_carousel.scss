@@ -4,8 +4,9 @@
     left: 50%;
     transform: translate(-50%,-50%);
     max-width: 500px;
+    max-height: 300px;
     width: 90%;
-    height: 300px;
+    height: 90%;
 
     &__activator{
         display: none;
@@ -20,7 +21,6 @@
 
     &__controls{
         display: none;
-
         font-size: 3rem;
         color: #fff;
     }
