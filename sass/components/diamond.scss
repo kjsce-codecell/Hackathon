@@ -47,6 +47,7 @@
   .shape {
     width: 30px;
     height: 30px;
+    border-radius: 50%;
     margin: auto;
     background-color: $back;
     border: 5px solid $odd;
@@ -83,6 +84,7 @@
   .shape {
     width: 30px;
     height: 30px;
+    border-radius: 50%;
     margin: auto;
     background-color: $back;
     border: 5px solid $even;

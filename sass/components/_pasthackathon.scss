@@ -4,10 +4,11 @@
     background-size: cover;
     border: .5rem solid var(--color-black);
     background-attachment: fixed;
+    backface-visibility: hidden;
     position: relative;
     &__button {
         display: inline-block;
-        position: absolute;
+        position: relative;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
