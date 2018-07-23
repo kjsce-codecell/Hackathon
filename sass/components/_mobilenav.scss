@@ -1,0 +1,41 @@
+#hamburger{
+    display: none;
+}
+.mobilenav{
+    display: none;
+    background-color: var(--color-white);
+    z-index: 999;
+
+    &__hamburger{
+        margin-right: 10px;
+        font-size: 3rem;
+    }
+
+    &__elems{
+        display: none;
+        background-color: var(--color-white);
+        position: fixed;
+        z-index: 999;
+        top: 50px;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-device-width: 650px){
+    .mobilenav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    #hamburger:checked ~ .mobilenav__elems{
+        display: flex;
+        flex-direction: column;
+    }
+}
