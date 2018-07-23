@@ -1,24 +1,19 @@
-.schedulebox{
+.schedulebox {
     width: 100vw;
-    overflow: hidden;
-    // background: var(--color-white);
+    overflow: hidden; // background: var(--color-white);
     position: relative;
-
-    &__heading{
+    &__heading {
         cursor: pointer;
         display: inline-block;
         position: relative;
-        left:50%;
+        left: 50%;
         top: 5rem;
-        
-        transform: translate(-50%,-50%);
-
-        &--text{
+        transform: translate(-50%, -50%);
+        &--text {
             padding: .5rem 0;
             text-align: center;
         }
-
-        &--overline{
+        &--overline {
             width: 10rem;
             margin: 0 auto;
             background-color: var(--color-primary);
@@ -26,215 +21,181 @@
             border-radius: .5rem;
         }
     }
-
-    .scheduleholder{
-        width:90%;
-        margin:0 auto 5rem auto;
-        overflow:hidden;
-        &--days{
+    .scheduleholder {
+        width: 70%;
+        margin: 0 auto 5rem auto;
+        overflow: hidden;
+        &--days {
             width: 43%;
             height: 30rem;
             margin: 2rem auto;
-            padding:1.5rem 1.5rem 0 1.5rem;
-            // border: .05rem solid var(--color-gray);
+            padding: 1.5rem 1.5rem 0 1.5rem; // border: .05rem solid var(--color-gray);
             // border-radius:.3rem;
-            background-color: rgba(255,255,255,0.5);
-            // box-shadow: -.15rem .25rem .6rem -0.2rem #222;
+            background-color: rgba(255, 255, 255, 0.5); // box-shadow: -.15rem .25rem .6rem -0.2rem #222;
             min-width: 280px;
-            transition: all .25s ease-in-out;
-
-            // &:hover{
+            transition: all .25s ease-in-out; // &:hover{
             //     box-shadow: 0 .35rem 1rem -0.2rem var(--color-black);
             //     transform: translate(0, -0.8%);
             // }
         }
-
-        .left{
-            margin-left:2%;
-            float:left;
+        .left {
+            margin-left: 2%;
+            float: left;
         }
-        .right{ 
-            float:right; 
-            margin-right:2%;   
+        .right {
+            float: right;
+            margin-right: 2%;
         }
-
-        .daynum{
+        .daynum {
             text-align: center;
-            color:var(--color-black);
+            color: var(--color-black);
         }
-        .actualschedule{
-            padding:1.2rem 0 1.2rem 1rem;
-            color:var(--color-black);
-            height:90%;
+        .actualschedule {
+            padding: 1.2rem 0 1.2rem 1rem;
+            color: var(--color-black);
+            height: 90%;
         }
-
         .timeline {
             position: relative;
             margin: 0 auto;
-            height:100%;
-            float:left;
+            height: 100%;
+            float: left;
         }
         .timeline::after {
             content: '';
             position: absolute;
-            float:left;
+            float: left;
             width: 2px;
-            height:100%;
+            height: 100%;
             background-color: #555;
             top: 0;
-            bottom: 0;  
+            bottom: 0;
         }
-
-        .event{
+        .event {
             padding: .8rem 0 .8rem .5rem;
-            margin-left:.6rem;
+            margin-left: .6rem;
             position: relative;
             width: 100%;
-            font-size:1.2rem;
-            text-align:left;
-            float:left;
+            font-size: 1.2rem;
+            text-align: left;
+            float: left;
         }
         .event::before {
             content: '';
             position: absolute;
             width: 1rem;
-            height:1rem;
-            padding:0;
-            margin-top:0rem;
-            left:-1.2rem;
-            background-color:var(--color-white);
+            height: 1rem;
+            padding: 0;
+            margin-top: 0rem;
+            left: -1.2rem;
+            background-color: var(--color-white);
             border: 0.25rem solid var(--color-secondary);
             border-radius: 50%;
             z-index: 1;
             transform: translate(0.15rem, 0);
         }
-
-        .odde::before{
-            border: 0.25rem solid var(--color-primary); 
+        .odde::before {
+            border: 0.25rem solid var(--color-primary);
         }
-
-        .right{
-            .event{
+        .right {
+            .event {
                 padding: 1rem 0 1rem .5rem;
             }
         }
-
-        @media only screen and (max-width: 1148px)
-        {
-            .right{
-                .event{
+        @media only screen and (max-width: 1148px) {
+            .right {
+                .event {
                     padding: 0.9rem 0 0.9rem .5rem;
                 }
             }
         }
-
-        @media only screen and (max-width: 1085px)
-        {
-            
-            &--days{
-                width:48%;
+        @media only screen and (max-width: 1085px) {
+            &--days {
+                width: 48%;
             }
-
-            .left{
-                margin-left:0%;
+            .left {
+                margin-left: 0%;
             }
-
-            .right{
-                margin-right:0%;
-                .event{
+            .right {
+                margin-right: 0%;
+                .event {
                     padding: 1rem 0 1rem .5rem;
                 }
             }
         }
-
-        @media only screen and (max-width: 1030px)
-        {
-            .right{
-                .event{
+        @media only screen and (max-width: 1030px) {
+            .right {
+                .event {
                     padding: 0.89rem 0 0.89rem .5rem;
                 }
             }
         }
-
-        @media only screen and (max-width: 974px)
-        {
-            .right{
-                .event{
+        @media only screen and (max-width: 974px) {
+            .right {
+                .event {
                     padding: 1rem 0 1rem .5rem;
                 }
             }
         }
-
-        @media only screen and (max-width: 960px)
-        {
-            .right{
-                .event{
+        @media only screen and (max-width: 960px) {
+            .right {
+                .event {
                     padding: 0.89rem 0 0.89rem .5rem;
                 }
             }
         }
-
-        @media only screen and (max-width: 850px)
-        {
-            &--days{
+        @media only screen and (max-width: 850px) {
+            &--days {
                 height: 31rem;
             }
-
-            .right{
-                .event{
+            .right {
+                .event {
                     padding: 1rem 0 1rem .5rem;
                 }
             }
         }
-
-        @media only screen and (max-width: 800px)
-        {
-            
-            &--days{
+        @media only screen and (max-width: 800px) {
+            &--days {
                 position: relative;
-                left:50%;
-                transform: translate(-50%,0);
-                width:75%;
-                height:30rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 75%;
+                height: 30rem;
                 margin: 2rem auto;
-                padding:1.5rem;
+                padding: 1.5rem;
                 padding-bottom: 0;
-
-                &:hover{
+                &:hover {
                     box-shadow: -.18rem .35rem .85rem -0.2rem var(--color-black);
                     transform: translate(-50%, -0.8%);
                 }
-                
             }
-            .right{
-                float:left;
-                .event{
+            .right {
+                float: left;
+                .event {
                     padding: 1rem 0 1rem .5rem;
                 }
-            }  
+            }
         }
-        @media only screen and (max-width: 660px)  {
-            width:100%;
-            &--days{
+        @media only screen and (max-width: 660px) {
+            width: 100%;
+            &--days {
                 width: 80%;
             }
         }
-        @media only screen and (max-width: 540px)  {   
-            &--days{
-                width: 90%;   
-            }      
-        }
-        @media only screen and (max-width: 420px)  {
-            &--days{
-                height:33rem;
+        @media only screen and (max-width: 540px) {
+            &--days {
+                width: 90%;
             }
-            
         }
-        @media only screen and (max-width: 340px)  {
-            &--days{
-                height:35rem;
+        @media only screen and (max-width: 420px) {
+            &--days {
+                height: 33rem;
             }
-            
+        }
+        @media only screen and (max-width: 340px) {
+            &--days {
+                height: 35rem;
+            }
         }
     }
 }

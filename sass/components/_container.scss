@@ -1,61 +1,51 @@
 .container {
     width: 100vw;
-    height: 100vh;
-    // background: var(--color-gray);
-    position: relative;
-    // border: .5rem solid var(--color-black);
-
-    &__button{
+    height: 100vh; // background: var(--color-gray);
+    position: relative; // border: .5rem solid var(--color-black);
+    &__button {
         display: inline-block;
         background-color: var(--color-primary);
         color: var(--color-white);
         padding: .5rem 5rem;
         border-radius: 3rem;
-        position: relative;
-        // top: 50%;
+        position: relative; // top: 50%;
         left: 50%;
-        transform: translate(-50%,0%);
+        transform: translate(-50%, 0%);
         cursor: pointer;
         transition: all .5s ease-in-out;
         margin-bottom: 1rem;
-
-        &:hover{
+        &:hover {
             box-shadow: 0rem .5rem .5rem -0.2rem var(--color-black);
             transform: translate(-50%, calc(-50% - .5rem));
         }
     }
-
-    &__heading{
+    &__heading {
         cursor: pointer;
         display: inline-block;
         position: relative;
         left: 50%;
-        transform: translate(-50%,0%);
+        transform: translate(-50%, 0%);
         margin: 1rem auto;
-
-        &--text{
+        &--text {
             font-size: 2rem;
             padding: .5rem 0;
             text-align: center;
             transition: all .5s ease-in-out;
         }
-
-        &--overline{
+        &--overline {
             width: 60%;
             margin: 0 auto;
-            background: linear-gradient(-90deg, var(--color-primary),var(--color-primary-dark),var(--color-primary));
+            background: linear-gradient(-90deg, var(--color-primary), var(--color-primary-dark), var(--color-primary));
             height: .5rem;
             border-radius: .5rem;
             transition: all .5s ease-in-out;
         }
-
-        &:hover{
-            &>.container__heading--overline{
+        &:hover {
+            &>.container__heading--overline {
                 width: 100%;
                 transform: translateY(2rem);
             }
-
-            &>.container__heading--text{
+            &>.container__heading--text {
                 transform: translateY(-1rem);
             }
         }

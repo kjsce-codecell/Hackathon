@@ -11,7 +11,7 @@ $back: #FFFFFF;
   max-width:1100px;
   width: 90%;
   height:100%;
-  padding-bottom:70px;
+  padding-bottom:80px;
   background-color:rgba(255,255,255,0.5);
   // border: .05rem solid var(--color-gray);
   // border-radius:.3rem;
@@ -47,7 +47,7 @@ $back: #FFFFFF;
           }
         }
         .shape.hovered{
-      animation: wiggle 0.2s cubic-bezier(.36,.07,.19,.97) both; 
+      //animation: wiggle 0.2s cubic-bezier(.36,.07,.19,.97) both; 
       animation-iteration-count: 3; 
       }
     }
@@ -153,5 +153,4 @@ $back: #FFFFFF;
     }
   }
 }
-
 

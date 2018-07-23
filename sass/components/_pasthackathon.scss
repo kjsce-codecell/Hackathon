@@ -1,17 +1,17 @@
-.pasthackathon{
+.pasthackathon {
     width: 100vw;
     height: 50vh;
     background-size: cover;
     border: .5rem solid var(--color-black);
     background-attachment: fixed;
+    backface-visibility: hidden;
     position: relative;
-
-    &__button{
+    &__button {
         display: inline-block;
-        position: absolute;
+        position: relative;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         padding: 1rem 5rem;
         cursor: pointer;
         color: var(--color-white);
@@ -19,16 +19,15 @@
         background-color: var(--color-primary);
         border-radius: 3rem;
         transition: all .5s ease-in-out;
-
-        &:hover{
-            box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
-            transform: translate(-50%,calc(-50% - .5rem));
+        &:hover {
+            box-shadow: 0rem .5rem 1rem -0.2rem rgba(0, 0, 0, 0.5);
+            transform: translate(-50%, calc(-50% - .5rem));
         }
     }
 }
 
 @media screen and (max-device-width: 650px) {
-    .pasthackathon__button{
+    .pasthackathon__button {
         font-size: 1rem;
     }
 }

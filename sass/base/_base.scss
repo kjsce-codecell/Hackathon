@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: inherit;
 }
+
 :root {
     --color-primary: #fc427b;
     --color-primary-dark: #b33771;
@@ -18,12 +19,14 @@
     background-color: var(--color-white);
     color: var(--color-black);
     font-size: 90%;
-  }
-  @media screen and (max-device-width: 650px){
-      :root {
-          font-size: 60%;
-      }
-  }
+}
+
+@media screen and (max-device-width: 650px) {
+    :root {
+        font-size: 60%;
+    }
+}
+
 body {
     box-sizing: border-box;
     overflow-x: hidden;
