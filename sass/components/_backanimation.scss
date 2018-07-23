@@ -24,8 +24,8 @@
         &--2 {
             top: 50%;
             left: 42.5%;
-            width: 30px;
-            height: 30px;
+            width: 0px;
+            height: 0px;
             border: 1rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
@@ -40,8 +40,8 @@
         &--4 {
             top: 45%;
             left: 60%;
-            width: 30px;
-            height: 30px;
+            width: 0px;
+            height: 0px;
             border: 1rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
@@ -58,8 +58,8 @@
         &--1 {
             top: 50%;
             left: 30%;
-            width: 20px;
-            height: 20px;
+            width: 0px;
+            height: 0px;
             border-radius: 50%;
             border: 1rem solid var(--color-secondary-light);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
@@ -77,8 +77,8 @@
         &--3 {
             top: 60%;
             left: 25%;
-            width: 30px;
-            height: 30px;
+            width: 0px;
+            height: 0px;
             border-radius: 50%;
             border: 1rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
