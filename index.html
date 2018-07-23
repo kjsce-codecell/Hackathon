@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing</title>
@@ -10,21 +9,20 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-    <div class="head">
-        <div class="head__nav">
-            <div class="head__nav__elems--logo">
-                <img src="./assets/H3.png" alt="">
+    <!-- <input type="radio" id="hamburger" name="mobile" class="mobilenav"> -->
+    <div class="page-wrap">
+    <div id="Home" class="head">
+            <div class="head__nav">
+                <div class="head__nav__elems--logo"><img src="./assets/H3.png" alt=""></div>
+                <div class="head__nav__elems">
+                    <a href="#Home"><div class="head__nav__elems--name">Home</div></a>
+                    <a href="#About"><div class="head__nav__elems--name">About</div></a>
+                    <a href="#Schedule"><div class="head__nav__elems--name">Schedule</div></a>
+                    <a href="#FAQ"><div class="head__nav__elems--name">FAQ</div></a>
+                    <a href="#Sponsors"><div class="head__nav__elems--name">Sponsors</div></a>
+                </div>
             </div>
-            <div class="head__nav__elems">
-                <div class="head__nav__elems--name">Home</div>
-                <div class="head__nav__elems--name">About</div>
-                <div class="head__nav__elems--name">Schedule</div>
-                <div class="head__nav__elems--name">FAQ</div>
-                <div class="head__nav__elems--name">Sponsors</div>
-            </div>
-        </div>
         <div class="head__content">
             <div class="head__content--title">
                 <div>Subscribe To Get Updates</div>
@@ -34,26 +32,52 @@
                 <div class="head__content--button--link">Interested in sponsoring ?</div>
             </div>
             <div class="head__content--gallery">
-                <img src="./assets/head1.jpg" alt="">
-                <img src="./assets/head2.jpg" alt="">
-                <img src="./assets/head3.jpg" alt="">
+                <ul class="carousel my-carousel">
+                    <input type="radio" id="1" name="activator" checked="checked" class="carousel__activator"/>
+                    <input type="radio" id="2" name="activator" class="carousel__activator"/>
+                    <input type="radio" id="3" name="activator" class="carousel__activator"/>
+                    <div class="carousel__controls">
+                        <label for="3" class="carousel__control carousel__control--backward">‹</label>
+                        <label for="2" class="carousel__control carousel__control--forward">›</label>
+                        
+                    </div>
+                    <div class="carousel__controls">
+                        <label for="1" class="carousel__control carousel__control--backward">‹</label>
+                        <label for="3" class="carousel__control carousel__control--forward">›</label>
+                        
+                    </div>
+                    <div class="carousel__controls">
+                        <label for="2" class="carousel__control carousel__control--backward">‹</label>
+                        <label for="1" class="carousel__control carousel__control--forward">›</label>
+                        
+                    </div>
+                    <li class="carousel__slide" style="background-image: url('./assets/head1.jpg')">
+                    </li>
+                    <li class="carousel__slide" style="background-image: url('./assets/head2.jpg')">
+                    </li>
+                    <li class="carousel__slide" style="background-image: url('./assets/head3.jpg')">
+                    </li>
+                    <div class="carousel__indicators"> 
+                        <label for="1" class="carousel__indicator">●</label>
+                        <label for="2" class="carousel__indicator">●</label>
+                        <label for="3" class="carousel__indicator">●</label>
+                    </div>
+                </ul>
             </div>
         </div>
     </div>
 
     <!-- ABOUT SECTION -->
-    <div class="about" style="background-image: url('./assets/H4.png')">
+    <div id="About" class="about" style="background-image: url('./assets/H4.png')">
         <div class="container__heading">
             <div class="container__heading--overline"></div>
             <div class="container__heading--text">About KJSCE Hackathon</div>
         </div>
         <div class="about__content">
-            The KJSCE hackathon 2016 saw the particiapation of all tech-savy people across Mumbai and we were in awe of the innovation
-            ideas and brilliant products in display. The dedicated approach by the participants helped set a high standard
-            for the comprition in its first year itself. Hackathon 2016 was held in KJSCE as a part of the annual technical
-            fest, Abhiayntriki. This tradition will be followed and we will be hosting the Hackathon 2017 during Abhiyantriki
-            2017, a two day festival from 6th October to 7th October.
-
+            The KJSCE hackathon 2016 saw the particiapation of all tech-savy people across Mumbai and we were in awe of the innovation ideas and brilliant products in display.
+            The dedicated approach by the participants helped set a high standard for the comprition in its first year itself. Hackathon 2016 was held in KJSCE as a part of the annual technical fest, Abhiayntriki.
+            This tradition will be followed and we will be hosting the Hackathon 2017 during Abhiyantriki 2017, a two day festival from 6th October to 7th October.
+            
         </div>
 
         <div class="about__pics">
@@ -75,335 +99,315 @@
             </div>
         </div>
     </div>
-    <div class="container__heading">
+    <div id="Schedule" class="container__heading">
         <div class="container__heading--overline"></div>
         <div class="container__heading--text">Schedule</div>
     </div>
-    <div class="schedulebox">
-        <div class="scheduleholder">
-            <div class="scheduleholder--days left">
-                <div class="daynum">Day 1</div>
-                <div class="actualschedule">
+    <div class = "schedulebox">
+        <div class = "scheduleholder">
+            <div class = "scheduleholder--days left">
+                <div class = "daynum">Day 1</div>
+                <div class = "actualschedule">
                     <div class="timeline"></div>
-                    <div class="events">
-                        <div class="event odde">
-                            <p>
-                                <b>09:00 AM</b> Checking in</p>
+                        <div class="events">
+                            <div class="event odde">
+                                <p><b>09:00 AM</b> Checking in</p>
+                            </div>
+                            <div class="event evee">
+                                <p><b>09:30 AM</b> Kickoff of the Hackathon</p>
+                            </div>
+                            <div class="event odde">
+                                <p><b>10:30 AM</b> Hacking begins</p>
+                            </div>
+                            <div class="event evee">
+                                <p><b>12:00 PM</b> Lunch</p>
+                            </div>
+                            <div class="event odde">
+                                <p><b>01:00 PM</b> Hacking Period 2</p>
+                            </div>
+                            <div class="event evee">
+                                <p><b>05:00 PM</b> Evening Snacks and fun events</p>
+                            </div>
+                            <div class="event odde">
+                                <p><b>06:00 PM</b> Hacking Period 3</p>
+                            </div>
+                            <div class="event evee">
+                                <p><b>09:00 PM</b> End of Day 1</p>
+                            </div>
                         </div>
-                        <div class="event evee">
-                            <p>
-                                <b>09:30 AM</b> Kickoff of the Hackathon</p>
-                        </div>
-                        <div class="event odde">
-                            <p>
-                                <b>10:30 AM</b> Hacking begins</p>
-                        </div>
-                        <div class="event evee">
-                            <p>
-                                <b>12:00 PM</b> Lunch</p>
-                        </div>
-                        <div class="event odde">
-                            <p>
-                                <b>01:00 PM</b> Hacking Period 2</p>
-                        </div>
-                        <div class="event evee">
-                            <p>
-                                <b>05:00 PM</b> Evening Snacks and fun events</p>
-                        </div>
-                        <div class="event odde">
-                            <p>
-                                <b>06:00 PM</b> Hacking Period 3</p>
-                        </div>
-                        <div class="event evee">
-                            <p>
-                                <b>09:00 PM</b> End of Day 1</p>
-                        </div>
+                    
                     </div>
-
-                </div>
             </div>
-            <!-- SPONSORS SECTION STARTS HERE -->
-            <div class="right scheduleholder--days">
-                <div class="daynum">Day 2</div>
-                <div class="actualschedule">
+           <!-- SPONSORS SECTION STARTS HERE -->
+            <div class = "right scheduleholder--days">
+                <div class = "daynum">Day 2</div>
+                <div class = "actualschedule">
                     <div class="timeline"></div>
                     <div class="events">
                         <div class="event odde">
-                            <p>
-                                <b>09:00 AM</b> Checking in</p>
+                            <p><b>09:00 AM</b> Checking in</p>
                         </div>
                         <div class="event evee">
-                            <p>
-                                <b>09:30 AM</b> Hacking Period 4</p>
+                            <p><b>09:30 AM</b> Hacking Period 4</p>
                         </div>
                         <div class="event odde">
-                            <p>
-                                <b>11:30 AM</b> Hacking Period Ends</p>
+                            <p><b>11:30 AM</b> Hacking Period Ends</p>
                         </div>
                         <div class="event evee">
-                            <p>
-                                <b>12:00 PM</b> Lunch</p>
+                            <p><b>12:00 PM</b> Lunch</p>
                         </div>
                         <div class="event odde">
-                            <p>
-                                <b>03:00 PM</b> Hack and Presentation submission</p>
+                            <p><b>03:00 PM</b> Hack and Presentation submission</p>
                         </div>
                         <div class="event evee">
-                            <p>
-                                <b>03:30 PM</b> Hack and Presentation judging</p>
+                            <p><b>03:30 PM</b> Hack and Presentation judging</p>
                         </div>
                         <div class="event odde">
-                            <p>
-                                <b>06:00 PM</b> Result Declaration</p>
+                            <p><b>06:00 PM</b> Result Declaration</p>
                         </div>
-
+                       
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
-    <!--FAQ -->
+    <!-- FAQ SECTION -->
     <div class="container__heading">
-        <div class="container__heading--overline"></div>
-        <div class="container__heading--text">FAQ</div>
-    </div>
-
-    <div class="fcontainer">
-        <div class="qa odd">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
+            <div class="container__heading--overline"></div>
+            <div class="container__heading--text">FAQ</div>
+        </div>
+    
+        <div class="fcontainer">
+            <div class="qa odd">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>What happens at a Hackathon?</span>
                     </div>
                 </div>
-                <div class="question">
-                    <span>What happens at a Hackathon?</span>
+                <div class="a">
+                    <div class="ans">
+                        Participants (“hackers”) spend 36 hours working in teams of 1 - 5 people to build or code or design projects (“hacks”) that
+                        they’re excited about. There are workshops, mentors, food, swag, and buckets of coffee to guide you along
+                        the way. You bring your ideas, and we give you everything you need to make them come to life.
+                    </div>
                 </div>
             </div>
-            <div class="a">
-                <div class="ans">
-                    Participants (“hackers”) spend 36 hours working in teams of 1 - 5 people to build or code or design projects (“hacks”) that
-                    they’re excited about. There are workshops, mentors, food, swag, and buckets of coffee to guide you along
-                    the way. You bring your ideas, and we give you everything you need to make them come to life.
+            <div class="qa odd">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>What shoud I bring?</span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        You should bring your student ID and anything you’d need for a sleepover: laptop, charger, deodorant (!), change of clothes,
+                        etc.. You won’t need food or drinks; we’ve got you covered there.
+                    </div>
+                </div>
+            </div>
+            <div class="qa even">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>What do people normally make?</span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        Hacks generally fall under one (or more) of the seven cortices: Web Development, Android, iOS, AI/ML, AR/VR, Game Development,
+                        and Hardware.
+                    </div>
+                </div>
+            </div>
+            <div class="qa even">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>What should I not bring?</span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        Weapons of any kind, drugs, or alcohol. If you’re not sure whether something will be okay, please ask ahead of time!
+                    </div>
+                </div>
+            </div>
+            <div class="qa odd">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>What are the topics and the prizes for the Hackathon?</span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        The topic and the prizes will be declared soon.So keep an eye on the
+                        <a href="https://www.facebook.com/kjscecodecell/" target="_blank">KJSCE-CodeCell Facebook Page</a>. Also once you've registered with an e-mail id , we'll shoot you a mail
+                        about further announcements
+                    </div>
+                </div>
+            </div>
+            <div class="qa odd">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>What if i don't have a team or an idea?
+                        </span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        Not to worry, most people don’t! We have some great activities planned before and during the event to help you meet teammates
+                        and start thinking through your ideas.
+                    </div>
+                </div>
+            </div>
+            <div class="qa even">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>Do you allow walk-ins?</span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        We will not be allowing walk-ins. To ensure that you’ll be allowed in, please apply ahead of time.
+                    </div>
+                </div>
+            </div>
+            <div class="qa even">
+                <div class="q">
+                    <div class="shape closed">
+                        <div class="expand">
+                            <div class="horizontal"></div>
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <span>Did we just miss something.. </span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="ans">
+                        You can just drop a DM at any of our social network handles and we'll try our best to answer them ASAP ;)
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="qa odd">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>What shoud I bring?</span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    You should bring your student ID and anything you’d need for a sleepover: laptop, charger, deodorant (!), change of clothes,
-                    etc.. You won’t need food or drinks; we’ve got you covered there.
-                </div>
-            </div>
-        </div>
-        <div class="qa even">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>What do people normally make?</span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    Hacks generally fall under one (or more) of the seven cortices: Web Development, Android, iOS, AI/ML, AR/VR, Game Development,
-                    and Hardware.
-                </div>
-            </div>
-        </div>
-        <div class="qa even">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>What should I not bring?</span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    Weapons of any kind, drugs, or alcohol. If you’re not sure whether something will be okay, please ask ahead of time!
-                </div>
-            </div>
-        </div>
-        <div class="qa odd">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>What are the topics and the prizes for the Hackathon?</span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    The topic and the prizes will be declared soon.So keep an eye on the
-                    <a href="https://www.facebook.com/kjscecodecell/" target="_blank">KJSCE-CodeCell Facebook Page</a>. Also once you've registered with an e-mail id , we'll shoot you a mail
-                    about further announcements
-                </div>
-            </div>
-        </div>
-        <div class="qa odd">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>What if i don't have a team or an idea?
-                    </span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    Not to worry, most people don’t! We have some great activities planned before and during the event to help you meet teammates
-                    and start thinking through your ideas.
-                </div>
-            </div>
-        </div>
-        <div class="qa even">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>Do you allow walk-ins?</span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    We will not be allowing walk-ins. To ensure that you’ll be allowed in, please apply ahead of time.
-                </div>
-            </div>
-        </div>
-        <div class="qa even">
-            <div class="q">
-                <div class="shape closed">
-                    <div class="expand">
-                        <div class="horizontal"></div>
-                        <div class="vertical"></div>
-                    </div>
-                </div>
-                <div class="question">
-                    <span>Did we just miss something.. </span>
-                </div>
-            </div>
-            <div class="a">
-                <div class="ans">
-                    You can just drop a DM at any of our social network handles and we'll try our best to answer them ASAP ;)
-                </div>
-            </div>
-        </div>
-    </div>
     <!--End of FAQ Section-->
-
     <!-- Past Hackathon  -->
     <div class="pasthackathon" style="background-image: url('./assets/H2.png')">
-        <div class="pasthackathon__button">Hackathon 2017</div>
+        <div class="pasthackathon__button col-6 col-sm-12">Hackathon 2017</div>
     </div>
-    <!--Sponsor Section-->
-    <div class="container__heading">
-        <div class="container__heading--overline"></div>
-        <div class="container__heading--text">Sponsors</div>
-    </div>
-    <main id="imgcontainer">
-        <div class="flexbox col-1">
-            <img src="./Sponsors/ologo.png" />
+    
+  <!--Sponsor Section-->
+        <div id="Sponsors" class="container__heading">
+            <div class="container__heading--overline"></div>
+            <div class="container__heading--text">Sponsors</div>
         </div>
-        <div class="flexbox col-1">
-            <img src="./Sponsors/pplogo.png" />
-        </div>
-        <div class="flexbox col-2">
-            <img src="./Sponsors/Venturesity.png" />
-        </div>
-        <div class="flexbox col-2">
-            <img src="./Sponsors/wlogo.png" />
-        </div>
-        <div class="flexbox col-1">
-            <img src="./Sponsors/riidllogo1.png" />
-        </div>
-    </main>
+
+        <main id="imgcontainer">
+            <div class="flexbox col-1">
+                <img src="Sponsors/ologo.png" />
+            </div>
+            <div class="flexbox col-1">
+                <img src="Sponsors/pplogo.png" />
+            </div>
+            <div class="flexbox col-2">
+                <img src="Sponsors/Venturesity.png" />
+            </div>
+            <div class="flexbox col-2">
+                <img src="Sponsors/wlogo.png" />
+            </div>
+            <div class="flexbox col-1">
+                <img src="Sponsors/riidllogo1.png" />
+            </div>
+        </main>
+    
     <div class="sponsor">
         <div class="sponsor__button">Sponsor Us</div>
         <div class="sponsor__link">Why Sponsor Us?</div>
     </div>
+
     <main id="imgcontainer">
         <div class="flexbox col-3">
-            <img src="./Sponsors/Abhiyantriki.png" />
+            <img src="Sponsors/Abhiyantriki.png" />
         </div>
         <div class="flexbox col-3">
-            <img src="./Sponsors/somaiya.png" />
+            <img src="Sponsors/somaiya.png" />
         </div>
         <div class="flexbox col-3">
             <img src="./assets/cclogo.png" />
         </div>
     </main>
-
-    <br>
-
-
+<br>
     <div class="imgcontainer">
         <div class="effect laertes">
             <div class="buttons">
-                <a href="https://www.facebook.com/kjscecodecell/" class="fb" title="Join us on Facebook">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a href="https://twitter.com/kjsce_codecell" class="tw" title="Join us on Twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/kjsce_codecell/" class="insta" title="Join us on Instagram">
-                    <i class="fa fa-instagram"></i>
-                </a>
-                <a href="https://github.com/KJSCE-Codecell" class="in" title="Join us on Linked In">
-                    <i class="fa fa-github"></i>
-                </a>
+                <a href="https://www.facebook.com/kjscecodecell/" class="fb" title="Join us on Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/kjsce_codecell" class="tw" title="Join us on Twitter"><i class="fa fa-twitter" ></i></a>
+                <a href="https://www.instagram.com/kjsce_codecell/" class="insta" title="Join us on Instagram"><i class="fa fa-instagram" ></i></a>
+                <a href="https://github.com/KJSCE-Codecell" class="in" title="Join us on Linked In"><i class="fa fa-github" ></i></a>
             </div>
         </div>
     </div>
-    <!--End of Sponsor Section-->
 
-    <!-- BACKGROUND ANIMATIONS -->
-    <!-- <div class="backanimation backanimation__rectangle--1"></div>
-<div class="backanimation backanimation__circle--1"></div> 
-<div class="backanimation backanimation__rectangle--2"></div>
-<div class="backanimation backanimation__circle--2"></div>  
-<div class="backanimation backanimation__rectangle--3"></div>
-<div class="backanimation backanimation__circle--3"></div>  
-<div class="backanimation backanimation__rectangle--4"></div>
-<div class="backanimation backanimation__circle--4"></div>   -->
+<!--End of Sponsor Section-->
 
-
+<!-- BACKGROUND ANIMATIONS -->
+<div class="backanimation__container">
+    <div class="backanimation backanimation__rectangle--1"></div>
+    <div class="backanimation backanimation__circle--1"></div> 
+    <div class="backanimation backanimation__rectangle--2"></div>
+    <div class="backanimation backanimation__circle--2"></div>  
+    <div class="backanimation backanimation__rectangle--3"></div>
+    <div class="backanimation backanimation__circle--3"></div>  
+    <div class="backanimation backanimation__rectangle--4"></div>
+    <div class="backanimation backanimation__circle--4"></div>
+    <div class="backanimation backanimation__rectangle--5"></div>
+    <div class="backanimation backanimation__circle--5"></div>
+</div>
+</div>
     <!--JS Files-->
-    <script src="js/index.js"></script>
+
+    <script  src="js/index.js"></script>
     <!--Let this be last line of this file-->
 </body>
 
