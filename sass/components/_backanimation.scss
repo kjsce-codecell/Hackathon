@@ -22,8 +22,8 @@
         &--3{
             top: 20%;
             left: 60%;
-            width: 20px;
-            height: 20px;
+            width: 70px;
+            height: 70px;
             border: 1rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
@@ -70,8 +70,8 @@
         &--4{
             top: 60%;
             left: 70%;
-            width: 30px;
-            height: 30px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             border: 1rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
@@ -119,14 +119,8 @@
     }
 }
 
-// @media screen and (max-device-width: 650px) {
-//     .backanimation{
-//         border-width: 1rem;
-//     }
-//     .backanimation__rectangle--3{
-//         display: none;
-//     }
-//     .backanimation__circle--3{
-//         display: none;
-//     }
-// }
+@media screen and (max-device-width: 650px) {
+    .backanimation{
+        display: none;
+    }
+}
