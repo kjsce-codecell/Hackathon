@@ -8,22 +8,21 @@
 }
 
 main {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 100%;
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+width: 100%;
 }
 
 .flexbox img {
-  max-width: 250px;
-  width: 100%;
-  height: auto;
+max-width: 250px;
+width: 100%;
+height: auto;
 }
 
 .flexbox {
-  padding: 10px;
+padding: 10px;
 }
-
 // @media screen and (min-device-width: 651px) {
 // 	.col-1 ,.col-2{
 //         width: 25%;
@@ -38,18 +37,18 @@ main {
 // 	}
 // }
 @media screen and (max-device-width: 650px) {
-  // .col-1 ,.col-2{
-  //       width: 35%;
-  //       margin-bottom: 20px;
-  //       margin-left: 20px;   
-  // }
-  // .col-3 {
-  //       width: 35%;
-  //       margin-bottom: 10px;
-  // }
-  .flexbox img {
-    max-width: 150px;
-  }
+// .col-1 ,.col-2{
+//       width: 35%;
+//       margin-bottom: 20px;
+//       margin-left: 20px;   
+// }
+// .col-3 {
+//       width: 35%;
+//       margin-bottom: 10px;
+// }
+.flexbox img{
+  max-width: 150px;
+}
 }
 
 //variables
@@ -61,74 +60,114 @@ $insta: #bc2a8d;
 $github: #212121;
 $border-radius: 10px;
 $font-size: 25px;
-/*common styles !!!YOU DON'T NEED THEM */
 
+/*common styles !!!YOU DON'T NEED THEM */
 .imgcontainer {
-  margin: 0px auto 0px auto;
-  text-align: center;
+margin: 0px auto 0px auto;
+text-align: center;
 }
 
 .effect {
-  width: 100%;
-  .buttons {
-    margin: 4rem auto;
-    display: flex;
-    justify-content: center;
+width: 100%;
+// padding: 50px 0px 70px 0px;
+
+.buttons {
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  
+  &:last-child {
+    margin-right: 0px;
   }
-  a {
-    &:last-child {
-      margin-right: 0px;
-    }
-  }
+}
 }
 
 /*common link styles !!!YOU NEED THEM*/
-
 .effect {
-  /*display: flex; !!!uncomment this line !!!*/
-  a {
-    text-decoration: none !important;
-    color: white;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-    font-size: 25px;
-    overflow: hidden;
+/*display: flex; !!!uncomment this line !!!*/
+
+a {
+  text-decoration: none !important;
+  color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;     
+  margin-right: 20px;
+  font-size: 25px;
+  overflow: hidden;
+  position: relative;
+  
+  i {
     position: relative;
-    img {
-      width: 45px;
-      height: 45px;
-      fill: #fff;
-      color: #fff
+    z-index: 3;
+  }
+  
+  &.fb {
+    background-color: $fb-color;
+  }
+  
+  &.tw {
+    background-color: $tw-color;
+  }  
+  &.insta {
+    background-color: $insta;
+  }
+  
+  &.in {
+    background-color: $github;
+  }
+}
+}
+.effect.laertes {
+
+a {
+  transition: all 0.2s linear 0s;
+  
+  i {
+    transition: all 0.2s linear 0s;
+  }
+ 
+  &:hover { 
+    i {
+      transform: scale(1.5);
+      text-shadow: 0 0 12px rgba($basic-dark-color, 0.5);
     }
   }
 }
+}
 
-.sponsor {
-  margin: 2rem auto;
-  &__button {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    padding: 1rem 5rem;
-    margin: 1rem auto;
-    cursor: pointer;
-    color: var(--color-white);
-    font-size: 2rem;
-    background-color: var(--color-primary);
-    border-radius: 3rem;
-    transition: all .5s ease-in-out;
-    &:hover {
-      box-shadow: 0rem .5rem 1rem -0.2rem rgba(0, 0, 0, 0.5);
-      transform: translate(-50%, -.5rem);
-    }
+.sponsor{
+margin: 2rem auto;
+
+&__button{
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0%);
+  padding: 1rem 5rem;
+  margin: 1rem auto;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 2rem;
+  background-color: var(--color-primary);
+  border-radius: 3rem;
+  transition: all .5s ease-in-out;
+
+  &:hover{
+      box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
+      transform: translate(-50%,-.5rem);
   }
-  &__link {
-    text-align: center;
-    font-size: 1.2rem; // padding: 2rem;
-  }
+}
+
+&__link{
+  text-align: center;
+  font-size: 1.2rem;
+  // padding: 2rem;
+}
 }
