@@ -19,17 +19,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            :last-child{
-                margin-right: 1rem;
+            a{
+                &:hover{
+                    color: var(--color-white);
+                }
             }
+            // :last-child{
+            //     margin-right: 1rem;
+            // }
             &--name{
                 padding: 1rem;
                 font-size: 1.5rem;
                 text-align: center;
                 cursor: pointer;
 
+
                 &:hover{
-                    color: var(--color-white);
                     background-color: var(--color-secondary);
                     transition: all .3s linear;
                 }
@@ -38,6 +43,7 @@
     }
 
     &__content{
+        margin-top: 50px;
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;

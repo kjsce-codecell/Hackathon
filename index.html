@@ -10,15 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="head">
+    <div class="page-wrap">
+    <div id="Home" class="head">
             <div class="head__nav">
                 <div class="head__nav__elems--logo"><img src="Sponsors/H3.png" alt=""></div>
                 <div class="head__nav__elems">
-                    <div class="head__nav__elems--name">Home</div>
-                    <div class="head__nav__elems--name">About</div>
-                    <div class="head__nav__elems--name">Schedule</div>
-                    <div class="head__nav__elems--name">FAQ</div>
-                    <div class="head__nav__elems--name">Sponsors</div>
+                    <a href="#Home"><div class="head__nav__elems--name">Home</div></a>
+                    <a href="#About"><div class="head__nav__elems--name">About</div></a>
+                    <a href="#Schedule"><div class="head__nav__elems--name">Schedule</div></a>
+                    <a href="#FAQ"><div class="head__nav__elems--name">FAQ</div></a>
+                    <a href="#Sponsors"><div class="head__nav__elems--name">Sponsors</div></a>
                 </div>
             </div>
         <div class="head__content">
@@ -30,15 +31,43 @@
                 <div class="head__content--button--link">Interested in sponsoring ?</div>
             </div>
             <div class="head__content--gallery">
-                <img src="./Sponsors/head1.jpg" alt="">
-                <img src="./Sponsors/head2.jpg" alt="">
-                <img src="./Sponsors/head3.jpg" alt="">
+                <ul class="carousel my-carousel">
+                    <input type="radio" id="1" name="activator" checked="checked" class="carousel__activator"/>
+                    <input type="radio" id="2" name="activator" class="carousel__activator"/>
+                    <input type="radio" id="3" name="activator" class="carousel__activator"/>
+                    <div class="carousel__controls">
+                        <label for="3" class="carousel__control carousel__control--backward">‹</label>
+                        <label for="2" class="carousel__control carousel__control--forward">›</label>
+                        
+                    </div>
+                    <div class="carousel__controls">
+                        <label for="1" class="carousel__control carousel__control--backward">‹</label>
+                        <label for="3" class="carousel__control carousel__control--forward">›</label>
+                        
+                    </div>
+                    <div class="carousel__controls">
+                        <label for="2" class="carousel__control carousel__control--backward">‹</label>
+                        <label for="1" class="carousel__control carousel__control--forward">›</label>
+                        
+                    </div>
+                    <li class="carousel__slide" style="background-image: url('Sponsors/head1.jpg')">
+                    </li>
+                    <li class="carousel__slide" style="background-image: url('Sponsors/head2.jpg')">
+                    </li>
+                    <li class="carousel__slide" style="background-image: url('Sponsors/head3.jpg')">
+                    </li>
+                    <div class="carousel__indicators"> 
+                        <label for="1" class="carousel__indicator">●</label>
+                        <label for="2" class="carousel__indicator">●</label>
+                        <label for="3" class="carousel__indicator">●</label>
+                    </div>
+                </ul>
             </div>
         </div>
     </div>
 
     <!-- ABOUT SECTION -->
-    <div class="about" style="background-image: url('Sponsors/H4.png')">
+    <div id="About" class="about" style="background-image: url('Sponsors/H4.png')">
         <div class="container__heading">
             <div class="container__heading--overline"></div>
             <div class="container__heading--text">About KJSCE Hackathon</div>
@@ -69,7 +98,7 @@
             </div>
         </div>
     </div>
-    <div class="container__heading">
+    <div id="Schedule" class="container__heading">
         <div class="container__heading--overline"></div>
         <div class="container__heading--text">Schedule</div>
     </div>
@@ -141,11 +170,8 @@
                 </div>
             </div>
         </div>
-    </div>
-  
     <!-- FAQ SECTION -->
-
-    <div class="container__heading">
+    <div id="FAQ" class="container__heading">
         <div class="container__heading--overline"></div>
         <div class="container__heading--text">FAQ</div>
     </div>
@@ -285,58 +311,58 @@
     <div class="pasthackathon" style="background-image: url('Sponsors/H2.png')">
         <div class="pasthackathon__button">Hackathon 2017</div>
     </div>
+    
   <!--Sponsor Section-->
-        <div class="container__heading">
+        <div id="Sponsors" class="container__heading">
             <div class="container__heading--overline"></div>
             <div class="container__heading--text">Sponsors</div>
         </div>
+
         <main id="imgcontainer">
-                <div class="flexbox col-1">
-                    <img src="Sponsors/ologo.png" />
-                </div>
-                <div class="flexbox col-1">
-                    <img src="Sponsors/pplogo.png" />
-                </div>
-                <div class="flexbox col-2">
-                    <img src="Sponsors/Venturesity.png" />
-                </div>
-                <div class="flexbox col-2">
-                    <img src="Sponsors/wlogo.png" />
-                </div>
-                <div class="flexbox col-1">
-                    <img src="Sponsors/riidllogo1.png" />
+            <div class="flexbox col-1">
+                <img src="Sponsors/ologo.png" />
+            </div>
+            <div class="flexbox col-1">
+                <img src="Sponsors/pplogo.png" />
+            </div>
+            <div class="flexbox col-2">
+                <img src="Sponsors/Venturesity.png" />
+            </div>
+            <div class="flexbox col-2">
+                <img src="Sponsors/wlogo.png" />
+            </div>
+            <div class="flexbox col-1">
+                <img src="Sponsors/riidllogo1.png" />
             </div>
         </main>
-        <div class="sponsor">
-            <div class="sponsor__button">Sponsor Us</div>
-            <div class="sponsor__link">Why Sponsor Us?</div>
+    
+    <div class="sponsor">
+        <div class="sponsor__button">Sponsor Us</div>
+        <div class="sponsor__link">Why Sponsor Us?</div>
+    </div>
+
+    <main id="imgcontainer">
+        <div class="flexbox col-3">
+            <img src="Sponsors/Abhiyantriki.png" />
         </div>
-        <main id="imgcontainer">
-            <div class="flexbox col-3">
-                <img src="Sponsors/Abhiyantriki.png" />
-            </div>
-            <div class="flexbox col-3">
-                <img src="Sponsors/somaiya.png" />
-            </div>
-            <div class="flexbox col-3">
-                <img src="Sponsors/cclogo.png" />
-            </div>
+        <div class="flexbox col-3">
+            <img src="Sponsors/somaiya.png" />
+        </div>
+        <div class="flexbox col-3">
+            <img src="Sponsors/cclogo.png" />
+        </div>
     </main>
-
-        <br>
-
-
+<br>
     <div class="imgcontainer">
-            <div class="effect laertes">
-              <div class="buttons">
+        <div class="effect laertes">
+            <div class="buttons">
                 <a href="https://www.facebook.com/kjscecodecell/" class="fb" title="Join us on Facebook"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/kjsce_codecell" class="tw" title="Join us on Twitter"><i class="fa fa-twitter" ></i></a>
                 <a href="https://www.instagram.com/kjsce_codecell/" class="insta" title="Join us on Instagram"><i class="fa fa-instagram" ></i></a>
                 <a href="https://github.com/KJSCE-Codecell" class="in" title="Join us on Linked In"><i class="fa fa-github" ></i></a>
-              </div>
             </div>
-            
-          </div>
+        </div>
+    </div>
 
 <!--End of Sponsor Section-->
 
@@ -349,9 +375,9 @@
 <div class="backanimation backanimation__circle--3"></div>  
 <div class="backanimation backanimation__rectangle--4"></div>
 <div class="backanimation backanimation__circle--4"></div>   -->
-
-
+</div>
     <!--JS Files-->
+
     <script  src="js/index.js"></script>
     <!--Let this be last line of this file-->
 </body>
