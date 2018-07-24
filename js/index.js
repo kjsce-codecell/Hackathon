@@ -19,6 +19,7 @@ var circ2 = document.getElementsByClassName("backanimation__circle--2")[0];
 var circ3 = document.getElementsByClassName("backanimation__circle--3")[0];
 var circ4 = document.getElementsByClassName("backanimation__circle--4")[0];
 var circ5 = document.getElementsByClassName("backanimation__circle--5")[0];
+var circ6 = document.getElementsByClassName("backanimation__circle--6")[0];
 
 (window).addEventListener("scroll",function() {
   var theta = (window).scrollY / 100 % Math.PI;
@@ -37,6 +38,7 @@ var circ5 = document.getElementsByClassName("backanimation__circle--5")[0];
   circ3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  circ6.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   
 });
 
@@ -48,6 +50,27 @@ var circ5 = document.getElementsByClassName("backanimation__circle--5")[0];
 //   // 5. Maps?
 //   // 6. Shadow Depth
 
+
+
+///////////// FORM AJAX REQUEST
+// HIDE THIS
+var url = 'https://script.google.com/macros/s/AKfycby5k1hGxY8puK4xawvxMd3-_hYSrQgeA9L_7jSYq6KPxVYJd2zT/exec';
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();  
+  var form = new FormData(document.getElementById("starter-form"));
+  let jsonObject = {
+    name : form.get("name"),
+    email : form.get("email"),
+    college : form.get("college"),
+  };
+  $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: jsonObject
+  })
+})
 // SMOOTH SCROLL
 $(document).ready(function(){
   // Add smooth scrolling to all links
