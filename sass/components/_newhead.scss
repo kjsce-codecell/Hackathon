@@ -78,6 +78,13 @@
 
 @media screen and (max-device-width: 1100px) {
     .newhead{
+
+        &__logo{
+            img{
+                height: 150px;
+            }
+        }
+
         &__form{
             width: 80vw;
         }
