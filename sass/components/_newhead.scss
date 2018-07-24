@@ -23,7 +23,17 @@
 
     &__logo{
         img{
-            height: 300px;
+            height: 200px;
+            width: auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__logo1{
+        img{
+            height: 50px;
             width: auto;
             position: relative;
             left: 50%;
@@ -86,6 +96,12 @@
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
+            }
+        }
+
+        &__logo1{
+            img{
+                height: 40px;
             }
         }
 
