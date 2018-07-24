@@ -47,3 +47,25 @@ var circ5 = document.getElementsByClassName("backanimation__circle--5")[0];
 //   // 4. Footer, social media links
 //   // 5. Maps?
 //   // 6. Shadow Depth
+
+
+
+///////////// FORM AJAX REQUEST
+// HIDE THIS
+var url = 'https://script.google.com/macros/s/AKfycby5k1hGxY8puK4xawvxMd3-_hYSrQgeA9L_7jSYq6KPxVYJd2zT/exec';
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();  
+  var form = new FormData(document.getElementById("starter-form"));
+  let jsonObject = {
+    name : form.get("name"),
+    email : form.get("email"),
+    college : form.get("college"),
+  };
+  $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: jsonObject
+  })
+})
