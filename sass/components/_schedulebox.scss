@@ -181,26 +181,26 @@
                 }
             }
         }
-        // @media only screen and (max-width: 660px) {
-        //     width: 100%;
-        //     &--days {
-        //         width: 80%;
-        //     }
-        // }
-        // @media only screen and (max-width: 540px) {
-        //     &--days {
-        //         width: 90%;
-        //     }
-        // }
-        // @media only screen and (max-width: 420px) {
-        //     &--days {
-        //         height: 33rem;
-        //     }
-        // }
-        // @media only screen and (max-width: 340px) {
-        //     &--days {
-        //         height: 35rem;
-        //     }
-        // }
+        @media only screen and (max-width: 660px) {
+            width: 100%;
+            &--days {
+                width: 80%;
+            }
+        }
+        @media only screen and (max-width: 540px) {
+            &--days {
+                width: 80%;
+            }
+        }
+        @media only screen and (max-width: 420px) {
+            &--days {
+                height: 33rem;
+            }
+        }
+        @media only screen and (max-width: 340px) {
+            &--days {
+                height: 35rem;
+            }
+        }
     }
 }
