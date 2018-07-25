@@ -12,7 +12,7 @@
         right: 0;
         top: 0;
         z-index: 999;
-        background: rgba(255,255,255,0.5);
+        background: rgba(0,0,0,0.5);
         box-shadow: 0 1rem 3rem -.5rem rgba(0,0,0,0.5);
 
         &__elems{
@@ -32,12 +32,38 @@
                 font-size: 1.5rem;
                 text-align: center;
                 cursor: pointer;
-
+                color: var(--color-white);
 
                 &:hover{
-                    background-color: var(--color-secondary);
+                    background-color: #E59600;
                     transition: all .3s linear;
+                    //color: var(--color-primary);
                 }
+            }
+        }
+    }
+    &__logos{
+        display: flex;
+        img{
+            position: relative;
+            display:block;
+            float:left;
+            padding:0;
+            margin:0;
+        }
+        &--logo1{
+            img{
+                margin-left: 15px;
+                margin-top: 3px;
+                width:auto;
+                height: 43px;
+            }
+        }
+        &--logo2{
+            img{
+                margin-top: 7px;
+                width:auto;
+                height: 32px;
             }
         }
     }

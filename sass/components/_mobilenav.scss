@@ -3,22 +3,42 @@
 }
 .mobilenav{
     display: none;
-    background-color: var(--color-white);
+    background-color:rgba(0,0,0,0.5);
     z-index: 999;
 
     &__hamburger{
         margin-right: 10px;
         font-size: 3rem;
+        color: var(--color-white);
     }
 
     &__elems{
         display: none;
-        background-color: var(--color-white);
+        background-color: rgba(0,0,0,0.7);
         position: fixed;
         z-index: 999;
         top: 50px;
         left: 0;
         right: 0;
+    }
+    &__logos{
+        img{
+            position: relative;
+            float:left;
+        }
+        &--logo1{
+            img{
+                margin-left: 10px;
+                width:auto;
+                height:35px;
+            }
+        }
+        &--logo2{
+            img{
+                width:auto;
+                height:25px;
+            }
+        }
     }
 }
 
