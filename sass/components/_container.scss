@@ -15,7 +15,7 @@
         transition: all .5s ease-in-out;
         margin-bottom: 1rem;
         &:hover {
-            box-shadow: 0rem .5rem .5rem -0.2rem var(--color-black);
+            box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
             transform: translate(-50%, calc(-50% - .5rem));
         }
     }
