@@ -3,6 +3,7 @@
     height: 100vh; // background: var(--color-gray);
     position: relative; // border: .5rem solid var(--color-black);
     &__button {
+        // font-family: 'Permanent Marker', cursive;
         display: inline-block;
         background-color: var(--color-primary);
         color: var(--color-white);
@@ -20,6 +21,7 @@
         }
     }
     &__heading {
+        // font-family: 'Permanent Marker', cursive;
         cursor: pointer;
         display: inline-block;
         position: relative;
