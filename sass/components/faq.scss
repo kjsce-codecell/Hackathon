@@ -40,10 +40,11 @@ $back: #FFFFFF;
       cursor: pointer; 
       .question{
         span{
+          display: block;
           line-height:20px;
           color: var(--color-white);
           font-size:1.2rem;
-          padding-left:2.5rem;
+          padding-left:4rem;
           }
         }
         .shape.hovered{
@@ -133,22 +134,26 @@ $back: #FFFFFF;
 
 // Responsive Content
 .fcontainer {
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
+    width: 80%;
     align-content: flex-start;
     .qa {
+      padding: 0;
       width: calc(100% - 30px);
       margin:auto;
-      padding-left:50px;
-      padding-right:50px;
+      // padding-left:50px;
+      // padding-right:50px;
     }
   }
   @media screen and (max-width: 400px) {
+    width: 80%;
     align-content: flex-start;
     .qa {
+      padding: 0;
       width: calc(100% - 30px);
       margin:auto;
-      padding-left:20px;
-      padding-right:20px;
+      // padding-left:20px;
+      // padding-right:20px;
       padding:auto;
     }
   }

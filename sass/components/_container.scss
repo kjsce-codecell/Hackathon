@@ -3,6 +3,7 @@
     height: 100vh; // background: var(--color-gray);
     position: relative; // border: .5rem solid var(--color-black);
     &__button {
+        // font-family: 'Permanent Marker', cursive;
         display: inline-block;
         background-color: var(--color-primary);
         color: var(--color-white);
@@ -15,11 +16,12 @@
         transition: all .5s ease-in-out;
         margin-bottom: 1rem;
         &:hover {
-            box-shadow: 0rem .5rem .5rem -0.2rem var(--color-black);
+            box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
             transform: translate(-50%, calc(-50% - .5rem));
         }
     }
     &__heading {
+        // font-family: 'Permanent Marker', cursive;
         cursor: pointer;
         display: inline-block;
         position: relative;

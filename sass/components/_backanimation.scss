@@ -20,6 +20,7 @@
             height: 60px;
             border: 0.5rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
+            animation-delay: 1s;
         }
         &--2 {
             top: 5%;
@@ -28,6 +29,7 @@
             height: 30px;
             border: 0.5rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
+            animation-delay: 2s;
         }
         &--3 {
             top: 20%;
@@ -36,6 +38,7 @@
             height: 70px;
             border: 0.5rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
+            animation-delay: 3s;
         }
         &--4 {
             top: 45%;
@@ -44,6 +47,7 @@
             height: 45px;
             border: 0.5rem solid var(--color-primary);
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
+            animation-delay: 4s;
         }
         &--5{
             top: 30%;
@@ -63,6 +67,7 @@
             border-radius: 50%;
             border: 0.5rem solid var(--color-secondary-light);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
+            animation-delay: 1s;
         }
 
         &--2{
@@ -73,6 +78,7 @@
             border-radius: 50%;
             border: 0.6rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
+            animation-delay: 2s;
         }
         &--3 {
             top: 35%;
@@ -82,6 +88,7 @@
             border-radius: 50%;
             border: 0.5rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
+            animation-delay: 3s;
         }
         &--4 {
             top: 60%;
@@ -91,6 +98,7 @@
             border-radius: 50%;
             border: 0rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
+            animation-delay: 4s;
         }
         &--5{
             top: 55%;

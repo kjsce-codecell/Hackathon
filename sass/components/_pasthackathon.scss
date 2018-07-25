@@ -2,11 +2,12 @@
     width: 100vw;
     height: 50vh;
     background-size: cover;
-    border: .5rem solid var(--color-black);
+    border: 0 solid var(--color-black);
     background-attachment: fixed;
     backface-visibility: hidden;
     position: relative;
     &__button {
+        // font-family: 'Permanent Marker', cursive;
         display: inline-block;
         position: relative;
         left: 50%;
@@ -20,7 +21,7 @@
         border-radius: 3rem;
         transition: all .5s ease-in-out;
         &:hover {
-            box-shadow: 0rem .5rem 1rem -0.2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
             transform: translate(-50%, calc(-50% - .5rem));
         }
     }
