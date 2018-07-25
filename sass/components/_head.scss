@@ -12,7 +12,7 @@
         right: 0;
         top: 0;
         z-index: 999;
-        background: var(--color-white);
+        background: rgba(255,255,255,0.5);
         box-shadow: 0 1rem 3rem -.5rem rgba(0,0,0,0.5);
 
         &__elems{

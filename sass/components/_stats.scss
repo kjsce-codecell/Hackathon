@@ -9,7 +9,8 @@
 	margin-bottom: 15vh;
   text-align: center;
   background: transparent;
-  border: 0.2rem solid var(--color-primary);
+  background:rgba(0, 0, 0, 0.5);
+  border: 0.2rem solid var(--color-tertiary-dark);
 }
 
 .end {
@@ -26,8 +27,8 @@
 
 .counter {
   padding: 20px 0;
+  color: rgba(255,255,255,1);
   border-radius: 5px;
-  background: rgba(0,0,0,0.2);
 }
 .count-title {
   font-size: 40px; font-weight: normal; 
@@ -38,6 +39,7 @@
 .count-text {
   font-size: 13px;
   font-weight: normal;
+  color: rgba(255,255,255,1);
   margin-top: 10px;
   margin-bottom: 0;
   text-align: center;
@@ -47,7 +49,7 @@
   margin: 0 auto;
   float: none;
   display: table;
-  color:var(--color-secondary);
+  color:var(--color-tertiary);
 }
 
 @media screen and (max-device-width: 650px) {

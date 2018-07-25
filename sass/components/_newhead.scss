@@ -1,6 +1,7 @@
 .newhead{
     // background-attachment: fixed;
-    background-size: cover;
+    // background:radial-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
     height: 100vh;
@@ -9,10 +10,11 @@
 
     &__layer{
         background-color: rgba(0,0,0,0.5);
-        // background: radial-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+        background: radial-gradient(rgba(255,255,255,0.4), rgba(0,0,0,0.2));
         width: 100vw;
         height: 100vh;
         position: relative;
+        z-index: -100;
     }
 
     &__content{

@@ -30,10 +30,11 @@
             height: 30rem;
             margin: 2rem auto;
             padding: 1.5rem 1.5rem 0 1.5rem; // border: .05rem solid var(--color-gray);
-            // border-radius:.3rem;
-            background-color: rgba(255, 255, 255, 0.5); // box-shadow: -.15rem .25rem .6rem -0.2rem #222;
+            border-radius: 5px;
+            border: .2rem solid var(--color-tertiary-dark);
+            background-color: rgba(0, 0, 0, 0.5); // box-shadow: -.15rem .25rem .6rem -0.2rem #222;
             min-width: 280px;
-            transition: all .25s ease-in-out; // &:hover{
+            //transition: all .25s ease-in-out; // &:hover{
             //     box-shadow: 0 .35rem 1rem -0.2rem var(--color-black);
             //     transform: translate(0, -0.8%);
             // }
@@ -48,7 +49,7 @@
         }
         .daynum {
             text-align: center;
-            color: var(--color-black);
+            color: var(--color-white);
         }
         .actualschedule {
             padding: 1.2rem 0 1.2rem 1rem;
@@ -67,7 +68,7 @@
             float: left;
             width: 2px;
             height: 100%;
-            background-color: #555;
+            background-color:var(--color-white);
             top: 0;
             bottom: 0;
         }
@@ -79,6 +80,7 @@
             font-size: 1.2rem;
             text-align: left;
             float: left;
+            color: var(--color-white);
         }
         .event::before {
             content: '';
@@ -101,6 +103,9 @@
             .event {
                 padding: 1rem 0 1rem .5rem;
             }
+        }
+        .time{
+            color:var(--color-tertiary);
         }
         @media only screen and (max-width: 1148px) {
             .right {
