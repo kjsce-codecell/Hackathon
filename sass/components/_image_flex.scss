@@ -140,7 +140,7 @@ a {
   &:hover { 
     i {
       transform: scale(1.5);
-      text-shadow: 0 0 12px rgba($basic-dark-color, 0.5);
+      box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
     }
   }
 }
@@ -164,7 +164,7 @@ margin: 2rem auto;
   transition: all .5s ease-in-out;
 
   &:hover{
-      box-shadow: 0rem .5rem 1rem -0.2rem rgba(0,0,0,0.5);
+    box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
       transform: translate(-50%,-.5rem);
   }
 }

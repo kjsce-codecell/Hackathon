@@ -170,7 +170,7 @@
                 padding: 1.5rem;
                 padding-bottom: 0;
                 &:hover {
-                    box-shadow: -.18rem .35rem .85rem -0.2rem var(--color-black);
+                    box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
                     transform: translate(-50%, -0.8%);
                 }
             }
