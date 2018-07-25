@@ -21,6 +21,9 @@ var circ4 = document.getElementsByClassName("backanimation__circle--4")[0];
 var circ5 = document.getElementsByClassName("backanimation__circle--5")[0];
 var circ6 = document.getElementsByClassName("backanimation__circle--6")[0];
 
+
+var headcontent = document.getElementsByClassName("newhead__content")[0];
+
 (window).addEventListener("scroll",function() {
   var theta = (window).scrollY / 100 % Math.PI;
   theta = theta/2;
@@ -39,7 +42,7 @@ var circ6 = document.getElementsByClassName("backanimation__circle--6")[0];
   circ4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
   circ6.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  
+  headcontent.style.transform = 'translate(-50%,calc(-50% - '+(travel)+'px))';
 });
 
 //   // TODO
@@ -60,9 +63,9 @@ $('#submit-form').on('click', function(e) {
   e.preventDefault();  
   var form = new FormData(document.getElementById("starter-form"));
   let jsonObject = {
-    name : form.get("name"),
+    // name : form.get("name"),
     email : form.get("email"),
-    college : form.get("college"),
+    // college : form.get("college"),
   };
   $.ajax({
     url: url,

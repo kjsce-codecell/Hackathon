@@ -79,20 +79,35 @@
 	}
 }(jQuery));
 
-jQuery(function ($) {
-  // custom formatting example
-  $('.count-number').data('countToOptions', {
-	formatter: function (value, options) {
-	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+var hT = $('.stats').offset().top,
+hH = $('.stats').outerHeight(),
+wH = $(window).height();
+
+$(window).scroll(function() {
+	var wS = $(this).scrollTop();
+	if (wS > (hT+hH-wH)){
+		console.log(wS);
+		console.log(hT);
+		console.log(hT+hH-wH);
+		hT = 1000000000;
+		console.log(hT);
+		jQuery(function ($) {
+			// custom formatting example
+			$('.count-number').data('countToOptions', {
+			  formatter: function (value, options) {
+				return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+			  }
+			});
+		  
+			// start all the timers
+			$('.timer').each(count);
+		  
+			function count(options) {
+			  var $this = $(this);
+			  options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+			  $this.countTo(options);
+			}
+		  });
 	}
-  });
+ });
 
-  // start all the timers
-  $('.timer').each(count);
-
-  function count(options) {
-	var $this = $(this);
-	options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-	$this.countTo(options);
-  }
-});
