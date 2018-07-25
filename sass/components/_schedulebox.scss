@@ -3,6 +3,7 @@
     overflow: hidden; // background: var(--color-white);
     position: relative;
     &__heading {
+        // font-family: 'Permanent Marker', cursive;
         cursor: pointer;
         display: inline-block;
         position: relative;
@@ -159,19 +160,19 @@
         @media only screen and (max-width: 927px)
         {
             
-            width:75%;
+            width:80%;
         }
 
         @media only screen and (max-width: 865px)
         {  
-            width:78%;
+            width:80%;
         }
         @media only screen and (max-width: 833px) {
             &--days {
                 position: relative;
                 left: 50%;
                 transform: translate(-50%, 0);
-                width: 75%;
+                width: 80%;
                 height: 30.5rem;
                 margin: 2rem auto;
                 padding: 1.5rem;

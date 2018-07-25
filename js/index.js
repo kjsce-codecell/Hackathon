@@ -27,21 +27,23 @@ var headcontent = document.getElementsByClassName("newhead__content")[0];
 (window).addEventListener("scroll",function() {
   var theta = (window).scrollY / 100 % Math.PI;
   theta = theta/2;
+  theta1 = theta/4;
+  theta2 = theta/6;
   var travel = (window).scrollY;
 
   // console.log(theta);
   rect1.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  rect2.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  rect3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  rect2.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta1+100) + 'rad)';
+  rect3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta2+100) + 'rad)';
   rect4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  rect5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  rect5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta1+100) + 'rad)';
 
-  circ1.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  circ1.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta2+100) + 'rad)';
   circ2.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  circ3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  circ4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  circ3.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta1+100) + 'rad)';
+  circ4.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta2+100) + 'rad)';
   circ5.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
-  circ6.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta+100) + 'rad)';
+  circ6.style.transform = 'translateY(' + (travel/10) +'px)' + 'rotate(' + (theta1+100) + 'rad)';
   headcontent.style.transform = 'translate(-50%,calc(-50% - '+(travel)+'px))';
 });
 
