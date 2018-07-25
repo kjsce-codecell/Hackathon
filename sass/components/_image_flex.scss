@@ -61,7 +61,7 @@ $basic-light-color: #fff;
 $fb-color: #3b5998;
 $tw-color: #00aced;
 $insta: #bc2a8d;
-$github: #212121;
+$github: #313131;
 $border-radius: 10px;
 $font-size: 25px;
 
@@ -102,6 +102,7 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 50%;     
+  border: 1px solid var(--color-white);
   margin-right: 20px;
   font-size: 25px;
   overflow: hidden;

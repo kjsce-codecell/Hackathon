@@ -52,16 +52,19 @@
   color:var(--color-tertiary);
 }
 
-@media screen and (max-device-width: 650px) {
+@media screen and (max-device-width: 500px) {
     .wrapper{
-      flex-direction: column;
+      flex-direction: column ;
+      display:inline-block;
+      margin-right: 5%;
+      margin-left: 5%;
     }
     .col_fourth{
-      float: none;
-      width: 80%;
+      float: left;
+      width: 40%;
       margin-top: 10px;
       margin-bottom: 10px;
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-left: 5%;
+      margin-right: 5%;
     }
 }
