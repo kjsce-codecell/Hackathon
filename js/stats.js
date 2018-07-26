@@ -86,11 +86,11 @@ wH = $(window).height();
 $(window).scroll(function() {
 	var wS = $(this).scrollTop();
 	if (wS > (hT+hH-wH)){
-		console.log(wS);
-		console.log(hT);
-		console.log(hT+hH-wH);
+		// console.log(wS);
+		// console.log(hT);
+		// console.log(hT+hH-wH);
 		hT = 1000000000;
-		console.log(hT);
+		// console.log(hT);
 		jQuery(function ($) {
 			// custom formatting example
 			$('.count-number').data('countToOptions', {
