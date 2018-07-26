@@ -1,0 +1,71 @@
+.contactus{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+
+    &__maps{
+        width: 47.5%;
+        margin-left: 5%;
+        margin-right: 2.5%;
+        height: 100%;
+        border-radius: 1rem;
+        border: 2px solid var(--color-tertiary-dark);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__content{
+        width: 47.5%;
+        margin-right: 5%;
+        margin-left: 2.5%;
+        height: 100%;
+        color: var(--color-white);
+        position: relative;
+        border-radius: 1rem;
+        border: 2px solid var(--color-tertiary-dark);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__data{
+        // padding: 1rem;
+        width: 100%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);  
+    }
+
+    &__fields{
+        display: flex;
+
+        &--head{
+            margin: 1rem;
+            text-decoration: underline;
+            font-size: 2rem;
+            // border: 1px solid red;
+        }
+
+        &--reply{
+            margin: 1rem;
+            // border: 1px solid red;
+        }
+    }
+}
+
+@media screen and (max-device-width: 650px) {
+    .contactus{
+        flex-direction: column;
+        
+        &__maps{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 10%;
+        }
+
+        &__content{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+}
