@@ -160,19 +160,19 @@
         @media only screen and (max-width: 927px)
         {
             
-            width:80%;
+            width:80vw;
         }
 
         @media only screen and (max-width: 865px)
         {  
-            width:80%;
+            width:80vw;
         }
         @media only screen and (max-width: 833px) {
             &--days {
                 position: relative;
                 left: 50%;
                 transform: translate(-50%, 0);
-                width: 80%;
+                width: 80vw;
                 height: 30.5rem;
                 margin: 2rem auto;
                 padding: 1.5rem;
