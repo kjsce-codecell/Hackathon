@@ -55,18 +55,21 @@
 @media screen and (max-device-width: 650px) {
     .contactus{
         flex-direction: column;
+        height: 100vh;
         
         &__maps{
             width: 80%;
             margin-left: 10%;
             margin-right: 10%;
             margin-bottom: 10%;
+            height: 50%;
         }
 
         &__content{
             width: 80%;
             margin-left: 10%;
             margin-right: 10%;
+            height: 50%;
         }
     }
 }
