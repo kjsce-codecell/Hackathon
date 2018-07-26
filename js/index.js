@@ -55,6 +55,21 @@ var headcontent = document.getElementsByClassName("newhead__content")[0];
 //   // 5. Maps?
 //   // 6. Shadow Depth
 
+var floatbutton = document.getElementsByClassName("floatbutton")[0];
+
+$(window).scroll(function() {
+  var wS = $(this).scrollTop();
+  var hT = $('.schedulebox').offset().top,
+  hH = $('.schedulebox').outerHeight(),
+  wH = $(window).height();
+
+	if (wS > (hT+hH-wH)){
+    floatbutton.classList.add("floatbutton__show");
+  }
+  else{
+    floatbutton.classList.remove("floatbutton__show");
+  }
+ });
 
 
 ///////////// FORM AJAX REQUEST
@@ -79,7 +94,7 @@ $('#submit-form').on('click', function(e) {
       document.getElementById("starter-form").style.visibility = "hidden";
       document.getElementById("subscribed").style.visibility = "visible";
       var subspara = document.getElementById("subscribed");
-      subspara.innerHTML = "You're in ! ✨  🎉  😛 ";
+      subspara.innerHTML = "Subscribed! 🎉 ";
     }
   })
 })
@@ -108,6 +123,7 @@ $(document).ready(function(){
     } // End if
   });
 });
+
 
 // MAPS PART
 // Initialize and add the map
