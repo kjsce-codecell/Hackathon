@@ -1,24 +1,26 @@
 .floatbutton{
-    opacity: 0;
     position: fixed;
-    bottom: 5rem;
-    right: 3rem;
-    width: 3.3rem;
-    font-size: 3rem;
+    bottom: 40px;
+    right: 0px;
+    z-index: 9999;
+    width: 50px;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
     text-align: center;
-    border-radius: 100%;
+    line-height: 37px;
+    background: var(--color-primary-dark);
+    color: #e0e0e0;
     cursor: pointer;
-    color: #000;
-    background: var(--color-primary);
-    transition: .5s all ease-in-out;
-
+    border: 0;
+    font-size: 20px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
     &__show{
         opacity: 1;
         pointer-events: all;
-
-        &:hover{
-            box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
-            transform: translateY(-.5rem);
+        &:hover {
+            background: rgba(0,0,0,0.6);
         }
     }
 }
