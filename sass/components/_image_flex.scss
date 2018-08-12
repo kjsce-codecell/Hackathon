@@ -8,25 +8,26 @@
 }
 
 main {
-display: flex;
-flex-flow: row wrap;
-justify-content: center;
-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .flexbox img {
-max-width: 300px;
-width: 100%;
-height: auto;
-position: relative;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .flexbox {
-padding: 25px;
+  padding: 25px;
 }
+
 // @media screen and (min-device-width: 651px) {
 // 	.col-1 ,.col-2{
 //         width: 25%;
@@ -41,18 +42,18 @@ padding: 25px;
 // 	}
 // }
 @media screen and (max-device-width: 650px) {
-// .col-1 ,.col-2{
-//       width: 35%;
-//       margin-bottom: 20px;
-//       margin-left: 20px;   
-// }
-// .col-3 {
-//       width: 35%;
-//       margin-bottom: 10px;
-// }
-.flexbox img{
-  max-width: 150px;
-}
+  // .col-1 ,.col-2{
+  //       width: 35%;
+  //       margin-bottom: 20px;
+  //       margin-left: 20px;   
+  // }
+  // .col-3 {
+  //       width: 35%;
+  //       margin-bottom: 10px;
+  // }
+  .flexbox img {
+    max-width: 150px;
+  }
 }
 
 //variables
@@ -64,116 +65,103 @@ $insta: #bc2a8d;
 $github: #313131;
 $border-radius: 10px;
 $font-size: 25px;
-
 /*common styles !!!YOU DON'T NEED THEM */
+
 .imgcontainer {
-margin: 0px auto 0px auto;
-text-align: center;
+  margin: 0px auto 0px auto;
+  text-align: center;
 }
 
 .effect {
-width: 100%;
-// padding: 50px 0px 70px 0px;
-
-.buttons {
-  margin: 4rem auto;
-  display: flex;
-  justify-content: center;
-}
-
-a {
-  
-  &:last-child {
-    margin-right: 0px;
+  width: 100%;
+  // padding: 50px 0px 70px 0px;
+  .buttons {
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
   }
-}
-}
-
-/*common link styles !!!YOU NEED THEM*/
-.effect {
-/*display: flex; !!!uncomment this line !!!*/
-
-a {
-  text-decoration: none !important;
-  color: white;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;     
-  border: 1px solid var(--color-white);
-  margin-right: 20px;
-  font-size: 25px;
-  overflow: hidden;
-  position: relative;
-  
-  i {
-    position: relative;
-    z-index: 3;
-  }
-  
-  &.fb {
-    background-color: $fb-color;
-  }
-  
-  &.tw {
-    background-color: $tw-color;
-  }  
-  &.insta {
-    background-color: $insta;
-  }
-  
-  &.in {
-    background-color: $github;
-  }
-}
-}
-.effect.laertes {
-
-a {
-  transition: all 0.2s linear 0s;
-  
-  i {
-    transition: all 0.2s linear 0s;
-  }
- 
-  &:hover { 
-    i {
-      transform: scale(1.5);
-      box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
+  a {
+    &:last-child {
+      margin-right: 0px;
     }
   }
 }
-}
 
-.sponsor{
-margin: 2rem auto;
+/*common link styles !!!YOU NEED THEM*/
 
-&__button{
-  // font-family: 'Permanent Marker', cursive;
-  display: inline-block;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%,0%);
-  padding: 1rem 5rem;
-  margin: 1rem auto;
-  cursor: pointer;
-  color: var(--color-white);
-  font-size: 2rem;
-  background-color: var(--color-primary);
-  border-radius: 3rem;
-  transition: all .5s ease-in-out;
-
-  &:hover{
-    box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
-      transform: translate(-50%,-.5rem);
+.effect {
+  /*display: flex; !!!uncomment this line !!!*/
+  a {
+    text-decoration: none !important;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-white);
+    margin-right: 20px;
+    font-size: 25px;
+    overflow: hidden;
+    position: relative;
+    i {
+      position: relative;
+      z-index: 3;
+    }
+    &.fb {
+      background-color: $fb-color;
+    }
+    &.tw {
+      background-color: $tw-color;
+    }
+    &.insta {
+      background-color: $insta;
+    }
+    &.in {
+      background-color: $github;
+    }
   }
 }
 
-&__link{
-  text-align: center;
-  font-size: 1.2rem;
-  // padding: 2rem;
+.effect.laertes {
+  a {
+    transition: all 0.2s linear 0s;
+    i {
+      transition: all 0.2s linear 0s;
+    }
+    &:hover {
+      i {
+        transform: scale(1.5);
+        box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
+      }
+    }
+  }
 }
+
+.sponsor {
+  margin: 2rem auto;
+  &__button {
+    // font-family: 'Permanent Marker', cursive;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 1rem 5rem;
+    margin: 1rem auto;
+    cursor: pointer;
+    color: var(--color-white);
+    font-size: 2rem;
+    background-color: var(--color-primary);
+    border-radius: 3rem;
+    transition: all .5s ease-in-out;
+    &:hover {
+      box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
+      transform: translate(-50%, -.5rem);
+    }
+  }
+  &__link {
+    text-align: center;
+    font-size: 1.2rem; // padding: 2rem;
+  }
 }
