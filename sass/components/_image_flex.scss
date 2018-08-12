@@ -14,7 +14,7 @@ main {
   width: 100%;
 }
 
-.flexbox img {
+.flexbox-l img {
   max-width: 300px;
   width: 100%;
   height: auto;
@@ -23,8 +23,21 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.flexbox-v img {
+  max-height: 200px;
+  height: 100%;
+  width: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-.flexbox {
+.flexbox-v {
+  padding: 25px;
+}
+
+.flexbox-l {
   padding: 25px;
 }
 
@@ -51,8 +64,12 @@ main {
   //       width: 35%;
   //       margin-bottom: 10px;
   // }
-  .flexbox img {
+  .flexbox-l img {
     max-width: 150px;
+  }
+
+  .flexbox-v img {
+    max-height: 100px;
   }
 }
 
