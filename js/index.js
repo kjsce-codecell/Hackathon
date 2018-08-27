@@ -79,6 +79,14 @@ var url = 'https://script.google.com/macros/s/AKfycby5k1hGxY8puK4xawvxMd3-_hYSrQ
 $('#submit-form').on('click', function(e) {
   e.preventDefault();  
   var $this = $(this);
+  $.ajax({
+    success:function() {
+      document.getElementById("starter-form").style.visibility = "hidden";
+      document.getElementById("subscribed").style.visibility = "visible";
+      var subspara = document.getElementById("subscribed");
+      subspara.innerHTML = "Subscribed! 🎉 ";
+    }
+  })
   var form = new FormData(document.getElementById("starter-form"));
   let jsonObject = {
     // name : form.get("name"),
@@ -90,12 +98,6 @@ $('#submit-form').on('click', function(e) {
     method: "GET",
     dataType: "json",
     data: jsonObject,
-    success:function() {
-      document.getElementById("starter-form").style.visibility = "hidden";
-      document.getElementById("subscribed").style.visibility = "visible";
-      var subspara = document.getElementById("subscribed");
-      subspara.innerHTML = "Subscribed! 🎉 ";
-    }
   })
 })
 // SMOOTH SCROLL
