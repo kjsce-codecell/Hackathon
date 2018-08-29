@@ -5,6 +5,7 @@
     color: var(--color-white);
     overflow-x: hidden;
     border: 0 solid var(--color-black);
+
     &__content {
         max-width: 75rem;
         padding-top: 3rem;
@@ -12,18 +13,22 @@
         text-align: center;
         font-size: 1.5rem;
     }
+
     &__pics {
         padding: 4rem;
         display: flex;
         align-content: center;
         justify-content: center;
+
         &__card {
             margin: 1rem;
+
             img {
                 height: 75px;
                 width: auto;
             }
         }
+
         &__title {
             text-align: center;
             font-size: 1.2rem;
@@ -37,13 +42,16 @@
             max-width: 300px;
             padding-top: 0;
         }
+
         &__pics {
             padding: 2rem;
+
             &__card {
                 img {
                     height: 40px;
                 }
             }
+
             &__title {
                 font-size: 1rem;
             }

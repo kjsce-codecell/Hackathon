@@ -1,8 +1,8 @@
-.backanimation{
+.backanimation {
     z-index: -10;
     position: fixed;
 
-    &__container{
+    &__container {
         z-index: -1;
         position: fixed;
         top: 0;
@@ -12,8 +12,8 @@
         // background:radial-gradient(rgba(255,255,255,0.5),rgba(0,0,0,0.5));
     }
 
-    &__rectangle{
-        &--1{
+    &__rectangle {
+        &--1 {
             top: 10%;
             left: 35%;
             width: 60px;
@@ -22,6 +22,7 @@
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
             animation-delay: 1s;
         }
+
         &--2 {
             top: 5%;
             left: 50%;
@@ -31,6 +32,7 @@
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
             animation-delay: 2s;
         }
+
         &--3 {
             top: 20%;
             left: 70%;
@@ -40,6 +42,7 @@
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
             animation-delay: 3s;
         }
+
         &--4 {
             top: 53%;
             left: 60%;
@@ -49,7 +52,8 @@
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
             animation-delay: 4s;
         }
-        &--5{
+
+        &--5 {
             top: 30%;
             right: 15%;
             width: 10px;
@@ -58,6 +62,7 @@
             animation: animate1 5s cubic-bezier(0, 1.2, 0, 1.24) infinite;
         }
     }
+
     &__circle {
         &--1 {
             top: 55%;
@@ -70,7 +75,7 @@
             animation-delay: 1s;
         }
 
-        &--2{
+        &--2 {
             top: 22%;
             left: 15%;
             width: 75px;
@@ -80,6 +85,7 @@
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
             animation-delay: 2s;
         }
+
         &--3 {
             top: 35%;
             left: 30%;
@@ -90,6 +96,7 @@
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
             animation-delay: 3s;
         }
+
         &--4 {
             top: 60%;
             right: 25%;
@@ -100,7 +107,8 @@
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
             animation-delay: 4s;
         }
-        &--5{
+
+        &--5 {
             top: 55%;
             left: 15%;
             width: 10px;
@@ -109,7 +117,8 @@
             border: 0.5rem solid var(--color-tertiary);
             animation: animate2 5s cubic-bezier(0, 1.24, 0, 1.24) infinite;
         }
-        &--6{
+
+        &--6 {
             top: 50%;
             left: 50%;
             width: 10px;
@@ -126,43 +135,51 @@
         border-color: var(--color-primary);
         border-radius: 0%;
     }
+
     35% {
         border-color: var(--color-secondary);
     }
+
     50% {
         border-radius: 50%;
     }
+
     70% {
         border-color: var(--color-primary);
     }
+
     100% {
         border-color: var(--color-primary);
         border-radius: 0%;
     }
 }
 
-@keyframes animate2{
-    0%{
+@keyframes animate2 {
+    0% {
         border-color: var(--color-secondary);
         border-radius: 50%;
     }
-    35%{
+
+    35% {
         border-color: var(--color-primary);
     }
+
     50% {
         border-radius: 0%;
     }
-    70%{
+
+    70% {
         border-color: var(--color-secondary);
     }
-    100%{
+
+    100% {
         border-color: var(--color-secondary);
         border-radius: 50%;
     }
 }
 
 @media screen and (max-device-width: 650px) {
-    .backanimation{
+    .backanimation {
         display: none;
-        }
+    }
 }
