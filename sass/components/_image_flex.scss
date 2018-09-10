@@ -24,6 +24,17 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.flexbox-v img {
+  max-height: 200px;
+  height: 100%;
+  width: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .flexbox-v img {
   max-height: 200px;
   height: 100%;
@@ -56,6 +67,7 @@ main {
 // 	}
 // }
 @media screen and (max-device-width: 650px) {
+
   // .col-1 ,.col-2{
   //       width: 35%;
   //       margin-bottom: 20px;
@@ -83,8 +95,8 @@ $insta: #bc2a8d;
 $github: #313131;
 $border-radius: 10px;
 $font-size: 25px;
-/*common styles !!!YOU DON'T NEED THEM */
 
+/*common styles !!!YOU DON'T NEED THEM */
 .imgcontainer {
   margin: 0px auto 0px auto;
   text-align: center;
@@ -92,12 +104,14 @@ $font-size: 25px;
 
 .effect {
   width: 100%;
+
   // padding: 50px 0px 70px 0px;
   .buttons {
     margin: 4rem auto;
     display: flex;
     justify-content: center;
   }
+
   a {
     &:last-child {
       margin-right: 0px;
@@ -106,8 +120,8 @@ $font-size: 25px;
 }
 
 /*common link styles !!!YOU NEED THEM*/
-
 .effect {
+
   /*display: flex; !!!uncomment this line !!!*/
   a {
     text-decoration: none !important;
@@ -123,19 +137,24 @@ $font-size: 25px;
     font-size: 25px;
     overflow: hidden;
     position: relative;
+
     i {
       position: relative;
       z-index: 3;
     }
+
     &.fb {
       background-color: $fb-color;
     }
+
     &.tw {
       background-color: $tw-color;
     }
+
     &.insta {
       background-color: $insta;
     }
+
     &.in {
       background-color: $github;
     }
@@ -145,9 +164,11 @@ $font-size: 25px;
 .effect.laertes {
   a {
     transition: all 0.2s linear 0s;
+
     i {
       transition: all 0.2s linear 0s;
     }
+
     &:hover {
       i {
         transform: scale(1.5);
@@ -159,6 +180,7 @@ $font-size: 25px;
 
 .sponsor {
   margin: 2rem auto;
+
   &__button {
     // font-family: 'Permanent Marker', cursive;
     display: inline-block;
@@ -173,11 +195,13 @@ $font-size: 25px;
     background-color: var(--color-primary);
     border-radius: 3rem;
     transition: all .5s ease-in-out;
+
     &:hover {
       box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
       transform: translate(-50%, -.5rem);
     }
   }
+
   &__link {
     text-align: center;
     font-size: 1.2rem; // padding: 2rem;

@@ -1,9 +1,9 @@
-.contactus{
+.contactus {
     width: 100vw;
     height: 50vh;
     display: flex;
 
-    &__maps{
+    &__maps {
         width: 47.5%;
         margin-left: 5%;
         margin-right: 2.5%;
@@ -13,7 +13,7 @@
         background: rgba(0, 0, 0, 0.5);
     }
 
-    &__content{
+    &__content {
         width: 47.5%;
         margin-right: 5%;
         margin-left: 2.5%;
@@ -25,27 +25,27 @@
         background: rgba(0, 0, 0, 0.5);
     }
 
-    &__data{
+    &__data {
         // padding: 1rem;
         width: 100%;
         position: relative;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);  
+        transform: translate(-50%, -50%);
     }
 
-    &__fields{
+    &__fields {
         display: flex;
         justify-content: center;
 
-        &--head{
+        &--head {
             margin: 1rem;
             text-decoration: underline;
             font-size: 2rem;
             // border: 1px solid red;
         }
 
-        &--reply{
+        &--reply {
             margin: 1.4rem;
             // border: 1px solid red;
         }
@@ -53,11 +53,11 @@
 }
 
 @media screen and (max-device-width: 650px) {
-    .contactus{
+    .contactus {
         flex-direction: column;
         height: 100vh;
-        
-        &__maps{
+
+        &__maps {
             width: 80%;
             margin-left: 10%;
             margin-right: 10%;
@@ -65,7 +65,7 @@
             height: 50%;
         }
 
-        &__content{
+        &__content {
             width: 80%;
             margin-left: 10%;
             margin-right: 10%;
