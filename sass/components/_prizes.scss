@@ -14,16 +14,22 @@
 .card{
 height: 320px;
 width: 300px;
-background: #fff;
-margin: 5px;
-border-radius: 5px;
+background: #ccc;
+margin: 30px;
+border-radius: 10px;
 cursor: pointer;
+box-shadow: 0px 10px 20px 0 rgba(0,0,0,0.3);
+transition: all .2s linear;
 
 display: flex;
 flex-direction: column;
-    
+
+    &:hover{
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px 0 rgba(0,0,0,0.7);
+    }
     &__title{
-        border-radius: 5px 5px 0 0;
+        border-radius: 10px 10px 0 0;
         height: 20px;
         background: linear-gradient(to right, #fc427b , #1b9cfc);
         color: white;
@@ -65,6 +71,17 @@ flex-direction: column;
         transform: translate(-50%,-50%);
         text-align: center;
         font-size: 30px;
+        }
+
+        &--sub{
+            position: relative;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
         }
     }
   }
