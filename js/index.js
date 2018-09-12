@@ -55,20 +55,20 @@ var headcontent = document.getElementsByClassName("newhead__content")[0];
 //   // 5. Maps?
 //   // 6. Shadow Depth
 
-var floatbutton = document.getElementsByClassName("floatbutton")[0];
+// var floatbutton = document.getElementsByClassName("floatbutton")[0];
 
-$(window).scroll(function () {
-  var wS = $(this).scrollTop();
-  var hT = $('.schedulebox').offset().top,
-    hH = $('.schedulebox').outerHeight(),
-    wH = $(window).height();
+// $(window).scroll(function () {
+//   var wS = $(this).scrollTop();
+//   var hT = $('.schedulebox').offset().top,
+//     hH = $('.schedulebox').outerHeight(),
+//     wH = $(window).height();
 
-  if (wS > (hT + hH - wH)) {
-    floatbutton.classList.add("floatbutton__show");
-  } else {
-    floatbutton.classList.remove("floatbutton__show");
-  }
-});
+//   if (wS > (hT + hH - wH)) {
+//     floatbutton.classList.add("floatbutton__show");
+//   } else {
+//     floatbutton.classList.remove("floatbutton__show");
+//   }
+// });
 
 
 ///////////// FORM AJAX REQUEST
