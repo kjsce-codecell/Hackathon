@@ -46,6 +46,21 @@
         }
     }
 
+    &__presented {
+        position: relative;
+        img {
+            height: 60px;
+            width: auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        p {
+            text-align: center;
+            color: rgb(207, 207, 207);
+        }
+    }
+
     &__tagline {
         text-align: center;
         margin: 1rem;
