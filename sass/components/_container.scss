@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh; // background: var(--color-gray);
     position: relative; // border: .5rem solid var(--color-black);
+
     &__button {
         // font-family: 'Permanent Marker', cursive;
         display: inline-block;
@@ -15,11 +16,13 @@
         cursor: pointer;
         transition: all .5s ease-in-out;
         margin-bottom: 1rem;
+
         &:hover {
             box-shadow: 0rem .5rem 1.25rem -0.2rem rgba(0, 0, 0, 1);
             transform: translate(-50%, calc(-50% - .5rem));
         }
     }
+
     &__heading {
         // font-family: 'Permanent Marker', cursive;
         cursor: pointer;
@@ -28,6 +31,7 @@
         left: 50%;
         transform: translate(-50%, 0%);
         margin: 1rem auto;
+
         &--text {
             font-size: 2rem;
             padding: .5rem 0;
@@ -35,6 +39,7 @@
             transition: all .5s ease-in-out;
             color: var(--color-white);
         }
+
         &--overline {
             width: 60%;
             margin: 0 auto;
@@ -43,11 +48,13 @@
             border-radius: .5rem;
             transition: all .5s ease-in-out;
         }
+
         &:hover {
             &>.container__heading--overline {
                 width: 100%;
                 transform: translateY(3rem);
             }
+
             &>.container__heading--text {
                 transform: translateY(-1rem);
             }

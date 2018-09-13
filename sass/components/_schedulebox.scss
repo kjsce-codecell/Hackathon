@@ -2,6 +2,7 @@
     width: 100vw;
     overflow: hidden; // background: var(--color-white);
     position: relative;
+
     &__heading {
         // font-family: 'Permanent Marker', cursive;
         cursor: pointer;
@@ -10,10 +11,12 @@
         left: 50%;
         top: 5rem;
         transform: translate(-50%, -50%);
+
         &--text {
             padding: .5rem 0;
             text-align: center;
         }
+
         &--overline {
             width: 10rem;
             margin: 0 auto;
@@ -22,10 +25,12 @@
             border-radius: .5rem;
         }
     }
+
     .scheduleholder {
         width: 70%;
         margin: 0 auto 5rem auto;
         overflow: hidden;
+
         &--days {
             width: 43%;
             height: 31rem;
@@ -40,39 +45,46 @@
             //     transform: translate(0, -0.8%);
             // }
         }
+
         .left {
             margin-left: 2%;
             float: left;
         }
+
         .right {
             float: right;
             margin-right: 2%;
         }
+
         .daynum {
             text-align: center;
             color: var(--color-white);
         }
+
         .actualschedule {
             padding: 1.2rem 0 1.2rem 1rem;
             color: var(--color-black);
             height: 90%;
         }
+
         .timeline {
             position: relative;
             margin: 0 auto;
             height: 100%;
             float: left;
         }
+
         .timeline::after {
             content: '';
             position: absolute;
             float: left;
             width: 2px;
             height: 100%;
-            background-color:var(--color-white);
+            background-color: var(--color-white);
             top: 0;
             bottom: 0;
         }
+
         .event {
             padding: .8rem 0 .8rem .5rem;
             margin-left: .6rem;
@@ -83,6 +95,7 @@
             float: left;
             color: var(--color-white);
         }
+
         .event::before {
             content: '';
             position: absolute;
@@ -97,38 +110,22 @@
             z-index: 1;
             transform: translate(0.15rem, 0);
         }
+
         .odde::before {
             border: 0.25rem solid var(--color-primary);
         }
-        .time{
-            color:var(--color-tertiary);
+
+        .time {
+            color: var(--color-tertiary);
         }
+
         .right {
             .event {
                 padding: 1.03rem 0 1.03rem .5rem;
             }
         }
-        @media only screen and (max-width: 1379px)
-        {
-            .right {
-                .event {
-                    padding: 0.92rem 0 0.92rem .5rem;
-                }
-            }
-        }
-        @media only screen and (max-width: 1279px)
-        {
-            &--days {
-                height:32rem;
-            }
-            .right {
-                .event {
-                    padding: 1.03rem 0 1.03rem .5rem;
-                }
-            }
-        }
-        @media only screen and (max-width: 1272px)
-        {
+
+        @media only screen and (max-width: 1379px) {
             .right {
                 .event {
                     padding: 0.92rem 0 0.92rem .5rem;
@@ -136,11 +133,11 @@
             }
         }
 
-        @media only screen and (max-width: 1127px)
-        {
+        @media only screen and (max-width: 1279px) {
             &--days {
-                height:33.5rem;
+                height: 32rem;
             }
+
             .right {
                 .event {
                     padding: 1.03rem 0 1.03rem .5rem;
@@ -148,8 +145,7 @@
             }
         }
 
-        @media only screen and (max-width: 1021px)
-        {
+        @media only screen and (max-width: 1272px) {
             .right {
                 .event {
                     padding: 0.92rem 0 0.92rem .5rem;
@@ -157,16 +153,34 @@
             }
         }
 
-        @media only screen and (max-width: 927px)
-        {
-            
-            width:80vw;
+        @media only screen and (max-width: 1127px) {
+            &--days {
+                height: 33.5rem;
+            }
+
+            .right {
+                .event {
+                    padding: 1.03rem 0 1.03rem .5rem;
+                }
+            }
         }
 
-        @media only screen and (max-width: 865px)
-        {  
-            width:80vw;
+        @media only screen and (max-width: 1021px) {
+            .right {
+                .event {
+                    padding: 0.92rem 0 0.92rem .5rem;
+                }
+            }
         }
+
+        @media only screen and (max-width: 927px) {
+            width: 80vw;
+        }
+
+        @media only screen and (max-width: 865px) {
+            width: 80vw;
+        }
+
         @media only screen and (max-width: 833px) {
             &--days {
                 position: relative;
@@ -177,91 +191,95 @@
                 margin: 2rem auto;
                 padding: 1.5rem;
                 padding-bottom: 0;
+
                 &:hover {
                     box-shadow: -.18rem .35rem .85rem -0.2rem var(--color-black);
                     transform: translate(-50%, -0.8%);
                 }
             }
-            .left{
-                margin-left:0%;
+
+            .left {
+                margin-left: 0%;
             }
+
             .right {
-                margin-right:0%;
+                margin-right: 0%;
                 float: left;
+
                 .event {
                     padding: .8rem 0 .8rem .5rem;
                 }
 
-                .timeline{
-                    height:87.5%;
+                .timeline {
+                    height: 87.5%;
                 }
             }
         }
 
-        @media only screen and (max-width: 780px)
-        {
-            
+        @media only screen and (max-width: 780px) {
             .right {
-                .timeline{
-                    height:89%;
+                .timeline {
+                    height: 89%;
                 }
             }
         }
-        @media only screen and (max-width: 726px)
-        {
+
+        @media only screen and (max-width: 726px) {
             &--days {
-                height:31rem;
+                height: 31rem;
             }
         }
-        @media only screen and (max-width: 660px)
-        {
+
+        @media only screen and (max-width: 660px) {
             &--days {
-                height:31.5rem;
+                height: 31.5rem;
             }
         }
-        @media only screen and (max-width: 468px)
-        {
+
+        @media only screen and (max-width: 468px) {
             .right {
-                .timeline{
-                    height:95%;
+                .timeline {
+                    height: 95%;
                 }
             }
-            
         }
-        @media only screen and (max-width: 438px)
-        {
+
+        @media only screen and (max-width: 438px) {
             &--days {
-                height:32.5rem;
-            }  
-            .right {
-                .timeline{
-                    height:90%;
-                }
-            }           
-        }
-        @media only screen and (max-width: 436px)
-        {
-            &--days {
-                height:33rem;
-            }  
-            .right {
-                .timeline{
-                    height:93%;
-                }
-            }           
-        }
-        @media only screen and (max-width: 386px)
-        {
-            &--days {
-                height:34rem;
+                height: 32.5rem;
             }
+
             .right {
-                .timeline{
-                    height:90%;
+                .timeline {
+                    height: 90%;
                 }
-            }     
-                  
+            }
         }
+
+        @media only screen and (max-width: 436px) {
+            &--days {
+                height: 33rem;
+            }
+
+            .right {
+                .timeline {
+                    height: 93%;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 386px) {
+            &--days {
+                height: 34rem;
+            }
+
+            .right {
+                .timeline {
+                    height: 90%;
+                }
+            }
+        }
+
         // @media only screen and (max-width: 660px) {
         //     width: 100%;
         //     &--days {
