@@ -98,8 +98,11 @@
 
 .titlesponsor{
     color: #fff;
-    .flexbox-l{
-        width: 100%;
+    .flexbox-l:nth-child(1){
+        width: 50%;
+    }
+    .flexbox-l:nth-child(2){
+        width: 50%;
     }
     img{
         max-width: 400px;
