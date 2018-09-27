@@ -1,0 +1,26 @@
+body { margin:0; }
+.wrap {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.time-to {
+  text-align:center;
+  color:white;
+  font-size:35px;
+  letter-spacing:2px;
+  span {
+    display:block;
+    font-size:80px;
+    color: var(--color-tertiary);
+  }
+}
+
+@media screen and (max-device-width: 650px){
+    .time-to{
+        font-size: 20px;
+        span{
+            font-size: 35px;
+        }
+    }
+}
