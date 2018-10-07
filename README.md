@@ -8,7 +8,7 @@
 ### Getting up and running
 
 Use latest version of Node (v10.6.0)
-Prefereably use Node Version Manager (https://github.com/creationix/nvm)
+Preferably use Node Version Manager (https://github.com/creationix/nvm)
 
 Install dev dependencies:
 ```
