@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KJ Hack 2K19</title>
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/countdowncube.css"/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142860092-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142860092-1');
+    </script>
+
+</head>
+
+<body>
+    <div id="fullcont">
+        <div id="logo" class="span100">
+            <!-- <img src="assets/test.png" alt="KJ Hack"> -->
+            <object id="inlogo" data="assets/loader.svg" height="75%" width="75%" style="display: block; margin: auto;"></object>
+        </div>
+        <div class="typewriter">
+            <span class="typewrite" data-period="2000" data-type='["Assembling files.....","Fixing CSS....", "Importing JS libraries...", "Solving IE issues.." ,"Dropping support for IE.."]'>
+            </span>
+        </div>
+        <!-- Pre-Registration Link https://forms.gle/B71K5tTGbSjBiTSa8
+             #TODO: Delete before website goes live-->
+        <div id="counter"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/countdowncube.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script>
+        function timercube(){
+            wid = screen.width
+            if (wid < 800) {
+                s = 60;
+            } else {
+                s = 120
+            }
+            $('#counter').countdownCube({
+                target: '2019-07-02T21:00:00+05:30',
+                cubeSize: s,
+                background: 'radial-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.30))',
+                color: 'white',
+                labelsTranslations: {
+                    'hour': 'Hours',
+                    'minute': 'Minutes',
+                    'second': 'Seconds'
+                },
+                showDaysOnly: true
+            });
+
+            document.getElementById('day').style.display = 'none';
+                    };
+
+        timercube();
+
+        window.addEventListener('resize', function (event) {
+                timercube();
+        });
+    </script>
+</body>
+</html>
