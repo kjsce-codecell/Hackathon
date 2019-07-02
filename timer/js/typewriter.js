@@ -1,23 +1,3 @@
-
-// $(document).ready(
-//     function () {
-//         pastnum = 0;
-//         setInterval(function () {
-//             $('#typewriter-main').removeClass('typewriter' + rnum);
-//             var min = 5;
-//             var max = 1;
-//             var rnum = Math.floor(Math.random() * (+max - +min)) + +min;
-//             while (rnum === pastnum)
-//                 rnum = Math.floor(Math.random() * (+max - +min)) + +min;
-//             console.log(pastnum + ' ' + rnum);
-//             $('#typewriter-main').addClass('typewriter' + rnum);
-//             pastnum = rnum;
-
-
-//         }, 3000);
-// });
-
-
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -74,18 +54,3 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
-
-$(document).ready(function () {
-
-    var regex = new RegExp(
-        '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
-        '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
-        '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
-    );
-
-    $('.email input').on('keyup', function (e) {
-        $(this).parent().toggleClass('success', regex.test($(this).val()));
-        console.log('asd')
-    });
-
-});

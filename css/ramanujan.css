@@ -1,0 +1,33 @@
+#ramanujan{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width:80%;
+    margin: auto;
+    margin-top: 100px;
+    color:white;
+}
+
+.rect-future{
+    width:100%;
+    background-image: radial-gradient(rgba(0,255,255,0.05),rgba(0,255,255,0.2));
+    border: 3px solid;
+    border-color: aqua;
+    text-align: center;
+}
+
+.fa{
+    margin-top: 0.5vw;
+    font-size: 2vw;
+}
+
+.rect-future-inner{
+    margin: 1vw;
+    font-size: 3vw;
+}
+
+.stats-title{
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+}

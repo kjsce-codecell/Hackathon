@@ -1,11 +1,23 @@
 body {
     margin: 0;
-    font: normal 75% Arial, Helvetica, sans-serif;
+    font: normal 75% monospace, Arial, Helvetica, sans-serif;
     overflow:hidden;
     width: 100vw;
-    background: linear-gradient(90deg, #000000 20px, transparent 1%) center, linear-gradient(#000000 20px, transparent 1%) center, #00ffffc9;
-  background-size: 22px 22px;
 }
+
+body {
+  background:
+    linear-gradient(90deg,
+            transparent 5px, black 5px,black 8px),
+    linear-gradient(0deg,transparent 50px, rgba(0, 255, 255, 0.4) 51px, transparent 52px),
+    linear-gradient(0deg,
+            transparent 5px, black 5px,black 8px),
+    linear-gradient(90deg,transparent 50px, rgba(0, 255, 255, 0.4) 51px, transparent 52px),
+  black;
+  background-size: 10px 10px,100px 100px,10px 10px,100px 100px;
+  background-position: 8.5px 0px, 0px 0px, 0px 0px;
+}
+
 
 #fullcont{
     display: grid;
@@ -25,11 +37,12 @@ body {
 
 #logo{
     grid-column: 1 / 13;
-    width:auto;
     vertical-align: middle;
     height: 50vh;
+    width:100%;
     padding:15px;
     margin: auto;
+
     display: flex;
 }
 
@@ -49,25 +62,8 @@ body {
     margin-top:25px;
 }
 
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    z-index: -5;
-}
-
-canvas {
-    display: block;
-    vertical-align: bottom;
-}
 
 @media screen and (max-width: 800px) {
-
-body {
-  background-size: 22px 22px;
-}
-
 #fullcont{
     width:90vw;
 }
@@ -82,7 +78,7 @@ body {
     padding:15px;
     margin: auto;
     display: flex;
-    margin-top:20px;
+    margin-top:75px;
 }
 
 #logo>img{
@@ -103,7 +99,7 @@ body {
     grid-column: 1 / 13;
     width:100%;
     height: auto;
-    margin-top:20px;
+    margin-top:15vh;
 }
 
 }

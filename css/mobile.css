@@ -1,0 +1,221 @@
+@media screen and (max-width: 800px) {
+    #socket_for_rocket{
+        display:none;
+    }
+
+    .child-container{
+        height:auto;
+    }
+
+    #title_view{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 10px;
+        width:100%;
+        margin: auto;
+        color:white;
+        align-items: center;
+        height:auto;
+    }
+
+    #logo {
+        grid-column: 1 / span 10;
+        width:100%;
+        height: 65vh;
+        padding:15px;
+    }
+
+    #inlogo{
+        transform: scale(3)
+    }
+
+    #this_is_if{
+        grid-column: 1 / span 9;
+        width:100%;
+        text-align: center;
+        height: auto;
+        font-size: 20px;
+    }
+
+    #give_me_email{
+        grid-column: 2 / span 8;
+        width:100%;
+        text-align: center;
+        height: auto;
+
+    }
+
+    #button_daba_na{
+        grid-column: 1 / span 10;
+        width:100%;
+        text-align: center;
+        height: auto;
+        font-size: 20px;
+        padding: 0px;
+    }
+
+    #sponsor_us{
+        grid-column: 1 / span 10;
+        width:100%;
+        text-align: center;
+        height: auto;
+        font-size: 20px;
+        margin-bottom: 70px;
+        padding: 0px;
+    }
+
+    .centre-container {
+        padding-top: 10px;
+    }
+
+    #about_by_akshay,#video_by_rushang{
+        grid-column: auto / span 12;
+        margin-bottom: 20px
+    }
+
+    .box-header{
+        font-size: 28px;
+        color:aqua;
+        text-align: center;
+    }
+
+    .box-contents{
+        color: aliceblue;
+        font-size:18px;
+        margin-top:20px;
+        text-align: center;
+    }
+
+    #ramanujan{
+        margin-top: 20px;
+    }
+
+    .rect-future{
+        grid-column: auto / span 2;
+    }
+
+    .fa{
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    .rect-future-inner{
+        margin: 5px;
+        font-size: 25px;
+    }
+
+    .stats-title{
+        font-family: 'Bitter', serif;
+        margin-bottom: 1vw;
+        font-size: 18px;
+    }
+
+    #view-3{
+        padding-top:35px;
+    }
+
+    #sponsor-container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 10px;
+        width:95%;
+        margin: auto;
+        color:white;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .sponsor-rect-future{
+        height: auto;
+    }
+
+    .sponsor-rect-future:after{
+        background: -webkit-linear-gradient(left,
+                    aqua 0%,
+                    aqua calc(50% - 100px),
+                    rgba(255, 255, 255, 0) calc(50% - 100px),
+                    rgb(255, 255, 255, 0) calc(50% + 100px),
+                    aqua calc(50% + 100px),
+                    aqua 100%);
+
+    }
+
+    .ps{
+        font-size: 18px;
+    }
+
+    .sponsorlogo:nth-child(n){
+        height: 100px;
+        grid-column: auto / span 3;
+    }
+
+    .sponsorlogo:nth-child(1){
+        grid-column: auto / span 6;
+    }
+
+    .sponsorlogo:nth-child(2){
+        grid-column: auto / span 6;
+    }
+    .sponsorlogo:nth-child(11){
+        grid-column: 4 / span 3;
+    }
+
+    .call_karna{
+        width:90%;
+        padding-top: 0px;
+    }
+
+    #reach{
+
+    margin-bottom: 20px;
+    }
+
+    #contact{
+        grid-column: 1 /  11;
+        background-image: radial-gradient(rgba(0,255,255,0.05),rgba(0,255,255,0.2));
+        border: 3px solid;
+        border-color: aqua;
+        text-align: center;
+        width:100%;
+        height: 100%;
+        padding:15px;
+    }
+
+    #contact_shelf{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 50px;
+        width:90%;
+        margin: auto;
+        align-items: center;
+    }
+    .socialbtns{
+        grid-column: 1 /  13;
+    }
+
+    .shelf {
+        display: block;
+        grid-column: 2 /  12;
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+
+    .fab,.fas {
+        font-size:50px;
+
+    }
+
+    .heart{
+        font-size: 20px;
+    }
+
+    #made_by{
+        font-size: 20px;
+    }
+
+    #particles-js{
+        height: 120%;
+    }
+}

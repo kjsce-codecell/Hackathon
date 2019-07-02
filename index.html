@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KJ Hack 2K19</title>
-    <link rel="stylesheet" href="css/timer.css">
-    <link rel="stylesheet" href="css/countdowncube.css"/>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142860092-1"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142860092-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -16,55 +23,271 @@
 
         gtag('config', 'UA-142860092-1');
     </script>
-
+    <link rel="stylesheet" href="css/compress.css">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div id="fullcont">
-        <div id="logo" class="span100">
-            <!-- <img src="assets/test.png" alt="KJ Hack"> -->
-            <object id="inlogo" data="assets/loader.svg" height="75%" width="75%" style="display: block; margin: auto;"></object>
+        <div id="snackbar1" class="snackbar">Thank You, We will keep you updated.</div>
+        <div id="snackbar2" class="snackbar">We'll send you the prospectus soon</div>
+    <div id="particles-js" z-index="-5"></div>
+    <div id="socket_for_rocket">
+        <div class="rocketsvg disable-selection" >
+            <div class="overlaysvg"></div>
+            <object data="assets/rocket.svg" type="image/svg+xml"
+            id="alphasvg" width="100%" height="100%"></object>
         </div>
-        <div class="typewriter">
-            <span class="typewrite" data-period="2000" data-type='["Assembling files.....","Fixing CSS....", "Importing JS libraries...", "Solving IE issues.." ,"Dropping support for IE.."]'>
-            </span>
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+            <span id="title_link" class="highlighted"><a href="#logo">Title</a></span>
+            <p></p>
+            </div>
+
         </div>
-        <!-- Pre-Registration Link https://forms.gle/B71K5tTGbSjBiTSa8
-             #TODO: Delete before website goes live-->
-        <div id="counter"></div>
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+            <span id="about_link"><a href="#view-2">About</a></span>
+            <p></p>
+            </div>
+
+        </div>
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+            <span id="sponsor18_link"><a href="#view-3">Sponsors</a></span>
+            <p></p>
+            </div>
+
+        </div>
+        <div class="timeline-block timeline-block-right" style="height: 20px;" >
+            <div class="marker"></div>
+            <div class="timeline-content" >
+            <span id="contact_link"><a href="#view-4">Contact Us</a></span>
+            <p></p>
+            </div>
+
+        </div>
+
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/countdowncube.js"></script>
-    <script src="js/typewriter.js"></script>
-    <script>
-        function timercube(){
-            wid = screen.width
-            if (wid < 800) {
-                s = 60;
-            } else {
-                s = 120
-            }
-            $('#counter').countdownCube({
-                target: '2019-07-02T21:00:00+05:30',
-                cubeSize: s,
-                background: 'radial-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.30))',
-                color: 'white',
-                labelsTranslations: {
-                    'hour': 'Hours',
-                    'minute': 'Minutes',
-                    'second': 'Seconds'
-                },
-                showDaysOnly: true
-            });
+    <div class="full-container">
+        <div id="innerchildparent">
+        <div class="child-container">
+            <div id="title_view">
+                <div id="logo" class="span100">
+                    <object id="inlogo" data="assets/logomid.svg" height="100%" width="60%" style="display: block; margin: auto;"></object>
+                </div>
 
-            document.getElementById('day').style.display = 'none';
-                    };
+                <div id="this_is_if">
+                    <span class="syntax-keyword"><b>if</b></span>
+                    <span class="skills">"</span><span id="skills" href="" class="typewrite skills" data-period="2000"
+                        data-type='[ "Designer", "Developer", "Maker", "Hacker", "Tech Enthusiast"]'>
+                        <span class="wrap"></span>
+                    </span><span class="skills">"</span>
+                    <span class="syntax-keyword"><b>in</b></span>
+                    <span class="syntax-varname"><b>skills</b></span><span>:</span>
+                </div>
+                <div id="give_me_email">
+                    <div class="email">
+                        <input type="text" placeholder="Enter email id" id="id_email">
+                    </div>
+                </div>
+                <div id="button_daba_na">
+                    <a class="brk-btn" id="update_btn">
+                        Keep me updated
+                    </a>
+                </div>
+                <div id="sponsor_us">
+                    <a class="brk-btn" id="sponsor_btn">
+                        &nbsp;&nbsp;Sponsor Us&nbsp;&nbsp;&nbsp;
+                    </a>
+                </div>
 
-        timercube();
 
-        window.addEventListener('resize', function (event) {
-                timercube();
-        });
-    </script>
+        </div>
+        </div>
+        <div class="child-container" id="view-2">
+            <div class="centre-container">
+                <div id="about_by_akshay">
+                    <div class="box-header glow">
+                        <span>About KJSCE Hack</span>
+                    </div>
+                    <div class="box-contents"><span>
+                            The KJSCE Hack brings together a group of inspired and creative coders from all across India. We present to them a
+                            platform where they can showcase their talent in the spirit of progress and technology. This Hackathon is a part of
+                            KJSCE’s annual tech fest, Abhiyantriki. Most engineers lack hands-on
+                            experience on industrial problem solving. KJSCE Hack is the rostrum for coders and engineers to exercise their skills,
+                            work towards solving real industry level problems and win prizes - all over the course of 24 hours. This hackathon is
+                            your chance at creating something impactful, something real!
+                    </span></div>
+                </div>
+                <div id="video_by_rushang">
+                    <div class="video-box">
+                        <svg width="0" height="0" style="position: absolute;">
+                            <defs>
+                                <clipPath id="clipPolygon">
+                                    <!-- <polygon points="15% 0, 0 26%, 0 38%, 4% 45%, 4% 75%, 0 83%, 0 95%, 3% 100%, 86% 100%, 100% 75%, 100% 63%, 96% 55%, 96% 25%, 100% 18%, 100% 5%, 97% 0"> -->
+                                    <polygon
+                                        points="100 0, 0 100, 0 140, 28 170, 28 285, 0 315, 0 353, 23 378, 560 378, 659 277, 659 242, 632 210, 632 92, 659 60, 659 22, 635 0">
+                                    </polygon>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <div class="video-box__video-container">
+                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="100%" type="text/html" src="https://www.youtube.com/embed/o7epPUFkzVw"><div><small><a href="https://youtubeembedcode.com/de/">youtubeembedcode de</a></small></div><div><small><a href="http://add-link-exchange.com">http://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div><div><small><a href="http://add-link-exchange.com">ww:add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div><div><small><a href="http://add-link-exchange.com">add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode.com/nl/</a></small></div><div><small><a href="http://add-link-exchange.com">http://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode.com/es/</a></small></div><div><small><a href="http://add-link-exchange.com">www:add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/en">youtubeembedcode.com/en/</a></small></div><div><small><a href="http://add-link-exchange.com">http://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode es</a></small></div><div><small><a href="http://add-link-exchange.com">add-link-exchange.com</a></small></div></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ramanujan">
+                <div class="rect-future" id="count_applicants">
+                    <div><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="rect-future-inner" data-count="600">0</div>
+                    <div class="stats-title">Applicants</div>
+                </div>
+                <div class="rect-future" id="count-hackers">
+                    <div><i class="fa fa-coffee" aria-hidden="true"></i></div>
+                    <div class="rect-future-inner" data-count="250">0</div>
+                    <div class="stats-title">Hackers</div>
+                </div>
+                <div class="rect-future" id="count-teams">
+                    <div><i class="fa fa-lightbulb" aria-hidden="true"></i></div>
+                    <div class="rect-future-inner" data-count="50">0</div>
+                    <div class="stats-title">Teams</div>
+                </div>
+                <div class="rect-future" id="count-colleges">
+                    <div><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+                    <div class="rect-future-inner" data-count="30">0</div>
+                    <div class="stats-title">Colleges</div>
+                </div>
+            </div>
+        </div>
+        <div class="child-container" id="view-3">
+            <div class="back_to_the_past">
+                <div class="ps">
+
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Past Sponsors
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+            <div id="sponsor-container" class="sponsor-rect-future">
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png">
+                        <!-- <img src="assets/Sponsors_2018/s45/Mobicule-logo-min.png"> -->
+                        <!-- <div id="logo1" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/frappe-min.png">
+                        <!-- <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png"> -->
+                        <!-- <div id="logo2" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/hackerEarth-min.png">
+                        <!-- <div id="logo3" class="logoinner"></div> -->
+                        <!-- <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png"> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/jetbrains-min.png">
+                        <!-- <div id="logo4" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/wolfram-language-min.png">
+                        <!-- <div id="logo5" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/temboo-logo-min.png">
+                        <!-- <div id="logo6" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/about-min.png">
+                        <!-- <div id="logo7" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/HasuraLogoHorizontal-min.png">
+                        <!-- <div id="logo8" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/bugsee-min.png">
+                        <!-- <div id="logo9" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/product-hunt-min.png">
+                        <!-- <div id="logo10" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/EnrootDark BG-min.png">
+                        <!-- <div id="logo11" class="logoinner"></div> -->
+                    </div>
+                </div>
+                <div class="sponsorlogo">
+                    <div class="logo">
+                        <img src="assets/Sponsors_2018/s450/riidl-min.png">
+                        <!-- <div id="logo12" class="logoinner"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="child-container" id="view-4">
+
+            <div id="reach">
+                <span>Reach us</span>
+            </div>
+            <div class="call_karna">
+                <div id="contact">
+                    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom">
+                    </div>
+                </div>
+            </div>
+            <div id="contact_shelf">
+                <div align="center" class="socialbtns">
+                    <ul>
+                        <li><a href="mailto:codecell.engg@somaiya.edu?Subject=KJSCE%20Hack%202K19" class="fas fa-inbox"></a></li>
+                        <li><a href="https://www.facebook.com/kjscecodecell/" class="fab fa-facebook"></a></li>
+                        <li><a href="https://twitter.com/kjsce_codecell?lang=en" class="fab fa-twitter"></a></li>
+                        <li><a href="https://github.com/KJSCE-Codecell" class="fab fa-github"></a></li>
+                        <li><a href="https://www.linkedin.com/company/kjscecodecell/about/" class="fab fa-linkedin"></a></li>
+                        <li><a href="https://www.instagram.com/kjsce_codecell/?hl=en" class="fab fa-instagram"></a></li>
+                    </ul>
+                </div>
+                <div class="shelf">
+                </div>
+            </div>
+            <div id="made_by">
+                <span>Made with <i class="fas fa-heart heart"></i> by <a href="http://www.kjscecodecell.com/">CodeCell</a></span>
+            </div>
+        </div>
+        <!-- <div class="child-container"></div> -->
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/concat.js"></script>
 </body>
+
 </html>

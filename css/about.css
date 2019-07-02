@@ -1,0 +1,20 @@
+.box-header{
+    font-size:2.8vw;
+    color:aqua;
+    text-align: center;
+}
+
+
+.box-contents{
+  color: aliceblue;
+  font-size:1.3vw;
+  margin-top:20px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+/* .glow {
+
+    color: rgb(0, 247, 255);
+    text-align: center;
+
+  } */
