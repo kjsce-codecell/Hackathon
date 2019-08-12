@@ -18,6 +18,7 @@ body {
     -ms-overflow-style: none;
     scroll-behavior: smooth;
     overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
 }
 
 .full-container::-webkit-scrollbar { width: 0 !important }
@@ -208,7 +209,8 @@ a:hover{
 }
 
 .sponsorlogo{
-    height:100%;
+    width: 100%;
+    
     border-color: aqua;
     font-size: 2vw;
     text-align: center;
@@ -217,6 +219,8 @@ a:hover{
 }
 
 .sponsorlogo:nth-child(n){
+    height: 100px;
+    height:100%;
     grid-column: auto / span 3;
 }
 
@@ -373,28 +377,4 @@ a:hover{
 }
 #made_by>span>a:hover{
     color:white;
-}
-
-.panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
-    border: none;
-    background-color: transparent !important;
-}
-.faq-qans{
-    background-color: transparent !important;
-}
-.q{
-  font-size: 300%;
-}
-.ans{
-  font-size: 250%;
-}
-.faq-container {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
-.first5{
-    grid-column: 1 / span 1;
-}
-.last5{
-    grid-column: 2 / span 1;
 }

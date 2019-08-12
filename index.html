@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KJ Hack 2K19</title>
+    <title>KJSCE Hack 2019</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -25,21 +24,20 @@
 
         gtag('config', 'UA-142860092-1');
     </script>
-    <link rel="stylesheet" href="css/about.css">
+    <!-- <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/concat.css">
-    <link rel="stylesheet" href="css/countdowncube.css">
     <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/faq.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/map.css">
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/map.css"> 
     <link rel="stylesheet" href="css/ramanujan.css">
     <link rel="stylesheet" href="css/rocket.css">
     <link rel="stylesheet" href="css/shelf.css">
     <link rel="stylesheet" href="css/snackbar.css">
     <link rel="stylesheet" href="css/timeline.css">
-    <link rel="stylesheet" href="css/timer.css">
     <link rel="stylesheet" href="css/typewriter.css">
+    <link rel="stylesheet" href="css/mobile.css"> -->
+    <link rel="stylesheet" href="css/compress.css">
 
     <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
@@ -281,20 +279,27 @@
             <div id="reach">
                 <span>FAQ</span>
             </div>
-            <div class="faq-rect-future faq-container" style="width: 80%; margin: 0 auto;">
-                <div class="first5">
-                  <div class="panel-group" id="accordion">
+            <div class="faq-rect-future faq-container" style="width: 80%; margin: 0 auto; height:auto;">
+                
+                <div class="panel-group" id="accordion">
+                   
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                            <span style="color: aqua;">What happens at a Hackathon?</span>
-                          </a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse1" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed opened">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                              <span class="question-text">What happens at a Hackathon?</span>
+                          </div>
+                        </div>
                       </div>
                       <div id="collapse1" class="panel-collapse collapse faq-qans aniket_collapsible_mob in" style="  color: white;">
                         <div class="panel-body ans ans_mob ">
-                          Participants (“hackers”) spend 24 hours working in teams of 1 - 4 people to build or code projects (“hacks”) they’re excited
+                          Participants (“hackers”) spend 24 hours working in teams of 2 - 4 people to build or code projects (“hacks”) they’re excited
                           about. There are workshops, mentors, food, swag, and buckets of coffee to guide you along the way.
                           You bring your ideas, and we give you everything you need to make them come to life.
                         </div>
@@ -302,9 +307,17 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" style=""><span style="color: aqua;">What if I've never been to a hackathon before? </span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                           
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse2" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">What if I've never been to a hackathon before? </span></div>
+                        </div>
                       </div>
                       <div id="collapse2" class="panel-collapse collapse faq-qans aniket_collapsible_mob" style="  color: white;">
                         <div class="panel-body ans ans_mob" >
@@ -316,9 +329,17 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" style=""><span style="color: aqua;">What do people normally make?</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse3" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">What do people normally make?</span></div>
+                        </div>
                       </div>
                       <div id="collapse3" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
                         <div class="panel-body ans ans_mob">
@@ -329,9 +350,17 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" style=""><span style="color: aqua;">What should I bring?</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse4" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">What should I bring?</span></div>
+                        </div>
                       </div>
                       <div id="collapse4" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
                         <div class="panel-body ans ans_mob">
@@ -342,9 +371,17 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse0" style=""><span style="color: aqua;">What is the Code of Conduct?</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse0" onclick="javascript:toggleshape(this);" >
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">What is the Code of Conduct?</span></div>
+                        </div>
                       </div>
                       <div id="collapse0" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
                         <div class="panel-body ans ans_mob">
@@ -352,17 +389,25 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="last5">
-                  <div class="panel-group" id="accordion1">
+              
+                
+               
+                  
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5" style=""><span style="color: aqua;">What shoud I not bring?</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse5" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">What should I not bring?</span></div>
+                        </div>
                       </div>
-                      <div id="collapse5" class="panel-collapse collapse faq-qans aniket_collapsible_mob in" style="  color: white;">
+                      <div id="collapse5" class="panel-collapse collapse faq-qans aniket_collapsible_mob" style="  color: white;">
                         <div class="panel-body ans ans_mob">
                           Weapons of any kind, drugs, or alcohol. If you’re not sure whether something will be okay, please ask ahead of time!
                         </div>
@@ -370,9 +415,17 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse6" style=""><span style="color: aqua;">What are the topics and the prizes for the Hackathon?</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse6" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">What are the topics and the prizes for the Hackathon?</span></div>
+                        </div>
                       </div>
                       <div id="collapse6" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
                         <div class="panel-body ans ans_mob">
@@ -384,9 +437,17 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse7" style=""><span style="color: aqua;">Do you allow walk-ins?</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse7" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">Do you allow walk-ins?</span></div>
+                        </div>
                       </div>
                       <div id="collapse7" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
                         <div class="panel-body ans ans_mob">
@@ -396,19 +457,30 @@
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <h4 class="panel-title q q_mob">
-                          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse8" style=""><span style="color: aqua;">404: Question Not Found</span></a>
-                        </h4>
+                        <div class="panel-title q q_mob">
+                            
+                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse8" onclick="javascript:toggleshape(this);">
+                              <div class="shape closed">
+                                  <div class="expand">
+                                      <div class="horizontal"></div>
+                                      <div class="vertical"></div>
+                                  </div>
+                              </div>
+                            <span class="question-text">404: Question Not Found</span></div>
+                          
+                        </div>
                       </div>
                       <div id="collapse8" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
                         <div class="panel-body ans ans_mob">
                           You can just drop a DM at any of our social network handles and we'll try our best to answer them ASAP ;)
                         </div>
                       </div>
-                    </div>
+                    
                 </div>
+                
             </div>
           </div>
+        </div>
         <div class="child-container" id="view-4">
 
             <div id="reach">
@@ -441,11 +513,12 @@
         <!-- <div class="child-container"></div> -->
     </div>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/countdowncube.js"></script>
-    <script src="js/map.js"></script>
+    <script src="js/compressed.js"></script>
+    <!-- <script src="js/map.js"></script>
     <script src="js/particle.js"></script>
     <script src="js/particleinit.js"></script>
     <script src="js/preloader.js"></script>
@@ -453,7 +526,7 @@
     <script src="js/rocket.js"></script>
     <script src="js/subscribe.js"></script>
     <script src="js/typewriter.js"></script>
-    <script src="js/video.js"></script>
+    <script src="js/video.js"></script> -->
 
 </body>
 

@@ -34,7 +34,7 @@ $(document).ready(function()
 
 function fullscroll()
 {
-        console.log('hiii');
+        // console.log('hiii');
         if(typeof fires == 'undefined') fires=[];
 
         if (typeof svgDoc != 'undefined' && svgDoc!=null && fires.length<3){
@@ -77,13 +77,13 @@ function fullscroll()
             // console.log("translateY("+scrollPercent+"px)")
             $(rocketsvg).css('top',  scrollPercent+ '%');
            // $(rocketsvg).css("-webkit-transform", "translateY(" + scrollPercent + "px)");
-            var l = [0, 20, 40, 60, 100];
+            var l = [0, 20, 50, 75, 100];
             var links = [title_link, about_link, sponsor_link, faq_link, contact_link];
 
             for(var i = 0; i<5; i++)
             {
-                console.log(i+' '+(scrollPercent-l[i]));
-                if(Math.abs(scrollPercent - l[i])<15)
+                console.log(i+' '+(scrollPercent));
+                if(Math.abs(scrollPercent - l[i])<12)
                 {
                     links[i].addClass('highlighted');
                 }else{

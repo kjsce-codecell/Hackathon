@@ -18,6 +18,8 @@ $(document).ready(function()
         email_bhej('spon');
     });
 
+    
+
 
 });
 
@@ -73,4 +75,20 @@ function email_bhej(user){
         url: url_ + email_id,
         type: 'GET',
     });
+}
+
+function toggleshape(e)
+{
+    var openit = true;
+    var target = $(e.getElementsByClassName('shape')[0]);
+    if(target.hasClass('opened'))
+    {
+        openit=false;
+    }
+    $('.shape').removeClass('opened');
+    if(openit)
+    {
+        target.addClass('opened');
+    }
+    //(e.getElementsByClassName('shape')).toggleClass('opened');
 }
