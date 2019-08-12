@@ -256,7 +256,7 @@ a:hover{
 @media (min-width: 1056px){
   .faq-rect-future{
     width:80%;
-    height: 530px;
+    height: 543px;
     background-image: linear-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.25));
     /* -webkit-clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
     /* clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
@@ -377,13 +377,24 @@ a:hover{
 
 .panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
     border: none;
+    background-color: transparent !important;
 }
 .faq-qans{
-  background-color: black !important;
+    background-color: transparent !important;
 }
 .q{
   font-size: 300%;
 }
 .ans{
   font-size: 250%;
+}
+.faq-container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+.first5{
+    grid-column: 1 / span 1;
+}
+.last5{
+    grid-column: 2 / span 1;
 }

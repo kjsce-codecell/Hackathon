@@ -143,7 +143,7 @@
 
     .faq-rect-future{
         width:80%;
-        height: 530px;
+        height: 567px;
         background-image: linear-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.25));
         /* -webkit-clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
         /* clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
@@ -247,5 +247,19 @@
 
     #particles-js{
         height: 120%;
+    }
+    .faq-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-row-gap: 0px;
+    }
+    .first5{
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+    }
+    .last5{
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
     }
 }
