@@ -1,6 +1,5 @@
 $(document).ready(function()
 {
-    console.log('hiii');
     lastScrollTop = 0;
     ramanujaninner = $('.rect-future-inner')
     triggered = false;
@@ -14,11 +13,10 @@ $(document).ready(function()
     about_link = $('#about_link');
     sponsor_link = $('#sponsor18_link');
     contact_link = $('#contact_link');
+    faq_link = $('#faq_link');
 
     rockervanilla = document.getElementsByClassName('rocketsvg')[0]
 
-
-    
     svgDoc = a.contentDocument;
     $('.full-container').on('scroll', fullscroll);
 
@@ -36,9 +34,9 @@ $(document).ready(function()
 
 function fullscroll()
 {
-        console.log('hiii');
+        // console.log('hiii');
         if(typeof fires == 'undefined') fires=[];
-        
+
         if (typeof svgDoc != 'undefined' && svgDoc!=null && fires.length<3){
             fires = svgDoc.getElementsByClassName("fire");
         }
@@ -79,15 +77,14 @@ function fullscroll()
             // console.log("translateY("+scrollPercent+"px)")
             $(rocketsvg).css('top',  scrollPercent+ '%');
            // $(rocketsvg).css("-webkit-transform", "translateY(" + scrollPercent + "px)");
-            var l = [0, 33, 66, 100];
-            var links = [title_link, about_link, sponsor_link, contact_link];
+            var l = [0, 20, 50, 75, 100];
+            var links = [title_link, about_link, sponsor_link, faq_link, contact_link];
 
-            for(var i = 0; i<4; i++)
+            for(var i = 0; i<5; i++)
             {
-                // console.log(i+' '+(scrollPercent*1.33-l[i]));
-                if(Math.abs(scrollPercent - l[i])<10)
+                console.log(i+' '+(scrollPercent));
+                if(Math.abs(scrollPercent - l[i])<12)
                 {
-
                     links[i].addClass('highlighted');
                 }else{
                     links[i].removeClass('highlighted');

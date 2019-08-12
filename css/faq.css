@@ -1,0 +1,84 @@
+
+.panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
+    border: none;
+    background-color: transparent !important;
+}
+.faq-qans{
+    background-color: transparent !important;
+}
+.q{
+  font-size: 250%;
+  cursor: pointer;
+    font-family: monospace;
+    font-weight: bold;
+}
+.ans{
+  font-size: 250%;
+}
+
+#accordion{
+    margin-top:20px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.panel-body{
+    border-left: 5px solid #00a0a0 !important; 
+}
+
+
+.shape {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: auto;
+    background-color: #00000000;
+    border: 0px solid #00000000;
+    text-align: center;
+    transform: rotate(45deg);
+    float: left;
+    margin-left:-30px;
+    margin-top:-5px;
+}
+
+.horizontal, .vertical {
+    position: absolute;
+    background-color: #00a0a0;
+    left: 50%;
+    top: 50%;
+}
+
+.horizontal {
+    width: 20px;
+    height: 2px;
+    margin-left: -10px;
+    margin-top: -1px;
+}
+
+.vertical{
+    width: 2px;
+    height: 20px;
+    margin-left: -1px;
+    margin-top: -10px;
+}
+
+.closed .horizontal, .closed .vertical {
+    transition: all .5s ease-in-out;
+    transform: rotate(-135deg);
+}
+
+.opened .horizontal, .opened .vertical {
+    transition: all .5s ease-in-out;
+    transform: rotate(45deg);
+}
+
+.opened .horizontal{
+    opacity: 0;
+}
+
+.question-text{
+    color: aqua;
+    margin-left: 10px;
+}
+

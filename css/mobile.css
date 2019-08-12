@@ -141,6 +141,36 @@
 
     }
 
+    .faq-rect-future{
+        width:80%;
+        height: 567px;
+        background-image: linear-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.25));
+        /* -webkit-clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
+        /* clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
+        /* border: 3px solid; */
+        text-align: center;
+        position: relative;
+        border-top: 3px solid;
+        border-left: 3px solid;
+        border-right: 3px solid;
+        border-bottom: 3px solid;
+        border-color: aqua;
+    }
+
+
+    .panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
+        border: none;
+    }
+    .faq-qans_mob{
+      background-color: black !important;
+    }
+    .q_mob{
+      font-size: 203%;
+    }
+    .ans_mob{
+      font-size: 180%;
+    }
+
     .ps{
         font-size: 18px;
     }
@@ -218,4 +248,15 @@
     #particles-js{
         height: 120%;
     }
+    .faq-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-row-gap: 0px;
+    }
+    #accordion{
+       
+        grid-template-columns: repeat(1, 1fr);
+        
+      }
 }
