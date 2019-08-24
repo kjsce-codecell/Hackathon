@@ -1,0 +1,111 @@
+.info-section{
+    overflow:hidden;
+    margin: 150px auto 0;
+    width: 80%;
+    }
+ }
+ .info-section.carousel {
+    width: 1800px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 13px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .info-section .holder {
+    width: 100000px;
+    animation: movement 12s linear infinite;
+  }
+  
+  @keyframes movement {
+    0%   { margin-left: 30px; }
+    100% { margin-left: -200% }
+  }
+
+  .info-section .rect-future{
+    width:auto;
+    margin: 0 20px;
+    float:left;
+    }
+
+  .info-section table {
+      table-layout: fixed;
+      border-spacing:"0";
+      height: 150px;
+  }
+  .info-section #akshay, .info-section #rushang, .info-section #karan, .info-section #aditya, .info-section #vedant, 
+  .info-section #nachiket, .info-section #aniket, .info-section #kevin, .info-section #hetal, .info-section #bhuvnesh,
+  .info-section #tejas, .info-section #soumya, .info-section #heet, .info-section #sanika {
+    text-align: center;
+    border-spacing:"0";
+    width : 320px;
+  }
+  .info-section img {
+    float: centre;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  /*.info-section .org-images .fa {
+    position: relative;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    text-align: left;
+    /* transform-origin: 50% 50%;  */
+    /* color: white; */
+  }
+  .info-section.org-images .fa{
+    font-size:3vw;
+    padding:3vw;
+    color: white;
+    padding-bottom: 0;
+  }
+
+ .info-section.carousel .fa {
+	width: 40px;
+  height: 28px;
+	color: white ;
+	padding-top: 12px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-o-border-radius: 20px;
+	transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	-webkit-transition: all ease 0.5s;
+	-o-transition: all ease 0.5s;
+  }
+
+  .info-section.org-images.heightspec {
+    height: 70;
+  }
+
+  .info-section.org-images.heightspec1 {
+    height: 50;
+  }
+
+  .info-section.org-images.heightspec2 {
+    height: 50;
+    width: 135;
+  }
+
+  span.textspec {
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  span.textspec1 {
+    color:white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  @keyframes move {
+    0%   { margin-left: -200px; }
+    100% { margin-left: 100%; }
+  }
