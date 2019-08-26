@@ -1,0 +1,164 @@
+#info-section{
+    overflow:hidden;
+    margin: 100px auto 0;
+    width: 80%;
+    }
+
+  
+  #info-section .holder {
+    width: calc(366px * 21);
+    animation: movement 100s linear infinite;
+    /* -webkit-animation: move 100s linear infinite;
+    -o-animation: move 100s linear infinite;
+    -moz-animation: move 100s linear infinite; */
+    display: flex;
+  }
+
+  #info-section .carousel{
+    position: relative;
+  }
+  
+  #info-section .holder:hover{
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused;
+  animation-play-state:paused;
+  
+}
+
+
+  #info-section .rect-future{
+    width:auto;
+    margin: 0 20px;
+    width: 326px;
+    }
+
+  #info-section table {
+      table-layout: fixed;
+      border-spacing:"0";
+      margin: 10px 0;
+      height: 150px;
+      text-align: center;
+    border-spacing:"0";
+    width :100%;
+
+  }
+  /* #info-section #akshay, #info-section #rushang, #info-section #karan, #info-section #aditya, #info-section #vedant, 
+  #info-section #nachiket, #info-section #aniket, #info-section #kevin, #info-section #hetal, #info-section #bhuvnesh,
+  #info-section #tejas, #info-section #soumya, #info-section #heet, #info-section #sanika {
+    
+  } */
+  #info-section img {
+    /* float: centre; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    text-indent: -1000000px;
+    border: 2px solid aqua;
+    transition: border 0.5s linear;
+    cursor: pointer;
+    filter: grayscale(20%);
+ }
+
+  #info-section img:hover{
+    border: 2px solid rgb(168, 255, 255);
+    filter: brightness(125%);
+  }
+
+  /*#info-section .org-images .fa {
+    position: relative;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    text-align: left;
+    /* transform-origin: 50% 50%;  */
+    /* color: white; */
+  /* } */
+  #info-section .fa, #info-section .fab{
+    font-size:30px;
+    /* color: white; */
+    padding: 0 10px;
+  }
+
+ /* #info-section .carousel .fa {
+	width: 40px;
+  height: 28px;
+	color: white ;
+	padding-top: 12px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-o-border-radius: 20px;
+	transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	-webkit-transition: all ease 0.5s;
+	-o-transition: all ease 0.5s;
+  } */
+
+ 
+
+  #info-section .carousel::before,
+	#info-section .carousel::after {
+    background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: 5%;
+		z-index: 2;
+	}
+	
+	#info-section .carousel::after {
+		right: -1px;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	#info-section .carousel::before {
+		left: 0;
+		top: 0;
+	}
+
+  /* #info-section.org-images.heightspec {
+    height: 70;
+  }
+
+  #info-section.org-images.heightspec1 {
+    height: 50;
+  }
+
+  #info-section.org-images.heightspec2 {
+    height: 50;
+    width: 135;
+  } */
+
+  span.textspec {
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  span.textspec1 {
+    color:white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  @keyframes movement {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(-366px * 15)) }
+  }
+
+tbody > tr:nth-child(2) > td{
+  vertical-align: text-top;
+}
+
+@media screen and (max-width: 600px)
+{
+  #info-section{
+   
+    margin: 100px auto 50px;
+    width: 90%;
+    }
+}

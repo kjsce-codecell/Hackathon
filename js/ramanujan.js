@@ -14,8 +14,8 @@ $(document).ready(function()
     sponsor_link = $('#sponsor18_link');
     contact_link = $('#contact_link');
     faq_link = $('#faq_link');
-
-    rockervanilla = document.getElementsByClassName('rocketsvg')[0]
+    lazyloadImages = document.getElementsByClassName('lazyimage');
+    rockervanilla = document.getElementsByClassName('rocketsvg')[0];
 
     svgDoc = a.contentDocument;
     $('.full-container').on('scroll', fullscroll);
@@ -68,7 +68,19 @@ function fullscroll()
             else{
                 rocketsvg.css('transform', 'rotate('+(0)+'deg)')
             }
-            var scrollPercent = 100 * fullcont.scrollTop() / (childcontparent.height()-reachus.height());
+
+            var scrollTop = fullcont.scrollTop();
+            //console.log(lazyloadImages);
+            for(var l_i = 0; l_i<lazyloadImages.length; l_i++) {
+                var img = lazyloadImages[l_i];
+                //console.log((img.getBoundingClientRect().top + scrollTop)+' '+(window.innerHeight + scrollTop) )
+                if(img.getBoundingClientRect().top < (window.innerHeight + scrollTop)) {
+                  img.src = img.dataset.src;
+                  img.classList.remove('lazyimage');
+                }
+            }
+
+            var scrollPercent = 100 * scrollTop / (childcontparent.height()-(reachus.height()-teamscroll.height()-contactshelf.height()));
             // console.log(scrollPercent)
             // console.log(fullcont.scrollTop()+' '+childcontparent.height()+' '+fullcont.height());
             // console.log(rocketsvg + ' '+rocketsvg.css('transform'));
@@ -82,7 +94,7 @@ function fullscroll()
 
             for(var i = 0; i<5; i++)
             {
-                console.log(i+' '+(scrollPercent));
+                //console.log(i+' '+(scrollPercent));
                 if(Math.abs(scrollPercent - l[i])<12)
                 {
                     links[i].addClass('highlighted');
