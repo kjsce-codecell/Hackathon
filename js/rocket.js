@@ -3,9 +3,10 @@ function rocketDrag(event)
 }
 $(document).ready(function(){
     sv = document.getElementsByClassName('rocketsvg')[0];
-    reachus = $('#view-4')
+    reachus = $('#view-4');
+    teamscroll = $('#info-section');
+    contactshelf = $('#contact_shelf');
     innerchildparent = $('#innerchildparent');
-
 
     var isDragging = false;
     var fullc = document.getElementsByClassName('full-container')[0];
@@ -27,7 +28,7 @@ $('*').mousemove(function(e) {
             sv.style.transition = 'none';
             //console.log(percent*4)
             fullc.style.scrollBehavior= 'unset';
-            fullc.scrollTop=percent*0.01*(innerchildparent.height()-reachus.height());
+            fullc.scrollTop=percent*0.01*(innerchildparent.height()-(reachus.height()-teamscroll.height()-contactshelf.height()));
         }
 
     }

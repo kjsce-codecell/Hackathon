@@ -169,6 +169,7 @@ a:hover{
 }
 
 .ps:before {
+    box-sizing: border-box;
 	content: '';
 	position: absolute;
 	width:100%;
