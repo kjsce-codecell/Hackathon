@@ -133,12 +133,30 @@
     .sponsor-rect-future:after{
         background: -webkit-linear-gradient(left,
                     aqua 0%,
-                    aqua calc(50% - 100px),
-                    rgba(255, 255, 255, 0) calc(50% - 100px),
-                    rgb(255, 255, 255, 0) calc(50% + 100px),
-                    aqua calc(50% + 100px),
+                    aqua calc(50% - 148px),
+                    rgba(255, 255, 255, 0) calc(50% - 148px),
+                    rgb(255, 255, 255, 0) calc(50% + 52px),
+                    aqua calc(50% + 52px),
                     aqua 100%);
 
+    }
+
+    .pass_s:after{
+        background: -webkit-linear-gradient(left,
+                    aqua 0%,
+                    aqua calc(50% - 148px),
+                    rgba(255, 255, 255, 0) calc(50% - 148px),
+                    rgb(255, 255, 255, 0) calc(50% + 52px),
+                    aqua calc(50% + 52px),
+                    aqua 100%);
+    }
+    
+    .curr_s:after{
+        background: -webkit-linear-gradient(
+            left,#0ff 0,
+            #0ff 37.8%,rgba(255,255,255,0) 37.5%,
+            rgb(255,255,255,0) 84%,
+            #0ff 56.8%,#0ff 100%);
     }
 
     .faq-rect-future{
