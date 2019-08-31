@@ -1,4 +1,7 @@
 @media screen and (max-width: 800px) {
+    #dates{
+        font-size: 20px;
+    }
     #socket_for_rocket{
         display:none;
     }

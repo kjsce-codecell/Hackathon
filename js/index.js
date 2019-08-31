@@ -18,6 +18,16 @@ $(document).ready(function()
         email_bhej('spon');
     });
 
+    $('#devfolio-apply-now').click(function()
+    {
+        console.log('click');
+        $('#snackbar1').html('Registrations open soon! Stay tuned!');
+        $('#snackbar1').addClass('show');
+
+        setTimeout(function () { $('#snackbar1').removeClass('show')}, 2990);
+
+    });
+
 
 
 
