@@ -156,7 +156,6 @@ a:hover{
 }
 
 .back_to_the_past{
-    width:80%;
     margin: auto;
     color:white;
     text-align: center;
@@ -228,29 +227,40 @@ a:hover{
     margin: auto;
     color:white;
     align-items: center;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding: 20px;
 }
 
 .tier{
-    padding-top: 10px;
-    font-size:70%;
+    padding-bottom: 1.2vw;
+    font-size: 60%;
 }
 
 .sponsorlogo{
     width: 100%;
-    
+
     border-color: aqua;
     font-size: 2vw;
     text-align: center;
     font-size:50px;
-    display:table
+    display:grid;
 }
+
 
 .sponsorlogo:nth-child(n){
     height: 100px;
     height:100%;
     grid-column: auto / span 3;
+}
+
+
+.sponsorlogonew{
+    width: 100%;
+    border-color: aqua;
+    font-size: 2vw;
+    text-align: center;
+    font-size:50px;
+    display:grid;
+    grid-column: 5 / span 4;
 }
 
 .sponsor-rect-future{
@@ -322,11 +332,7 @@ a:hover{
 }
 
 .curr_s:after{
-    background: -webkit-linear-gradient(
-        left,#0ff 0,
-        #0ff 43.3%,rgba(255,255,255,0) 43.2%,
-        rgb(255,255,255,0) 68.0%,
-        #0ff 65.4%,#0ff 100%);
+    background: -webkit-linear-gradient( left,#0ff 0, #0ff 44.3%,rgba(255,255,255,0) 43.2%, rgb(255,255,255,0) 69.2%, #0ff 65.4%,#0ff 100%);
 }
 
 .pass_s:after{
@@ -346,19 +352,22 @@ a:hover{
     display: table-cell;
     vertical-align: middle;
     position: relative;
+    width: 70%;
+}
 
+.logonew{
+    width: 90%;
+    margin-top: 10px;
 }
 
 .logo > img{
-    display: block;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-height: 100%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.logo > a > img{
+    width: 100%;
+    height: 100%;
 }
 
 #map {
