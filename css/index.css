@@ -7,6 +7,7 @@ body {
     background-color: rgb(136, 136, 127);
 }
 
+
 /* * {
   cursor: url('../assets/cursor.png'),auto;
 } */
@@ -155,7 +156,6 @@ a:hover{
 }
 
 .back_to_the_past{
-    width:80%;
     margin: auto;
     color:white;
     text-align: center;
@@ -184,6 +184,28 @@ a:hover{
     border-bottom: none;
 }
 
+.past_spon:before{
+    border-right-style:none;
+    transform:rotateX(-70deg) perspective(125px) rotateX(70deg);
+}
+
+.past_spon{
+    transform: translateX(23%);
+}
+
+.past_spon_text{
+    font-size: 70%;
+}
+
+.curr_spon:before{
+    border-left-style:none;
+    transform:rotateX(-70deg) perspective(125px) rotateX(70deg);
+}
+
+.curr_spon{
+    transform: translateX(-23%);
+}
+
 .ps>span{
     line-height: 1.7;
     vertical-align: center;
@@ -205,24 +227,40 @@ a:hover{
     margin: auto;
     color:white;
     align-items: center;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding: 20px;
+}
+
+.tier{
+    padding-bottom: 1.2vw;
+    font-size: 60%;
 }
 
 .sponsorlogo{
     width: 100%;
-    
+
     border-color: aqua;
     font-size: 2vw;
     text-align: center;
     font-size:50px;
-    display:table
+    display:grid;
 }
+
 
 .sponsorlogo:nth-child(n){
     height: 100px;
     height:100%;
     grid-column: auto / span 3;
+}
+
+
+.sponsorlogonew{
+    width: 100%;
+    border-color: aqua;
+    font-size: 2vw;
+    text-align: center;
+    font-size:50px;
+    display:grid;
+    grid-column: 5 / span 4;
 }
 
 .sponsor-rect-future{
@@ -239,6 +277,8 @@ a:hover{
     border-bottom: 3px solid;
     border-color: aqua;
 }
+
+
 
 @media (max-width: 1056px){
   .faq-rect-future{
@@ -278,13 +318,11 @@ a:hover{
 
 .sponsor-rect-future:after{
     content:"";
-    background: -webkit-linear-gradient(left,
-                 aqua 0%,
-                 aqua 37.2%,
-                 rgba(255, 255, 255, 0) 37.2%,
-                 rgb(255, 255, 255, 0) 62.8%,
-                  aqua 62.8%,
-                  aqua 100%);;
+    background: -webkit-linear-gradient(
+            left,#0ff 0,
+            #0ff 24.7%,rgba(255,255,255,0) 24.2%,
+            rgb(255,255,255,0) 49.3%,
+            #0ff 49.8%,#0ff 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -293,24 +331,43 @@ a:hover{
 
 }
 
+.curr_s:after{
+    background: -webkit-linear-gradient( left,#0ff 0, #0ff 44.3%,rgba(255,255,255,0) 43.2%, rgb(255,255,255,0) 69.2%, #0ff 65.4%,#0ff 100%);
+}
+
+.pass_s:after{
+    background: -webkit-linear-gradient(
+        left,#0ff 0,
+        #0ff 31.8%,rgba(255,255,255,0) 32.5%,
+        rgb(255,255,255,0) 56%,
+        #0ff 56.8%,#0ff 100%);
+}
+
+.hide{
+    display: none;
+}
+
 .logo{
     margin: auto;
     display: table-cell;
     vertical-align: middle;
     position: relative;
+    width: 70%;
+}
 
+.logonew{
+    width: 90%;
+    margin-top: 10px;
 }
 
 .logo > img{
-    display: block;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-height: 100%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.logo > a > img{
+    width: 100%;
+    height: 100%;
 }
 
 #map {
