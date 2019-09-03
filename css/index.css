@@ -477,6 +477,10 @@ a:hover{
     cursor: pointer;
 }
 
-/* #devfolio-apply-now:hover {
+#devfolio-apply-now:hover {
     background-color: #2954BF !important;
-} */
+} 
+
+svg.logo{
+    fill: white;
+}
