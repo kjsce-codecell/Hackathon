@@ -377,8 +377,13 @@ a:hover{
     height: 100%;
 }
 
-.logo > a > img{
+.partner{
     width: 100%;
+    height: 100%;
+}
+
+.gold{
+    width: 70%;
     height: 100%;
 }
 
@@ -479,7 +484,7 @@ a:hover{
 
 #devfolio-apply-now:hover {
     background-color: #2954BF !important;
-} 
+}
 
 svg.logo{
     fill: white;
