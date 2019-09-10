@@ -489,3 +489,7 @@ a:hover{
 svg.logo{
     fill: white;
 }
+
+.patronrow{
+    grid-column: 3/span 8;
+}

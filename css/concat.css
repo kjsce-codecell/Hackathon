@@ -324,6 +324,7 @@ canvas {
     width:100%;
     text-align: center;
     height: auto;
+    z-index:999;
 
 }
 
@@ -474,9 +475,9 @@ a:hover{
     text-align: center;
     width: 100%;
     top:-8vh;
-    font-size:400%;
+    font-size:2vw;
     color: aqua;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .tier{
@@ -614,9 +615,14 @@ a:hover{
     height: 100%;
 }
 
-.logo > a > img{
+.partner{
     width: 100%;
     height: 100%;
+}
+
+.gold{
+    width: 70%;
+    /* height: 100%; */
 }
 
 #map {
@@ -706,6 +712,7 @@ a:hover{
     margin:20px auto;
     text-align: center;
     cursor:not-allowed;
+    outline: none;
     /* text-transform: lowercase; */
 }
 
@@ -713,10 +720,17 @@ a:hover{
     cursor: pointer;
 }
 
-/* #devfolio-apply-now:hover {
+#devfolio-apply-now:hover {
     background-color: #2954BF !important;
-} */
+}
 
+svg.logo{
+    fill: white;
+}
+
+.patronrow{
+    grid-column: 3/span 8;
+}
 
 .leaflet-popup-content-wrapper {
     background-image: linear-gradient(rgba(0,255,255,0.25),rgba(0, 255, 255, 0.5)) !important;
@@ -885,7 +899,7 @@ a, a:hover {
 .snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
+    /*margin-left: -125px; */
     background-color: rgba(50, 50, 50, .7); /* Black background color */
     color: #fff; /* White text color */
     text-align: center; /* Centered text */
@@ -897,6 +911,7 @@ a, a:hover {
     bottom: 30px; /* 30px from the bottom */
     font-size: 20px;
     border: 2px solid aqua;
+    transform: translate(-50%, 0);
 
   }
   
@@ -1133,6 +1148,9 @@ font-weight:bolder;
 
 
 @media screen and (max-width: 800px) {
+    #dates{
+        font-size: 20px;
+    }
     #socket_for_rocket{
         display:none;
     }
@@ -1415,6 +1433,11 @@ font-weight:bolder;
         grid-template-columns: repeat(1, 1fr);
 
       }
+
+
+.patronrow{
+    grid-column: auto/span 12;
+}
 }
 
 
