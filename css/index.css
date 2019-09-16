@@ -277,7 +277,6 @@ a:hover{
 
 .sponsor-rect-future{
     width:80%;
-    height: 800px;
     background-image: linear-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.25));
     /* -webkit-clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
     /* clip-path: polygon(35% 0, 38% 1%, 62% 1%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
