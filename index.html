@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="KJSCE Hack brings together a group of inspired and creative coders from all across India. We present to them a
     platform where they can showcase their talent in the spirit of progress and technology." />
-    <meta name="keywords" content="Hack, Hackathon, Codecell, conference, development, KJSCE, programming, coding, Abhiyantriki" />
+    <meta name="keywords"
+        content="Hack, Hackathon, Codecell, conference, development, KJSCE, programming, coding, Abhiyantriki" />
     <meta name="author" content="Codecell" />
     <meta name="robots" content="INDEX, FOLLOW" />
     <meta name="theme-color" content="#000000" />
@@ -17,11 +18,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
-    <link rel="preload" as="font" href="/assets/fonts/thunderstrike/thunderstrike-webfont.woff" type="font/woff" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/assets/fonts/Transformer/transformers_movie-webfont.woff" type="font/woff" crossorigin="anonymous">
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142860092-1"></script>
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="preload" as="font" href="/assets/fonts/thunderstrike/thunderstrike-webfont.woff" type="font/woff"
+        crossorigin="anonymous">
+    <link rel="preload" as="font" href="/assets/fonts/Transformer/transformers_movie-webfont.woff" type="font/woff"
+        crossorigin="anonymous">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142860092-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -52,52 +55,58 @@
 </head>
 
 <body>
-        <div id="snackbar1" class="snackbar">Thank You, We will keep you updated.</div>
-        <div id="snackbar2" class="snackbar">We'll send you the prospectus soon</div>
+    <div id="snackbar1" class="snackbar">Thank You, We will keep you updated.</div>
+    <div id="snackbar2" class="snackbar">We'll send you the prospectus soon</div>
     <div id="particles-js" z-index="-5"></div>
     <div id="socket_for_rocket">
-        <div class="rocketsvg disable-selection" >
+        <div class="rocketsvg disable-selection">
             <div class="overlaysvg"></div>
-            <object data="assets/rocket.svg" type="image/svg+xml"
-            id="alphasvg" width="100%" height="100%"></object>
+            <object data="assets/rocket.svg" type="image/svg+xml" id="alphasvg" width="100%" height="100%"></object>
         </div>
         <div class="timeline-block timeline-block-right">
             <div class="marker"></div>
             <div class="timeline-content">
-            <span id="title_link" class="highlighted"><a href="#logo">Title</a></span>
-            <p></p>
+                <span id="title_link" class="highlighted"><a href="#logo">Title</a></span>
+                <p></p>
             </div>
 
         </div>
         <div class="timeline-block timeline-block-right">
             <div class="marker"></div>
             <div class="timeline-content">
-            <span id="about_link"><a href="#view-2">About</a></span>
-            <p></p>
+                <span id="about_link"><a href="#view-2">About</a></span>
+                <p></p>
+            </div>
+        </div>
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <span id="themes_link"><a href="#themes">Themes</a></span>
+                <p></p>
             </div>
 
         </div>
         <div class="timeline-block timeline-block-right">
             <div class="marker"></div>
             <div class="timeline-content">
-            <span id="sponsor18_link"><a href="#view-3">Sponsors</a></span>
-            <p></p>
+                <span id="sponsor18_link"><a href="#view-3">Sponsors</a></span>
+                <p></p>
             </div>
 
         </div>
         <div class="timeline-block timeline-block-right">
             <div class="marker"></div>
             <div class="timeline-content">
-            <span id="faq_link"><a href="#view-5">FAQ</a></span>
-            <p></p>
+                <span id="faq_link"><a href="#view-5">FAQ</a></span>
+                <p></p>
             </div>
 
         </div>
-        <div class="timeline-block timeline-block-right" style="height: 20px;" >
+        <div class="timeline-block timeline-block-right" style="height: 20px;">
             <div class="marker"></div>
-            <div class="timeline-content" >
-            <span id="contact_link"><a href="#view-4">Contact Us</a></span>
-            <p></p>
+            <div class="timeline-content">
+                <span id="contact_link"><a href="#view-4">Contact Us</a></span>
+                <p></p>
             </div>
 
         </div>
@@ -105,30 +114,38 @@
     </div>
     <div class="full-container">
         <div id="innerchildparent">
-        <div class="child-container">
-            <div id="title_view">
-                <div id="logo" class="span100">
-                    <object id="inlogo" data="assets/logomid.svg" height="100%" width="60%" style="display: block; margin: auto;"></object>
-                    <div id="dates">5<sup>th</sup> and 6<sup>th</sup> October '19</div>
-                </div>
+            <div class="child-container">
+                <div id="title_view">
+                    <div id="logo" class="span100">
+                        <object id="inlogo" data="assets/logomid.svg" height="100%" width="60%"
+                            style="display: block; margin: auto;"></object>
+                        <div id="dates">5<sup>th</sup> and 6<sup>th</sup> October '19</div>
+                    </div>
 
 
-                <div id="this_is_if">
-                    <span class="syntax-keyword"><b>if</b></span>
-                    <span class="skills">"</span><span id="skills" href="" class="typewrite skills" data-period="2000"
-                        data-type='[ "Designer", "Developer", "Maker", "Hacker", "Tech Enthusiast"]'>
-                        <span class="wrap"></span>
-                    </span><span class="skills">"</span>
-                    <span class="syntax-keyword"><b>in</b></span>
-                    <span class="syntax-varname"><b>skills</b></span><span>:</span>
-                </div>
-                <div id="give_me_email">
-                        <button id="devfolio-apply-now" ><svg class="logo" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 115.46 123.46" style="height:24px;width:24px;margin-right:8px;"><path d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z"/><path d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z"/></svg>Apply with Devfolio</button>
-                </div>
-                <div id="button_daba_na">
+                    <div id="this_is_if">
+                        <span class="syntax-keyword"><b>if</b></span>
+                        <span class="skills">"</span><span id="skills" href="" class="typewrite skills"
+                            data-period="2000"
+                            data-type='[ "Designer", "Developer", "Maker", "Hacker", "Tech Enthusiast"]'>
+                            <span class="wrap"></span>
+                        </span><span class="skills">"</span>
+                        <span class="syntax-keyword"><b>in</b></span>
+                        <span class="syntax-varname"><b>skills</b></span><span>:</span>
+                    </div>
+                    <div id="give_me_email">
+                        <button id="devfolio-apply-now"><svg class="logo" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                                viewBox="0 0 115.46 123.46" style="height:24px;width:24px;margin-right:8px;">
+                                <path
+                                    d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z" />
+                                <path
+                                    d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z" />
+                            </svg>Apply with Devfolio</button>
+                    </div>
+                    <div id="button_daba_na">
 
-                </div>
-                <!-- <div id="button_daba_na">
+                    </div>
+                    <!-- <div id="button_daba_na">
                     <a class="brk-btn" id="update_btn">
                         Keep me updated
                     </a>
@@ -140,888 +157,1064 @@
                 </div> -->
 
 
-        </div>
-        </div>
-        <div class="child-container" id="view-2">
-            <div class="centre-container">
-                <div id="about_by_akshay">
-                    <div class="box-header glow">
-                        <span>About KJSCE Hack</span>
-                    </div>
-                    <div class="box-contents"><span>
-                            The KJSCE Hack brings together a group of inspired and creative coders from all across India. We present to them a
-                            platform where they can showcase their talent in the spirit of progress and technology. This Hackathon is a part of
-                            KJSCE’s annual tech fest, Abhiyantriki. Most engineers lack hands-on
-                            experience on industrial problem solving. KJSCE Hack is the rostrum for coders and engineers to exercise their skills,
-                            work towards solving real industry level problems and win prizes - all over the course of 24 hours. This hackathon is
-                            your chance at creating something impactful, something real!
-                    </span></div>
-                </div>
-                <div id="video_by_rushang">
-                    <div class="video-box">
-                        <svg width="0" height="0" style="position: absolute;">
-                            <defs>
-                                <clipPath id="clipPolygon">
-                                    <!-- <polygon points="15% 0, 0 26%, 0 38%, 4% 45%, 4% 75%, 0 83%, 0 95%, 3% 100%, 86% 100%, 100% 75%, 100% 63%, 96% 55%, 96% 25%, 100% 18%, 100% 5%, 97% 0"> -->
-                                    <polygon
-                                        points="100 0, 0 100, 0 140, 28 170, 28 285, 0 315, 0 353, 23 378, 560 378, 659 277, 659 242, 632 210, 632 92, 659 60, 659 22, 635 0">
-                                    </polygon>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <div class="video-box__video-container">
-                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="100%" type="text/html" src="https://www.youtube.com/embed/o7epPUFkzVw"><div><small><a href="https://youtubeembedcode.com/de/">youtubeembedcode de</a></small></div><div><small><a href="http://add-link-exchange.com">http://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div><div><small><a href="http://add-link-exchange.com">ww:add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div><div><small><a href="http://add-link-exchange.com">add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode.com/nl/</a></small></div><div><small><a href="http://add-link-exchange.com">http://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode.com/es/</a></small></div><div><small><a href="http://add-link-exchange.com">www:add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/en">youtubeembedcode.com/en/</a></small></div><div><small><a href="http://add-link-exchange.com">http://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode es</a></small></div><div><small><a href="http://add-link-exchange.com">add-link-exchange.com</a></small></div></iframe>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div id="ramanujan">
-                <div class="rect-future" id="count_applicants">
-                    <div><i class="fa fa-user" aria-hidden="true"></i></div>
-                    <div class="rect-future-inner" data-count="600">0</div>
-                    <div class="stats-title">Applicants</div>
-                </div>
-                <div class="rect-future" id="count-hackers">
-                    <div><i class="fa fa-coffee" aria-hidden="true"></i></div>
-                    <div class="rect-future-inner" data-count="250">0</div>
-                    <div class="stats-title">Hackers</div>
-                </div>
-                <div class="rect-future" id="count-teams">
-                    <div><i class="fa fa-lightbulb" aria-hidden="true"></i></div>
-                    <div class="rect-future-inner" data-count="50">0</div>
-                    <div class="stats-title">Teams</div>
-                </div>
-                <div class="rect-future" id="count-colleges">
-                    <div><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
-                    <div class="rect-future-inner" data-count="30">0</div>
-                    <div class="stats-title">Colleges</div>
-                </div>
-            </div>
-        </div>
-        <div class="child-container" id="view-3">
-            <div class="back_to_the_past">
-                    <div class="ps past_spon">
-                            <span class="past_spon_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                Past ..
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <div class="child-container" id="view-2">
+                <div class="centre-container">
+                    <div id="about_by_akshay">
+                        <div class="box-header glow">
+                            <span>About KJSCE Hack</span>
                         </div>
-                <div class="ps">
-                    <span class="curr_spon_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Our Sponsors
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                </div>
-
-            </div>
-            <div id="sponsor-container" class="sponsor-rect-future curr_s">
-                <!-- Current Sponsors -->
-                <div class="new_hide sponsorlogonew">
-
-                    <div class="logo logonew">
-                        <div class="tier">Our Partner</div>
-                        <a href="https://devfolio.co" target="_blank" style="cursor: pointer;">
-                            <img class="lazyimage partner" data-src="assets/Sponsors_2019/devfolio.png">
-                        </a>
+                        <div class="box-contents"><span>
+                                The KJSCE Hack brings together a group of inspired and creative coders from all across
+                                India. We present to them a
+                                platform where they can showcase their talent in the spirit of progress and technology.
+                                This Hackathon is a part of
+                                KJSCE’s annual tech fest, Abhiyantriki. Most engineers lack hands-on
+                                experience on industrial problem solving. KJSCE Hack is the rostrum for coders and
+                                engineers to exercise their skills,
+                                work towards solving real industry level problems and win prizes - all over the course
+                                of 24 hours. This hackathon is
+                                your chance at creating something impactful, something real!
+                            </span></div>
                     </div>
-
-                </div>
-                <div class="new_hide sponsorlogonew" style="grid-column: auto/span 12;">
-
-                    <div class="logo logonew">
-                        <div class="tier">Gold Sponsor</div>
-
-                        <div class="sponsor_row" style="display: grid;grid-template-columns: repeat(10,1fr); grid-gap: 10px;">
-
-                        <a href="https://matic.network/" target="_blank" style="cursor: pointer;grid-column: 2/span 4;">
-                            <img class="lazyimage gold" data-src="assets/Sponsors_2019/matic.png">
-                        </a>
-                        <a href="https://linode.com" target="_blank" style="cursor: pointer;grid-column: 6/span 4;">
-                            <img class="lazyimage gold" data-src="assets/Sponsors_2019/linode.png"  >
-                        </a>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="new_hide sponsorlogonew patronrow" >
-
-                    <div class="logo logonew">
-                        <div class="tier">Patron</div>
-                        <div class="sponsor_row sponsor_patron_row">
-                            <a href="https://repl.it" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/repl.png" style="width:40%;">
-                            </a>
-                            <!-- <div></div> -->
-                            <a href="https://sketch.com" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/sketch.png" style="width:100%">
-                            </a>
-                            <!-- <div></div> -->
-                            <a href="https://doist.com" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/doist.png" style="width:50%;filter:invert(1);margin-top:10%;">
-                            </a>
-                            <a href="https://balsamiq.com" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/balsamiq.png" style="width:75%;margin-top:8%;">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="new_hide sponsorlogonew patronrow">
-                    <div class="logo logonew">
-                        <div class="sponsor_row sponsor_patron_row">
-                            <a href="https://www.wolfram.com/" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/wolfram.png" style="width:100%">
-                            </a>
-                            <a href="https://www.sublimetext.com/" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/sublime.png"
-                                    style="width:30%;margin-top:8%;">
-                            </a>
-                            <a href="https://codingblocks.com/" target="_blank" style="cursor: pointer;">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/cb.png" style="width:100%">
-                            </a>
-                            <a href="https://dev.to" target="_blank" style="cursor: pointer;filter:invert(1);">
-                                <img class="lazyimage patron" data-src="assets/Sponsors_2019/dev.png" style="width:35%;margin-top:8%;">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Past Sponsors -->
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/Mobicule-logo-min.png">
-                        <!-- <img src="assets/Sponsors_2018/s45/Mobicule-logo-min.png"> -->
-                        <!-- <div id="logo1" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/frappe-min.png">
-                        <!-- <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png"> -->
-                        <!-- <div id="logo2" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/hackerEarth-min.png">
-                        <!-- <div id="logo3" class="logoinner"></div> -->
-                        <!-- <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png"> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/jetbrains-min.png">
-                        <!-- <div id="logo4" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/wolfram-language-min.png">
-                        <!-- <div id="logo5" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/temboo-logo-min.png">
-                        <!-- <div id="logo6" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/about-min.png">
-                        <!-- <div id="logo7" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/HasuraLogoHorizontal-min.png">
-                        <!-- <div id="logo8" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/bugsee-min.png">
-                        <!-- <div id="logo9" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/product-hunt-min.png">
-                        <!-- <div id="logo10" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/EnrootDark BG-min.png">
-                        <!-- <div id="logo11" class="logoinner"></div> -->
-                    </div>
-                </div>
-                <div class="sponsorlogo past_hide hide">
-                    <div class="logo">
-                        <img class="lazyimage" data-src="assets/Sponsors_2018/s450/riidl-min.png">
-                        <!-- <div id="logo12" class="logoinner"></div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="child-container" id="view-5">
-            <div id="reach">
-                <span>FAQ</span>
-            </div>
-            <div class="faq-rect-future faq-container" style="width: 80%; margin: 0 auto; height:auto;">
-
-                <div class="panel-group" id="accordion">
-
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob">
-                        <div class="panel-title q q_mob">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse1" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed opened">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                              <span class="question-text">What happens at a Hackathon?</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="collapse1" class="panel-collapse collapse faq-qans aniket_collapsible_mob in" style="  color: white;">
-                        <div class="panel-body ans ans_mob ">
-                          Participants (“hackers”) spend 24 hours working in teams of 2 - 4 people to build or code projects (“hacks”) they’re excited
-                          about. There are workshops, mentors, food, swag, and buckets of coffee to guide you along the way.
-                          You bring your ideas, and we give you everything you need to make them come to life.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse2" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">What if I've never been to a hackathon before? </span></div>
-                        </div>
-                      </div>
-                      <div id="collapse2" class="panel-collapse collapse faq-qans aniket_collapsible_mob" style="  color: white;">
-                        <div class="panel-body ans ans_mob" >
-                          Not to worry, We welcome students of all skill levels. We’ll have talks, mentors and workshops to help you with your project;
-                          hackathons can be a great place to learn new skills in a short amount of time. Just be eager to learn,
-                          and excited to meet lots of awesome people.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse3" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">What do people normally make?</span></div>
-                        </div>
-                      </div>
-                      <div id="collapse3" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          Hacks generally fall under one (or more) of the seven cortices: Web Development, Android, iOS, AI/ML, AR/VR, Game Development,
-                          and Hardware.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse4" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">What should I bring?</span></div>
-                        </div>
-                      </div>
-                      <div id="collapse4" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          You should bring your student ID and anything you’d need for a sleepover: laptop, charger, deodorant (!), change of clothes,
-                          etc.. You won’t need food or drinks; we’ve got you covered there.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse0" onclick="javascript:toggleshape(this);" >
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">What is the Code of Conduct?</span></div>
-                        </div>
-                      </div>
-                      <div id="collapse0" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          The appropriate code of conduct is linked <a href="https://drive.google.com/file/d/1-R1HES25QDTKarrEkZnox8EE9TvCBvin/view" target="_blank" style="color: aqua">here</a>.
-                        </div>
-                      </div>
-                    </div>
-
-
-
-
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse5" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">What should I not bring?</span></div>
-                        </div>
-                      </div>
-                      <div id="collapse5" class="panel-collapse collapse faq-qans aniket_collapsible_mob" style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          Weapons of any kind, drugs, or alcohol. If you’re not sure whether something will be okay, please ask ahead of time!
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse6" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">What are the topics and the prizes for the Hackathon?</span></div>
-                        </div>
-                      </div>
-                      <div id="collapse6" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          The topic and the prizes will be declared soon.So keep an eye on the
-                          <a href="https://www.facebook.com/kjscecodecell/" target="_blank" style="color: aqua">KJSCE-CodeCell Facebook Page</a>. Also once you've registered with an e-mail id , we'll shoot you
-                          a mail about further announcements
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse7" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">Do you allow walk-ins?</span></div>
-                        </div>
-                      </div>
-                      <div id="collapse7" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          We will not be allowing walk-ins. To ensure that you’ll be allowed in, please apply ahead of time.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading faq-qans aniket_collapsible_mob ">
-                        <div class="panel-title q q_mob">
-
-                          <div data-toggle="collapse" data-parent="#accordion" href="#collapse8" onclick="javascript:toggleshape(this);">
-                              <div class="shape closed">
-                                  <div class="expand">
-                                      <div class="horizontal"></div>
-                                      <div class="vertical"></div>
-                                  </div>
-                              </div>
-                            <span class="question-text">404: Question Not Found</span></div>
-
-                        </div>
-                      </div>
-                      <div id="collapse8" class="panel-collapse collapse faq-qans aniket_collapsible_mob " style="  color: white;">
-                        <div class="panel-body ans ans_mob">
-                          You can just drop a DM at any of our social network handles and we'll try our best to answer them ASAP ;)
-                        </div>
-                      </div>
-
-                </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="child-container" id="view-4">
-            <div id="reach">
-                <span>Reach us</span>
-            </div>
-            <div class="call_karna">
-                <div id="contact">
-                    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom">
-                    </div>
-                </div>
-            </div>
-            <div id = "info-section">
-                <div class="carousel">
-                    <div class="holder">
-                        <div class="rect-future">
-                            <table id ="akshay" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Akshay Padte</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Akshay.png"></td>
-                                </tr>
-                                <tr>
-                                        <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="socialmedia">
-
-                                            <a href="https://github.com/akshay-99" class="fab fa-github" ></a>
-                                            <a href="https://linkedin.com/in/akshay-padte/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="rect-future">
-                            <table id ="rushang" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Rushang Gajjal</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Rushang.png"></td>
-                                </tr>
-                                <tr>
-                                        <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
-
-                                </tr>
-                                <tr>
-                                    <td class="socialmedia">
-
-                                                <a href="https://github.com/RusherRG" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/rusherrg/" class="fab fa-linkedin" ></a>
-                                    </td>
-
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="rect-future">
-                            <table id ="karan" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Karan Sheth</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Karan.png"></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="heightspec1"><span class="textspec1">Tech Head</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/Korusuke" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/kiteretsu/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="rect-future">
-                            <table id ="aditya" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Aditya Prajapati</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Aditya.jpeg"></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/Syn3rman" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/aditya-prajapati-129716101/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="rect-future">
-                            <table id ="vedant" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Vedant Shroff</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Vedant.png"></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                            <a href="https://github.com/vedant-shroff" class="fab fa-github" ></a>
-                                            <a href="https://www.linkedin.com/in/vedant-shroff-31015615a/?originalSubdomain=in" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="rect-future">
-                            <table id ="nachiket" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Nachiket Bhuta</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Nachiket.jpeg"></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/nachiketbhuta" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/nachiket-bhuta-3061ba144/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-
-                        <div class="rect-future">
-                                <table id ="aniket" >
-                                    <tr>
-                                        <td class="heightspec"><span class="textspec">Aniket Bhosale</span></td>
-                                        <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Aniket.jpeg"></td>
-                                    </tr>
-                                    <tr>
-
-                                            <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
-                                    </tr>
-                                    <tr>
-
-                                            <td class="socialmedia">
-
-                                                    <a href="https://github.com/aniket15b" class="fab fa-github" ></a>
-                                                    <a href="https://www.linkedin.com/in/aniket-bhosale-548a51175" class="fab fa-linkedin" ></a>
-                                        </td>
-                                    </tr>
-                                </table>
+                    <div id="video_by_rushang">
+                        <div class="video-box">
+                            <svg width="0" height="0" style="position: absolute;">
+                                <defs>
+                                    <clipPath id="clipPolygon">
+                                        <!-- <polygon points="15% 0, 0 26%, 0 38%, 4% 45%, 4% 75%, 0 83%, 0 95%, 3% 100%, 86% 100%, 100% 75%, 100% 63%, 96% 55%, 96% 25%, 100% 18%, 100% 5%, 97% 0"> -->
+                                        <polygon
+                                            points="100 0, 0 100, 0 140, 28 170, 28 285, 0 315, 0 353, 23 378, 560 378, 659 277, 659 242, 632 210, 632 92, 659 60, 659 22, 635 0">
+                                        </polygon>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <div class="video-box__video-container">
+                                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%"
+                                    height="100%" type="text/html" src="https://www.youtube.com/embed/o7epPUFkzVw">
+                                    <div><small><a href="https://youtubeembedcode.com/de/">youtubeembedcode
+                                                de</a></small></div>
+                                    <div><small><a
+                                                href="http://add-link-exchange.com">http://add-link-exchange.com</a></small>
+                                    </div>
+                                    <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode
+                                                pl</a></small></div>
+                                    <div><small><a
+                                                href="http://add-link-exchange.com">ww:add-link-exchange.com</a></small>
+                                    </div>
+                                    <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode
+                                                pl</a></small></div>
+                                    <div><small><a href="http://add-link-exchange.com">add-link-exchange.com</a></small>
+                                    </div>
+                                    <div><small><a
+                                                href="https://youtubeembedcode.com/nl/">youtubeembedcode.com/nl/</a></small>
+                                    </div>
+                                    <div><small><a
+                                                href="http://add-link-exchange.com">http://add-link-exchange.com</a></small>
+                                    </div>
+                                    <div><small><a
+                                                href="https://youtubeembedcode.com/es/">youtubeembedcode.com/es/</a></small>
+                                    </div>
+                                    <div><small><a
+                                                href="http://add-link-exchange.com">www:add-link-exchange.com</a></small>
+                                    </div>
+                                    <div><small><a
+                                                href="https://youtubeembedcode.com/en">youtubeembedcode.com/en/</a></small>
+                                    </div>
+                                    <div><small><a
+                                                href="http://add-link-exchange.com">http://add-link-exchange.com</a></small>
+                                    </div>
+                                    <div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode
+                                                es</a></small></div>
+                                    <div><small><a href="http://add-link-exchange.com">add-link-exchange.com</a></small>
+                                    </div>
+                                </iframe>
                             </div>
-                            <div class="rect-future">
-                                    <table id ="kevin" >
-                                        <tr>
-                                            <td class="heightspec"><span class="textspec">Kevin Shah</span></td>
-                                            <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Kevin.png"></td>
-                                        </tr>
-                                        <tr>
+                        </div>
+                    </div>
+                </div>
+                <div id="ramanujan">
+                    <div class="rect-future" id="count_applicants">
+                        <div><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <div class="rect-future-inner" data-count="600">0</div>
+                        <div class="stats-title">Applicants</div>
+                    </div>
+                    <div class="rect-future" id="count-hackers">
+                        <div><i class="fa fa-coffee" aria-hidden="true"></i></div>
+                        <div class="rect-future-inner" data-count="250">0</div>
+                        <div class="stats-title">Hackers</div>
+                    </div>
+                    <div class="rect-future" id="count-teams">
+                        <div><i class="fa fa-lightbulb" aria-hidden="true"></i></div>
+                        <div class="rect-future-inner" data-count="50">0</div>
+                        <div class="stats-title">Teams</div>
+                    </div>
+                    <div class="rect-future" id="count-colleges">
+                        <div><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+                        <div class="rect-future-inner" data-count="30">0</div>
+                        <div class="stats-title">Colleges</div>
+                    </div>
+                </div>
+            </div>
+            <div class="child-container" id="themes">
+                <div id="reach">
+                    <span>Themes</span>
+                </div>
+                <div class="faq-rect-future faq-container" style="width: 80%; margin: 0 auto; height:auto;">
+                    <div class="new_theme">
 
-                                                <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
-                                        </tr>
-                                        <tr>
+                        <div class="theme" id="them">
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/wifi.png">
+                                <span>IOT</span>
+                            </div>
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/study.png">
+                                <span>Education</span>
+                            </div>
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/health.png">
+                                <span>Health Tech</span>
+                            </div>
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/ai.png">
+                                <span>AI, ML/DL</span>
+                            </div>
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/blockchain.png">
+                                <span>Blockchain</span>
+                            </div>
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/ar.png">
+                                <span>AR/VR</span>
+                            </div>
+                            <div>
+                                <img class="lazyimage partner" data-src="assets/themes/innovation.png">
+                                <span>FinTech</span>
+                            </div>
+                        </div>
 
-                                                <td class="socialmedia">
+                    </div>
+                </div>
+            </div>
+            <div class="child-container" id="view-3">
+                <div class="back_to_the_past">
+                    <div class="ps past_spon">
+                        <span class="past_spon_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Past ..
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <div class="ps">
+                        <span class="curr_spon_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Our Sponsors
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
 
-                                                        <a href="https://github.com/KevinShahgit" class="fab fa-github" ></a>
-                                                        <a href="https://www.linkedin.com/in/reach-shah-kevin/" class="fab fa-linkedin" ></a>
-                                            </td>
-                                        </tr>
-                                    </table>
+                </div>
+                <div id="sponsor-container" class="sponsor-rect-future curr_s">
+                    <!-- Current Sponsors -->
+                    <div class="new_hide sponsorlogonew">
+
+                        <div class="logo logonew">
+                            <div class="tier">Our Partner</div>
+                            <a href="https://devfolio.co" target="_blank" style="cursor: pointer;">
+                                <img class="lazyimage partner" data-src="assets/Sponsors_2019/devfolio.png">
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="new_hide sponsorlogonew" style="grid-column: auto/span 12;">
+
+                        <div class="logo logonew">
+                            <div class="tier">Gold Sponsor</div>
+
+                            <div class="sponsor_row gold_row">
+
+                                <a href="https://matic.network/" target="_blank">
+                                    <img class="lazyimage gold" data-src="assets/Sponsors_2019/matic.png">
+                                </a>
+                                <a href="https://linode.com" target="_blank">
+                                    <img class="lazyimage gold" data-src="assets/Sponsors_2019/linode.png">
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="new_hide sponsorlogonew patronrow">
+
+                        <div class="logo logonew">
+                            <div class="tier">Patron</div>
+                            <div class="sponsor_row sponsor_patron_row">
+
+                                <a href="https://repl.it" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/repl.png"
+                                        style="width:40%;">
+                                </a>
+                                <!-- <div></div> -->
+                                <a href="https://sketch.com" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/sketch.png"
+                                        style="width:100%">
+                                </a>
+                                <!-- <div></div> -->
+                                <a href="https://doist.com" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/doist.png"
+                                        style="width:50%;filter:invert(1);margin-top:10%;">
+                                </a>
+                                <a href="https://balsamiq.com" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/balsamiq.png"
+                                        style="width:75%;margin-top:8%;">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="new_hide sponsorlogonew patronrow">
+                        <div class="logo logonew">
+                            <div class="sponsor_row sponsor_patron_row">
+                                <a href="https://wolfram.com" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/wolfram.png"
+                                        style="width:100%">
+                                </a>
+                                <a href="https://sublimetext.com" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/sublime.png"
+                                        style="width:30%;margin-top:8%;">
+                                </a>
+                                <a href="https://codingblocks.com/" target="_blank" style="cursor: pointer;">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/cb.png"
+                                        style="width:100%">
+                                </a>
+                                <a href="https://dev.to" target="_blank" style="cursor: pointer;filter:invert(1);">
+                                    <img class="lazyimage patron" data-src="assets/Sponsors_2019/dev.png"
+                                        style="width:35%;margin-top:8%;">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Past Sponsors -->
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/Mobicule-logo-min.png">
+                            <!-- <img src="assets/Sponsors_2018/s45/Mobicule-logo-min.png"> -->
+                            <!-- <div id="logo1" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/frappe-min.png">
+                            <!-- <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png"> -->
+                            <!-- <div id="logo2" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/hackerEarth-min.png">
+                            <!-- <div id="logo3" class="logoinner"></div> -->
+                            <!-- <img src="assets/Sponsors_2018/s450/Mobicule-logo-min.png"> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/jetbrains-min.png">
+                            <!-- <div id="logo4" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/wolfram-language-min.png">
+                            <!-- <div id="logo5" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/temboo-logo-min.png">
+                            <!-- <div id="logo6" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/about-min.png">
+                            <!-- <div id="logo7" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/HasuraLogoHorizontal-min.png">
+                            <!-- <div id="logo8" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/bugsee-min.png">
+                            <!-- <div id="logo9" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/product-hunt-min.png">
+                            <!-- <div id="logo10" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/EnrootDark BG-min.png">
+                            <!-- <div id="logo11" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                    <div class="sponsorlogo past_hide hide">
+                        <div class="logo">
+                            <img class="lazyimage" data-src="assets/Sponsors_2018/s450/riidl-min.png">
+                            <!-- <div id="logo12" class="logoinner"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child-container" id="view-5">
+                <div id="reach">
+                    <span>FAQ</span>
+                </div>
+                <div class="faq-rect-future faq-container" style="width: 80%; margin: 0 auto; height:auto;">
+
+                    <div class="panel-group" id="accordion">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob">
+                                <div class="panel-title q q_mob">
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse1"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed opened">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What happens at a Hackathon?</span>
+                                    </div>
                                 </div>
-                        <div class="rect-future">
-                            <table id ="hetal" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Hetal Kuvadia</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Hetal.png"></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="heightspec1"><span class="textspec1">Head Co-ordinator</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/hetzz" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/hetal-kuvadia/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse faq-qans aniket_collapsible_mob in"
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob ">
+                                    Participants (“hackers”) spend 24 hours working in teams of 2 - 4 people to
+                                    build or code projects (“hacks”) they’re excited
+                                    about. There are workshops, mentors, food, swag, and buckets of coffee to guide
+                                    you along the way.
+                                    You bring your ideas, and we give you everything you need to make them come to
+                                    life.
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                            <table id ="bhuvnesh" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">&nbsp;Bhuvnesh Solanki</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Bhuvnesh.png"></td>
-                                </tr>
-                                <tr>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
 
-                                        <td class="heightspec1"><span class="textspec1">Co-ordinator</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/bhuvnesh7" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/bhuvnesh-solanki-3a8597192/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse2"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What if I've never been to a hackathon before?
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse faq-qans aniket_collapsible_mob"
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    Not to worry, We welcome students of all skill levels. We’ll have talks, mentors
+                                    and workshops to help you with your project;
+                                    hackathons can be a great place to learn new skills in a short amount of time.
+                                    Just be eager to learn,
+                                    and excited to meet lots of awesome people.
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                            <table id ="tejas" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Tejas Khanolkar</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Tejas.png"></td>
-                                </tr>
-                                <tr>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
 
-                                        <td class="heightspec1"><span class="textspec1">Co-ordinator</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/tejas2008" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/tejas-khanolkar-a04733192/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse3"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What do people normally make?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse faq-qans aniket_collapsible_mob "
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    Hacks generally fall under one (or more) of the seven cortices: Web Development,
+                                    Android, iOS, AI/ML, AR/VR, Game Development,
+                                    and Hardware.
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                            <table id ="soumya" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Soumya Parekh</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Soumya.png"></td>
-                                </tr>
-                                <tr>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
 
-                                        <td class="heightspec1"><span class="textspec1">Creative Team</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/rubyruins" class="fab fa-github" ></a>
-                                                <a href="#" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse4"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What should I bring?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse faq-qans aniket_collapsible_mob "
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    You should bring your student ID and anything you’d need for a sleepover:
+                                    laptop, charger, deodorant (!), change of clothes,
+                                    etc.. You won’t need food or drinks; we’ve got you covered there.
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                            <table id ="dev" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Dev Shah</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Dev.png"></td>
-                                </tr>
-                                <tr>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
 
-                                        <td class="heightspec1"><span class="textspec1">Creative Team</span></td>
-                                </tr>
-                                <tr>
-
-                                        <td class="socialmedia">
-
-                                                <a href="https://github.com/devshahofficial" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/dev-shah-a59965171/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse0"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What is the Code of Conduct?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse0" class="panel-collapse collapse faq-qans aniket_collapsible_mob "
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    The appropriate code of conduct is linked <a
+                                        href="https://drive.google.com/file/d/1-R1HES25QDTKarrEkZnox8EE9TvCBvin/view"
+                                        target="_blank" style="color: aqua">here</a>.
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                            <table id ="heet" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Heet Sakaria</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Heet.png"></td>
-                                </tr>
-                                <tr>
 
-                                        <td class="heightspec1"><span class="textspec1">PR Team</span></td>
-                                </tr>
-                                <tr>
 
-                                        <td class="socialmedia">
 
-                                                <a href="https://github.com/heet9022" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/heet-sakaria-a7b45b148/" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
+
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse5"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What should I not bring?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse5" class="panel-collapse collapse faq-qans aniket_collapsible_mob"
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    Weapons of any kind, drugs, or alcohol. If you’re not sure whether something
+                                    will be okay, please ask ahead of time!
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                            <table id ="sanika" >
-                                <tr>
-                                    <td class="heightspec"><span class="textspec">Sanika Bagwe</span></td>
-                                    <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Sanika.png"></td>
-                                </tr>
-                                <tr>
-                                        <td class="heightspec1"><span class="textspec1">PR Team</span></td>
-                                </tr>
-                                <tr>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
 
-                                        <td class="socialmedia">
-                                                <a href="https://github.com/sanb26" class="fab fa-github" ></a>
-                                                <a href="#" class="fab fa-linkedin" ></a>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse6"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">What are the topics and the prizes for the
+                                            Hackathon?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse6" class="panel-collapse collapse faq-qans aniket_collapsible_mob "
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    The topic and the prizes will be declared soon.So keep an eye on the
+                                    <a href="https://www.facebook.com/kjscecodecell/" target="_blank"
+                                        style="color: aqua">KJSCE-CodeCell Facebook Page</a>. Also once you've
+                                    registered with an e-mail id , we'll shoot you
+                                    a mail about further announcements
+                                </div>
+                            </div>
                         </div>
-                        <div class="rect-future">
-                                <table id ="akshay" >
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
+
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse7"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">Do you allow walk-ins?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse7" class="panel-collapse collapse faq-qans aniket_collapsible_mob "
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    We will not be allowing walk-ins. To ensure that you’ll be allowed in, please
+                                    apply ahead of time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading faq-qans aniket_collapsible_mob ">
+                                <div class="panel-title q q_mob">
+
+                                    <div data-toggle="collapse" data-parent="#accordion" href="#collapse8"
+                                        onclick="javascript:toggleshape(this);">
+                                        <div class="shape closed">
+                                            <div class="expand">
+                                                <div class="horizontal"></div>
+                                                <div class="vertical"></div>
+                                            </div>
+                                        </div>
+                                        <span class="question-text">404: Question Not Found</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="collapse8" class="panel-collapse collapse faq-qans aniket_collapsible_mob "
+                                style="  color: white;">
+                                <div class="panel-body ans ans_mob">
+                                    You can just drop a DM at any of our social network handles and we'll try our
+                                    best to answer them ASAP ;)
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="child-container" id="view-4">
+                <div id="reach">
+                    <span>Reach us</span>
+                </div>
+                <div class="call_karna">
+                    <div id="contact">
+                        <div id="map"
+                            class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom">
+                        </div>
+                    </div>
+                </div>
+                <div id="info-section">
+                    <div class="carousel">
+                        <div class="holder">
+                            <div class="rect-future">
+                                <table id="akshay">
                                     <tr>
                                         <td class="heightspec"><span class="textspec">Akshay Padte</span></td>
-                                        <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Akshay.png"></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Akshay.png"></td>
                                     </tr>
                                     <tr>
-                                            <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
+                                        <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
                                     </tr>
                                     <tr>
                                         <td class="socialmedia">
 
-                                                <a href="https://github.com/akshay-99" class="fab fa-github" ></a>
-                                                <a href="https://linkedin.com/in/akshay-padte/" class="fab fa-linkedin" ></a>
+                                            <a href="https://github.com/akshay-99" class="fab fa-github"></a>
+                                            <a href="https://linkedin.com/in/akshay-padte/" class="fab fa-linkedin"></a>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="rect-future">
-                                <table id ="rushang" >
+                                <table id="rushang">
                                     <tr>
                                         <td class="heightspec"><span class="textspec">Rushang Gajjal</span></td>
-                                        <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Rushang.png"></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Rushang.png"></td>
                                     </tr>
                                     <tr>
-                                            <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
+                                        <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
 
                                     </tr>
                                     <tr>
                                         <td class="socialmedia">
-                                                    <a href="https://github.com/RusherRG" class="fab fa-github" ></a>
-                                                    <a href="https://linkedin.com/in/rusherrg/" class="fab fa-linkedin" ></a>
+
+                                            <a href="https://github.com/RusherRG" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/rusherrg/" class="fab fa-linkedin"></a>
                                         </td>
 
                                     </tr>
                                 </table>
                             </div>
                             <div class="rect-future">
-                                <table id ="karan" >
+                                <table id="karan">
                                     <tr>
                                         <td class="heightspec"><span class="textspec">Karan Sheth</span></td>
-                                        <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Karan.png"></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Karan.png"></td>
                                     </tr>
                                     <tr>
 
-                                            <td class="heightspec1"><span class="textspec1">Tech Head</span></td>
+                                        <td class="heightspec1"><span class="textspec1">Tech Head</span></td>
                                     </tr>
                                     <tr>
 
-                                            <td class="socialmedia">
+                                        <td class="socialmedia">
 
-                                                    <a href="https://github.com/Korusuke" class="fab fa-github" ></a>
-                                                    <a href="https://linkedin.com/in/kiteretsu/" class="fab fa-linkedin" ></a>
+                                            <a href="https://github.com/Korusuke" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/kiteretsu/"
+                                                class="fab fa-linkedin"></a>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="rect-future">
-                                <table id ="aditya" >
+                                <table id="aditya">
                                     <tr>
                                         <td class="heightspec"><span class="textspec">Aditya Prajapati</span></td>
-                                        <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Aditya.jpeg"></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Aditya.jpeg"></td>
                                     </tr>
                                     <tr>
 
-                                            <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
                                     </tr>
                                     <tr>
-                                            <td class="socialmedia">
-                                                    <a href="https://github.com/Syn3rman" class="fab fa-github" ></a>
-                                                    <a href="https://www.linkedin.com/in/aditya-prajapati-129716101/" class="fab fa-linkedin" ></a>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/Syn3rman" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/aditya-prajapati-129716101/"
+                                                class="fab fa-linkedin"></a>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="rect-future">
-                                <table id ="vedant" >
+                                <table id="vedant">
                                     <tr>
                                         <td class="heightspec"><span class="textspec">Vedant Shroff</span></td>
-                                        <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Vedant.png"></td>
-                                    </tr>
-                                    <tr>
-                                            <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Vedant.png"></td>
                                     </tr>
                                     <tr>
 
-                                            <td class="socialmedia">
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
 
-                                                <a href="https://github.com/vedant-shroff" class="fab fa-github" ></a>
-                                                <a href="https://www.linkedin.com/in/vedant-shroff-31015615a/?originalSubdomain=in" class="fab fa-linkedin" ></a>
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/vedant-shroff" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/vedant-shroff-31015615a/?originalSubdomain=in"
+                                                class="fab fa-linkedin"></a>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="rect-future">
-                                    <table id ="nachiket" >
-                                        <tr>
-                                            <td class="heightspec"><span class="textspec">Nachiket Bhuta</span></td>
-                                            <td rowspan="3"><img class="lazyimage" data-src="assets/team/compressed/Nachiket.jpeg"></td>
-                                        </tr>
-                                        <tr>
-                                                <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
-                                        </tr>
-                                        <tr>
-                                                <td class="socialmedia">
-                                                        <a href="https://github.com/nachiketbhuta" class="fab fa-github" >
-                                                        <a href="https://www.linkedin.com/in/nachiket-bhuta-3061ba144/" class="fab fa-linkedin" ></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                <table id="nachiket">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Nachiket Bhuta</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Nachiket.jpeg"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/nachiketbhuta" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/nachiket-bhuta-3061ba144/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="rect-future">
+                                <table id="aniket">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Aniket Bhosale</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Aniket.jpeg"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/aniket15b" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/aniket-bhosale-548a51175"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="kevin">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Kevin Shah</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Kevin.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/KevinShahgit" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/reach-shah-kevin/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="hetal">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Hetal Kuvadia</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Hetal.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Head Co-ordinator</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/hetzz" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/hetal-kuvadia/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="bhuvnesh">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">&nbsp;Bhuvnesh Solanki</span>
+                                        </td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Bhuvnesh.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Co-ordinator</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/bhuvnesh7" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/bhuvnesh-solanki-3a8597192/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="tejas">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Tejas Khanolkar</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Tejas.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Co-ordinator</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/tejas2008" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/tejas-khanolkar-a04733192/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="soumya">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Soumya Parekh</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Soumya.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Creative Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/rubyruins" class="fab fa-github"></a>
+                                            <a href="#" class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="dev">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Dev Shah</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Dev.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Creative Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/devshahofficial" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/dev-shah-a59965171/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="heet">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Heet Sakaria</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Heet.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">PR Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/heet9022" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/heet-sakaria-a7b45b148/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="sanika">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Sanika Bagwe</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Sanika.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heightspec1"><span class="textspec1">PR Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+                                            <a href="https://github.com/sanb26" class="fab fa-github"></a>
+                                            <a href="#" class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="akshay">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Akshay Padte</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Akshay.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/akshay-99" class="fab fa-github"></a>
+                                            <a href="https://linkedin.com/in/akshay-padte/" class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="rushang">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Rushang Gajjal</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Rushang.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heightspec1"><span class="textspec1">Committee Head</span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="socialmedia">
+                                            <a href="https://github.com/RusherRG" class="fab fa-github"></a>
+                                            <a href="https://linkedin.com/in/rusherrg/" class="fab fa-linkedin"></a>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="karan">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Karan Sheth</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Karan.png"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Tech Head</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/Korusuke" class="fab fa-github"></a>
+                                            <a href="https://linkedin.com/in/kiteretsu/" class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="aditya">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Aditya Prajapati</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Aditya.jpeg"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="socialmedia">
+                                            <a href="https://github.com/Syn3rman" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/aditya-prajapati-129716101/"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="vedant">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Vedant Shroff</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Vedant.png"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="socialmedia">
+
+                                            <a href="https://github.com/vedant-shroff" class="fab fa-github"></a>
+                                            <a href="https://www.linkedin.com/in/vedant-shroff-31015615a/?originalSubdomain=in"
+                                                class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="rect-future">
+                                <table id="nachiket">
+                                    <tr>
+                                        <td class="heightspec"><span class="textspec">Nachiket Bhuta</span></td>
+                                        <td rowspan="3"><img class="lazyimage"
+                                                data-src="assets/team/compressed/Nachiket.jpeg"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heightspec1"><span class="textspec1">Tech Team</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="socialmedia">
+                                            <a href="https://github.com/nachiketbhuta" class="fab fa-github">
+                                                <a href="https://www.linkedin.com/in/nachiket-bhuta-3061ba144/"
+                                                    class="fab fa-linkedin"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="contact_shelf">
-                <div align="center" class="socialbtns">
-                    <ul>
-                        <li><a href="mailto:codecell.engg@somaiya.edu?Subject=KJSCE%20Hack%202K19" class="fas fa-inbox"></a></li>
-                        <li><a href="https://www.facebook.com/kjscecodecell/" class="fab fa-facebook"></a></li>
-                        <li><a href="https://twitter.com/kjsce_codecell?lang=en" class="fab fa-twitter"></a></li>
-                        <li><a href="https://github.com/KJSCE-Codecell" class="fab fa-github"></a></li>
-                        <li><a href="https://www.linkedin.com/company/kjscecodecell/about/" class="fab fa-linkedin"></a></li>
-                        <li><a href="https://www.instagram.com/kjsce_codecell/?hl=en" class="fab fa-instagram"></a></li>
-                    </ul>
+                <div id="contact_shelf">
+                    <div align="center" class="socialbtns">
+                        <ul>
+                            <li><a href="mailto:codecell.engg@somaiya.edu?Subject=KJSCE%20Hack%202K19"
+                                    class="fas fa-inbox"></a></li>
+                            <li><a href="https://www.facebook.com/kjscecodecell/" class="fab fa-facebook"></a></li>
+                            <li><a href="https://twitter.com/kjsce_codecell?lang=en" class="fab fa-twitter"></a>
+                            </li>
+                            <li><a href="https://github.com/KJSCE-Codecell" class="fab fa-github"></a></li>
+                            <li><a href="https://www.linkedin.com/company/kjscecodecell/about/"
+                                    class="fab fa-linkedin"></a></li>
+                            <li><a href="https://www.instagram.com/kjsce_codecell/?hl=en" class="fab fa-instagram"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shelf">
+                    </div>
                 </div>
-                <div class="shelf">
+                <div id="made_by">
+                    <span>Made with <i class="fas fa-heart heart"></i> by <a
+                            href="http://www.kjscecodecell.com/">CodeCell</a></span>
                 </div>
             </div>
-            <div id="made_by">
-                <span>Made with <i class="fas fa-heart heart"></i> by <a href="http://www.kjscecodecell.com/">CodeCell</a></span>
-            </div>
+            <!-- <div class="child-container"></div> -->
         </div>
-        <!-- <div class="child-container"></div> -->
-    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/compressed.js"></script>
@@ -1033,8 +1226,8 @@
     <script src="js/rocket.js"></script>
     <script src="js/subscribe.js"></script>
     <script src="js/typewriter.js"></script>
-    <script src="js/video.js"></script> -->
-    <!-- <script src="js/sponsor.js"></script> -->
+    <script src="js/video.js"></script>
+    <script src="js/sponsor.js"></script> -->
 </body>
 
 </html>
