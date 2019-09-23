@@ -208,10 +208,6 @@
         grid-column: 4 / span 3;
     }
 
-    .sponsorlogonew{
-        grid-column: 2 / span 10;
-    }
-
     .tier{
         font-size: 20px;
     }
@@ -285,8 +281,4 @@
 
       }
 
-
-    .patronrow{
-        grid-column: auto/span 12;
-    }
 }

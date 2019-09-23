@@ -1,0 +1,37 @@
+.sponsorlogonew{
+    width: 100%;
+    border-color: aqua;
+    font-size: 2vw;
+    text-align: center;
+    font-size:50px;
+    display:grid;
+    grid-column: 5 / span 4;
+}
+
+.sponsor_patron_row{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap: 50px;
+}
+
+.patronrow{
+    grid-column: auto/span 12;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .sponsorlogonew{
+        grid-column: 2 / span 10;
+    }
+
+    .sponsor_patron_row{
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+        grid-gap: 50px;
+    }
+
+    .patronrow{
+        grid-column: auto/span 12;
+    }
+}

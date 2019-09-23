@@ -265,16 +265,6 @@ a:hover{
 }
 
 
-.sponsorlogonew{
-    width: 100%;
-    border-color: aqua;
-    font-size: 2vw;
-    text-align: center;
-    font-size:50px;
-    display:grid;
-    grid-column: 5 / span 4;
-}
-
 .sponsor-rect-future{
     width:80%;
     background-image: linear-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.25));
@@ -487,8 +477,4 @@ a:hover{
 
 svg.logo{
     fill: white;
-}
-
-.patronrow{
-    grid-column: 3/span 8;
 }

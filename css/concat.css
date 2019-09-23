@@ -503,16 +503,6 @@ a:hover{
 }
 
 
-.sponsorlogonew{
-    width: 100%;
-    border-color: aqua;
-    font-size: 2vw;
-    text-align: center;
-    font-size:50px;
-    display:grid;
-    grid-column: 5 / span 4;
-}
-
 .sponsor-rect-future{
     width:80%;
     background-image: linear-gradient(rgba(0,255,255,0.05),rgba(0, 255, 255, 0.25));
@@ -727,9 +717,6 @@ svg.logo{
     fill: white;
 }
 
-.patronrow{
-    grid-column: 3/span 8;
-}
 
 .leaflet-popup-content-wrapper {
     background-image: linear-gradient(rgba(0,255,255,0.25),rgba(0, 255, 255, 0.5)) !important;
@@ -1356,10 +1343,6 @@ font-weight:bolder;
         grid-column: 4 / span 3;
     }
 
-    .sponsorlogonew{
-        grid-column: 2 / span 10;
-    }
-
     .tier{
         font-size: 20px;
     }
@@ -1434,9 +1417,7 @@ font-weight:bolder;
       }
 
 
-.patronrow{
-    grid-column: auto/span 12;
-}
+
 }
 
 
