@@ -6,7 +6,7 @@
 
   
   #info-section .holder {
-    width: calc(366px * 21);
+    width: calc(366px * 24);
     animation: movement 100s linear infinite;
     /* -webkit-animation: move 100s linear infinite;
     -o-animation: move 100s linear infinite;
@@ -147,7 +147,7 @@
   }
   @keyframes movement {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(calc(-366px * 15)) }
+    100% { transform: translateX(calc(-366px * 18)) }
   }
 
 tbody > tr:nth-child(2) > td{
