@@ -69,7 +69,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color:black;
+
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -80,6 +81,10 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+}
+
+#navcontent{
+  color: white;
 }
 
 h1,

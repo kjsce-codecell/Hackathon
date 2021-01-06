@@ -30,6 +30,10 @@ body {
   background-color: black;
 }
 
+.nav-link{
+  color: white;
+}
+
 a {
   color: #526bf5;
 }
