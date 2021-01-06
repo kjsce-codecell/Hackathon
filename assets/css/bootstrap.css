@@ -73,6 +73,34 @@ body {
 
 }
 
+/* stats */
+
+#stats{
+  margin-top: 80px;
+  padding: 0 150px;
+}
+
+.end { margin-right: 0 !important; }
+/* Column Grids End */
+
+.wrapper {  position: relative; }
+.counter {  padding: 40px; background-color: rgba(129, 129, 129, 0.11); border-radius: 20px; }
+.count-title { font-size: 40px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
+.count-text { font-size: 13px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
+.fa-2x { margin: 0 auto; float: none; display: table; color: #4ad1e5; }
+
+@media only screen and (max-width: 600px) {
+  .counter {  
+    padding: 50px; 
+    background-color: rgba(129, 129, 129, 0.384); 
+    border-radius: 20px; 
+  }
+  #stats { 
+    padding: 40px;
+  }
+}
+/* stats ends */
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -10574,6 +10602,8 @@ button.bg-dark:focus {
   .text-md-center {
     text-align: center !important;
   }
+
+
 }
 
 @media (min-width: 992px) {
