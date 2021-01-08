@@ -2316,8 +2316,8 @@ section {
 .card-page {
   position: relative;
   padding: 20px;
-  background-color: #fff;
-  color: #6b6872;
+  background-color: rgba(104, 104, 104, 0.425);
+  color: #ded0ff;
   border-radius: 4px;
   box-shadow: 0 2px 12px rgba(95, 90, 104, 0.12);
 }
