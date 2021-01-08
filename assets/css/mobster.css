@@ -2322,6 +2322,10 @@ section {
   box-shadow: 0 2px 12px rgba(95, 90, 104, 0.12);
 }
 
+.team-name{
+  color: white;
+}
+
 .card-page hr {
   margin-left: -20px;
   margin-right: -20px;
