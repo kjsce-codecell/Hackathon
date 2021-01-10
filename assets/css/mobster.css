@@ -5,6 +5,11 @@
  * License under CC 4.0 ()
  */
 
+ .row{
+  margin: 0px auto;
+  padding: 10px 0px;
+ }
+
 :root {
   --primary: #3D58F3;
   --secondary: #A52EFF;
