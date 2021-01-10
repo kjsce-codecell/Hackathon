@@ -1,16 +1,16 @@
 {
-  "name": "cube_code",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": {
-    "name": "Neelansh Mathur"
-  },
-  "scripts": {
-    "build": "webpack",
-    "build:watch": "webpack --watch"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "three": "^0.124.0"
-  }
+    "name": "cube_code",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": {
+        "name": "Neelansh Mathur"
+    },
+    "scripts": {
+        "build": "webpack",
+        "build:watch": "webpack --watch"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "three": "^0.124.0"
+    }
 }
