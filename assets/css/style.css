@@ -1,0 +1,19 @@
+
+/* Animated Neon text-shadows */
+.animate-text-shadow{
+    text-shadow: 0 0 1vw #99e6ff;
+    animation-name: animate_text_shadow;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes animate_text_shadow{
+    from{
+        text-shadow: 0 0 1vw #99e6ff;
+    }
+    to{
+        text-shadow: 0 0 0.6vw #c3f0ff;
+    }
+}
