@@ -457,14 +457,14 @@
 							<div class="text-center wow fadeIn">
 								<h2 class="mb-4">Sponsors</h2>
 								<div class="button-container">
-									<button class="btn btn-outline-secondary" id="prev-sp">Previous Sponsors</button>
-									<button class="btn btn-outline-secondary active" id="prev-sp">Our Sponsors</button>
+									<button class="sponsor-button" id="prev-sp">Previous Sponsors</button>
+									<button class="sponsor-button clicked-button" id="prev-sp">Our Sponsors</button>
 								</div>
 								<hr class="sep-line">
 							</div>
 							<div class="inner-container">
 								<!-- prev sponsors -->
-								<div id="previous-sponsors">
+								<div class="previous-sponsors hidden">
 									<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center align-items-center mt-5">
 										<div class="p-3 wow zoomIn">
 											<div class="img-place client-img">
@@ -510,7 +510,7 @@
 								</div>
 								
 								<!-- current sponsors -->
-								<div id="current-sponsors">
+								<div class="current-sponsors">
 									<div class="sponsor-header"><h3>Our Partner</h3></div>
 									<div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 justify-content-center align-items-center">
 										<div class="p-3 wow zoomIn">
@@ -930,6 +930,8 @@
 		<!-- ParticleJS, Codecell -->
 		<script src="../assets/js/particles.min.js"></script>
 		<script src="../assets/js/load_particles.js"></script>
+		<!-- Custom, CodeCell -->
+		<script src="../assets/js/sponsors.js"></script>
 
 		<!-- Cube in ThreeJS -->
 		<!-- <script src="../assets/js/cube_code/dist/main.js"></script> -->

@@ -54,6 +54,23 @@ h3{
 	margin-bottom: 0;
 }
 
+.hidden{
+	display: none;
+}
+
+.sponsor-button{
+	border: 1px solid palevioletred;
+	color: palevioletred;
+	background-color: transparent;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.clicked-button{
+	color: white;
+	background-color: palevioletred;
+}
+
 /* #previous-sponsors{
 	display: block;
 }
