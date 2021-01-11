@@ -10,6 +10,8 @@
   padding: 10px 0px;
  }
 
+ 
+
 :root {
   --primary: #3D58F3;
   --secondary: #A52EFF;
@@ -2136,9 +2138,6 @@ section {
 }
 
 @media (min-width: 992px) {
-  .navbar-expand-lg.navbar-floating {
-    top: 20px;
-  }
 
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 16px;
