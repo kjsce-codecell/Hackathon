@@ -1,4 +1,3 @@
-
 /* Animated Neon text-shadows */
 .animate-text-shadow{
     text-shadow: 0 0 1vw #99e6ff;
@@ -15,4 +14,16 @@
     to{
         text-shadow: 0 0 0.6vw #c3f0ff;
     }
+}
+
+/* sponsors section */
+.sponsor-container-wrapper{
+	align-content: center;
+}
+
+.sponsor-container{
+	width: 90%;
+	margin: auto;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 1rem;
 }
