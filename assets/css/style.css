@@ -19,11 +19,53 @@
 /* sponsors section */
 .sponsor-container-wrapper{
 	align-content: center;
+	text-align: center;
 }
 
 .sponsor-container{
+	align-content: center;
+	text-align: center;
 	width: 90%;
 	margin: auto;
 	background-color: rgba(0,0,0,0.5);
 	border-radius: 1rem;
+}
+
+.inner-container{
+	margin: auto;
+	align-content: center;
+	text-align: center;
+	width: 90%;
+}
+
+hr.sep-line {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+.sponsor-header{
+	text-align: center;
+	margin-bottom: 0;
+	margin-top: 2rem;
+}
+
+h3{
+	margin-bottom: 0;
+}
+
+/* #previous-sponsors{
+	display: block;
+}
+
+#current-sponsors{
+	display: none;
+} */
+
+#previous-sponsors{
+	display: none;
+}
+
+#current-sponsors{
+	display: block;
 }
