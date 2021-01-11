@@ -8,7 +8,6 @@
     animation-iteration-count: infinite;
 }
 
-
 @keyframes animate_text_shadow{
     from{
         text-shadow: 0 0 1vw #99e6ff;
