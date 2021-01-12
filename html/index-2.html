@@ -22,7 +22,74 @@
 
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
   <link rel="stylesheet" href="../assets/css/mobster.css">
+  <style>
+    .faq-container{
+      width: 50%;
+      padding: 3%;
+      background: rgba(255, 255, 255, 0.1);
+      margin: auto;
+      font-size: 18px;
+      border: 1px solid gray;    
+    }
+    .question {
+      color: #fff;
+      position: relative;
+      background: transparent;
+      margin: 0;
+      padding: 10px 10px 10px 50px;
+      display: block;
+      width:100%;
+      cursor: pointer;
+    }
+
+    .answers {
+      font-weight:300;
+      background: transparent;
+      padding: 0px 15px;
+      margin: 0px 0;
+      height: 0;
+      overflow: hidden;
+      z-index: -1;
+      position: relative;
+      opacity: 0;
+      transition: .7s ease;
+    }
+
+    .answers p{
+      margin-left: 25px;
+      padding-left: 15px;
+      font-size: 16px;
+      border-left: 5px solid silver;
+    }
+
+    .questions:checked ~ .answers{
+      height: auto;
+      opacity: 1;
+      padding: 15px;
+    }
+
+    .plus {
+      color:#fff;
+      position: absolute;
+      margin-left: 10px;
+      margin-top: 5px;
+      z-index: 5;
+      font-size: 2.25em;
+      line-height: 100%;
+      user-select: none;
+      transition: .3s ease;
+    }
+
+    .questions:checked ~ .plus {
+      transform: rotate(225deg);
+    }
+
+    .questions {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -140,6 +207,71 @@
         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia repellendus illo, possimus magni cumque, voluptatem et necessitatibus consequatur perspiciatis laborum temporibus sint dolorem porro, eaque quo sequi. Tempora, voluptates quibusdam?</p>
         <a href="#" class="btn btn-outline-primary rounded-pill">See Addons</a>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="faq-container wow fadeInUp">
+  <div>
+    <input type="checkbox" id="question1" name="q"  class="questions">
+    <div class="plus">+</div>
+    <label for="question1" class="question">
+      What happens at an Online Hackathon?
+    </label>
+    <div class="answers">
+      <p> Participants (“hackers”) spend 24 hours working in teams of 2 - 4 people to build or code projects (“hacks”) they’re excited about. There are workshops, mentors and mini-events to guide you along the way. You bring your ideas, and we give you everything you need to make them come to life. </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="question2" name="q"  class="questions">
+    <div class="plus">+</div>
+    <label for="question2" class="question">
+      What do people normally make?
+    </label>
+    <div class="answers">
+      <p>Hacks generally fall under one (or more) of the seven cortices: Web Development, Android, iOS, AI/ML, AR/VR, Game Development, and Hardware. </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="question3" name="q"  class="questions">
+    <div class="plus">+</div>
+    <label for="question3" class="question">
+      What is the Code of Conduct?
+    </label>
+    <div class="answers">
+      <p>The appropriate code of conduct is linked <a href="https://drive.google.com/file/d/1-R1HES25QDTKarrEkZnox8EE9TvCBvin/view" class="coc">here</a>.</p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="question4" name="q"  class="questions">
+    <div class="plus">+</div>
+    <label for="question4" class="question">
+      What are the topics and the prizes for the Hackathon?
+    </label>
+    <div class="answers">
+      <p>The topic and the prizes will be declared soon.So keep an eye on the <a href="https://www.facebook.com/kjscecodecell/">KJSCE-CodeCell Facebook Page</a>. Also once you've registered with an e-mail id , we'll shoot you a mail about further announcements
+      </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="question5" name="q"  class="questions">
+    <div class="plus">+</div>
+    <label for="question5" class="question">
+      404: Question Not Found
+    </label>
+    <div class="answers">
+      <p>You can just drop a DM at any of our social network handles and we'll try our best to answer them ASAP ;)</p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="question6" name="q"  class="questions">
+    <div class="plus">+</div>
+    <label for="question6" class="question">
+      What if I've never been to a hackathon before?
+    </label>
+    <div class="answers">
+      <p>Not to worry, We welcome students of all skill levels. We’ll have talks, mentors and workshops to help you with your project; hackathons can be a great place to learn new skills in a short amount of time. Just be eager to learn, and excited to meet lots of awesome people.</p>
     </div>
   </div>
 </div>
@@ -549,6 +681,7 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/mobster.js"></script>
+<script src="../script.js"></script>
 
 </body>
 </html>
