@@ -121,20 +121,15 @@ button:focus {
   /* width: 240px; */
 }
 
-.btn {
-  /* letter-spacing: 0.1em; */
-  /* cursor: pointer; */
-  /* font-size: 14px; */
-  /* font-weight: 400; */
-  /* line-height: 45px; */
-  /* max-width: 160px; */
+.sp-btn {
   width: 10rem;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+  padding: 0.5rem 1rem;
 }
-.btn:hover {
+.sp-btn:hover {
   text-decoration: none;
 }
 
