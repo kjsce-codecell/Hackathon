@@ -231,7 +231,7 @@ hr {
 }
 
 
-/* Width and Height */
+
 @media (min-width: 576px) {
   .w-sm-25 {
     width: 25% !important;
@@ -368,7 +368,7 @@ hr {
   }
 }
 
-/* Shadow */
+
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(56, 51, 64, 0.1) !important;
 }
@@ -388,7 +388,7 @@ hr {
   box-shadow: none !important;
 }
 
-/* Margin */
+
 .m-6 {
   margin: 4rem !important;
 }
@@ -757,7 +757,7 @@ hr {
   }
 }
 
-/* Padding */
+
 .p-6 {
   padding: 4rem !important;
 }
@@ -1126,7 +1126,7 @@ hr {
   }
 }
 
-/* Image */
+
 .bg-image {
   background-size: cover;
   background-position: center center;
@@ -1297,7 +1297,7 @@ section {
   flex-basis: calc(100% - 100px);
 }
 
-/* List */
+
 .theme-list {
   position: relative;
   padding-left: 16px;
@@ -1323,7 +1323,7 @@ section {
   transform: translateY(4px);
 }
 
-/* Accordion */
+
 .accordion {
   position: relative;
   display: block;
@@ -1411,7 +1411,7 @@ section {
   border-radius: 4px;
 }
 
-/* Buttons */
+
 .btn {
   padding: 10px 24px;
   border-width: 2px;
@@ -2069,7 +2069,7 @@ section {
   border-bottom-left-radius: 0;
 }
 
-/* Breadcrumb */
+
 .breadcrumb {
   background-color: #F0EEF5;
 }
@@ -2107,14 +2107,14 @@ section {
   color: #fff;
 }
 
-/* Input */
+
 .form-control {
   padding-top: 10px;
   padding-bottom: 10px;
   height: unset;
 }
 
-/* Navbar */
+
 .navbar-floating {
   position: absolute;
   top: 0;
@@ -2186,7 +2186,7 @@ section {
 .page-section:not(.fg-white) h1,
 .page-section:not(.fg-white) h2,
 .page-section:not(.fg-white) h3 {
-  /* color: #6b6872; */
+
   color : white;
 }
 
@@ -2407,7 +2407,7 @@ section {
 
 
 
-/* Pricing Table */
+
 
 .pricing-table {
   position: relative;
@@ -2478,7 +2478,7 @@ section {
   }
 }
 
-/* Carousel */
+
 
 .stack-carousel .owl-item {
   padding: 50px 12px;
@@ -2514,7 +2514,7 @@ section {
   min-height: 500px;
 }
 
-/* Teams */
+
 .team-item {
   display: block;
   text-align: center;
@@ -2540,7 +2540,7 @@ section {
 
 
 
-/* Blog */
+
 .blog-entry {
   position: relative;
   padding: 24px 0;
@@ -2675,7 +2675,7 @@ section {
 }
 
 
-/* Widget */
+
 .widget-wrap {
   position: relative;
   display: block;
@@ -2812,7 +2812,7 @@ section {
 }
 
 
-/* Comments */
+
 .comment-area {
   display: block;
   padding: 20px 16px;
@@ -2903,3 +2903,184 @@ section {
 .team{
   color:#b4b6bd !important;
 }
+
+/* Loader Animation */
+
+#btn--yp {
+  box-sizing: content-box;
+  position: fixed;
+  z-index: 9;
+  bottom: 1em;
+  right: 1em;
+  border: solid 1em transparent;
+  width: 4.625em;
+  height: 3.25em;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/icon-yp.svg) 50%/cover content-box;
+  font: 16px/1.25 trebuchet ms, sans-serif;
+  text-indent: 200vw;
+  text-shadow: none;
+  filter: grayscale(1) drop-shadow(0 0 1px #e8e0e0);
+  transition: 0.5s;
+  white-space: nowrap;
+}
+#btn--yp:before {
+  box-sizing: inherit;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin: 1em -0.5em;
+  padding: 0.5em;
+  width: 100%;
+  border-radius: 5px;
+  background: #e8e0e0;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0vw;
+  white-space: normal;
+  animation: float 1s ease-in-out infinite alternate;
+  content: attr(data-txt);
+}
+#btn--yp:hover, #btn--yp:focus {
+  outline: none;
+  filter: grayscale(0) drop-shadow(0 0 1px crimson);
+}
+
+@keyframes float {
+  to {
+    transform: translateY(0.75em);
+  }
+}
+loader {
+	position : fixed;
+	display : none;
+	top : 0;
+	height :100vh;
+  grid-template: 12em/10em;
+  place-content: center;
+  overflow: hidden;
+  margin: 0;
+  z-index: 100;
+  background: #262626;
+  font: 20vmin/1 lalezar, sans-serif;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+loader, loader *, loader ::before, loader ::after {
+  display: grid;
+  grid-area: 1/1;
+}
+
+.scene {
+  overflow: hidden;
+  clip-path: inset(0 round 5px);
+  filter: contrast(0.85);
+}
+.scene::before {
+  background: "#dbdde4";
+  content: "";
+}
+
+.rotor {
+  place-self: center;
+  width: 150%;
+  height: 150%;
+  grid-template-rows: 1fr 1fr;
+  mix-blend-mode: multiply;
+  animation: rotz 4s ease-in infinite;
+}
+
+@keyframes rotz {
+  40%, 50% {
+    transform: rotate(0.5turn);
+  }
+  90%, 100% {
+    transform: rotate(1turn);
+  }
+}
+.year {
+  --i: 1;
+  --not-i: calc(1 - var(--i));
+  --not-k: calc(1 - var(--k));
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: rotate(calc(var(--k)*.5turn));
+  background: hsla(0, 0%, calc(var(--k)*100%), var(--i));
+  color: hsla(0, 0%, calc(var(--not-k)*100%), var(--i));
+  text-shadow: 0 0 calc(var(--not-i)*19px) hsl(0, 0%, calc(var(--not-k)*100%));
+  text-decoration: none;
+}
+
+[aria-hidden=true] {
+  --i: 0 ;
+}
+
+del {
+  --k: 0;
+  mix-blend-mode: screen;
+}
+
+ins {
+  --k: 1;
+  mix-blend-mode: multiply;
+}
+
+time {
+  place-self: end center;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.25em;
+  height: 6em;
+  background: inherit;
+  animation: move 4s ease-in infinite, blob calc(var(--i)*2s) ease-out infinite alternate;
+  animation-delay: calc(var(--k)*-2s);
+}
+time::before, time::after {
+  display: grid;
+  align-items: end;
+  height: 100%;
+  content: "";
+}
+
+@keyframes move {
+  40%, 50% {
+    transform: translatey(calc(1ch + 19px));
+  }
+  0%, 90%, 100% {
+    transform: translatey(1px);
+  }
+}
+@keyframes blob {
+  80%, 100% {
+    filter: blur(13px) contrast(39);
+  }
+}
+.popOver {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #d9dfe5;
+    animation: bummer 2s;
+    animation: bummer 2s;
+    animation-delay: 4s;
+    animation-delay: 4s;
+    transform: scale(1,1); 
+    transform: scale(1,1);
+    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; /* Add this so that your modal doesn't 
+                                      close after the animation completes */
+                                      
+ 
+}
+
+@keyframes bummer {
+    100% {
+        transform: scale(2.5,2.5); 
+    }
+}
+
+@keyframes bummer {
+    100% {
+        transform: scale(2.5,2.5); 
+    }
+}
+
