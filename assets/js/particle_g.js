@@ -17,7 +17,7 @@ $(document).ready(function() {
 	minSpeedY: 0.05,
 	maxSpeedX: 0.05,
 	maxSpeedY: 0.05,
-	density: 5000,
+	density: 6000,
 	particleRadius: 5,
 	lineWidth: 0.15,
 	proximity: 70,

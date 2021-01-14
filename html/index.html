@@ -50,7 +50,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="loading()">
 		
 		<!-- Loading Animation -->
 		<loader>
@@ -72,7 +72,7 @@
 		<!-- Threejs Container for Cube -->
 		<!-- <div id="cube" style="height: 100vh; width: 100%;"></div> -->
 
-		<section class="d-flex justify-content-center align-items-center">
+		<section data-background-color="white" class="section d-flex justify-content-center align-items-center">
 			<!-- Glitch Text -->
 			<div class="glitch-wrapper">
                 <h1 class="glitch" data-text="KJSCE HACK 5.0">KJSCE HACK 5.0</h1>
@@ -1187,6 +1187,13 @@
 			$("header").append("<div class='glitch-window'></div>");
 			//fill div with clone of real header
 			$("h1.glitched").clone().appendTo(".glitch-window");
+		</script>
+		
+		<script>
+			function loading() {
+				console.log("loading");
+				$("loader").fadeOut("slow");
+			}
 		</script>
 	</body>
 </html>

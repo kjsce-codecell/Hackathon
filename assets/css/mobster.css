@@ -95,9 +95,9 @@ hr {
     border-color: #e4e1eb;
 }
 
-.no-transform {
-    -webkit-transform: none !important;
-    transform: none !important;
+.no--webkit-transform {
+  -webkit--webkit-transform: none !important;
+  -webkit-transform: none !important;
 }
 
 .no-scroll {
@@ -1174,8 +1174,8 @@ section {
 }
 #clock {
     animation: clock 5s infinite linear;
-    transform-origin: bottom;
-    transform-box: fill-box;
+    -webkit-transform-origin: bottom;
+    -webkit-transform-box: fill-box;
 }
 @keyframes logo {
     from {
@@ -1186,11 +1186,11 @@ section {
     }
 }
 @keyframes clock {
-    to {
-        transform: rotateZ(0deg);
+    to{
+        -webkit-transform: rotateZ(0deg);
     }
-    from {
-        transform: rotateZ(360deg);
+    from{
+        -webkit-transform: rotateZ(360deg);
     }
 }
 
@@ -1317,17 +1317,17 @@ section {
 }
 
 .theme-list .list-item::before {
-    content: "";
-    display: inline-block;
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(96, 47, 218, 0.16);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.568' height='7.818' viewBox='0 0 11.568 7.818'%3E%3Cpath id='Path_56' data-name='Path 56' d='M573,3671.99l4.2,2.76,5.55-6.25' transform='translate(-572.1 -3667.582)' fill='none' stroke='%23602fda' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.3'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    border-radius: 50%;
-    transform: translateY(4px);
+  content: '';
+  display: inline-block;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(96, 47, 218, 0.16);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.568' height='7.818' viewBox='0 0 11.568 7.818'%3E%3Cpath id='Path_56' data-name='Path 56' d='M573,3671.99l4.2,2.76,5.55-6.25' -webkit-transform='translate(-572.1 -3667.582)' fill='none' stroke='%23602fda' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+  -webkit-transform: translateY(4px);
 }
 
 .accordion {
@@ -1395,8 +1395,8 @@ section {
 }
 
 .accordion-item .btn:not(.collapsed)::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z'/%3E%3C/svg%3E");
-    transform: rotate(-180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z'/%3E%3C/svg%3E");
+  -webkit-transform: rotate(-180deg);
 }
 
 .accordion-content {
@@ -2268,17 +2268,15 @@ section {
 }
 
 @keyframes bounceLimit {
-    0%,
-    50%,
-    100% {
-        transform: translateY(0);
-    }
-    25% {
-        transform: translateY(4px);
-    }
-    75% {
-        transform: translateY(-4px);
-    }
+  0%, 50%, 100% {
+    -webkit-transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(4px);
+  }
+  75% {
+    -webkit-transform: translateY(-4px);
+  }
 }
 
 .mobile-preview {
@@ -2457,8 +2455,8 @@ section {
 }
 
 .pricing-item:not(.active) .theme-list .list-item::before {
-    background-color: rgba(95, 90, 104, 0.16);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.568' height='7.818' viewBox='0 0 11.568 7.818'%3E%3Cpath id='Path_56' data-name='Path 56' d='M573,3671.99l4.2,2.76,5.55-6.25' transform='translate(-572.1 -3667.582)' fill='none' stroke='%235F5A68' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.3'/%3E%3C/svg%3E");
+  background-color: rgba(95, 90, 104, 0.16);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.568' height='7.818' viewBox='0 0 11.568 7.818'%3E%3Cpath id='Path_56' data-name='Path 56' d='M573,3671.99l4.2,2.76,5.55-6.25' -webkit-transform='translate(-572.1 -3667.582)' fill='none' stroke='%235F5A68' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.3'/%3E%3C/svg%3E");
 }
 
 .btn-switch .btn {
@@ -2479,12 +2477,12 @@ section {
 }
 
 @media (min-width: 992px) {
-    .pricing-table {
-        flex-wrap: nowrap;
-    }
-    .pricing-item.active {
-        transform: translateY(-50px);
-    }
+  .pricing-table {
+    flex-wrap: nowrap;
+  }
+  .pricing-item.active {
+    -webkit-transform: translateY(-50px);
+  }
 }
 
 .stack-carousel .owl-item {
@@ -2494,9 +2492,9 @@ section {
 }
 
 .stack-carousel .owl-item.center {
-    transform: scale(1.2);
-    opacity: 1;
-    z-index: 3;
+  -webkit-transform: scale(1.2);
+  opacity: 1;
+  z-index: 3;
 }
 
 .stack-carousel .item {
@@ -2863,11 +2861,11 @@ section {
 }
 
 .comment-list li .comment-body .meta {
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-    color: #ada8b4;
+  text--webkit-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .1em;
+  margin-bottom: 16px;
+  color: #ADA8B4;
 }
 
 .comment-list li .comment-body .reply {
@@ -2944,9 +2942,9 @@ section {
 }
 
 @keyframes float {
-    to {
-        transform: translateY(0.75em);
-    }
+  to {
+    -webkit-transform: translateY(0.75em);
+  }
 }
 loader {
     position: fixed;
@@ -2992,27 +2990,24 @@ loader ::after {
 }
 
 @keyframes rotz {
-    40%,
-    50% {
-        transform: rotate(0.5turn);
-    }
-    90%,
-    100% {
-        transform: rotate(1turn);
-    }
+  40%, 50% {
+    -webkit-transform: rotate(0.5turn);
+  }
+  90%, 100% {
+    -webkit-transform: rotate(1turn);
+  }
 }
 .year {
-    --i: 1;
-    --not-i: calc(1 - var(--i));
-    --not-k: calc(1 - var(--k));
-    overflow: hidden;
-    transform-origin: 50% 100%;
-    transform: rotate(calc(var(--k) * 0.5turn));
-    background: hsla(0, 0%, calc(var(--k) * 100%), var(--i));
-    color: hsla(0, 0%, calc(var(--not-k) * 100%), var(--i));
-    text-shadow: 0 0 calc(var(--not-i) * 19px)
-        hsl(0, 0%, calc(var(--not-k) * 100%));
-    text-decoration: none;
+  --i: 1;
+  --not-i: calc(1 - var(--i));
+  --not-k: calc(1 - var(--k));
+  overflow: hidden;
+  -webkit-transform-origin: 50% 100%;
+  -webkit-transform: rotate(calc(var(--k)*.5turn));
+  background: hsla(0, 0%, calc(var(--k)*100%), var(--i));
+  color: hsla(0, 0%, calc(var(--not-k)*100%), var(--i));
+  text-shadow: 0 0 calc(var(--not-i)*19px) hsl(0, 0%, calc(var(--not-k)*100%));
+  text-decoration: none;
 }
 
 [aria-hidden="true"] {
@@ -3049,46 +3044,16 @@ time::after {
 }
 
 @keyframes move {
-    40%,
-    50% {
-        transform: translatey(calc(1ch + 19px));
-    }
-    0%,
-    90%,
-    100% {
-        transform: translatey(1px);
-    }
+  40%, 50% {
+    -webkit-transform: translatey(calc(1ch + 19px));
+  }
+  0%, 90%, 100% {
+    -webkit-transform: translatey(1px);
+  }
 }
 @keyframes blob {
     80%,
     100% {
         filter: blur(13px) contrast(39);
-    }
-}
-.popOver {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    background-color: #d9dfe5;
-    animation: bummer 2s;
-    animation: bummer 2s;
-    animation-delay: 4s;
-    animation-delay: 4s;
-    transform: scale(1, 1);
-    transform: scale(1, 1);
-    animation-fill-mode: forwards;
-    animation-fill-mode: forwards; /* Add this so that your modal doesn't 
-                                        close after the animation completes */
-}
-
-@keyframes bummer {
-    100% {
-        transform: scale(2.5, 2.5) translate(0, -20vh);
-    }
-}
-
-@keyframes bummer {
-    100% {
-        transform: scale(2.5, 2.5) translate(0, -20vh);
     }
 }

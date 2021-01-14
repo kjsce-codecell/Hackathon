@@ -8,9 +8,7 @@
   });
 });
 
-setTimeout(function(){ 
-    $("loader").fadeOut("slow");
-}, 5200);
+
 
 (function ($) {
 	$.fn.countTo = function (options) {
