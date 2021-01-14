@@ -2952,11 +2952,13 @@ section {
   }
 }
 loader {
-	position : fixed;
-	display : none;
-	top : 0;
-	height :100vh;
-  grid-template: 12em/10em;
+  position : fixed;
+  display : none;
+  top : 0;
+  right: 0;
+  height :100vh;
+  width : 100%;
+  grid-template: 12em/12em;
   place-content: center;
   overflow: hidden;
   margin: 0;
@@ -3074,13 +3076,14 @@ time::before, time::after {
 
 @keyframes bummer {
     100% {
-        transform: scale(2.5,2.5); 
+        transform: scale(2.5,2.5) translate(0, -20vh);; 
+
     }
 }
 
 @keyframes bummer {
     100% {
-        transform: scale(2.5,2.5); 
+        transform: scale(2.5,2.5) translate(0, -20vh);
     }
 }
 
