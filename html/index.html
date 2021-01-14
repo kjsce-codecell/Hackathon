@@ -53,19 +53,22 @@
 	<body onload="loading()">
 		
 		<!-- Loading Animation -->
-		<loader>
-			<section class="scene popOver">
-				<div class="rotor">
-					<del class="year" aria-hidden="true">
-						<time datetime="2020"> KJSCE</time>
-					</del><ins class="year" aria-hidden="true">
-						<time datetime="2021">HACK</time></ins>
-					<del class="year"><time datetime="2020">KJSCE</time>
-					</del><ins class="year">
-						<time datetime="2021">HACK</time></ins>
-				</div>
-			</section>
-		</loader>
+		<div class="loading">
+	<div class="loading-text">
+		<span class="loading-text-words">K</span>
+		<span class="loading-text-words">J</span>
+		<span class="loading-text-words">S</span>
+		<span class="loading-text-words">C</span>
+		<span class="loading-text-words">E</span>
+		<span class="loading-text-words"> </span>
+		<span class="loading-text-words">H</span>
+		<span class="loading-text-words">A</span>
+		<span class="loading-text-words">C</span>
+		<span class="loading-text-words">K</span>
+		<span class="loading-text-words"> 5</span>
+		<span class="loading-text-words">.O</span>
+	</div>
+</div>
 		
 		
 		<section>
@@ -294,7 +297,6 @@
 								</p>
 								<a
 									href="#"
-									class="btn btn-outline-primary rounded-pill"
 									>How it works</a
 								>
 							</div>
@@ -1192,7 +1194,7 @@
 		<script>
 			function loading() {
 				console.log("loading");
-				$("loader").fadeOut("slow");
+				$(".loading").fadeOut("slow");
 			}
 		</script>
 	</body>
