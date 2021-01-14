@@ -120,19 +120,19 @@ body {
 }
 
 .questions {
-    color: rgba(223, 223, 223, 0.74);
+    color: rgba(223, 223, 223, 0.664);
 
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    font: outline;
 }
 .iconic-md {
     opacity: 0.7;
 }
 
 .ans {
-    text-align: center;
-    padding: 10px;
-    color: rgba(255, 255, 255, 0.479);
+    font-size: 19px;
+    color: rgba(217, 230, 255, 0.877);
+    font-weight: 100;
 }
 #cube {
     height: 450px;
