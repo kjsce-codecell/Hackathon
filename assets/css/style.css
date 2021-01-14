@@ -1,3 +1,10 @@
+
+/* Section */
+section{
+  min-height: 100vh;
+  width: 100%;
+}
+
 /* Animated Neon text-shadows */
 .animate-text-shadow{
     text-shadow: 0 0 1vw #99e6ff;
