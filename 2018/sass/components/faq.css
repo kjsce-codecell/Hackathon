@@ -1,0 +1,190 @@
+.fcontainer {
+  max-width: 1100px;
+  width: 90%;
+  height: 100%;
+  padding-bottom: 80px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0.2rem solid var(--color-tertiary-dark);
+  border-radius: 10px;
+  margin: 0 auto 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+.fcontainer .qa {
+  position: relative;
+  top: 50px;
+  margin: auto;
+  padding-left: 75px;
+  width: 50%;
+  float: left;
+}
+
+.fcontainer .qa .q {
+  cursor: pointer;
+}
+
+.fcontainer .qa .q .question span {
+  display: block;
+  line-height: 28px;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  padding-left: 4rem;
+}
+
+.fcontainer .qa .q .shape.hovered {
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+
+.fcontainer .qa .a .ans {
+  line-height: 20px;
+  color: var(--color-tertiary);
+  font-size: 1.2rem;
+  margin-left: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+  border-radius: 5px;
+}
+
+.fcontainer .qa .a .ans.show {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.header {
+  max-width: 1000px;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.header__heading {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-bottom: 1rem;
+}
+
+.header__heading--text {
+  padding: .5rem 0;
+  text-align: center;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.header__heading--overline {
+  width: 60%;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, right top, left top, from(var(--color-primary)), color-stop(var(--color-primary-dark)), to(var(--color-primary)));
+  background: linear-gradient(-90deg, var(--color-primary), var(--color-primary-dark), var(--color-primary));
+  height: .5rem;
+  border-radius: .5rem;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.header__heading:hover > .header__heading--overline {
+  width: 100%;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+}
+
+.header__heading:hover > .header__heading--text {
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  25% {
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+  }
+  75% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  25% {
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+  }
+  75% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .fcontainer {
+    width: 80%;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+  .fcontainer .qa {
+    padding: 0;
+    width: calc(100% - 30px);
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .fcontainer {
+    width: 80%;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+  .fcontainer .qa {
+    padding: 0;
+    width: calc(100% - 30px);
+    margin: auto;
+    padding: auto;
+  }
+}
+/*# sourceMappingURL=faq.css.map */
