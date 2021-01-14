@@ -73,12 +73,20 @@ button:focus {
     outline: 0 !important;
 }
 
-.clicked-button {
+.row{
+	margin-top: 1rem !important;
+}
+
+.inv-color{
+	filter: invert(100%)
+}
+
+/* .clicked-button {
     color: #666 !important;
     border: 4px solid #666;
     background-color: #fff;
     box-shadow: 0px 0px 0px 4px #eee inset;
-}
+} */
 
 .hidden {
     display: none;
@@ -120,68 +128,6 @@ button:focus {
     margin: 0 2rem;
 }
 
-.sp-btn {
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-    padding: 0.25rem 0.75rem;
-}
-.sp-btn:hover {
-    text-decoration: none;
-}
-
-/*btn_background*/
-.btn-effect {
-    color: #fff;
-    border: 4px solid #000;
-    box-shadow: 0px 0px 0px 1px #000 inset;
-    background-color: #000;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-}
-.btn-effect:hover {
-    border: 4px solid #666;
-    background-color: #fff;
-    box-shadow: 0px 0px 0px 4px #eee inset;
-}
-
-/*btn_text*/
-.btn-effect span {
-    transition: all 0.2s ease-out;
-    z-index: 2;
-}
-.btn-effect:hover span {
-    letter-spacing: 0.13em;
-    color: #333;
-}
-
-/*highlight*/
-.btn-effect:after {
-    background: #fff;
-    border: 0px solid #000;
-    content: "";
-    height: 155px;
-    left: -75px;
-    opacity: 0.8;
-    position: absolute;
-    top: -50px;
-    -webkit-transform: rotate(35deg);
-    transform: rotate(35deg);
-    width: 50px;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
-    z-index: 1;
-}
-.btn-effect:hover:after {
-    background: #fff;
-    border: 20px solid #000;
-    opacity: 0;
-    left: 120%;
-    -webkit-transform: rotate(40deg);
-    transform: rotate(40deg);
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -201,4 +147,93 @@ button:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #0b99c9;
+}
+
+/* exp button */
+
+.sp-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    /* font-size: 24px; */
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.sp-btn:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 5px #2196f3, 0 0 20px #2196f3, 0 0 40px #2196f3;
+    transition-delay: 0.5s;
+}
+
+.sp-btn span {
+    position: absolute;
+    display: block;
+}
+
+.sp-btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+.sp-btn:hover span:nth-child(1) {
+    left: 100%;
+    transition: 0.5s;
+}
+
+.sp-btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+.sp-btn:hover span:nth-child(3) {
+    right: 100%;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+}
+
+.sp-btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+.sp-btn:hover span:nth-child(2) {
+    top: 100%;
+    transition: 0.5s;
+    transition-delay: 0.125s;
+}
+
+.sp-btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+.sp-btn:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 0.5s;
+    transition-delay: 0.375s;
+}
+
+.clicked-button {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 2px #2196f3, 0 0 10px #2196f3, 0 0 20px #2196f3;
+    transition-delay: 0.5s;
 }
