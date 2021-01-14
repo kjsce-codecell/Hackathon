@@ -20,11 +20,6 @@
 
 		<link
 			rel="stylesheet"
-			href="path/to/font-awesome/css/font-awesome.min.css"
-		/>
-
-		<link
-			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 			integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 			crossorigin="anonymous"
@@ -54,76 +49,37 @@
 		</style>
 	</head>
 	<body>
+		
+		<!-- Loading Animation -->
+		<loader>
+			<section class="scene popOver">
+				<div class="rotor">
+					<del class="year" aria-hidden="true">
+						<time datetime="2020"> KJSCE</time>
+					</del><ins class="year" aria-hidden="true">
+						<time datetime="2021">HACK</time></ins>
+					<del class="year"><time datetime="2020">KJSCE</time>
+					</del><ins class="year">
+						<time datetime="2021">HACK</time></ins>
+				</div>
+			</section>
+		</loader>
+		
+		
+		<section>
 		<!-- Threejs Container for Cube -->
 		<!-- <div id="cube" style="height: 100vh; width: 100%;"></div> -->
 
-		<section>
+		<section class="d-flex justify-content-center align-items-center">
 			<!-- Glitch Text -->
-			<header class="header">
-				<h1 class="glitched">KJSCE Hack 5.0</h1>
-			</header>
+			<div class="glitch-wrapper">
+                <h1 class="glitch" data-text="KJSCE HACK 5.0">KJSCE HACK 5.0</h1>
+            </div>
 		</section>
-
-		<!--
-		<div class="container" style="margin: 5em auto; z-index: 0">
-			<div class="row">
-				<div class="col-12 d-flex justify-content-center">
-					<em
-						><strong
-							class="animate-text-shadow"
-							style="
-								font-size: 80px;
-								font-family: 'Pricedown Bl', sans-serif;
-							"
-							>KJSCE Hack 5.O</strong
-						></em
-					>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="offset-3 col-6 d-flex justify-content-center">
-					<img
-						src="../assets/cube/Cube2.gif"
-						alt="Cube Logo Animated"
-						width="450px"
-						height="450px"
-					/>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<em
-						><strong
-							class="animate-text-shadow"
-							style="
-								font-size: 40px;
-								font-family: 'Pricedown Bl', sans-serif;
-								letter-spacing: 3px;
-							"
-						>
-							24th March, 2021 <br /> </strong
-					></em>
-				</div>
-			</div>
-
-			<div class="row">
-				<div
-					class="col-12 d-flex justify-content-center"
-					style="margin-top: 2em"
-				>
-					<a href="#" class="btn w-25 btn-primary rounded-pill"
-						>Apply now</a
-					>
-				</div>
-			</div>
-		</div>
-	-->
 
 		<div
 			class="page-hero-section bg-image hero-home-1"
-			style="background-color: black; z-index: -5; margin-top: 100vh"
+			style="background-color: black; z-index: -5;"
 			;
 		>
 			<div class="hero-caption pt-5">
@@ -198,7 +154,7 @@
 			</div>
 		</div>
 
-		<div class="fluid-container" style="z-index: -5">
+		 <div class="fluid-container section" data-background-color="#27ae60" style="z-index:-5;">
 			<div class="wrapper row" id="stats">
 				<div class="counter col_fourth col-lg-3 col-md-6">
 					<i class="fa fa-wpforms fa-2x"></i>
@@ -537,7 +493,7 @@
 					</div>
 				</div>
 
-				<div class="page-section">
+				<<div class="page-section section" data-background-color="#3498db">
 					<div class="container">
 						<!-- commented ecommerce part -->
 						<!-- <div class="row">
@@ -1246,13 +1202,8 @@
 			</div>
 		</section>
 
-		<div
-			class="page-section bg-image"
-			style="
-				background-image: url(../assets/img/pattern_2.svg);
-				z-index: -5;
-			"
-		>
+		<div data-background-color="pink" class="page-section bg-image section"
+            style="background-image: url(../assets/img/pattern_2.svg); z-index:-5;">
 			<div class="container">
 				<div class="row justify-content-center align-items-center">
 					<div class="col-lg-5 mb-5 mb-lg-0 wow fadeInUp">
@@ -1450,6 +1401,8 @@
 					</div>
 				</div>
 			</div>
+					<div id="particle-g" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:-1">
+					</div>
 		</div>
 		<!-- <div
 			id="particle-g"
@@ -1476,7 +1429,8 @@
 		<!-- ParticleJS, Codecell -->
 		<!-- <script src="../assets/js/particles.min.js"></script>
 		<script src="../assets/js/load_particles.js"></script> -->
-		<script src="../assets/js/jquery.particleground.min.js"></script>
+		<script src="../assets/js/in-view.js"></script>
+		<script src="../assets/js/jquery.particleground.js"></script>
 		<script src="../assets/js/particle_g.js"></script>
 		<!-- Custom, CodeCell -->
 		<script src="../assets/js/sponsors.js"></script>
