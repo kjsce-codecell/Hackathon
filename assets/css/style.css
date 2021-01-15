@@ -223,9 +223,6 @@ button:focus {
     #curr-sp {
         margin-bottom: 15px !important;
     }
-    .sep-line {
-        margin-bottom: 0 0;
-    }
 }
 
 .sp-btn:hover {
@@ -304,24 +301,19 @@ button:focus {
 
 /* social media buttons */
 
-.tpfornow {
+.socialbtns {
 	margin: auto;
 	padding: 0 20%;
-	/* display: flex; */
-	/* position: absolute; */
-	/* top: 50%; */
-	/* left: 50%; */
 	display: flex;
 	flex-direction: row;
-	/* transform: translate(-50%, -50%); */
 }
   
-.tpfornow li {
+.socialbtns li {
 	list-style: none;
 	margin: auto;
 }
   
-.tpfornow li a {
+.socialbtns li a {
 	position: relative; 
 	display: block;
 	width: 60px;
@@ -335,7 +327,7 @@ button:focus {
 	transition: .5s;
 }
   
-.tpfornow li a::before {
+.socialbtns li a::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -349,13 +341,19 @@ button:focus {
 	z-index: -1;
 }
   
-.tpfornow li a:hover::before {
+.socialbtns li a:hover::before {
 	transform: scale(1.1);
 	box-shadow: 0 0 5px #2196f3;
 }
   
-.tpfornow li a:hover {
+.socialbtns li a:hover {
 	color: #2196f3;
 	box-shadow: 0 0 5px #2196f3;
 	text-shadow: 0 0 5px #2196f3;
+}
+
+@media only screen and (max-width: 768px) {
+    .socialbtns{
+		padding: 15px 0 15px 0;
+	}
 }
