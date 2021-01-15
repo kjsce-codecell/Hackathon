@@ -61,12 +61,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
   }
+
+  /* .hs__item__image{
+      border-radius: 50%; 
+  } */
   @media only screen and (max-width: 990px) {
     .hs__item {
       flex-basis: calc(100% / 3 - (10px * 2) - (20px / 3));
