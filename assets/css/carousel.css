@@ -145,7 +145,7 @@
     mix-blend-mode: invert;
     position: relative;
   }
-  .container-about:after {
+  /* .container-about:after {
     content: "";
     width: 100vw;
     height: 100%;
@@ -155,7 +155,7 @@
     top: 0;
     transform: translateX(-50%);
     z-index: -1;
-  }
+  } */
   @media only screen and (min-width: 990px) {
     .container {
       padding: calc(10px * 4) calc(10px * 8);
