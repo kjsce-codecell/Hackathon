@@ -3179,3 +3179,55 @@ time::after {
     filter: blur(4px);
   }
 }
+
+
+
+/* about */
+
+.info-icons{
+    display: flex;
+    justify-content: end;
+    padding: 0.5rem 0rem;
+    width: 30%;
+
+}
+.info-icons i{
+    color: rgb(201, 201, 201);
+    font-size: 1.5rem;
+
+}
+
+.about-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 0.5rem;
+}
+
+@media (max-width: 768px){
+
+
+    .info-icons{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 0.4rem 0rem;
+        width: 20%;
+    
+    }
+    .about-info{
+    
+        padding-right: 0rem;
+    }
+    .about-info span{
+        font-size: 0.9rem;
+        
+    }
+
+
+
+}
+
+
+
+/* about */
