@@ -4,6 +4,29 @@ section {
     width: 100%;
 }
 
+.neon {
+    background-color: #2196f3;
+    padding: 1rem 1.5rem;
+    transition: 0.25s;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    color: #255784;
+    letter-spacing: 5px;
+}
+.neon:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 5px #2196f3, 0 0 20px #2196f3, 0 0 40px #2196f3;
+}
+
+@media only screen and (max-width: 768px){
+    .neon{
+        font-size: 0.8rem;
+        padding: 0.8rem 1.2rem;
+    }
+}
+
 /* Animated Neon text-shadows */
 .animate-text-shadow {
     text-shadow: 0 0 1vw #99e6ff;
@@ -73,12 +96,12 @@ button:focus {
     outline: 0 !important;
 }
 
-.row{
-	margin-top: 1rem !important;
+.row {
+    margin-top: 1rem !important;
 }
 
-.inv-color{
-	filter: invert(100%)
+.inv-color {
+    filter: invert(100%);
 }
 
 /* .clicked-button {
@@ -159,8 +182,8 @@ button:focus {
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
-	/* width: 15rem; */
-	font-weight: 700;
+    /* width: 15rem; */
+    font-weight: 700;
     overflow: hidden;
     transition: 0.5s;
 }
