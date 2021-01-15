@@ -95,10 +95,10 @@ h3 {
 button:focus {
     outline: 0 !important;
 }
-
+/* 
 .row {
     margin-top: 1rem !important;
-}
+} */
 
 .inv-color {
     filter: invert(100%);
