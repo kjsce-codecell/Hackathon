@@ -301,3 +301,61 @@ button:focus {
     box-shadow: 0 0 2px #2196f3, 0 0 10px #2196f3, 0 0 20px #2196f3;
     transition-delay: 0.5s;
 }
+
+/* social media buttons */
+
+.tpfornow {
+	margin: auto;
+	padding: 0 20%;
+	/* display: flex; */
+	/* position: absolute; */
+	/* top: 50%; */
+	/* left: 50%; */
+	display: flex;
+	flex-direction: row;
+	/* transform: translate(-50%, -50%); */
+}
+  
+.tpfornow li {
+	list-style: none;
+	margin: auto;
+}
+  
+.tpfornow li a {
+	position: relative; 
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 63px;
+	background: rgba(51, 51, 51, 0.90);
+	border-radius: 50%;
+	font-size: 30px;
+	color: #2196f3;
+	transition: .5s;
+}
+  
+.tpfornow li a::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: #2196f3;
+	transition: .5s;
+	transform: scale(.9);
+	z-index: -1;
+}
+  
+.tpfornow li a:hover::before {
+	transform: scale(1.1);
+	box-shadow: 0 0 5px #2196f3;
+}
+  
+.tpfornow li a:hover {
+	color: #2196f3;
+	box-shadow: 0 0 5px #2196f3;
+	text-shadow: 0 0 5px #2196f3;
+}
