@@ -5,12 +5,25 @@ section {
 }
 
 .glow {
+    padding-top: 170px;
     font-size: 60px;
     color: #fff;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
+}
+
+@media only screen and (max-width: 768px) {
+    .glow {
+    padding-top: 0px;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
 }
 
 @-webkit-keyframes glow {

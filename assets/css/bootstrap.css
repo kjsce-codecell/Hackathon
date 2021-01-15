@@ -81,8 +81,7 @@ body {
 /* stats */
 
 #stats {
-    margin-top: 80px;
-    padding: 0 150px;
+    padding: 150px 150px;
 }
 
 .end {
@@ -147,7 +146,6 @@ body {
     }
     #stats {
         padding: 40px;
-        margin-top: 400px;
     }
     #cube {
         height: 250px;
