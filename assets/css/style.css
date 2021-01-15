@@ -77,12 +77,12 @@ section {
 }
 
 .sponsor-container {
-    border: 2px solid white;
+    border: 1px solid rgb(90, 90, 90);
     align-content: center;
     text-align: center;
-    width: 90%;
+    width: 100%;
     margin: auto;
-    background-color: rgba(0, 5, 25, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 1rem;
 }
 
@@ -119,21 +119,10 @@ h3 {
 button:focus {
     outline: 0 !important;
 }
-/* 
-.row {
-    margin-top: 1rem !important;
-} */
 
 .inv-color {
     filter: invert(100%);
 }
-
-/* .clicked-button {
-    color: #666 !important;
-    border: 4px solid #666;
-    background-color: #fff;
-    box-shadow: 0px 0px 0px 4px #eee inset;
-} */
 
 .hidden {
     display: none;
@@ -196,8 +185,6 @@ button:focus {
     background: #0b99c9;
 }
 
-/* exp button */
-
 .sp-btn {
     position: relative;
     display: inline-block;
@@ -206,10 +193,22 @@ button:focus {
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
-    /* width: 15rem; */
     font-weight: 700;
     overflow: hidden;
     transition: 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+    .sp-btn {
+        padding: 10px 20px;
+        letter-spacing: 2px;
+    }
+    #curr-sp {
+        margin-bottom: 15px !important;
+    }
+    .sep-line {
+        margin-bottom: 0 0;
+    }
 }
 
 .sp-btn:hover {

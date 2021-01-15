@@ -33,7 +33,7 @@ body {
 /* Responsiveness (CUSTOM, Don't override) - neelansh, Codecell */
 @media only screen and (max-width: 768px){
   .glitch{
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .glitch-2{
     font-size: 1.2rem;
