@@ -121,7 +121,7 @@ body {
 
 .questions {
     color: rgba(223, 223, 223, 0.664);
-
+    text-shadow: 4px 4px 8px rgb(113, 113, 245);
     margin-bottom: 20px;
     font: outline;
 }

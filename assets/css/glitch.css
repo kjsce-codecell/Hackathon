@@ -21,16 +21,22 @@ body {
 }
 .glitch {
   color: white;
-  font-size: 150px;
+  font-size: 8rem;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
 }
 
+.glitch-2{
+  font-size: 3rem;
+}
 /* Responsiveness (CUSTOM, Don't override) - neelansh, Codecell */
 @media only screen and (max-width: 768px){
   .glitch{
     font-size: 2.5rem;
+  }
+  .glitch-2{
+    font-size: 1.2rem;
   }
 }
 
