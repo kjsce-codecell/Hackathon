@@ -141,7 +141,6 @@ body {
 @media only screen and (max-width: 600px) {
     .counter {
         padding: 50px;
-        background-color: rgba(129, 129, 129, 0.384);
         border-radius: 20px;
     }
     #stats {
