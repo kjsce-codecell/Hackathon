@@ -5,7 +5,7 @@ section {
 }
 
 .glow {
-    padding-top: 170px;
+    padding-top: 10px;
     font-size: 60px;
     color: #fff;
     text-align: center;
@@ -16,14 +16,14 @@ section {
 
 @media only screen and (max-width: 768px) {
     .glow {
-    padding-top: 0px;
-    font-size: 60px;
-    color: #fff;
-    text-align: center;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
-}
+        padding-top: 0px;
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
 }
 
 @-webkit-keyframes glow {
@@ -61,6 +61,10 @@ section {
     .neon {
         font-size: 0.8rem;
         padding: 0.8rem 1.2rem;
+    }
+    .glow {
+        font-size: 40px;
+        padding-top: 28px;
     }
 }
 
