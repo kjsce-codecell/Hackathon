@@ -31,6 +31,7 @@
 	<link rel="stylesheet" href="../assets/css/bootstrap.css" />
 
 	<link rel="stylesheet" href="../assets/css/mobster.css" />
+	<link rel="stylesheet" href="../assets/css/towers.css">
 
 	<!-- Custom, Codecell -->
 	<link rel="stylesheet" href="../assets/css/style.css" />
@@ -77,7 +78,43 @@
 		<section
             data-background-color="white"
             class="section d-flex flex-column justify-content-center align-items-center"
-        >
+		>
+		
+		<div class="electricity">
+			<div class="plus-diode">
+			  <div class="ball">
+				<div class="shine"></div>
+			  </div>
+			  <div class="socket"></div>
+			  <div class="socket foot"></div>
+			  <div class="ring"></div>
+			  <div class="ring medium"></div>
+			  <div class="ring small"></div>
+			</div>
+			<div class="minus-diode">
+			  <div class="ball">
+				<div class="shine"></div>
+			  </div>
+			  <div class="socket"></div>
+			  <div class="socket foot"></div>
+			  <div class="ring"></div>
+			  <div class="ring medium"></div>
+			  <div class="ring small"></div>
+			</div>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+			  <defs>
+			  <filter id="f1" x="0" y="0">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+			  </filter>
+			</defs>
+			  <g>
+				<path d="M0,100,500,100" fill="none" stroke="#2196f3" filter="url(#f1)"></path>
+				<path d="M0,100,500,100" fill="none" stroke="#2196f3"></path>
+			  </g>
+			</svg>
+		  
+		  </div>
+
             <!-- Glitch Text -->
             <div class="glitch-wrapper">
                 <h1 class="glitch" data-text="KJSCE HACK 5.0">
@@ -88,7 +125,7 @@
 			<div>
 				<div class="glitch-wrapper">
 					<h1 class="glitch glitch-2" data-text="15th March 2021">
-						15th March 2021
+						15th March, 2021
 					</h1>
 				</div>
 			</div>
