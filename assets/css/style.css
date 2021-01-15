@@ -4,12 +4,36 @@ section {
     width: 100%;
 }
 
+.glow {
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2196f3,
+            0 0 40px #2196f3, 0 0 50px #2196f3, 0 0 60px #2196f3,
+            0 0 70px #2196f3;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #2196f3, 0 0 40px #2196f3,
+            0 0 50px #2196f3, 0 0 60px #2196f3, 0 0 70px #2196f3,
+            0 0 80px #2196f3;
+    }
+}
+
 .neon {
     background-color: #2196f3;
     padding: 1rem 1.5rem;
     transition: 0.25s;
     text-transform: uppercase;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
     font-size: 1.2rem;
     color: #255784;
     letter-spacing: 5px;
@@ -20,8 +44,8 @@ section {
     box-shadow: 0 0 5px #2196f3, 0 0 20px #2196f3, 0 0 40px #2196f3;
 }
 
-@media only screen and (max-width: 768px){
-    .neon{
+@media only screen and (max-width: 768px) {
+    .neon {
         font-size: 0.8rem;
         padding: 0.8rem 1.2rem;
     }
