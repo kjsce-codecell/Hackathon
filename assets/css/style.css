@@ -357,3 +357,27 @@ button:focus {
 		padding: 15px 0 15px 0;
 	}
 }
+
+#made_by{
+	font-size: 1.5rem;
+	color: #2196f3;
+	margin: auto 10px;
+	text-align: center;
+}
+
+#made_by a{
+	color: #2196f3;
+	text-decoration: none;
+	font-weight: 700;
+	transition: all 0.5s ease-in-out;
+}
+
+#made_by a:hover{
+	color: rgb(185, 185, 185);
+}
+
+.heart {
+    font-size: 1.5rem;
+    padding: 0;
+    color: red;
+}
