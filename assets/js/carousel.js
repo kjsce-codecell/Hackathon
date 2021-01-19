@@ -1,6 +1,6 @@
 var instance = $(".hs__wrapper");
 $.each(instance, function (key, value) {
-    var arrows = $(instance[key]).find(".arrow"),
+    var arrows = $(instance[key]).find(".arrows"),
         prevArrow = arrows.filter(".arrow-prev"),
         nextArrow = arrows.filter(".arrow-next"),
         box = $(instance[key]).find(".hs"),
