@@ -152,7 +152,7 @@ body {
 
     padding: calc(10px * 2);
     margin: 0 auto;
-    background: #121212;
+    background: #2929299a;
     mix-blend-mode: invert;
     position: relative;
 }

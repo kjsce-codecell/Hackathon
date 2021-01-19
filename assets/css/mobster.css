@@ -3089,6 +3089,23 @@ time::after {
     height: 100px;
     line-height: 100px;
 }
+.loading-text-outer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* width: 50vh; */
+    /* height: 40%; */
+    opacity: 0.3;
+    /* height: 100px; */
+    z-index: -3;
+    background: url("../cube/Cube2.gif");
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .loading-text span {
     display: inline-block;
     margin: 0 5px;
