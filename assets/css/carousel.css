@@ -37,6 +37,7 @@
 }
 .hs__arrows .arrow:before {
     content: "";
+    color: #2196f3;
     display: inline-block;
     vertical-align: middle;
     content: "";
