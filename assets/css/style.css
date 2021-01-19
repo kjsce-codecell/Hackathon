@@ -8,6 +8,15 @@ section {
     box-shadow: 0px 0px 15px #0b99c9;
 }
 
+.shadow-glow2 {
+    border: 2px solid #6fbcc9;
+    /* box-shadow: 0px 0px 15px #0b99c9; */
+   -moz-box-shadow: inset 0 0 30px #0b99c9;
+   -webkit-box-shadow:inset 0 0 30px #0b99c9;
+   box-shadow: inset 0 0 30px #0b99c9;
+}
+
+
 .glow {
     padding-top: 10px;
     font-size: 60px;
