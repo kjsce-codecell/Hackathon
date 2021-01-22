@@ -1148,9 +1148,22 @@
 		</script>
 
 		<script>
+			var loaded = false;
+			var fivePlus = false;
+			setTimeout(function () {
+				if (loaded) {
+					$(".loading").fadeOut("slow");
+				}
+				else {
+					fivePlus = true;
+				}
+			}, 5000)
 			function loading() {
-				console.log("loading");
-				$(".loading").fadeOut("slow");
+				loaded = true;
+				if (fivePlus) {
+					console.log("loading");
+					$(".loading").fadeOut("slow");
+				}
 			}
 		</script>
 		<script>
