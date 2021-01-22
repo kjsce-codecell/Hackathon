@@ -114,6 +114,10 @@
     -o-object-fit: cover;
     object-fit: cover;
 }
+
+.hs__item__image__wrapper:hover > .hs__item__image{
+    box-shadow: 0px 0px 25px #0b99c9;
+}
 @media only screen and (min-width: 990px) {
     .hs__wrapper {
         overflow: hidden;
