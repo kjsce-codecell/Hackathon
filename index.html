@@ -39,9 +39,9 @@
 	<link rel="stylesheet" href="./assets/css/glitch.css" />
 
 	<!-- Pricedown Bl (Font) -->
-	<link href="http://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
+	<link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/css/faq.css">
-	<link href="http://fonts.cdnfonts.com/css/pricedown" rel="stylesheet" />
+	<link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet" />
 	<style>
 		html,
 		body {
@@ -100,7 +100,7 @@
 					<div class="ring medium"></div>
 					<div class="ring small"></div>
 				</div>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+				<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 200">
 					<defs>
 						<filter id="f1" x="0" y="0">
 							<feGaussianBlur in="SourceGraphic" stdDeviation="5" />
@@ -163,7 +163,7 @@
 								<div class="iconic-item wow fadeInUp">
 									<div class="iconic-md iconic-text fg-white rounded-circle"
 										style="background-color: #007bff;">
-										<span class="fa fa-map-marker"></span>
+										<span class="fa fa-map-marker-alt"></span>
 									</div>
 									<div class="iconic-content">
 										<h3 class="questions">WHERE?</h5>
@@ -191,16 +191,16 @@
 
 						<div class="row">
 							<div class="offset-3 col-6 d-flex justify-content-center">
-								<img class="lazyload" data-src="./assets/cube/Cube2.gif" loading="lazy" alt="Cube Logo Animated" id="cube" />
+								<img class="lazyload" data-src="./assets/cube/cube.gif" loading="lazy" alt="Cube Logo Animated" id="cube" />
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<div class="fluid-container section" data-background-color="#27ae60" style="z-index:-5;margin: 100px 0;">
-			<h3 class="glow mb-4">Stats</h3>
+		<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/X7IHEJgJ_Lc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		<div class="fluid-container section" data-background-color="#27ae60" style="z-index:-5;margin: 30px 0;">
+			<h3 class="glow">Stats</h3>
 			<div class="wrapper row " id="stats">
 				
 				<div class="counter col-md-6 col-lg-2 shadow-glow2">
@@ -239,7 +239,7 @@
 			<div class="position-realive bg-image">
 				<div class="faq-container wow fadeInUp shadow-glow">
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-lg-6" id="left">
 							<div id="q1">
 								<div class="q">
 									What happens at an Online Hackathon?
@@ -285,7 +285,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6" id="right">
 							<div id="q5">
 								<div class="q">
 									404: Question Not Found?
@@ -313,7 +313,7 @@
 				</div>
 
 				<div class="page-section">
-					<div class="page-section section" data-background-color="#3498db">
+					<div class="page-section section" data-background-color="#3498db" style="padding-bottom:30px;">
 						<div class="container">
 							<!-- commented ecommerce part -->
 							<!-- <div class="row">
@@ -793,11 +793,11 @@
 
 
 		<!-- about -->
-		<h3 class="glow mb-4">Our Team</h3>
+		<h3 class="glow">Our Team</h3>
 		<div class="container-about">
 			<div class="hs__wrapper " >
 				<div class="hs__header">
-					<div class="hs__arrows"><a class="arrows glow disabled arrow-prev">&lt;&nbsp;</a><a class="arrows glow arrow-next" >&gt;</a>
+					<div class="hs__arrows"><a class="arrows glow disabled arrow-prev" style="padding-top: 0px;">&lt;&nbsp;</a><a class="arrows glow arrow-next" style="padding-top: 0px;" >&gt;</a>
 					</div>
 				</div>
 				<ul class="hs">
@@ -1102,7 +1102,7 @@
 			</div>
 		</div>
 		<div id="made_by">
-			<span>Made with <i class="fas fa-heart heart"></i> by <a target="_blank" href="http://www.kjscecodecell.com/">CodeCell</a></span>
+			<span>Made with <i class="fas fa-heart heart"></i> by <a target="_blank" href="https://www.kjscecodecell.com/">CodeCell</a></span>
 		</div>
 		<div id="particle-g" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:-1"></div>
 		<!-- <div
@@ -1148,22 +1148,24 @@
 		</script>
 
 		<script>
-			var loaded = false;
-			var fivePlus = false;
-			setTimeout(function () {
-				if (loaded) {
-					$(".loading").fadeOut("slow");
-				}
-				else {
-					fivePlus = true;
-				}
-			}, 5000)
+			<!-- var loaded = false; -->
+			<!-- var fivePlus = false; -->
+			<!-- setTimeout(function () { -->
+				<!-- if (loaded) { -->
+					<!-- $(".loading").fadeOut("slow"); -->
+				<!-- } -->
+				<!-- else { -->
+					<!-- fivePlus = true; -->
+				<!-- } -->
+			<!-- }, 5000) -->
 			function loading() {
-				loaded = true;
-				if (fivePlus) {
-					console.log("loading");
-					$(".loading").fadeOut("slow");
-				}
+				console.log("loading");
+				$(".loading").fadeOut("slow");
+				<!-- loaded = true; -->
+				<!-- if (fivePlus) { -->
+					<!-- console.log("loading"); -->
+					<!-- $(".loading").fadeOut("slow"); -->
+				<!-- } -->
 			}
 		</script>
 		<script>

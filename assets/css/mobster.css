@@ -3101,8 +3101,8 @@ time::after {
     opacity: 0.3;
     /* height: 100px; */
     z-index: -3;
-    background: url("../cube/Cube2.gif");
-    background-size: 100vh;
+    /* background: url("../cube/cube.gif"); */
+    /* background-size: 75vh; */
     background-position: center;
     background-repeat: no-repeat;
 }

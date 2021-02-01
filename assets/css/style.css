@@ -395,3 +395,13 @@ button:focus {
     padding: 0;
     color: red;
 }
+
+@media (min-width:810px) {
+	#stats{
+		padding: 40px 0px 50px 0px;
+		max-width: 1275px;
+	}
+	#cube{
+		margin-left: 41.66667%;
+	}
+}
