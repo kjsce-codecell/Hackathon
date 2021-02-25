@@ -29,6 +29,7 @@ body {
 
 .glitch-2{
   font-size: 3rem;
+  text-transform: none;
 }
 /* Responsiveness (CUSTOM, Don't override) - neelansh, Codecell */
 @media only screen and (max-width: 768px){
