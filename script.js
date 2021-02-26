@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  $(".faq-container").css({
+    'width': ($('.page-section .container').width() + 'px')
+  });
+});
 for (let j = 1; j <=6 ; j++) {
     document.querySelector(`#q${j} .q`).addEventListener("click",()=>{
         document.querySelector(`#a${j}`).classList.toggle("open");
