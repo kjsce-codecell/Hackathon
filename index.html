@@ -365,7 +365,7 @@
 										</h2>
 										<div class="button-container buttons">
 											<div class="container-btn">
-												<a role="button" class="sp-btn clicked-button" id="prev-sp" target="_blank">
+												<a role="button" class="sp-btn" id="prev-sp" target="_blank">
 													<span></span>
 													<span></span>
 													<span></span>
@@ -374,21 +374,21 @@
 												</a>
 											</div>
 											<div class="container-btn">
-												<!-- <a role="button" class="sp-btn clicked-button" id="curr-sp"
+												<a role="button" class="sp-btn clicked-button" id="curr-sp"
 													target="_blank">
 													<span></span>
 													<span></span>
 													<span></span>
 													<span></span>
 													Our Sponsors
-												</a> -->
+												</a>
 											</div>
 										</div>
 										<hr class="sep-line" />
 									</div>
 									<div class="inner-container">
 										<!-- prev sponsors -->
-										<div id="previous-sponsors">
+										<div id="previous-sponsors" class="hidden">
 											<div
 												class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 justify-content-center align-items-center mt-5">
 												<!-- <div class="p-3 wow zoomIn"> -->
@@ -578,9 +578,9 @@
 										</div>
 
 										<!-- current sponsors -->
-										<div id="current-sponsors" class="hidden">
+										<div id="current-sponsors">
 											<div class="sponsor-header">
-												<h4>Our Partner</h4>
+												<h3>Our Partner</h3>
 											</div>
 											<div
 												class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 justify-content-center align-items-center">
@@ -595,56 +595,45 @@
 												</div>
 											</div>
 											<div class="sponsor-header">
-												<!-- <h3>Gold Sponsors</h3> -->
-												<h4>Gold Sponsors</h4>
+												<h3>Gold Sponsors</h3>
+												<!-- <h4>Gold Sponsors</h4> -->
 											</div>
 											<div
 												class="row row-cols-1 row-cols-sm-1 row-cols-md-4 row-cols-lg-4 justify-content-center align-items-center">
 												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
-														<a href="https://matic.network/" target="_blank">
+														<a href="https://polygon.technology/" target="_blank">
 															<img class="prev-sponsor-img lazyload reduce-width-1" loading="lazy"
-																data-src="./assets/img/sponsor_logos/matic.png" alt="" />
+																data-src="./assets/img/sponsor_logos/polygon.png" alt="" />
 														</a>
 													</div>
 												</div>
 												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
-														<a href="https://www.linode.com/" target="_blank">
+														<a href="https://www.portis.io/" target="_blank">
 															<img class="prev-sponsor-img lazyload reduce-width-1" loading="lazy"
-																data-src="./assets/img/sponsor_logos/linode.png" alt="" />
+																data-src="./assets/img/sponsor_logos/portis.png" alt="" />
 														</a>
 													</div>
 												</div>
 												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
-														<a href="https://frappe.io/" target="_blank">
+														<a href="https://tezos.com/" target="_blank">
 															<img class="prev-sponsor-img lazyload reduce-width-2" loading="lazy"
-																data-src="./assets/img/sponsor_logos/frappe-logo.png"
+																data-src="./assets/img/sponsor_logos/tezos.png"
 																alt="" />
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
-												<div class="p-3">
-													<div class="img-place client-img">
-														<a href="https://tvarit.com/" target="_blank">
-															<img class="prev-sponsor-img lazyload reduce-width-1" loading="lazy"
-																data-src="./assets/img/sponsor_logos/tvarit.png" alt="" />
-														</a>
-													</div>
-												</div>
 											</div>
-											<div class="sponsor-header">
-												<!-- <h3>Bronze Sponsors</h3> -->
+											<!-- <div class="sponsor-header">
 												<h4>Bronze Sponsors</h4>
 											</div>
 											<div
 												class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 justify-content-center align-items-center">
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://hasura.io/" target="_blank">
@@ -653,14 +642,12 @@
 														</a>
 													</div>
 												</div>
-											</div>
-											<div class="sponsor-header">
-												<!-- <h3>Patrons</h3> -->
+											</div> -->
+											<!-- <div class="sponsor-header">
 												<h4>Patrons</h4>
 											</div>
 											<div
 												class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center align-items-center">
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://repl.it/" target="_blank">
@@ -669,7 +656,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://www.sketch.com/" target="_blank">
@@ -678,7 +664,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://doist.com/" target="_blank">
@@ -687,7 +672,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://balsamiq.com/" target="_blank">
@@ -696,7 +680,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://wolfram.com/" target="_blank">
@@ -705,7 +688,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://www.sublimetext.com/" target="_blank">
@@ -714,7 +696,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://codingblocks.com/" target="_blank">
@@ -723,7 +704,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://dev.to/" target="_blank">
@@ -732,7 +712,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://www.jetbrains.com/" target="_blank">
@@ -741,7 +720,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://sheroes.com/" target="_blank">
@@ -750,7 +728,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://developers.google.com/community/dsc"
@@ -760,7 +737,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://www.bugsee.com/" target="_blank">
@@ -769,7 +745,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://www.stickermule.com/" target="_blank">
@@ -779,7 +754,6 @@
 														</a>
 													</div>
 												</div>
-												<!-- <div class="p-3 wow zoomIn"> -->
 												<div class="p-3">
 													<div class="img-place client-img">
 														<a href="https://www.desmos.com/" target="_blank">
@@ -788,7 +762,7 @@
 														</a>
 													</div>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>
