@@ -3,7 +3,7 @@ $(document).ready(function() {
     'width': ($('.page-section .container').width() + 'px')
   });
 });
-for (let j = 1; j <=6 ; j++) {
+for (let j = 1; j <=8 ; j++) {
     document.querySelector(`#q${j} .q`).addEventListener("click",()=>{
         document.querySelector(`#a${j}`).classList.toggle("open");
         document.querySelector(`#q${j} .fa`).style.transform = "rotate(180deg)";
@@ -15,7 +15,7 @@ for (let j = 1; j <=6 ; j++) {
             document.querySelector(`#q${j} .fa`).classList.remove("fa-minus");
             document.querySelector(`#q${j} .fa`).classList.add("fa-plus");
         }
-        for (let i = 1; i <= 6; i++) {
+        for (let i = 1; i <= 8; i++) {
             if(i!=j){
                 document.querySelector(`#a${i}`).classList.remove("open");
                 document.querySelector(`#q${i} .fa`).classList.remove("fa-minus");
