@@ -20,6 +20,10 @@ section{min-height:100vh;width:100%}.shadow-glow{box-shadow:0 0 15px #0b99c9}.sh
 	animation:glow-new 1s ease-in-out infinite alternate;
 }
 
+.clip-size {
+	padding: 2rem !important;
+}
+
 @-webkit-keyframes glow-new {
 	from {
 	  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #0b99c9, 0 0 4px #0b99c9, 0 0 5px #0b99c9, 0 0 6px #0b99c9, 0 0 7px #0b99c9;
@@ -27,7 +31,7 @@ section{min-height:100vh;width:100%}.shadow-glow{box-shadow:0 0 15px #0b99c9}.sh
 	to {
 	  text-shadow: 0 0 2px #fff, 0 0 3px #0b99c9, 0 0 4px #0b99c9, 0 0 5px #0b99c9, 0 0 6px #0b99c9, 0 0 7px #0b99c9, 0 0 8px #0b99c9;
 	}
-  }
+}
 
 @media only screen and (max-width:768px) {
 	.ty-prize {margin-left: 1rem;}
