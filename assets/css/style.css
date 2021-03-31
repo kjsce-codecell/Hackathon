@@ -2,7 +2,7 @@ section{min-height:100vh;width:100%}.shadow-glow{box-shadow:0 0 15px #0b99c9}.sh
 
 /* ----------- prizes ---------- */
 
-.ty-prize,.winner-prize{min-height:220px;border:2px solid #0b99c9;border-radius:15px;padding:30px;margin-bottom:1.5rem;margin-right:20px}
+.ty-prize,.winner-prize{min-height:220px;border-radius:15px;padding:30px;margin-bottom:1.5rem;margin-right:20px}
 .prize-name{font-size:1.5rem;font-weight:600;margin-bottom:15px;text-align:center;}
 .prize-winner{font-size:1.7rem;font-weight:600;margin-bottom:15px;text-align:center;}
 .prize-value{list-style-type:square;list-style-position:outside}
