@@ -30,3 +30,57 @@ body {
 .inner-responsive-page {
     height: var(--overlay-height);
 }
+
+/* adjust the logo please */
+.logo{
+    width: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    /* cursor: pointer; */
+}
+.nav-list{
+width:50%;
+/* background-color: #023e8a; */
+display: flex;
+}    
+
+.nav-list li{
+list-style: none;
+padding-right: 5%;
+
+}
+
+.nav-list li a{
+text-decoration: none;
+
+text-transform: uppercase;
+letter-spacing: 1px;
+color: #000000;
+display: inline-block;
+justify-content: center;
+align-items: center;
+padding-top: 15px;
+}
+
+.nav-list li a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+
+.nav-list li a:hover{
+  
+    color:#BD3944;
+
+    border-bottom: 2px solid #FD4556;
+}
+
+
