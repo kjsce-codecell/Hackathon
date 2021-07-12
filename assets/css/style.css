@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: var(--dark-red);
+    background-color: var(--black);
     position: static;
     width: 100%;
     height: 100%;
@@ -35,10 +35,9 @@ body {
 
 /* adjust the logo please */
 .logo{
-    width: 5px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 200px;
+    margin-left: 10vw;
+    margin-top: 5px;
 }
 .navbar{
     display: flex;
