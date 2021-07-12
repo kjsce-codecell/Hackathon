@@ -1,0 +1,32 @@
+:root {
+    --red: #FD4556;
+    --dark-red: #BD3944;
+    --maroon: #53212B;
+    --white: #FFFBF5;
+    --black: #000000;
+
+    --overlay-height: 85vh;
+    --overlay-width: 85vw;
+}
+
+body {
+    background-color: var(--dark-red);
+    position: static;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.overlay {
+    background-color: var(--white); 
+    height: var(--overlay-height);
+    width: var(--overlay-width);
+    position:absolute;
+    overflow-y: scroll;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.inner-responsive-page {
+    height: var(--overlay-height);
+}
