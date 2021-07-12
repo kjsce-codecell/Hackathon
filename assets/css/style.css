@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #000000;
+    background-color: var(--black);
     position: static;
     width: 100%;
     height: 100%;
@@ -38,10 +38,9 @@ body {
 
 /* adjust the logo please */
 .logo{
-    width: 5px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 200px;
+    margin-left: 10vw;
+    margin-top: 5px;
 }
 
 
@@ -76,18 +75,18 @@ h1 {
 .stats {
     margin-top: 10vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
 .stat {
     font-size: 1.4em;
-    padding: 20px;
+    padding: 15px;
     border: 2px ridge #FD4556;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 1px #FD4556;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 10px  #FD4556;
     display: inline;
     text-align: center;
-    height: 14vh;
+    height: 20vh;
     width: 30vh;
     text-shadow: none;
 }
@@ -151,6 +150,16 @@ h1 {
     max-height: 35px;
     height: 90%;
     width: 90%;
+}
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.number {
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 .bigCircleRightGray svg{
