@@ -10,12 +10,13 @@
 }
 
 body {
-    background-color: var(--dark-red);
+    background-color: var(--black);
     position: static;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
 
 .overlay {
     background-color: var(--white); 
@@ -25,8 +26,8 @@ body {
     overflow-y: scroll;
     top: 50%;
     left: 50%;
-    overflow-x: hidden;
     transform: translate(-50%, -50%);
+    border-radius: 10px;
 
 }
 .inner-responsive-page {
@@ -35,52 +36,34 @@ body {
 
 /* adjust the logo please */
 .logo{
-    width: 5px;
-    display:flex;
+    max-width: 200px;
+    margin-left: 10vw;
+    margin-top: 5px;
+}
+    
+
+/* Navbar */
+
+.nav-item .nav-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FD4556;
+    display: inline-block;
     justify-content: center;
     align-items: center;
-}
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-}
-.nav-list{
-width:50%;
-/* background-color: #023e8a; */
-display: flex;
-}    
-
-.nav-list li{
-list-style: none;
-padding-right: 5%;
+    padding-top: 15px;
+    box-sizing:border-box; 
 
 }
-
-.nav-list li a{
-text-decoration: none;
-text-transform: uppercase;
-letter-spacing: 1px;
-color: #000000;
-display: inline-block;
-justify-content: center;
-align-items: center;
-padding-top: 15px;
-}
-
-.nav-list li a:hover:after { 
+.nav-item .nav-link:after { 
     width: 100%; 
-    left: 0; 
-  }
-
-
-.nav-list li a:hover{
-  
-    color:#BD3944;
-
+    padding-bottom: 5px;
+}
+.nav-item .nav-link:hover{
     border-bottom: 2px solid #FD4556;
+    width: 100%;
+
 }
 
 h1 {
