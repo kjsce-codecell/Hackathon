@@ -25,7 +25,9 @@ body {
     overflow-y: scroll;
     top: 50%;
     left: 50%;
+    overflow-x: hidden;
     transform: translate(-50%, -50%);
+
 }
 .inner-responsive-page {
     height: var(--overlay-height);
@@ -44,7 +46,6 @@ body {
     justify-content: center;
     position: sticky;
     top: 0;
-    /* cursor: pointer; */
 }
 .nav-list{
 width:50%;
@@ -60,7 +61,6 @@ padding-right: 5%;
 
 .nav-list li a{
 text-decoration: none;
-
 text-transform: uppercase;
 letter-spacing: 1px;
 color: #000000;
