@@ -125,19 +125,23 @@
         <div class="inner-responsive-page">
             <h1>Sponsors</h1>   
             <div class="button-container">
-                <button class="btn btn--light">
+                <button id="previous-sponsor-button" class="btn btn--light" onclick="SponsorChange('prev')">
                     <span class="btn__inner">
                     <span class="btn__slide"></span>
                     <span class="btn__content">Previous Sponsors</span>
                     </span>
                 </button>
                 
-                <button class="btn btn--light">
+                <button id="current-sponsor-button" disabled class="btn btn--light"  onclick="SponsorChange('curr')">
                     <span class="btn__inner">
                     <span class="btn__slide"></span>
                     <span class="btn__content">Current Sponsors</span>
                     </span>
                 </button>
+            </div>
+            <div class="sponsors-wrapper">
+              <div id="previous-sponsor" style="display: none;">prev</div>
+              <div id="current-sponsor">curr</div>
             </div>
         </div>
         

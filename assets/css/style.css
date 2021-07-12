@@ -156,6 +156,12 @@ body {
     animation: transform 0.5s;
   }
   
+  .btn:disabled .btn__inner{
+    background-color: var(--neon-red);
+  }
+  .btn:disabled .btn__content{
+    color:var(--black)
+  }
   .btn:hover .btn__slide {
     width: calc(100% + 15px);
   }
