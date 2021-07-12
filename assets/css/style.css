@@ -11,6 +11,10 @@
     --overlay-height: 85vh;
     --overlay-width: 85vw;
 }
+@font-face {
+  font-family: Valorant;
+  src: url(/assets/css/ValorantFont.ttf) format(truetype);
+}
 *{
     box-sizing: border-box;
 }
@@ -19,6 +23,7 @@ body {
     position: static;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 
@@ -31,7 +36,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-
 }
 /* buttons */
 .btn {
@@ -213,6 +217,14 @@ body {
     width: 100%;
 
 }
+.navbar-toggler{
+  border:1px solid var(--red);
+  margin-left: 5px;
+}
+.navbar-toggler .navbar-toggler-icon{
+  background-color: var(--red);
+  color: white;
+}
 
 h1 {
     text-align: center;
@@ -320,4 +332,24 @@ h2 {
 .button-container{
     display: flex;
     justify-content: space-evenly;
+}
+
+#mainPage{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+#mainPage{
+  background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu/img/CVoXF3Pr-2oX6-HM.jpg") no-repeat 
+    center center /cover; 
+}
+#mainPage .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+  font-size: 100px;
+  margin: 0 auto;
+  font-family: Valorant;
 }
