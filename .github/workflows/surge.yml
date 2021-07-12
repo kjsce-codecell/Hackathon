@@ -6,7 +6,7 @@ on:
       - hack_2021
 
 jobs:
-  github-pages:
+  surge-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install -g surge
-      - run: surge ./ ${{secrets.SURGE_TOKEN}}
+      - run: surge ./ --token ${{secrets.SURGE_TOKEN}}
