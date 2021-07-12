@@ -83,4 +83,35 @@ padding-top: 15px;
     border-bottom: 2px solid #FD4556;
 }
 
+h1 {
+    text-align: center;
+  }
+  
+.stats {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+.stat {
+    font-size: 1.4em;
+    padding: 20px;
+    border: 2px ridge #FD4556;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px #FD4556;
+    display: inline;
+    text-align: center;
+    height: 14vh;
+    width: 30vh;
+    text-shadow: none;
+}
+
+/* .stat:hover {
+    transform: scale(1.1);
+    animation: transform 1.5s;
+} */
+
+.number:hover, .term:hover {
+     text-shadow: 0 0 4px #FD4556;
+}
 
