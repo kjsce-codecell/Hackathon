@@ -13,11 +13,10 @@
 
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
 
 </head>
 <body>
@@ -108,22 +107,22 @@
             <div class="stats">
                 <div class=" stat applications" data-aos="zoom-in-up">
                     <i class="fa  fa-file-text fa-2x"></i>
-                    <div class="number"><div><h2 class="timer count-title count-number" data-to="1200" data-speed="1500"></h2></div><div>+</div></div> 
+                    <div class="number"><div><h2 class="count">1200</h2></div><div>+</div></div> 
                     <div class="term">Applications</div>
                 </div>
                 <div class="stat hackers" data-aos="zoom-in-up">
                     <i class="fa fa-code fa-2x"></i>
-                    <div class="number"><div><h2 class="timer count-title count-number" data-to="220" data-speed="1500"></h2></div><div>+</div></div> 
+                    <div class="number"><div><h2 class="count">220</h2></div><div>+</div></div> 
                     <div class="term">Hackers</div>
                 </div>
                 <div class="stat teams" data-aos="zoom-in-up">
                     <i class="fa fa-users fa-2x"></i>
-                    <div class="number"><div><h2 class="timer count-title count-number" data-to="70" data-speed="1500"></h2></div><div>+</div></div> 
+                    <div class="number"><div><h2 class="count">70</h2></div><div>+</div></div> 
                     <div class="term">Teams</div>
                 </div>
                 <div class="stat colleges" data-aos="zoom-in-up">
                     <i class="fa fa-university fa-2x"></i>
-                    <div class="number"><div><h2 class="timer count-title count-number" data-to="30" data-speed="1500"></h2></div><div>+</div></div> 
+                    <div class="number"><div><h2 class="count">30</h2></div><div>+</div></div> 
                     <div class="term">Colleges</div>
                 </div>
             </div>      
@@ -268,6 +267,22 @@ jQuery(function ($) {
 	$this.countTo(options);
   }
 });
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async>
+      $('.count').each(function() {
+        $(this).prop('Counter', 0).animate(
+          {
+            Counter: $(this).text()
+          },
+          {
+            duration: 3000,
+            easing: 'swing',
+            step: function(now) {
+              $(this).text(Math.ceil(now));
+            }
+          }
+        );
+      });
     </script>
 </body>
 </html>
