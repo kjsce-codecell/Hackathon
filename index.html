@@ -267,22 +267,24 @@ jQuery(function ($) {
 	$this.countTo(options);
   }
 });
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script async>
-      $('.count').each(function() {
-        $(this).prop('Counter', 0).animate(
-          {
-            Counter: $(this).text()
-          },
-          {
+
+</script>
+<script async>
+    $('.count').each(function() {
+    $(this).prop('Counter', 0).animate(
+    {
+        Counter: $(this).text()
+        },
+        {
             duration: 3000,
             easing: 'swing',
             step: function(now) {
-              $(this).text(Math.ceil(now));
-            }
-          }
-        );
-      });
+                    $(this).text(Math.ceil(now));
+                }
+                }
+    );
+    });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
