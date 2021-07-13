@@ -378,7 +378,20 @@ h2 {
   display: flex;
   justify-content: space-evenly;
 }
-
+.sponsor-wrapper{border: 1px solid #FD0E35;
+    align-content: center;
+    text-align: center;
+    width: 75%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 1rem;
+}
+.flexcontainer{
+  display: flex;
+  
+  overflow:scroll;
+  scrollbar-width: none;
+}
 #mainPage{
   position: fixed;
   text-align: center;
