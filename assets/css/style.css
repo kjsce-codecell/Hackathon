@@ -167,7 +167,7 @@ body {
 
 
 .logo{
-  max-width: 225px;
+  max-width: 230px;
   margin-left: 2vw;/**/
   margin-top: 0px;/**/
 }
@@ -191,14 +191,34 @@ body {
   margin-right: 2px;/**/
   font-family: Valorant;
 }
+
 .nav-item .nav-link:after { 
   width: 100%; 
   padding-bottom: 5px;
 }
-.nav-item .nav-link:hover{
-  border-bottom: 2px solid #FD4556;
-  width: 100%;
+
+.nav-item .nav-link:after,
+.nav-item .nav-link:before {
+  transition: .5s;
 }
+
+
+.menu__link:hover{
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 17px;
+  color: white;
+  text-decoration: none;
+}
+.nav-link .nav-item {
+  position: relative;
+}
+
+
+.nav-item .nav-link {
+  transition: all 0.5s;
+}
+
 .navbar-toggler{
 border:1px solid var(--red);
 margin-left: 5px;
@@ -231,10 +251,10 @@ h1 {
   text-shadow: none;
 }
 
-/* .stat:hover {
+ .stat:hover {
   transform: scale(1.1);
   animation: transform 1.5s;
-} */
+} 
 
 .number:hover, .term:hover {
   text-shadow: 0 0 10px #FD4556;
