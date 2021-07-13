@@ -10,7 +10,7 @@
 
     --overlay-height: 85vh;
     --overlay-width: 85vw;
-    --inner-responsive-page-height: 75vh;
+    --inner-responsive-page-height: 76vh;
 }
 @font-face {
   font-family: Valorant;
@@ -38,9 +38,16 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 10px;
     overflow-x: hidden;
+    scrollbar-width: none;
+  }
+
+.overlay::-webkit-scrollbar {
+    display: none;
 }
+
 .inner-responsive-page {
     height: var(--inner-responsive-page-height);
+    scroll-margin: 80px;
 }
 
 
