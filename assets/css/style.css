@@ -233,21 +233,26 @@ body {
   margin-right: 2px;/**/
   font-family: Valorant;
 }
-.nav-item .nav-link:after { 
-  width: 100%; 
-  padding-bottom: 5px;
+
+.nav-item .nav-link:hover {
+  transform: scale(1.1);
+  animation: transform 1.5s;
+  box-shadow:inset 0px -2px 0px 0px var(--dark-red);
 }
-.nav-item .nav-link:hover{
-  border-bottom: 2px solid #FD4556;
-  width: 100%;
+.nav-item .nav-link:active {
+  transform: scale(1.1);
+  animation: transform 1.5s;
+  box-shadow:inset 0px -2px 0px 0px var(--dark-red);
 }
+
 .navbar-toggler{
-border:1px solid var(--red);
-margin-left: 5px;
+  border:1px solid var(--red);
+  margin-left: 5px;
+  margin-right: 20px;
 }
 .navbar-toggler .navbar-toggler-icon{
-background-color: var(--red);
-color: white;
+  background-color: var(--red);
+  color: white;
 }
 
 h1 {
