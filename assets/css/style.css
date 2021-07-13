@@ -11,6 +11,7 @@
   --overlay-height: 85vh;
   --overlay-width: 85vw;
   --inner-responsive-page-height: 76vh;
+
 }
 @font-face {
 font-family: Valorant;
@@ -379,21 +380,30 @@ h2 {
 }
 
 #mainPage{
-position: relative;
-text-align: center;
-color: white;
+  position: fixed;
+  text-align: center;
+  color: white;
+  width: 100%;
 }
-#mainPage{
+/* #mainPage{
 background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu/img/CVoXF3Pr-2oX6-HM.jpg") no-repeat 
   center center /cover; 
+} */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
 #mainPage .centered {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 40%;
+  z-index: 3;
+  transform: translate(-50%, -50%) rotateZ('-90deg');
   color: var(--red);
-  font-size: 100px;
+  font-size: 80px;
   margin: 0 auto;
   font-family: Valorant;
 }
