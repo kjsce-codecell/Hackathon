@@ -203,15 +203,36 @@ body {
 /* Navbar */
 .navbar{
     background: #171717;
+    height:10vh;
 }
 .nav-item .nav-link{
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #FD4556;
-    display: inline-block;
+    font-weight: bold;
+    color: #53212B;
+    display: flex;
+    position:relative;
+    left:80px;
     padding-top: 15px;
     box-sizing:border-box; 
+    width:150%;
+    color: #FD4556;
+    margin-left: 2px;
+    margin-right: 2px;
+    /*text-shadow:
+      0 0 5px #53212B,
+      0 0 10px #53212B,
+      0 0 20px #53212B,
+      0 0 40px #53212B,
+      0 0 150px #53212B;*/
+}
+.space{
+  transition:0.5s;
+}
+.space:hover{
+  margin-right:5px;
+  margin-left: 5px;
 }
 .nav-item .nav-link:after { 
     width: 100%; 
@@ -223,7 +244,7 @@ body {
 }
 .navbar-toggler{
   border:1px solid var(--red);
-  margin-left: 5px;
+  margin-left: 4px;
 }
 .navbar-toggler .navbar-toggler-icon{
   background-color: var(--red);
@@ -356,6 +377,8 @@ h2 {
   margin: 0 auto;
   font-family: Valorant;
 }
+
+              
 
 /* ! discontinued navbar */
 
