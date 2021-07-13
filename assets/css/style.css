@@ -387,9 +387,14 @@ h2 {
 }
 .flexcontainer{
   display: flex;
-  
-  overflow:scroll;
-  scrollbar-width: none;
+  overflow: scroll;  
+}
+.no-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 #mainPage{
 position: relative;
