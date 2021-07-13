@@ -167,9 +167,9 @@ body {
 
 
 .logo{
-  max-width: 200px;
+  max-width: 225px;
   margin-left: 2vw;/**/
-  margin-top: 5px;
+  margin-top: 0px;/**/
 }
 
 
@@ -189,6 +189,7 @@ body {
   font-weight: bold;/**/
   margin-left: 2px;/**/
   margin-right: 2px;/**/
+  font-family: Valorant;
 }
 .nav-item .nav-link:after { 
   width: 100%; 
