@@ -10,7 +10,7 @@
 
     --overlay-height: 85vh;
     --overlay-width: 85vw;
-    --inner-responsive-page-height: 75vh;
+    --inner-responsive-page-height: 76vh;
 }
 @font-face {
   font-family: Valorant;
@@ -47,6 +47,7 @@ body {
 
 .inner-responsive-page {
     height: var(--inner-responsive-page-height);
+    scroll-margin: 80px;
 }
 
 

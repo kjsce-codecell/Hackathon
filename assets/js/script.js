@@ -14,6 +14,25 @@ function SponsorChange(state){
     }
 
 }
+$('.scroll').click(function(e) {
 
+    e.preventDefault();
+    var target = $(this).attr('href');
+
+    if (target.length < 2) return
+
+    // var headerOffset = 140
+    var element = document.querySelector(target);
+
+    if (element) {
+        var offsetPosition = element.getBoundingClientRect().top;
+    
+        element.scrollIntoView({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+    
+});
 //aos animations
     AOS.init();
