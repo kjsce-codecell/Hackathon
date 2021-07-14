@@ -8,8 +8,8 @@
   --background-color: #0f1923;
   --neon-red: #FD0E35;
 
-  --overlay-height: 85vh;
-  --overlay-width: 85vw;
+  --overlay-height: 90vh;
+  --overlay-width: 90vw;
   --inner-responsive-page-height: 76vh;
 
 }
@@ -40,6 +40,7 @@ body {
   border-radius: 10px;
   overflow-x: hidden;
   scrollbar-width: none;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
 }
 
 .overlay::-webkit-scrollbar {
@@ -414,13 +415,14 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
+  opacity: 0.85;
 }
 #mainPage .centered {
   position: absolute;
   top: 40%;
-  left: 40%;
+  left: 50%;
   z-index: 3;
-  transform: translate(-50%, -50%) rotateZ('-90deg');
+  transform: translate(-50%, -50%);
   color: var(--red);
   font-size: 80px;
   margin: 0 auto;
