@@ -7,10 +7,11 @@
   /* button colors */
   --background-color: #0f1923;
   --neon-red: #FD0E35;
+  --white-valo:#ece8e1;
 
   --overlay-height: 90vh;
   --overlay-width: 90vw;
-  --inner-responsive-page-height: 76vh;
+  --inner-responsive-page-height: 86vh;
 
 }
 @font-face {
@@ -30,7 +31,7 @@ body {
 
 
 .overlay {
-  background-color: var(--white); 
+  background-color: #0f1923;
   height: var(--overlay-height);
   width: var(--overlay-width);
   position:absolute;
@@ -42,7 +43,15 @@ body {
   scrollbar-width: none;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
 }
-
+@media screen and (max-width:600px) {
+  .overlay{
+    height: 100vh;
+    width: 100vw;
+  }
+  .logo{
+    
+  }
+}
 .overlay::-webkit-scrollbar {
   display: none;
 }
@@ -232,7 +241,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #FD4556;
+  color: var(--white-valo);
   display: inline-block;
   padding-top: 15px;
   box-sizing:border-box; 
@@ -422,7 +431,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
-  opacity: 0.85;
 }
 #mainPage .centered {
   position: absolute;
