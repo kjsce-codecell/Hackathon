@@ -290,12 +290,14 @@ body {
 
 h1 {
   text-align: center;
+  color: var(--red);
 }
 
 .stats {
   margin-top: 10vh;
   display: flex;
   justify-content: space-around;
+  color: #ece8e1;
 }
 
 .stat {
@@ -313,13 +315,16 @@ h1 {
 
  .stat:hover {
   transform: scale(1.01);
-  box-shadow: inset 0 0 15px #FD4556;
+  box-shadow: inset 0 0 15px var(--red);
   animation: all 1.5s;
-
 } 
 
 .number:hover, .term:hover {
-  text-shadow: 0 0 3px #FD4556;
+  text-shadow: 0 0 3px var(--red);
+}
+
+.fa {
+  color: var(--red);
 }
 
 /* SVGs */
@@ -487,15 +492,16 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     margin-top: 15vh;
     display: flex;
     flex-direction: column;
+    color: #ece8e1;
   }
   
   .stat {
     margin: 1vh;
     font-size: 1.2em;
     padding: 20px;
-    border: 2px ridge #FD4556;
+    border: 2px ridge var(--red);
     border-radius: 1rem;
-    box-shadow: inset 0 0 10px #FD4556;
+    box-shadow: inset 0 0 10px var(--red);
     display: flex;
     justify-content: space-evenly;
     height: 10vh;
@@ -509,12 +515,15 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
   .stat:focus {
     transform: scale(1.01);
-    box-shadow: inset 0 0 15px #FD4556;
+    box-shadow: inset 0 0 15px var(--red);
     animation: all 1.5s;
   } 
   
   .number:focus, .term:focus {
-    text-shadow: 0 0 3px #FD4556;
+    text-shadow: 0 0 3px var(--red);
+  }
+  .fa {
+    color: var(--red);
   }
 }
 
@@ -528,21 +537,23 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
+    color: #ece8e1;
   }
   
   .stat {
     margin: 1vh;
     font-size: 1.2em;
     padding: 20px;
-    border: 2px ridge #FD4556;
+    border: 2px ridge var(--red);
     border-radius: 1rem;
-    box-shadow: inset 0 0 10px #FD4556;
+    box-shadow: inset 0 0 10px var(--red);
     display: flex;
     justify-content: space-evenly;
     height: 10vh;
     width: 70vh;
     text-shadow: none;
     text-align: center;
+    
   }
 
   .number {
@@ -553,11 +564,14 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
   .stat:focus {
     transform: scale(1.01);
-    box-shadow: inset 0 0 15px #FD4556;
+    box-shadow: inset 0 0 15px var(--red);
     animation: all 1.5s;
   } 
   
   .number:focus, .term:focus {
-    text-shadow: 0 0 3px #FD4556;
+    text-shadow: 0 0 3px var(--red);
+  }
+  .fa {
+    color: var(--red);
   }
 }
