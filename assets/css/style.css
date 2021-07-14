@@ -10,7 +10,7 @@
 
   --overlay-height: 85vh;
   --overlay-width: 85vw;
-  --inner-responsive-page-height: 76vh;
+  --inner-responsive-page-height: 77vh;
 
 }
 @font-face {
@@ -405,24 +405,17 @@ h2 {
 .no-scroll::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
-#mainPage{
+/* #mainPage{
   position: fixed;
   text-align: center;
   color: white;
   width: 100%;
-}
+} */
 /* #mainPage{
 background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu/img/CVoXF3Pr-2oX6-HM.jpg") no-repeat 
   center center /cover; 
 } */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-#mainPage .centered {
+/* #mainPage .centered {
   position: absolute;
   top: 40%;
   left: 40%;
@@ -432,5 +425,36 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   font-size: 80px;
   margin: 0 auto;
   font-family: Valorant;
-}
+} */
 
+/* * Home Page */
+.home-page-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+.home-page-text-container {
+  position: absolute; 
+  top: calc(var(--inner-responsive-page-height) / 2 ); 
+  left: 0;
+  text-align: center; 
+  width: 100%; 
+}
+.home-page-text {
+  font-family: Valorant;
+  margin-inline: 10vw;
+  color: var(--white);
+  font-size: 10vh;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 922px) {
+  .home-page-text-container {
+    position: absolute; 
+    top: calc(var(--inner-responsive-page-height) / 2 - 10vh); 
+    left: 0;
+    text-align: center; 
+    width: 100%; 
+  }
+}
