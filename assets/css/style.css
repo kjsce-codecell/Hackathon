@@ -466,7 +466,23 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 /* FAQs */
 .font-faq{
-  color: aliceblue;
+  color: var(--white-valo);
+}
+.q{
+  color: var(--red);
+}
+.faq-content{
+  display: flex;
+  text-align: left;
+}
+.unit{
+  border: 2px solid var(--red);
+  min-height: 250px;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 1.5rem;
+  margin-right: 20px;
+
 }
 
 /* FAQs END */
