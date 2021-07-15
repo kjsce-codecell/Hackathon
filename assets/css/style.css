@@ -470,6 +470,13 @@ h2 {
 background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu/img/CVoXF3Pr-2oX6-HM.jpg") no-repeat 
   center center /cover; 
 } */
+
+/* FAQs */
+.font-faq{
+  color: aliceblue;
+}
+
+/* FAQs END */
 #myVideo {
     position: fixed;
     right: 0;
@@ -492,11 +499,20 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 /* * Home Page */
 .home-page-video {
+<<<<<<< HEAD
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+=======
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  padding-left: 5px;
+>>>>>>> 5233df8746d9ffaa3da40606c71687f69eb6c7c3
 }
 .home-page-text-container {
     position: absolute;
@@ -625,9 +641,17 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   align-items: center;
   text-align: center;
 }*/
+<<<<<<< HEAD
 .slider {
     max-width: 100%;
     display: flex;
+=======
+.slider{
+  max-width: 100%;
+  display: flex;
+  margin-left: 70px;
+
+>>>>>>> 5233df8746d9ffaa3da40606c71687f69eb6c7c3
 }
 .card {
     display: flex;
