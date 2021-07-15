@@ -1,953 +1,1455 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KJSCE Hack 6.0</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KJSCE Hack 6.0</title>
+        <!-- Bootstrap -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Bootstrap -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet" />
 
-  <link href="assets/css/style.css" rel="stylesheet">
+        <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-
-</head>
-
-<body>
-  <!-- Svgs -->
-  <div class="elipseLeftTop">
-    <svg width="1841" height="1505" viewBox="0 0 1841 1505" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="733.5" cy="397" rx="1107.5" ry="1108" fill="#FF4656" />
-    </svg>
-  </div>
-
-  <div class="elipseRightWhite">
-    <svg width="268" height="269" viewBox="0 0 268 269" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="134" cy="134.5" rx="134" ry="134.5" fill="#EFEFEF" />
-    </svg>
-  </div>
-
-  <div class="circleRightRed">
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="22" cy="22" r="22" fill="#FF4656" />
-    </svg>
-  </div>
-
-  <div class="circleRightGray">
-    <svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="49" cy="49" r="49" fill="#505155" />
-    </svg>
-  </div>
-
-  <div class="elipseLeftWhite">
-    <svg width="470" height="209" viewBox="0 0 470 209" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="235" cy="235" r="235" fill="#EFEFEF" />
-    </svg>
-  </div>
-
-  <div class="circleLeftGray">
-    <svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="49" cy="49" r="49" fill="#505155" />
-    </svg>
-  </div>
-
-  <div class="bigCircleRightGray">
-    <svg width="1070" height="931" viewBox="0 0 1070 931" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="721.5" cy="721.5" r="721.5" fill="#292C31" />
-    </svg>
-  </div>
-
-
-
-
-  <!-- outside constant container with animated gif -->
-  <!-- TODO add gif -->
-  <div class="overlay">
-
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <a class="navbar-brand" href="#"><img class="logo" src="assets/images/cropped-logo.png" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto menu__list" style="margin: 0 auto; text-align: center;">
-          <li class="nav-item menu__item"><a href="#about" class="nav-link scroll menu__link">About</a></li>
-          <li class="nav-item menu__item"><a href="#stats" class="nav-link scroll menu__link">Stats</a></li>
-          <li class="nav-item menu__item"><a href="#prizes" class="nav-link scroll menu__link">Prizes</a></li>
-          <li class="nav-item menu__item"><a href="#FAQs" class="nav-link scroll menu__link">FAQs</a></li>
-          <li class="nav-item menu__item"><a href="#flashbacks" class="nav-link scroll menu__link">Flashbacks</a></li>
-          <li class="nav-item menu__item"><a href="#sponsors" class="nav-link scroll menu__link">Sponsors</a></li>
-          <li class="nav-item menu__item"><a href="#card1" class="nav-link scroll menu__link">Our Team</a></li>
-        </ul>
-
-      </div>
-    </nav>
-
-    <div>
-      <div class="inner-responsive-page" id="mainPage">
-        <div class="centered">KJSCE HACK 6.0</div>
-        <video autoplay muted loop id="myVideo">
-          <source src="assets/images/home-bg4.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="inner-responsive-page" id="about">
-        <h1>About</h1>
-      </div>
-
-      <div class="inner-responsive-page" id="stats">
-        <h1>Stats</h1>
-        <div class="stats">
-          <div class=" stat applications" data-aos="zoom-in-up">
-            <i class="fa  fa-file-text fa-2x"></i>
-            <div class="number">
-              <div>
-                <h2 class="count">1200</h2>
-              </div>
-              <div>+</div>
-            </div>
-            <div class="term">Applications</div>
-          </div>
-          <div class="stat hackers" data-aos="zoom-in-up">
-            <i class="fa fa-code fa-2x"></i>
-            <div class="number">
-              <div>
-                <h2 class="count">220</h2>
-              </div>
-              <div>+</div>
-            </div>
-            <div class="term">Hackers</div>
-          </div>
-          <div class="stat teams" data-aos="zoom-in-up">
-            <i class="fa fa-users fa-2x"></i>
-            <div class="number">
-              <div>
-                <h2 class="count">70</h2>
-              </div>
-              <div>+</div>
-            </div>
-            <div class="term">Teams</div>
-          </div>
-          <div class="stat colleges" data-aos="zoom-in-up">
-            <i class="fa fa-university fa-2x"></i>
-            <div class="number">
-              <div>
-                <h2 class="count">30</h2>
-              </div>
-              <div>+</div>
-            </div>
-            <div class="term">Colleges</div>
-          </div>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        />
+    </head>
+    <body>
+        <!-- Svgs -->
+        <div class="elipseLeftTop">
+            <svg
+                width="1841"
+                height="1505"
+                viewBox="0 0 1841 1505"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <ellipse
+                    cx="733.5"
+                    cy="397"
+                    rx="1107.5"
+                    ry="1108"
+                    fill="#FF4656"
+                />
+            </svg>
         </div>
-      </div>
 
-      <div class="inner-responsive-page" id="sponsors">
-        <h1>Sponsors</h1>
-        <div class="button-container">
-          <button id="previous-sponsor-button" class="btn btn--light" onclick="SponsorChange('prev')">
-            <span class="btn__inner">
-              <span class="btn__slide"></span>
-              <span class="btn__content">Previous Sponsors</span>
-            </span>
-          </button>
-
-          <button id="current-sponsor-button" class="btn btn--light btn--selected" onclick="SponsorChange('curr')">
-            <span class="btn__inner">
-              <span class="btn__slide"></span>
-              <span class="btn__content">Current Sponsors</span>
-            </span>
-          </button>
+        <div class="elipseRightWhite">
+            <svg
+                width="268"
+                height="269"
+                viewBox="0 0 268 269"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <ellipse
+                    cx="134"
+                    cy="134.5"
+                    rx="134"
+                    ry="134.5"
+                    fill="#EFEFEF"
+                />
+            </svg>
         </div>
-        <div class="sponsor-wrapper">
-          <div id="previous-sponsor" style="display: none;">
-            <div
-              class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-center align-items-center m-2">
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/sponsors/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://polygon.technology/" target="_blank">
-                    <img src="assets/images/sponsors/polygon.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.portis.io/" target="_blank">
-                    <img src="assets/images/sponsors/portis.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://tezos.com/" target="_blank">
-                    <img src="assets/images/sponsors/tezos.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://frappe.io/" target="_blank">
-                    <img src="assets/images/sponsors/frappe_new-logo.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.digitalocean.com/" target="_blank">
-                    <img src="assets/images/sponsors/digitalocean.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.sublimetext.com/" target="_blank">
-                    <img class="small-logo" src="assets/images/sponsors/sublime.png" />
-                  </a>
-                </div>
-              </div>
 
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://hotpot.ai/" target="_blank">
-                    <img src="assets/images/sponsors/hotpot.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://developers.google.com/community/dsc" target="_blank">
-                    <img src="assets/images/sponsors/DSC.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://balsamiq.com/" target="_blank">
-                    <img src="assets/images/sponsors/balsamiq.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.geeksforgeeks.org/" target="_blank">
-                    <img src="assets/images/sponsors/gfg_logo.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://wolfram.com/" target="_blank">
-                    <img src="assets/images/sponsors/wolfram.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.echoar.xyz/" target="_blank">
-                    <img src="assets/images/sponsors/echoAR_logo.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://repl.it/" target="_blank">
-                    <img src="assets/images/sponsors/repl.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://matic.network/" target="_blank">
-                    <img src="assets/images/sponsors/matic.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.linode.com/" target="_blank">
-                    <img src="assets/images/sponsors/linode.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://tvarit.com/" target="_blank">
-                    <img src="assets/images/sponsors/tvarit.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.sketch.com/" target="_blank">
-                    <img src="assets/images/sponsors/sketch.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://doist.com/" target="_blank">
-                    <img class="inv-color" src="assets/images/sponsors/doist.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://hasura.io/" target="_blank">
-                    <img src="assets/images/sponsors/cbimage.svg" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://codingblocks.com/" target="_blank">
-                    <img src="assets/images/sponsors/cb.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://dev.to/" target="_blank">
-                    <img class="inv-color" src="assets/images/sponsors/dev.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.jetbrains.com/" target="_blank">
-                    <img src="assets/images/sponsors/jetbrains.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://sheroes.com/" target="_blank">
-                    <img src="assets/images/sponsors/sheroes.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.bugsee.com/" target="_blank">
-                    <img src="assets/images/sponsors/bugsee.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.stickermule.com/" target="_blank">
-                    <img src="assets/images/sponsors/stickermule.svg" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://www.desmos.com/" target="_blank">
-                    <img src="assets/images/sponsors/desmos.png" />
-                  </a>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-
-
-
-          <div id="current-sponsor">
-            <h3>Our Partner</h3>
-            <div
-              class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 justify-content-center align-items-center m-2">
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <h3>Gold Sponsors</h3>
-            <div
-              class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 justify-content-center align-items-center m-2">
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <h3>Silver Sponsors</h3>
-            <div
-              class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center align-items-center m-2">
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <h3>Patrons</h3>
-            <div
-              class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 justify-content-center align-items-center m-2">
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="p-3">
-                <div class="img-place client-img">
-                  <a href="https://devfolio.co/" target="_blank">
-                    <img src="assets/images/devfolio.png" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="circleRightRed">
+            <svg
+                width="44"
+                height="44"
+                viewBox="0 0 44 44"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle cx="22" cy="22" r="22" fill="#FF4656" />
+            </svg>
         </div>
-      </div>
 
-      <div class="inner-responsive-page" id="FAQs">
-        <h1>FAQs</h1>
-        
-          <div class="position-realive bg-image">
-            
-              <div class="row">
-                
-                <div class="font-faq">
-                  <div class="faq-content">
-                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 justify-content-center    align-items-center m-2">
-                    <div class="unit">
-                    <div id="q1">
-                      <div class="q">
-                        What happens at an Online Hackathon?
-                       
-                      </div>
-                      <div class="answer open" id="a1">
-                        Participants (“hackers”) spend 24 hours working in teams of 2 - 4 people to build or
-                        code projects (“hacks”) they’re excited about. There are workshops, mentors and
-                        mini-events to guide you along the way. You bring your ideas, and we give you
-                        everything you need to make them come to life.
-                      </div>
-                    </div>
-                    </div>
-                    <div class="unit">
+        <div class="circleRightGray">
+            <svg
+                width="98"
+                height="98"
+                viewBox="0 0 98 98"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle cx="49" cy="49" r="49" fill="#505155" />
+            </svg>
+        </div>
 
-                    <div id="q2">
-                      <div class="q">
-                        What are the topics for the Hackathon?
-                        
-                      </div>
-                      <div class="answer" id="a2">
-                        This is an open innovation hackathon i.e. there won't be any problem statements or tracks
-                        provided.
-                        Teams are free to build what they want.
-                        Also once you've registered with an e-mail id, we'll shoot you a mail about further
-                        announcements.
-                      </div>
-                    </div>
-                    </div>
-                  
-                    <div class="unit">
-                    <div id="q3">
-                      <div class="q">
-                        What do people normally make?
-                        
-                      </div>
-                      <div class="answer" id="a3">
-                        Hacks generally fall under one (or more) of the seven cortices: Web Development,
-                        Android, iOS, AI/ML, AR/VR, Game Development, and Hardware.
-                      </div>
-                    </div>
-                    </div>
-                    <div class="unit">
-                    <div id="q4">
-                      <div class="q">
-                        What is the Code of Conduct?
-                        
-                      </div>
-                      <div class="answer" id="a4">
-                        The appropriate code of conduct is linked
-                        <a href="https://drive.google.com/file/d/1EDjvC7DpBDr_j6EsBHBwd-XgZ6KS4_Hi/view?usp=sharing"
-                          class="coc">here
-                        </a>.
-                      </div>
-                    </div>
-                  </div>
-                  
+        <div class="elipseLeftWhite">
+            <svg
+                width="470"
+                height="209"
+                viewBox="0 0 470 209"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle cx="235" cy="235" r="235" fill="#EFEFEF" />
+            </svg>
+        </div>
 
-                  <div class="unit">
-                    <div id="q5">
-                      <div class="q">
-                        What if I've never been to a hackathon before?
-                        
-                      </div>
-                      <div class="answer" id="a5">
-                        Not to worry, We welcome students of all skill levels. We’ll have talks, mentors and
-                        workshops to help you with your project; hackathons can be a great place to learn
-                        new skills in a short amount of time. Just be eager to learn, and excited to meet
-                        lots of awesome people.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="unit">
-                    <div id="q6">
-                      <div class="q">
-                        What should be the team size?
-                       
-                        
-                      </div>
-                      <div class="answer" id="a6">
-                        A team can consist of 2-4 members although participants can register individually on Devfolio.
-                        Projects are to be submitted as a team on Devfolio, so participants need to finalize their teams
-                        during the event to submit their projects.
-                      </div>
-                    </div>
-                  </div>
+        <div class="circleLeftGray">
+            <svg
+                width="98"
+                height="98"
+                viewBox="0 0 98 98"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle cx="49" cy="49" r="49" fill="#505155" />
+            </svg>
+        </div>
 
-                  <div class="unit">
-                    <div id="q7">
-                      <div class="q">
-                        Interested in sponsoring us?
-                        
-                      </div>
-                      <div class="answer" id="a7">
-                        Reach out to us at <a href="mailto:sponsor@kjscecodecell.com">sponsor@kjscecodecell.com</a>
-                      </div>
+        <div class="bigCircleRightGray">
+            <svg
+                width="1070"
+                height="931"
+                viewBox="0 0 1070 931"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle cx="721.5" cy="721.5" r="721.5" fill="#292C31" />
+            </svg>
+        </div>
+
+        <!-- outside constant container with animated gif -->
+        <!-- TODO add gif -->
+        <div class="overlay">
+            <nav class="navbar navbar-expand-lg sticky-top">
+                <a class="navbar-brand" href="#"
+                    ><img
+                        class="logo"
+                        src="assets/images/cropped-logo.png"
+                        alt="logo"
+                /></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul
+                        class="navbar-nav mr-auto menu__list"
+                        style="margin: 0 auto; text-align: center"
+                    >
+                        <li class="nav-item menu__item">
+                            <a href="#about" class="nav-link scroll menu__link"
+                                >About</a
+                            >
+                        </li>
+                        <li class="nav-item menu__item">
+                            <a href="#stats" class="nav-link scroll menu__link"
+                                >Stats</a
+                            >
+                        </li>
+                        <li class="nav-item menu__item">
+                            <a href="#prizes" class="nav-link scroll menu__link"
+                                >Prizes</a
+                            >
+                        </li>
+                        <li class="nav-item menu__item">
+                            <a href="#FAQs" class="nav-link scroll menu__link"
+                                >FAQs</a
+                            >
+                        </li>
+                        <li class="nav-item menu__item">
+                            <a
+                                href="#flashbacks"
+                                class="nav-link scroll menu__link"
+                                >Flashbacks</a
+                            >
+                        </li>
+                        <li class="nav-item menu__item">
+                            <a
+                                href="#sponsors"
+                                class="nav-link scroll menu__link"
+                                >Sponsors</a
+                            >
+                        </li>
+                        <li class="nav-item menu__item">
+                            <a href="#card1" class="nav-link scroll menu__link"
+                                >Our Team</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div>
+                <div class="inner-responsive-page" id="mainPage">
+                    <div class="centered">KJSCE HACK 6.0</div>
+                    <video autoplay muted loop id="myVideo">
+                        <source
+                            src="assets/images/home-bg4.mp4"
+                            type="video/mp4"
+                        />
+                    </video>
+                </div>
+
+                <div class="inner-responsive-page" id="about">
+                    <h1>About</h1>
+                    <div class="container">
+                        <div class="row" id="aboutmr">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <img
+                                    src="../Hackathon/assets/images/cropped-logo.png"
+                                    alt=""
+                                    id="aboutimg"
+                                />
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div
+                                class="col-sm-5 abouttext"
+                                style="color: white"
+                            >
+                                <br />
+                                <h2>WHAT?</h2>
+                                <p>
+                                    This is a 24-hour Hackathon conducted on a
+                                    virtual platform, with many fun activities
+                                    and exciting prizes lined up.
+                                </p>
+
+                                <h2>WHERE?</h2>
+                                <p>
+                                    You decide. This is going to be conducted in
+                                    a fully online mode at the ease of your
+                                    pajamas.
+                                </p>
+
+                                <h2>WHY?</h2>
+                                <p>
+                                    Why not? Brainstorm on ideas along with your
+                                    team. Moreover, you wouldn't want to miss
+                                    out on SCHWAGS obviously!
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="unit">
-                    <div id="q8">
-                      <div class="q">
-                        404: Question Not Found?
-                        
-                      </div>
-                      <div class="answer fadeInUP" id="a8">
-                        You can just drop a DM at any of our social network handles and we'll try our best
-                        to answer them ASAP :)
-                        <br>You can also reach out to us at <a
-                          href="mailto:hack@kjscecodecell.com">hack@kjscecodecell.com</a>
-                      </div>
+                </div>
+
+                <div class="inner-responsive-page" id="stats">
+                    <h1>Stats</h1>
+                    <div class="stats">
+                        <div class="stat applications" data-aos="zoom-in-up">
+                            <i class="fa fa-file-text fa-2x"></i>
+                            <div class="number">
+                                <div><h2 class="count">1200</h2></div>
+                                <div>+</div>
+                            </div>
+                            <div class="term">Applications</div>
+                        </div>
+                        <div class="stat hackers" data-aos="zoom-in-up">
+                            <i class="fa fa-code fa-2x"></i>
+                            <div class="number">
+                                <div><h2 class="count">220</h2></div>
+                                <div>+</div>
+                            </div>
+                            <div class="term">Hackers</div>
+                        </div>
+                        <div class="stat teams" data-aos="zoom-in-up">
+                            <i class="fa fa-users fa-2x"></i>
+                            <div class="number">
+                                <div><h2 class="count">70</h2></div>
+                                <div>+</div>
+                            </div>
+                            <div class="term">Teams</div>
+                        </div>
+                        <div class="stat colleges" data-aos="zoom-in-up">
+                            <i class="fa fa-university fa-2x"></i>
+                            <div class="number">
+                                <div><h2 class="count">30</h2></div>
+                                <div>+</div>
+                            </div>
+                            <div class="term">Colleges</div>
+                        </div>
                     </div>
+                </div>
+
+                <div class="inner-responsive-page" id="sponsors">
+                    <h1>Sponsors</h1>
+                    <div class="button-container">
+                        <button
+                            id="previous-sponsor-button"
+                            class="btn btn--light"
+                            onclick="SponsorChange('prev')"
+                        >
+                            <span class="btn__inner">
+                                <span class="btn__slide"></span>
+                                <span class="btn__content"
+                                    >Previous Sponsors</span
+                                >
+                            </span>
+                        </button>
+
+                        <button
+                            id="current-sponsor-button"
+                            class="btn btn--light btn--selected"
+                            onclick="SponsorChange('curr')"
+                        >
+                            <span class="btn__inner">
+                                <span class="btn__slide"></span>
+                                <span class="btn__content"
+                                    >Current Sponsors</span
+                                >
+                            </span>
+                        </button>
                     </div>
-                  </div>
+                    <div class="sponsor-wrapper">
+                        <div id="previous-sponsor" style="display: none">
+                            <div
+                                class="
+                                    row
+                                    row-cols-2
+                                    row-cols-sm-2
+                                    row-cols-md-3
+                                    row-cols-lg-5
+                                    justify-content-center
+                                    align-items-center
+                                    m-2
+                                "
+                            >
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://polygon.technology/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/polygon.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.portis.io/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/portis.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://tezos.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/tezos.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://frappe.io/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/frappe_new-logo.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.digitalocean.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/digitalocean.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.sublimetext.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                class="small-logo"
+                                                src="assets/images/sponsors/sublime.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://hotpot.ai/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/hotpot.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://developers.google.com/community/dsc"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/DSC.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://balsamiq.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/balsamiq.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.geeksforgeeks.org/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/gfg_logo.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://wolfram.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/wolfram.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.echoar.xyz/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/echoAR_logo.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://repl.it/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/repl.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://matic.network/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/matic.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.linode.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/linode.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://tvarit.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/tvarit.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.sketch.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/sketch.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://doist.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                class="inv-color"
+                                                src="assets/images/sponsors/doist.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://hasura.io/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/cbimage.svg"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://codingblocks.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/cb.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://dev.to/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                class="inv-color"
+                                                src="assets/images/sponsors/dev.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.jetbrains.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/jetbrains.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://sheroes.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/sheroes.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.bugsee.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/bugsee.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.stickermule.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/stickermule.svg"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://www.desmos.com/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/sponsors/desmos.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="current-sponsor">
+                            <h3>Our Partner</h3>
+                            <div
+                                class="
+                                    row
+                                    row-cols-2
+                                    row-cols-sm-2
+                                    row-cols-md-3
+                                    row-cols-lg-3
+                                    justify-content-center
+                                    align-items-center
+                                    m-2
+                                "
+                            >
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Gold Sponsors</h3>
+                            <div
+                                class="
+                                    row
+                                    row-cols-2
+                                    row-cols-sm-2
+                                    row-cols-md-3
+                                    row-cols-lg-3
+                                    justify-content-center
+                                    align-items-center
+                                    m-2
+                                "
+                            >
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Silver Sponsors</h3>
+                            <div
+                                class="
+                                    row
+                                    row-cols-2
+                                    row-cols-sm-2
+                                    row-cols-md-3
+                                    row-cols-lg-4
+                                    justify-content-center
+                                    align-items-center
+                                    m-2
+                                "
+                            >
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Patrons</h3>
+                            <div
+                                class="
+                                    row
+                                    row-cols-2
+                                    row-cols-sm-3
+                                    row-cols-md-4
+                                    row-cols-lg-5
+                                    justify-content-center
+                                    align-items-center
+                                    m-2
+                                "
+                            >
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="img-place client-img">
+                                        <a
+                                            href="https://devfolio.co/"
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src="assets/images/devfolio.png"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-              </div>
-            
-          </div>
-        
-      </div>
-        <!-- <div class="inner-responsive-page" id="team"> -->
-        <h1>Meet Our Team</h1>
-        <div class="slider owl-carousel">
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Devansh _Shah _Committee Head.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Devansh Shah</h2>
-              <p class="position">Committee Head</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/devansh-shah-8b598b192/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
+
+                <div class="inner-responsive-page" id="FAQs">
+                    <h1>FAQs</h1>
                 </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/twilight-warlock" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
+
+                <!-- <div class="inner-responsive-page" id="team"> -->
+                <h1>Meet Our Team</h1>
+                <div class="slider owl-carousel">
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Devansh _Shah _Committee Head.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Devansh Shah</h2>
+                            <p class="position">Committee Head</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/devansh-shah-8b598b192/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/twilight-warlock"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Neelansh Mathur_Committee Head.png"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Neelansh Mathur</h2>
+                            <p class="position">Committee Head</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/neelansh-mathur/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/neelansh15"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Kevin Joshi_Marketing Head.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Kevin Joshi</h2>
+                            <p class="position">Marketing Head</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/kevinjoshi46b/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/KevinJ-hub"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Nishit_patel_tech_head.jpeg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Nishit Patel</h2>
+                            <p class="position">Tech Head</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/nishit130"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/nis130"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Hussain Pettiwala_Tech Team.png"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Hussain Pettiwala</h2>
+                            <p class="position">Tech Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/hussain-pettiwala-198469202/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/pettiboy"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Jay Malve_Tech Team.jpeg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Jay Malve</h2>
+                            <p class="position">Tech Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/jay-malave-0098a01ba/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/jaymalave"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Jayesh Nirve_Tech Team.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Jayesh Nirve</h2>
+                            <p class="position">Tech Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href=" https://www.linkedin.com/in/techno-disaster/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/Techno-Disaster"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/RajTiwari_TechTeam.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Raj Tiwari</h2>
+                            <p class="position">Tech Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/raj-tiwari-7bb7a31b1/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/therajtiwari"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Sahil Sayani _ Tech team.jpeg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Sahil Sayani</h2>
+                            <p class="position">Tech Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/sahil-sayani-1696751b7/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/SahilSayani"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Vedant Nagani_TechTeam.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Vedant Nagani</h2>
+                            <p class="position">Tech Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/vedant-nagani-a5607a1aa/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/Vedant13-ux"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Manasi Varaiya_Co-ordinator.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Manasi Varaiya</h2>
+                            <p class="position">Coordinator</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/manasi-varaiya-b292691aa/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/manasivaraiya"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Tanvi Deshpande _Co-ordinator_.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Tanvi Deshpande</h2>
+                            <p class="position">Coordinator</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/tanvi-deshpande-9046b620a/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/Tanvi-15"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Vidhi Shah_Co-ordinator.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Vidhi Shah</h2>
+                            <p class="position">Coordinator</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/vidhi03/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/vidhishah03"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Rahil Parikh_PR Team.jpeg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Rahil Parikh</h2>
+                            <p class="position">PR Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/rahil-parikh-52b957216/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/rprkh"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/SOUMEN SAMANTA PR TEAM.jpeg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Soumen Samanta</h2>
+                            <p class="position">PR Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/soumen-samanta-91866b1b3/"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/soumen246"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Huzaifa Khilawala_Creative-team.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Huzaifa Khilawala</h2>
+                            <p class="position">Creative Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/huzaifa-khilawala"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/RedHeadphone"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-12 mb-4">
+                        <div
+                            class="card text-center rounded-0 border-0"
+                            id="card1"
+                        >
+                            <img
+                                src="./assets/images/Medhavi_Creative_Team.jpg"
+                                alt=""
+                                class="circular-image"
+                            />
+                            <h2 class="card-name">Medhavi Sinha</h2>
+                            <p class="position">Creative Team</p>
+                            <div
+                                class="row mx-0 mb-0 mt-0 justify-content-left"
+                            >
+                                <div class="col-6 px-2 py-0">
+                                    <a
+                                        href="https://www.linkedin.com/in/medhavi-sinha-7b9a431ba"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-linkedin"></div
+                                    ></a>
+                                </div>
+                                <div class="col-2 px-1 py-0">
+                                    <a
+                                        href="https://github.com/medhavisinha"
+                                        target="_blank"
+                                        ><div class="py-2 fa fa-github"></div
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <!-- </div> -->
             </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Neelansh Mathur_Committee Head.png" alt="" class="circular-image">
-              <h2 class="card-name">Neelansh Mathur</h2>
-              <p class="position">Committee Head</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/neelansh-mathur/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/neelansh15" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Kevin Joshi_Marketing Head.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Kevin Joshi</h2>
-              <p class="position">Marketing Head</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/kevinjoshi46b/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/KevinJ-hub" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Nishit_patel_tech_head.jpeg" alt="" class="circular-image">
-              <h2 class="card-name">Nishit Patel</h2>
-              <p class="position">Tech Head</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/nishit130" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/nis130" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Hussain Pettiwala_Tech Team.png" alt="" class="circular-image">
-              <h2 class="card-name">Hussain Pettiwala</h2>
-              <p class="position">Tech Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/hussain-pettiwala-198469202/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/pettiboy" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Jay Malve_Tech Team.jpeg" alt="" class="circular-image">
-              <h2 class="card-name">Jay Malve</h2>
-              <p class="position">Tech Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/jay-malave-0098a01ba/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/jaymalave" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Jayesh Nirve_Tech Team.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Jayesh Nirve</h2>
-              <p class="position">Tech Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href=" https://www.linkedin.com/in/techno-disaster/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/Techno-Disaster" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/RajTiwari_TechTeam.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Raj Tiwari</h2>
-              <p class="position">Tech Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/raj-tiwari-7bb7a31b1/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/therajtiwari" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Sahil Sayani _ Tech team.jpeg" alt="" class="circular-image">
-              <h2 class="card-name">Sahil Sayani</h2>
-              <p class="position">Tech Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/sahil-sayani-1696751b7/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/SahilSayani" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Vedant Nagani_TechTeam.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Vedant Nagani</h2>
-              <p class="position">Tech Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/vedant-nagani-a5607a1aa/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/Vedant13-ux" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Manasi Varaiya_Co-ordinator.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Manasi Varaiya</h2>
-              <p class="position">Coordinator</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/manasi-varaiya-b292691aa/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/manasivaraiya" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Tanvi Deshpande _Co-ordinator_.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Tanvi Deshpande</h2>
-              <p class="position">Coordinator</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/tanvi-deshpande-9046b620a/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/Tanvi-15" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Vidhi Shah_Co-ordinator.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Vidhi Shah</h2>
-              <p class="position">Coordinator</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/vidhi03/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/vidhishah03" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Rahil Parikh_PR Team.jpeg" alt="" class="circular-image">
-              <h2 class="card-name">Rahil Parikh</h2>
-              <p class="position">PR Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/rahil-parikh-52b957216/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/rprkh" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/SOUMEN SAMANTA PR TEAM.jpeg" alt="" class="circular-image">
-              <h2 class="card-name">Soumen Samanta</h2>
-              <p class="position">PR Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/soumen-samanta-91866b1b3/" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/soumen246" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Huzaifa Khilawala_Creative-team.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Huzaifa Khilawala</h2>
-              <p class="position">Creative Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/huzaifa-khilawala" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/RedHeadphone" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 col-12 mb-4">
-            <div class="card text-center rounded-0 border-0" id="card1">
-              <img src="./assets/images/Medhavi_Creative_Team.jpg" alt="" class="circular-image">
-              <h2 class="card-name">Medhavi Sinha</h2>
-              <p class="position">Creative Team</p>
-              <div class="row mx-0 mb-0 mt-0 justify-content-left">
-                <div class="col-6 px-2 py-0">
-                  <a href="https://www.linkedin.com/in/medhavi-sinha-7b9a431ba" target="_blank">
-                    <div class="py-2 fa fa-linkedin"></div>
-                  </a>
-                </div>
-                <div class="col-2 px-1 py-0">
-                  <a href="https://github.com/medhavisinha" target="_blank">
-                    <div class="py-2 fa fa-github"></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- </div> -->
       </div>
@@ -957,7 +1459,7 @@
       $(".slider").owlCarousel({
         loop: true,
         autoplay: true,
-        autoplayTimeout: 1000,
+        autoplayTimeout: 2500,
         autoplayHoverPause: true,
       });
     </script>
