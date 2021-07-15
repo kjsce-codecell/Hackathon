@@ -357,6 +357,7 @@ h1 {
 
 .fa {
     color: var(--red);
+    background: transparent !important;
 }
 
 /* SVGs */
