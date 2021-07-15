@@ -635,6 +635,11 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   align-items: center;
   text-align: center;
 }*/
+/* #team{
+  margin:'0 auto';
+  max-width: 1000px;
+  width: 90%;
+} */
 .slider {
     max-width: 100%;
     display: flex;
@@ -670,7 +675,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 #card1 {
-    align-content: center;
     border-top: 3px solid #fd4556 !important;
     width: 300px;
     transition: 0.5s;
@@ -687,36 +691,36 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     width: 30%;
 }
 
-.fa {
+#team .fa {
     color: white;
     background-color: black;
     width: 40px;
     transition: 0.2s;
 }
 
-.fa:hover {
+#team .fa:hover {
     opacity: 1;
     transition: 0.2s;
 }
 
-.fa-linkedin {
+#team .fa-linkedin {
     align-content: center;
     background-color: #0077b5;
     opacity: 0.7;
 }
 
-.fa-github {
+#team.fa-github {
     align-content: center;
     background-color: #000000;
     opacity: 0.7;
 }
 
-svg {
+#team svg {
     height: 200px;
     width: 150px;
 }
 
-.cards-wrapper {
+#team .cards-wrapper {
     display: flex;
     justify-content: center;
 }
