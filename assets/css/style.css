@@ -50,7 +50,13 @@ body {
     width: 100vw;
     border-radius: 0px;
   }
+  .inner-responsive-page {
+    height: 90vh !important;
+    scroll-margin: 80px;
+  }
 }
+
+
 .overlay::-webkit-scrollbar {
   display: none;
 }
@@ -317,8 +323,8 @@ h1 {
 }
 
 .stat {
-  font-size: 1.2em;
-  padding: 15px;
+  font-size: 2.5vh;
+  padding: 1vh;
   border: 2px ridge #FD4556;
   border-radius: 1rem;
   box-shadow: inset 0 0 10px #FD4556;
@@ -520,8 +526,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   
   .stat {
     margin: 1vh;
-    font-size: 1.2em;
-    padding: 20px;
+    font-size: 2.5vh;
+    padding: 1vh;
     border: 2px ridge var(--red);
     border-radius: 1rem;
     box-shadow: inset 0 0 10px var(--red);
@@ -565,8 +571,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   
   .stat {
     margin: 1vh;
-    font-size: 1.2em;
-    padding: 20px;
+    font-size: 2.5vh;
+    padding: 1vh;
     border: 2px ridge var(--red);
     border-radius: 1rem;
     box-shadow: inset 0 0 10px var(--red);
@@ -718,17 +724,16 @@ svg {
   transform: translateY(-100%);
 
 }*/
-@media (max-width: 768px) and (min-width: 0px) {
+/*@media (max-width: 768px) and (min-width: 0px) {
   .slider {
     padding: 3px;
   }
   .card {
     padding: 3px;
   }
-}
+}*/
 
-img{
-  
+.circular-image{
+  border-radius: 50%;
 }
-
 /*---------------------Team End--------------*/
