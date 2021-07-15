@@ -50,7 +50,14 @@ body {
     width: 100vw;
     border-radius: 0px;
   }
+  .inner-responsive-page {
+    height: 100vh !important;
+    background-color: #000000;
+    scroll-margin: 80px;
+  }
 }
+
+
 .overlay::-webkit-scrollbar {
   display: none;
 }
