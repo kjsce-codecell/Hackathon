@@ -450,6 +450,11 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 .font-faq{
   color: var(--white-valo);
 }
+#FAQs{
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 90%;
+}
 .q{
   color: var(--red);
 }
@@ -459,13 +464,11 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 .unit{
   border: 2px solid var(--red);
-  min-height: 250px;
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 1.5rem;
   margin-right: 20px;
-  
-
+  width: 100%;
 }
 
 /* FAQs END */
