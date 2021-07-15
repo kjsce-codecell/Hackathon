@@ -338,7 +338,7 @@ body {
     text-shadow: 0 0 3px var(--red);
 }
 
-.fa {
+#stats .fa {
     color: var(--red);
     background: transparent !important;
 }
@@ -692,7 +692,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 #team .fa {
-    color: white;
     background-color: black;
     width: 40px;
     transition: 0.2s;
@@ -705,14 +704,18 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 #team .fa-linkedin {
     align-content: center;
-    background-color: #0077b5;
+    background-color: #0077b5 !important;
     opacity: 0.7;
+    color: white;
+
 }
 
-#team.fa-github {
+#team .fa-github {
     align-content: center;
-    background-color: #000000;
+    background-color: #000000 !important;
     opacity: 0.7;
+    color: white !important;
+
 }
 
 #team svg {
