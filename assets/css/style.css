@@ -289,18 +289,21 @@ body {
 }
 
 .navbar-toggler {
-    border: 1px solid var(--red);
+  border-color: var(--dark-red);
     margin-left: 5px;
     margin-right: 20px;
 }
 .navbar-toggler .navbar-toggler-icon {
-    background-color: var(--red);
-    color: white;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(189,57,68)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-h1 {
-    text-align: center;
-    color: var(--red);
+.section-heading {
+  text-align: center;
+  font-size: 50px;
+  /* color: var(--red); */
+
+  color: #F0CDCD;
+  -webkit-text-stroke: 2px #FF4656; /* width and color */
 }
 
 .stats {
@@ -483,7 +486,9 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     left: 50%;
     z-index: 3;
     transform: translate(-50%, -50%);
-    color: var(--red);
+    /* color: var(--red); */
+    color: #F0CDCD;
+    -webkit-text-stroke: 2px #FF4656; /* width and color */
     font-size: 80px;
     margin: 0 auto;
     font-family: Valorant;
