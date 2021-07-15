@@ -712,17 +712,16 @@ svg {
   transform: translateY(-100%);
 
 }*/
-@media (max-width: 768px) and (min-width: 0px) {
+/*@media (max-width: 768px) and (min-width: 0px) {
   .slider {
     padding: 3px;
   }
   .card {
     padding: 3px;
   }
-}
+}*/
 
-img{
-  
+.circular-image{
+  border-radius: 50%;
 }
-
 /*---------------------Team End--------------*/
