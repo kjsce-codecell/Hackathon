@@ -190,32 +190,16 @@ body {
     box-shadow: 0 0 15px 1px var(--neon-red);
     transform: scale(1.01);
     animation: transform 0.5s;
-}
-
-/* .btn:disabled .btn__inner{
+  }
+  
+  .btn--selected .btn__inner{
     background-color: var(--neon-red);
   }
-  .btn:disabled .btn__content{
+  .btn--selected .btn__content{
     color:var(--black)
-  } */
-.btn--selected .btn__inner {
-    background-color: var(--neon-red);
-}
-.btn--selected .btn__content {
-    color: var(--black);
-}
-/* .btn--selected:hover .btn__inner{
-    background-color: var(--button-background-color);
-  } */
-/* .btn--selected:hover .btn__content{
-    color:var(--black)
-  } */
+  }
 
-.img-place * {
-    height: 100%;
-    width: 100%;
-}
-.sponsor-wrapper {
+  .sponsor-wrapper{
     max-height: 60vh !important;
     overflow: auto;
     overflow-x: auto;
@@ -225,20 +209,15 @@ body {
     color: white;
     margin-top: 32px;
     margin-bottom: 0px;
-}
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-track {
-    background: 0 0;
-}
-::-webkit-scrollbar-thumb {
-    background: #666;
-    border-radius: 15px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #0b99c9;
-}
+  }
+  .img-place a img{
+    max-height: 70px;
+    max-width: 100%;
+  }
+  ::-webkit-scrollbar{width:5px}
+  ::-webkit-scrollbar-track{background:0 0}
+  ::-webkit-scrollbar-thumb{background:#666;border-radius:15px}
+  ::-webkit-scrollbar-thumb:hover{background:#0b99c9}
 
 .btn:hover .btn__slide {
     width: calc(100% + 15px);
@@ -361,6 +340,7 @@ body {
 
 .fa {
     color: var(--red);
+    background: transparent !important;
 }
 
 /* SVGs */
@@ -439,10 +419,6 @@ h2 {
 .inv-color {
     filter: invert(100%);
 }
-.small-logo {
-    max-height: 110px;
-    max-width: 90px;
-}
 
 .sponsor-wrapper {
     border: 1px solid #fd0e35;
@@ -488,11 +464,12 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 .unit{
   border: 2px solid var(--red);
-  min-height: 250px;
+  min-height: 300px;
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 1.5rem;
   margin-right: 20px;
+  
 
 }
 
