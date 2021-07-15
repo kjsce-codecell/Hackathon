@@ -31,7 +31,8 @@ body {
 
 
 .overlay {
-  background-color: #0f1923;
+  /* background-color: #0f1923; */
+  background-color: #0D1A27;
   height: var(--overlay-height);
   width: var(--overlay-width);
   position:absolute;
@@ -47,9 +48,7 @@ body {
   .overlay{
     height: 100vh;
     width: 100vw;
-  }
-  .logo{
-    
+    border-radius: 0px;
   }
 }
 .overlay::-webkit-scrollbar {
@@ -464,7 +463,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
   font-size: 80px;
   margin: 0 auto;
   font-family: Valorant;
-} */
+  text-align: center;
+} 
 
 /* * Home Page */
 .home-page-video {
