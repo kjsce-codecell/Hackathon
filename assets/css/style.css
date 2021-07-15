@@ -51,8 +51,7 @@ body {
     border-radius: 0px;
   }
   .inner-responsive-page {
-    height: 100vh !important;
-    background-color: #000000;
+    height: 90vh !important;
     scroll-margin: 80px;
   }
 }
