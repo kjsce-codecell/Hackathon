@@ -205,6 +205,23 @@ body {
   /* .btn--selected:hover .btn__content{
     color:var(--black)
   } */
+
+  .img-place *{
+    height: 100%;
+    width: 100%;
+  }
+  .sponsor-wrapper{
+    max-height: 60vh !important;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  ::-webkit-scrollbar{width:5px}
+  ::-webkit-scrollbar-track{background:0 0}
+  ::-webkit-scrollbar-thumb{background:#666;border-radius:15px}
+  ::-webkit-scrollbar-thumb:hover{background:#0b99c9}
+
+  
   .btn:hover .btn__slide {
     width: calc(100% + 15px);
   }
