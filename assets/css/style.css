@@ -221,6 +221,11 @@ body {
     overflow-x: auto;
     overflow-y: auto;
   }
+  #current-sponsor h3{
+    color:white;
+    margin-top: 32px;
+    margin-bottom: 0px;
+  }
   ::-webkit-scrollbar{width:5px}
   ::-webkit-scrollbar-track{background:0 0}
   ::-webkit-scrollbar-thumb{background:#666;border-radius:15px}
