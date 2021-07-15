@@ -463,6 +463,13 @@ h2 {
 background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu/img/CVoXF3Pr-2oX6-HM.jpg") no-repeat 
   center center /cover; 
 } */
+
+/* FAQs */
+.font-faq{
+  color: aliceblue;
+}
+
+/* FAQs END */
 #myVideo {
   position: fixed;
   right: 0;
