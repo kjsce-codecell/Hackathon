@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/valorant');
+
 :root {
     --red: #fd4556;
     --dark-red: #bd3944;
@@ -13,10 +15,7 @@
     --overlay-width: 90vw;
     --inner-responsive-page-height: 86vh;
 }
-@font-face {
-    font-family: Valorant;
-    src: url(/assets/css/ValorantFont.ttf) format(truetype);
-}
+
 * {
     box-sizing: border-box;
 }
@@ -260,7 +259,7 @@ body {
     font-weight: bold; /**/
     margin-left: 2px; /**/
     margin-right: 2px; /**/
-    font-family: Valorant;
+    font-family: 'VALORANT', sans-serif;
 }
 
 .nav-item .nav-link:after {
@@ -337,6 +336,12 @@ body {
 .term:hover {
     text-shadow: 0 0 3px var(--red);
 }
+/* 
+#stats {
+    background-image: url(/2018/assets/H4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 
 #stats .fa {
     color: var(--red);
@@ -495,7 +500,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     -webkit-text-stroke: 2px #FF4656; /* width and color */
     font-size: 80px;
     margin: 0 auto;
-    font-family: Valorant;
+    font-family: 'VALORANT', sans-serif;
     text-align: center;
 }
 
@@ -516,7 +521,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     width: 100%;
 }
 .home-page-text {
-    font-family: Valorant;
+    font-family: 'VALORANT', sans-serif;
     margin-inline: 10vw;
     color: var(--white);
     font-size: 10vh;
@@ -782,7 +787,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     /* height: 285px; */
     border: solid 2px #fd4556;
     box-shadow: inset 0 0 10px #fd4556;
-    font-family: Valorant;
+    font-family: 'VALORANT', sans-serif;
     border-bottom-right-radius: 20%;
 }
 @media only screen and (max-width: 600px) {
