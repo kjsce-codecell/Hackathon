@@ -412,7 +412,7 @@ body {
 
 #stats {
     min-height: 60vh !important;
-    margin: 70px auto;
+    margin-top: 70px;
 }
 
 #stats .fa {
