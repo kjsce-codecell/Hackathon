@@ -735,33 +735,26 @@
 
 
                     <div class="inner-responsive-page" id="team" style="width: 100%; height:70vh">
-                       <h1 style="color: white;">woefnioern</h1>
-                            <div class="owl-carousel" style="color:red; border:4px solid green">
+                       <h1 style="color: white;">Our Team</h1>
+                            <div class="owl-carousel">
                                 <div class="image-container"> <img class="team-image" src="./assets/images/Neelansh Mathur_Committee Head.png" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Devansh _Shah _Committee Head.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Nishit_patel_tech_head.jpeg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Jayesh Nirve_Tech Team.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/RajTiwari_TechTeam.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Vedant Nagani_TechTeam.jpg" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Devansh _Shah _Committee Head.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Nishit_patel_tech_head.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Jayesh Nirve_Tech Team.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/RajTiwari_TechTeam.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Vedant Nagani_TechTeam.png" alt=""> </div>
                                 <div class="image-container"> <img class="team-image" src="./assets/images/Hussain Pettiwala_Tech Team.png" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Jay Malve_Tech Team.jpeg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Sahil Sayani _ Tech team.jpeg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Manasi Varaiya_Co-ordinator.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Vidhi Shah_Co-ordinator.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Tanvi Deshpande _Co-ordinator_.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Kevin Joshi_Marketing Head.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Huzaifa Khilawala_Creative-team.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Medhavi_Creative_Team.jpg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/SOUMEN SAMANTA PR TEAM.jpeg" alt=""> </div>
-                                <div class="image-container"> <img class="team-image" src="./assets/images/Rahil Parikh_PR Team.jpeg" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Jay Malve_Tech Team.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Sahil Sayani _ Tech team.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Manasi Varaiya_Co-ordinator.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Vidhi Shah_Co-ordinator.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Tanvi Deshpande _Co-ordinator_.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Kevin Joshi_Marketing Head.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Huzaifa Khilawala_Creative-team.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Medhavi_Creative_Team.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/SOUMEN SAMANTA PR TEAM.png" alt=""> </div>
+                                <div class="image-container"> <img class="team-image" src="./assets/images/Rahil Parikh_PR Team.png" alt=""> </div>
 
-                                <!-- <div class="image-container">  </div>
-                                <div class="image-container">  </div>
-                                <div class="image-container">  </div>
-                                <div class="image-container">  </div>
-                                <div class="image-container">  </div>
-                                <div class="image-container">  </div>
-                                <div class="image-container">  </div> -->
                                 
                               </div>
                        
@@ -789,26 +782,38 @@
         <script>
             $(document).ready(function(){
                 $(".owl-carousel").owlCarousel({
-                    loop: true,
+                    
                     autoplay: true,
                     autoplayTimeout: 2500,
+                   
                     autoplayHoverPause: true,
                     responsiveClass:true,
                     lazyLoad: false,
                     navText: ['', ''],
+                    loop: true,
                     responsive:{
                         0:{
                             items:1,
-                            nav:true
-                        },
-                        600:{
-                            items:3,
-                            nav:false
-                        },
-                        1000:{
-                            items:5,
                             nav:true,
-                            loop:false
+                            loop:true
+                        },
+                        300:{
+                            items:2,
+                            nav:true,
+                            loop:true
+                        },
+                        700:{
+                            items:3,
+                            nav:false,
+                            loop:true
+                        },
+                        1100:{
+                            items:4,
+                            loop:true
+                        },
+                        1500:{
+                            items:6,
+                            loop:true
                         }
                 }}
                 );

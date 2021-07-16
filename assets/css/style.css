@@ -920,9 +920,24 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 /* TEAM BEGIN */
 .team-image {
     width: 100%;
+    border-radius: 5%;
 }
 
 .image-container {
     width: 220px;
+    margin: auto;
+    /* border: 4px solid white; */
 }
+
+@media only screen and (max-width: 700px) {
+    .image-container {
+        max-width: 200px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .image-container {
+        max-width: 150px;
+    }
+}
+
 /* /* TEAM END */
