@@ -504,6 +504,7 @@ h2 {
 /* Sponsor CSS */
 
 .button-container {
+    margin-top: 22px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -715,7 +716,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         color: #ece8e1;
     }
     #stats{
-        margin: 30px auto;
+        margin: 55px auto;
     }
     .stat {
         margin: 1vh;
