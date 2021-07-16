@@ -239,7 +239,7 @@ body {
 }
 
 .sponsor-wrapper-in::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 0.2rem;
 }
 
 .sponsor-wrapper-in::-webkit-scrollbar-track {
@@ -247,7 +247,7 @@ body {
 }
 
 .sponsor-wrapper-in::-webkit-scrollbar-thumb {
-    background: #666;
+    background: var(--red);
     border-radius: 1rem;
     padding: 0.25rem;
 }
@@ -257,8 +257,18 @@ body {
     border-radius: 15px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #0b99c9;
+.overlay::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+.overlay::-webkit-scrollbar-track {
+    background: 0 0;
+}
+
+.overlay::-webkit-scrollbar-thumb {
+    background: var(--red);
+    border-radius: 15px;
+    padding: 0.25rem;
 }
 
 .btn:hover .btn__slide {

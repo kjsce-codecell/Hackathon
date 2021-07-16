@@ -2,7 +2,7 @@
 
 ## Fixes (In priority order)
 - [x] Box scrollbar should be visible: Red colour
-- [ ] Background red circles issue
+- [x] Background red circles issue
 - [x] Gap above navbar
 - [ ] Need smaller font size and less space inside buttons
 - [ ] Update Mobile View for entire website
