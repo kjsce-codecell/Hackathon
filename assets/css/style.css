@@ -1,18 +1,8 @@
 @import url("http://fonts.cdnfonts.com/css/valorant");
-
 @font-face {
     font-family: "Tungsten Bold";
     src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
-    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix")
-            format("embedded-opentype"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2")
-            format("woff2"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff")
-            format("woff"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf")
-            format("truetype"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold")
-            format("svg");
+    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg");
 }
 
 :root {
@@ -104,8 +94,7 @@ body {
     transition: all 0.15s ease;
 }
 
-.btn::before,
-.btn::after {
+.btn::before, .btn::after {
     content: "";
     display: block;
     position: absolute;
@@ -131,13 +120,11 @@ body {
     border-top-width: 0;
 }
 
-.btn:active,
-.btn:focus {
+.btn:active, .btn:focus {
     outline: none;
 }
 
-.btn:active::before,
-.btn:active::after {
+.btn:active::before, .btn:active::after {
     right: 3px;
     left: 3px;
 }
@@ -238,6 +225,13 @@ body {
     width: 70%;
 }
 
+@media screen and (max-width: 768px) {
+    .img-place a img {
+        max-height: 70px;
+        width: 90%;
+    }
+}
+
 .sponsor-wrapper-in::-webkit-scrollbar {
     width: 0.2rem;
 }
@@ -315,7 +309,7 @@ body {
     padding-right: 20px;
 }
 
-.navbar-brand > img {
+.navbar-brand>img {
     max-width: 42px;
 }
 
@@ -341,8 +335,7 @@ body {
     padding-bottom: 5px;
 }
 
-.nav-item .nav-link:after,
-.nav-item .nav-link:before {
+.nav-item .nav-link:after, .nav-item .nav-link:before {
     transition: 0.5s;
 }
 
@@ -413,8 +406,7 @@ body {
     animation: all 1.5s;
 }
 
-.number:hover,
-.term:hover {
+.number:hover, .term:hover {
     text-shadow: 0 0 3px var(--red);
 }
 
@@ -598,6 +590,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 .accordion-header {
     color: white;
 }
+
 .accordion-button {
     color: white;
     background-color: transparent !important;
@@ -621,6 +614,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     color: white;
     border: none;
 }
+
 .accordion-item::after {
     content: " ";
     height: 1px;
@@ -637,6 +631,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     z-index: 3;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
 }
+
 .accordion-button:not(.collapsed) {
     color: var(--red) !important;
 }
@@ -715,7 +710,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         flex-direction: column;
         color: #ece8e1;
     }
-    #stats{
+    #stats {
         margin: 55px auto;
     }
     .stat {
@@ -738,8 +733,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus,
-    .term:focus {
+    .number:focus, .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -782,8 +776,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus,
-    .term:focus {
+    .number:focus, .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -831,8 +824,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     background: #e74c3c;
 }
 
-#heading,
-#heading0 {
+#heading, #heading0 {
     color: black;
 }
 
@@ -942,8 +934,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 #aboutimg {
     width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
 }
 
 #about {
@@ -953,6 +943,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 .about-blocks {
     margin-bottom: 2rem;
 }
+
 .abouttext {
     text-align: left;
     padding: 2rem;
@@ -985,6 +976,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 /* TEAM BEGIN */
+
 .team-image {
     width: 100%;
     border-radius: 10px;
@@ -1002,6 +994,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     height: 300px;
     /* border: 4px solid white; */
 }
+
 .team-mem-info {
     position: absolute;
     top: 0;
@@ -1019,6 +1012,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     justify-content: flex-end;
     text-align: center;
 }
+
 .info-items {
     margin-bottom: 15px;
 }
@@ -1027,10 +1021,12 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     color: white;
     margin: 0 5px;
 }
-#team{
+
+#team {
     margin-top: 70px;
     min-height: 70vh !important;
 }
+
 .image-container:hover .team-mem-info {
     visibility: visible;
     opacity: 1;
@@ -1046,6 +1042,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         min-height: 60vh !important;
     }
 }
+
 @media only screen and (max-width: 400px) {
     .image-container {
         max-width: 150px;
@@ -1056,15 +1053,18 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 .footer {
     bottom: 0;
 }
+
 .footer p {
     text-align: center;
     font-size: 20px;
     color: var(--white-valo);
 }
+
 .footer span {
     color: var(--red);
     font-size: 25px;
 }
+
 .footer a {
     text-decoration: none;
     color: var(--red);
