@@ -1,4 +1,7 @@
 @import url('http://fonts.cdnfonts.com/css/valorant');
+
+@font-face {font-family: "Tungsten Bold"; src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot"); src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg"); }
+
 :root {
     --red: #fd4556;
     --dark-red: #bd3944;
@@ -44,8 +47,8 @@ body {
 
 @media screen and (max-width: 600px) {
     .overlay {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         border-radius: 0px;
     }
     .inner-responsive-page {
@@ -93,7 +96,8 @@ body {
     transition: all 0.15s ease;
 }
 
-.btn::before, .btn::after {
+.btn::before,
+.btn::after {
     content: "";
     display: block;
     position: absolute;
@@ -119,11 +123,13 @@ body {
     border-top-width: 0;
 }
 
-.btn:active, .btn:focus {
+.btn:active,
+.btn:focus {
     outline: none;
 }
 
-.btn:active::before, .btn:active::after {
+.btn:active::before,
+.btn:active::after {
     right: 3px;
     left: 3px;
 }
@@ -197,7 +203,7 @@ body {
 }
 
 .btn--selected .btn__content {
-    color: var(--black)
+    color: var(--black);
 }
 
 .sponsor-wrapper{
@@ -241,6 +247,11 @@ body {
 
 .sponsor-wrapper-in::-webkit-scrollbar-thumb:hover {
     background: var(--red);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0b99c9;
 }
 
 .btn:hover .btn__slide {
@@ -287,7 +298,7 @@ body {
     padding-right: 20px;
 }
 
-.navbar-brand>img {
+.navbar-brand > img {
     max-width: 42px;
 }
 
@@ -305,7 +316,7 @@ body {
     /**/
     margin-right: 2px;
     /**/
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
 }
 
 .nav-item .nav-link:after {
@@ -313,7 +324,8 @@ body {
     padding-bottom: 5px;
 }
 
-.nav-item .nav-link:after, .nav-item .nav-link:before {
+.nav-item .nav-link:after,
+.nav-item .nav-link:before {
     transition: 0.5s;
 }
 
@@ -345,10 +357,10 @@ body {
 
 .section-heading {
     text-align: center;
-    font-size: 50px;
+    font-size: 55px;
     /* color: var(--red); */
     color: #F0CDCD;
-    -webkit-text-stroke: 2px #FF4656;
+    font-family: "Tungsten Bold";
     /* width and color */
 }
 
@@ -384,7 +396,8 @@ body {
     animation: all 1.5s;
 }
 
-.number:hover, .term:hover {
+.number:hover,
+.term:hover {
     text-shadow: 0 0 3px var(--red);
 }
 
@@ -569,7 +582,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 .accordion-header {
     color: white;
 }
-
 .accordion-button {
     color: white;
     background-color: #272727 !important;
@@ -581,6 +593,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     margin-top: 1rem;
     background-color: transparent !important;
     color: white;
+    border: none;
 }
 
 .accordion-button:focus {
@@ -591,7 +604,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     border: none !important;
     outline: none !important; */
 }
-
 .accordion-button:not(.collapsed) {
     color: var(--red) !important;
 }
@@ -614,11 +626,10 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     transform: translate(-50%, -50%);
     /* color: var(--red); */
     color: #F0CDCD;
-    -webkit-text-stroke: 2px #FF4656;
     /* width and color */
     font-size: 80px;
     margin: 0 auto;
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
     text-align: center;
 }
 
@@ -642,7 +653,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 .home-page-text {
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
     margin-inline: 10vw;
     color: var(--white);
     font-size: 10vh;
@@ -691,7 +702,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus, .term:focus {
+    .number:focus,
+    .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -734,7 +746,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus, .term:focus {
+    .number:focus,
+    .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -782,7 +795,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     background: #e74c3c;
 }
 
-#heading, #heading0 {
+#heading,
+#heading0 {
     color: black;
 }
 
@@ -905,7 +919,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     /* height: 285px; */
     border: solid 2px #fd4556;
     box-shadow: inset 0 0 10px #fd4556;
-    font-family: 'VALORANT', sans-serif;
+    font-family: georgia,sans-serif;
     border-bottom-right-radius: 20%;
 }
 
@@ -923,3 +937,28 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 #aboutmr {
     margin-top: 5%;
 }
+
+/* TEAM BEGIN */
+.team-image {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.image-container {
+    width: 220px;
+    margin: auto;
+    /* border: 4px solid white; */
+}
+
+@media only screen and (max-width: 700px) {
+    .image-container {
+        max-width: 200px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .image-container {
+        max-width: 150px;
+    }
+}
+
+/* /* TEAM END */
