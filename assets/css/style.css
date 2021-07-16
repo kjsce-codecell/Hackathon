@@ -1028,7 +1028,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 #team{
     margin-top: 70px;
-    min-height: 60vh !important;
+    min-height: 70vh !important;
 }
 .image-container:hover .team-mem-info {
     visibility: visible;
