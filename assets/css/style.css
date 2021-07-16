@@ -10,7 +10,7 @@
     --background-color: #0f1923;
     --neon-red: #fd0e35;
     --white-valo: #ece8e1;
-
+    --black-matt:#171717;
     --overlay-height: 90vh;
     --overlay-width: 90vw;
     --inner-responsive-page-height: 86vh;
@@ -246,7 +246,7 @@ body {
 }
 /* Navbar */
 .navbar {
-    background: #171717;
+    background: var(--black-matt);
 }
 .nav-item .nav-link {
     text-decoration: none;
@@ -482,6 +482,49 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 /* FAQs END */
+
+
+/* FAQs New Start */
+
+.FAQs-wrapper{
+    margin: 5rem 0rem;
+}
+
+.faq-wrapper{
+width: 80%;
+margin: auto;
+
+}
+
+.accordion-header{
+    color: white;
+}
+.accordion-button{
+    color: white;
+    background-color: #272727 !important;
+    /* background-color: var(--black-matt) !important; */
+
+
+}
+
+.accordion-item{
+    margin-top: 1rem;
+    background-color: transparent !important;
+    color:white;
+}
+.accordion-button:focus {
+    outline:0 !important;
+    z-index: 3;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+    /* border-color: red important;
+    border: none !important;
+    outline: none !important; */
+}
+.accordion-button:not(.collapsed){
+    color: var(--red) !important;
+}
+/* FAQs New End */
+
 #myVideo {
     position: fixed;
     right: 0;
