@@ -509,6 +509,7 @@ h2 {
 /* Sponsor CSS */
 
 .button-container {
+    margin-top: 22px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -719,8 +720,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         flex-direction: column;
         color: #ece8e1;
     }
-    #stats {
-        margin: 30px auto;
+    #stats{
+        margin: 55px auto;
     }
     .stat {
         margin: 1vh;
@@ -1031,9 +1032,9 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     color: white;
     margin: 0 5px;
 }
-#team {
-    margin-top: 60px;
-    min-height: 60vh !important;
+#team{
+    margin-top: 70px;
+    min-height: 70vh !important;
 }
 .image-container:hover .team-mem-info {
     visibility: visible;
