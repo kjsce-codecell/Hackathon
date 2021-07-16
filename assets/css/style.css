@@ -282,7 +282,7 @@ body {
     padding-right: 20px;
 }
 
-.navbar-brand>img {
+.navbar-brand > img {
     max-width: 42px;
 }
 
@@ -717,10 +717,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 10px var(--red);
         display: flex;
         justify-content: space-evenly;
-<<<<<<< HEAD
-
-=======
->>>>>>> 344b3be5af49e61032e6e7f8d93de60999ebcf4c
         width: 70vh;
         text-shadow: none;
         text-align: center;
