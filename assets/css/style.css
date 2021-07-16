@@ -237,6 +237,12 @@ body {
     max-height: 70px;
     width: 70%;
 }
+@media screen and (max-width: 768px) {
+    .img-place a img {
+        max-height: 70px;
+        width: 90%;
+    }
+}
 
 .sponsor-wrapper-in::-webkit-scrollbar {
     width: 0.2rem;
