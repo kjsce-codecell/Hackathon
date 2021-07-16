@@ -714,6 +714,9 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         flex-direction: column;
         color: #ece8e1;
     }
+    #stats{
+        margin: 30px auto;
+    }
     .stat {
         margin: 1vh;
         font-size: 2.5vh;
