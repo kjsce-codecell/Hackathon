@@ -927,13 +927,17 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     /* height: 285px; */
     border: solid 2px #fd4556;
     box-shadow: inset 0 0 10px #fd4556;
+    font-size: 1.2rem;
     font-family: georgia,sans-serif;
     border-bottom-right-radius: 20%;
 }
 
 @media only screen and (max-width: 600px) {
     .abouttext h2 {
-        font-size: large;
+        font-size: 1.2rem;
+    }
+    .abouttext {
+        font-size: 15px;
     }
     #aboutimg {
         width: 100%;
