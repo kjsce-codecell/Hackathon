@@ -200,7 +200,13 @@ body {
     color: var(--black)
 }
 
-.sponsor-wrapper {
+.sponsor-wrapper{
+    overflow: hidden;
+}
+
+.sponsor-wrapper-in {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     max-height: 60vh !important;
     overflow: auto;
     overflow-x: auto;
@@ -218,21 +224,23 @@ body {
     max-width: 100%;
 }
 
-::-webkit-scrollbar {
-    width: 5px
+.sponsor-wrapper-in::-webkit-scrollbar {
+    width: 0.5rem;
+    
 }
 
-::-webkit-scrollbar-track {
+.sponsor-wrapper-in::-webkit-scrollbar-track {
     background: 0 0
 }
 
-::-webkit-scrollbar-thumb {
+.sponsor-wrapper-in::-webkit-scrollbar-thumb {
     background: #666;
-    border-radius: 15px
+    border-radius: 1rem;
+    padding:0.25rem;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #0b99c9
+.sponsor-wrapper-in::-webkit-scrollbar-thumb:hover {
+    background: var(--red);
 }
 
 .btn:hover .btn__slide {
