@@ -1040,4 +1040,21 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     }
 }
 
+.footer {
+    bottom: 0;
+}
+.footer p {
+    text-align: center;
+    font-size: 20px;
+    color: var(--white-valo);
+}
+.footer span {
+    color: var(--red);
+    font-size: 25px;
+}
+.footer a {
+    text-decoration: none;
+    color: var(--red);
+}
+
 /* /* TEAM END */
