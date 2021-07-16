@@ -1,5 +1,15 @@
 # General Instructions
 
+## Fixes (In priority order)
+- [x] Box scrollbar should be visible: Red colour
+- [x] Background red circles issue
+- [x] Gap above navbar
+- [ ] Need smaller font size and less space inside buttons
+- [ ] Update Mobile View for entire website
+- [ ] FAQ divide into 4x2 grid
+- [ ] If previous sponser button selected, hover on current sponsor button triggers glow in section border too
+- [x] "Made with Love / Blood Sweat and Tears by KJSCE CodeCell" section
+
 ## clone the repo
 
 
