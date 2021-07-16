@@ -235,7 +235,7 @@ body {
 
 .img-place a img {
     max-height: 70px;
-    max-width: 100%;
+    width: 70%;
 }
 
 .sponsor-wrapper-in::-webkit-scrollbar {
@@ -954,7 +954,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     border: solid 2px #fd4556;
     box-shadow: inset 0 0 10px #fd4556;
     font-size: 1.2rem;
-    font-family: georgia,sans-serif;
+    font-family: georgia, sans-serif;
     border-bottom-right-radius: 20%;
 }
 
