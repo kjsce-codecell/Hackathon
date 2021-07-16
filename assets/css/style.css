@@ -1,6 +1,19 @@
-@import url('http://fonts.cdnfonts.com/css/valorant');
+@import url("http://fonts.cdnfonts.com/css/valorant");
 
-@font-face {font-family: "Tungsten Bold"; src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot"); src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg"); }
+@font-face {
+    font-family: "Tungsten Bold";
+    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
+    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix")
+            format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2")
+            format("woff2"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff")
+            format("woff"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf")
+            format("truetype"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold")
+            format("svg");
+}
 
 :root {
     --red: #fd4556;
@@ -55,7 +68,6 @@ body {
         scroll-margin: 80px;
     }
 }
-
 
 .inner-responsive-page {
     min-height: var(--inner-responsive-page-height);
@@ -202,7 +214,7 @@ body {
     color: var(--black);
 }
 
-.sponsor-wrapper{
+.sponsor-wrapper {
     overflow: hidden;
 }
 
@@ -228,7 +240,6 @@ body {
 
 .sponsor-wrapper-in::-webkit-scrollbar {
     width: 0.2rem;
-    
 }
 
 .sponsor-wrapper-in::-webkit-scrollbar-track {
@@ -238,7 +249,7 @@ body {
 .sponsor-wrapper-in::-webkit-scrollbar-thumb {
     background: var(--red);
     border-radius: 1rem;
-    padding:0.25rem;
+    padding: 0.25rem;
 }
 
 .sponsor-wrapper-in::-webkit-scrollbar-thumb:hover {
@@ -248,7 +259,6 @@ body {
 
 .overlay::-webkit-scrollbar {
     width: 0.3rem;
-    
 }
 
 .overlay::-webkit-scrollbar-track {
@@ -258,9 +268,8 @@ body {
 .overlay::-webkit-scrollbar-thumb {
     background: var(--red);
     border-radius: 15px;
-    padding:0.25rem;
+    padding: 0.25rem;
 }
-
 
 .btn:hover .btn__slide {
     width: calc(100% + 15px);
@@ -367,7 +376,7 @@ body {
     text-align: center;
     font-size: 55px;
     /* color: var(--red); */
-    color: #F0CDCD;
+    color: #f0cdcd;
     font-family: "Tungsten Bold";
     /* width and color */
 }
@@ -633,7 +642,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     z-index: 3;
     transform: translate(-50%, -50%);
     /* color: var(--red); */
-    color: #F0CDCD;
+    color: #f0cdcd;
     /* width and color */
     font-size: 80px;
     margin: 0 auto;
@@ -932,12 +941,14 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     border-bottom-right-radius: 20%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
     .abouttext h2 {
         font-size: 1.2rem;
     }
     .abouttext {
         font-size: 15px;
+        width: 80%;
+        margin: auto;
     }
     #aboutimg {
         width: 100%;
@@ -1002,11 +1013,13 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 @media only screen and (max-width: 700px) {
     .image-container {
         max-width: 200px;
+        height: 270px;
     }
 }
 @media only screen and (max-width: 400px) {
     .image-container {
         max-width: 150px;
+        height: 205px;
     }
 }
 
