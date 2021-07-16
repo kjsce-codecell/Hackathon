@@ -40,3 +40,7 @@ $('.scroll').click(function(e) {
 });
 //aos animations
     AOS.init();
+
+
+
+// team section

@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/valorant');
+@import url("http://fonts.cdnfonts.com/css/valorant");
 :root {
     --red: #fd4556;
     --dark-red: #bd3944;
@@ -9,7 +9,7 @@
     --background-color: #0f1923;
     --neon-red: #fd0e35;
     --white-valo: #ece8e1;
-    --black-matt:#171717;
+    --black-matt: #171717;
     --overlay-height: 90vh;
     --overlay-width: 90vw;
     --inner-responsive-page-height: 86vh;
@@ -93,7 +93,8 @@ body {
     transition: all 0.15s ease;
 }
 
-.btn::before, .btn::after {
+.btn::before,
+.btn::after {
     content: "";
     display: block;
     position: absolute;
@@ -119,11 +120,13 @@ body {
     border-top-width: 0;
 }
 
-.btn:active, .btn:focus {
+.btn:active,
+.btn:focus {
     outline: none;
 }
 
-.btn:active::before, .btn:active::after {
+.btn:active::before,
+.btn:active::after {
     right: 3px;
     left: 3px;
 }
@@ -197,7 +200,7 @@ body {
 }
 
 .btn--selected .btn__content {
-    color: var(--black)
+    color: var(--black);
 }
 
 .sponsor-wrapper {
@@ -219,20 +222,20 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 5px
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: 0 0
+    background: 0 0;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #666;
-    border-radius: 15px
+    border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b99c9
+    background: #0b99c9;
 }
 
 .btn:hover .btn__slide {
@@ -293,7 +296,7 @@ body {
     /**/
     margin-right: 2px;
     /**/
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
 }
 
 .nav-item .nav-link:after {
@@ -301,7 +304,8 @@ body {
     padding-bottom: 5px;
 }
 
-.nav-item .nav-link:after, .nav-item .nav-link:before {
+.nav-item .nav-link:after,
+.nav-item .nav-link:before {
     transition: 0.5s;
 }
 
@@ -335,8 +339,8 @@ body {
     text-align: center;
     font-size: 50px;
     /* color: var(--red); */
-    color: #F0CDCD;
-    -webkit-text-stroke: 2px #FF4656;
+    color: #f0cdcd;
+    -webkit-text-stroke: 2px #ff4656;
     /* width and color */
 }
 
@@ -345,10 +349,8 @@ body {
     display: flex;
     justify-content: space-around;
     color: #ece8e1;
-    
-    
 }
-.stat-icon{
+.stat-icon {
     margin-bottom: 10px;
 }
 
@@ -373,7 +375,8 @@ body {
     animation: all 1.5s;
 }
 
-.number:hover, .term:hover {
+.number:hover,
+.term:hover {
     text-shadow: 0 0 3px var(--red);
 }
 
@@ -544,45 +547,42 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 /* FAQs END */
 
-
 /* FAQs New Start */
 
-.FAQs-wrapper{
+.FAQs-wrapper {
     margin: 5rem 0rem;
 }
 
-.faq-wrapper{
-width: 80%;
-margin: auto;
-
+.faq-wrapper {
+    width: 80%;
+    margin: auto;
 }
 
-.accordion-header{
+.accordion-header {
     color: white;
 }
-.accordion-button{
+.accordion-button {
     color: white;
     background-color: #272727 !important;
     /* background-color: var(--black-matt) !important;
      */
-
-
 }
 
-.accordion-item{
+.accordion-item {
     margin-top: 1rem;
     background-color: transparent !important;
-    color:white;
+    color: white;
+    border: none;
 }
 .accordion-button:focus {
-    outline:0 !important;
+    outline: 0 !important;
     z-index: 3;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
     /* border-color: red important;
     border: none !important;
     outline: none !important; */
 }
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
     color: var(--red) !important;
 }
 /* FAQs New End */
@@ -602,12 +602,12 @@ margin: auto;
     z-index: 3;
     transform: translate(-50%, -50%);
     /* color: var(--red); */
-    color: #F0CDCD;
-    -webkit-text-stroke: 2px #FF4656;
+    color: #f0cdcd;
+    -webkit-text-stroke: 2px #ff4656;
     /* width and color */
     font-size: 80px;
     margin: 0 auto;
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
     text-align: center;
 }
 
@@ -631,7 +631,7 @@ margin: auto;
 }
 
 .home-page-text {
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
     margin-inline: 10vw;
     color: var(--white);
     font-size: 10vh;
@@ -680,7 +680,8 @@ margin: auto;
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus, .term:focus {
+    .number:focus,
+    .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -709,7 +710,7 @@ margin: auto;
         box-shadow: inset 0 0 10px var(--red);
         display: flex;
         justify-content: space-evenly;
-     
+
         width: 70vh;
         text-shadow: none;
         text-align: center;
@@ -724,7 +725,8 @@ margin: auto;
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus, .term:focus {
+    .number:focus,
+    .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -772,7 +774,8 @@ margin: auto;
     background: #e74c3c;
 }
 
-#heading, #heading0 {
+#heading,
+#heading0 {
     color: black;
 }
 
@@ -895,7 +898,7 @@ margin: auto;
     /* height: 285px; */
     border: solid 2px #fd4556;
     box-shadow: inset 0 0 10px #fd4556;
-    font-family: 'VALORANT', sans-serif;
+    font-family: "VALORANT", sans-serif;
     border-bottom-right-radius: 20%;
 }
 
@@ -913,3 +916,13 @@ margin: auto;
 #aboutmr {
     margin-top: 5%;
 }
+
+/* TEAM BEGIN */
+.team-image {
+    width: 100%;
+}
+
+.image-container {
+    width: 220px;
+}
+/* /* TEAM END */
