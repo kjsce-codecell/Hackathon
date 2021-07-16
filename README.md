@@ -8,7 +8,7 @@
 - [ ] Update Mobile View for entire website
 - [ ] FAQ divide into 4x2 grid
 - [ ] If previous sponser button selected, hover on current sponsor button triggers glow in section border too
-- [ ] "Made with Love / Blood Sweat and Tears by KJSCE CodeCell" section
+- [x] "Made with Love / Blood Sweat and Tears by KJSCE CodeCell" section
 
 ## clone the repo
 
