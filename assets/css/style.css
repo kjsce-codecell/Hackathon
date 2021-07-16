@@ -41,7 +41,6 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 10px;
     overflow-x: hidden;
-    scrollbar-width: none;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
 }
 
@@ -57,9 +56,6 @@ body {
     }
 }
 
-.overlay::-webkit-scrollbar {
-    display: none;
-}
 
 .inner-responsive-page {
     min-height: var(--inner-responsive-page-height);
@@ -145,7 +141,7 @@ body {
 .btn__inner {
     position: relative;
     display: block;
-    padding: 20px 30px;
+    padding: 1vw 2vw;
     background-color: var(--button-background-color);
     overflow: hidden;
     box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
@@ -233,7 +229,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #666;
+    background: var(--red);
     border-radius: 15px;
 }
 
