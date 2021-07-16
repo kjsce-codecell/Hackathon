@@ -940,9 +940,16 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     border-bottom-right-radius: 20%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
     .abouttext h2 {
         font-size: large;
+        width: 80%;
+        margin: auto;
+    }
+    .abouttext {
+        width: 80%;
+        margin: auto;
+        text-align: center;
     }
     #aboutimg {
         width: 100%;
@@ -1013,7 +1020,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 @media only screen and (max-width: 400px) {
     .image-container {
         max-width: 150px;
-        height: 200px;
+        height: 205px;
     }
 }
 
