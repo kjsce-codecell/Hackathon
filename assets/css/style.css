@@ -43,10 +43,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    overflow-x: hidden;
+    overflow: hidden;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
 }
-
+.overlay-in{
+    overflow: auto;
+    /* height: 100%;
+    width: 100%; */
+}
 @media screen and (max-width: 600px) {
     .overlay {
         height: 100%;
@@ -206,8 +210,8 @@ body {
 }
 
 .sponsor-wrapper-in {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    /* margin-top: 0.5rem;
+    margin-bottom: 0.5rem; */
     max-height: 60vh !important;
     overflow: auto;
     overflow-x: auto;
@@ -251,15 +255,15 @@ body {
     border-radius: 15px;
 }
 
-.overlay::-webkit-scrollbar {
+.overlay-in::-webkit-scrollbar {
     width: 0.3rem;
 }
 
-.overlay::-webkit-scrollbar-track {
+.overlay-in::-webkit-scrollbar-track {
     background: 0 0;
 }
 
-.overlay::-webkit-scrollbar-thumb {
+.overlay-in::-webkit-scrollbar-thumb {
     background: var(--red);
     border-radius: 15px;
     padding: 0.25rem;
