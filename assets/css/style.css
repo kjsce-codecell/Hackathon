@@ -2,7 +2,16 @@
 @font-face {
     font-family: "Tungsten Bold";
     src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
-    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg");
+    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix")
+            format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2")
+            format("woff2"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff")
+            format("woff"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf")
+            format("truetype"),
+        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold")
+            format("svg");
 }
 
 :root {
@@ -46,7 +55,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
 }
-.overlay-in{
+.overlay-in {
     overflow: auto;
     /* height: 100%;
     width: 100%; */
@@ -98,7 +107,8 @@ body {
     transition: all 0.15s ease;
 }
 
-.btn::before, .btn::after {
+.btn::before,
+.btn::after {
     content: "";
     display: block;
     position: absolute;
@@ -124,11 +134,13 @@ body {
     border-top-width: 0;
 }
 
-.btn:active, .btn:focus {
+.btn:active,
+.btn:focus {
     outline: none;
 }
 
-.btn:active::before, .btn:active::after {
+.btn:active::before,
+.btn:active::after {
     right: 3px;
     left: 3px;
 }
@@ -226,7 +238,7 @@ body {
 
 .img-place a img {
     max-height: 70px;
-    width: 70%;
+    max-width: 70%;
 }
 
 @media screen and (max-width: 768px) {
@@ -313,7 +325,7 @@ body {
     padding-right: 20px;
 }
 
-.navbar-brand>img {
+.navbar-brand > img {
     max-width: 42px;
 }
 
@@ -339,7 +351,8 @@ body {
     padding-bottom: 5px;
 }
 
-.nav-item .nav-link:after, .nav-item .nav-link:before {
+.nav-item .nav-link:after,
+.nav-item .nav-link:before {
     transition: 0.5s;
 }
 
@@ -410,7 +423,8 @@ body {
     animation: all 1.5s;
 }
 
-.number:hover, .term:hover {
+.number:hover,
+.term:hover {
     text-shadow: 0 0 3px var(--red);
 }
 
@@ -737,7 +751,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus, .term:focus {
+    .number:focus,
+    .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -780,7 +795,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus, .term:focus {
+    .number:focus,
+    .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -828,7 +844,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     background: #e74c3c;
 }
 
-#heading, #heading0 {
+#heading,
+#heading0 {
     color: black;
 }
 
