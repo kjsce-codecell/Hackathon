@@ -1,4 +1,11 @@
-@import url("http://fonts.cdnfonts.com/css/valorant");
+@font-face {
+    font-family: "VALORANT";
+    font-style: normal;
+    font-weight: 400;
+    src: local("VALORANT"),
+        url("https://fonts.cdnfonts.com/s/37505/Valorant Font.woff")
+            format("woff");
+}
 @font-face {
     font-family: "Tungsten Bold";
     src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
@@ -670,8 +677,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     left: 50%;
     z-index: 3;
     transform: translate(-50%, -50%);
-    /* color: var(--red); */
-    color: #f0cdcd;
+    color: var(--red);
+    /* color: #f0cdcd; */
     /* width and color */
     font-size: 80px;
     margin: 0 auto;
@@ -1062,6 +1069,9 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         margin-top: 40px;
         min-height: 60vh !important;
     }
+    #arrow-down {
+        top: 70% !important;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -1092,3 +1102,15 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 /* /* TEAM END */
+
+#arrow-down .fas {
+    animation: arrowdown 0.5s infinite alternate;
+}
+@keyframes arrowdown {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(50%);
+    }
+}

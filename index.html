@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142860092-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142860092-1');
+        </script>
+
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>KJSCE Hack 6.0</title>
+        <meta name="keywords" content="kjsce, abhiyantriki, codecell, hackathon, hack, 2021, programming, development, blockchain, machine leanring, ai, android, ios, javascript, conference, algorithms, somaiya"/>
+        <meta name="description" content="KJSCE Hackathon, a student run annual hackathon at K.J Somaiya College Of Engineering hosted incroporation with KJSCE CodeCell"/>
+        <meta property="og:title" content="KJSCE Hackathon 2021" />
+        <meta property="og:url" content="https://hack.kjsce.com" />
+        <meta property="og:site_name" content="KJSCE Hackathon 2021" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="INDEX, FOLLOW" />
+        <meta name="author" content="Codecell" />
+        <meta name="geo.region" content="IN" />
 
         <!-- Bootstrap -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -219,6 +238,23 @@
                 <div>
                     <div class="inner-responsive-page" id="mainPage">
                         <div class="centered">KJSCE HACK 6.0</div>
+                        <a
+                                id="arrow-down"
+                                class="btn btn--light scroll"
+                                style="z-index: 3; position: absolute;
+                                top: 55%;
+                                left: 50%;
+                                z-index: 3;
+                                transform: translate(-50%, -50%);"
+                                href="#about"
+                            >
+                                <span class="btn__inner">
+                                    <span class="btn__slide"></span>
+                                    <span class="btn__content"
+                                        ><i class="fas fa-chevron-down"></i></span
+                                    >
+                                </span>
+                            </a>
                         <video autoplay muted loop id="myVideo">
                             <source
                                 src="assets/images/home-bg4.mp4"
@@ -288,7 +324,7 @@
                                 <i class="stat-icon fa fa-file-text fa-2x"></i>
                                 <div class="number">
                                     <div>
-                                        <h2 id="count">1200</h2>
+                                        <h2 class="stat_numbers">1200</h2>
                                     </div>
                                     <div>+</div>
                                 </div>
@@ -298,7 +334,7 @@
                                 <i class="stat-icon fa fa-code fa-2x"></i>
                                 <div class="number">
                                     <div>
-                                        <h2 id="count">220</h2>
+                                        <h2 class="stat_numbers">220</h2>
                                     </div>
                                     <div>+</div>
                                 </div>
@@ -308,7 +344,7 @@
                                 <i class="stat-icon fa fa-users fa-2x"></i>
                                 <div class="number">
                                     <div>
-                                        <h2 id="count">70</h2>
+                                        <h2 class="stat_numbers">70</h2>
                                     </div>
                                     <div>+</div>
                                 </div>
@@ -318,7 +354,7 @@
                                 <i class="stat-icon fa fa-university fa-2x"></i>
                                 <div class="number">
                                     <div>
-                                        <h2 id="count">30</h2>
+                                        <h2 class="stat_numbers">30</h2>
                                     </div>
                                     <div>+</div>
                                 </div>
@@ -327,7 +363,7 @@
                         </div>
                     </div>
 
-                    <div class="inner-responsive-page" id="sponsors">
+                    <div class="inner-responsive-page" class="sponsors">
                         <h1 class="section-heading">Sponsors</h1>
                         <div class="button-container">
                             <button
@@ -1865,35 +1901,50 @@
         <script src="assets/js//bootstrap.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="assets/js/script.js"></script>
-        <script async>
-            var count = document.getElementById("count");
+        <script>
+            var stats=document.querySelector('#stats')
+            var statsLoaded=false
             var observer = new IntersectionObserver(
-                function (entries) {
-                    if (entries[0].isIntersecting === true) {
-                        count.classList.add("count");
-                    }
+                function (entries, observer) {
+                    entries.forEach(entry=>{
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        if(!statsLoaded){
+                            statsLoaded=true
+                            $(".stat_numbers").each(function () {
+                                $(this)
+                                    .prop("Counter", 0)
+                                    .animate(
+                                        {
+                                            Counter: $(this).text(),
+                                        },
+                                        {
+                                            duration: 3000,
+                                            easing: "swing",
+                                            step: function (now) {
+                                                $(this).text(Math.ceil(now));
+                                            },
+                                        }
+                                    );
+                            });
+                        }
+
+                    })
+                    
                 },
-                { threshold: [1] }
+                { 
+                    threshold: 0,
+                    rootMargin: '-200px 1500px -200px 1500px' 
+                }
             );
 
-            observer.observe(document.querySelector(".stats"));
 
-            $(".count").each(function () {
-                $(this)
-                    .prop("Counter", 0)
-                    .animate(
-                        {
-                            Counter: $(this).text(),
-                        },
-                        {
-                            duration: 3000,
-                            easing: "swing",
-                            step: function (now) {
-                                $(this).text(Math.ceil(now));
-                            },
-                        }
-                    );
-            });
+            observer.observe(stats);
+            
+
+            
         </script>
         <script src="assets/js/Menu-link.js"></script>
     </body>
