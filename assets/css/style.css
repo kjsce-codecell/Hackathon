@@ -1,4 +1,9 @@
-@import url("http://fonts.cdnfonts.com/css/valorant");
+@font-face {
+    font-family: 'VALORANT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('VALORANT'), url('https://fonts.cdnfonts.com/s/37505/Valorant Font.woff') format('woff');
+}
 @font-face {
     font-family: "Tungsten Bold";
     src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
