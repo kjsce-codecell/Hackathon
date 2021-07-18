@@ -251,10 +251,21 @@ body {
 @media screen and (max-width: 768px) {
     .img-place a img {
         max-height: 70px;
-        width: 90%;
+        max-width: 90%;
     }
 }
-
+@media screen and (max-width: 400px) {
+    .img-place a img {
+        max-height: 70px;
+        max-width: 100%;
+    }
+    #previous-sponsor .p-4{
+        padding: 0px!important;
+    }
+    #current-sponsor .p-4{
+        padding: 0px!important;
+    }
+}
 .sponsor-wrapper-in::-webkit-scrollbar {
     width: 0.2rem;
 }
@@ -1083,6 +1094,10 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     .image-container {
         max-width: 150px;
         height: 200px;
+    }
+    .button-container{
+        flex-direction: column;
+        padding: 10%;
     }
 }
 
