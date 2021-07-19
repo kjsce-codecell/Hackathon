@@ -259,11 +259,11 @@ body {
         max-height: 70px;
         max-width: 100%;
     }
-    #previous-sponsor .p-4{
-        padding: 0px!important;
+    #previous-sponsor .p-4 {
+        padding: 0px !important;
     }
-    #current-sponsor .p-4{
-        padding: 0px!important;
+    #current-sponsor .p-4 {
+        padding: 0px !important;
     }
 }
 .sponsor-wrapper-in::-webkit-scrollbar {
@@ -905,6 +905,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 #team .fa-linkedin {
     align-content: center;
+    text-decoration: none !important;
     /* background-color: #0077b5 !important; */
     /* opacity: 0.7; */
     color: white;
@@ -1057,7 +1058,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 .social-link {
-    color: white;
+    color: inherit !important;
     margin: 0 5px;
 }
 
@@ -1080,22 +1081,19 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         margin-top: 40px;
         min-height: 60vh !important;
     }
-    
 }
 @media only screen and (min-width: 0px) and (max-width: 1350px) {
-    
-    #arrow-down{
-        top:70% !important;
+    #arrow-down {
+        top: 70% !important;
     }
 }
-
 
 @media only screen and (max-width: 400px) {
     .image-container {
         max-width: 150px;
         height: 200px;
     }
-    .button-container{
+    .button-container {
         flex-direction: column;
         padding: 10%;
     }
