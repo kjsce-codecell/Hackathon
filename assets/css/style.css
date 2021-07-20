@@ -174,38 +174,92 @@ body {
 }
 .syntax-keyword {
     overflow-x: hidden;
-    font-size: 3vw;
+    font-size: 5vh;
 }
 .skills {
-    font-size: 3vw;
+    font-size: 5vh;
 }
-@media screen and (max-width: 1100px) {
-    /* .six-point-o {
-        bottom: -15%;
-        right: -5%;
-        font-size: 25vw;
+@media screen and (max-width: 1450px) {
+    .home-page-container {
+        margin-right: 10vh;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .home-page-container {
+        margin-right: 0vh;
+    }
+    .six-point-o h1 {
+        bottom: 15vh;
+    }
+}
+@media screen and (max-width: 992px) {
+    /* .home-page-container {
+        margin-right: 0vh;
     } */
+    .six-point-o h1 {
+        bottom: 15vh;
+    }
+    .kjsce-hack-text {
+        transform: scale(1);
+        writing-mode: horizontal-tb;
+    }
+    .home-page-container {
+        flex-direction: column;
+        align-self: flex-start;
+        justify-content: flex-start;
+    }
+    .hack-text {
+        margin-left: 0px;
+    }
+    .text-and-button {
+        margin-left: 0;
+    }
+    .red-line {
+        border-left: 0px;
+    }
+    .kjsce-hack-text {
+        text-align: center;
+    }
+    #tagline-break {
+        display: none;
+    }
+    .text-and-button {
+        margin-top: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+    .syntax-keyword {
+        font-size: 3vh;
+    }
+    .skills {
+        font-size: 3vh;
+    }
 }
-@media screen and (max-width: 900px) {
-    /* .six-point-o {
-        bottom: -15%;
-        right: -3%;
-        font-size: 23vw;
-    } */
+@media screen and (max-width: 830px) {
+    .six-point-o h1 {
+        font-size: 40vw;
+        bottom: 12vh;
+    }
 }
-@media screen and (max-width: 670px) {
-    /* .six-point-o {
-        bottom: -10%;
-        right: -3%;
-    } */
+@media screen and (max-width: 500px) {
+    .home-page-container-wrapper {
+        min-height: 92vh !important;
+    }
+    .home-page-container {
+        margin-top: 15vh;
+    }
+    .hack-text {
+        font-size: 13vh;
+    }
+    .kjsce-text {
+        font-size: 8vh;
+    }
+    .six-point-o h1 {
+        font-size: 60vw;
+        bottom: 8vh;
+    }
 }
-@media screen and (max-width: 600px) {
-    /* .six-point-o {
-        bottom: -10%;
-        right: -3%;
-        font-size: 50vw;
-    } */
-}
+
 /* !end homepage */
 
 /* buttons */
