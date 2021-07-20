@@ -137,12 +137,26 @@ body {
     position: absolute;
     bottom: -20%;
     right: -3%;
-    font-size: 25vw;
+    font-size: 23vw;
+}
+.syntax-keyword {
+    font-size: 3vw;
+}
+.skills {
+    font-size: 3vw;
+}
+@media screen and (max-width: 1100px) { 
+    .six-point-o {
+        bottom: -15%;
+        right: -5%;
+        font-size: 25vw;
+    }
 }
 @media screen and (max-width: 900px) { 
     .six-point-o {
         bottom: -15%;
         right: -3%;
+        font-size: 23vw;
     }
 }
 @media screen and (max-width: 670px) { 
