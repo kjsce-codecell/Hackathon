@@ -95,6 +95,7 @@ body {
     justify-content: center;
     margin-top: 10%;
     align-items: center;
+    margin-right: 300px !important;
 }
 .kjsce-hack-text {
     transform: scale(-1);
@@ -103,16 +104,18 @@ body {
 .outline-text {
     font-family: VALORANT;
     color: var(--background-color);
-    text-shadow: var(--white-valo) 0px 0px 2px,   var(--white-valo) 0px 0px 2px,   var(--white-valo) 0px 0px 2px,
-    var(--white-valo) 0px 0px 2px,   var(--white-valo) 0px 0px 2px,   var(--white-valo) 0px 0px 2px;
+    text-shadow: var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px,
+        var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px,
+        var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px;
 }
-.kjsce-text {    
-    font-size: 5em;     
+.kjsce-text {
+    font-size: 5em;
 }
 .hack-text {
     font-size: 8em;
-    text-shadow: var(--white-valo) 0px 0px 4px,   var(--white-valo) 0px 0px 4px,   var(--white-valo) 0px 0px 4px,
-    var(--white-valo) 0px 0px 4px,   var(--white-valo) 0px 0px 4px,   var(--white-valo) 0px 0px 4px;
+    text-shadow: var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
+        var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
+        var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px;
 }
 .red-line {
     border-left: thick solid var(--red);
@@ -125,17 +128,18 @@ body {
     justify-content: flex-end;
 }
 .tmp-btn {
-    padding: 15px; 
+    margin-top: 2rem;
+    padding: 15px;
     padding-inline: 35px;
     background-color: var(--red);
 }
 .six-point-o {
-    color: #324A61;
-    font-family: 'Be Vietnam', sans-serif;
+    color: #324a61;
+    font-family: "Be Vietnam", sans-serif;
     font-weight: bolder;
 
     position: absolute;
-    bottom: -20%;
+    bottom: -25%;
     right: -3%;
     font-size: 23vw;
 }
@@ -145,27 +149,27 @@ body {
 .skills {
     font-size: 3vw;
 }
-@media screen and (max-width: 1100px) { 
+@media screen and (max-width: 1100px) {
     .six-point-o {
         bottom: -15%;
         right: -5%;
         font-size: 25vw;
     }
 }
-@media screen and (max-width: 900px) { 
+@media screen and (max-width: 900px) {
     .six-point-o {
         bottom: -15%;
         right: -3%;
         font-size: 23vw;
     }
 }
-@media screen and (max-width: 670px) { 
+@media screen and (max-width: 670px) {
     .six-point-o {
         bottom: -10%;
         right: -3%;
     }
 }
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
     .six-point-o {
         bottom: -10%;
         right: -3%;
@@ -1182,13 +1186,11 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     }
 }
 
-
 @media only screen and (max-width: 400px) {
     .image-container {
         max-width: 150px;
         height: 200px;
     }
-    
 }
 
 .footer {
