@@ -155,7 +155,7 @@ body {
     color: #324a61;
     position: absolute;
     width: 100%;
-    bottom: -15vh;
+    bottom: 0vh;
     left: 3vw;
     /* bottom: 1px; */
 }
@@ -163,7 +163,7 @@ body {
     float: right;
     font-family: "Be Vietnam", sans-serif;
     font-weight: bolder;
-    font-size: 550px;
+    font-size: 50vh;
 }
 .syntax-keyword {
     overflow-x: hidden;
