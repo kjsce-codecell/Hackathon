@@ -34,7 +34,7 @@
     --black-matt: #171717;
     --overlay-height: 90vh;
     --overlay-width: 90vw;
-    --inner-responsive-page-height: 880px;
+    --inner-responsive-page-height: 85vh;
 }
 
 * {
@@ -155,20 +155,23 @@ body {
     color: #324a61;
     /* position: absolute */
     /* width: 100%; */
-    right: 0;
+    /* right: 0; */
     /* bottom: 20vh;
     left: 3vw; */
     /* bottom: 1px; */
 }
 .six-point-o h1 {
     /* float: right; */
+    margin: 0;
+    padding: 0;
+    line-height: 0;
     position: absolute;
-    right: 0;
+    right: -5vh;
     font-family: "Be Vietnam", sans-serif;
     font-weight: bolder;
     font-size: 28vw;
-    bottom: 25vh;
-    line-height: 0;
+    bottom: 20vh;
+    /* line-height: 1rem; */
 }
 .syntax-keyword {
     overflow-x: hidden;
