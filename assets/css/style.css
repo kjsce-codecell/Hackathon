@@ -105,9 +105,8 @@ body {
     font-size: 15vh;
     margin-left: 20px;
     line-height: 10vh;
-    text-shadow: var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
-        var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
-        var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px;
+    text-shadow: white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px,
+        white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px;
 }
 .red-line {
     border-left: thick solid var(--red);
