@@ -153,17 +153,22 @@ body {
 }
 .six-point-o {
     color: #324a61;
-    position: absolute;
-    width: 100%;
-    bottom: 0vh;
-    left: 3vw;
+    /* position: absolute */
+    /* width: 100%; */
+    right: 0;
+    /* bottom: 20vh;
+    left: 3vw; */
     /* bottom: 1px; */
 }
 .six-point-o h1 {
-    float: right;
+    /* float: right; */
+    position: absolute;
+    right: 0;
     font-family: "Be Vietnam", sans-serif;
     font-weight: bolder;
-    font-size: 50vh;
+    font-size: 28vw;
+    bottom: 15vh;
+    line-height: 0;
 }
 .syntax-keyword {
     overflow-x: hidden;
