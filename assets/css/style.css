@@ -94,9 +94,8 @@ body {
 .outline-text {
     font-family: VALORANT;
     color: var(--background-color);
-    text-shadow: var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px,
-        var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px,
-        var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px;
+    text-shadow: white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px,
+        white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px;
 }
 .kjsce-text {
     font-size: 10vh;
@@ -104,6 +103,7 @@ body {
 }
 .hack-text {
     font-size: 15vh;
+    margin-left: 20px;
     line-height: 10vh;
     text-shadow: var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
         var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
@@ -137,10 +137,10 @@ body {
 .home-page-container {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 10vh;
     align-items: center;
     position: relative;
-    margin-right: 20%;
+    margin-right: 30vh;
 }
 .home-page-container-wrapper * {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -155,8 +155,8 @@ body {
     color: #324a61;
     position: absolute;
     width: 100%;
-    bottom: -20%;
-    left: 5%;
+    bottom: -15vh;
+    left: 3vw;
     /* bottom: 1px; */
 }
 .six-point-o h1 {
