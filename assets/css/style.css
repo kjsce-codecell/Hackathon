@@ -99,12 +99,12 @@ body {
         var(--white-valo) 0px 0px 3px, var(--white-valo) 0px 0px 3px;
 }
 .kjsce-text {
-    font-size: 6em;
+    font-size: 10vh;
     /* margin: -2rem; */
 }
 .hack-text {
-    font-size: 10em;
-    line-height: 8rem;
+    font-size: 15vh;
+    line-height: 10vh;
     text-shadow: var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
         var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px,
         var(--white-valo) 0px 0px 4px, var(--white-valo) 0px 0px 4px;
@@ -129,7 +129,9 @@ body {
 .home-page-container-wrapper {
     position: relative;
     background-image: url("../images/home-bg.png");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     overflow: hidden;
 }
 .home-page-container {
