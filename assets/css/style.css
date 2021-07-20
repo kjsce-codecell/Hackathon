@@ -259,6 +259,10 @@ body {
         max-height: 70px;
         max-width: 100%;
     }
+    .button-container {
+        flex-direction: column;
+        padding: 10%;
+    }
     #previous-sponsor .p-4 {
         padding: 0px !important;
     }
@@ -1089,15 +1093,12 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 400px) {
     .image-container {
         max-width: 150px;
         height: 200px;
     }
-    .button-container {
-        flex-direction: column;
-        padding: 10%;
-    }
+    
 }
 
 .footer {
