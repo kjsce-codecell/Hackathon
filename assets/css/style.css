@@ -124,6 +124,7 @@ body {
     padding: 15px;
     padding-inline: 35px;
     background-color: var(--red);
+    border: 0;
 }
 
 .home-page-container-wrapper {
