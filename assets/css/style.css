@@ -2,23 +2,13 @@
     font-family: "VALORANT";
     font-style: normal;
     font-weight: 400;
-    src: local("VALORANT"),
-        url("https://fonts.cdnfonts.com/s/37505/Valorant Font.woff")
-            format("woff");
+    src: local("VALORANT"), url("https://fonts.cdnfonts.com/s/37505/Valorant Font.woff") format("woff");
 }
+
 @font-face {
     font-family: "Tungsten Bold";
     src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
-    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix")
-            format("embedded-opentype"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2")
-            format("woff2"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff")
-            format("woff"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf")
-            format("truetype"),
-        url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold")
-            format("svg");
+    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg");
 }
 
 :root {
@@ -63,11 +53,13 @@ body {
     overflow-x: hidden !important;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
 }
+
 .overlay-in {
     overflow: auto;
     /* height: 100%;
     width: 100%; */
 }
+
 @media screen and (max-width: 600px) {
     .overlay {
         height: 100%;
@@ -91,26 +83,29 @@ body {
     transform: scale(-1);
     writing-mode: vertical-rl;
 }
+
 .outline-text {
     font-family: VALORANT;
     color: var(--background-color);
-    text-shadow: white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px,
-        white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px;
+    text-shadow: white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px, white 0px 0px 3px;
 }
+
 .kjsce-text {
     font-size: 10vh;
     /* margin: -2rem; */
 }
+
 .hack-text {
     font-size: 15vh;
     margin-left: 20px;
     line-height: 10vh;
-    text-shadow: white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px,
-        white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px;
+    text-shadow: white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px, white 0px 0px 4px;
 }
+
 .red-line {
     border-left: thick solid var(--red);
 }
+
 .text-and-button {
     color: var(--white-valo);
     margin-left: 3em;
@@ -118,12 +113,16 @@ body {
     flex-direction: column;
     justify-content: flex-end;
 }
+
 .tmp-btn {
     margin-top: 2rem;
     padding: 15px;
     padding-inline: 35px;
     background-color: var(--red);
     border: 0;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
 }
 
 .home-page-container-wrapper {
@@ -133,6 +132,7 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
 .home-page-container {
     display: flex;
     justify-content: center;
@@ -141,15 +141,23 @@ body {
     position: relative;
     margin-right: 30vh;
 }
+
 .home-page-container-wrapper * {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
 .six-point-o {
     color: #324a61;
     /* position: absolute */
@@ -159,6 +167,7 @@ body {
     left: 3vw; */
     /* bottom: 1px; */
 }
+
 .six-point-o h1 {
     /* float: right; */
     margin: 0;
@@ -172,18 +181,22 @@ body {
     bottom: 20vh;
     /* line-height: 1rem; */
 }
+
 .syntax-keyword {
     overflow-x: hidden;
     font-size: 5vh;
 }
+
 .skills {
     font-size: 5vh;
 }
+
 @media screen and (max-width: 1450px) {
     .home-page-container {
         margin-right: 10vh;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .home-page-container {
         margin-right: 0vh;
@@ -192,6 +205,7 @@ body {
         bottom: 15vh;
     }
 }
+
 @media screen and (max-width: 992px) {
     /* .home-page-container {
         margin-right: 0vh;
@@ -235,12 +249,14 @@ body {
         font-size: 3vh;
     }
 }
+
 @media screen and (max-width: 830px) {
     .six-point-o h1 {
         font-size: 40vw;
         bottom: 12vh;
     }
 }
+
 @media screen and (max-width: 500px) {
     .home-page-container-wrapper {
         min-height: 92vh !important;
@@ -292,8 +308,7 @@ body {
     transition: all 0.15s ease;
 }
 
-.btn::before,
-.btn::after {
+.btn::before, .btn::after {
     content: "";
     display: block;
     position: absolute;
@@ -319,13 +334,11 @@ body {
     border-top-width: 0;
 }
 
-.btn:active,
-.btn:focus {
+.btn:active, .btn:focus {
     outline: none;
 }
 
-.btn:active::before,
-.btn:active::after {
+.btn:active::before, .btn:active::after {
     right: 3px;
     left: 3px;
 }
@@ -432,6 +445,7 @@ body {
         max-width: 90%;
     }
 }
+
 @media screen and (max-width: 480px) {
     .img-place a img {
         max-height: 70px;
@@ -448,6 +462,7 @@ body {
         padding: 0px !important;
     }
 }
+
 .sponsor-wrapper-in::-webkit-scrollbar {
     width: 0.2rem;
 }
@@ -525,7 +540,7 @@ body {
     padding-right: 20px;
 }
 
-.navbar-brand > img {
+.navbar-brand>img {
     max-width: 42px;
 }
 
@@ -551,8 +566,7 @@ body {
     padding-bottom: 5px;
 }
 
-.nav-item .nav-link:after,
-.nav-item .nav-link:before {
+.nav-item .nav-link:after, .nav-item .nav-link:before {
     transition: 0.5s;
 }
 
@@ -624,8 +638,7 @@ body {
     animation: all 1.5s;
 }
 
-.number:hover,
-.term:hover {
+.number:hover, .term:hover {
     text-shadow: 0 0 3px var(--red);
 }
 
@@ -952,8 +965,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus,
-    .term:focus {
+    .number:focus, .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -996,8 +1008,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         box-shadow: inset 0 0 15px var(--red);
         animation: all 1.5s;
     }
-    .number:focus,
-    .term:focus {
+    .number:focus, .term:focus {
         text-shadow: 0 0 3px var(--red);
     }
     .fa {
@@ -1045,8 +1056,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     background: #e74c3c;
 }
 
-#heading,
-#heading0 {
+#heading, #heading0 {
     color: black;
 }
 
@@ -1265,6 +1275,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         min-height: 60vh !important;
     }
 }
+
 @media only screen and (min-width: 0px) and (max-width: 1350px) {
     #arrow-down {
         top: 70% !important;
@@ -1303,6 +1314,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 #arrow-down .fas {
     animation: arrowdown 0.5s infinite alternate;
 }
+
 @keyframes arrowdown {
     from {
         transform: translateY(0%);
