@@ -607,7 +607,7 @@ body {
 }
 
 .stats {
-    margin-top: 8vh;
+    margin-top: 6vh;
     display: flex;
     justify-content: space-around;
     color: #ece8e1;
@@ -650,6 +650,13 @@ body {
 #stats .fa {
     color: var(--red);
     background: transparent !important;
+}
+
+.sub-headings-stats {
+    display: flex;
+    justify-content: space-around;
+    color: #f0cdcd;
+    font-size: 1.5rem;
 }
 
 /* SVGs */
