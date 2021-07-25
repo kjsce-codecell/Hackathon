@@ -993,6 +993,17 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     .fa {
         color: var(--red);
     }
+ 
+   .socialbtns {
+       display: inline-block;
+       justify-content: center;
+   }
+
+   .socialbtns li {
+       margin: 2px;
+   }
+
+
 }
 
 @media screen and (min-width: 850px) and (max-width: 1000px) {
@@ -1285,6 +1296,10 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     margin-bottom: 15px;
 }
 
+.socials {
+    min-height: 10vh !important;
+}
+
 .social-link {
     color: inherit !important;
     margin: 0 5px;
@@ -1292,7 +1307,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 #team {
     margin-top: 70px;
-    min-height: 70vh !important;
+    min-height: 60vh !important;
 }
 
 .image-container:hover .team-mem-info {
@@ -1344,11 +1359,12 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     color: var(--red);
 }
 .socialbtns{
+    margin-top: 2vh;
     list-style: none;
     display:flex;
     justify-content: space-around;
     padding: 0 20%;
-
+    
 }
 .socialbtns li {
     text-align: center;
