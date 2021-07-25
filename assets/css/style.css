@@ -1344,8 +1344,46 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     padding: 0 20%;
 
 }
-.socialbtns li a:hover{
+.socialbtns li {
+    text-align: center;
+    border-radius: 50%;
+    
+} 
+.socialbtns li a {
+    /* position: relative; */
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    
+    line-height: 48px;
+    background: rgba(51,51,51,.9);
+    border-radius: 50%;
+    font-size: 30px;
+    transition: .5s;
+}
+/* .socialbtns li a:hover{
    color:white;
+
+} */
+.socialbtns li a::before {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--red);
+    transition: .4s;
+    transform: scale(.9);
+    z-index: -1
+}
+
+.socialbtns li a:hover {
+    color:white;
+    box-shadow: 0 0 7px white;
+    text-shadow: 0 0 3px white;
 }
 /* /* TEAM END */
 
