@@ -609,12 +609,17 @@ body {
 .stats {
     margin-top: 6vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     color: #ece8e1;
 }
 
 .stat-icon {
     margin-bottom: 10px;
+}
+.staty {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .stat {
@@ -625,7 +630,7 @@ body {
     box-shadow: inset 0 0 10px #fd4556;
     display: inline;
     text-align: center;
-    width: 38vh;
+    width: 40%;
     text-shadow: none;
     display: flex;
     flex-direction: column;
@@ -650,6 +655,10 @@ body {
 #stats .fa {
     color: var(--red);
     background: transparent !important;
+}
+
+.apps-heading, .hacks-heading {
+    display: none;
 }
 
 .sub-headings-stats {
@@ -1020,6 +1029,19 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     }
     .fa {
         color: var(--red);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sub-headings-stats {
+        display:none;
+    }
+    .staty {
+        display: contents;
+    }
+    .apps-heading, .hacks-heading {
+        display: block;
+        font-size: 1.5rem;
     }
 }
 
