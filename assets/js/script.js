@@ -38,10 +38,7 @@ $('.scroll').click(function(e) {
     }
     
 });
-//aos animations
-    AOS.init();
 
-//stats section
 
 
 

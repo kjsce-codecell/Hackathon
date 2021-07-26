@@ -253,8 +253,14 @@ body {
 @media screen and (max-width: 830px) {
     .six-point-o h1 {
         font-size: 40vw;
-        bottom: 12vh;
+        bottom: 14vh;
     }
+    .home-page-container-wrapper {
+    
+        background-image: url("../images/home-bg-mobile.png");
+      
+    }
+    
 }
 
 @media screen and (max-width: 500px) {
@@ -272,7 +278,7 @@ body {
     }
     .six-point-o h1 {
         font-size: 60vw;
-        bottom: 8vh;
+        bottom: 17vh;
     }
 }
 
@@ -648,7 +654,7 @@ body {
 }
 
 #stats {
-    min-height: 60vh !important;
+    min-height: 70vh !important;
     margin-top: 70px;
 }
 
@@ -987,6 +993,17 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     .fa {
         color: var(--red);
     }
+ 
+   .socialbtns {
+       display: inline-block;
+       justify-content: center;
+   }
+
+   .socialbtns li {
+       margin: 2px;
+   }
+
+
 }
 
 @media screen and (min-width: 850px) and (max-width: 1000px) {
@@ -1280,6 +1297,10 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     margin-bottom: 15px;
 }
 
+.socials {
+    min-height: 10vh !important;
+}
+
 .social-link {
     color: inherit !important;
     margin: 0 5px;
@@ -1287,7 +1308,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 
 #team {
     margin-top: 70px;
-    min-height: 70vh !important;
+    min-height: 60vh !important;
 }
 
 .image-container:hover .team-mem-info {
@@ -1338,7 +1359,55 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     text-decoration: none;
     color: var(--red);
 }
+.socialbtns{
+    margin-top: 2vh;
+    list-style: none;
+    display:flex;
+    justify-content: space-around;
+    padding: 0 20%;
+    
+}
+.socialbtns li {
+    text-align: center;
+    border-radius: 50%;
+    
+} 
+.socialbtns li a {
+    /* position: relative; */
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    
+    line-height: 48px;
+    background: rgba(51,51,51,.9);
+    border-radius: 50%;
+    font-size: 30px;
+    transition: .5s;
+}
+/* .socialbtns li a:hover{
+   color:white;
 
+} */
+.socialbtns li a::before {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--red);
+    transition: .4s;
+    transform: scale(.9);
+    z-index: -1
+}
+
+.socialbtns li a:hover {
+    color:white;
+    box-shadow: 0 0 7px white;
+    text-shadow: 0 0 3px white;
+}
 /* /* TEAM END */
 
 #arrow-down .fas {
