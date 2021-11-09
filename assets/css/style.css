@@ -772,6 +772,7 @@ h2 {
 .flexcontainer {
     display: flex;
     overflow: scroll;
+    
 }
 
 .no-scroll {
@@ -784,6 +785,13 @@ h2 {
 .no-scroll::-webkit-scrollbar {
     display: none;
     /* Chrome, Safari and Opera */
+}
+.p-3 a {
+    color: #EFEFEF;
+    text-decoration: NONE;
+}
+.p-3 a:hover{
+    color:#e74c3c
 }
 
 /* #mainPage{
