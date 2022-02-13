@@ -31,6 +31,19 @@
     box-sizing: border-box;
 }
 
+/* preloader */
+#preloader{
+    width:100%;
+    height: 100vh;
+    background:black url('/assets/images/hack6_logo.gif') no-repeat center;
+    /* background-size: 30% 45%; */
+    position: fixed;
+    z-index: 100;
+    
+
+}
+/* preloader-end */
+
 body {
     background-color: var(--black);
     position: fixed;
