@@ -2,5 +2,9 @@ const peck = document.querySelector('#preloader');
 
 window.addEventListener('load', (event) => {
     
-    peck.style.display="none";
+    function preloaderDelay(){
+        peck.style.display="none";
+    } 
+    setTimeout(preloaderDelay,2000);
 });
+
