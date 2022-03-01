@@ -64,11 +64,15 @@ body {
     color: white;
     z-index:50;
     font-family: VALORANT;
-    
     font-size: max(5vw,10vh);
 }
+.countdown-container {
+    margin-top: 15vh;
+    text-align: center;
+    align-items: center;
+}
 .funnytext{
-    margin-top:5vh;
+    margin-top:3vh;
     color: #FF4656;
     font-size:max(3vw,5vh);
     margin-bottom: 5vh;
