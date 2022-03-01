@@ -51,6 +51,32 @@ body {
     height: 100%;
     overflow: hidden;
 }
+/*countdown*/
+
+.countdown{
+    position:fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--black);
+    color: white;
+    z-index:50;
+    font-family: VALORANT;
+    
+    font-size: max(5vw,10vh);
+}
+.funnytext{
+    margin-top:5vh;
+    color: #FF4656;
+    font-size:max(3vw,5vh);
+    margin-bottom: 5vh;
+}
+.gif{
+    margin-top:5vh;
+    width:max(250px,30vw);
+}
 
 .overlay {
     /* background-color: #0f1923; */
