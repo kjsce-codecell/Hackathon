@@ -483,6 +483,9 @@ body {
     margin-bottom: 0px;
 }
 
+.img-place{
+    margin-top:15px;
+}
 .img-place a img {
     max-height: 70px;
     max-width: 70%;
