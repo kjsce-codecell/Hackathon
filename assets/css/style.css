@@ -104,6 +104,7 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    
     .overlay {
         height: 100%;
         width: 100%;
@@ -113,6 +114,24 @@ body {
         min-height: 90vh !important;
         scroll-margin: 80px;
     }
+    #flashbacks{
+        min-height: 40vh !important;
+    }
+    
+    
+    .flashbacks{
+        width:90vw !important;
+        height:50.625vw !important
+    }
+}
+
+#flashbacks{
+    text-align: center;
+}
+.flashbacks{
+    width:56vw;
+    height:31.5vw;
+    margin-top: 5vh;
 }
 
 .inner-responsive-page {
@@ -487,6 +506,10 @@ body {
     margin-top:15px;
 }
 .img-place a img {
+    max-height: 70px;
+    max-width: 70%;
+}
+.img-place a svg{
     max-height: 70px;
     max-width: 70%;
 }
