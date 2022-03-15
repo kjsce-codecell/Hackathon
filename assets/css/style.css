@@ -25,6 +25,8 @@
     --overlay-height: 90vh;
     --overlay-width: 90vw;
     --inner-responsive-page-height: 85vh;
+    --inner-responsive-page-height1: 50vh;
+
 }
 
 * {
@@ -136,7 +138,11 @@ body {
 
 .inner-responsive-page {
     min-height: var(--inner-responsive-page-height);
-    scroll-margin: 80px;
+    scroll-margin: 0px;
+}
+.inner-responsive-page1 {
+    min-height: var(--inner-responsive-page-height1);
+    scroll-margin: 0px;
 }
 
 /* !new homepage */
@@ -723,7 +729,7 @@ body {
 }
 
 #stats {
-    min-height: 70vh !important;
+    min-height: 50vh !important;
     margin-top: 70px;
 }
 
@@ -1045,6 +1051,18 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         margin: 55px auto;
     }
     .stat {
+        margin: 1vh;
+        font-size: 2.5vh;
+        padding: 1vh;
+        border: 2px ridge var(--red);
+        border-radius: 1rem;
+        box-shadow: inset 0 0 10px var(--red);
+        display: flex;
+        justify-content: space-evenly;
+        width: 40vh;
+        text-shadow: none;
+    }
+    .ty-prize{
         margin: 1vh;
         font-size: 2.5vh;
         padding: 1vh;
@@ -1498,3 +1516,44 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         transform: translateY(50%);
     }
 }
+
+
+/*  */
+.ty-prize,.winner-prize{min-height:220px;border:2px solid #fd4556;border-radius:15px;color: #ece8e1; box-shadow: inset 0 0 10px #fd4556; padding:30px;margin-bottom:1.5rem;margin-right:20px}
+.prize-name{font-size:1.5rem;font-weight:600;margin-bottom:15px;text-align:center;}
+.prize-winner{font-size:1.7rem;font-weight:600;margin-bottom:15px;text-align:center;}
+.prize-value{list-style-type:square;list-style-position:outside}
+.width-inc{width: 100%;}
+.fs-inc1{font-size: 1.5rem !important; font-weight: 600 !important;}
+.fs-inc2{font-size: 1.2rem !important;}
+.fh-money1{font-weight: 500; color: #fd4556;}
+
+
+.ty-prize:hover { transform: scale(1.01); box-shadow: inset 0 0 15px var(--red);animation: all 1.5s;}
+
+.glow-mod{
+	/* padding-top:10px; */
+	color:#fff;
+	text-align:center;
+	-webkit-animation:glow-new 1s ease-in-out infinite alternate;
+	-moz-animation:glow-new 1s ease-in-out infinite alternate;
+	animation:glow-new 1s ease-in-out infinite alternate;
+}
+
+.clip-size {
+	padding: 2rem !important;
+}
+
+@-webkit-keyframes glow-new {
+	from {
+	  text-shadow: 0 0 1px #fd4556, 0 0 2px #fd4556, 0 0 3px #fd4556, 0 0 4px #fd4556, 0 0 5px #fd4556, 0 0 6px #fd4556, 0 0 7px #fd4556;
+	}
+	to {
+        text-shadow: 0 0 1px #fd4556, 0 0 2px #fd4556, 0 0 3px #fd4556, 0 0 4px #fd4556, 0 0 5px #fd4556, 0 0 6px #fd4556, 0 0 7px #fd4556;
+
+	}
+}
+
+/* @media only screen and (max-width:850px) {
+	.ty-prize {margin-left: 1rem;width:40vh;}
+} */
