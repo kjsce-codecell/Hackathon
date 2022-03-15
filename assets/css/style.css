@@ -25,7 +25,7 @@
     --overlay-height: 90vh;
     --overlay-width: 90vw;
     --inner-responsive-page-height: 85vh;
-    --inner-responsive-page-height1: 50vh;
+    --inner-responsive-page-height1: 10vh;
 
 }
 
@@ -686,7 +686,15 @@ body {
     font-family: "Tungsten Bold";
     /* width and color */
 }
+.prize-cs{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 30px;
+    /* color: var(--red); */
+    color: #f0cdcd;
+    font-family: "Tungsten Bold";
 
+}
 .stats {
     margin-top: 6vh;
     display: flex;

@@ -2,7 +2,7 @@
 
 function countdown(){
     var now = new Date();
-    var eventDate = new Date(2022, 1, 16,19,0,0);
+    var eventDate = new Date(2022, 2, 16,19,0,0);
     var diff=eventDate-now;
     if (diff<=0){
         document.getElementById('countdown').remove();
