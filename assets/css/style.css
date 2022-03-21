@@ -8,7 +8,7 @@
 @font-face {
     font-family: "Tungsten Bold";
     src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
-    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg");
+    src: url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix") format("embedded-opentype"), url("../fonts/561f38b1f4570de0fb8a39d691ab058c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff") format("woff"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten Bold") format("svg");
 }
 
 :root {
@@ -105,6 +105,15 @@ body {
     width: 100%; */
 }
 
+/* dates */
+
+#dates {
+  font-size: 3vh;
+  color: var(--red);
+  margin-top: 2vh;
+  /* text-align: center; */
+}
+
 @media screen and (max-width: 600px) {
     
     .overlay {
@@ -179,13 +188,13 @@ body {
     margin-left: 3em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .tmp-btn {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 15px;
-    padding-inline: 35px;
+    padding-inline: 25px;
     background-color: var(--red);
     border: 0;
     color: white;
@@ -245,8 +254,9 @@ body {
     right: -5vh;
     font-family: "Be Vietnam", sans-serif;
     font-weight: bolder;
-    font-size: 28vw;
+    font-size: 25vw;
     bottom: 20vh;
+    z-index: 0;
     /* line-height: 1rem; */
 }
 
@@ -347,6 +357,10 @@ body {
     .six-point-o h1 {
         font-size: 60vw;
         bottom: 17vh;
+    }
+    #dates {
+        margin: 2vh;
+        font-size: 3vh;
     }
 }
 
