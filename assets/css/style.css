@@ -105,6 +105,15 @@ body {
     width: 100%; */
 }
 
+/* dates */
+
+#dates {
+  font-size: 3vh;
+  margin: 0vh;
+  color: var(--red);
+  /* text-align: center; */
+}
+
 @media screen and (max-width: 600px) {
     
     .overlay {
@@ -185,7 +194,7 @@ body {
 .tmp-btn {
     margin-top: 2rem;
     padding: 15px;
-    padding-inline: 35px;
+    padding-inline: 30px;
     background-color: var(--red);
     border: 0;
     color: white;
