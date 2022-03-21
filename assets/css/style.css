@@ -109,8 +109,8 @@ body {
 
 #dates {
   font-size: 3vh;
-  margin: 0vh;
   color: var(--red);
+  margin-top: 2vh;
   /* text-align: center; */
 }
 
@@ -188,13 +188,13 @@ body {
     margin-left: 3em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .tmp-btn {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 15px;
-    padding-inline: 30px;
+    padding-inline: 25px;
     background-color: var(--red);
     border: 0;
     color: white;
@@ -254,8 +254,9 @@ body {
     right: -5vh;
     font-family: "Be Vietnam", sans-serif;
     font-weight: bolder;
-    font-size: 28vw;
+    font-size: 25vw;
     bottom: 20vh;
+    z-index: 0;
     /* line-height: 1rem; */
 }
 
@@ -356,6 +357,10 @@ body {
     .six-point-o h1 {
         font-size: 60vw;
         bottom: 17vh;
+    }
+    #dates {
+        margin: 2vh;
+        font-size: 3vh;
     }
 }
 
