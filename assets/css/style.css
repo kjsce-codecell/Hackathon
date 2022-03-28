@@ -251,7 +251,7 @@ body {
     /* bottom: 20vh;
     left: 3vw; */
     /* bottom: 1px; */
-    z-index: -1;
+    z-index: 0;
 }
 
 .six-point-o h1 {
@@ -605,9 +605,9 @@ body {
     margin-top: 10px;
     background-color: var(--red);
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     width: 50%;
-    z-index: 10000000000000000;
+    z-index: 10;
 }
 
 .btn:hover .btn__slide {
@@ -1083,7 +1083,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         margin: auto;
         width: 50%;
         margin-top: 10px;
-        z-index: 10000000000000000;
+        z-index: 10;
     }
     .stats {
         text-align: center;
@@ -1386,7 +1386,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         margin: auto;
         width: 50%;
         margin-top: 10px;
-        z-index: 10000000000000000;
+        z-index: 10;
     }
 }
 
@@ -1396,7 +1396,7 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         margin: auto;
         width: 50%;
         margin-top: 10px;
-        z-index: 10000000000000000;
+        z-index: 10;
     }
     .abouttext h2 {
         font-size: 1.2rem;
