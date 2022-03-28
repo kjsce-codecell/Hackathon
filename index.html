@@ -55,7 +55,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         />
-
+        <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
         <!-- fontawesome -->
@@ -301,7 +301,9 @@
                                     </div>
                                 </div>
                                 <div class="text-and-button">
-                                    <div id="home-text-container">
+                                    <div id="home-text-container" style="
+                                    margin-bottom: 15px;
+                                ">
                                         <span class="syntax-keyword"
                                             >We Invite You</span
                                         ><br id="tagline-break" />
@@ -318,10 +320,18 @@
                                         ><span class="skills">"</span>
                                     </div>
                                     <div>
-                                        <button class="tmp-btn" onclick= "window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc7mpUAkp1X7LQoJa2GoFXnF-rge79FMrNIdc4dN_nfxaVW-g/viewform?usp=sf_link;'" >
-                                            Pre-Registration
-                                        </button>                                        
+                                        <div 
+                                            class="apply-button"
+                                            data-hackathon-slug="kjscehack22" 
+                                            data-button-theme="light"
+                                            style="height: 44px; width: 312px"
+                                        ></div>
                                     </div>
+
+                                    <a target="_blank" style="z-index: 10;" class="text-decoration-none text-white" href="https://youtu.be/FwF2wLlg4bo">
+                                        <div class="guide-btn">Guidance Video</div>
+                                    </a>
+
                                     <h1 id="dates">9th & 10th April, 2022</h1>
 
                                     <!-- Devfolio Button Pending -->
@@ -969,7 +979,7 @@
                                         <div class="p-3">
                                             <div class="img-place client-img">
                                                 <a
-                                                    href="https://www.stickermule.com/"
+                                                    href="https://mule.to/p2lw"
                                                     target="_blank"
                                                 >
                                                     <img
@@ -1443,8 +1453,8 @@
                                                 Hacks generally fall under one
                                                 (or more) of the seven cortices:
                                                 Web Development, Blockchain, Android, iOS,
-                                                AI/ML, AR/VR, Game Development,
-                                                and Hardware.
+                                                AI/ML, AR/VR and Game Development
+                                                .
                                             </div>
                                         </div>
                                     </div>
@@ -2487,6 +2497,12 @@
                                         ><i class="fab fa-instagram"></i
                                     ></a>
                                 </li>
+                                <li>
+                                    <a download="kjsce-hack-wallpaper.jpg" href="./assets/images/KJSCEHackWallpaper.png" title="kjsce-hack-wallpaper">
+                                        <img alt="kjsce-hack-wallpaper" src="./assets/images/KJSCEHackWallpaper.png" hidden>
+                                        <i class="fab fa-twitch"></i
+                                    ></a>
+                                </li>
                             </ul>
                         </div>
                         <p>
@@ -2506,6 +2522,7 @@
             </div>
         </div>
         <script src="assets\js\countdown.js"></script>
+        <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
