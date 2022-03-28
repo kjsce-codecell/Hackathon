@@ -1118,8 +1118,8 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
         border: 2px ridge var(--red);
         border-radius: 1rem;
         box-shadow: inset 0 0 10px var(--red);
-        display: flex;
-        justify-content: space-evenly;
+        /* display: flex; */
+        /* justify-content: space-evenly; */
         width: 40vh;
         text-shadow: none;
     }
