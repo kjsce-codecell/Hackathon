@@ -251,6 +251,7 @@ body {
     /* bottom: 20vh;
     left: 3vw; */
     /* bottom: 1px; */
+    z-index: -1;
 }
 
 .six-point-o h1 {
@@ -597,6 +598,16 @@ body {
     background: var(--red);
     border-radius: 15px;
     padding: 0.25rem;
+}
+
+.guide-btn {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--red);
+    text-align: center;
+    font-size: 0.8rem;
+    width: 50%;
+    z-index: 10000000000000000;
 }
 
 .btn:hover .btn__slide {
@@ -1067,6 +1078,13 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 }
 
 @media screen and (max-width: 850px) {
+    .guide-btn {
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-top: 10px;
+        z-index: 10000000000000000;
+    }
     .stats {
         text-align: center;
         display: block;
@@ -1362,7 +1380,24 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
     border-bottom-right-radius: 20%;
 }
 
+@media only screen and (max-width: 990px) {
+    .guide-btn {
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-top: 10px;
+        z-index: 10000000000000000;
+    }
+}
+
 @media only screen and (max-width: 600px) {
+    .guide-btn {
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-top: 10px;
+        z-index: 10000000000000000;
+    }
     .abouttext h2 {
         font-size: 1.2rem;
     }
