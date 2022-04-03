@@ -139,6 +139,8 @@ body {
     .flashbacks {
         width: 90vw !important;
         height: 50.625vw !important;
+        box-shadow: rgb(253 69 86) 0px 0px 20px 1px;
+
     }
 }
 
@@ -149,6 +151,8 @@ body {
     width: 56vw;
     height: 31.5vw;
     margin-top: 5vh;
+    box-shadow: rgb(253 69 86) 0px 0px 20px 1px;
+
 }
 
 .inner-responsive-page {
