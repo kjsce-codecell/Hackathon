@@ -144,6 +144,77 @@ body {
     }
 }
 
+
+/* timeline */
+.vertical {
+    width: 5px;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    background-color: var(--red);
+    position: absolute;
+    z-index: -1;
+}
+.comment {
+    text-align: center;
+    position: relative;
+    margin: 60px auto;
+    width: 500px;
+    padding: 3px 20px 3px 20px;
+}
+.comment p{
+    text-align: center;
+    color: aliceblue;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    position: relative;
+    max-width: 200px;
+    background-color: var(--background-color);
+}
+.comment p:nth-child(odd) {
+    left: 55%;
+}
+.comment p:nth-child(even) {
+    right: 0;
+}
+/* .comment p:nth-child(odd)::before , .comment p:nth-child(even)::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 3px solid var(--button-text-color);
+    border-radius: 50%;
+    background-color:  var(--red);
+    top: 40%;
+} */
+.comment p:nth-child(odd)::before {
+    right: 107.5%;
+}
+.comment p:nth-child(even)::before {
+    left: 107.5%;
+}
+.comment p:nth-child(odd)::after , .comment p:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    border: solid 8px;
+    top: 40%;
+}
+.comment p:nth-child(odd)::after {
+    right: 100%;
+    border-color: transparent #ccc transparent transparent;
+}
+.comment p:nth-child(even)::after {
+    left: 100%;
+    border-color: transparent  transparent transparent #ccc;
+}
+
+
+
+
+
 #flashbacks {
     text-align: center;
 }
