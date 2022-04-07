@@ -431,6 +431,8 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+
+ 
        /* timeline */
 .vertical {
     width: 5px;
@@ -439,25 +441,27 @@ body {
     height: 100%;
     background-color: var(--red);
     position: absolute;
+    /* transform: translateX(-50%); */
     z-index: -1;
 }
 .comment {
     text-align: center;
     position: relative;
     margin: 60px auto;
-    width: 350px;
+    width: 100%;
     padding: 3px 20px 3px 20px;
 
 }
+
 .comment p{
     text-align: center;
     color: aliceblue;
     padding: 10px;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     position: relative;
-    max-width: 100px;
+    max-width: 150px;
     background-color: var(--background-color);
     border: 2px ridge #fd4556;
     border-radius: 1rem;
@@ -467,7 +471,7 @@ body {
     left: 55%;
 }
 .comment p:nth-child(even) {
-    right: 0;
+    left:0%;
 }
 /* .comment p:nth-child(odd)::before , .comment p:nth-child(even)::before{
     content: '';
@@ -516,7 +520,7 @@ body {
         font-size: 8vh;
     }
     .six-point-o h1 {
-        font-size: 60vw;
+        font-size: 45vw;
         bottom: 17vh;
     }
     #dates {
@@ -698,7 +702,7 @@ body {
     max-width: 70%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width:500px) and (max-width: 768px) {
     /* timeline */
 .vertical {
     width: 5px;
