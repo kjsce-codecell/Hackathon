@@ -713,7 +713,7 @@ body {
     text-align: center;
     position: relative;
     margin: 60px auto;
-    width: 400px;
+    width: 300px;
     padding: 3px 20px 3px 20px;
 
 }
@@ -735,7 +735,7 @@ body {
     left: 55%;
 }
 .comment p:nth-child(even) {
-    right: 0;
+    right: 10%;
 }
 /* .comment p:nth-child(odd)::before , .comment p:nth-child(even)::before{
     content: '';
