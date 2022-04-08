@@ -1888,6 +1888,6 @@ background: url("https://pbs.twimg.com/ext_tw_video_thumb/1248732574224207872/pu
 } */
 @media only screen and (max-width:700px) {
     .comment p{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }
