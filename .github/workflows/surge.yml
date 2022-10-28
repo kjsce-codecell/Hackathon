@@ -3,7 +3,7 @@ name: Deploy to dev server
 on:
   push:
     branches:
-      - hack_2021
+      - hack_2022
 
 jobs:
   surge-deploy:
@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install -g surge
-      - run: surge ./ --token ${{secrets.SURGE_TOKEN}}
+      - run: surge ./ ${{secrets.SURGE_HACK7_DOMAIN}} --token ${{secrets.SURGE_TOKEN}}
