@@ -1,3 +1,14 @@
+/* <==== Variable CSS ====> */
+:root {
+    --black: #000000;
+    --grey: #606060;
+    --bg-black: #121211;
+    --bg-magenta: #570A57;
+    --neon-pink: #f806cc;
+    --text-pink: #a91079;
+    --red: #fd4556;
+}
+
 /* Imports */
 
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;300;400;500;600;700&display=swap');
@@ -41,6 +52,10 @@ ul {
 .flashback-video {
     display: flex;
     justify-content: center;
+}
+
+iframe {
+    width: 60%;
 }
 
 /* <==== Footer Section CSS ====>  */
