@@ -1,0 +1,50 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;300;400;500;600;700&display=swap');
+
+/* Resets */
+:root,
+:root::before,
+:root::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Advent Pro';
+    font-size: 1.6rem;
+    font-weight: 400;
+    background-color: #121211;
+    color: whitesmoke;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* <==== NavBar CSS ====>  */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 34px;
+}
+
+/* <==== Flashback Section CSS ====> */
+.flashback-video {
+    display: flex;
+    justify-content: center;
+}
+
+/* <==== Footer Section CSS ====>  */
+footer .codecell-logo {
+    width: 100px;
+}
+
