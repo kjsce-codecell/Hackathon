@@ -11,16 +11,43 @@
   <!-- Model Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <!-- Fontawesome Icons -->
-<script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+    <!--===== GOOGLE FONTS =====-->
+    <!--Oswald-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <!--Open Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+    <!--Advent Pro-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet"> 
+    
+    <!--Orbitron-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
+
 </head>
 
 <body>
   <div class="3d-model">
     <model-viewer src="assets/3d-Model/cyber_orb.glb" ios-src="assets/3d-Model/Cyber_Orb.usdz" ar
-      ar-modes="webxr scene-viewer quick-look" camera-controls exposure="2"
-      auto-rotate environment-image="legacy" loading="eager" autoplay disable-zoom>
+      ar-modes="webxr scene-viewer quick-look" camera-controls exposure="2" auto-rotate environment-image="legacy"
+      loading="eager" autoplay disable-zoom>
     </model-viewer>
   </div>
+
+  <!--================= NAVBAR =====================-->
+
   <nav class="navbar">
     <div class="logo"></div>
     <div class="active">
@@ -36,21 +63,31 @@
     </ul>
   </nav>
   <p>Coming Soon! Surge Domain Check</p>
+
+  <!--================= TIMELINE =====================-->
+  
   <section>
     <div class="topic-heading">Timeline</div>
   </section>
-  <section>
-    <div class="topic-heading about-heading">KJSCE Hack 7.0</div>
-    <div class="about-text">
-    <div class="about-data">
-      <div class="content">This is a 24-hour Hackathon conducted in a Hybrid Mode, with free food, accommodation, games, many fun activities and exciting prizes lined up.</div>
-      
-      <div class="content">You decide. This is going to be conducted in an offline as well as online at the ease of your pajamas.</div>
 
-      <div class="content">Why not? Brainstorm on ideas along with your team. Moreover, you wouldn't want to miss out on SCHWAGS obviously!</div>
-    </div>
+  <!--================= ABOUT =====================-->
+
+  <section class="about">
+    <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
+    <div class="about-content"> 
+        <div class="about-content-heading">We Invite you to Build/Learn/Hack</div>
+        <div class="about-text">
+          <p>This is a 24-hour Hackathon conducted in a Hybrid Mode, with free food, accommodation, games, many fun activities and exciting prizes lined up.</p>
+        
+          <p>You decide. This is going to be conducted in an offline as well as online at the ease of your pajamas.</p>
+
+          <p>Why not? Brainstorm on ideas along with your team. Moreover, you wouldn't want to miss out on SCHWAGS obviously!</p>
+      </div>
     </div>
   </section>
+
+  <!--=================== STATS =======================-->
+
   <section>
     <div class="topic-heading">Stats</div>
   </section>
@@ -63,24 +100,43 @@
     </div>
   </section>
   
+  <!--================= SPONSORS =====================-->
+
   <section>
     <div class="topic-heading">Sponsors</div>
   </section>
+
+  <!--==================== FAQ =======================-->
+
   <section>
     <div class="topic-heading">FAQ</div>
 
   </section>
+
+  <!--=================== TEAM =======================-->
+
   <section>
     <div class="topic-heading">Team</div>
   </section>
+
+  <!--=================== FOOTER =======================-->
+
   <footer>
 
-    <img class="codecell-logo" src="" alt="">
-    <div>
+    <a target="_blank" href="https://www.kjscecodecell.com"><img class="codecell-logo"
+        src="./assets/images/CodeCell-Logo-Red.png" alt=""></a>
 
+    <div class="social-media-icons">
+      <a target="_blank" href="https://twitter.com/kjsce_codecell"><i class="fa-brands fa-twitter"></i></a>
+      <a target="_blank" href="https://www.youtube.com/kjscecodecell"><i class="fa-brands fa-youtube"></i></a>
+      <a target="_blank" href="https://www.instagram.com/kjsce_codecell/"><i class="fa-brands fa-instagram"></i></a>
+      <a target="_blank" href="https://www.facebook.com/kjscecodecell"><i class="fa-brands fa-facebook-f"></i></a>
+      <a target="_blank" href="https://discord.com/invite/UBbSuw7swW"><i class="fa-brands fa-discord"></i></a>
     </div>
-    <p>Made with love by KJSCE CodeCell</p>
+
+    <p class="made-with-love">Made with <i class="fa-solid fa-heart"></i> by KJSCE CodeCell</p>
   </footer>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

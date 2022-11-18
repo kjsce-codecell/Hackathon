@@ -1,6 +1,16 @@
-/* Imports */
+/* <==== Variable CSS ====> */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #606060;
+    --bg-black: #121211;
+    --bg-magenta: #570A57;
+    --neon-pink: #f806cc;
+    --text-pink: #a91079;
+    --red: #fd4556;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;300;400;500;600;700&display=swap');
+/* Imports */
 
 /* Resets */
 :root,
@@ -16,21 +26,31 @@ html {
 }
 
 body {
-    font-family: 'Advent Pro';
+    
     font-size: 1.6rem;
     font-weight: 400;
     background-color: #121211;
     color: whitesmoke;
+    font-family: 'Advent Pro', sans-serif;
 }
 
 ul {
     list-style-type: none;
 }
 
-.topic-heading{
-    display:flex;
-    font-size: 7vw;
-    font-weight: bold;
+.black-heading{
+    font-family: 'Oswald';
+    
+    /* font-size: 120px; */
+    line-height: 178px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #121211;
+}
+
+.heading{
+    font-weight: 700;
+    font-size: 8.7vw;
 }
 
 /* <==== NavBar CSS ====>  */
@@ -43,23 +63,57 @@ ul {
     height: 34px;
 }
 /* <==== About section CSS ====> */
-.about-heading{
-    padding: 3vw;
-    justify-content: left;
-}
-.content{
-    font-size:1.5vw;
-    padding:2vw;
 
+
+.about{
+    padding: 2vw;
+    background: #570A57;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
-.about-data{
-    width:500vw;
-    margin-right:0; 
+
+.about-heading{
+    display: flex;
+    justify-self: left;
+}
+.about-content-heading{
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 33px;
+
+    /* identical to box height */
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .about-text{
-    display: flex;
-    justify-content: left;
+    margin-top: 10vh;
+    width: 40vw;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.8vh;
+    line-height: 30px;
+
+    /* or 167% */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 /* <==== Flashback Section CSS ====> */
 .flashback-video {
@@ -84,7 +138,72 @@ iframe{
 
 
 /* <==== Footer Section CSS ====>  */
-footer .codecell-logo {
+/* footer .codecell-logo {
+    margin: auto auto;
     width: 100px;
+} */
+
+footer {
+    background-color: var(--bg-black);
+    margin: 40px 0;
 }
 
+footer img {
+    display: block;
+    width: 150px;
+    padding: 30px;
+    margin: auto auto;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-media-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 100%;
+    transition-duration: 100ms;
+}
+
+.social-media-icons i {
+    padding: 0px;
+    margin: 0px;
+}
+
+.social-media-icons a:hover {
+    transform: scale(1.2);
+}
+
+.made-with-love {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+.fa-heart {
+    color: var(--red);
+}
+
+
+/* Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border: 2px solid var(--grey);
+    border-radius: 10px;
+}
