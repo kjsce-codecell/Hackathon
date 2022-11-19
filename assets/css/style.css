@@ -15,7 +15,7 @@
 /* Resets */
 :root,
 :root::before,
-:root::after {
+:root::after,*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
