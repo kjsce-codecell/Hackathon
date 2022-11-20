@@ -35,7 +35,6 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     margin-top: 70px;
     scroll-behavior: smooth;
 }
@@ -81,7 +80,9 @@ a {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: transparent;
+    box-shadow: 0 8px 32px 0 var(--bg-black);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .logo img {
