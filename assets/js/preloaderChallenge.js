@@ -3,7 +3,7 @@ if (localStorage.getItem("codecellhack7") != null) {
     "codecellhack7",
     Number(localStorage.getItem("codecellhack7")) + 1
   );
-  if (localStorage.getItem("codecellhack7") % 1 === 0) {
+  if (localStorage.getItem("codecellhack7") % 5 === 0) {
     document.getElementById("preloader").style.display = "block";
     document.getElementById("wrapper").style.display = "none";
     document.getElementById("preloader").style.animation =
