@@ -5,6 +5,19 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords"
+    content="kjsce, abhiyantriki, codecell, hackathon, hack, 2021, programming, development, blockchain, machine leanring, ai, android, ios, javascript, conference, algorithms, somaiya">
+  <meta name="description"
+    content="KJSCE Hackathon, a student run annual hackathon at K.J Somaiya College Of Engineering hosted incroporation with KJSCE CodeCell">
+  <meta property="og:title" content="KJSCE Hackathon 2023">
+  <meta property="og:url" content="https://hack.kjsce.com">
+  <meta property="og:site_name" content="KJSCE Hackathon 2023">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="INDEX, FOLLOW">
+  <meta name="author" content="Codecell">
+  <meta name="geo.region" content="IN">
+
   <title>KJSCE Hack 7.0</title>
   <!-- Links -->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -19,6 +32,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon"> 
   <link rel="manifest" href="assets/favicons/site.webmanifest">
   <!--===== GOOGLE FONTS =====-->
   <!--Oswald-->
@@ -28,7 +42,6 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HACK 7.0</title>
   <!-- Links -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <!-- Model Viewer -->
@@ -60,7 +73,6 @@
 
 <body>
   <!--================= NAVBAR =====================-->
-
   <nav class="navbar">
     <div class="logo">
       <img src="assets\images\CodeCell-Logo-White.png" alt="KJSCE Codecell Logo" />
@@ -79,7 +91,7 @@
 
     <ul class="nav-links">
       <li class="nav-link"><a href="#home">Home</a></li>
-      <li class="nav-link"><a href="#timeline">Timeline</a></li>
+      <!-- <li class="nav-link"><a href="#timeline">Timeline</a></li> -->
       <li class="nav-link"><a href="#about">About</a></li>
       <li class="nav-link"><a href="#stats">Stats</a></li>
       <li class="nav-link"><a href="#flashback">flashback</a></li>
@@ -94,29 +106,32 @@
   </nav>
 
   <!--================= HOME =====================-->
-  <section class="home">
+  <section class="home" id="home">
     <div class="bg-container">
       <img src="assets/images/back1.svg" class="object" data-value="-2" id="build2" />
       <img src="assets/images/front.svg" class="object" data-value="3" id="build1" />
       <img src="assets/images/back2.svg" class="object" data-value="-2" id="build3" />
     </div>
-    <div class="3d-model">
-      <model-viewer src="assets/3d-Model/cyber_orb.glb" ios-src="assets/3d-Model/Cyber_Orb.usdz" ar
-        ar-modes="webxr scene-viewer quick-look" camera-controls exposure="2" auto-rotate environment-image="legacy"
-        loading="eager" autoplay disable-zoom>
-      </model-viewer>
+    <div class="container">
+      <div class="main-logo">
+      </div>
+      <div class="3d-model">
+        <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp" auto-rotate
+          disable-zoom>
+        </model-viewer>
+      </div>
     </div>
   </section>
 
   <!--================= TIMELINE =====================-->
 
-  <section>
+  <!-- <section id="timeline">
     <div class="topic-heading">Timeline</div>
-  </section>
+  </section> -->
 
   <!--================= ABOUT =====================-->
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
     <div class="about-content">
       <div class="about-content-heading">
@@ -146,7 +161,7 @@
 
   <!--=================== STATS =======================-->
 
-  <section class="stats">
+  <section class="stats" id="stats">
     <div class="pink-heading heading stats-heading">STATS</div>
     <div class="stats-content">
       <div class="stats-container"></div>
@@ -157,8 +172,8 @@
   </section>
 
   <!--================= Flashback =====================-->
-  <section>
-    <div class="topic-heading">Flashback</div>
+  <section class="about" id="flashback">
+    <div class="topic-heading heading about-heading black-heading ">Flashback</div>
     <div class="flashback-video">
       <iframe width="960" height="540" src="https://www.youtube.com/embed/FZzZCGf6-wk" title="YouTube video player"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -167,19 +182,19 @@
   </section>
   <!--================= SPONSORS =====================-->
 
-  <section>
+  <section id="sponsors">
     <div class="topic-heading">Sponsors</div>
   </section>
 
   <!--==================== FAQ =======================-->
 
-  <section>
+  <section id="faqs">
     <div class="topic-heading">FAQ</div>
   </section>
 
   <!--=================== TEAM =======================-->
 
-  <section>
+  <section id="team">
     <div class="topic-heading">Team</div>
   </section>
 

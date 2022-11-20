@@ -139,7 +139,7 @@ a {
 
 .nav-links {
     position: absolute;
-    top: -14px;
+    top: 0px;
     right: 0;
     width: 20%;
     height: 100vh;
@@ -203,6 +203,7 @@ a {
 
 @media screen and (max-width: 720px) {
     .nav-links {
+        top: -14px;
         width: 50%;
         height: calc(100vh - 50px);
         margin-top: 80px;
@@ -259,6 +260,11 @@ section {
     z-index: -9;
 }
 
+model-viewer {
+    width: 50vw;
+    height: 80vh;
+}
+
 /* <==== About section CSS ====> */
 
 .about {
@@ -274,7 +280,6 @@ section {
 }
 
 .about-content-heading {
-    margin-top: 15vh;
     font-family: "Orbitron";
     font-style: normal;
     font-weight: 900;
