@@ -38,15 +38,27 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Links -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
   <!-- Model Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <!-- Fontawesome Icons -->
   <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
     crossorigin="anonymous"></script>
+
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
   <!-- TypeIt -->
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
@@ -217,6 +229,71 @@
 
     <section id="team">
       <div class="topic-heading">Team</div>
+      <div class="container">
+        <!-- Slider main container -->
+        <div class="swiper">
+        <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="card card0">
+                  <div class="border">
+                    <h2></h2>
+                    <!-- <div class="icons">
+                      <i class="fa fa-codepen" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div> -->
+                  </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card card1">
+                <div class="card card0">
+                  <div class="border">
+                    <h2></h2>
+                    <!-- <div class="icons">
+                      <i class="fa fa-codepen" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card card2">
+                <div class="card card0">
+                  <div class="border">
+                    <h2></h2>
+                    <!-- <div class="icons">
+                      <i class="fa fa-codepen" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
     </section>
 
 
@@ -244,6 +321,7 @@
   <script src="assets/js/parallax.js"></script>
   <script src="assets/js/navbar.js"></script>
   <script src="assets/js/preloaderChallenge.js"></script>
+  <script src="assets/js/swiper.js"></script>
 </body>
 
 </html>
