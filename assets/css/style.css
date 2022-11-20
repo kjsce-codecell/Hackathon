@@ -68,6 +68,13 @@ ul {
     justify-content: left;
 }
 
+.hex{
+    font-family: 'Open Sans';
+    color: var(--white);
+    font-size: 2.8vh;
+    margin: 5vh 0;
+}
+
 /*------- Background CSS ------*/
 
 .section-background{
@@ -100,7 +107,7 @@ ul {
     font-weight: 900;
     font-size: 26px;
     letter-spacing: 0.05em;
-    color: #FFFFFF;
+    color: var(--white);
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -114,7 +121,7 @@ ul {
     font-weight: 400;
     font-size: 2.8vh;
     line-height: 1.6;
-    color: #FFFFFF;
+    color: var(--white);
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -150,6 +157,23 @@ ul {
 /* <==== iframe ====> */
 iframe{
     box-shadow: 0px 0px 10px red;
+}
+
+/* <======== SPONSORS =======> */
+
+.sponsors-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 24px;
+    width: 70vw;
+    height: 80vh;
+    left: 54px;
+    top: calc(50% - 499px/2 + 62.5px);
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(135px);
 }
 
 /*<==== FAQ ====> */
