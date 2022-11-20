@@ -15,7 +15,8 @@
 /* Resets */
 :root,
 :root::before,
-:root::after,*{
+:root::after,
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -26,7 +27,7 @@ html {
 }
 
 body {
-    
+
     font-size: 1.6rem;
     font-weight: 400;
     background-color: var(--bg-black);
@@ -38,22 +39,22 @@ ul {
     list-style-type: none;
 }
 
-.heading{
+.heading {
     display: flex;
     font-family: 'Oswald';
     font-weight: 700;
     font-size: 8.7vw;
 }
 
-.black-heading{
+.black-heading {
     line-height: 178px;
     text-align: center;
     text-transform: uppercase;
     color: var(--bg-black);
 }
 
-.pink-heading{
-    color:var(--neon-pink);
+.pink-heading {
+    color: var(--neon-pink);
 }
 
 /* <==== NavBar CSS ====>  */
@@ -65,10 +66,50 @@ ul {
     width: 100%;
     height: 34px;
 }
+
+/* <==== HOME =====> */
+.home {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container img {
+    opacity: 0.5;
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#build2 {
+    left: -2%;
+    z-index: -10;
+}
+
+#build3 {
+    right: -2%;
+    z-index: -10;
+}
+
+#build1 {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -9;
+}
+
 /* <==== About section CSS ====> */
 
 
-.about{
+.about {
     padding: 2vw;
     background: var(--bg-magenta);
     flex: none;
@@ -76,11 +117,11 @@ ul {
     flex-grow: 0;
 }
 
-.about-heading{
+.about-heading {
     justify-self: left;
 }
 
-.about-content-heading{
+.about-content-heading {
     margin-top: 15vh;
     font-family: 'Orbitron';
     font-style: normal;
@@ -93,7 +134,7 @@ ul {
     flex-grow: 0;
 }
 
-.about-text{
+.about-text {
     margin-top: 10vh;
     width: 40vw;
     font-family: 'Open Sans';
@@ -109,15 +150,15 @@ ul {
 
 /* <========= STATS SECTION ========>*/
 
-.stats{
+.stats {
     padding: 2vw;
 }
 
-.stats-heading{
+.stats-heading {
     justify-content: right;
 }
 
-.stats-content{
+.stats-content {
     width: 90vw;
     margin: auto auto;
     margin-top: 15vh;
@@ -125,25 +166,25 @@ ul {
     justify-content: space-between;
 }
 
-.stats-container{
+.stats-container {
     width: 19vw;
     height: 19vw;
     background-color: var(--neon-pink);
 }
 
 /* <======= FLASHBACK SECTION =========> */
-.flashback{
+.flashback {
     background: var(--bg-magenta);
 }
 
 .flashback-video {
     display: flex;
     justify-content: center;
-    padding:5vw;
+    padding: 5vw;
 }
 
 /* <==== iframe ====> */
-iframe{
+iframe {
     box-shadow: 0px 0px 10px red;
 }
 
@@ -154,7 +195,7 @@ iframe{
     background-color: transparent !important;
     color: rgb(255, 255, 255);
     border: medium none;
-}  
+}
 
 
 /* <==== Footer Section CSS ====>  */
