@@ -26,6 +26,11 @@ html {
   font-size: 62.5%;
 }
 
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
 body {
   font-size: 1.6rem;
   font-weight: 400;
@@ -37,6 +42,7 @@ body {
   padding: 0;
   margin-top: 70px;
   scroll-behavior: smooth;
+  cursor: default;
 }
 
 ul {
@@ -82,8 +88,8 @@ a {
     letter-spacing: 3px;
     padding-top: 20px;
     padding-bottom: 20px;
-    box-shadow: 0 8px 32px 0 var(--bg-black);
-    backdrop-filter: blur(150px);
+    box-shadow: 0 8px 26px 0 var(--bg-black);
+    backdrop-filter: blur(200px);
     -webkit-backdrop-filter: blur(10px);
 }
 
@@ -98,6 +104,7 @@ a {
   align-items: center;
   justify-content: center;
   user-select: none;
+  margin-left: -35px;
 }
 
 .active-link-name {
@@ -440,17 +447,24 @@ model-viewer {
 }
 
 .about-text {
-  margin-top: 10vh;
-  width: 40vw;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.8vh;
-  line-height: 1.6;
-  color: #ffffff;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+    cursor:default;
+    margin-top: 10vh;
+    width: 45vw;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.8vh;
+    line-height: 1.6;
+    color: #ffffff;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 /* <========= STATS ========>*/
@@ -587,7 +601,7 @@ footer img {
     align-items: center;
     margin: 0 auto;
   }
-  .border {
+  .border-team {
     height: 400px;
     width: 290px;
     background: transparent;
@@ -595,7 +609,7 @@ footer img {
     transition: border 1s;
     position: relative;
   }
-  .border h2 {
+  .border-team h2 {
     color: #000;
   }
   /* .border:hover {
