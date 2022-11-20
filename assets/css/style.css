@@ -466,8 +466,9 @@ model-viewer {
 }
 
 iframe {
-  box-shadow: 0px 0px 10px red;
-  min-height: 40vw;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px var(--bg-magenta);
+  min-height: 45vh;
 }
 
 
