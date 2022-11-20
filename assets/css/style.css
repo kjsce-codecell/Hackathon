@@ -74,14 +74,14 @@ ul {
     overflow: hidden;
 }
 
-.container {
+.bg-container {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
 
-.container img {
+.bg-container img {
     opacity: 0.5;
     position: absolute;
     overflow: hidden;
