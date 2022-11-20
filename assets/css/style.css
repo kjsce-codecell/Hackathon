@@ -10,8 +10,6 @@
     --red: #fd4556;
 }
 
-/* Imports */
-
 /* Resets */
 :root,
 :root::before,
@@ -38,6 +36,8 @@ ul {
     list-style-type: none;
 }
 
+/* <===== COMMON ATTRIBUTES =====> */
+/*------- Heading CSS ------*/
 .heading{
     display: flex;
     font-family: 'Oswald';
@@ -56,6 +56,32 @@ ul {
     color:var(--neon-pink);
 }
 
+.mid-heading{
+    justify-content: center;
+}
+
+.right-heading{
+    justify-content: right;
+}
+
+.left-heading{
+    justify-content: left;
+}
+
+/*------- Background CSS ------*/
+
+.section-background{
+    padding: 2vw;
+    padding: 2vw;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.magenta-background{
+    background: var(--bg-magenta);
+}
+
 /* <==== NavBar CSS ====>  */
 
 .navbar {
@@ -66,19 +92,6 @@ ul {
     height: 34px;
 }
 /* <==== About section CSS ====> */
-
-
-.about{
-    padding: 2vw;
-    background: var(--bg-magenta);
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.about-heading{
-    justify-self: left;
-}
 
 .about-content-heading{
     margin-top: 15vh;
@@ -108,14 +121,6 @@ ul {
 }
 
 /* <========= STATS SECTION ========>*/
-
-.stats{
-    padding: 2vw;
-}
-
-.stats-heading{
-    justify-content: right;
-}
 
 .stats-content{
     width: 90vw;
