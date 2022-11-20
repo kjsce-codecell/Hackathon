@@ -29,7 +29,7 @@ body {
     
     font-size: 1.6rem;
     font-weight: 400;
-    background-color: #121211;
+    background-color: var(--bg-black);
     color: whitesmoke;
     font-family: 'Advent Pro', sans-serif;
 }
@@ -38,19 +38,22 @@ ul {
     list-style-type: none;
 }
 
-.black-heading{
+.heading{
+    display: flex;
     font-family: 'Oswald';
-    
-    /* font-size: 120px; */
+    font-weight: 700;
+    font-size: 8.7vw;
+}
+
+.black-heading{
     line-height: 178px;
     text-align: center;
     text-transform: uppercase;
-    color: #121211;
+    color: var(--bg-black);
 }
 
-.heading{
-    font-weight: 700;
-    font-size: 8.7vw;
+.pink-heading{
+    color:var(--neon-pink);
 }
 
 /* <==== NavBar CSS ====>  */
@@ -67,30 +70,24 @@ ul {
 
 .about{
     padding: 2vw;
-    background: #570A57;
+    background: var(--bg-magenta);
     flex: none;
     order: 1;
     flex-grow: 0;
 }
 
 .about-heading{
-    display: flex;
     justify-self: left;
 }
+
 .about-content-heading{
+    margin-top: 15vh;
     font-family: 'Orbitron';
     font-style: normal;
     font-weight: 900;
     font-size: 26px;
-    line-height: 33px;
-
-    /* identical to box height */
     letter-spacing: 0.05em;
-
     color: #FFFFFF;
-
-
-    /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -103,19 +100,42 @@ ul {
     font-style: normal;
     font-weight: 400;
     font-size: 2.8vh;
-    line-height: 30px;
-
-    /* or 167% */
-
+    line-height: 1.6;
     color: #FFFFFF;
-
-
-    /* Inside auto layout */
     flex: none;
     order: 1;
     flex-grow: 0;
 }
-/* <==== Flashback Section CSS ====> */
+
+/* <========= STATS SECTION ========>*/
+
+.stats{
+    padding: 2vw;
+}
+
+.stats-heading{
+    justify-content: right;
+}
+
+.stats-content{
+    width: 90vw;
+    margin: auto auto;
+    margin-top: 15vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats-container{
+    width: 19vw;
+    height: 19vw;
+    background-color: var(--neon-pink);
+}
+
+/* <======= FLASHBACK SECTION =========> */
+.flashback{
+    background: var(--bg-magenta);
+}
+
 .flashback-video {
     display: flex;
     justify-content: center;
