@@ -343,6 +343,7 @@ model-viewer {
 /* <==== iframe ====> */
 iframe {
     box-shadow: 0px 0px 10px red;
+    min-height: 40vw;
 }
 
 /*<==== FAQ ====> */
