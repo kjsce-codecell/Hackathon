@@ -129,7 +129,7 @@ a {
 }
 .nav-links {
   position: absolute;
-  top: -14px;
+  top: 0px;
   right: 0;
   width: 20%;
   height: 100vh;
