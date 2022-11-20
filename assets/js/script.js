@@ -1,1 +1,4 @@
-$('img').attr('draggable','false')
+$("img").attr("draggable", "false");
+
+
+
