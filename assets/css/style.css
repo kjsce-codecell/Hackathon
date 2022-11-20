@@ -78,6 +78,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 800;
+    letter-spacing: 3px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 0 8px 32px 0 var(--bg-black);
@@ -222,6 +224,7 @@ section {
 }
 
 /* <==== HOME =====> */
+
 .home {
     height: 100vh;
     width: 100vw;
@@ -250,6 +253,7 @@ section {
 #build3 {
     right: -2%;
     z-index: -10;
+    
 }
 
 #build1 {
@@ -260,15 +264,9 @@ section {
     z-index: -9;
 }
 
-model-viewer {
-    width: 50vw;
-    height: 80vh;
-}
-
 #homeView {
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
     width: 100vw;
     justify-content: center;
 }
@@ -279,21 +277,23 @@ model-viewer {
     font-weight: 700;
     left: 20%;
     font-size: 110px;
+    letter-spacing: 4px;
     display: flex;
     position: absolute;
     color: white;
+    user-select: none;
 }
 
 #heading-logo-1 {
     font-size: 110px;
-    margin-top: 235px;
+    margin-top: 210px;
     z-index: 100;
     margin-left: -30px;
 }
 
 #heading-logo-2 {
     font-size: 120px;
-    margin-top: 300px;
+    margin-top: 275px;
     color: white !important;
     margin-left: -5px;
 }
@@ -301,19 +301,30 @@ model-viewer {
 #heading-logo-3 {
     position: absolute;
     font-size: 500px;
+    margin-top: -25px;
     text-shadow: none;
     -webkit-text-stroke-width: 10px;
     -webkit-text-stroke-color: white;
     color: transparent;
     z-index: -100;
+    font-stretch:extra-expanded;
 }
 
 .hack-ka-logo {
     position: absolute;
 }
 
+#model {
+    position: absolute;
+    left: 50vw;
+}
 
-/* <==== About section CSS ====> */
+model-viewer {
+    width: 30vw;
+    height: 50vh;
+}
+
+/* <==== ABOUT ====> */
 
 .about {
     padding: 2vw;
@@ -353,7 +364,8 @@ model-viewer {
     flex-grow: 0;
 }
 
-/* <========= STATS SECTION ========>*/
+
+/* <========= STATS ========>*/
 
 .stats {
     padding: 2vw;
@@ -377,7 +389,8 @@ model-viewer {
     background-color: var(--neon-pink);
 }
 
-/* <======= FLASHBACK SECTION =========> */
+/* <======= FLASHBACK =========> */
+
 .flashback {
     background: var(--bg-magenta);
 }
@@ -388,13 +401,14 @@ model-viewer {
     padding: 5vw;
 }
 
-/* <==== iframe ====> */
 iframe {
     box-shadow: 0px 0px 10px red;
     min-height: 40vw;
 }
 
-/*<==== FAQ ====> */
+
+/*<==== FAQs ====> */
+
 .accordion-item {
     margin-top: 1rem;
     padding: 0rem 1rem;
@@ -402,6 +416,7 @@ iframe {
     color: rgb(255, 255, 255);
     border: medium none;
 }
+
 
 /* <==== Footer Section CSS ====>  */
 /* footer .codecell-logo {
@@ -462,7 +477,8 @@ footer img {
     color: var(--red);
 }
 
-/* Scroll Bar CSS */
+
+/* Scroll Bar */
 ::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
