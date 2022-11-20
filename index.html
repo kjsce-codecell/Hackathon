@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="keywords"
-    content="kjsce, abhiyantriki, codecell, hackathon, hack, 2021, programming, development, blockchain, machine leanring, ai, android, ios, javascript, conference, algorithms, somaiya">
+    content="kjsce, abhiyantriki, codecell, hackathon, hack, 2022, programming, development, blockchain, machine leanring, ai, android, ios, javascript, conference, algorithms, somaiya">
   <meta name="description"
-    content="KJSCE Hackathon, a student run annual hackathon at K.J Somaiya College Of Engineering hosted incroporation with KJSCE CodeCell">
+    content="KJSCE Hack, a student run annual hackathon at K. J. Somaiya College Of Engineering hosted incorporation with KJSCE CodeCell">
   <meta property="og:title" content="KJSCE Hackathon 2023">
   <meta property="og:url" content="https://hack.kjsce.com">
   <meta property="og:site_name" content="KJSCE Hackathon 2023">
@@ -52,22 +52,23 @@
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
     crossorigin="anonymous"></script>
   <!--===== GOOGLE FONTS =====-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!--Oswald-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+
   <!--Open Sans-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+
   <!--Advent Pro-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet" />
+
   <!--Orbitron-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+
+  <!--Barlow Semi Condensed-->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -106,19 +107,25 @@
   </nav>
 
   <!--================= HOME =====================-->
+
   <section class="home" id="home">
-    <div class="bg-container">
-      <img src="assets/images/back1.svg" class="object" data-value="-2" id="build2" />
-      <img src="assets/images/front.svg" class="object" data-value="3" id="build1" />
-      <img src="assets/images/back2.svg" class="object" data-value="-2" id="build3" />
-    </div>
-    <div class="container">
-      <div class="main-logo">
+    <div id="firstview">
+      <div class="bg-container">
+        <img src="assets/images/back1.svg" class="object" data-value="-2" id="build2" />
+        <img src="assets/images/front.svg" class="object" data-value="3" id="build1" />
+        <img src="assets/images/back2.svg" class="object" data-value="-2" id="build3" />
       </div>
-      <div class="3d-model">
-        <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp" auto-rotate
-          disable-zoom>
-        </model-viewer>
+      <div id="homeView">
+        <div id="hack-7" class="">
+          <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br>
+          <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br>
+          <span id="heading-logo-3" class="hack-ka-logo">7</span>
+        </div>
+        <div class="3d-model">
+          <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp" auto-rotate
+            disable-zoom>
+          </model-viewer>
+        </div>
       </div>
     </div>
   </section>

@@ -265,6 +265,54 @@ model-viewer {
     height: 80vh;
 }
 
+#homeView {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    width: 100vw;
+    justify-content: center;
+}
+
+#hack-7 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+    font-weight: 700;
+    left: 20%;
+    font-size: 110px;
+    display: flex;
+    position: absolute;
+    color: white;
+}
+
+#heading-logo-1 {
+    font-size: 110px;
+    margin-top: 235px;
+    z-index: 100;
+    margin-left: -30px;
+}
+
+#heading-logo-2 {
+    font-size: 120px;
+    margin-top: 300px;
+    color: white !important;
+    margin-left: -5px;
+}
+
+#heading-logo-3 {
+    position: absolute;
+    font-size: 500px;
+    text-shadow: none;
+    -webkit-text-stroke-width: 10px;
+    -webkit-text-stroke-color: white;
+    color: transparent;
+    z-index: -100;
+}
+
+.hack-ka-logo {
+    position: absolute;
+}
+
+
 /* <==== About section CSS ====> */
 
 .about {
