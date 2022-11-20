@@ -15,7 +15,7 @@
 /* Resets */
 :root,
 :root::before,
-:root::after {
+:root::after,*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -170,7 +170,7 @@ footer {
 
 footer img {
     display: block;
-    width: 150px;
+    width: 200px;
     padding: 30px;
     margin: auto auto;
 }
@@ -184,8 +184,8 @@ footer img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-decoration: none;
     margin: 10px;
     padding: 5px;
