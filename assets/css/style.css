@@ -175,7 +175,7 @@ a {
 
 .hamburger {
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 40px;
   z-index: 1000;
 }
 
@@ -248,6 +248,7 @@ section {
     opacity: 1;
   }
 }
+
 #content {
   position: absolute;
   top: 30%;
@@ -352,7 +353,7 @@ section {
 #homeView {
   display: flex;
   flex-direction: row;
-  height: 30vh;
+  height: 15vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -497,6 +498,19 @@ model-viewer {
   background: var(--bg-magenta);
 }
 
+#mom-iframe {
+    border: 10px solid white;
+    width: 60vw;
+    margin: auto auto;
+    position: relative;
+    border-radius: 40px;
+    padding: 0;
+  box-shadow: 0px 0px 30px var(--bg-magenta);
+  margin-top: 40px;
+
+
+}
+
 .flashback-video {
   display: flex;
   justify-content: center;
@@ -506,7 +520,9 @@ model-viewer {
 iframe {
   border-radius: 15px;
   box-shadow: 0px 0px 30px var(--bg-magenta);
-  min-height: 45vh;
+  min-width: 90%;
+  min-height: 360px;
+
 }
 
 /*<==== FAQs ====> */
