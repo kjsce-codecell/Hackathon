@@ -223,6 +223,71 @@ section {
   min-height: 100vh;
 }
 
+
+/* <==== Preloader =====> */
+
+#preloader {
+    background-color: var(--bg-black);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    margin-left: -35px;
+}
+
+@keyframes specialFade {
+    0%  {opacity: 0;}
+    50% {opacity: 1;}
+}
+#content {
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-30%);
+}
+
+#companion {
+    color: #ffffff;
+    text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+    font-family: "Oswald";
+    font-weight: 700;
+    font-size: 75px;
+}
+
+.wrapper {
+  animation: appear 2.25s ease-in-out;
+}
+
+@keyframes appear {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.7;}
+    100% {opacity: 1;}
+}
+
+@media screen and (min-width: 1024px) {
+    #companion {
+        font-size: 65px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #companion {
+        font-size: 50px;
+    }
+    #preloader {
+        margin-left: -20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #companion {
+        font-size: 25px;
+    }
+    #preloader {
+        margin-left: 0px;
+    }
+}
+
 /* <==== HOME =====> */
 
 .home {
@@ -253,7 +318,6 @@ section {
 #build3 {
     right: -2%;
     z-index: -10;
-    
 }
 
 #build1 {
