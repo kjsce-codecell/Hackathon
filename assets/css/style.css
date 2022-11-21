@@ -468,6 +468,11 @@ model-viewer {
     justify-content: space-between;
 }
 
+#ex-image {
+  width: 90%;
+  margin-left: 30px;
+}
+
 /* <========= STATS ========>*/
 
 .stats {
@@ -521,6 +526,90 @@ iframe {
   min-width: 90%;
   min-height: 360px;
 
+}
+
+/* <======= Sponsors =========> */
+.sponsors{
+    padding: 2vw;
+}
+.sponsor-container{
+  display:flex;
+  flex-direction:row;
+}
+
+.sponsor-wrapper {
+  float: left;
+  width:100%;
+  overflow: hidden;
+}
+/*
+.sponsor-buttons {
+  float: left;
+  width:25%;
+}
+*/
+.sponsor-wrapper-in {
+  border-style: solid;
+  border-color: var(--text-pink);
+  border-radius: 10px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: 13%;
+  margin-right: 13%;
+  max-height: 60vh !important;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.previous-sponsor{
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-box {
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-img{
+  width:50%;
+  max-width: 200px;
+  height:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-img img{
+  max-height: 70px;
+  max-width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.sponsor-img svg {
+  max-height: 70px;
+  max-width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.sponsor-btn{
+  height:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-btn button{
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 10px 5px;
+  cursor: pointer;
 }
 
 /*<==== FAQs ====> */
