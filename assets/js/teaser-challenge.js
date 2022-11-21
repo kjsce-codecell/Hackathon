@@ -10,21 +10,21 @@ if (localStorage.getItem("codecellhack7") != null) {
       "specialFade 1.5s ease-in-out;";
     document.body.style.overflow = "hidden";
     new TypeIt("#companion", {
-      speed: 52,
+      speed: 40,
       waitUntilVisible: true,
     })
       .type("We invite you to ")
-      .pause(500)
+      .pause(420)
       .delete(3)
       .type("all to hack")
-      .pause(120)
+      .pause(220)
       .move(-16)
       .delete(6)
       .type("challenge")
       .move(null, { to: "END" })
       .delete(4)
       .type("debug...")
-      .pause(400)
+      .pause(600)
       .delete(8)
       .type("explore...")
       .go();
@@ -33,7 +33,7 @@ if (localStorage.getItem("codecellhack7") != null) {
       document.getElementById("preloader").style.display = "none";
       document.getElementById("wrapper").style.display = "block";
       document.body.style.overflowY = "scroll";
-    }, 10400);
+    }, 9900);
   }
 } else {
   localStorage.setItem("codecellhack7", 0);
