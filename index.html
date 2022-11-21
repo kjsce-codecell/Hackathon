@@ -38,15 +38,29 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Links -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
   <!-- Model Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <!-- Fontawesome Icons -->
   <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
     crossorigin="anonymous"></script>
+
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- TypeIt -->
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
   <!--===== GOOGLE FONTS =====-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,121 +85,142 @@
 
 <body>
 
-  <!--================= NAVIGATION =====================-->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="assets\images\CodeCell-Logo-White.png" alt="KJSCE Codecell Logo" />
-    </div>
-    <div class="active">
-      <div class="active-link-name">HOME</div>
-      <div class="border">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+  <div id="preloader" class="preloader heading">
+    <div id="content"><span id="companion"></span></div>
+  </div>
+
+  <div id="wrapper" class="wrapper">
+
+    <!--================= NAVIGATION =====================-->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="https://kjscecodecell.com" target="_black">
+          <img src="assets\images\CodeCell-Logo-White.png" alt="KJSCE Codecell Logo" />
+        </a>
       </div>
-    </div>
-    <div class="hamburger">
-      <img src="assets/images/Menu.svg" />
-    </div>
-
-    <ul class="nav-links">
-      <li class="nav-link"><a href="#home">Home</a></li>
-      <!-- <li class="nav-link"><a href="#timeline">Timeline</a></li> -->
-      <li class="nav-link"><a href="#about">About</a></li>
-      <li class="nav-link"><a href="#stats">Stats</a></li>
-      <li class="nav-link"><a href="#flashback">Flashback</a></li>
-      <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
-      <li class="nav-link"><a href="#faqs">FAQs</a></li>
-      <li class="nav-link"><a href="#team">Team</a></li>
-      <li class="college-logos">
-        <a href=""><img class="somaiya-trust" src="/assets/images/somaiya-trust.png" alt="Somaiya Trust" /></a>
-        <a href=""><img src="/assets/images/somaiya-white-logo.png" alt="KJSCE SVU Logo" /></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!--================= HOME =====================-->
-
-  <section class="home" id="home">
-    <div id="firstview">
-      <div class="bg-container">
-        <img src="assets/images/back1.svg" class="object" data-value="-2" id="build2" />
-        <img src="assets/images/front.svg" class="object" data-value="3" id="build1" />
-        <img src="assets/images/back2.svg" class="object" data-value="-2" id="build3" />
-      </div>
-      <div id="homeView">
-        <div id="hack-7" class="">
-          <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br>
-          <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br>
-          <span id="heading-logo-3" class="hack-ka-logo">7</span>
-        </div>
-        <div id="model" class="3d-model">
-          <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp" auto-rotate
-            disable-zoom>
-          </model-viewer>
+      <div class="active">
+        <div class="active-link-name">HOME</div>
+        <div class="border">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!--================= TIMELINE =====================-->
-
-  <!-- <section id="timeline">
-    <div class="topic-heading">Timeline</div>
-  </section> -->
-
-  <!--================= ABOUT =====================-->
-
-  <section class="about" id="about">
-    <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
-    <div class="about-content">
-      <div class="about-content-heading">
-        We Invite you to Build/Learn/Hack
+      <div class="hamburger">
+        <img src="assets/images/Menu.svg" />
       </div>
-      <div class="about-text">
-        <p>
-          This is a 24-hour Hackathon conducted in a Hybrid Mode, with free
-          food, accommodation, games, many fun activities and exciting prizes
-          lined up.
-        </p>
-        <br />
-        <p>
-          You decide. This is going to be conducted in an offline as well as
-          online at the ease of your pajamas.
-        </p>
-        <br />
-        <p>
-          Why not? Brainstorm on ideas along with your team. Moreover, you
-          wouldn't want to miss out on SCHWAGS obviously!
-        </p>
-        <br />
-        <p>4b4a53434520434f444543454c4c</p>
+
+      <ul class="nav-links">
+        <li class="nav-link"><a href="#home">Home</a></li>
+        <!-- <li class="nav-link"><a href="#timeline">Timeline</a></li> -->
+        <li class="nav-link"><a href="#about">About</a></li>
+        <li class="nav-link"><a href="#stats">Stats</a></li>
+        <li class="nav-link"><a href="#flashback">Flashback</a></li>
+        <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
+        <li class="nav-link"><a href="#faqs">FAQs</a></li>
+        <li class="nav-link"><a href="#team">Team</a></li>
+        <li class="college-logos">
+          <a href=""><img class="somaiya-trust" src="/assets/images/somaiya-trust.png" alt="Somaiya Trust" /></a>
+          <a href=""><img src="/assets/images/somaiya-white-logo.png" alt="KJSCE SVU Logo" /></a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <!--================= HOME =====================-->
+
+    <section class="home" id="home">
+      <div id="firstview">
+        <div class="bg-container">
+          <img src="assets/images/back1.svg" class="object" data-value="-2" id="build2" />
+          <img src="assets/images/front.svg" class="object" data-value="3" id="build1" />
+          <img src="assets/images/back2.svg" class="object" data-value="-2" id="build3" />
+        </div>
+        <div id="homeView">
+          <div id="hack-7" class="">
+            <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br>
+            <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br>
+            <span id="heading-logo-3" class="hack-ka-logo">7</span>
+          </div>
+          <div id="model" class="three-d-model">
+            <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp" auto-rotate
+              disable-zoom>
+            </model-viewer>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!--=================== STATS =======================-->
+    <!--================= TIMELINE =====================-->
 
-  <section class="stats" id="stats">
-    <div class="pink-heading heading stats-heading">STATS</div>
-    <div class="stats-content">
-      <div class="stats-container"></div>
-      <div class="stats-container"></div>
-      <div class="stats-container"></div>
-      <div class="stats-container"></div>
-    </div>
-  </section>
+    <!-- <section id="timeline">
+      <div class="topic-heading">Timeline</div>
+    </section> -->
 
-  <!--================= FLASHBACK =====================-->
-  <section class="about" id="flashback">
-    <div class="topic-heading heading about-heading black-heading ">Flashback</div>
-    <div class="flashback-video">
-      <iframe width="60%" height="100%" src="https://www.youtube.com/embed/FZzZCGf6-wk" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-  </section>
-  <!--================= SPONSORS =====================-->
+    <!--================= ABOUT =====================-->
+
+    <section class="about" id="about">
+      <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
+      <div class="about-content">
+        <div class="about-content-heading">
+          We invite you to Build/Learn/Hack
+        </div>
+        <div id="main-content">
+          <div class="about-text">
+            <p>
+              This is a 24-hour Hackathon conducted in a Hybrid Mode, with free
+              food, accommodation, games, many fun activities and exciting prizes
+              lined up.
+            </p>
+            <br />
+            <p>
+              You decide. This is going to be conducted in an offline as well as
+              online at the ease of your pajamas.
+            </p>
+            <br />
+            <p>
+              Why not? Brainstorm on ideas along with your team. Moreover, you
+              wouldn't want to miss out on SCHWAGS obviously!
+            </p>
+            <br />
+            <p>4b4a53434520434f444543454c4c</p>
+          </div>
+          <div id="ex-im">
+            <img src="assets/images/ex-image.jpg" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!--=================== STATS =======================-->
+
+    <section class="stats" id="stats">
+      <div class="pink-heading heading stats-heading">STATS</div>
+      <div class="stats-content">
+        <div class="stats-container"></div>
+        <div class="stats-container"></div>
+        <div class="stats-container"></div>
+        <div class="stats-container"></div>
+      </div>
+    </section>
+
+
+    <!--================= FLASHBACK =====================-->
+
+    <section class="about" id="flashback">
+      <div class="topic-heading heading about-heading black-heading ">Flashback</div>
+      <div id="mom-iframe">
+        <div class="flashback-video">
+          <iframe src="https://www.youtube.com/embed/FZzZCGf6-wk" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+
+    <!--================= SPONSORS =====================-->
 
   <section class="sponsors" id="sponsors">
     <div class="topic-heading heading pink-heading">Sponsors</div>
@@ -373,37 +408,109 @@
     </div>
   </section>
 
-  <!--==================== FAQs =======================-->
 
-  <section id="faqs">
-    <div class="topic-heading">FAQ</div>
-  </section>
+    <!--==================== FAQs =======================-->
 
-  <!--=================== TEAM =======================-->
+    <section id="faqs">
+      <div class="topic-heading">FAQ</div>
+    </section>
 
-  <section id="team">
-    <div class="topic-heading">Team</div>
-  </section>
 
-  <!--=================== FOOTER =======================-->
-  <footer>
-    <a target="_blank" href="https://www.kjscecodecell.com"><img class="codecell-logo"
-        src="./assets/images/CodeCell-Logo-Red.png" alt="" /></a>
-    <div class="social-media-icons">
-      <a target="_blank" href="https://discord.com/invite/UBbSuw7swW"><i class="fa-brands fa-discord"></i></a>
-      <a target="_blank" href="https://www.instagram.com/kjsce_codecell/"><i class="fa-brands fa-instagram"></i></a>
-      <a target="_blank" href="https://www.linkedin.com/company/kjscecodecell/mycompany/"><i class="fa-brands fa-linkedin"></i></a>
-      <a target="_blank" href="https://twitter.com/kjsce_codecell"><i class="fa-brands fa-twitter"></i></a>
-      <a target="_blank" href="https://www.youtube.com/kjscecodecell"><i class="fa-brands fa-youtube"></i></a>
-      <a target="_blank" href="https://www.facebook.com/kjscecodecell"><i class="fa-brands fa-facebook-f"></i></a>
-    </div>
-    <p class="made-with-love">
-      Made with <i class="fa-solid fa-heart"></i> by KJSCE CodeCell
-    </p>
-  </footer>
+    <!--=================== TEAM =======================-->
+
+    <section id="team">
+      <div class="topic-heading">Team</div>
+      <div class="container">
+        <!-- Slider main container -->
+        <div class="swiper">
+        <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="card card0">
+                  <div class="border-team">
+                    <h2></h2>
+                    <!-- <div class="icons">
+                      <i class="fa fa-codepen" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div> -->
+                  </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card card1">
+                <div class="card card0">
+                  <div class="border-team">
+                    <h2></h2>
+                    <!-- <div class="icons">
+                      <i class="fa fa-codepen" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card card2">
+                <div class="card card0">
+                  <div class="border-team">
+                    <h2></h2>
+                    <!-- <div class="icons">
+                      <i class="fa fa-codepen" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          If we need navigation buttons
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!--=================== FOOTER =======================-->
+    
+    <footer>
+      <a target="_blank" href="https://www.kjscecodecell.com"><img class="codecell-logo"
+          src="./assets/images/CodeCell-Logo-Red.png" alt="" /></a>
+      <div class="social-media-icons">
+        <a target="_blank" href="https://discord.com/invite/UBbSuw7swW"><i class="fa-brands fa-discord"></i></a>
+        <a target="_blank" href="https://www.instagram.com/kjsce_codecell/"><i class="fa-brands fa-instagram"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/company/kjscecodecell/mycompany/"><i class="fa-brands fa-linkedin"></i></a>
+        <a target="_blank" href="https://twitter.com/kjsce_codecell"><i class="fa-brands fa-twitter"></i></a>
+        <a target="_blank" href="https://www.youtube.com/kjscecodecell"><i class="fa-brands fa-youtube"></i></a>
+        <a target="_blank" href="https://www.facebook.com/kjscecodecell"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <p class="made-with-love">
+        Made with <i class="fa-solid fa-heart"></i> by KJSCE CodeCell
+      </p>
+    </footer>
+
+  </div>
+
   <script src="assets/js/script.js"></script>
   <script src="assets/js/parallax.js"></script>
   <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/preloaderChallenge.js"></script>
+  <script src="assets/js/swiper.js"></script>
 </body>
 
 </html>
