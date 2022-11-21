@@ -468,6 +468,11 @@ model-viewer {
     justify-content: space-between;
 }
 
+#ex-image {
+  width: 90%;
+  margin-left: 30px;
+}
+
 /* <========= STATS ========>*/
 
 .stats {
