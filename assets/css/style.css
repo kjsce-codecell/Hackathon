@@ -27,8 +27,8 @@ html {
 }
 
 ::selection {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 body {
@@ -58,7 +58,7 @@ a {
   display: flex;
   font-family: "Oswald";
   font-weight: 700;
-  font-size: 8.7vw;
+  font-size: 8rem;
 }
 
 .black-heading {
@@ -75,22 +75,22 @@ a {
 /* <==== NavBar CSS ====>  */
 
 .navbar {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 800;
-    letter-spacing: 3px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0 8px 26px 0 var(--bg-black);
-    backdrop-filter: blur(200px);
-    -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 3px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 8px 26px 0 var(--bg-black);
+  backdrop-filter: blur(200px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .logo img {
@@ -110,7 +110,7 @@ a {
 .active-link-name {
   font-family: "Advent Pro";
   font-weight: 700;
-  font-size: 24px;
+  font-size: 2.4rem;
   letter-spacing: 0.05em;
   text-shadow: 0px 5.99304px 20.9756px #8e8901;
   color: var(--neon-pink);
@@ -263,7 +263,7 @@ section {
     0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   font-family: "Oswald";
   font-weight: 700;
-  font-size: 75px;
+  font-size: 7.5rem;
 }
 
 .wrapper {
@@ -290,7 +290,7 @@ section {
 
 @media screen and (min-width: 1024px) {
   #companion {
-    font-size: 65px;
+    font-size: 6.5rem;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -422,57 +422,93 @@ model-viewer {
 }
 
 /* <==== ABOUT ====> */
+.section-divder {
+  background: var(--bg-magenta);
+  width: 100%;
+  overflow: hidden;
+}
+.section-divder img {
+  object-fit: contain;
+}
+/* <==== ABOUT ====> */
 
 .about {
   padding: 2vw;
   background: var(--bg-magenta);
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+}
+.about-heading {
+  text-align: left;
+}
+.about-content {
+  background: url("../images/wires-background.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+}
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
 }
 
-.about-heading {
-  justify-self: left;
+.main-content img {
+  width: 90%;
+  margin-left: 10%;
+}
+.about-text {
+  font-family: "Open Sans", sans-serif;
+  width: 60%;
 }
 
 .about-content-heading {
   font-family: "Orbitron";
-  font-style: normal;
+  text-align: left;
   font-weight: 900;
-  font-size: 26px;
+  font-size: 2.6rem;
   letter-spacing: 0.05em;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   color: #ffffff;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  width: 100%;
+  border-bottom: 2px solid white;
+  position: relative;
+}
+.about-content-heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transform: translateY(140%);
+}
+.about-content-heading::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 0 0 5px 5px;
+  bottom: 0px;
+  left: 25px;
+  border-color: transparent transparent var(--bg-magenta) transparent;
+  transform: translateY(125%);
 }
 
-.about-text {
-    cursor:default;
-    margin-top: 10vh;
-    width: 45vw;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.8vh;
-    line-height: 1.6;
-    color: #ffffff;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+.special-hex-string {
+  border-bottom: 2px solid white;
+  padding-bottom: 8px;
+  width: 50%;
+  position: relative;
 }
-
-#main-content {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+.special-hex-string::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background: white;
 }
-
-#ex-image {
-  width: 90%;
-  margin-left: 30px;
-}
-
 /* <========= STATS ========>*/
 
 .stats {
@@ -504,14 +540,14 @@ model-viewer {
 }
 
 #mom-iframe {
-    border: 10px solid white;
-    width: 60vw;
-    margin: auto auto;
-    position: relative;
-    border-radius: 40px;
-    padding: 0;
-    box-shadow: 0px 0px 30px var(--bg-magenta);
-    margin-top: 40px;
+  border: 10px solid white;
+  width: 60vw;
+  margin: auto auto;
+  position: relative;
+  border-radius: 40px;
+  padding: 0;
+  box-shadow: 0px 0px 30px var(--bg-magenta);
+  margin-top: 40px;
 }
 
 .flashback-video {
@@ -525,21 +561,20 @@ iframe {
   box-shadow: 0px 0px 30px var(--bg-magenta);
   min-width: 90%;
   min-height: 360px;
-
 }
 
 /* <======= Sponsors =========> */
-.sponsors{
-    padding: 2vw;
+.sponsors {
+  padding: 2vw;
 }
-.sponsor-container{
-  display:flex;
-  flex-direction:row;
+.sponsor-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .sponsor-wrapper {
   float: left;
-  width:100%;
+  width: 100%;
   overflow: hidden;
 }
 /*
@@ -562,29 +597,29 @@ iframe {
   overflow-y: auto;
 }
 
-.previous-sponsor{
+.previous-sponsor {
   justify-content: center;
   align-items: center;
 }
 
 .sponsor-box {
   display: flex;
-  flex-direction:row;
-  flex-wrap:wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.sponsor-img{
-  width:50%;
+.sponsor-img {
+  width: 50%;
   max-width: 200px;
-  height:100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.sponsor-img img{
+.sponsor-img img {
   max-height: 70px;
   max-width: 70%;
   display: block;
@@ -598,14 +633,14 @@ iframe {
   margin: auto;
 }
 
-.sponsor-btn{
-  height:50%;
+.sponsor-btn {
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.sponsor-btn button{
+.sponsor-btn button {
   border-radius: 5px;
   border: 1px solid transparent;
   padding: 10px 5px;
@@ -621,7 +656,6 @@ iframe {
   color: rgb(255, 255, 255);
   border: medium none;
 }
-
 
 /* <==== Footer Section  ====>  */
 
@@ -651,7 +685,7 @@ footer img {
   text-decoration: none;
   margin: 10px;
   padding: 5px;
-  font-size: 20px;
+  font-size: 2rem;
   color: var(--black);
   background-color: var(--white);
   border-radius: 100%;
@@ -680,5 +714,5 @@ footer img {
 
 /* Scroll Bar Disability */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }

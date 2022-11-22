@@ -1,6 +1,27 @@
 /* For Mobiles */
 
 @media screen and (max-width: 767px) {
-
+  html {
+    font-size: 50%;
+  }
+  .main-content {
+    flex-direction: column;
+  }
+  .about-text {
+    width: 100%;
+  }
+  .main-content img {
+    width: 95vw;
+    margin-left: 0;
+    margin: 5vw;
+  }
 }
- 
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 45%;
+  }
+  .heading {
+    font-size: 6rem;
+  }
+}
