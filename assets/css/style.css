@@ -438,6 +438,7 @@ model-viewer {
 }
 .about-heading {
   text-align: left;
+  color: white;
 }
 .about-content {
   background: url("../images/wires-background.svg") no-repeat center center;
