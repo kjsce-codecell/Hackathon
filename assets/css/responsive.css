@@ -24,4 +24,8 @@
   .heading {
     font-size: 6rem;
   }
+  .stats-card {
+    width: 200px;
+    height: 200px;
+  }
 }

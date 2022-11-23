@@ -8,9 +8,8 @@ const navBarManager = () => {
     navBar.classList.toggle("active");
     if (navBar.classList.contains("active")) {
       navLinks.forEach((link, index) => {
-        link.style.animation = `navLinkAnimation 0.5s ease forwards ${
-          index / 7 + 0.3
-        }s`;
+        link.style.animation = `navLinkAnimation 0.5s ease forwards ${index / 7 + 0.3
+          }s`;
       });
     } else {
       navLinks.forEach((link, index) => {

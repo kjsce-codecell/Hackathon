@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,26 +24,57 @@
     <title>KJSCE Hack 7.0</title>
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/favicons/favicon.ico"
+      type="image/x-icon"
+    />
     <link rel="manifest" href="assets/favicons/site.webmanifest" />
 
     <!-- Links -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/mid_resp.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
 
     <!-- Model Viewer -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
 
     <!-- Fontawesome Icons -->
-    <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous" ></script>
+    <script
+      src="https://kit.fontawesome.com/6d232ec003.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous" ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Swiper -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
@@ -59,20 +89,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!--Oswald-->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <!--Open Sans-->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
 
     <!--Advent Pro-->
-    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap"
+      rel="stylesheet"
+    />
 
     <!--Orbitron-->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
 
     <!--Barlow Semi Condensed-->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap" rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -225,21 +269,63 @@
       <section class="stats" id="stats">
         <div class="pink-heading heading stats-heading">STATS</div>
         <div class="stats-content">
-          <div class="stats-container"></div>
-          <div class="stats-container"></div>
-          <div class="stats-container"></div>
-          <div class="stats-container"></div>
+          <div class="stats-card-wrapper">
+            <div class="stats-card">
+              <div class="card-icon">
+                <img src="./assets/images/application-icon.svg" alt="" />
+              </div>
+              <div class="card-number">
+                <span id="applications">1200</span><sup>+</sup>
+              </div>
+              <div class="card-text">Applications</div>
+            </div>
+          </div>
+          <div class="stats-card-wrapper">
+            <div class="stats-card">
+              <div class="card-icon">
+                <img src="./assets/images/colleges-icon.svg" alt="" />
+              </div>
+              <div class="card-number">
+                <span id="colleges">100</span><sup>+</sup>
+              </div>
+              <div class="card-text">Colleges</div>
+            </div>
+          </div>
+          <div class="stats-card-wrapper">
+            <div class="stats-card">
+              <div class="card-icon">
+                <img src="./assets/images/hackers-icon.svg" alt="" />
+              </div>
+              <div class="card-number">
+                <span id="hackers">250</span><sup>+</sup>
+              </div>
+              <div class="card-text">Hackers</div>
+            </div>
+          </div>
+          <div class="stats-card-wrapper">
+            <div class="stats-card">
+              <div class="card-icon">
+                <img src="./assets/images/teams-icon.svg" alt="" />
+              </div>
+              <div class="card-number">
+                <span id="teams">60</span><sup>+</sup>
+              </div>
+              <div class="card-text">Teams</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!--================= FLASHBACK =====================-->
 
-      <section class="about" id="flashback">
+      <section class="flashback" id="flashback">
         <div class="topic-heading heading about-heading black-heading">
           Flashback
         </div>
-        <div id="mom-iframe">
-          <div class="flashback-video">
+        <div class="flashback-wrapper">
+          <div class="cross-border-bottom"></div>
+          <div class="cross-border-top"></div>
+          <div class="flashback-container">
             <iframe
               src="https://www.youtube.com/embed/FZzZCGf6-wk"
               title="YouTube video player"
@@ -311,7 +397,9 @@
                   </div>
                   <div class="sponsor-img">
                     <a
-                      href="https://symbl.ai/?utm_source=hackathons&utm_medium=kjsce&utm_campaign=kjsce" target="_blank" >
+                      href="https://symbl.ai/?utm_source=hackathons&utm_medium=kjsce&utm_campaign=kjsce"
+                      target="_blank"
+                    >
                       <img src="assets/images/sponsors/symbl.png" />
                     </a>
                   </div>
@@ -326,7 +414,10 @@
                     </a>
                   </div>
                   <div class="sponsor-img">
-                    <a href="https://www.insiderbiz.in/company/BAPPA-MORYA-LUXURY-CAR-CARE-PRIVATELIMITED" target="_blank" >
+                    <a
+                      href="https://www.insiderbiz.in/company/BAPPA-MORYA-LUXURY-CAR-CARE-PRIVATELIMITED"
+                      target="_blank"
+                    >
                       <img src="assets/images/sponsors/bappa-gold.png" />
                     </a>
                   </div>
@@ -404,7 +495,9 @@
                   </div>
                   <div class="sponsor-img">
                     <a href="https://www.oreilly.com/" target="_blank">
-                      <img src="assets/images/sponsors/OReilly_logo_white_rgb.png" />
+                      <img
+                        src="assets/images/sponsors/OReilly_logo_white_rgb.png"
+                      />
                     </a>
                   </div>
                   <div class="sponsor-img">
@@ -423,7 +516,11 @@
                     </a>
                   </div>
                   <div class="sponsor-img">
-                    <a href="https://riidl.org/" style="background-color: white" target="_blank">
+                    <a
+                      href="https://riidl.org/"
+                      style="background-color: white"
+                      target="_blank"
+                    >
                       <img src="assets/images/sponsors/riidllogo.png" />
                     </a>
                   </div>
@@ -431,31 +528,35 @@
               </div>
 
               <div id="current-sponsor" style="display: none">
-                
                 <!-- SEE THE COMMENT -->
                 <!-- THE FIRST SPONSER ADDED HERE IS JUST FOR REFERENCE PURPOSE AND HAVING SOME CONTENT TO TEST THE BUTTON FUNCTIONALITY.... WHOEVER ADDS THE FURTHER LIST HERE, DO REMOVE THE FIRST DIV AFTER USING IT AS TEMPLATE -->
 
                 <div class="sponsor-img">
-                  <a href="https://riidl.org/" style="background-color: white" target="_blank">
+                  <a
+                    href="https://riidl.org/"
+                    style="background-color: white"
+                    target="_blank"
+                  >
                     <img src="assets/images/sponsors/riidllogo.png" />
                   </a>
                 </div>
-
               </div>
-
             </div>
           </div>
 
           <div class="sponsor-buttons">
             <div class="sponsor-btn">
-              <button type="button" onclick="showPrevious()">Previous Sponsors</button>
+              <button type="button" onclick="showPrevious()">
+                Previous Sponsors
+              </button>
             </div>
             <div class="sponsor-btn">
-              <button type="button" onclick="showCurrent()">Current Sponsors</button>
+              <button type="button" onclick="showCurrent()">
+                Current Sponsors
+              </button>
             </div>
-          </div>    
+          </div>
         </div>
-
       </section>
 
       <!--==================== FAQs =======================-->
