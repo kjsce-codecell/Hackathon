@@ -590,8 +590,8 @@ iframe {
   border-radius: 10px;
   margin-top: 2vh;
   margin-bottom: 2vh;
-  margin-left: 13%;
-  margin-right: 13%;
+  margin-left: 12%;
+  margin-right: 12%;
   max-height: 60vh !important;
   overflow: auto;
   overflow-x: auto;
@@ -621,8 +621,8 @@ iframe {
 }
 
 .sponsor-img img {
-  max-height: 70px;
-  max-width: 70%;
+  max-height: 75px;
+  max-width: 74%;
   display: block;
   margin: auto;
 }
