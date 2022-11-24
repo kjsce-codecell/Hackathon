@@ -3,7 +3,7 @@ if (localStorage.getItem("codecellhack7") != null) {
     "codecellhack7",
     Number(localStorage.getItem("codecellhack7")) + 1
   );
-  if (localStorage.getItem("codecellhack7") % 5 === 0) {
+  if (localStorage.getItem("codecellhack7") % 1 === 0) {
     document.getElementById("preloader").style.display = "block";
     document.getElementById("wrapper").style.display = "none";
     document.getElementById("preloader").style.animation =
@@ -13,18 +13,15 @@ if (localStorage.getItem("codecellhack7") != null) {
       speed: 40,
       waitUntilVisible: true,
     })
-      .type("We invite you to ")
+      .type("We invite you to hack...")
       .pause(420)
-      .delete(3)
-      .type("all to hack")
-      .pause(220)
-      .move(-16)
+      .move(-15)
       .delete(6)
       .type("challenge")
       .move(null, { to: "END" })
-      .delete(4)
+      .delete(7)
       .type("debug...")
-      .pause(600)
+      .pause(550)
       .delete(8)
       .type("explore...")
       .go();
@@ -33,7 +30,7 @@ if (localStorage.getItem("codecellhack7") != null) {
       document.getElementById("preloader").style.display = "none";
       document.getElementById("wrapper").style.display = "block";
       document.body.style.overflowY = "scroll";
-    }, 9900);
+    }, 8800);
   }
 } else {
   localStorage.setItem("codecellhack7", 0);

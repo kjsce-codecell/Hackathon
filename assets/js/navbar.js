@@ -25,7 +25,7 @@ const navBarManager = () => {
     let len = sections.length - 1;
     // console.log('Current user is on ' + (window.scrollY + 70));
     while (len > -1) {
-      if (window.scrollY + 70 >= sections[len].offsetTop) break;
+      if (window.scrollY + 125 >= sections[len].offsetTop) break;
       // console.log(navLinkList[len] + ' Section Start: ' + sections[len].offsetTop);
       len--;
     }
