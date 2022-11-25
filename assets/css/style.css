@@ -719,7 +719,7 @@ iframe {
 }
 .sponsor-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .sponsor-wrapper {
@@ -727,20 +727,24 @@ iframe {
   width: 100%;
   overflow: hidden;
 }
-/*
+
 .sponsor-buttons {
-  float: left;
-  width:25%;
+  display: flex;
+  width:50%;
+  margin: 20px auto;
+  margin-top: 40px;
+  justify-content: space-between;
 }
-*/
+
 .sponsor-wrapper-in {
   border-style: solid;
   border-color: var(--text-pink);
   border-radius: 10px;
-  margin-top: 2vh;
+  margin-top: 3.5vh;
   margin-bottom: 2vh;
   margin-left: 12%;
   margin-right: 12%;
+  min-height: 60vh !important;
   max-height: 60vh !important;
   overflow: auto;
   overflow-x: auto;

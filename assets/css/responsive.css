@@ -15,6 +15,9 @@
     margin-left: 0;
     margin: 5vw;
   }
+  .sponsor-wrapper-in {
+    margin-top: 4vh;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -27,5 +30,8 @@
   .stats-card {
     width: 200px;
     height: 200px;
+  }
+  .sponsor-wrapper-in {
+    margin-top: 5vh;
   }
 }

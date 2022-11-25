@@ -342,12 +342,24 @@
       <section class="sponsors" id="sponsors">
         <div class="topic-heading heading pink-heading">Sponsors</div>
         <div class="sponsor-container">
+          <div class="sponsor-buttons">
+            <div class="sponsor-btn">
+              <button type="button" onclick="showCurrent()">
+                Current Sponsors
+              </button>
+            </div>
+            <div class="sponsor-btn">
+              <button type="button" onclick="showPrevious()">
+                Previous Sponsors
+              </button>
+            </div>
+          </div>
           <div class="sponsor-wrapper">
             <div class="sponsor-wrapper-in">
               <div
                 class="previous-sponsor"
                 id="previous-sponsor"
-                style="display: block"
+                style="display: none"
               >
                 <div class="sponsor-box">
                   <div class="sponsor-img">
@@ -527,9 +539,12 @@
                 </div>
               </div>
 
-              <div id="current-sponsor" style="display: none">
+              <div id="current-sponsor"  style="display: block" >
                 <!-- SEE THE COMMENT -->
                 <!-- THE FIRST SPONSER ADDED HERE IS JUST FOR REFERENCE PURPOSE AND HAVING SOME CONTENT TO TEST THE BUTTON FUNCTIONALITY.... WHOEVER ADDS THE FURTHER LIST HERE, DO REMOVE THE FIRST DIV AFTER USING IT AS TEMPLATE -->
+
+                <!-- Hatts off and kudos to the whole Team for onboarding such amazing sponsors 
+                                                                            ~ bevatsal1122 -->
 
                 <div class="sponsor-img">
                   <a
@@ -541,19 +556,6 @@
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="sponsor-buttons">
-            <div class="sponsor-btn">
-              <button type="button" onclick="showPrevious()">
-                Previous Sponsors
-              </button>
-            </div>
-            <div class="sponsor-btn">
-              <button type="button" onclick="showCurrent()">
-                Current Sponsors
-              </button>
             </div>
           </div>
         </div>

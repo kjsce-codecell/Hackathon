@@ -3,7 +3,7 @@ if (localStorage.getItem("codecellhack7") != null) {
     "codecellhack7",
     Number(localStorage.getItem("codecellhack7")) + 1
   );
-  if (localStorage.getItem("codecellhack7") % 1 === 0) {
+  if (localStorage.getItem("codecellhack7") % 5 === 0) {
     document.getElementById("preloader").style.display = "block";
     document.getElementById("wrapper").style.display = "none";
     document.getElementById("preloader").style.animation =
@@ -30,7 +30,7 @@ if (localStorage.getItem("codecellhack7") != null) {
       document.getElementById("preloader").style.display = "none";
       document.getElementById("wrapper").style.display = "block";
       document.body.style.overflowY = "scroll";
-    }, 8800);
+    }, 8820);
   }
 } else {
   localStorage.setItem("codecellhack7", 0);
