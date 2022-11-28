@@ -34,4 +34,7 @@
   .sponsor-wrapper-in {
     margin-top: 5vh;
   }
+  .socials {
+    display: none;
+  }
 }
