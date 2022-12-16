@@ -1,633 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      name="keywords"
-      content="kjsce, abhiyantriki, codecell, hackathon, hack, 2022, programming, development, blockchain, machine learning, ai, android, ios, javascript, conference, algorithms, somaiya, coding"
-    />
-    <meta
-      name="description"
-      content="KJSCE Hack, a Student run Annual Hackathon at K. J. Somaiya College Of Engineering hosted incorporation with KJSCE CodeCell"
-    />
-    <meta property="og:title" content="KJSCE Hackathon 2023" />
-    <meta property="og:url" content="https://hack.kjsce.com" />
-    <meta property="og:site_name" content="KJSCE Hackathon 2023" />
-    <meta property="og:type" content="website" />
-    <meta name="robots" content="INDEX, FOLLOW" />
-    <meta name="author" content="CodeCell" />
-    <meta name="geo.region" content="IN" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>KJSCE Hack 7.0</title>
+  <meta name="keywords"
+    content="kjsce, abhiyantriki, codecell, hackathon, hack, 2022, programming, development, blockchain, machine learning, ai, android, ios, javascript, conference, algorithms, somaiya, coding" />
+  <meta name="description"
+    content="KJSCE Hack, a Student run Annual Hackathon at K. J. Somaiya College Of Engineering hosted incorporation with KJSCE CodeCell" />
+  <meta property="og:title" content="KJSCE Hackathon 2023" />
+  <meta property="og:url" content="https://hack.kjsce.com" />
+  <meta property="og:site_name" content="KJSCE Hackathon 2023" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="author" content="CodeCell" />
+  <meta name="geo.region" content="IN" />
 
-    <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="shortcut icon"
-      href="assets/favicons/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="manifest" href="assets/favicons/site.webmanifest" />
+  <title>KJSCE Hack 7.0</title>
 
-    <!-- Links -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/mid_resp.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="assets/favicons/site.webmanifest" />
 
-    <!-- Model Viewer -->
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
+  <!-- Links -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/mid_resp.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-    <!-- Fontawesome Icons -->
-    <script
-      src="https://kit.fontawesome.com/6d232ec003.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-    <!-- JQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.js"
-      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-      crossorigin="anonymous"
-    ></script>
+  <!-- Fontawesome Icons -->
+  <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
 
-    <!-- Swiper -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
 
-    <!-- TypeIt -->
-    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <!-- Swiper -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
 
-    <script src="./assets/js/button-events.js"></script>
+  <!-- TypeIt -->
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="./assets/js/button-events.js"></script>
 
-    <!--Oswald-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!--Open Sans-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+  <!--Oswald-->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
 
-    <!--Advent Pro-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap"
-      rel="stylesheet"
-    />
+  <!--Open Sans-->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
-    <!--Orbitron-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
-      rel="stylesheet"
-    />
+  <!--Advent Pro-->
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet" />
 
-    <!--Barlow Semi Condensed-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!--Orbitron-->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
 
-  <body>
-    <!-- Parent:1:Start -->
-    <div id="preloader" class="preloader">
-      <div id="content"><span id="companion"></span></div>
-    </div>
-    <!-- Parent:1:End -->
+  <!--Barlow Semi Condensed-->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap" rel="stylesheet" />
+</head>
 
-    <!-- Parent:2:Start -->
-    <div id="wrapper" class="wrapper">
-      <!--================= NAVIGATION =====================-->
-      <nav class="navbar">
-        <div class="logo">
-          <a href="https://kjscecodecell.com" target="_black">
-            <img
-              src="./assets/images/CodeCell-Logo-White.png"
-              alt="KJSCE CodeCell Logo"
-            />
-          </a>
-        </div>
-        <div class="active">
-          <div class="active-link-name">HOME</div>
-          <div class="border">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-        </div>
-        <div class="hamburger">
-          <img src="assets/images/Menu.svg" />
-        </div>
+<body>
+  <!-- Parent:1:Start -->
+  <div id="preloader" class="preloader">
+    <div id="content"><span id="companion"></span></div>
+  </div>
+  <!-- Parent:1:End -->
 
-        <ul class="nav-links">
-          <li class="nav-link"><a href="#home">Home</a></li>
-          <!-- <li class="nav-link"><a href="#timeline">Timeline</a></li> -->
-          <li class="nav-link"><a href="#about">About</a></li>
-          <li class="nav-link"><a href="#stats">Stats</a></li>
-          <li class="nav-link"><a href="#flashback">Flashback</a></li>
-          <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
-          <li class="nav-link"><a href="#faqs">FAQ</a></li>
-          <li class="nav-link"><a href="#team">Team</a></li>
-          <li class="college-logos">
-            <a href=""
-              ><img
-                class="somaiya-trust"
-                src="./assets/images/somaiya-trust.png"
-                alt="Somaiya Trust"
-            /></a>
-            <a href=""
-              ><img
-                src="./assets/images/somaiya-white-logo.png"
-                alt="KJSCE SVU Logo"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-
-      <!--================= HOME =====================-->
-
-      <section class="home" id="home">
-        <div id="firstview">
-          <div class="bg-container">
-            <img
-              src="./assets/images/back1.svg"
-              class="object"
-              data-value="-2"
-              id="build2"
-            />
-            <img
-              src="./assets/images/front.svg"
-              class="object"
-              data-value="3"
-              id="build1"
-            />
-            <img
-              src="./assets/images/back2.svg"
-              class="object"
-              data-value="-2"
-              id="build3"
-            />
-          </div>
-          <div id="homeView">
-            <div id="hack-7" class="">
-              <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br />
-              <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br />
-              <span id="heading-logo-3" class="hack-ka-logo">7</span>
-            </div>
-            <div id="model" class="three-d-model">
-              <model-viewer
-                src="assets/model/testeract_fbx.glb"
-                camera-controls
-                poster="assets/model/poster.webp"
-                auto-rotate
-                disable-zoom
-              >
-              </model-viewer>
-            </div>
-          </div>
-        </div>
-        <div class="socials">
+  <!-- Parent:2:Start -->
+  <div id="wrapper" class="wrapper">
+    <!--================= NAVIGATION =====================-->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="https://kjscecodecell.com" target="_black">
+          <img src="./assets/images/CodeCell-Logo-White.png" alt="KJSCE CodeCell Logo" />
+        </a>
+      </div>
+      <div class="active">
+        <div class="active-link-name">HOME</div>
+        <div class="border">
           <div class="line1"></div>
-          <!-- TODO: Add social links -->
-          <a href=""><img src="./assets/images/twitter.svg" alt="" /></a>
-          <a href=""><img src="./assets/images/instagram.svg" alt="" /></a>
-          <a href=""><img src="./assets/images/twitter.svg" alt="" /></a>
           <div class="line2"></div>
+          <div class="line3"></div>
         </div>
-      </section>
+      </div>
+      <div class="hamburger">
+        <img src="assets/images/Menu.svg" />
+      </div>
 
-      <!--================= TIMELINE =====================-->
+      <ul class="nav-links">
+        <li class="nav-link"><a href="#home">Home</a></li>
+        <!-- <li class="nav-link"><a href="#timeline">Timeline</a></li> -->
+        <li class="nav-link"><a href="#about">About</a></li>
+        <li class="nav-link"><a href="#stats">Stats</a></li>
+        <li class="nav-link"><a href="#flashback">Flashback</a></li>
+        <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
+        <li class="nav-link"><a href="#faqs">FAQ</a></li>
+        <li class="nav-link"><a href="#team">Team</a></li>
+        <li class="college-logos">
+          <a href=""><img class="somaiya-trust" src="./assets/images/somaiya-trust.png" alt="Somaiya Trust" /></a>
+          <a href=""><img src="./assets/images/somaiya-white-logo.png" alt="KJSCE SVU Logo" /></a>
+        </li>
+      </ul>
+    </nav>
 
-      <!-- <section id="timeline">
+    <!--================= HOME =====================-->
+
+    <section class="home" id="home">
+      <div id="firstview">
+        <div class="bg-container">
+          <img src="./assets/images/back1.svg" class="object" data-value="-2" id="build2" />
+          <img src="./assets/images/front.svg" class="object" data-value="3" id="build1" />
+          <img src="./assets/images/back2.svg" class="object" data-value="-2" id="build3" />
+        </div>
+        <div id="homeView">
+          <div id="hack-7" class="">
+            <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br />
+            <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br />
+            <span id="heading-logo-3" class="hack-ka-logo">7</span>
+          </div>
+          <div id="model" class="three-d-model">
+            <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp"
+              auto-rotate disable-zoom>
+            </model-viewer>
+          </div>
+        </div>
+      </div>
+      <div class="socials">
+        <div class="line1"></div>
+        <!-- TODO: Add social links -->
+        <a href=""><img src="./assets/images/twitter.svg" alt="" /></a>
+        <a href=""><img src="./assets/images/instagram.svg" alt="" /></a>
+        <a href=""><img src="./assets/images/twitter.svg" alt="" /></a>
+        <div class="line2"></div>
+      </div>
+    </section>
+
+    <!--================= TIMELINE =====================-->
+
+    <!-- <section id="timeline">
       <div class="topic-heading">Timeline</div>
     </section> -->
 
-      <!-- SECTION DIVIDER -->
-      <div class="section-divder">
-        <img src="./assets/images/section 1 seperator.svg" alt="" />
+    <!-- SECTION DIVIDER -->
+    <div class="section-divder">
+      <img src="./assets/images/section 1 seperator.svg" alt="" />
+    </div>
+    <!--================= ABOUT =====================-->
+
+    <section class="about" id="about">
+      <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
+      <div class="about-content">
+        <div class="main-content">
+          <div class="about-text">
+            <div class="about-content-heading">
+              We invite you to Build/Learn/Hack
+            </div>
+            <p>
+              This is a 24-hour Hackathon conducted in a Hybrid Mode, with
+              free food, accommodation, games, many fun activities and
+              exciting prizes lined up.
+            </p>
+            <br />
+            <p>
+              You decide. This is going to be conducted in an offline as well
+              as online at the ease of your pajamas.
+            </p>
+            <br />
+            <p>
+              Why not? Brainstorm on ideas along with your team. Moreover, you
+              wouldn't want to miss out on SCHWAGS obviously!
+            </p>
+            <br />
+            <p class="special-hex-string">4b4a53434520434f444543454c4c</p>
+          </div>
+          <div>
+            <img src="./assets/images/ex-image.jpg" alt="" srcset="" />
+          </div>
+        </div>
       </div>
-      <!--================= ABOUT =====================-->
+    </section>
 
-      <section class="about" id="about">
-        <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
-        <div class="about-content">
-          <div class="main-content">
-            <div class="about-text">
-              <div class="about-content-heading">
-                We invite you to Build/Learn/Hack
-              </div>
-              <p>
-                This is a 24-hour Hackathon conducted in a Hybrid Mode, with
-                free food, accommodation, games, many fun activities and
-                exciting prizes lined up.
-              </p>
-              <br />
-              <p>
-                You decide. This is going to be conducted in an offline as well
-                as online at the ease of your pajamas.
-              </p>
-              <br />
-              <p>
-                Why not? Brainstorm on ideas along with your team. Moreover, you
-                wouldn't want to miss out on SCHWAGS obviously!
-              </p>
-              <br />
-              <p class="special-hex-string">4b4a53434520434f444543454c4c</p>
+    <!--=================== STATS =======================-->
+
+    <section class="stats" id="stats">
+      <div class="pink-heading heading stats-heading">STATS</div>
+      <div class="stats-content">
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/application-icon.svg" alt="" />
             </div>
-            <div>
-              <img src="./assets/images/ex-image.jpg" alt="" srcset="" />
+            <div class="card-number">
+              <span id="applications">1200</span><sup>+</sup>
             </div>
+            <div class="card-text">Applications</div>
           </div>
         </div>
-      </section>
-
-      <!--=================== STATS =======================-->
-
-      <section class="stats" id="stats">
-        <div class="pink-heading heading stats-heading">STATS</div>
-        <div class="stats-content">
-          <div class="stats-card-wrapper">
-            <div class="stats-card">
-              <div class="card-icon">
-                <img src="./assets/images/application-icon.svg" alt="" />
-              </div>
-              <div class="card-number">
-                <span id="applications">1200</span><sup>+</sup>
-              </div>
-              <div class="card-text">Applications</div>
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/colleges-icon.svg" alt="" />
             </div>
-          </div>
-          <div class="stats-card-wrapper">
-            <div class="stats-card">
-              <div class="card-icon">
-                <img src="./assets/images/colleges-icon.svg" alt="" />
-              </div>
-              <div class="card-number">
-                <span id="colleges">100</span><sup>+</sup>
-              </div>
-              <div class="card-text">Colleges</div>
+            <div class="card-number">
+              <span id="colleges">100</span><sup>+</sup>
             </div>
-          </div>
-          <div class="stats-card-wrapper">
-            <div class="stats-card">
-              <div class="card-icon">
-                <img src="./assets/images/hackers-icon.svg" alt="" />
-              </div>
-              <div class="card-number">
-                <span id="hackers">250</span><sup>+</sup>
-              </div>
-              <div class="card-text">Hackers</div>
-            </div>
-          </div>
-          <div class="stats-card-wrapper">
-            <div class="stats-card">
-              <div class="card-icon">
-                <img src="./assets/images/teams-icon.svg" alt="" />
-              </div>
-              <div class="card-number">
-                <span id="teams">60</span><sup>+</sup>
-              </div>
-              <div class="card-text">Teams</div>
-            </div>
+            <div class="card-text">Colleges</div>
           </div>
         </div>
-      </section>
-
-      <!--================= FLASHBACK =====================-->
-
-      <section class="flashback" id="flashback">
-        <div class="topic-heading heading about-heading black-heading">
-          Flashback
-        </div>
-        <div class="flashback-wrapper">
-          <div class="cross-border-bottom"></div>
-          <div class="cross-border-top"></div>
-          <div class="flashback-container">
-            <iframe
-              src="https://www.youtube.com/embed/FZzZCGf6-wk"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/hackers-icon.svg" alt="" />
+            </div>
+            <div class="card-number">
+              <span id="hackers">250</span><sup>+</sup>
+            </div>
+            <div class="card-text">Hackers</div>
           </div>
         </div>
-      </section>
-
-      <!-- SECTION DIVIDER -->
-      <div class="section-divder section-divider-two">
-        <img src="./assets/images/section 2 seperator.svg" alt="" />
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/teams-icon.svg" alt="" />
+            </div>
+            <div class="card-number">
+              <span id="teams">60</span><sup>+</sup>
+            </div>
+            <div class="card-text">Teams</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!--================= SPONSORS =====================-->
+    <!--================= FLASHBACK =====================-->
 
-      <section class="sponsors" id="sponsors">
-        <div class="topic-heading heading pink-heading">Sponsors</div>
-        <div class="sponsor-container">
-          <div class="sponsor-buttons">
-            <div class="sponsor-btn">
-              <button type="button" onclick="showCurrent()">
-                Current Sponsors
-              </button>
-            </div>
-            <div class="sponsor-btn">
-              <button type="button" onclick="showPrevious()">
-                Previous Sponsors
-              </button>
-            </div>
+    <section class="flashback" id="flashback">
+      <div class="topic-heading heading about-heading black-heading">
+        Flashback
+      </div>
+      <div class="flashback-wrapper">
+        <div class="cross-border-bottom"></div>
+        <div class="cross-border-top"></div>
+        <div class="flashback-container">
+          <iframe src="https://www.youtube.com/embed/FZzZCGf6-wk" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divder section-divider-two">
+      <img src="./assets/images/section 2 seperator.svg" alt="" />
+    </div>
+
+    <!--================= SPONSORS =====================-->
+
+    <section class="sponsors" id="sponsors">
+      <div class="topic-heading heading pink-heading">Sponsors</div>
+      <div class="sponsor-container">
+        <div class="sponsor-buttons">
+          <div class="sponsor-btn">
+            <button class="cybr-btn" onclick="showCurrent()">
+              Previous <span aria-hidden>Sponsors</span>
+              <span aria-hidden class="cybr-btn__glitch">Hack 6.0</span>
+              <span aria-hidden class="cybr-btn__tag">KH7</span>
+            </button>
           </div>
-          <div class="sponsor-wrapper">
-            <div class="sponsor-wrapper-in">
-              <div
-                class="previous-sponsor"
-                id="previous-sponsor"
-                style="display: none"
-              >
-                <div class="sponsor-box">
-                  <div class="sponsor-img">
-                    <a href="https://devfolio.co/" target="_blank">
-                      <img src="assets/images/sponsors/devfolio.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://polygon.technology/" target="_blank">
-                      <img src="assets/images/sponsors/polygon.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.portis.io/" target="_blank">
-                      <img src="assets/images/sponsors/portis.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://tezos.com/" target="_blank">
-                      <img src="assets/images/sponsors/tezos.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://arcana.network/" target="_blank">
-                      <img src="assets/images/sponsors/arcana.svg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://frappe.io/" target="_blank">
-                      <img src="assets/images/sponsors/frappe_new-logo.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://filecoin.io" target="_blank">
-                      <img src="assets/images/sponsors/filecoin.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://celo.org" target="_blank">
-                      <img src="assets/images/sponsors/celo.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://thebelgianwaffle.co/" target="_blank">
-                      <img src="assets/images/sponsors/belgian-waffles.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a
-                      href="https://symbl.ai/?utm_source=hackathons&utm_medium=kjsce&utm_campaign=kjsce"
-                      target="_blank"
-                    >
-                      <img src="assets/images/sponsors/symbl.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://alan.app/" target="_blank">
-                      <img src="assets/images/sponsors/alan.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://konfhub.com/" target="_blank">
-                      <img src="assets/images/sponsors/konfhub.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a
-                      href="https://www.insiderbiz.in/company/BAPPA-MORYA-LUXURY-CAR-CARE-PRIVATELIMITED"
-                      target="_blank"
-                    >
-                      <img src="assets/images/sponsors/bappa-gold.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.noticebard.com" target="_blank">
-                      <img src="assets/images/sponsors/noticebard.svg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://gatsbyindia.com" target="_blank">
-                      <img src="assets/images/sponsors/Gatsby.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://mule.to/p2lw" target="_blank">
-                      <img
-                        src="assets/images/sponsors/sticker-mule-logo-white.png"
-                      />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.taskade.com/" target="_blank">
-                      <img src="assets/images/sponsors/taskade.jpg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://proto.io/" target="_blank">
-                      <img src="assets/images/sponsors/proto.jpg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://theeducationtree.com/" target="_blank">
-                      <img src="assets/images/sponsors/theeducationtree.jpeg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://heiphen.com/" target="_blank">
-                      <img src="assets/images/sponsors/heiphen.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.wolfram.com/" target="_blank">
-                      <img src="assets/images/sponsors/wolfram.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.geeksforgeeks.org/" target="_blank">
-                      <img src="assets/images/sponsors/gfg_logo.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://certopus.com" target="_blank">
-                      <img src="assets/images/sponsors/certopus_light.svg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://rosenfeldmedia.com" target="_blank">
-                      <img src="assets/images/sponsors/Rosenfeld.jpg" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.digitalocean.com/" target="_blank">
-                      <img src="assets/images/sponsors/digitalocean.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.newtonschool.co/" target="_blank">
-                      <img src="assets/images/sponsors/newton.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.echo3d.co/" target="_blank">
-                      <img src="assets/images/sponsors/echo3D.webp" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.oreilly.com/" target="_blank">
-                      <img
-                        src="assets/images/sponsors/OReilly_logo_white_rgb.png"
-                      />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://www.interviewcake.com" target="_blank">
-                      <img src="assets/images/sponsors/interviewCake.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://interviewbuddy.in" target="_blank">
-                      <img src="assets/images/sponsors/interviewbuddy.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a href="https://hackclub.com" target="_blank">
-                      <img src="assets/images/sponsors/hack-club.png" />
-                    </a>
-                  </div>
-                  <div class="sponsor-img">
-                    <a
-                      href="https://riidl.org/"
-                      style="background-color: white"
-                      target="_blank"
-                    >
-                      <img src="assets/images/sponsors/riidllogo.png" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div id="current-sponsor" style="display: block">
-                <!-- SEE THE COMMENT -->
-                <!-- THE FIRST SPONSER ADDED HERE IS JUST FOR REFERENCE PURPOSE AND HAVING SOME CONTENT TO TEST THE BUTTON FUNCTIONALITY.... WHOEVER ADDS THE FURTHER LIST HERE, DO REMOVE THE FIRST DIV AFTER USING IT AS TEMPLATE -->
-
-                <!-- Hatts off and kudos to the whole Team for onboarding such amazing sponsors 
-                                                                            ~ bevatsal1122 -->
-
+          <div class="sponsor-btn">
+            <button class="cybr-btn" onclick="showPrevious()">
+              Current <span aria-hidden>Sponsors</span>
+              <span aria-hidden class="cybr-btn__glitch">Hack 7.0</span>
+              <span aria-hidden class="cybr-btn__tag">KH6</span>
+            </button>
+          </div>
+        </div>
+        <div class="sponsor-wrapper">
+          <div class="sponsor-wrapper-in">
+            <div class="previous-sponsor" id="previous-sponsor" style="display: none">
+              <div class="sponsor-box">
                 <div class="sponsor-img">
-                  <a
-                    href="https://riidl.org/"
-                    style="background-color: white"
-                    target="_blank"
-                  >
+                  <a href="https://devfolio.co/" target="_blank">
+                    <img src="assets/images/sponsors/devfolio.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://polygon.technology/" target="_blank">
+                    <img src="assets/images/sponsors/polygon.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.portis.io/" target="_blank">
+                    <img src="assets/images/sponsors/portis.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://tezos.com/" target="_blank">
+                    <img src="assets/images/sponsors/tezos.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://arcana.network/" target="_blank">
+                    <img src="assets/images/sponsors/arcana.svg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://frappe.io/" target="_blank">
+                    <img src="assets/images/sponsors/frappe_new-logo.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://filecoin.io" target="_blank">
+                    <img src="assets/images/sponsors/filecoin.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://celo.org" target="_blank">
+                    <img src="assets/images/sponsors/celo.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://thebelgianwaffle.co/" target="_blank">
+                    <img src="assets/images/sponsors/belgian-waffles.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://symbl.ai/?utm_source=hackathons&utm_medium=kjsce&utm_campaign=kjsce" target="_blank">
+                    <img src="assets/images/sponsors/symbl.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://alan.app/" target="_blank">
+                    <img src="assets/images/sponsors/alan.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://konfhub.com/" target="_blank">
+                    <img src="assets/images/sponsors/konfhub.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.insiderbiz.in/company/BAPPA-MORYA-LUXURY-CAR-CARE-PRIVATELIMITED"
+                    target="_blank">
+                    <img src="assets/images/sponsors/bappa-gold.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.noticebard.com" target="_blank">
+                    <img src="assets/images/sponsors/noticebard.svg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://gatsbyindia.com" target="_blank">
+                    <img src="assets/images/sponsors/Gatsby.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://mule.to/p2lw" target="_blank">
+                    <img src="assets/images/sponsors/sticker-mule-logo-white.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.taskade.com/" target="_blank">
+                    <img src="assets/images/sponsors/taskade.jpg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://proto.io/" target="_blank">
+                    <img src="assets/images/sponsors/proto.jpg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://theeducationtree.com/" target="_blank">
+                    <img src="assets/images/sponsors/theeducationtree.jpeg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://heiphen.com/" target="_blank">
+                    <img src="assets/images/sponsors/heiphen.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.wolfram.com/" target="_blank">
+                    <img src="assets/images/sponsors/wolfram.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.geeksforgeeks.org/" target="_blank">
+                    <img src="assets/images/sponsors/gfg_logo.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://certopus.com" target="_blank">
+                    <img src="assets/images/sponsors/certopus_light.svg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://rosenfeldmedia.com" target="_blank">
+                    <img src="assets/images/sponsors/Rosenfeld.jpg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.digitalocean.com/" target="_blank">
+                    <img src="assets/images/sponsors/digitalocean.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.newtonschool.co/" target="_blank">
+                    <img src="assets/images/sponsors/newton.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.echo3d.co/" target="_blank">
+                    <img src="assets/images/sponsors/echo3D.webp" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.oreilly.com/" target="_blank">
+                    <img src="assets/images/sponsors/OReilly_logo_white_rgb.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.interviewcake.com" target="_blank">
+                    <img src="assets/images/sponsors/interviewCake.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://interviewbuddy.in" target="_blank">
+                    <img src="assets/images/sponsors/interviewbuddy.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://hackclub.com" target="_blank">
+                    <img src="assets/images/sponsors/hack-club.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://riidl.org/" style="background-color: white" target="_blank">
                     <img src="assets/images/sponsors/riidllogo.png" />
                   </a>
                 </div>
               </div>
             </div>
+
+            <div id="current-sponsor" style="display: block">
+              <!-- SEE THE COMMENT -->
+              <!-- THE FIRST SPONSER ADDED HERE IS JUST FOR REFERENCE PURPOSE AND HAVING SOME CONTENT TO TEST THE BUTTON FUNCTIONALITY.... WHOEVER ADDS THE FURTHER LIST HERE, DO REMOVE THE FIRST DIV AFTER USING IT AS TEMPLATE -->
+
+              <!-- Hatts off and kudos to the whole Team for onboarding such amazing sponsors 
+                                                                            ~ bevatsal1122 -->
+
+              <div class="sponsor-img">
+                <a href="https://riidl.org/" style="background-color: white" target="_blank">
+                  <img src="assets/images/sponsors/riidllogo.png" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!--==================== FAQs =======================-->
+    <!--==================== FAQs =======================-->
 
-      <section id="faqs">
-        <div class="topic-heading">FAQ</div>
-      </section>
+    <section id="faqs">
+      <div class="topic-heading">FAQ</div>
+    </section>
 
-      <!--=================== TEAM =======================-->
+    <!--=================== TEAM =======================-->
 
-      <section id="team">
-        <div class="topic-heading">Team</div>
-      </section>
+    <section id="team">
+      <div class="topic-heading">Team</div>
+    </section>
 
-      <!--=================== FOOTER =======================-->
+    <!--=================== FOOTER =======================-->
 
-      <footer>
-        <a target="_blank" href="https://www.kjscecodecell.com"
-          ><img
-            class="codecell-logo"
-            src="./assets/images/CodeCell-Logo-Red.png"
-            alt=""
-        /></a>
-        <div class="social-media-icons">
-          <a target="_blank" href="https://discord.com/invite/UBbSuw7swW"
-            ><i class="fa-brands fa-discord"></i
-          ></a>
-          <a target="_blank" href="https://www.instagram.com/kjsce_codecell/"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/company/kjscecodecell/mycompany/"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a target="_blank" href="https://twitter.com/kjsce_codecell"
-            ><i class="fa-brands fa-twitter"></i
-          ></a>
-          <a target="_blank" href="https://www.youtube.com/kjscecodecell"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-          <a target="_blank" href="https://www.facebook.com/kjscecodecell"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-        </div>
-        <p class="made-with-love">
-          Made with <i class="fa-solid fa-heart"></i> by KJSCE CodeCell
-        </p>
-      </footer>
-    </div>
-    <!-- Parent:2:Start -->
+    <footer>
+      <a target="_blank" href="https://www.kjscecodecell.com"><img class="codecell-logo"
+          src="./assets/images/CodeCell-Logo-Red.png" alt="" /></a>
+      <div class="social-media-icons">
+        <a target="_blank" href="https://discord.com/invite/UBbSuw7swW"><i class="fa-brands fa-discord"></i></a>
+        <a target="_blank" href="https://www.instagram.com/kjsce_codecell/"><i class="fa-brands fa-instagram"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/company/kjscecodecell/mycompany/"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a target="_blank" href="https://twitter.com/kjsce_codecell"><i class="fa-brands fa-twitter"></i></a>
+        <a target="_blank" href="https://www.youtube.com/kjscecodecell"><i class="fa-brands fa-youtube"></i></a>
+        <a target="_blank" href="https://www.facebook.com/kjscecodecell"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <p class="made-with-love">
+        Made with <i class="fa-solid fa-heart"></i> by KJSCE CodeCell
+      </p>
+    </footer>
+  </div>
+  <!-- Parent:2:Start -->
 
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/parallax.js"></script>
-    <script src="./assets/js/navbar.js"></script>
-    <script src="./assets/js/teaser-challenge.js"></script>
-    <script src="./assets/js/swiper.js"></script>
-  </body>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/parallax.js"></script>
+  <script src="./assets/js/navbar.js"></script>
+  <script src="./assets/js/teaser-challenge.js"></script>
+  <script src="./assets/js/swiper.js"></script>
+</body>
+
 </html>
