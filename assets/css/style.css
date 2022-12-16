@@ -391,7 +391,7 @@ section {
 #heading-logo-1 {
   font-size: 110px;
   margin-top: 205px;
-  z-index: 100;
+  z-index: 20;
   margin-left: -30px;
 }
 
