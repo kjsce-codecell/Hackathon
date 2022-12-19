@@ -419,7 +419,7 @@ section {
   -webkit-text-stroke-width: 10px;
   -webkit-text-stroke-color: white;
   color: transparent;
-  z-index: -100;
+  z-index: -1;
   font-stretch: extra-expanded;
 }
 
