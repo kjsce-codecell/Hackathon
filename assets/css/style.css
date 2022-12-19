@@ -97,7 +97,7 @@ a {
 
 .logo img {
   margin-left: 20px;
-  width: 80px;
+  width: 12rem;
 }
 
 .active {
@@ -177,9 +177,108 @@ a {
 }
 
 .hamburger {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: .1s;
+  margin-right: 3rem;
   cursor: pointer;
-  margin-right: 40px;
-  z-index: 1000;
+  display: inline-block;
+  z-index: 10;
+}
+
+.hamburger span {
+  width: 5px;
+  height: 5px;
+  background-color: var(--white);
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+
+}
+
+.hamburger:hover span {
+  transform: scale(1.2);
+  transition: 350ms cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.hamburger span:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  left: 12px;
+  top: 0;
+}
+
+.hamburger span:nth-child(3) {
+  right: 0;
+  top: 0;
+}
+
+.hamburger span:nth-child(4) {
+  left: 0;
+  top: 12px;
+}
+
+.hamburger span:nth-child(5) {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+.hamburger span:nth-child(6) {
+  right: 0px;
+  top: 12px;
+}
+
+.hamburger span:nth-child(7) {
+  left: 0px;
+  bottom: 0px;
+}
+
+.hamburger span:nth-child(8) {
+  position: absolute;
+  left: 12px;
+  bottom: 0px;
+}
+
+.hamburger span:nth-child(9) {
+  right: 0px;
+  bottom: 0px;
+}
+
+.hamburger.open {
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition: .2s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.hamburger.open span {
+  border-radius: 50%;
+  transition-delay: 200ms;
+  transition: .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.hamburger.open span:nth-child(2) {
+  left: 6px;
+  top: 6px;
+}
+
+.hamburger.open span:nth-child(4) {
+  left: 6px;
+  top: 18px;
+}
+
+.hamburger.open span:nth-child(6) {
+  right: 6px;
+  top: 6px;
+}
+
+.hamburger.open span:nth-child(8) {
+  left: 18px;
+  bottom: 6px;
 }
 
 .college-logos {

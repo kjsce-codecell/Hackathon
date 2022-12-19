@@ -5,6 +5,7 @@ const navBarManager = () => {
   const sections = document.querySelectorAll("section");
 
   hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
     navBar.classList.toggle("active");
     if (navBar.classList.contains("active")) {
       navLinks.forEach((link, index) => {
@@ -44,8 +45,7 @@ var $root = $("html, body");
 $('a[href^="#"]').click(function () {
   var href = $.attr(this, "href");
 
-  $root.animate(
-    {
+  $root.animate({
       scrollTop: $(href).offset().top,
     },
     500,
