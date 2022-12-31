@@ -1264,12 +1264,83 @@ iframe {
 
 /*<==== FAQs ====> */
 
+.faqs {
+  background: var(--bg-black);
+  background-size: cover;
+  padding-bottom: 2rem;
+}
+
+.faqs> .heading{
+  justify-content: right;
+  margin-right: 3rem;
+  text-transform: none;
+}
+
+.accordion-item-body-content >a{
+  color: #3366CC;
+}
+
+.accordion {
+  width: 80%;
+  margin: 2rem auto;
+  background-color: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
 .accordion-item {
-  margin-top: 1rem;
-  padding: 0rem 1rem;
-  background-color: transparent !important;
-  color: rgb(255, 255, 255);
-  border: medium none;
+  background-color: none;
+  color: var(--white);
+  margin: 1.5rem 0;
+  border-bottom: 1px solid var(--text-pink);
+}
+
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header.active {
+  color:var(--neon-pink);
+  text-align: left;
+  justify-content: left;
+  flex-direction: row;
+  margin:auto;
+}
+
+.accordion-item-header::after {
+  content: "\002B";
+  position: absolute;
+  right: 1rem;
+  animation: rotateleft 0.3s ;
+}
+
+.accordion-item-header.active::after {
+  content: "\2212";
+  animation: rotateright 0.3s ;
+}
+
+@keyframes rotateright {
+  100% {transform: rotate(180deg);}
+}
+
+@keyframes rotateleft {
+  100% {transform: rotate(-180deg);}
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  padding: 1.5rem;
 }
 
 /* <==== Footer Section  ====>  */
