@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/mid_resp.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
   <!-- Model Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -492,9 +492,81 @@
 
     <!--=================== TEAM =======================-->
 
+    <style>
+
+        #team
+        {
+            position: relative;
+            height: 100%;
+            margin: 0 5vw 0 5vw;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+          }
+    
+          .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+    
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+          }
+    
+          .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+          }
+        </style>
+
     <section id="team">
-      <div class="topic-heading">Team</div>
+      <div class="heading">Team</div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="image (1).png" alt="" srcset=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+          }
+        });
+      </script>
 
     <!--=================== FOOTER =======================-->
 
@@ -521,7 +593,6 @@
   <script src="./assets/js/parallax.js"></script>
   <script src="./assets/js/navbar.js"></script>
   <script src="./assets/js/teaser-challenge.js"></script>
-  <script src="./assets/js/swiper.js"></script>
 </body>
 
 </html>
