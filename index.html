@@ -7,50 +7,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="keywords"
-    content="kjsce, abhiyantriki, codecell, hackathon, hack, 2022, programming, development, blockchain, machine learning, ai, android, ios, javascript, conference, algorithms, somaiya">
+    content="kjsce, abhiyantriki, codecell, hackathon, hack, 2022, programming, development, blockchain, machine learning, ai, android, ios, javascript, conference, algorithms, somaiya, coding" />
   <meta name="description"
-    content="KJSCE Hack, a student run annual hackathon at K. J. Somaiya College Of Engineering hosted incorporation with KJSCE CodeCell">
-  <meta property="og:title" content="KJSCE Hackathon 2023">
-  <meta property="og:url" content="https://hack.kjsce.com">
-  <meta property="og:site_name" content="KJSCE Hackathon 2023">
-  <meta property="og:type" content="website">
-  <meta name="robots" content="INDEX, FOLLOW">
-  <meta name="author" content="Codecell">
-  <meta name="geo.region" content="IN">
+    content="KJSCE Hack, a Student run Annual Hackathon at K. J. Somaiya College Of Engineering hosted incorporation with KJSCE CodeCell" />
+  <meta property="og:title" content="KJSCE Hackathon 2023" />
+  <meta property="og:url" content="https://hack.kjsce.com" />
+  <meta property="og:site_name" content="KJSCE Hackathon 2023" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="author" content="CodeCell" />
+  <meta name="geo.region" content="IN" />
 
   <title>KJSCE Hack 7.0</title>
-  <!-- Links -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Model Viewer -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <!-- Fontawesome Icons -->
-  <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-    crossorigin="anonymous"></script>
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-  <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="assets/favicons/site.webmanifest">
 
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="assets/favicons/site.webmanifest" />
+
   <!-- Links -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/mid_resp.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <!-- Model Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <!-- Fontawesome Icons -->
   <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
     crossorigin="anonymous"></script>
+
+  <!-- Swiper -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+
   <!-- TypeIt -->
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
-  <!--===== GOOGLE FONTS =====-->
+  <script src="./assets/js/button-events.js"></script>
+
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -58,7 +60,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
 
   <!--Open Sans-->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
 
   <!--Advent Pro-->
   <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet" />
@@ -67,22 +71,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
 
   <!--Barlow Semi Condensed-->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
-  <div id="preloader" class="preloader heading">
+  <!-- Parent:1:Start -->
+  <div id="preloader" class="preloader">
     <div id="content"><span id="companion"></span></div>
   </div>
+  <!-- Parent:1:End -->
 
+  <!-- Parent:2:Start -->
   <div id="wrapper" class="wrapper">
-
     <!--================= NAVIGATION =====================-->
     <nav class="navbar">
       <div class="logo">
-        <img src="assets\images\CodeCell-Logo-White.png" alt="KJSCE Codecell Logo" />
+        <a href="https://www.kjscecodecell.com" target="_blank">
+          <img src="./assets/images/CodeCell-Logo-White.png" alt="KJSCE CodeCell Logo" />
+        </a>
       </div>
       <div class="active">
         <div class="active-link-name">HOME</div>
@@ -92,143 +98,603 @@
           <div class="line3"></div>
         </div>
       </div>
-      <div class="hamburger">
-        <img src="assets/images/Menu.svg" />
+
+      <div class="icon nav-icon-1 hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
       <ul class="nav-links">
         <li class="nav-link"><a href="#home">Home</a></li>
-        <!-- <li class="nav-link"><a href="#timeline">Timeline</a></li> -->
+        <li class="nav-link"><a href="#timelineBody">TimeLine</a></li>
         <li class="nav-link"><a href="#about">About</a></li>
         <li class="nav-link"><a href="#stats">Stats</a></li>
         <li class="nav-link"><a href="#flashback">Flashback</a></li>
         <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
-        <li class="nav-link"><a href="#faqs">FAQs</a></li>
+        <li class="nav-link"><a href="#faqs">FAQ</a></li>
         <li class="nav-link"><a href="#team">Team</a></li>
         <li class="college-logos">
-          <a href=""><img class="somaiya-trust" src="/assets/images/somaiya-trust.png" alt="Somaiya Trust" /></a>
-          <a href=""><img src="/assets/images/somaiya-white-logo.png" alt="KJSCE SVU Logo" /></a>
+          <a href=""><img class="somaiya-trust" src="./assets/images/somaiya-trust.png" alt="Somaiya Trust" /></a>
+          <a href=""><img src="./assets/images/somaiya-white-logo.png" alt="KJSCE SVU Logo" /></a>
         </li>
       </ul>
     </nav>
-
 
     <!--================= HOME =====================-->
 
     <section class="home" id="home">
       <div id="firstview">
         <div class="bg-container">
-          <img src="assets/images/back1.svg" class="object" data-value="-2" id="build2" />
-          <img src="assets/images/front.svg" class="object" data-value="3" id="build1" />
-          <img src="assets/images/back2.svg" class="object" data-value="-2" id="build3" />
+          <img src="./assets/images/back1.svg" class="object" data-value="-2" id="build2" />
+          <img src="./assets/images/front.svg" class="object" data-value="3" id="build1" />
+          <img src="./assets/images/back2.svg" class="object" data-value="-2" id="build3" />
         </div>
         <div id="homeView">
           <div id="hack-7" class="">
-            <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br>
-            <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br>
+            <span id="heading-logo-1" class="hack-ka-logo">KJSCE</span><br />
+            <span id="heading-logo-2" class="hack-ka-logo">Hack</span><br />
             <span id="heading-logo-3" class="hack-ka-logo">7</span>
           </div>
-          <div id="model" class="3d-model">
-            <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp" auto-rotate
-              disable-zoom>
+          <div id="model" class="three-d-model">
+            <model-viewer src="assets/model/testeract_fbx.glb" camera-controls poster="assets/model/poster.webp"
+              auto-rotate disable-zoom>
             </model-viewer>
           </div>
         </div>
+      </div>
+      <div class="socials">
+        <div class="line1"></div>
+        <!-- TODO: Add social links -->
+        <a href=""><img src="./assets/images/twitter.svg" alt="" /></a>
+        <a href=""><img src="./assets/images/instagram.svg" alt="" /></a>
+        <a href=""><img src="./assets/images/twitter.svg" alt="" /></a>
+        <div class="line2"></div>
       </div>
     </section>
 
     <!--================= TIMELINE =====================-->
 
+        <section id="timelineBody" class = "timelineBody">
+            <div data-aos="fade-up" data-aos-duration="1000" class="heading pink-heading">TimeLine</div>
+            <div class="timeline">
+              <div data-aos="flip-left"  class="container left">
+                <div class="content">
+                  <h2>2022</h2>
+                  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+              <div data-aos="flip-right" class="container right">
+                <div  class="content">
+                  <h2>2021</h2>
+                  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+              <div data-aos="flip-left" class="container left">
+                <div class="content">
+                  <h2>2020</h2>
+                  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+              <div data-aos="flip-right" class="container right">
+                <div class="content">
+                  <h2>2019</h2>
+                  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+              <div data-aos="flip-left" class="container left">
+                <div class="content">
+                  <h2>2018</h2>
+                  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+              <div data-aos="flip-right" class="container right">
+                <div class="content">
+                  <h2>20017</h2>
+                  <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+
     <!-- <section id="timeline">
       <div class="topic-heading">Timeline</div>
     </section> -->
 
+    <!-- SECTION DIVIDER -->
+    <div class="section-divder">
+      <img src="./assets/images/section 1 seperator.svg" alt="" />
+    </div>
     <!--================= ABOUT =====================-->
 
     <section class="about" id="about">
       <div class="heading about-heading black-heading">KJSCE Hack 7.0</div>
       <div class="about-content">
-        <div class="about-content-heading">
-          We Invite you to Build/Learn/Hack
-        </div>
-        <div class="about-text">
-          <p>
-            This is a 24-hour Hackathon conducted in a Hybrid Mode, with free
-            food, accommodation, games, many fun activities and exciting prizes
-            lined up.
-          </p>
-          <br />
-          <p>
-            You decide. This is going to be conducted in an offline as well as
-            online at the ease of your pajamas.
-          </p>
-          <br />
-          <p>
-            Why not? Brainstorm on ideas along with your team. Moreover, you
-            wouldn't want to miss out on SCHWAGS obviously!
-          </p>
-          <br>
-          <div class="hex">4b4a53434520434f444543454c4c</div>
+        <div class="main-content">
+          <div class="about-text">
+            <div class="about-content-heading">
+              We invite you to Build/Learn/Hack
+            </div>
+            <p>
+              This is a 24-hour Hackathon conducted in a Hybrid Mode, with
+              free food, accommodation, games, many fun activities and
+              exciting prizes lined up.
+            </p>
+            <br />
+            <p>
+              You decide. This is going to be conducted in an offline as well
+              as online at the ease of your pajamas.
+            </p>
+            <br />
+            <p>
+              Why not? Brainstorm on ideas along with your team. Moreover, you
+              wouldn't want to miss out on SCHWAGS obviously!
+            </p>
+            <br />
+            <p class="special-hex-string">4b4a53434520434f444543454c4c</p>
+          </div>
+          <div>
+            <img src="./assets/images/ex-image.jpg" alt="KJSCE-Hack" />
+          </div>
         </div>
       </div>
     </section>
-
 
     <!--=================== STATS =======================-->
 
     <section class="stats" id="stats">
-      <div class="pink-heading heading stats-heading">STATS</div>
+      <div class="heading stats-heading">STATS</div>
       <div class="stats-content">
-        <div class="stats-container"></div>
-        <div class="stats-container"></div>
-        <div class="stats-container"></div>
-        <div class="stats-container"></div>
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/application-icon.svg" alt="" />
+            </div>
+            <div class="card-number">
+              <span id="applications">1200</span><sup>+</sup>
+            </div>
+            <div class="card-text">Applications</div>
+          </div>
+        </div>
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/colleges-icon.svg" alt="" />
+            </div>
+            <div class="card-number">
+              <span id="colleges">100</span><sup>+</sup>
+            </div>
+            <div class="card-text">Colleges</div>
+          </div>
+        </div>
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/hackers-icon.svg" alt="" />
+            </div>
+            <div class="card-number">
+              <span id="hackers">250</span><sup>+</sup>
+            </div>
+            <div class="card-text">Hackers</div>
+          </div>
+        </div>
+        <div class="stats-card-wrapper">
+          <div class="stats-card">
+            <div class="card-icon">
+              <img src="./assets/images/teams-icon.svg" alt="" />
+            </div>
+            <div class="card-number">
+              <span id="teams">60</span><sup>+</sup>
+            </div>
+            <div class="card-text">Teams</div>
+          </div>
+        </div>
       </div>
     </section>
-
 
     <!--================= FLASHBACK =====================-->
 
-    <section class="about" id="flashback">
-      <div class="topic-heading heading about-heading black-heading ">Flashback</div>
-      <div class="flashback-video">
-        <iframe width="60%" height="100%" src="https://www.youtube.com/embed/FZzZCGf6-wk" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+    <section class="flashback" id="flashback">
+      <div class="heading">
+        Flashback
+      </div>
+      <div class="flashback-wrapper">
+        <div class="cross-border-bottom"></div>
+        <div class="cross-border-top"></div>
+        <div class="flashback-container">
+          <iframe src="https://www.youtube.com/embed/FZzZCGf6-wk" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
       </div>
     </section>
 
+    <!-- SECTION DIVIDER -->
+    <div class="section-divder section-divider-two">
+      <img src="./assets/images/section 2 seperator.svg" alt="" />
+    </div>
 
     <!--================= SPONSORS =====================-->
 
-    <section id="sponsors">
-      <div class="topic-heading">Sponsors</div>
+    <section class="sponsors" id="sponsors">
+      <div class="heading pink-heading">Sponsors</div>
+      <div class="sponsor-container">~
+        <div class="sponsor-buttons">
+          <div class="sponsor-btn">~
+            <button class="cybr-btn" onclick="showPrevious()">
+              Previous <span aria-hidden>Sponsors</span>
+              <span aria-hidden class="cybr-btn__glitch">Hack 6.0</span>
+              <span aria-hidden class="cybr-btn__tag">KH6</span>
+            </button>
+          </div>
+          <div class="sponsor-btn">
+            <button class="cybr-btn" onclick="showCurrent()">
+              Current <span aria-hidden>Sponsors</span>
+              <span aria-hidden class="cybr-btn__glitch">Hack 7.0</span>
+              <span aria-hidden class="cybr-btn__tag">KH7</span>
+            </button>
+          </div>
+        </div>
+        <div class="sponsor-wrapper">
+          <div class="sponsor-wrapper-in">
+            <div class="previous-sponsor" id="previous-sponsor" style="display: none">
+              <div class="sponsor-box">
+                <div class="sponsor-img">
+                  <a href="https://devfolio.co/" target="_blank">
+                    <img src="assets/images/sponsors/devfolio.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://polygon.technology/" target="_blank">
+                    <img src="assets/images/sponsors/polygon.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.portis.io/" target="_blank">
+                    <img src="assets/images/sponsors/portis.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://tezos.com/" target="_blank">
+                    <img src="assets/images/sponsors/tezos.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://arcana.network/" target="_blank">
+                    <img src="assets/images/sponsors/arcana.svg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://frappe.io/" target="_blank">
+                    <img src="assets/images/sponsors/frappe_new-logo.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://filecoin.io" target="_blank">
+                    <img src="assets/images/sponsors/filecoin.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://celo.org" target="_blank">
+                    <img src="assets/images/sponsors/celo.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://thebelgianwaffle.co/" target="_blank">
+                    <img src="assets/images/sponsors/belgian-waffles.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://symbl.ai/?utm_source=hackathons&utm_medium=kjsce&utm_campaign=kjsce" target="_blank">
+                    <img src="assets/images/sponsors/symbl.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://alan.app/" target="_blank">
+                    <img src="assets/images/sponsors/alan.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://konfhub.com/" target="_blank">
+                    <img src="assets/images/sponsors/konfhub.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.insiderbiz.in/company/BAPPA-MORYA-LUXURY-CAR-CARE-PRIVATELIMITED"
+                    target="_blank">
+                    <img src="assets/images/sponsors/bappa-gold.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.noticebard.com" target="_blank">
+                    <img src="assets/images/sponsors/noticebard.svg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://gatsbyindia.com" target="_blank">
+                    <img src="assets/images/sponsors/Gatsby.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://mule.to/p2lw" target="_blank">
+                    <img src="assets/images/sponsors/sticker-mule-logo-white.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.taskade.com/" target="_blank">
+                    <img src="assets/images/sponsors/taskade.jpg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://proto.io/" target="_blank">
+                    <img src="assets/images/sponsors/proto.jpg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://theeducationtree.com/" target="_blank">
+                    <img src="assets/images/sponsors/theeducationtree.jpeg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://heiphen.com/" target="_blank">
+                    <img src="assets/images/sponsors/heiphen.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.wolfram.com/" target="_blank">
+                    <img src="assets/images/sponsors/wolfram.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.geeksforgeeks.org/" target="_blank">
+                    <img src="assets/images/sponsors/gfg_logo.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://certopus.com" target="_blank">
+                    <img src="assets/images/sponsors/certopus_light.svg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://rosenfeldmedia.com" target="_blank">
+                    <img src="assets/images/sponsors/Rosenfeld.jpg" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.digitalocean.com/" target="_blank">
+                    <img src="assets/images/sponsors/digitalocean.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.newtonschool.co/" target="_blank">
+                    <img src="assets/images/sponsors/newton.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.echo3d.co/" target="_blank">
+                    <img src="assets/images/sponsors/echo3D.webp" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.oreilly.com/" target="_blank">
+                    <img src="assets/images/sponsors/OReilly_logo_white_rgb.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://www.interviewcake.com" target="_blank">
+                    <img src="assets/images/sponsors/interviewCake.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://interviewbuddy.in" target="_blank">
+                    <img src="assets/images/sponsors/interviewbuddy.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://hackclub.com" target="_blank">
+                    <img src="assets/images/sponsors/hack-club.png" />
+                  </a>
+                </div>
+                <div class="sponsor-img">
+                  <a href="https://riidl.org/" style="background-color: white" target="_blank">
+                    <img src="assets/images/sponsors/riidllogo.png" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div id="current-sponsor" style="display: block">
+              <!-- SEE THE COMMENT -->
+              <!-- THE FIRST SPONSER ADDED HERE IS JUST FOR REFERENCE PURPOSE AND HAVING SOME CONTENT TO TEST THE BUTTON FUNCTIONALITY.... WHOEVER ADDS THE FURTHER LIST HERE, DO REMOVE THE FIRST DIV AFTER USING IT AS TEMPLATE -->
+
+              <!-- Hatts off and kudos to the whole Team for onboarding such amazing sponsors 
+                                                                            ~ bevatsal1122 -->
+
+              <div class="sponsor-img">
+                <a href="https://riidl.org/" style="background-color: white" target="_blank">
+                  <img src="assets/images/sponsors/riidllogo.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
 
 
     <!--==================== FAQs =======================-->
 
-    <section id="faqs">
-      <div class="topic-heading">FAQ</div>
+    <section id="faqs" class="faqs">
+      <div class="heading pink-heading">FAQs</div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            What happens at a Hackathon?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Participants (“hackers”) spend 24 hours working 
+              in teams of 2 - 4 people to build or code
+              projects (“hacks”) they’re excited about. 
+              There are workshops, mentors and mini-events 
+              to guide you along the way. You bring your ideas,
+              and we give you everything you need to make them 
+              come to life.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+         <div class="accordion-item">
+          <div class="accordion-item-header">
+            What are the topics for the
+                                                Hackathon?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              This is an open innovation hackathon i.e. 
+              there won't be any problem statements or 
+              tracks provided. Teams are free to build 
+              what they want. Also once you've registered 
+              with an e-mail id, we'll shoot you a mail 
+              about further announcements.            
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            What do people normally make?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Hacks generally fall under one
+              (or more) of the seven cortices:
+              Web Development, Blockchain, Android, iOS,
+              AI/ML, AR/VR and Game Development.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Where will the hackathon be held?          
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              The hackathon will be conducted at K.J Somaiya 
+              College of Engineering, Vidyavihar, Mumbai.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            What is the Code of Conduct?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              The appropriate code of conduct is linked
+              <a href="https://drive.google.com/file/d/1EDjvC7DpBDr_j6EsBHBwd-XgZ6KS4_Hi/view?usp=sharing"
+                class="coc">here
+              </a>.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            What if I've never been to a hackathon before?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Not to worry, We welcome students of all skill 
+              levels. We'll have talks, mentors and workshops 
+              to help you with your project; hackathons can be a
+              great place to learn new skills in a short amount 
+              of time. Just be eager to learn, and excited
+              to meet lots of awesome people.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            What should be the team size?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              A team can consist of 2-4
+              members although participants
+              can register individually on
+              Devfolio. Projects are to be
+              submitted as a team on Devfolio,
+              so participants need to finalize
+              their teams during the event to
+              submit their projects.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Interested in sponsoring us?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Reach out to us at
+              <a href="mailto:sponsor@kjscecodecell.com">
+                sponsor@kjscecodecell.com
+              </a>
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            404: Question Not Found?
+          </div><!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              You can just drop a DM at any of our social 
+              network handles and we'll try our best to 
+              answer them ASAP ;) You can also reach
+              out to us at hack@kjscecodecell.com.
+            </div>
+          </div><!-- /.accordion-item-body -->
+        </div><!-- /.accordion-item -->
+      </div>
     </section>
-
 
     <!--=================== TEAM =======================-->
 
     <section id="team">
-      <div class="topic-heading">Team</div>
+      <div class="heading">Team</div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="assets/images/teamCard.png" alt="" srcset=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </section>
 
-
     <!--=================== FOOTER =======================-->
-    
+
     <footer>
       <a target="_blank" href="https://www.kjscecodecell.com"><img class="codecell-logo"
           src="./assets/images/CodeCell-Logo-Red.png" alt="" /></a>
       <div class="social-media-icons">
         <a target="_blank" href="https://discord.com/invite/UBbSuw7swW"><i class="fa-brands fa-discord"></i></a>
         <a target="_blank" href="https://www.instagram.com/kjsce_codecell/"><i class="fa-brands fa-instagram"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/company/kjscecodecell/mycompany/"><i class="fa-brands fa-linkedin"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/company/kjscecodecell/mycompany/"><i
+            class="fa-brands fa-linkedin"></i></a>
         <a target="_blank" href="https://twitter.com/kjsce_codecell"><i class="fa-brands fa-twitter"></i></a>
         <a target="_blank" href="https://www.youtube.com/kjscecodecell"><i class="fa-brands fa-youtube"></i></a>
         <a target="_blank" href="https://www.facebook.com/kjscecodecell"><i class="fa-brands fa-facebook-f"></i></a>
@@ -237,13 +703,18 @@
         Made with <i class="fa-solid fa-heart"></i> by KJSCE CodeCell
       </p>
     </footer>
-
   </div>
+  <!-- Parent:2:Start -->
 
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/parallax.js"></script>
-  <script src="assets/js/navbar.js"></script>
-  <script src="assets/js/preloaderChallenge.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/parallax.js"></script>
+  <script src="./assets/js/navbar.js"></script>
+  <script src="./assets/js/teaser-challenge.js"></script>
+  <script src="./assets/js/faq.js"></script>
+  <script src="./assets/js/swiper.js"></script>
+  
 </body>
 
 </html>

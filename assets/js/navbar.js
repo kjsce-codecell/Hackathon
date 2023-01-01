@@ -5,12 +5,12 @@ const navBarManager = () => {
   const sections = document.querySelectorAll("section");
 
   hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
     navBar.classList.toggle("active");
     if (navBar.classList.contains("active")) {
       navLinks.forEach((link, index) => {
-        link.style.animation = `navLinkAnimation 0.5s ease forwards ${
-          index / 7 + 0.3
-        }s`;
+        link.style.animation = `navLinkAnimation 0.5s ease forwards ${index / 7 + 0.3
+          }s`;
       });
     } else {
       navLinks.forEach((link, index) => {
@@ -26,7 +26,7 @@ const navBarManager = () => {
     let len = sections.length - 1;
     // console.log('Current user is on ' + (window.scrollY + 70));
     while (len > -1) {
-      if (window.scrollY + 70 >= sections[len].offsetTop) break;
+      if (window.scrollY + 125 >= sections[len].offsetTop) break;
       // console.log(navLinkList[len] + ' Section Start: ' + sections[len].offsetTop);
       len--;
     }
@@ -45,8 +45,7 @@ var $root = $("html, body");
 $('a[href^="#"]').click(function () {
   var href = $.attr(this, "href");
 
-  $root.animate(
-    {
+  $root.animate({
       scrollTop: $(href).offset().top,
     },
     500,
