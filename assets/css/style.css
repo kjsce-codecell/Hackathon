@@ -57,7 +57,7 @@ a {
   display: flex;
   font-family: "Oswald";
   font-weight: 700;
-  font-size: 10rem;
+  font-size: 6vw;
   margin: 3.7rem 0 2.7rem;
   text-align: center;
   text-transform: uppercase;
@@ -606,12 +606,13 @@ model-viewer {
 
 .section-divder {
   background: var(--bg-magenta);
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
 }
 
 .section-divider-two {
   top: 80px;
+  width: 100vw;
   background: var(--bg-black);
 }
 
@@ -725,8 +726,7 @@ model-viewer {
 
 .stats-content {
   width: 98vw;
-  margin: auto auto;
-  margin-top: 15vh;
+  margin: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -929,7 +929,7 @@ iframe {
 .sponsors {
   background: url("../images/sponsers-bg-elements.svg") no-repeat center center;
   background-size: cover;
-  padding: 2vw;
+  padding: 1rem 2vw 1rem 2vw;
 }
 
 .sponsor-container {
@@ -1240,12 +1240,8 @@ iframe {
   border-style: solid;
   border-color: var(--text-pink);
   border-radius: 10px;
-  margin-top: 3.5vh;
-  margin-bottom: 2vh;
-  margin-left: 12%;
-  margin-right: 12%;
-  min-height: 60vh !important;
-  max-height: 60vh !important;
+  margin: 3.5vh 9vw 2vh 9vw;
+  height: 60vh;
   overflow: auto;
   backdrop-filter: blur(3px);
 }
@@ -1264,8 +1260,8 @@ iframe {
 }
 
 .sponsor-img {
-  width: 50%;
-  max-width: 200px;
+  width:25%;
+  min-width: 140px;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -1315,7 +1311,7 @@ iframe {
 .faqs {
   background: var(--bg-black);
   background-size: cover;
-  padding-bottom: 2rem;
+  padding: 1rem 0 2rem 0;
 }
 
 .faqs> .heading{
@@ -1390,6 +1386,7 @@ iframe {
 
 .accordion-item-body-content {
   padding: 1.5rem;
+  padding-top: 0.8rem;
 }
 
 /* <==== Footer Section  ====>  */
@@ -1562,9 +1559,9 @@ footer img {
     width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid white;
+    border: medium solid var(--neon-pink);
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent var(--neon-pink);
   }
   
   /* Add arrows to the right container (pointing left) */
@@ -1576,9 +1573,9 @@ footer img {
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid white;
+    border: medium solid var(--neon-pink);
     border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent var(--neon-pink) transparent transparent;
   }
   
   /* Fix the circle for containers on the right side */
@@ -1589,9 +1586,11 @@ footer img {
   /* The actual content */
   .content {
     padding: 20px 30px;
-    background-color: white;
+    background: none;
+    color:var(--white);
     position: relative;
     border-radius: 6px;
+    border: 2px solid var(--neon-pink);
   }
   
   /* Media queries - Responsive timeline on screens less than 600px wide */
