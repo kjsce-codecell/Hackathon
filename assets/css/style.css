@@ -821,6 +821,79 @@ model-viewer {
   transition: all 0.3s ease;
 }
 
+/* <======= PRIZES =========> */
+
+.prizes {
+  padding: 2vw;
+  background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat
+    center center;
+  /* background-size: cover; */
+  min-height: 40vw;
+  width: 100%;
+  overflow: hidden;
+}
+
+.prizes-heading {
+  text-align: left;
+  color: white;
+  padding: 0 2vw;
+  margin: 2vw 0vw;
+  margin-bottom: 0;
+}
+
+.rewards{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.reward-box{
+  border: solid 2px;
+  padding: 2vw;
+  border-radius: 1vw;
+  margin: 2vw;
+  width: 33vw;
+  height: 20vw;
+  box-shadow: inset 0 0 1vw var(--neon-pink);
+}
+
+.reward-heading{
+  text-align: center;
+  font-size: 3vw;
+  font-weight: bold;
+  color: var(--neon-pink);
+  text-shadow: 0 0 2vw var(--neon-pink);
+}
+
+.reward-content{
+  font-size: 2.5vw;
+  text-align: center;
+  padding: 4vw;
+}
+
+@media(max-width:720px){
+  .rewards{
+    flex-direction: column;
+    margin: 5vw;
+  }
+
+  .reward-box{
+    width: 80vw;
+    margin: 3vw;
+    box-shadow: inset 0 0 2.5vw var(--neon-pink);
+  }
+
+  .reward-heading{
+    font-size: 6vw;
+  }
+
+  .reward-content{
+    padding: 2vw;
+    font-size: 4vw;
+  }
+}
+
+
 /* <======= FLASHBACK =========> */
 
 .flashback {
