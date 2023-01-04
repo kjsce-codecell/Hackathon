@@ -658,6 +658,17 @@ model-viewer {
   height: 100%;
 }
 
+.home-links{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.devfolio{
+  height: 2rem;
+}
+
 .socials {
   display: flex;
   flex-direction: column;

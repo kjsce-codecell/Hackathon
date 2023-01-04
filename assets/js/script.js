@@ -1,5 +1,5 @@
 $("img").attr("draggable", "false");
-
+console.log("I'm Batman.")
 AOS.init();
 
 var swiper = new Swiper(".mySwiper", {

@@ -1,6 +1,9 @@
 // For Previous Sponspors button in Sponspors section
+const goToProjects = () => {
+   window.open("https://kjscehack22.devfolio.co/projects")
+}
+// For Previous Sponspors button in Sponspors section
 const showPrevious = () => {
-   console.log("hello invoked");
    document.getElementById("current-sponsor").style.display="none";
    document.getElementById("previous-sponsor").style.display="block";
 }
