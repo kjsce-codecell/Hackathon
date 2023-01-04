@@ -1,6 +1,7 @@
+const hamburger = document.querySelector(".hamburger");
+const navBar = document.querySelector(".nav-links");
+
 const navBarManager = () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navBar = document.querySelector(".nav-links");
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
 
@@ -44,6 +45,8 @@ var $root = $("html, body");
 
 $('a[href^="#"]').click(function () {
   var href = $.attr(this, "href");
+  hamburger.classList.toggle("open");
+  navBar.classList.toggle("active");
 
   $root.animate({
       scrollTop: $(href).offset().top,
