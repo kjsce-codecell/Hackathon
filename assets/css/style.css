@@ -540,20 +540,20 @@ section {
   font-size: 12.5rem;
   margin-top: 11rem;
   z-index: 10;
-  -webkit-animation: glowing 5500ms infinite;
-  -moz-animation: glowing 5500ms infinite;
-  -o-animation: glowing 5500ms infinite;
-  animation: glowing 5500ms infinite;
+  -webkit-animation: glowing 7000ms infinite;
+  -moz-animation: glowing 7000ms infinite;
+  -o-animation: glowing 7000ms infinite;
+  animation: glowing 7000ms infinite;
 }
 
 #heading-logo-2 {
   font-size: 12.5rem;
   margin-top: 18rem;
   color: white !important;
-  -webkit-animation: glowing 5500ms infinite;
-  -moz-animation: glowing 5500ms infinite;
-  -o-animation: glowing 5500ms infinite;
-  animation: glowing 5500ms infinite;
+  -webkit-animation: glowing 7000ms infinite;
+  -moz-animation: glowing 7000ms infinite;
+  -o-animation: glowing 7000ms infinite;
+  animation: glowing 7000ms infinite;
 }
 
 #heading-logo-3 {
