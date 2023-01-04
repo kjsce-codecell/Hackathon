@@ -58,7 +58,7 @@ a {
   font-family: "Oswald";
   font-weight: 700;
   font-size: 6vw;
-  margin: 3.7rem 0 2.7rem;
+  margin: 3rem 0 2.7rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -92,6 +92,12 @@ a {
   color: var(--white);
   font-size: 2.8vh;
   margin: 5vh 0;
+}
+
+@media screen and (max-width: 720px) {
+  .left-heading, .right-heading {
+    justify-content: center;
+  }
 }
 
 /*------- Background CSS ------*/
@@ -366,7 +372,16 @@ a {
 /* Temporary required */
 section {
   min-height: 100vh;
+  padding: 2vw;
 }
+
+/*
+@media screen and (max-width: 720px) {
+  section {
+    padding: 10vw 2vw;
+  }
+}
+*/
 
 /* <==== Teaser =====> */
 
@@ -472,6 +487,7 @@ section {
 /* <==== HOME =====> */
 
 #home {
+  padding: 0;
   margin-top: 80px;
   min-height: 90vh;
   width: 100vw;
@@ -721,17 +737,10 @@ model-viewer {
 }
 
 .about {
-  padding: 2vw;
   background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
   background-size: cover;
   width: 100%;
   overflow: hidden;
-}
-
-.about-heading {
-  text-align: left;
-  color: white;
-  padding: 0 2vw;
 }
 
 .main-content {
@@ -751,6 +760,10 @@ model-viewer {
   font-weight: 400;
   font-size: 2rem;
   width: 40%;
+}
+
+.about-content{
+  padding: 0 2vw;
 }
 
 .about-content-heading {
@@ -811,20 +824,12 @@ model-viewer {
 /* <========= STATS ========>*/
 
 .stats {
-  padding: 2vw;
   width: 100%;
   background: url("../images/stats-bg-elements.svg") center center;
   background-size: contain;
 }
 
-.stats-heading {
-  justify-content: right;
-  color: var(--neon-pink);
-  padding: 0 5vw;
-}
-
 .stats-content {
-  width: 98vw;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
@@ -923,20 +928,11 @@ model-viewer {
 /* <======= PRIZES =========> */
 
 .prizes {
-  padding: 2vw;
   background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
   /* background-size: cover; */
   min-height: 40vw;
   width: 100%;
   overflow: hidden;
-}
-
-.prizes-heading {
-  text-align: left;
-  color: white;
-  padding: 0 2vw;
-  margin: 2vw 0vw;
-  margin-bottom: 0;
 }
 
 .rewards {
@@ -1100,7 +1096,6 @@ iframe {
 .sponsors {
   background: url("../images/sponsers-bg-elements.svg") no-repeat center center;
   background-size: cover;
-  padding: 1rem 2vw 1rem 2vw;
 }
 
 .sponsor-container {
@@ -1462,18 +1457,10 @@ iframe {
 .faqs {
   background: var(--bg-black);
   background-size: cover;
-  padding: 1rem 0 2rem 0;
-}
-
-.faqs>.heading {
-  justify-content: right;
-  margin-right: 3rem;
-  text-transform: none;
-  padding: 0 5vw;
 }
 
 .accordion-item-body-content>a {
-  color: #3366CC;
+  color: var(--neon-pink);
 }
 
 .accordion {
@@ -1621,7 +1608,6 @@ footer img {
   background-size: cover;
   position: relative;
   height: 100%;
-  padding: 2vh 5vw 2vh 5vw;
 }
 
 .swiper {
@@ -1661,7 +1647,6 @@ footer img {
   background: url("../images/stats-bg-elements.svg") center center;
   background-size: contain;
 
-  padding: 2vh 5vw 2vh 5vw;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -1777,9 +1762,9 @@ footer img {
   /* Make sure that all arrows are pointing leftwards */
   .container::before {
     left: 60px;
-    border: medium solid white;
+    border: medium solid var(--neon-pink);
     border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent var(--neon-pink) transparent transparent;
   }
 
   /* Make sure all circles are at the same spot */
