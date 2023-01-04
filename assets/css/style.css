@@ -1042,12 +1042,12 @@ model-viewer {
 
 .flashback-container::after {
   content: "";
-  bottom: 50px;
+  bottom: 2.2vh;
   right: -8px;
   position: absolute;
   background: var(--text-pink);
-  height: 200px;
-  width: 8px;
+  height: 10vh;
+  width: 6px;
 }
 
 .cross-border-bottom {
@@ -1089,9 +1089,10 @@ model-viewer {
 }
 
 iframe {
-  width: 60vw;
+  width: 70vw;
   object-fit: contain;
-  height: 60vh;
+  height: 45vw;
+  max-height: 80vh;
 }
 
 /* <======= Sponsors =========> */
