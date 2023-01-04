@@ -514,7 +514,7 @@ section {
   margin: 0 auto;
   display: grid;
   gap: 1rem;
-  padding-top: 4vw;
+  padding-top: 5vw;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -537,13 +537,13 @@ section {
 }
 
 #heading-logo-1 {
-  font-size: 110px;
+  font-size: 12.5rem;
   margin-top: 11rem;
   z-index: 20;
 }
 
 #heading-logo-2 {
-  font-size: 120px;
+  font-size: 12.5rem;
   margin-top: 18rem;
   color: white !important;
 }
