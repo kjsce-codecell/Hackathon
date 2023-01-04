@@ -852,7 +852,7 @@ model-viewer {
   padding: 2vw;
   border-radius: 1vw;
   margin: 2vw;
-  width: 33vw;
+  width: 80vw;
   height: 20vw;
   box-shadow: inset 0 0 1vw var(--neon-pink);
 }
@@ -866,9 +866,9 @@ model-viewer {
 }
 
 .reward-content{
-  font-size: 2.5vw;
+  font-size: 8vw;
   text-align: center;
-  padding: 4vw;
+  padding: 2vw;
 }
 
 @media(max-width:720px){
@@ -889,7 +889,7 @@ model-viewer {
 
   .reward-content{
     padding: 2vw;
-    font-size: 4vw;
+    font-size: vw;
   }
 }
 
@@ -1429,6 +1429,7 @@ iframe {
   justify-content: left;
   flex-direction: row;
   margin:auto;
+  font-size: 23px;
 }
 
 .accordion-item-header::after {
@@ -1460,6 +1461,16 @@ iframe {
 .accordion-item-body-content {
   padding: 1.5rem;
   padding-top: 0.8rem;
+  font-size: 17px;
+}
+
+@media(max-width : 720px){
+  .accordion-item-body-content{
+    font-size: 13px;
+  }
+  .accordion-item-header.active{
+    font-size: 15px;
+  }
 }
 
 /* <==== Footer Section  ====>  */
