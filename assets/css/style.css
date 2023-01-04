@@ -73,39 +73,39 @@ a {
   padding: 0 2vw;
 }
 
-.mid-heading{
-    justify-content: center;
+.mid-heading {
+  justify-content: center;
 }
 
-.right-heading{
-    justify-content: right;
-    padding: 0 2vw;
+.right-heading {
+  justify-content: right;
+  padding: 0 2vw;
 }
 
-.left-heading{
-    justify-content: left;
-    padding: 0 2vw;
+.left-heading {
+  justify-content: left;
+  padding: 0 2vw;
 }
 
-.hex{
-    font-family: 'Open Sans';
-    color: var(--white);
-    font-size: 2.8vh;
-    margin: 5vh 0;
+.hex {
+  font-family: 'Open Sans';
+  color: var(--white);
+  font-size: 2.8vh;
+  margin: 5vh 0;
 }
 
 /*------- Background CSS ------*/
 
-.section-background{
-    padding: 2vw;
-    padding: 2vw;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+.section-background {
+  padding: 2vw;
+  padding: 2vw;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
-.magenta-background{
-    background: var(--bg-magenta);
+.magenta-background {
+  background: var(--bg-magenta);
 }
 
 /* <==== NavBar CSS ====>  */
@@ -509,7 +509,7 @@ section {
   align-items: center;
 } */
 
-.parent{
+.parent {
   max-width: 95vw;
   margin: 0 auto;
   display: grid;
@@ -518,7 +518,7 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.child{
+.child {
   padding: 1rem;
   height: 45rem;
 }
@@ -539,13 +539,21 @@ section {
 #heading-logo-1 {
   font-size: 12.5rem;
   margin-top: 11rem;
-  z-index: 20;
+  z-index: 10;
+  -webkit-animation: glowing 5500ms infinite;
+  -moz-animation: glowing 5500ms infinite;
+  -o-animation: glowing 5500ms infinite;
+  animation: glowing 5500ms infinite;
 }
 
 #heading-logo-2 {
   font-size: 12.5rem;
   margin-top: 18rem;
   color: white !important;
+  -webkit-animation: glowing 5500ms infinite;
+  -moz-animation: glowing 5500ms infinite;
+  -o-animation: glowing 5500ms infinite;
+  animation: glowing 5500ms infinite;
 }
 
 #heading-logo-3 {
@@ -562,6 +570,70 @@ section {
 
 .hack-ka-logo {
   position: absolute;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    -webkit-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+
+  50% {
+    -webkit-b-text-shadow: 0 0 26px var(--neon-pink);
+  }
+
+  100% {
+    -webkit-b-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+}
+
+@-moz-keyframes glowing {
+  0% {
+    -moz-b-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+
+  50% {
+    -moz-b-text-shadow: 0 0 26px var(--neon-pink);
+  }
+
+  100% {
+    -moz-b-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+}
+
+@-o-keyframes glowing {
+  0% {
+    text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+
+  50% {
+    text-shadow: 0 0 26px var(--neon-pink);
+  }
+
+  100% {
+    text-shadow:0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
+
+  50% {
+    text-shadow: 0 0 26px var(--neon-pink);
+  }
+
+  100% {
+    text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+  }
 }
 
 #model {
@@ -626,8 +698,7 @@ model-viewer {
 
 .about {
   padding: 2vw;
-  background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat
-    center center;
+  background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
   background-size: cover;
   width: 100%;
   overflow: hidden;
@@ -829,8 +900,7 @@ model-viewer {
 
 .prizes {
   padding: 2vw;
-  background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat
-    center center;
+  background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
   /* background-size: cover; */
   min-height: 40vw;
   width: 100%;
@@ -845,13 +915,13 @@ model-viewer {
   margin-bottom: 0;
 }
 
-.rewards{
+.rewards {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.reward-box{
+.reward-box {
   border: solid 2px;
   padding: 2vw;
   border-radius: 1vw;
@@ -861,7 +931,7 @@ model-viewer {
   box-shadow: inset 0 0 1vw var(--neon-pink);
 }
 
-.reward-heading{
+.reward-heading {
   text-align: center;
   font-size: 3vw;
   font-weight: bold;
@@ -869,29 +939,29 @@ model-viewer {
   text-shadow: 0 0 2vw var(--neon-pink);
 }
 
-.reward-content{
+.reward-content {
   font-size: 8vw;
   text-align: center;
   padding: 2vw;
 }
 
-@media(max-width:720px){
-  .rewards{
+@media(max-width:720px) {
+  .rewards {
     flex-direction: column;
     margin: 5vw;
   }
 
-  .reward-box{
+  .reward-box {
     width: 80vw;
     margin: 3vw;
     box-shadow: inset 0 0 2.5vw var(--neon-pink);
   }
 
-  .reward-heading{
+  .reward-heading {
     font-size: 6vw;
   }
 
-  .reward-content{
+  .reward-content {
     padding: 2vw;
     font-size: vw;
   }
@@ -901,8 +971,7 @@ model-viewer {
 /* <======= FLASHBACK =========> */
 
 .flashback {
-  background: url("../images/flashback-bg.svg") var(--bg-magenta) center center
-    no-repeat;
+  background: url("../images/flashback-bg.svg") var(--bg-magenta) center center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -1031,11 +1100,9 @@ iframe {
 /* Cyber Buttons */
 
 .cybr-btn {
-  --primary: hsl(
-    var(--primary-hue),
-    82%,
-    calc(var(--primary-lightness, 36) * 1%)
-  );
+  --primary: hsl(var(--primary-hue),
+      82%,
+      calc(var(--primary-lightness, 36) * 1%));
   --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
   --primary-hue: 319;
   --primary-lightness: 36;
@@ -1045,96 +1112,80 @@ iframe {
   --label-size: 9px;
   --shadow-secondary-hue: 319;
   --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
-  --clip: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    95% 100%,
-    95% 90%,
-    85% 90%,
-    85% 100%,
-    8% 100%,
-    0 70%
-  );
+  --clip: polygon(0 0,
+      100% 0,
+      100% 100%,
+      95% 100%,
+      95% 90%,
+      85% 90%,
+      85% 100%,
+      8% 100%,
+      0 70%);
   --border: 5px;
   --shimmy-distance: 5;
-  --clip-one: polygon(
-    0 2%,
-    100% 2%,
-    100% 95%,
-    95% 95%,
-    95% 90%,
-    85% 90%,
-    85% 95%,
-    8% 95%,
-    0 70%
-  );
-  --clip-two: polygon(
-    0 78%,
-    100% 78%,
-    100% 100%,
-    95% 100%,
-    95% 90%,
-    85% 90%,
-    85% 100%,
-    8% 100%,
-    0 78%
-  );
-  --clip-three: polygon(
-    0 44%,
-    100% 44%,
-    100% 54%,
-    95% 54%,
-    95% 54%,
-    85% 54%,
-    85% 54%,
-    8% 54%,
-    0 54%
-  );
-  --clip-four: polygon(
-    0 0,
-    100% 0,
-    100% 0,
-    95% 0,
-    95% 0,
-    85% 0,
-    85% 0,
-    8% 0,
-    0 0
-  );
-  --clip-five: polygon(
-    0 0,
-    100% 0,
-    100% 0,
-    95% 0,
-    95% 0,
-    85% 0,
-    85% 0,
-    8% 0,
-    0 0
-  );
-  --clip-six: polygon(
-    0 40%,
-    100% 40%,
-    100% 85%,
-    95% 85%,
-    95% 85%,
-    85% 85%,
-    85% 85%,
-    8% 85%,
-    0 70%
-  );
-  --clip-seven: polygon(
-    0 63%,
-    100% 63%,
-    100% 80%,
-    95% 80%,
-    95% 80%,
-    85% 80%,
-    85% 80%,
-    8% 80%,
-    0 70%
-  );
+  --clip-one: polygon(0 2%,
+      100% 2%,
+      100% 95%,
+      95% 95%,
+      95% 90%,
+      85% 90%,
+      85% 95%,
+      8% 95%,
+      0 70%);
+  --clip-two: polygon(0 78%,
+      100% 78%,
+      100% 100%,
+      95% 100%,
+      95% 90%,
+      85% 90%,
+      85% 100%,
+      8% 100%,
+      0 78%);
+  --clip-three: polygon(0 44%,
+      100% 44%,
+      100% 54%,
+      95% 54%,
+      95% 54%,
+      85% 54%,
+      85% 54%,
+      8% 54%,
+      0 54%);
+  --clip-four: polygon(0 0,
+      100% 0,
+      100% 0,
+      95% 0,
+      95% 0,
+      85% 0,
+      85% 0,
+      8% 0,
+      0 0);
+  --clip-five: polygon(0 0,
+      100% 0,
+      100% 0,
+      95% 0,
+      95% 0,
+      85% 0,
+      85% 0,
+      8% 0,
+      0 0);
+  --clip-six: polygon(0 40%,
+      100% 40%,
+      100% 85%,
+      95% 85%,
+      95% 85%,
+      85% 85%,
+      85% 85%,
+      8% 85%,
+      0 70%);
+  --clip-seven: polygon(0 63%,
+      100% 63%,
+      100% 80%,
+      95% 80%,
+      95% 80%,
+      85% 80%,
+      85% 80%,
+      8% 80%,
+      0 70%);
   font-family: "Cyber", sans-serif;
   color: var(--color);
   cursor: pointer;
@@ -1154,19 +1205,15 @@ iframe {
 }
 
 .cybr-btn:hover {
-  --primary: hsl(
-    var(--primary-hue),
-    85%,
-    calc(var(--primary-lightness, 50) * 0.8%)
-  );
+  --primary: hsl(var(--primary-hue),
+      85%,
+      calc(var(--primary-lightness, 50) * 0.8%));
 }
 
 .cybr-btn:active {
-  --primary: hsl(
-    var(--primary-hue),
-    85%,
-    calc(var(--primary-lightness, 50) * 0.6%)
-  );
+  --primary: hsl(var(--primary-hue),
+      85%,
+      calc(var(--primary-lightness, 50) * 0.6%));
 }
 
 .cybr-btn:after,
@@ -1337,7 +1384,7 @@ iframe {
 }
 
 .sponsor-img {
-  width:25%;
+  width: 25%;
   min-width: 140px;
   height: 100px;
   display: flex;
@@ -1364,7 +1411,8 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 2vw;;
+  padding: 0 2vw;
+  ;
 }
 
 .sponsor-btn button {
@@ -1374,11 +1422,12 @@ iframe {
   cursor: pointer;
 }
 
-@media(max-width:720px){
-  .sponsor-buttons{
+@media(max-width:720px) {
+  .sponsor-buttons {
     flex-direction: column;
   }
-  .sponsor-btn{
+
+  .sponsor-btn {
     padding: 1vh 0;
   }
 }
@@ -1391,14 +1440,14 @@ iframe {
   padding: 1rem 0 2rem 0;
 }
 
-.faqs> .heading{
+.faqs>.heading {
   justify-content: right;
   margin-right: 3rem;
   text-transform: none;
   padding: 0 5vw;
 }
 
-.accordion-item-body-content >a{
+.accordion-item-body-content>a {
   color: #3366CC;
 }
 
@@ -1428,11 +1477,11 @@ iframe {
 }
 
 .accordion-item-header.active {
-  color:var(--neon-pink);
+  color: var(--neon-pink);
   text-align: left;
   justify-content: left;
   flex-direction: row;
-  margin:auto;
+  margin: auto;
   font-size: 23px;
 }
 
@@ -1440,20 +1489,24 @@ iframe {
   content: "\002B";
   position: absolute;
   right: 1rem;
-  animation: rotateleft 0.3s ;
+  animation: rotateleft 0.3s;
 }
 
 .accordion-item-header.active::after {
   content: "\2212";
-  animation: rotateright 0.3s ;
+  animation: rotateright 0.3s;
 }
 
 @keyframes rotateright {
-  100% {transform: rotate(180deg);}
+  100% {
+    transform: rotate(180deg);
+  }
 }
 
 @keyframes rotateleft {
-  100% {transform: rotate(-180deg);}
+  100% {
+    transform: rotate(-180deg);
+  }
 }
 
 .accordion-item-body {
@@ -1468,11 +1521,12 @@ iframe {
   font-size: 17px;
 }
 
-@media(max-width : 720px){
-  .accordion-item-body-content{
+@media(max-width : 720px) {
+  .accordion-item-body-content {
     font-size: 13px;
   }
-  .accordion-item-header.active{
+
+  .accordion-item-header.active {
     font-size: 15px;
   }
 }
@@ -1538,13 +1592,13 @@ footer img {
 }
 
 #team {
-    background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat
-    center center;
+  background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
   background-size: cover;
   position: relative;
   height: 100%;
   padding: 2vh 5vw 2vh 5vw;
 }
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -1577,139 +1631,140 @@ footer img {
 }
 
 
-.timelineBody
-{
+.timelineBody {
 
   background: url("../images/stats-bg-elements.svg") center center;
   background-size: contain;
 
-    padding: 2vh 5vw 2vh 5vw;
+  padding: 2vh 5vw 2vh 5vw;
 }
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
-    position: relative;
-    color: black ;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* The actual timeline (the vertical ruler) */
-  .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-  }
-  
-  /* Container around content */
-  .container {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-  }
-  
-  /* The circles on the timeline */
-  .container::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid var(--neon-pink);
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  /* Place the container to the left */
-  .left {
-    left: 0;
-  }
-  
-  /* Place the container to the right */
-  .right {
-    left: 50%;
-  }
-  
-  /* Add arrows to the left container (pointing right) */
-  .left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid var(--neon-pink);
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--neon-pink);
-  }
-  
-  /* Add arrows to the right container (pointing left) */
-  .right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid var(--neon-pink);
-    border-width: 10px 10px 10px 0;
-    border-color: transparent var(--neon-pink) transparent transparent;
-  }
-  
-  /* Fix the circle for containers on the right side */
-  .right::after {
-    left: -16px;
-  }
-  
-  /* The actual content */
-  .content {
-    padding: 20px 30px;
-    background: none;
-    color:var(--white);
-    position: relative;
-    border-radius: 6px;
-    border: 2px solid var(--neon-pink);
-  }
-  
-  /* Media queries - Responsive timeline on screens less than 600px wide */
-  @media screen and (max-width: 600px) {
+  position: relative;
+  color: black;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid var(--neon-pink);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--neon-pink);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--neon-pink);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--neon-pink);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--neon-pink) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background: none;
+  color: var(--white);
+  position: relative;
+  border-radius: 6px;
+  border: 2px solid var(--neon-pink);
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
   /* Place the timelime to the left */
-    .timeline::after {
-      left: 31px;
-    }
-  
-  /* Full-width containers */
-    .container {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
-    }
-  
-  /* Make sure that all arrows are pointing leftwards */
-    .container::before {
-      left: 60px;
-      border: medium solid white;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
-    }
-  
-  /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
-      left: 15px;
-    }
-  
-  /* Make all right containers behave like the left ones */
-    .right {
-      left: 0%;
-    }
+  .timeline::after {
+    left: 31px;
   }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
