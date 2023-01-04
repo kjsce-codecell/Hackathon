@@ -442,6 +442,10 @@ section {
     font-size: 50px;
   }
 
+  #build1 {
+    display: none;
+  }
+
   #preloader {
     margin-left: -20px;
   }
@@ -450,6 +454,14 @@ section {
 @media screen and (max-width: 767px) {
   #companion {
     font-size: 25px;
+  }
+
+#build1{
+    display: none;
+  }
+
+  .bg-container img {
+    opacity:var(--bg-magenta);
   }
 
   #preloader {
@@ -469,6 +481,7 @@ section {
 
 .bg-container {
   position: absolute;
+  opacity: 0.5;
   z-index: -1;
   width: 100vw;
   height: 100vh;
@@ -476,7 +489,6 @@ section {
 }
 
 .bg-container img {
-  opacity: 0.5;
   position: absolute;
   overflow: hidden;
   height: 100vh;
@@ -575,7 +587,7 @@ section {
 @-webkit-keyframes glowing {
   0% {
     -webkit-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 
   50% {
@@ -584,14 +596,14 @@ section {
 
   100% {
     -webkit-b-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 }
 
 @-moz-keyframes glowing {
   0% {
     -moz-b-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 
   50% {
@@ -600,14 +612,14 @@ section {
 
   100% {
     -moz-b-text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 }
 
 @-o-keyframes glowing {
   0% {
     text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 
   50% {
@@ -615,15 +627,15 @@ section {
   }
 
   100% {
-    text-shadow:0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+    text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 }
 
 @keyframes glowing {
   0% {
     text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 
   50% {
@@ -632,7 +644,7 @@ section {
 
   100% {
     text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
-    0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
+      0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
   }
 }
 
