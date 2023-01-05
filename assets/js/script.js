@@ -3,72 +3,45 @@ console.log("I'm Batman.")
 AOS.init();
 
 var swiper = new Swiper(".mySwiper", {
-
+  
+  autoHeight: true,
     slidesPerView: 1,
     spaceBetween: 30,
+    slidesPerGroup: 1,
+    loop: true,
     breakpoints: {
         // when window width is >= 320px
         320: {
-         slidesPerView: 1,
-         spaceBetween: 20
+         slidesPerView: 2,
+         spaceBetween: 20,
+         slidesPerGroup: 2
         },
         // when window width is >= 480px
         600: {
-         slidesPerView: 2,
-         spaceBetween: 30
+         slidesPerView: 3,
+         spaceBetween: 30,
+         slidesPerGroup: 3
         },
         // when window width is >= 640px
         900: {
-         slidesPerView: 3,
-         spaceBetween: 40
+         slidesPerView: 4,
+         spaceBetween: 40,
+         slidesPerGroup: 4
         }
        },
     autoplay: {
       delay: 2500,
-      disableOnInteraction: false
+      disableOnInteraction: true
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     }
   });
 
-var demoButtons;
-
-function start () {
-  
-  // Add event "click" to "demo buttons"
-  demoButtons = document.querySelectorAll ('.js-modify');
-  for (var i = 0; i < demoButtons.length; i++) {
-    demoButtons[i].addEventListener ('click', toggleEffect);
-  }
-  
-  // Add event "click" to "save buttons"
-  var saveButtons = document.querySelectorAll ('.js-save');
-  for (var i = 0; i < saveButtons.length; i++) {
-    saveButtons[i].addEventListener ('click', toggleActive);
-  }
-  
-}
-
-// Toggle "effect" classes
-function toggleEffect () {
-  var target = document.querySelector (this.dataset.target);
-      target.dataset.effect = this.dataset.effect;
-  
-  for (var i= 0; i < demoButtons.length; i++) {
-    demoButtons[i].classList.remove ('active');
-  }
-  
-  toggleActive.call (this);
-}
-
-// Toggle "active" class
-function toggleActive () {
-  this.classList.toggle ('active');
-}
-
-// Invoke "start ()" function
-window.addEventListener ('load', start);
-
-
+$(".mySwiper").hover(function() {
+    (this).swiper.autoplay.stop();
+}, function() {
+    (this).swiper.autoplay.start();
+});
+swiper.autoplay.stop();
