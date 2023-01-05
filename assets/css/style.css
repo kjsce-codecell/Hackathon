@@ -1660,66 +1660,169 @@ footer img {
   top: 4%;
   left: 5%;
   width: 90% !important;
-  height: 75% !important;
+  height: 78% !important;
   border-radius: 5px;
   border: solid var(--neon-pink) 1px;
 }
 
 .member-name {
   position: absolute;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: bolder;
-  bottom: 10%;
+  bottom: 4%;
   z-index: 1;
 }
 
 .member-post {
   position: absolute;
   font-size: 2rem;
-  bottom: 2%;
+  font-weight: bold;
+  bottom: -12%;
   z-index: 1;
 }
 
 .linkedin-link{
   cursor: pointer;
-  color: var(--black);
-  opacity: 0;
   position: absolute;
-  top: 35%;
-  left: 20%;
-  font-size: 5rem;
+  bottom: -31%;
+  left: 13%;
+  font-size: 4.1rem;
   z-index: 3;
+  transition: transform .2s;
 }
 
 .github-link{
-  color: var(--black);
   cursor: pointer;
-  opacity: 0;
   position: absolute;
-  font-size: 5rem;
-  top: 35%;
-  right:20%;
+  font-size: 4.1rem;
+  bottom: -31%;
+  right:13%;
   z-index: 3;
+  transition: transform .2s;
+}
+
+.swiper-slide > .member-image{
+  overflow: hidden;
+  animation: lighten-img 0.5s forwards;
+}
+
+.swiper-slide > .member-name{
+  animation: move-out-name 0.5s forwards;
+}
+
+.swiper-slide > .member-post{
+  animation: move-out-post 0.5s forwards;
+}
+
+.swiper-slide > .linkedin-link, .swiper-slide > .github-link{
+  animation: move-out-link 0.5s forwards;
 }
 
 .swiper-slide:hover > .member-image{
   overflow: hidden;
-  animation: blur-img 0.5s forwards;
+  animation: darken-img 0.5s forwards;
 }
 
-.swiper-slide:hover > .github-link,
-.swiper-slide:hover .linkedin-link{
-  animation: fadeIn 1s ease-out forwards;
+.swiper-slide:hover > .member-image{
+  overflow: hidden;
+  animation: darken-img 0.5s forwards;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+.swiper-slide:hover > .member-name{
+  overflow: hidden;
+  animation: move-in-name 0.5s forwards;
 }
 
-@keyframes blur-img {
-  0% { -webkit-filter: blur(0px) }
-  100% { -webkit-filter: blur(7px) }
+.swiper-slide:hover > .member-post{
+  overflow: hidden;
+  animation: move-in-post 0.5s forwards;
+}
+
+.swiper-slide:hover > .linkedin-link, .swiper-slide:hover > .github-link{
+  overflow: hidden;
+  animation: move-in-link 0.5s forwards;
+}
+
+.linkedin-link:hover, .github-link:hover {
+  transform: scale(1.1);
+}
+
+@keyframes darken-img {
+  0% {
+      filter: brightness(1);
+      -webkit-filter: brightness(1);
+      
+  }
+  100% {
+      filter: brightness(0.4);
+      -webkit-filter: brightness(0.4);
+     
+  }
+}
+
+@keyframes lighten-img {
+  0% {
+      filter: brightness(0.4);
+      -webkit-filter: brightness(0.4);
+  }
+  100% {
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+  }
+}
+
+@keyframes move-in-name {
+  0% {
+      bottom:4%;
+  }
+  100% {
+      bottom: 34%;
+  }
+}
+
+@keyframes move-out-name {
+  0% {
+      bottom: 34%;
+  }
+  100% {
+    bottom:4%;
+  }
+}
+
+@keyframes move-in-post {
+  0% {
+      bottom:-12%;
+  }
+  100% {
+      bottom: 22%;
+  }
+}
+
+@keyframes move-out-post {
+  0% {
+      bottom: 22%;
+  }
+  100% {
+    bottom:-12%;
+  }
+}
+
+@keyframes move-in-link {
+  0% {
+      bottom:-31%;
+  }
+  100% {
+      bottom: 1%;
+  }
+}
+
+@keyframes move-out-link {
+  0% {
+    bottom: 1%;
+  }
+  100% {
+      bottom:-31%;
+  }
 }
 
 .timelineBody {
