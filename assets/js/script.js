@@ -45,3 +45,39 @@ $(".mySwiper").hover(function() {
     (this).swiper.autoplay.start();
 });
 swiper.autoplay.stop();
+
+// Stats numbers
+
+var stats = document.querySelector("#stats");
+var statsLoaded = false;
+var observer = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      if (!statsLoaded) {
+        statsLoaded = true;
+        $(".stat_number").each(function () {
+          $(this)
+            .prop("Counter", 0)
+            .animate({
+              Counter: $(this).text(),
+            }, {
+              duration: 3000,
+              easing: "swing",
+              step: function (now) {
+                $(this).text(Math.ceil(now));
+              },
+            });
+        });
+      }
+    });
+  }, {
+    threshold: 0,
+    rootMargin: "-200px 1500px -200px 1500px",
+  }
+);
+
+observer.observe(stats);

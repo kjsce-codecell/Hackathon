@@ -846,7 +846,7 @@ model-viewer {
 }
 
 .stats-card-wrapper {
-  border: 3px solid var(--neon-pink);
+  border: 3px solid var(--bg-magenta);
   border-top-width: 5px;
   border-bottom-width: 5px;
   padding: 4px;
@@ -877,6 +877,7 @@ model-viewer {
 }
 
 .stats-card {
+  font-family: "Orbitron", sans-serif;
   width: 240px;
   height: 260px;
   background-color: var(--text-pink);
@@ -890,7 +891,7 @@ model-viewer {
   transform: scale(1.1);
 }
 
-.stats-card:hover .card-icon img {
+.stats-card:hover .card-icon i {
   transform: scale(1.1);
 }
 
@@ -914,22 +915,23 @@ model-viewer {
   height: 8px;
 }
 
-.card-icon img {
-  max-width: 75px;
-  transition: all 0.3s ease-in-out;
+.card-icon i{
+  font-size: 4.5rem;
+  color: var(--bg-black);
+  transition: all 0.3s ease;
+  padding-top: 2rem;
 }
 
 .stats-card .card-number {
   font-size: 4rem;
-  font-weight: 200;
-  font-family: "Orbitron", sans-serif;
+  color: var(--bg-black);
   letter-spacing: 2px;
 }
 
 .stats-card .card-text {
   font-size: 3rem;
-  font-weight: 500;
-  color: var(--card-text-color);
+  font-weight: 900;
+  color: var(--bg-black);
   transition: all 0.3s ease;
 }
 
