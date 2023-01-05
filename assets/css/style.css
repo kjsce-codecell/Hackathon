@@ -35,7 +35,7 @@ body {
   font-weight: 400;
   background-color: var(--bg-black);
   color: whitesmoke;
-  font-family: "Advent Pro", sans-serif;
+  font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -53,9 +53,15 @@ a {
   color: inherit;
 }
 
+.min-page{
+  min-height: 40vw;
+  width: 100%;
+  overflow: hidden;
+}
+
 .heading {
   display: flex;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 6vw;
   margin: 3rem 0 2.7rem;
@@ -88,7 +94,7 @@ a {
 }
 
 .hex {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   color: var(--white);
   font-size: 2.8vh;
   margin: 5vh 0;
@@ -151,8 +157,8 @@ a {
 }
 
 .active-link-name {
-  font-family: "Advent Pro";
-  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 200;
   font-size: 2.4rem;
   letter-spacing: 0.05em;
   text-shadow: 0px 5.99304px 20.9756px #8e8901;
@@ -371,8 +377,10 @@ a {
 
 /* Temporary required */
 section {
-  min-height: 100vh;
   padding: 2vw;
+  min-height: 40vw;
+  width: 100%;
+  overflow: hidden;
 }
 
 /*
@@ -415,7 +423,7 @@ section {
   color: #ffffff;
   text-shadow: 0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta),
     0px 0px 26px var(--bg-magenta), 0px 0px 26px var(--bg-magenta);
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 7.5rem;
 }
@@ -756,7 +764,7 @@ model-viewer {
 }
 
 .about-text {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 2rem;
   width: 40%;
@@ -767,10 +775,10 @@ model-viewer {
 }
 
 .about-content-heading {
-  font-family: "Orbitron";
+  font-family: "Orbitron", sans-serif;
   text-align: left;
-  font-weight: 900;
-  font-size: 2.6rem;
+  font-weight: 700;
+  font-size: 2.5rem;
   letter-spacing: 0.05em;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -913,8 +921,8 @@ model-viewer {
 
 .stats-card .card-number {
   font-size: 4rem;
-  font-weight: 900;
-  font-family: "Advent Pro", sans-serif;
+  font-weight: 200;
+  font-family: "Orbitron", sans-serif;
   letter-spacing: 2px;
 }
 
@@ -929,10 +937,6 @@ model-viewer {
 
 .prizes {
   background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
-  /* background-size: cover; */
-  min-height: 40vw;
-  width: 100%;
-  overflow: hidden;
 }
 
 .rewards {
@@ -996,7 +1000,6 @@ model-viewer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
 }
 
 .flashback-wrapper {
@@ -1127,9 +1130,9 @@ iframe {
   --primary-hue: 319;
   --primary-lightness: 36;
   --color: black;
-  --font-size: 2rem;
+  --font-size: 1.8rem;
   --shadow-primary-hue: 311;
-  --label-size: 9px;
+  --label-size: 7px;
   --shadow-secondary-hue: 319;
   --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
   --clip: polygon(0 0,
@@ -1206,7 +1209,7 @@ iframe {
       85% 80%,
       8% 80%,
       0 70%);
-  font-family: "Cyber", sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: var(--color);
   cursor: pointer;
   background: transparent;
@@ -1215,7 +1218,7 @@ iframe {
   outline: transparent;
   letter-spacing: 2px;
   position: relative;
-  font-weight: 700;
+  font-weight: 900;
   border: 0;
   min-width: 300px;
   height: 75px;
@@ -1589,8 +1592,7 @@ footer img {
 
 .made-with-love {
   text-align: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
 }
 
@@ -1607,7 +1609,6 @@ footer img {
   background: url("../images/about-bg-elements.svg") var(--bg-magenta) no-repeat center center;
   background-size: cover;
   position: relative;
-  height: 100%;
 }
 
 .swiper {
@@ -1667,16 +1668,18 @@ footer img {
 
 .member-name {
   position: absolute;
-  font-size: 3rem;
-  font-weight: bolder;
+  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
   bottom: 4%;
   z-index: 1;
 }
 
 .member-post {
   position: absolute;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
   bottom: -12%;
   z-index: 1;
 }
@@ -1850,6 +1853,14 @@ footer img {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+}
+
+.content h2{
+  font-family: "Orbitron", sans-serif;
+}
+
+.content p{
+  font-family: "Open Sans", sans-serif;
 }
 
 /* Container around content */
