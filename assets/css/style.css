@@ -378,6 +378,7 @@ a {
 /* Temporary required */
 section {
   padding: 2vw;
+  padding-bottom: 5vw;
   min-height: 40vw;
   width: 100%;
   overflow: hidden;
@@ -1456,6 +1457,14 @@ iframe {
   .sponsor-btn {
     padding: 1vh 0;
   }
+}
+
+.sponsor-ques{
+  text-align: center;
+  text-shadow:0 0 15px var(--neon-pink);
+  font-size: 2.2rem;
+
+
 }
 
 /*<==== FAQs ====> */
