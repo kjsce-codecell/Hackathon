@@ -1,6 +1,12 @@
+// Animate on Scroll
+AOS.init({
+  once: true,
+});
+
 $("img").attr("draggable", "false");
 console.log("I'm Batman.")
-AOS.init();
+
+// Card Swiper 
 
 var swiper = new Swiper(".mySwiper", {
   
@@ -81,3 +87,9 @@ var observer = new IntersectionObserver(
 );
 
 observer.observe(stats);
+
+// Disable parallax on mobile
+
+if ($(window).width() < 768) {
+  $('.building').removeClass('object');
+};
