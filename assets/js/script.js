@@ -7,6 +7,9 @@ $("img").attr("draggable", "false");
 
 // Card Swiper
 var swiper = new Swiper(".mySwiper", {
+  mousewheel: {
+    releaseOnEdges: true,
+  },
   autoHeight: true,
   slidesPerView: 1,
   spaceBetween: 30,
