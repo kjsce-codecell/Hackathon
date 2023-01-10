@@ -4,10 +4,8 @@ AOS.init({
 });
 
 $("img").attr("draggable", "false");
-console.log("I'm Batman.");
 
 // Card Swiper
-
 var swiper = new Swiper(".mySwiper", {
   autoHeight: true,
   slidesPerView: 1,
@@ -95,7 +93,17 @@ var observer = new IntersectionObserver(
 observer.observe(stats);
 
 // Disable parallax on mobile
-
 if ($(window).width() < 768) {
   $(".building").removeClass("object");
 }
+
+// Konami 
+var egg = new Egg("h,a,c,k,6", function () {
+  $("#preloader").fadeIn(1000);
+  document.getElementById("preloader").innerHTML =
+    ' <img src="assets/images/hack6.gif" class="preloadergif" style="max-width:100vw; max-height:100vh"/>';
+  $("#preloader").css("background-color", "black");
+  $("#preloader").delay(3500).fadeOut();
+}).listen();
+
+console.log("I'm Batman.");
