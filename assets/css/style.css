@@ -395,11 +395,16 @@ section {
 /* <==== Teaser =====> */
 
 #preloader {
-  background-color: var(--bg-black);
+  background-color: #11110E;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  display: none;
-  margin-left: -35px;
+  z-index: 9999;
 }
 
 @keyframes specialFade {
