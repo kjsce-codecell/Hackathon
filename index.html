@@ -228,17 +228,19 @@ PS : Find all easter eggs : )
             <div class="child">
               <div id="model">
                 <model-viewer
-                  src="./assets/model/purple_planet.glb"
-                  ios-src="./assets/model/Purple_Planet.usdz"
-                  alt="A 3D model of sphere"
+                  src="assets/model/ethereum_logo_3d.glb"
+                  ios-src="assets/model/Ethereum_logo_3D.usdz"
+                  alt="A 3D model of an Ethereum Logo"
                   ar
                   loading="eager"
                   ar-modes="scene-viewer webxr quick-look"
                   camera-controls
                   poster="assets/model/poster.webp"
-                  exposure="0.3"
-                  autoplay
                   auto-rotate
+                  disable-pan
+                  auto-rotate-delay="500"
+                  rotation-per-second="700%"
+                  exposure="0.5"
                   disable-zoom
                 >
                 </model-viewer>
