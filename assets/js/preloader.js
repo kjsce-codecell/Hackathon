@@ -24,13 +24,15 @@ if (localStorage.getItem("codecellhack7") != null) {
       .delete(8)
       .type("explore...")
       .go();
+    $("#preloader").delay(8820).fadeOut();
   } else {
     document.getElementById("preloader").innerHTML =
       ' <img src="assets/images/Preloader.gif" class="preloadergif" style="max-width:100vw; max-height:100vh"/>';
+    $("#preloader").delay(6000).fadeOut();
   }
 } else {
   document.getElementById("preloader").innerHTML =
     ' <img src="assets/images/Preloader.gif" class="preloadergif" style="max-width:100vw; max-height:100vh"/>';
   localStorage.setItem("codecellhack7", 0);
+  $("#preloader").delay(6000).fadeOut();
 }
-$("#preloader").delay(6000).fadeOut("slow");
