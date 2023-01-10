@@ -32,10 +32,11 @@ if (localStorage.getItem("codecellhack7") != null) {
 		document.getElementById("preloader").style.display = "flex";
 		document.getElementById("preloader").style.justifyContent = "center";
 		document.getElementById("preloader").style.alignItems = "center";
+		document.getElementById("preloader").style.position = "absolute";
+		document.getElementById("preloader").style.top = "0";
 		document.getElementById("preloader").style.maxWidth = "100vw";
 		document.getElementById("preloader").innerHTML =
-			' <img src="assets/images/Preloader.gif" class="preloadergif" style="max-width:120vw; max-height:100vh"/>';
-
+			' <img src="assets/images/Preloader.gif" class="preloadergif" style="max-width:100vw; max-height:100vh"/>';
 	}
 	setTimeout(function () {
 		document.getElementById("preloader").style.display = "none";
@@ -43,5 +44,22 @@ if (localStorage.getItem("codecellhack7") != null) {
 		document.body.style.overflowY = "scroll";
 	}, 8820);
 } else {
+
+	document.getElementById("wrapper").style.display = "none";
+	document.getElementById("preloader").style.display = "flex";
+	document.getElementById("preloader").style.justifyContent = "center";
+	document.getElementById("preloader").style.alignItems = "center";
+	document.getElementById("preloader").style.position = "absolute";
+	document.getElementById("preloader").style.top = "0";
+	document.getElementById("preloader").style.maxWidth = "100vw";
+	document.getElementById("preloader").innerHTML =
+		' <img src="assets/images/Preloader.gif" class="preloadergif" style="max-width:100vw; max-height:100vh"/>';
+
+	setTimeout(function () {
+		document.getElementById("preloader").style.display = "none";
+		document.getElementById("wrapper").style.display = "block";
+		document.body.style.overflowY = "scroll";
+	}, 8820);
+
 	localStorage.setItem("codecellhack7", 0);
 }
