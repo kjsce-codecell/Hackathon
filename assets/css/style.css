@@ -686,8 +686,9 @@ section {
 }
 
 #model {
+  margin: auto;
   height: 100%;
-  width: 100%;
+  width: 60%;
 }
 
 model-viewer {
@@ -771,13 +772,15 @@ model-viewer {
 .main-content img {
   width: 95%;
   margin-left: 5%;
+  border: 6px solid var(--bg-black);
+  /* clip-path: polygon(0 0, 95% 0%, 100% 5%, 100% 100%, 100% 100%, 5% 100%, 0% 95%, 0 0); */
 }
 
 .about-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 2rem;
-  width: 40%;
+  width: 100%;
 }
 
 .about-content{
