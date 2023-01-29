@@ -1517,16 +1517,21 @@ iframe {
 
 .sponsor-box {
   display: flex;
+  height: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+
 .sponsor-box >.coming-soon{
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+#current-sponsor{
+  height: 100%;
 }
 
 .sponsor-img {
