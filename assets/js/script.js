@@ -110,3 +110,12 @@ var egg = new Egg("h,a,c,k,6", function () {
 }).listen();
 
 console.log("I'm Batman.");
+
+const linkedin = document.querySelectorAll("a.linkedin-link");
+for(let i =0;i<linkedin.length;i++){
+  linkedin[i].setAttribute("tabindex","-1");
+}
+const github = document.querySelectorAll("a.github-link");
+for(let i =0;i<github.length;i++){
+  github[i].setAttribute("tabindex","-1");
+}
