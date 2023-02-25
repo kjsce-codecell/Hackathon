@@ -1526,7 +1526,7 @@ iframe {
   height: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -1546,6 +1546,16 @@ iframe {
   height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.sponsor-category {
+  width: 100%;
+  height: 100px;
+  font-size: 3.2rem;
+  font-weight:700;
+  display: flex;
+  justify-content:center;
   align-items: center;
 }
 
@@ -1586,6 +1596,14 @@ iframe {
 
   .sponsor-btn {
     padding: 1vh 0;
+  }
+
+  .sponsor-img{
+    height: 80px;
+  }
+
+  .sponsor-category{
+    height: 50px;
   }
 }
 
