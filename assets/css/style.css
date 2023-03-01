@@ -75,6 +75,19 @@ a {
   text-transform: uppercase;
 }
 
+/* .swiper-button-prev, .swiper-button-next {
+  transform: scale(1.1) !important;
+  margin-top: -12px !important;
+}
+
+.swiper-button-prev {
+  margin-left: 5.8em !important;
+}
+
+.swiper-button-next {
+  margin-right: 5.8em !important;
+} */
+
 .black-heading {
   color: var(--bg-black);
   padding: 0 2vw;
@@ -353,6 +366,19 @@ a {
   height: 100%;
   object-fit: contain;
 }
+
+/* .swiper-button-prev {
+  transform: scale(0.7);
+  margin-left: 2em;
+  margin-top: -18.5px;
+
+}
+
+.swiper-button-next {
+  transform: scale(0.7);
+  margin-top: -18.5px;
+  margin-right: 2em;
+} */
 
 @keyframes navLinkAnimation {
   from {
