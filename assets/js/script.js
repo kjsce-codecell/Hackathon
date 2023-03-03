@@ -4,56 +4,48 @@ AOS.init({
 });
 
 $("img").attr("draggable", "false");
+var prevButton = document.querySelector('.splide-prev');
+var nextButton = document.querySelector('.splide-next');
 
-// Card Swiper
-var swiper = new Swiper(".mySwiper", {
-  mousewheel: {
-    releaseOnEdges: true,
-  },
-  autoHeight: true,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  slidesPerGroup: 1,
-  loop: true,
+var splide = new Splide( '#splide', {
+  type: 'loop',
+  perPage: 4,
+  perMove: 4,
+  focus: 'left',
+  autoplay: true,
+  interval: 5000,
+  updateOnMove: true,
+  pagination: false,
+  throttle: 300,
+  gap:'4%',
+  start: 0,
+  width:'100%',
+  wheel: true,
+  arrows: false,
   breakpoints: {
-    // when window width is >= 320px
     320: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      slidesPerGroup: 2,
+      perPage: 1,
+      perMove: 1,
     },
-    // when window width is >= 480px
     600: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      slidesPerGroup: 3,
+      perPage: 2,
+      perMove: 2,
     },
-    // when window width is >= 640px
     900: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-      slidesPerGroup: 4,
-    },
-  },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+      perPage: 3,
+      perMove: 3,
+    }
+  }
+
+}).mount();
+
+prevButton.addEventListener('click', function() {
+  splide.go('<');
 });
 
-$(".mySwiper").hover(
-  function () {
-    this.swiper.autoplay.stop();
-  },
-  function () {
-    this.swiper.autoplay.start();
-  }
-);
-swiper.autoplay.stop();
+nextButton.addEventListener('click', function() {
+  splide.go('>');
+});
 
 // Stats numbers
 

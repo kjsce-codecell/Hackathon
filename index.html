@@ -61,7 +61,7 @@ PS : Find all easter eggs : )
 <link rel="stylesheet" href="assets/css/style.css" />
 <link rel="stylesheet" href="assets/css/mid_resp.css" />
 <link rel="stylesheet" href="assets/css/responsive.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"/>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <!-- Model Viewer -->
@@ -176,44 +176,28 @@ PS : Find all easter eggs : )
                 poster="assets/model/poster.webp" auto-rotate disable-pan auto-rotate-delay="500"
                 rotation-per-second="600%" exposure="0.2" disable-zoom>
               </model-viewer>
+              <!-- <div class="reg-buttons">
+                <div
+                class="dates"
+                  width="100%"
+                >
+                  1st & 2nd April, 2023
+                </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
       <div class="home-links">
-        <!-- <div class="reg-buttons">
+        <div class="reg-buttons">
           <div 
             class="apply-button" 
             data-hackathon-slug="kjscehack7" 
             data-button-theme="light"
             style="height: 44px; width: 312px"
           ></div>
-        </div> -->
-        <div class="reg-buttons">
-          <div class="reg-btn">
-            <button class="cybr-btn" onclick="goToProjects()">
-              <svg class="devfolio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.46 123.46">
-                <path d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 
-                  12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 
-                  13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 
-                  2.18.08 3.34z"></path>
-                <path d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 
-                  104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 
-                  55.41 0 0 1 50.58 55.34z"></path>
-              </svg>
-              <span aria-hidden>Projects</span>
-              <span aria-hidden class="cybr-btn__glitch">Devfolio</span>
-              <span aria-hidden class="cybr-btn__tag">dev</span>
-            </button>
-          </div>
-          <div class="reg-btn">
-            <button class="cybr-btn" onclick="registerNow()">
-              <span aria-hidden>Pre-Register Now</span>
-              <span aria-hidden class="cybr-btn__glitch">GForm</span>
-              <span aria-hidden class="cybr-btn__tag">dev</span>
-            </button>
-          </div>
-          </div>
+        </div>
+        
         <!-- <div class="reg-buttons">
           <button class="cybr-btn" onclick="goToProjects()">
             <svg class="devfolio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.46 123.46">
@@ -716,7 +700,7 @@ PS : Find all easter eggs : )
                   </a>
                 </div>
                 <div class="sponsor-category" style="width:100%">
-                    Credential Partner
+                    Credentials Partner
                 </div>
                 <div class="sponsor-img">
                   <a href="https://www.truscholar.io/" style="background-color: white" target="_blank">
@@ -945,249 +929,303 @@ PS : Find all easter eggs : )
 
     <section id="team">
       <div class="heading mid-heading" data-aos="fade-up" data-aos-duration="1000">
-          Team
-          <!-- <div class="swiper-button-next"></div> -->
-          <!-- <div class="swiper-button-prev"></div> -->
+        <button class="arrows splide-prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>  
+        Team
+        <button class="arrows splide-next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
       </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Jay_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Jay Malve</p>
-            <p class="member-post">Committee Head</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/jay-malave/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/jaymalave" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Tanvi_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Tanvi Deshpande</p>
-            <p class="member-post">Committee Head</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/tanvi-deshpande-9046b620a/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/Tanvi-15" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Rohit_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Rohit Tawde</p>
-            <p class="member-post">Tech Head</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/rohit-tawde-022a1420b/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/rohitt28" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Soumen_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Soumen Samanta</p>
-            <p class="member-post">Marketing Head</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/soumen-samanta-91866b1b3/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/soumen246" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Sahil_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Sahil Sayani</p>
-            <p class="member-post">Creative Head</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/sahil-sayani-1696751b7/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/SahilSayani" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img class="card-image" src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/TECH-VATSAL.jpg" alt="" srcset="" />
-            <p class="member-name">Vatsal Sanchala</p>
-            <p class="member-post">Tech Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/bevatsal1122/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/bevatsal1122" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Aditya_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Aditya Chandran</p>
-            <p class="member-post">Tech Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/aditya-chandrn-90aa0422a/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/Aditya-Chandrn" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Arya_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Arya Nair</p>
-            <p class="member-post">Tech Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/arya-nair-2003" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/Arya-A-Nair" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Gaurish_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Gaurish Baliga</p>
-            <p class="member-post">Tech Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/gaurish-baliga-443894131" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/LazerRazor" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Vinay_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Vinay Kanse</p>
-            <p class="member-post">Tech Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/vinay-sitaram-kanse/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/VinayKanase" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Pranay_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Pranay Singh</p>
-            <p class="member-post">Tech Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/pranay-singh-8289b21bb" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/hailhydra1" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Pargat_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Pargat Singh</p>
-            <p class="member-post">Creative Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/pargat-singh-dhanjal-h3y" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/Pargat-Dhanjal" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/SahilSaksena_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Sahil Saksena</p>
-            <p class="member-post">Creative Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/sahil-saksena-73a94020b" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/winterpigeon" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Medhavi_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Medhavi Sinha</p>
-            <p class="member-post">Creative Team</p>
-            <a class="linkedin-link" href="http://linkedin.com/in/medhavi-sinha-7b9a431ba" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/medhavisinha" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Dhruv_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Dhruv Bhagatkar</p>
-            <p class="member-post">Creative Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/dhruv-bhagatkar-1b267995" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/dhruv2003" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Aishwarya_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Aishwarya Ramasubramanian</p>
-            <p class="member-post">Marketing Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/aishwarya-ramasubramanian-505026233"
-              target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/Aishwaryaaa24" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Hardik_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Hardik Shah</p>
-            <p class="member-post">Marketing Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/hardik-shah-62a7851b2/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/HardikShah563" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Kashvi_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Kashvi Mody</p>
-            <p class="member-post">Marketing Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/kashvi-mody-174989225" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/kashvimody" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="assets/images/teamCard.png" alt="" srcset="" />
-            <img class="member-image" src="assets/images/team/Rahil_2022-23.png" alt="" srcset="" />
-            <p class="member-name">Rahil Parikh</p>
-            <p class="member-post">Marketing Team</p>
-            <a class="linkedin-link" href="https://www.linkedin.com/in/rahil-parikh-52b957216/" target="_blank">
-              <i class="fab fa-linkedin"> </i>
-            </a>
-            <a class="github-link" href="https://github.com/rprkh" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
+      <div class="splide" id="splide">
+        
+        <div class="splide__track">
+          <div class="splide__list">
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Jay_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Jay Malve</p>
+              <p class="member-post">Committee Head</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/jay-malave/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/jaymalave" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Tanvi_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Tanvi Deshpande</p>
+              <p class="member-post">Committee Head</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/tanvi-deshpande-9046b620a/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/Tanvi-15" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Rohit_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Rohit Tawde</p>
+              <p class="member-post">Tech Head</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/rohit-tawde-022a1420b/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/rohitt28" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Soumen_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Soumen Samanta</p>
+              <p class="member-post">Marketing Head</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/soumen-samanta-91866b1b3/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/soumen246" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+  
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Sahil_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Sahil Sayani</p>
+              <p class="member-post">Creative Head</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/sahil-sayani-1696751b7/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/SahilSayani" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img class="card-image" src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/TECH-VATSAL.jpg" alt="" srcset="" />
+              <p class="member-name">Vatsal Sanchala</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/bevatsal1122/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/bevatsal1122" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+  
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Aditya_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Aditya Chandran</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/aditya-chandrn-90aa0422a/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/Aditya-Chandrn" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Arya_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Arya Nair</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/arya-nair-2003" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/Arya-A-Nair" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Gaurish_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Gaurish Baliga</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/gaurish-baliga-443894131" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/LazerRazor" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Vinay_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Vinay Kanse</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/vinay-sitaram-kanse/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/VinayKanase" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Pranay_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Pranay Singh</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/pranay-singh-8289b21bb" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/hailhydra1" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Harshal_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Harshal Dulera</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/harshal-dulera/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/harshaldulera" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Rahil_Kothari_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Rahil Kothari</p>
+              <p class="member-post">Tech Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/rahilk9" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/RahilKothari9" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Pargat_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Pargat Singh</p>
+              <p class="member-post">Creative Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/pargat-singh-dhanjal-h3y" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/Pargat-Dhanjal" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/SahilSaksena_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Sahil Saksena</p>
+              <p class="member-post">Creative Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/sahil-saksena-73a94020b" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/winterpigeon" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Medhavi_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Medhavi Sinha</p>
+              <p class="member-post">Creative Team</p>
+              <a class="linkedin-link" href="http://linkedin.com/in/medhavi-sinha-7b9a431ba" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/medhavisinha" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Dhruv_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Dhruv Bhagatkar</p>
+              <p class="member-post">Creative Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/dhruv-bhagatkar-1b267995" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/dhruv2003" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Shubham_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Shubham Shah</p>
+              <p class="member-post">Creative Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/shubham-shah-166a67252" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/Wunderkindd" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Aishwarya_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Aishwarya Ramasubramanian</p>
+              <p class="member-post">Marketing Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/aishwarya-ramasubramanian-505026233"
+                target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/Aishwaryaaa24" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+  
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Hardik_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Hardik Shah</p>
+              <p class="member-post">Marketing Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/hardik-shah-62a7851b2/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/HardikShah563" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+  
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Kashvi_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Kashvi Mody</p>
+              <p class="member-post">Marketing Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/kashvi-mody-174989225" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/kashvimody" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Rahil_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Rahil Parikh</p>
+              <p class="member-post">Marketing Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/rahil-parikh-52b957216/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/rprkh" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="splide__slide">
+              <img src="assets/images/teamCard.png" alt="" srcset="" />
+              <img class="member-image" src="assets/images/team/Diya_2022-23.png" alt="" srcset="" />
+              <p class="member-name">Diya Parelkar</p>
+              <p class="member-post">Marketing Team</p>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/diya-parelkar-477287267/" target="_blank">
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a class="github-link" href="https://github.com/diya-parelkar" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
         </div>
-               
-        <div class="swiper-pagination"></div>
+        
       </div>
     </section>
 
@@ -1217,7 +1255,7 @@ PS : Find all easter eggs : )
   </div>
   <!-- Parent:2:Start -->
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/egg.js/1.0/egg.min.js"></script>
   <script src="./assets/js/script.js"></script>
