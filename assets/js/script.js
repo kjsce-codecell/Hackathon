@@ -3,11 +3,11 @@ AOS.init({
   once: true,
 });
 
-$("img").attr("draggable", "false");
+$('img').attr('draggable', 'false');
 var prevButton = document.querySelector('.splide-prev');
 var nextButton = document.querySelector('.splide-next');
 
-var splide = new Splide( '#splide', {
+var splide = new Splide('#splide', {
   type: 'loop',
   perPage: 4,
   perMove: 4,
@@ -17,10 +17,13 @@ var splide = new Splide( '#splide', {
   updateOnMove: true,
   pagination: false,
   throttle: 300,
-  gap:'4%',
+  gap: '4%',
   start: 0,
-  width:'100%',
+  width: '100%',
   wheel: true,
+  wheelSleep: 1000,
+  releaseWheel: false,
+  waitForTransition:true,
   arrows: false,
   breakpoints: {
     320: {
@@ -34,22 +37,21 @@ var splide = new Splide( '#splide', {
     900: {
       perPage: 3,
       perMove: 3,
-    }
-  }
-
+    },
+  },
 }).mount();
 
-prevButton.addEventListener('click', function() {
+prevButton.addEventListener('click', function () {
   splide.go('<');
 });
 
-nextButton.addEventListener('click', function() {
+nextButton.addEventListener('click', function () {
   splide.go('>');
 });
 
 // Stats numbers
 
-var stats = document.querySelector("#stats");
+var stats = document.querySelector('#stats');
 var statsLoaded = false;
 var observer = new IntersectionObserver(
   function (entries, observer) {
@@ -60,16 +62,16 @@ var observer = new IntersectionObserver(
 
       if (!statsLoaded) {
         statsLoaded = true;
-        $(".stat_number").each(function () {
+        $('.stat_number').each(function () {
           $(this)
-            .prop("Counter", 0)
+            .prop('Counter', 0)
             .animate(
               {
                 Counter: $(this).text(),
               },
               {
                 duration: 3000,
-                easing: "swing",
+                easing: 'swing',
                 step: function (now) {
                   $(this).text(Math.ceil(now));
                 },
@@ -81,7 +83,7 @@ var observer = new IntersectionObserver(
   },
   {
     threshold: 0,
-    rootMargin: "-200px 1500px -200px 1500px",
+    rootMargin: '-200px 1500px -200px 1500px',
   }
 );
 
@@ -89,25 +91,25 @@ observer.observe(stats);
 
 // Disable parallax on mobile
 if ($(window).width() < 768) {
-  $(".building").removeClass("object");
+  $('.building').removeClass('object');
 }
 
-// Konami 
-var egg = new Egg("h,a,c,k,6", function () {
-  $("#preloader").fadeIn(1000);
-  document.getElementById("preloader").innerHTML =
+// Konami
+var egg = new Egg('h,a,c,k,6', function () {
+  $('#preloader').fadeIn(1000);
+  document.getElementById('preloader').innerHTML =
     ' <img src="assets/images/hack6.gif" class="preloadergif" style="max-width:100vw; max-height:100vh"/>';
-  $("#preloader").css("background-color", "black");
-  $("#preloader").delay(3500).fadeOut();
+  $('#preloader').css('background-color', 'black');
+  $('#preloader').delay(3500).fadeOut();
 }).listen();
 
 console.log("I'm Batman.");
 
-const linkedin = document.querySelectorAll("a.linkedin-link");
-for(let i =0;i<linkedin.length;i++){
-  linkedin[i].setAttribute("tabindex","-1");
+const linkedin = document.querySelectorAll('a.linkedin-link');
+for (let i = 0; i < linkedin.length; i++) {
+  linkedin[i].setAttribute('tabindex', '-1');
 }
-const github = document.querySelectorAll("a.github-link");
-for(let i =0;i<github.length;i++){
-  github[i].setAttribute("tabindex","-1");
+const github = document.querySelectorAll('a.github-link');
+for (let i = 0; i < github.length; i++) {
+  github[i].setAttribute('tabindex', '-1');
 }
