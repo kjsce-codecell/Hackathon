@@ -30,7 +30,9 @@ html {
   color: var(--text-pink);
 }
 
-.heading, button, img{
+.heading,
+button,
+img {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -73,19 +75,6 @@ a {
   margin: 3rem 0 2.7rem;
   text-align: center;
   text-transform: uppercase;
-}
-
-.dates {
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-  font-size: 2.8vw;
-  text-align: center;
-}
-
-@media screen and (max-width: 450px) {
-  .dates {
-    font-size: 6vw;
-  }
 }
 
 /* .swiper-button-prev, .swiper-button-next {
@@ -560,11 +549,13 @@ section {
   margin-top: 1vw;
   justify-content: center;
 }
-.reg-btn{
+
+.reg-btn {
   padding: 1vw;
 }
+
 @media(max-width:720px) {
-  .reg-buttons{
+  .reg-buttons {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -587,14 +578,14 @@ section {
   opacity: 0.5;
   z-index: -1;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
 .bg-container img {
   position: absolute;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
 }
 
 #build2 {
@@ -685,12 +676,11 @@ section {
 
 
 .dates {
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-  font-size: 2.8vw;
-  text-align: center;
-  text-shadow: none;
-  color: white !important;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: 700;
   -webkit-animation: glowing 7000ms infinite;
   -moz-animation: glowing 7000ms infinite;
   -o-animation: glowing 7000ms infinite;
@@ -779,6 +769,7 @@ model-viewer {
 .home-links {
   height: 20vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 3rem;
@@ -1583,13 +1574,13 @@ model-viewer {
   align-items: center;
 }
 
-.sponsor-box >.coming-soon{
+.sponsor-box>.coming-soon {
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
-#current-sponsor{
+#current-sponsor {
   height: 100%;
 }
 
@@ -1606,9 +1597,9 @@ model-viewer {
   width: 100%;
   height: 100px;
   font-size: 3.2rem;
-  font-weight:700;
+  font-weight: 700;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -1651,11 +1642,11 @@ model-viewer {
     padding: 1vh 0;
   }
 
-  .sponsor-img{
+  .sponsor-img {
     height: 80px;
   }
 
-  .sponsor-category{
+  .sponsor-category {
     height: 50px;
   }
 }
@@ -1827,7 +1818,7 @@ footer img {
   position: relative;
 }
 
-.arrows{
+.arrows {
   align-self: left;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -1836,19 +1827,19 @@ footer img {
   outline: none;
 }
 
-.arrows > i{
+.arrows>i {
   font-size: 7vw;
   color: var(--white);
   animation: color-remove 0.3s forwards;
 }
 
 @media screen and (max-width: 450px) {
-  .arrows > i {
+  .arrows>i {
     font-size: 6.3rem;
   }
 }
 
-.arrows:hover > i{
+.arrows:hover>i {
   animation: color-add 0.3s forwards;
   transform: scale(1.05);
 }
@@ -1857,6 +1848,7 @@ footer img {
   0% {
     color: var(--white);
   }
+
   100% {
     color: var(--text-pink);
   }
@@ -1866,6 +1858,7 @@ footer img {
   0% {
     color: var(--text-pink);
   }
+
   100% {
     color: var(--white);
   }
@@ -1878,13 +1871,13 @@ footer img {
   overflow: hidden;
 }
 
-.splide__list{
+.splide__list {
   width: 100%;
   height: 100%;
   align-items: center;
 }
 
-.splide__track{
+.splide__track {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -1943,10 +1936,10 @@ footer img {
 
 .member-name {
   position: absolute;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 2rem;
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
@@ -1956,10 +1949,10 @@ footer img {
 
 .member-post {
   position: absolute;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.5rem;
   font-family: 'Orbitron', sans-serif;
   font-weight: 900;
