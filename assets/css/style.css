@@ -1264,7 +1264,7 @@ model-viewer {
   width: 8px;
 }
 
-iframe {
+.flashback-container iframe {
   width: 70vw;
   object-fit: contain;
   height: 45vw;
