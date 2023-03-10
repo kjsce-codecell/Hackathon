@@ -43,7 +43,7 @@ navBarManager();
 //smooth scroll to sections
 var $root = $("html, body");
 
-$('a[href^="#"]').click(function () {
+$('.nav-links * a[href^="#"]').click(function () {
   var href = $.attr(this, "href");
   hamburger.classList.toggle("open");
   navBar.classList.toggle("active");
