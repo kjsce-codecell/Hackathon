@@ -2121,6 +2121,25 @@ footer img {
   background: url("../images/stats-bg-elements.svg") center center;
   background-size: contain;
 }
+.TimelineLeft
+{
+        
+    float: left;  
+}
+.TimelineRight
+{
+    
+    float: left;
+}
+
+.timeline-ques {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 15px var(--neon-pink);
+  font-size: 2.2rem;
+  margin-top: 5%;
+}
+
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
@@ -2128,7 +2147,27 @@ footer img {
   color: black;
   max-width: 1200px;
   margin: 0 auto;
+  
 }
+.TimelineText {
+  font-size: 2.5rem;
+}
+.TimelineHeader {
+  display: flex;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  
+}
+.HeaderLeft{
+  width: 50%;
+
+}
+.HeaderRight{
+  width: 50%;
+  text-align: right;
+}
+
 
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
