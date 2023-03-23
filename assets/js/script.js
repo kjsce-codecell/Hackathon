@@ -113,3 +113,37 @@ const github = document.querySelectorAll('a.github-link');
 for (let i = 0; i < github.length; i++) {
   github[i].setAttribute('tabindex', '-1');
 }
+
+
+
+// GLITCH TEXT PRIZE SECTION
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let intervals = new Map();
+
+document.querySelectorAll(".prize-box").forEach(box => {
+  box.addEventListener("pointerenter", event => {
+    let head = event.currentTarget.querySelector(".head");
+    
+    let iteration = 0;
+
+    clearInterval(intervals.get(head));
+
+    intervals.set(head, setInterval(() => {
+      head.innerText = head.innerText
+        .split("")
+        .map((letter, index) => {
+          if(index < iteration) return head.dataset.value[index];
+
+          return letters[Math.floor(Math.random() * 26)]
+        }).join("");
+
+      if(iteration >= head.dataset.value.length){
+        clearInterval(intervals.get(head));
+      }
+
+      iteration += 1 / 3;
+    }, 30));
+  });
+});
