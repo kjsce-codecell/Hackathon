@@ -2320,6 +2320,15 @@ footer img {
   margin-left: -3px;
 }
 
+.time-head{
+  width: 100vw;
+  font-size: 4vw;
+  color: white;
+  text-shadow: 0 0 15px var(--neon-pink);
+  text-align: center;
+  margin-left: -5vw;
+}
+
 .content h2 {
   font-family: "Orbitron", sans-serif;
 }
