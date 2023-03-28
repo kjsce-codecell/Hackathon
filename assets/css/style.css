@@ -2484,4 +2484,13 @@ footer img {
 	.right {
 		left: 0%;
 	}
+
+	.day{
+		display: flex;
+		width: 100vw !important;
+		padding: 0;
+		margin-right: 0;
+		margin-left: 0;
+		font-size: 8vw;
+	}
 }
