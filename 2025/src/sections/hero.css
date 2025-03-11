@@ -1,0 +1,139 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/background.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(139, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.hero__nav {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.hero__nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.hero__nav a:hover {
+  color: #ffd700;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.gajshield {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 2px #fff;
+}
+
+.kjsse {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: -0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 2px #fff;
+}
+
+.eight {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #8b0000;
+  -webkit-text-stroke: 2px #fff;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  margin-top: -1rem;
+}
+
+.hero__cta {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero__cta-icon {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .hero__nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .gajshield {
+    font-size: 3rem;
+  }
+
+  .kjsse {
+    font-size: 2.5rem;
+  }
+
+  .eight {
+    font-size: 4rem;
+  }
+}
