@@ -21,19 +21,11 @@ const Hero = () => {
       <div className="hero__backgrounds">
         <div className="hero__background hero__background--base"></div>
         <img
-          src="/images/hero/sky.svg"
+          src="/images/hero/sky.png"
           alt="Sky"
           className="hero__background hero__background--sky"
           style={{
             transform: `translate(${mousePosition.x * 0.25}px, ${mousePosition.y * 0.25}px)`
-          }}
-        />
-        <img
-          src="/images/hero/terrain.svg"
-          alt="Terrain"
-          className="hero__background hero__background--terrain"
-          style={{
-            transform: `scale(1.2, 1) translate(${mousePosition.x * 0.15}px, ${mousePosition.y * 0.15}px)`
           }}
         />
         <img
@@ -52,11 +44,11 @@ const Hero = () => {
         ></div>
       </div>
       <div className="hero__overlay"></div>
-      <Navigation
+      {/* <Navigation
         style={{
           transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)`
         }}
-      />
+      /> */}
       <div
         className="hero__content"
         style={{
