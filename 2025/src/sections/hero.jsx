@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navigation from "../components/Navigation";
 import "./hero.css";
 
 const Hero = () => {
@@ -51,24 +52,11 @@ const Hero = () => {
         ></div>
       </div>
       <div className="hero__overlay"></div>
-      <nav
-        className="hero__nav"
+      <Navigation
         style={{
           transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)`
         }}
-      >
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#statistics">Statistics</a></li>
-          <li><a href="#prizes">Prizes</a></li>
-          <li><a href="#sponsors">Sponsors</a></li>
-          <li><a href="#flashbacks">Flashbacks</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#team">Team</a></li>
-        </ul>
-      </nav>
+      />
       <div
         className="hero__content"
         style={{
