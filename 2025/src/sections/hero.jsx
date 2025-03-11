@@ -4,6 +4,16 @@ import "./hero.css";
 const Hero = () => {
   return (
     <section className="hero">
+      <div className="hero__backgrounds">
+        <div className="hero__background hero__background--base"></div>
+        <img
+          src="/images/hero/terrain.svg"
+          alt="Terrain"
+          className="hero__background hero__background--terrain"
+        />
+        <div className="hero__background hero__background--horse"></div>
+        <div className="hero__background hero__background--sky"></div>
+      </div>
       <div className="hero__overlay"></div>
       <nav className="hero__nav">
         <ul>
@@ -20,17 +30,17 @@ const Hero = () => {
       </nav>
       <div className="hero__content">
         <h1 className="hero__title">
-          <span className="gajshield">GAJSHIELD</span>
-          <span className="kjsse">KJSSE HACK</span>
-          <span className="eight">8</span>
+          <div className="title-group">
+            <div className="text-group">
+              <span className="gajshield">GAJSHIELD</span>
+              <span className="kjsse">KJSSE HACK</span>
+            </div>
+            <span className="eight">8</span>
+          </div>
         </h1>
-        <button className="hero__cta">
-          <span className="hero__cta-icon">📁</span>
-          Go to projects
-        </button>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default Hero; 
