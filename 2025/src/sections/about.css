@@ -1,0 +1,45 @@
+.about {
+    color: #fff;
+    background-image: url('/assets/aboutbg.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 0 0 5rem 0;
+}
+
+
+.about-header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3rem;
+    font-size: 4.5rem;
+}
+
+.AboutUsLeftStreak, .AboutUsRightStreak {
+    position: absolute;
+    margin-top: 5rem;
+    height: 35rem;
+}
+
+.AboutUsLeftStreak {
+    left: 2rem;
+}
+
+.AboutUsRightStreak {
+    right: 2rem;
+}
+
+.about-content-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-wrap: wrap;
+    text-align: center;
+    max-width: 45%;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
