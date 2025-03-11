@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sponsor.css";
 
 export default function Sponsor() {
+  const [activeTab, setActiveTab] = useState("current");
+  
   return (
     <section className="sponsor" id="sponsor">
       <div className="sponsor__outer-frame"></div>
@@ -13,14 +15,19 @@ export default function Sponsor() {
         </div>
         
         <div className="sponsor__container">
-          <div className="sponsor__select-container">
-            <select className="sponsor__select">
-              <option>Select</option>
-              <option>Gold Sponsors</option>
-              <option>Silver Sponsors</option>
-              <option>Bronze Sponsors</option>
-              <option>Partners</option>
-            </select>
+          <div className="sponsor__button-container">
+            <button 
+              className={`sponsor__button ${activeTab === "current" ? "sponsor__button--active" : ""}`}
+              onClick={() => setActiveTab("current")}
+            >
+              Current Sponsors
+            </button>
+            <button 
+              className={`sponsor__button ${activeTab === "previous" ? "sponsor__button--active" : ""}`}
+              onClick={() => setActiveTab("previous")}
+            >
+              Previous Sponsors
+            </button>
           </div>
           
           <div className="sponsor__frame-container">
@@ -30,7 +37,9 @@ export default function Sponsor() {
             <div className="sponsor__frame-border sponsor__frame-border--left"></div>
             
             <div className="sponsor__frame">
-              <h2 className="sponsor__frame-title">Our Sponsors</h2>
+              <h2 className="sponsor__frame-title">
+                {activeTab === "current" ? "Our Current Sponsors" : "Our Previous Sponsors"}
+              </h2>
               
               <p className="sponsor__frame-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.

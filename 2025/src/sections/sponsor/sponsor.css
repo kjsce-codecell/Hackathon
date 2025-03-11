@@ -119,7 +119,7 @@
   width: 250px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: rgba(225, 135, 25, 0.72);
+  background-color: transparent;
   color: white;
   border: 1px solid rgba(211, 162, 54, 0.5);
   border-radius: 0;
@@ -132,6 +132,12 @@
   background-repeat: no-repeat;
   background-position: right 0.7rem top 50%;
   background-size: 0.65rem auto;
+}
+
+.sponsor__select:focus,
+.sponsor__select:active {
+  color: black;
+  background-color: white;
 }
   
 .sponsor__frame-container {
@@ -160,7 +166,7 @@
   -ms-overflow-style: none;
 }
 
-/* SVG Border Elements */
+/* SVG Border Elements - updated with proper overlapping */
 .sponsor__frame-border {
   position: absolute;
   pointer-events: none;
@@ -170,48 +176,48 @@
 
 .sponsor__frame-border--top {
   top: -5px;
-  left: 8px;
-  right: 8px;
-  height: 17px;
+  left: -20px;
+  right: -20px;
+  height: 20px;
   background-image: url('/sponsor/top-hori.svg');
   background-repeat: repeat-x;
-  background-size: auto 100%;
   background-position: center top;
 }
 
 .sponsor__frame-border--bottom {
   bottom: -5px;
-  left: 8px;
-  right: 8px;
+  left: -20px;
+  right: -20px;
   height: 17px;
   background-image: url('/sponsor/top-hori.svg');
   background-repeat: repeat-x;
-  background-size: auto 100%;
   background-position: center bottom;
   transform: rotate(180deg);
 }
 
 .sponsor__frame-border--left {
-  top: -5px;
+  top: -15px;
   left: 0;
-  bottom: -5px;
-  width: 13px;
+  bottom: -15px;
+  width: 9px;
   background-image: url('/sponsor/sides-ver.svg');
   background-repeat: repeat-y;
-  background-size: 100% auto;
+  background-size: 100% ;
   background-position: left center;
+  z-index: 4;
 }
 
 .sponsor__frame-border--right {
-  top: -5px;
+  top: -15px;
   right: 0;
-  bottom: -5px;
-  width: 13px;
+  bottom: -15px;
+  width: 9px;
   background-image: url('/sponsor/sides-ver.svg');
   background-repeat: repeat-y;
-  background-size: 100% auto;
+  background-size: 100% ;
   background-position: right center;
   transform: scaleX(-1);
+  z-index: 4;
 }
 
 .sponsor__scroll-indicator {
@@ -284,6 +290,34 @@
   color: #ffffff;
 }
 
+.sponsor__button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.sponsor__button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(211, 162, 54, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.sponsor__button:hover {
+  background-color: rgba(211, 162, 54, 0.15);
+}
+
+.sponsor__button--active {
+  background-color: rgba(211, 162, 54, 0.3);
+  border: 1px solid rgba(211, 162, 54, 0.8);
+}
+
 @media (max-width: 768px) {
   .sponsor__title {
     font-size: 2.5rem;
@@ -291,7 +325,7 @@
     
   .sponsor__frame {
     height: 300px;
-    padding: 20px 15px; /* Smaller padding for mobile */
+    padding: 20px 15px;
   }
   
   .sponsor__title-line {
@@ -318,12 +352,212 @@
   .sponsor__frame-border--top,
   .sponsor__frame-border--bottom {
     height: 12px;
-    left: 8px; /* Smaller for mobile */
-    right: 8px; /* Smaller for mobile */
+    left: 8px;
+    right: 8px;
   }
   
   .sponsor__frame-border--left,
   .sponsor__frame-border--right {
     width: 8px;
+  }
+
+  .sponsor__button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .sponsor__button {
+    width: 200px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* General responsive updates */
+@media (max-width: 1200px) {
+  .sponsor__content {
+    max-width: 95%;
+  }
+  
+  .sponsor__left-streak {
+    left: -100px;
+  }
+  
+  .sponsor__right-streak {
+    right: -100px;
+  }
+  
+  .sponsor__frame {
+    padding: 30px 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sponsor {
+    min-height: 100vh;
+    height: auto;
+    padding: 1.5rem;
+  }
+  
+  .sponsor__left-streak {
+    left: -80px;
+    width: 200px;
+    height: 30rem;
+  }
+  
+  .sponsor__right-streak {
+    right: -80px;
+    width: 200px;
+    height: 30rem;
+  }
+  
+  .sponsor__title {
+    font-size: 3.5rem;
+  }
+  
+  .sponsor__logos {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .sponsor__logo-item {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsor {
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+  
+  .sponsor__title {
+    font-size: 2.5rem;
+    margin: 0 1rem;
+  }
+  
+  .sponsor__title-container {
+    margin: 1.5rem 0 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .sponsor__title-line {
+    max-width: 60px;
+  }
+  
+  .sponsor__outer-frame {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .sponsor__left-streak,
+  .sponsor__right-streak {
+    height: 25rem;
+    width: 150px;
+    top: 300%;
+  }
+  
+  .sponsor__frame {
+    height: 350px;
+    padding: 20px 15px;
+  }
+  
+  .sponsor__frame-border--top,
+  .sponsor__frame-border--bottom {
+    height: 12px;
+    left: -10px;
+    right: -10px;
+  }
+  
+  .sponsor__frame-border--left,
+  .sponsor__frame-border--right {
+    width: 8px;
+    top: -10px;
+    bottom: -10px;
+  }
+  
+  .sponsor__button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .sponsor__button {
+    width: 200px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .sponsor__frame-title {
+    font-size: 1.75rem;
+  }
+  
+  .sponsor__logos {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sponsor__logo-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .sponsor__frame-text {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .sponsor {
+    padding: 0.8rem;
+  }
+  
+  .sponsor__title {
+    font-size: 2rem;
+  }
+  
+  .sponsor__title-container {
+    margin: 1rem 0 2rem;
+  }
+  
+  .sponsor__left-streak,
+  .sponsor__right-streak {
+    height: 20rem;
+    width: 100px;
+  }
+  
+  .sponsor__frame {
+    height: 400px;
+    padding: 15px 10px;
+  }
+  
+  .sponsor__button {
+    width: 170px;
+    font-size: 0.9rem;
+  }
+  
+  .sponsor__frame-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sponsor__frame-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sponsor__p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .sponsor__scroll-indicator {
+    font-size: 1.5rem;
+    bottom: -40px;
   }
 }
