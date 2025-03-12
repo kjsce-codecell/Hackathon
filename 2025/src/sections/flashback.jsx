@@ -1,3 +1,5 @@
+import '../sections/flashback.css';
+
 const FlashBack = () => {
   return (
     <section className="flashback">
