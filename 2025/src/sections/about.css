@@ -1,6 +1,6 @@
 .about {
     color: #fff;
-    background-image: url('/assets/aboutbg.svg');
+    background-image: url('/assets/about-hack8.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +14,15 @@
     justify-content: center;
     align-items: start;
     margin-top: 3rem;
-    font-size: 4.5rem;
+    font-size: 4rem;
+
+    @media (max-width: 1000px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 700px) {
+        font-size: 2rem;
+    }
 }
 
 .AboutUsLeftStreak, .AboutUsRightStreak {
