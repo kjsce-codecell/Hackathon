@@ -65,10 +65,6 @@ export default function Sponsor() {
               </p>
             </div>
           </div>
-          
-          <div className="sponsor__scroll-indicator">
-            <span>↓</span>
-          </div>
         </div>
       </div>
     </section>
