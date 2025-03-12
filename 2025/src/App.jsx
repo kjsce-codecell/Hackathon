@@ -1,13 +1,13 @@
 import React from "react"
 import Hero from "./sections/hero"
-import About from "./sections/about"
-import FlashBack from "./sections/flashback"
+import Prizes from "./sections/prizes"
+import "./App.css"
+
 function App() {
   return (
-    <div className="">
+    <div className="main-container">
       <Hero />
-      <About />
-      <FlashBack />
+      <Prizes />
     </div>
   )
 }
