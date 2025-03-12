@@ -1,7 +1,7 @@
 .about {
     color: #fff;
     background-image: url('/assets/aboutbg.svg');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
