@@ -53,8 +53,8 @@
 .hero__background--horse {
   background-image: url('/images/hero/horse.svg');
   z-index: 5;
-  background-size: 45% auto;
-  background-position: 85% center;
+  background-size: 25% auto;
+  background-position: 85% 65%;
   animation: float 8s infinite alternate ease-in-out;
 }
 
@@ -93,6 +93,7 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  padding-top: 0;
 }
 
 .hero__title {
@@ -105,18 +106,20 @@
 
 .title-group {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
 .text-group {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .gajshield {
   font-size: 5.5rem;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -126,7 +129,7 @@
 
 .kjsse {
   font-size: 5rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-top: -0.5rem;
@@ -139,10 +142,9 @@
   font-size: 11rem;
   font-weight: 900;
   color: #8b0000;
-  -webkit-text-stroke: 2px #000;
+  -webkit-text-stroke: 3px #000;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   line-height: 0.8;
-  margin-top: -0.5rem;
   margin-left: -1rem;
 }
 
@@ -155,36 +157,48 @@
   .hero__content {
     padding: 2rem;
     justify-content: flex-start;
-    padding-top: 3rem;
+    align-items: center;
+    text-align: center;
+    padding-top: 10vh;
   }
 
   .hero__title {
     width: 100%;
+    align-items: center;
   }
 
   .title-group {
     width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-group {
+    align-items: center;
   }
 
   .gajshield {
-    font-size: calc(2.8rem + 1.5vw);
+    font-size: calc(3.5rem + 1.5vw);
     letter-spacing: 2px;
+    text-align: center;
   }
 
   .kjsse {
-    font-size: calc(2.5rem + 1.5vw);
+    font-size: calc(3rem + 1.5vw);
     letter-spacing: 2px;
+    text-align: center;
+    margin-top: -0.3rem;
   }
 
   .eight {
-    font-size: calc(4.5rem + 1.5vw);
-    margin-left: -0.5rem;
+    font-size: calc(6rem + 1.5vw);
+    margin: 0;
+    margin-top: -0.5rem;
   }
 
   .hero__background--horse {
-    background-size: 70% auto;
-    background-position: center bottom;
-    bottom: 0;
+    background-size: 35% auto;
+    background-position: 80% 75%;
   }
 
   .hero__background--terrain,
@@ -206,7 +220,7 @@
 @media (min-width: 700px) and (max-width: 800px) {
   .hero__content {
     padding: 2rem;
-    padding-top: 2.5rem;
+    padding-top: 8vh;
   }
 
   .gajshield {
@@ -226,19 +240,19 @@
   }
 
   .hero__background--horse {
-    background-size: 80% auto;
-    background-position: center bottom;
+    background-size: 45% auto;
+    background-position: center 80%;
   }
 }
 
 /* Portrait Tablet Height Adjustment */
 @media (min-height: 800px) and (max-height: 900px) {
   .hero__content {
-    padding-top: 3rem;
+    padding-top: 8vh;
   }
 
   .hero__background--horse {
-    background-size: 75% auto;
+    background-size: 40% auto;
   }
 }
 
@@ -252,54 +266,30 @@
 
   .hero__content {
     padding: 1rem;
-    padding-top: 1.5rem;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    position: relative;
-    z-index: 10;
+    padding-top: 8vh;
   }
 
   .title-group {
     flex-direction: column;
-    align-items: center;
     gap: 0;
-    width: 100%;
-    text-align: center;
-    transform: scale(0.9);
-  }
-
-  .text-group {
-    align-items: center;
-    width: 100%;
   }
 
   .gajshield {
-    font-size: calc(1.6rem + 1.5vw);
-    letter-spacing: 1px;
-    -webkit-text-stroke: 1px #fff;
-    text-align: center;
-    width: 100%;
-    line-height: 1;
+    font-size: calc(3rem + 1.5vw);
+    -webkit-text-stroke: 1.5px #fff;
   }
 
   .kjsse {
-    font-size: calc(1.4rem + 1.5vw);
-    letter-spacing: 1px;
-    -webkit-text-stroke: 1px #fff;
-    margin-top: -0.1rem;
-    text-align: center;
-    width: 100%;
-    line-height: 1;
+    font-size: calc(2.8rem + 1.5vw);
+    -webkit-text-stroke: 1.5px #fff;
+    margin-top: -0.2rem;
   }
 
   .eight {
-    font-size: calc(2.8rem + 1.5vw);
+    font-size: calc(5.5rem + 1.5vw);
     margin: 0;
-    -webkit-text-stroke: 1px #000;
-    text-align: center;
-    width: 100%;
-    line-height: 0.9;
+    margin-top: 0.5rem;
+    -webkit-text-stroke: 1.5px #000;
   }
 
   .hero__background--horse {
@@ -308,8 +298,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: 120% auto;
-    background-position: center bottom;
+    background-size: 65% auto;
+    background-position: center 85%;
     opacity: 1;
     z-index: 5;
   }
@@ -335,72 +325,83 @@
 @media (max-width: 480px) {
   .hero__content {
     padding: 1rem;
-    padding-top: 1.5rem;
+    padding-top: 6vh;
   }
 
   .gajshield {
-    font-size: calc(1.4rem + 1.5vw);
+    font-size: calc(2.6rem + 1.5vw);
   }
 
   .kjsse {
-    font-size: calc(1.2rem + 1.5vw);
+    font-size: calc(2.4rem + 1.5vw);
   }
 
   .eight {
-    font-size: calc(2.5rem + 1.5vw);
+    font-size: calc(4.8rem + 1.5vw);
+    margin-top: 0.3rem;
   }
 
   .hero__background--horse {
-    background-size: 140% auto;
-    bottom: 0;
+    background-size: 75% auto;
+    background-position: center 85%;
   }
 }
 
 /* Extra Small Mobile Styles */
 @media (max-width: 360px) {
   .hero__content {
-    padding-top: 1rem;
+    padding: 1rem;
+    padding-top: 5vh;
   }
 
   .gajshield {
-    font-size: calc(1.2rem + 1.5vw);
-  }
-
-  .kjsse {
-    font-size: calc(1rem + 1.5vw);
-  }
-
-  .eight {
     font-size: calc(2.2rem + 1.5vw);
   }
 
+  .kjsse {
+    font-size: calc(2rem + 1.5vw);
+  }
+
+  .eight {
+    font-size: calc(4.2rem + 1.5vw);
+    margin-top: 0.2rem;
+  }
+
   .hero__background--horse {
-    background-size: 160% auto;
-    bottom: 0;
+    background-size: 85% auto;
+    background-position: center 85%;
   }
 }
 
 /* Landscape Mode */
 @media (max-height: 480px) and (orientation: landscape) {
   .hero__content {
-    padding-top: 1rem;
+    padding: 1rem;
+    padding-top: 8vh;
+  }
+
+  .title-group {
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .gajshield {
-    font-size: calc(1.2rem + 2vh);
-  }
-
-  .kjsse {
-    font-size: calc(1rem + 2vh);
-  }
-
-  .eight {
     font-size: calc(2rem + 2vh);
   }
 
+  .kjsse {
+    font-size: calc(1.8rem + 2vh);
+  }
+
+  .eight {
+    font-size: calc(3.5rem + 2vh);
+    margin-left: 0;
+    margin-top: 0;
+  }
+
   .hero__background--horse {
-    background-size: 80% auto;
-    background-position: center 60%;
+    background-size: 45% auto;
+    background-position: 75% 75%;
   }
 
   .hero__background--terrain,
