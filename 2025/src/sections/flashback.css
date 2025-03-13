@@ -47,22 +47,18 @@
     height: 35rem;
 }
 
-@media (max-width: 1000px) {
-    /* Keeping empty as in original */
-}
-
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .AboutUsLeftStreak, .AboutUsRightStreak {
         display: none;
     }
 }
 
 .AboutUsLeftStreak {
-    left: 2rem;
+    left: 6rem;
 }
 
 .AboutUsRightStreak {
-    right: 2rem;
+    right: 6rem;
 }
 
 .iframe-container {

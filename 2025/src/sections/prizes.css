@@ -102,14 +102,18 @@
     position: absolute;
     margin-top: 5rem;
     height: 35rem;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .PrizesLeftStreak {
-    left: 2rem;
+    left: 6rem;
 }
 
 .PrizesRightStreak {
-    right: 2rem;
+    right: 6rem;
 }
 
 @media (max-width: 768px) {
