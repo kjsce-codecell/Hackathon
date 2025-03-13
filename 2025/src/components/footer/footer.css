@@ -9,7 +9,7 @@ footer {
   overflow: hidden;
 }
 
-/* Stars background - will be visible beneath all content */
+
 footer::before {
   content: "";
   position: absolute;
@@ -24,8 +24,6 @@ footer::before {
   background-size: cover;
   z-index: 0;
 }
-
-/* Outlaws banner - sits at the top */
 .outlaws {
   position: relative;
   z-index: 1;
@@ -40,7 +38,6 @@ footer::before {
   display: block;
 }
 
-/* Main content container */
 .everything {
   position: relative;
   z-index: 1;
@@ -50,14 +47,33 @@ footer::before {
   padding: 0 40px 30px;
 }
 
-/* ESRB Rating */
+.G {
+  display: none;
+  flex: 0 0 auto;
+  width: 100px;
+  margin-top: 10px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
 .M {
   flex: 0 0 auto;
   width: 100px;
   margin-top: 120px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .M img {
+  width: 100%;
+  height: auto;
+}
+
+.G img {
   width: 100%;
   height: auto;
 }

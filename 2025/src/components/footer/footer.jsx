@@ -34,6 +34,9 @@ const Footer = () => {
           </div>
           <p>Copyright © 2025 KJSCE CodeCell </p>
         </div>
+        <div className="G">
+          <img src="./FOOTER/MATURE_17.svg" alt="MATURE" />
+        </div>
         <div className="cclogo"> 
           <img src="./FOOTER/Logo.svg" alt="cclogo" />
         </div>
