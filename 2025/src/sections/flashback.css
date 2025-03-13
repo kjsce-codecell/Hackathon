@@ -39,7 +39,7 @@
     justify-content: center;
     margin-top: 4.5rem;
     margin-top: 3rem;
-    padding: 0 8rem;
+    padding: 0 6rem;
 }
 
 .AboutUsLeftStreak, .AboutUsRightStreak {
@@ -67,12 +67,24 @@
     width: 80%; 
     max-width: 900px; 
     aspect-ratio: 16 / 9; 
-    margin: 0 auto;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .iframe-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: calc(100% - 2rem); 
+    height: calc(100% - 2rem);
     border: none;
+}
+
+.iframe-border {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    pointer-events: none;
 }
