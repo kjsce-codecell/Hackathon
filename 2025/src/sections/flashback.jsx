@@ -25,14 +25,14 @@ const FlashBack = () => {
           allowFullScreen
         ></iframe>
 
-        <div className="iframe-container">
+        {/* <div className="iframe-container">
           <iframe
             src="https://www.youtube.com/embed/MsIwzZziLfs"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
 
       </div>
     </section>
