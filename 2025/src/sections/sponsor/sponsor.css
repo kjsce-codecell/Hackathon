@@ -10,7 +10,7 @@
   box-sizing: border-box;
   background: 
   /* Top shadow */
-  linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 30%) top,
+  linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%) top,
   /* Bottom shadow */
   linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 25%) bottom,
   /* Left shadow */

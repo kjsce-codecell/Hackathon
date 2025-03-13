@@ -7,6 +7,8 @@
   flex-direction: column;
   color: #fff;
   overflow: hidden;
+  perspective: 1000px;
+  backface-visibility: hidden;
 }
 
 .hero__backgrounds {
@@ -15,6 +17,8 @@
   left: 0;
   width: 100%;
   height: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .hero__background {
@@ -26,6 +30,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
+  will-change: transform;
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backface-visibility: hidden;
 }
 
 .hero__background--base {
@@ -47,7 +54,8 @@
   transform-origin: bottom;
   pointer-events: none;
   filter: brightness(0.7) contrast(1.2);
-  animation: float 12s infinite alternate ease-in-out;
+  animation: groundFloat 8s infinite alternate-reverse cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  will-change: transform, filter;
 }
 
 .hero__background--horse {
@@ -55,7 +63,8 @@
   z-index: 5;
   background-size: 25% auto;
   background-position: 85% 65%;
-  animation: float 8s infinite alternate ease-in-out;
+  opacity: 1;
+  animation: horseSway 8s infinite ease-in-out;
 }
 
 .hero__background--sky {
@@ -78,6 +87,8 @@
   bottom: 0;
   z-index: 5;
   mix-blend-mode: multiply;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  transition: opacity 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .hero__content {
@@ -94,6 +105,8 @@
   margin: 0 auto;
   width: 100%;
   padding-top: 0;
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
 }
 
 .hero__title {
@@ -101,7 +114,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2rem;
-  animation: titleFloat 7s infinite alternate ease-in-out;
+  animation: titleFloat 8s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .title-group {
@@ -129,7 +142,7 @@
 
 .kjsse {
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-top: -0.5rem;
@@ -137,6 +150,7 @@
   -webkit-text-stroke: 2px #fff;
   line-height: 0.9;
 }
+
 
 .eight {
   font-size: 11rem;
@@ -419,15 +433,67 @@
 
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: translateY(-10px) rotate(0.5deg) scale(1.01);
   }
 
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-15px) rotate(-0.2deg) scale(1.02);
+  }
+
+  75% {
+    transform: translateY(-8px) rotate(0.3deg) scale(1.01);
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes groundFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: brightness(0.7) contrast(1.2);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.01);
+    filter: brightness(0.75) contrast(1.25);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(0.7) contrast(1.2);
+  }
+}
+
+@keyframes horseGallop {
+  0% {
+    transform: translate(0, 0);
+    background-position: 85% 65%;
+  }
+
+  25% {
+    transform: translate(0, -8px);
+    background-position: 85.1% 64.9%;
+  }
+
+  50% {
+    transform: translate(0, -12px);
+    background-position: 85% 65.1%;
+  }
+
+  75% {
+    transform: translate(0, -8px);
+    background-position: 84.9% 64.9%;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    background-position: 85% 65%;
   }
 }
 
@@ -458,13 +524,196 @@
 @keyframes titleFloat {
   0% {
     transform: translateY(0) scale(1);
+    letter-spacing: 0;
   }
 
   50% {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-8px) scale(1.01);
+    letter-spacing: 0.5px;
   }
 
   100% {
     transform: translateY(0) scale(1);
+    letter-spacing: 0;
+  }
+}
+
+/* Custom Text Animations */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(40px) scale(0.98);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-40px) scale(0.98);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-40px) scale(0.98);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(40px) scale(0.98);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  opacity: 0;
+  animation: slideInLeft 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-slide-in-delay-1 {
+  opacity: 0;
+  animation: slideInRight 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.3s;
+  will-change: transform, opacity;
+}
+
+.animate-slide-in-delay-2 {
+  opacity: 0;
+  animation: slideInUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.6s;
+  will-change: transform, opacity;
+}
+
+/* AOS Animation Overrides */
+[data-aos] {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+[data-aos="slide-up"] {
+  transform: translateY(60px) scale(0.98);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &.aos-animate {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+[data-aos="slide-down"] {
+  transform: translateY(-60px) scale(0.98);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &.aos-animate {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+[data-aos="slide-left"] {
+  transform: translateX(60px) scale(0.98);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &.aos-animate {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+[data-aos="slide-right"] {
+  transform: translateX(-60px) scale(0.98);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &.aos-animate {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ensure smooth transitions for transform properties */
+.hero__background {
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.hero__content {
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+/* Ensure AOS animations don't conflict with existing animations */
+.hero__background--ground[data-aos],
+.hero__background--horse[data-aos] {
+  animation: none;
+}
+
+.hero__background--ground[data-aos].aos-animate {
+  animation: groundFloat 8s infinite alternate-reverse cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.hero__background--horse[data-aos].aos-animate {
+  animation: horseGallop 12s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.hero__title[data-aos].aos-animate {
+  animation: titleFloat 8s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
+.hero__overlay {
+  transition: opacity 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes horseSway {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(5px, -3px) scale(1.005);
+  }
+
+  50% {
+    transform: translate(0, -5px) scale(1.01);
+  }
+
+  75% {
+    transform: translate(-5px, -3px) scale(1.005);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
