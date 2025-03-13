@@ -54,6 +54,8 @@
   transform-origin: bottom;
   pointer-events: none;
   filter: brightness(0.7) contrast(1.2);
+  animation: groundFloat 8s infinite alternate-reverse cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  will-change: transform, filter;
 }
 
 .hero__background--horse {
@@ -61,7 +63,8 @@
   z-index: 5;
   background-size: 25% auto;
   background-position: 85% 65%;
-  animation: float 12s infinite alternate ease-in-out;
+  opacity: 1;
+  animation: horseSway 8s infinite ease-in-out;
 }
 
 .hero__background--sky {
@@ -74,8 +77,6 @@
   object-position: top;
   pointer-events: none;
   filter: brightness(0.9) contrast(1.1);
-  will-change: transform;
-  transition: transform 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .hero__overlay {
@@ -141,7 +142,7 @@
 
 .kjsse {
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-top: -0.5rem;
@@ -432,15 +433,67 @@
 
 @keyframes float {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: translateY(-10px) rotate(0.5deg) scale(1.01);
   }
 
   50% {
-    transform: translateY(-15px) rotate(0.5deg);
+    transform: translateY(-15px) rotate(-0.2deg) scale(1.02);
+  }
+
+  75% {
+    transform: translateY(-8px) rotate(0.3deg) scale(1.01);
   }
 
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes groundFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: brightness(0.7) contrast(1.2);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.01);
+    filter: brightness(0.75) contrast(1.25);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(0.7) contrast(1.2);
+  }
+}
+
+@keyframes horseGallop {
+  0% {
+    transform: translate(0, 0);
+    background-position: 85% 65%;
+  }
+
+  25% {
+    transform: translate(0, -8px);
+    background-position: 85.1% 64.9%;
+  }
+
+  50% {
+    transform: translate(0, -12px);
+    background-position: 85% 65.1%;
+  }
+
+  75% {
+    transform: translate(0, -8px);
+    background-position: 84.9% 64.9%;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    background-position: 85% 65%;
   }
 }
 
@@ -626,19 +679,41 @@
   animation: none;
 }
 
-.hero__background--ground[data-aos].aos-animate,
+.hero__background--ground[data-aos].aos-animate {
+  animation: groundFloat 8s infinite alternate-reverse cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
 .hero__background--horse[data-aos].aos-animate {
-  animation: float 12s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation: horseGallop 12s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .hero__title[data-aos].aos-animate {
   animation: titleFloat 8s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-.hero__background--sky {
-  transition: transform 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
 
 .hero__overlay {
   transition: opacity 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes horseSway {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(5px, -3px) scale(1.005);
+  }
+
+  50% {
+    transform: translate(0, -5px) scale(1.01);
+  }
+
+  75% {
+    transform: translate(-5px, -3px) scale(1.005);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }

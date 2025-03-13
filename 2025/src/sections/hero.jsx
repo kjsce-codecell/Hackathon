@@ -14,13 +14,15 @@ const Hero = () => {
       duration: 1500,
       once: true,
       mirror: false,
-      easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      easing: "ease-out",
       anchorPlacement: "top-bottom",
       disable: "mobile"
     });
 
     // Set loaded state after a small delay to ensure smooth animation
-    setTimeout(() => setIsLoaded(true), 300);
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 300);
   }, []);
 
   const handleMouseMove = useCallback((e) => {
@@ -72,8 +74,6 @@ const Hero = () => {
           src="/images/hero/sky.png"
           alt="Sky"
           className="hero__background hero__background--sky"
-          data-aos="slide-down"
-          data-aos-duration="2000"
           style={{
             transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px)`
           }}
@@ -83,7 +83,8 @@ const Hero = () => {
           alt="Ground"
           className="hero__background hero__background--ground"
           style={{
-            transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1 + scrollPosition * 0.5}px)`
+            transform: `translate(${mousePosition.x * 0.08}px, ${mousePosition.y * 0.08 + scrollPosition * 0.4}px)`,
+            transformOrigin: 'bottom center'
           }}
           data-aos="slide-up"
           data-aos-duration="2000"
@@ -91,11 +92,9 @@ const Hero = () => {
         <div
           className="hero__background hero__background--horse"
           style={{
-            transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2 + scrollPosition * 0.4}px)`
+            transform: `translate(${mousePosition.x * 0.08}px, ${mousePosition.y * 0.08 + scrollPosition * 0.2}px)`,
+            transformOrigin: 'center center'
           }}
-          data-aos="slide-left"
-          data-aos-delay="400"
-          data-aos-duration="2000"
         ></div>
       </div>
       <div
