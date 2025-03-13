@@ -22,22 +22,49 @@
     justify-content: center;
     align-items: start;
     margin-top: 3rem;
+    transform: translateX(0.5rem);
+    font-size: 4rem;
 }
 
 .prizes-header h1 {
-    font-size: 6rem;
     margin: 0;
     padding: 0;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 4px;
+}
 
-    @media (max-width: 1000px) {
-        font-size: 4rem;
-    }
-
-    @media (max-width: 700px) {
+@media (max-width: 1120px) {
+    .prizes-header {
         font-size: 3rem;
+    }
+}
+
+@media (max-width: 1005px) {
+    .prizes-header {
+        margin-top: 4rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 905px) {
+    .prizes-header {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .prizes-header {
+        margin-top: 4.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 805px) {
+    .prizes-header {
+        margin-top: 4.7rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -125,10 +152,6 @@
         grid-template-columns: 1fr;
     }
     
-    .prizes-header {
-        font-size: 36px;
-    }
-
     .PrizesLeftStreak, .PrizesRightStreak {
         position: absolute;
         height: 100vh;

@@ -14,23 +14,40 @@
     align-items: start;
     margin-top: 3rem;
     font-size: 4rem;
+    transform: translateX(0.5rem);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1120px) {
     .flashback-header {
         font-size: 3rem;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1005px) {
     .flashback-header {
+        margin-top: 4rem;
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 905px) {
+    .flashback-header {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
     }
 }
 
 @media (max-width: 865px) {
     .flashback-header {
-        font-size: 2.4rem;
+        margin-top: 4.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 805px) {
+    .flashback-header {
+        margin-top: 4.7rem;
+        font-size: 1.2rem;
     }
 }
 
