@@ -1,0 +1,46 @@
+.hero__nav {
+  position: relative;
+  z-index: 6;
+  padding: 2rem;
+  animation: fadeFloat 6s infinite alternate ease-in-out;
+}
+
+.hero__nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.hero__nav a:hover {
+  color: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .hero__nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@keyframes fadeFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
