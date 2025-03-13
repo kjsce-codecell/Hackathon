@@ -5,7 +5,6 @@ import About from "./sections/about"
 import FlashBack from "./sections/flashback"
 import Prizes from "./sections/prizes"
 import Sponsor from "./sections/sponsor/sponsor"
-import Prizes from "./sections/prizes.jsx"
 
 function App() {
   return (
