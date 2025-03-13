@@ -1,0 +1,231 @@
+/* footer.css */
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+  overflow: hidden;
+}
+
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  background-image: url('./FOOTER/star.svg');
+  background-color: #000;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+.outlaws {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+.outlaws img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.everything {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 40px 30px;
+}
+
+.G {
+  display: none;
+  flex: 0 0 auto;
+  width: 100px;
+  margin-top: 10px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.M {
+  flex: 0 0 auto;
+  width: 100px;
+  margin-top: 120px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.M img {
+  width: 100%;
+  height: auto;
+}
+
+.G img {
+  width: 100%;
+  height: auto;
+}
+
+/* Center content column */
+.logo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* OUT NOW text */
+.out-now {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 0 8px;
+  letter-spacing: 2px;
+}
+
+/* SAVE THE DATE text */
+.save-the-date {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 0 8px;
+  letter-spacing: 2px;
+}
+
+/* APRIL 12 | 13 text */
+.april-dates {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Follow/Subscribe text */
+.follow-text {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Rockstar mailing button */
+.rockstar-mailing {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 20px;
+  border: 1px solid #444;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.rockstar-mailing:hover {
+  background-color: #444;
+}
+
+/* Register Now button */
+.register-now {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 20px;
+  border: 1px solid #444;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.register-now:hover {
+  background-color: #444;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 15px 0;
+}
+
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Social icons coloring */
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Copyright text */
+.logo p {
+  margin-top: 15px;
+  font-size: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Rockstar logo */
+.cclogo {
+  flex: 0 0 auto;
+  width: 100px;
+  margin-top: 120px;
+  text-align: right;
+}
+
+.cclogo img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .everything {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 20px;
+  }
+  
+  .M, .cclogo {
+    margin: 10px 0;
+    width: 80px;
+  }
+  
+  .out-now {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .social-icons {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
