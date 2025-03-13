@@ -1,0 +1,53 @@
+.about {
+    color: #fff;
+    background-image: url('/assets/about-hack8.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 0 0 5rem 0;
+}
+
+
+.about-header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3rem;
+    font-size: 4rem;
+
+    @media (max-width: 1000px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 700px) {
+        font-size: 2rem;
+    }
+}
+
+.AboutUsLeftStreak, .AboutUsRightStreak {
+    position: absolute;
+    margin-top: 5rem;
+    height: 35rem;
+}
+
+.AboutUsLeftStreak {
+    left: 2rem;
+}
+
+.AboutUsRightStreak {
+    right: 2rem;
+}
+
+.about-content-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-wrap: wrap;
+    text-align: center;
+    max-width: 45%;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
