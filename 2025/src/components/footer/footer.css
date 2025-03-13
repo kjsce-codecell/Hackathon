@@ -1,4 +1,6 @@
-/* footer.css */
+:root {
+  --brown: #fff;  /* Using white since it's a dark theme */
+}
 
 footer {
   position: relative;
@@ -9,6 +11,38 @@ footer {
   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:not(.social-icons a) {
+  position: relative;
+}
+
+a:not(.social-icons a)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--brown);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+a:not(.social-icons a):hover::before,
+a:not(.social-icons a):focus::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 footer::before {
   content: "";
@@ -55,13 +89,14 @@ footer::before {
 
   @media screen and (max-width: 768px) {
     display: block;
+    width: 26%;
   }
 }
 
 .M {
   flex: 0 0 auto;
   width: 100px;
-  margin-top: 120px;
+  margin-top: 80px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -69,7 +104,7 @@ footer::before {
 }
 
 .M img {
-  width: 100%;
+  width: 175%;
   height: auto;
 }
 
@@ -100,7 +135,7 @@ footer::before {
 
 /* SAVE THE DATE text */
 .save-the-date {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
@@ -110,7 +145,7 @@ footer::before {
 
 /* APRIL 12 | 13 text */
 .april-dates {
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
   margin-bottom: 15px;
   letter-spacing: 1px;
@@ -142,7 +177,6 @@ footer::before {
   background-color: #444;
 }
 
-/* Register Now button */
 .register-now {
   background-color: #333;
   color: #fff;
@@ -175,24 +209,27 @@ footer::before {
 
 .social-icons a:hover {
   transform: scale(1.2);
+  text-decoration: none;
 }
 
-/* Social icons coloring */
 .social-icons img {
   width: 30px;
   height: 30px;
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
-/* Copyright text */
 .logo p {
   margin-top: 15px;
-  font-size: 12px;
+  font-size: 16px;
   color: white;
-  font-family: Arial, sans-serif;
+  font-size: 18px;
 }
 
-/* Rockstar logo */
+.logo p span {
+  color: #ff0000;
+  font-size: 18px;
+}
+
 .cclogo {
   flex: 0 0 auto;
   width: 100px;
@@ -206,26 +243,33 @@ footer::before {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
   .everything {
-    flex-direction: column;
     align-items: center;
     padding: 0 20px 20px;
-  }
-  
-  .M, .cclogo {
-    margin: 10px 0;
-    width: 80px;
-  }
-  
-  .out-now {
-    font-size: 24px;
-    margin-top: 10px;
   }
   
   .social-icons {
     gap: 15px;
     flex-wrap: wrap;
+  }
+
+  .outlaws {
+    width: 150%;
+    margin-left: -25%;
+  }
+
+  .cclogo {
+    margin-top: 20px;
+    order: 3;
+  }
+
+  .logo {
+    display: block;
+    order: 2;
+  }
+
+  .M {
+    order: 1;
   }
 }
