@@ -1,0 +1,454 @@
+.stats {
+    color: #fff;
+    /* padding: 0 0 5rem 0; */
+    background-image: url("/assets/statsbg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Main container */
+.stats-container {
+    background-size: cover;
+    /* min-height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Western", "Rye", serif;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Add a dark red overlay for the color tint */
+.stats-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    /* background-color: rgba(139, 0, 0, 0.3); */
+    z-index: 1;
+}
+
+/* Content positioning over the overlay */
+.stats-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Main title */
+.title-container {
+    /* margin-bottom: 40px; */
+    width: 80%;
+    text-align: center;
+    position: relative;
+}
+
+.title-container:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.title-container:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+.title {
+    font-size: 4rem;
+    letter-spacing: 6px;
+    margin: 20px 0;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+/* Stats grid layout for both desktop and mobile */
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* min-height: 800px; Add fixed height to maintain spacing */
+}
+
+/* Stat rows */
+.stat-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+.top-row {
+    margin-bottom: 0px; /* Distance from central badge */
+}
+
+.bottom-row {
+    margin-top: 0px; /* Distance from central badge */
+}
+
+/* Central badge with gun icon - INCREASED SIZE */
+.central-badge-container {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Increased from 200px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.central-badge {
+    width: 220px; /* Increased from 150px */
+    height: 220px; /* Increased from 150px */
+    z-index: 4;
+}
+
+/* Rotating Gears Styles - New */
+.rotating-gears {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grey Gear - Outermost */
+.grey-gear {
+    position: absolute;
+    width: 200px; /* Increased from 130px */
+    height: 200px; /* Increased from 130px */
+    background-image: url("/assets/grey-gear.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Red Circle Outer */
+.red-circle-outer {
+    position: absolute;
+    width: 180px; /* Increased from 120px */
+    height: 180px; /* Increased from 120px */
+    background-image: url("/assets/red-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Grey Circle */
+.grey-circle {
+    position: absolute;
+    width: 160px; /* Increased from 110px */
+    height: 160px; /* Increased from 110px */
+    background-image: url("/assets/grey-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Red Gear */
+.red-gear {
+    position: absolute;
+    width: 140px; /* Increased from 100px */
+    height: 140px; /* Increased from 100px */
+    background-image: url("/assets/red-gear.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Red Circle Inner */
+.red-circle-inner {
+    position: absolute;
+    width: 120px; /* Increased from 90px */
+    height: 120px; /* Increased from 90px */
+    background-image: url("/assets/red-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Gun Icon */
+.gun-icon {
+    width: 90px; /* Increased from 70px */
+    height: 90px; /* Increased from 70px */
+    background-image: url("/assets/gun.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* Rotation animations */
+.rotate-clockwise {
+    animation: rotateClockwise 8s linear infinite;
+}
+
+.rotate-counter-clockwise {
+    animation: rotateCounterClockwise 8s linear infinite;
+}
+
+@keyframes rotateClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounterClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Stats boxes */
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 40%;
+}
+
+/* Stats values */
+.stat-value {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff0000;
+    margin: 5px 0;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* Stats labels */
+.stat-label {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Icon placeholders */
+.icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px 10px;
+}
+
+.document-icon {
+    background-image: url(/public/assets/application.svg);
+}
+
+.college-icon {
+    background-image: url(/public/assets/college.svg);
+}
+
+.team-icon {
+    background-image: url(/public/assets/registrations.svg);
+}
+
+.hacker-icon {
+    background-image: url(/public/assets/hacker.svg);
+}
+
+/* Border decoration */
+.stats-container::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .title {
+        font-size: 6rem;
+        letter-spacing: 10px;
+    }
+
+    .stat-value {
+        font-size: 5rem;
+    }
+
+    .stat-label {
+        font-size: 2rem;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .central-badge {
+        width: 280px;
+        height: 280px;
+    }
+
+    .grey-gear {
+        width: 280px;
+        height: 280px;
+    }
+
+    .red-circle-outer {
+        width: 230px;
+        height: 230px;
+    }
+
+    .grey-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .red-gear {
+        width: 170px;
+        height: 170px;
+    }
+
+    .red-circle-inner {
+        width: 140px;
+        height: 140px;
+    }
+
+    .gun-icon {
+        width: 110px;
+        height: 110px;
+    }
+
+    .line-top-left,
+    .line-top-right,
+    .line-bottom-left,
+    .line-bottom-right {
+        width: 20%;
+    }
+}
+/* Replace the existing connector styles */
+.connector {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Keep original values for large screens */
+.top-left-connector {
+    top: 8%;
+    left: 32%;
+    width: 200px;
+    height: 200px;
+}
+
+.top-right-connector {
+    top: 8%;
+    right: 32%;
+    width: 200px;
+    height: 200px;
+}
+
+.bottom-left-connector {
+    bottom: 8%;
+    left: 32%;
+    width: 200px;
+    height: 200px;
+}
+
+.bottom-right-connector {
+    bottom: 8%;
+    right: 32%;
+    width: 200px;
+    height: 200px;
+}
+
+/* Medium screens */
+@media (max-width: 1024) {
+    .connector {
+        width: calc(1vw);
+        height: calc(1vw);
+    }
+
+    .top-left-connector,
+    .top-right-connector {
+        top: 20%;
+    }
+
+    .bottom-left-connector,
+    .bottom-right-connector {
+        bottom: 20%;
+    }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .connector {
+        width: calc(18vw + 60px);
+        height: calc(18vw);
+    }
+
+    .top-left-connector {
+        top: 15%;
+        left: 28%;
+    }
+
+    .top-right-connector {
+        top: 15%;
+        right: 28%;
+    }
+
+    .bottom-left-connector {
+        bottom: 15%;
+        left: 26%;
+    }
+
+    .bottom-right-connector {
+        bottom: 15%;
+        right: 26%;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+    .connector {
+        width: calc(12vw + 130px);
+        height: calc(15vw + 40px);
+    }
+
+    .top-left-connector {
+        left: 25%;
+    }
+
+    .top-right-connector {
+        right: 25%;
+    }
+
+    .bottom-left-connector {
+        left: 23%;
+    }
+
+    .bottom-right-connector {
+        right: 23%;
+    }
+}
