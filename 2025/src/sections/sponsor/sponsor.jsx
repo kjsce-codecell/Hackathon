@@ -6,12 +6,12 @@ export default function Sponsor() {
   
   return (
     <section className="sponsor" id="sponsor">
+      <img className="sponsor__left-streak" src="/assets/AboutUsLeftStreak.svg" />
+      <img className="sponsor__right-streak" src="/assets/AboutUsRightStreak.svg" />
       <div className="sponsor__outer-frame"></div>
       <div className="sponsor__content">
         <div className="sponsor__title-container">
-          <div className="sponsor__left-streak"></div>
           <h1 className="sponsor__title">SPONSOR</h1>
-          <div className="sponsor__right-streak"></div>
         </div>
         
         <div className="sponsor__container">
