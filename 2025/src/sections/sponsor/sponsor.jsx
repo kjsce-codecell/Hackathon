@@ -1,13 +1,58 @@
 import React, { useState } from "react";
 import "./sponsor.css";
+import currsponsors from "../../../public/sponsor/currsponsors";
+import prevsponsors from "../../../public/sponsor/prevsponsors";
 
 export default function Sponsor() {
   const [activeTab, setActiveTab] = useState("current");
   
+  const renderPrevSponsors = () => {
+    return (
+      <div className="sponsor__logos">
+        {prevsponsors.map((item, index) => (
+          <div className="sponsor__logo-item" key={index}>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <img 
+                src={item.img} 
+                alt="Sponsor Logo" 
+                className="sponsor__logo-placeholder"
+              />
+            </a>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  const renderCurrSponsors = () => {
+    return (
+      <>
+        {currsponsors.map((category, index) => (
+          <div key={index} className="sponsor__category">
+            <h3 className="sponsor__category-title">{category.title}</h3>
+            <div className="sponsor__logos">
+              {category.sponsors.map((sponsor, idx) => (
+                <div className="sponsor__logo-item" key={idx}>
+                  <a href={sponsor.src} target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={sponsor.img} 
+                      alt="Sponsor Logo" 
+                      className="sponsor__logo-placeholder"
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  };
+  
   return (
     <section className="sponsor" id="sponsor">
-      <img className="sponsor__left-streak" src="/assets/AboutUsLeftStreak.svg" />
-      <img className="sponsor__right-streak" src="/assets/AboutUsRightStreak.svg" />
+      <img className="sponsor__left-streak" src="/assets/AboutUsLeftStreak.svg" alt="Left streak" />
+      <img className="sponsor__right-streak" src="/assets/AboutUsRightStreak.svg" alt="Right streak" />
       <div className="sponsor__outer-frame"></div>
       <div className="sponsor__content">
         <div className="sponsor__title-container">
@@ -41,28 +86,7 @@ export default function Sponsor() {
                 {activeTab === "current" ? "Our Current Sponsors" : "Our Previous Sponsors"}
               </h2>
               
-              <p className="sponsor__frame-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
-              </p>
-              
-              <div className="sponsor__logos">
-                <div className="sponsor__logo-item">
-                  <div className="sponsor__logo-placeholder">LOGO 1</div>
-                  <p className="sponsor__p">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div className="sponsor__logo-item">
-                  <div className="sponsor__logo-placeholder">LOGO 2</div>
-                  <p className="sponsor__p">Consectetur adipiscing elit</p>
-                </div>
-                <div className="sponsor__logo-item">
-                  <div className="sponsor__logo-placeholder">LOGO 3</div>
-                  <p className="sponsor__p">Nullam in dui mauris</p>
-                </div>
-              </div>
-              
-              <p className="sponsor__frame-text">
-                Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-              </p>
+              {activeTab === "current" ? renderCurrSponsors() : renderPrevSponsors()}
             </div>
           </div>
         </div>
