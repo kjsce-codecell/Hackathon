@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <footer>
       <div className="outlaws">
-        <img src="./FOOTER/outlaws.svg" alt="Outlaws For Life" />
+        <div className="outlaws-image">
+          <img src=".\FOOTER\no_outlaw-cropped.svg" alt="text" />
+          <h1>Code The Journey</h1>
+        </div>
       </div>
       <div className="everything">
         <div className="M">
@@ -28,11 +31,11 @@ const Footer = () => {
             <a href="https://www.youtube.com/kjscecodecell" target="_blank" rel="noopener noreferrer">
               <img src="./FOOTER/youtube.svg" alt="YouTube" style={{ width: '30px', height: '30px' }} />
             </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/kjscecodecell/" target="_blank" rel="noopener noreferrer">
               <img src="./FOOTER/linkedin.svg" alt="LinkedIn" style={{ width: '30px', height: '30px' }} />
             </a>
           </div>
-          <p>Copyright © 2025 KJSCE CodeCell </p>
+          <p>Made with <span>🤍;</span> by <a href="https://www.kjssecodecell.com/" target="_blank" rel="noopener noreferrer">KJSCE CodeCell</a> </p>
         </div>
         <div className="G">
           <img src="./FOOTER/MATURE_17.svg" alt="MATURE" />
