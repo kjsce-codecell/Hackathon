@@ -66,7 +66,7 @@
 
 .sponsor__left-streak, .sponsor__right-streak {
   position: absolute;
-  margin-top: 5rem;
+  margin-top: 8rem;
   height: 35rem;
 
   @media (max-width: 768px) {
@@ -91,47 +91,58 @@
   
 .sponsor__title {
   font-family: "Chinese Rocks", sans-serif;
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
   color: #ffffff;
   text-align: center;
-  margin: 0 6rem;
+  margin-top: 3rem;
 }
 
 @media (max-width: 1120px) {
-  margin-top: 4rem;
+  .sponsor__title-container {
+    margin-top: 4rem;
+  }
+  
   .sponsor__title {
-      font-size: 3rem;
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 1005px) {
   .sponsor__title {
-      margin-top: 4rem;
-      font-size: 2rem;
+    font-size: 2.5rem;
+    margin-top: 5rem;
+  }
+  
+  .sponsor__title-container {
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 905px) {
   .sponsor__title {
-      /* margin-top: 4.5rem; */
-      font-size: 1.7rem;
+    font-size: 2rem;
+    margin-top: 5.5rem;
   }
 }
 
 @media (max-width: 865px) {
   .sponsor__title {
-      /* margin-top: 4.5rem; */
-      font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-top: 5.6rem;
   }
 }
 
 @media (max-width: 805px) {
+  .sponsor__title-container {
+    margin-top: 2.8rem;
+  }
+  
   .sponsor__title {
-      /* margin-top: 4.7rem; */
-      font-size: 1rem;
+    font-size: 1.4rem;
+    margin-top: 5rem;
   }
 }
   
