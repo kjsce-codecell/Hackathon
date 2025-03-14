@@ -206,6 +206,32 @@ html {
   }
 }
 
+/* Added new media query specifically for 775px-900px range */
+@media (min-width: 769px) and (max-width: 900px) {
+  .nav-links {
+    gap: 0.6rem;
+  }
+
+  .hero__nav a {
+    font-size: 0.78rem;
+    padding: 3px 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo {
+    margin-right: 0.8rem;
+  }
+
+  .nav-logo img {
+    width: 85px;
+  }
+  
+  .hero__nav li::before {
+    width: 125%;
+    left: -12.5%;
+  }
+}
+
 @media (min-width: 849px) and (max-width: 991px) {
   .nav-links {
     gap: 0.7rem;
