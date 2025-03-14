@@ -8,6 +8,7 @@
   justify-content: flex-start;
   padding: 2rem;
   box-sizing: border-box;
+  min-height: 100vh;
   background: 
   /* Top shadow */
   linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%) top,
@@ -96,7 +97,42 @@
   letter-spacing: 4px;
   color: #ffffff;
   text-align: center;
-  margin: 0 2rem;
+  margin: 0 6rem;
+}
+
+@media (max-width: 1120px) {
+  margin-top: 4rem;
+  .sponsor__title {
+      font-size: 3rem;
+  }
+}
+
+@media (max-width: 1005px) {
+  .sponsor__title {
+      margin-top: 4rem;
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 905px) {
+  .sponsor__title {
+      /* margin-top: 4.5rem; */
+      font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 865px) {
+  .sponsor__title {
+      /* margin-top: 4.5rem; */
+      font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 805px) {
+  .sponsor__title {
+      /* margin-top: 4.7rem; */
+      font-size: 1rem;
+  }
 }
   
 .sponsor__container {
@@ -297,18 +333,10 @@
 }
 
 @media (max-width: 768px) {
-  .sponsor__title {
-    font-size: 2.5rem;
-  }
-  
   .sponsor__title-line {
     max-width: 60px;
   }
-  
-  .sponsor__title {
-    margin: 0 1rem;
-  }
-  
+
   .sponsor__outer-frame {
     top: 1rem;
     left: 1rem;
@@ -355,10 +383,6 @@
     padding: 1.5rem;
   }
   
-  .sponsor__title {
-    font-size: 3.5rem;
-  }
-  
   .sponsor__logos {
     justify-content: center;
     gap: 20px;
@@ -373,11 +397,6 @@
   .sponsor {
     padding: 1rem;
     overflow-x: hidden;
-  }
-  
-  .sponsor__title {
-    font-size: 2.5rem;
-    margin: 0 1rem;
   }
   
   .sponsor__title-container {
@@ -446,11 +465,7 @@
   .sponsor {
     padding: 0.8rem;
   }
-  
-  .sponsor__title {
-    font-size: 2rem;
-  }
-  
+
   .sponsor__title-container {
     margin: 1rem 0 2rem;
   }

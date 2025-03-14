@@ -1,11 +1,20 @@
 .about {
     color: #fff;
-    background-image: url('/assets/about-hack8.svg');
+    background: 
+    /* Top shadow */
+    linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%) top,
+    /* Bottom shadow */
+    linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 25%) bottom,
+    /* Left shadow */
+    linear-gradient(to right, #000000 0%, rgba(0,0,0,0) 0%) left,
+    /* Right shadow */
+    linear-gradient(to left, #000000 0%, rgba(0,0,0,0) 0%) right, url('/assets/about-hack8.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     padding: 0 0 5rem 0;
+    min-height: 100vh;
 }
 
 
@@ -66,7 +75,7 @@
 @media (max-width: 805px) {
     .flashback-header {
         margin-top: 4.7rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 
