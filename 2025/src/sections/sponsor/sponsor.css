@@ -101,48 +101,40 @@
 }
 
 @media (max-width: 1120px) {
-  .sponsor__title-container {
-    margin-top: 4rem;
-  }
   
   .sponsor__title {
     font-size: 3rem;
+    margin-top: 5rem;
   }
 }
 
 @media (max-width: 1005px) {
   .sponsor__title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-top: 5rem;
   }
-  
-  .sponsor__title-container {
-    margin-top: 2rem;
-  }
+
 }
 
 @media (max-width: 905px) {
   .sponsor__title {
-    font-size: 2rem;
-    margin-top: 5.5rem;
+    font-size: 2.2rem;
+    margin-top: 5rem;
   }
 }
 
 @media (max-width: 865px) {
   .sponsor__title {
-    font-size: 1.5rem;
-    margin-top: 5.6rem;
+    font-size: 2rem;
+    margin-top: 5.4rem;
   }
 }
 
 @media (max-width: 805px) {
-  .sponsor__title-container {
-    margin-top: 2.8rem;
-  }
   
   .sponsor__title {
-    font-size: 1.4rem;
-    margin-top: 5rem;
+    font-size: 1rem;
+    margin-top: 6rem;
   }
 }
   
