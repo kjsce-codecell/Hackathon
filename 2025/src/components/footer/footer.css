@@ -72,6 +72,45 @@ footer::before {
   display: block;
 }
 
+.outlaws-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outlaws-image h1 {
+  position: absolute;
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .outlaws-image h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .outlaws-image h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .outlaws-image h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .outlaws-image h1 {
+    font-size: 2.5rem;
+  }
+}
+
 .everything {
   position: relative;
   z-index: 1;
@@ -223,6 +262,7 @@ footer::before {
   font-size: 16px;
   color: white;
   font-size: 18px;
+  transform: translateY(-0.5rem);
 }
 
 .logo p span {
@@ -247,6 +287,7 @@ footer::before {
   .everything {
     align-items: center;
     padding: 0 20px 20px;
+    flex-direction: row; /* Maintain row direction */
   }
   
   .social-icons {
@@ -262,14 +303,16 @@ footer::before {
   .cclogo {
     margin-top: 20px;
     order: 3;
+    display: none;
   }
 
+  .G {
+    display: none;
+  }
   .logo {
-    display: block;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
     order: 2;
-  }
-
-  .M {
-    order: 1;
   }
 }

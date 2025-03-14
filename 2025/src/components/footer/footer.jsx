@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <footer>
       <div className="outlaws">
-        <img src="./FOOTER/outlaws.svg" alt="Outlaws For Life" />
+        <div className="outlaws-image">
+          <img src=".\FOOTER\no_outlaw-cropped.svg" alt="text" />
+          <h1>Code The Journey</h1>
+        </div>
       </div>
       <div className="everything">
         <div className="M">
