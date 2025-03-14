@@ -1,0 +1,155 @@
+.about {
+    color: #fff;
+    background: 
+    /* Top shadow */
+    linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%) top,
+    /* Bottom shadow */
+    linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 25%) bottom,
+    /* Left shadow */
+    linear-gradient(to right, #000000 0%, rgba(0,0,0,0) 0%) left,
+    /* Right shadow */
+    linear-gradient(to left, #000000 0%, rgba(0,0,0,0) 0%) right, url('/assets/about-hack8.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 0 0 5rem 0;
+    min-height: 100vh;
+}
+
+
+.about-header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3rem;
+    font-size: 4rem;
+    transform: translateX(0.5rem);
+}
+
+.AboutUsLeftStreak, .AboutUsRightStreak {
+    position: absolute;
+    margin-top: 5rem;
+    height: 35rem;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.AboutUsLeftStreak {
+    left: 6rem;
+}
+
+.AboutUsRightStreak {
+    right: 6rem;
+}
+
+@media (max-width: 1120px) {
+    .about-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1005px) {
+    .about-header {
+        margin-top: 4rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 905px) {
+    .about-header {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .about-header {
+        margin-top: 4.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 805px) {
+    .about-header {
+        margin-top: 4.7rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-header {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
+    }
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    gap: 2rem;
+
+    @media (max-width: 985px) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+.about-content img {
+    width: 25rem;
+    height: 25rem;
+    /* margin-left: 5rem; */
+    padding: 2rem;
+    margin-right: 8rem;
+
+    @media (max-width: 985px) {
+        margin: 0;
+        padding: 0;
+        padding-top: 3rem;
+    }
+}
+
+.about-content-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-wrap: wrap;
+    text-align: center;
+    max-width: 55%;
+    margin-left: 8rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+
+    @media (max-width: 1005px) {
+        font-size: 1.7rem;
+    }
+
+    @media (max-width: 905px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 865px) {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 805px) {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 985px) {
+        max-width: 100%;
+        margin-left: 7rem;
+        margin-right: 7rem;
+    }
+
+    @media (max-width: 768px) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        font-size: 1.25rem;
+    }
+}

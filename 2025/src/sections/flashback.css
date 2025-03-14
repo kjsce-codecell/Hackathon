@@ -1,0 +1,120 @@
+.flashback {
+    color: #fff;
+    padding: 0 0 5rem 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    min-height: 70vh;
+    background: 
+    /* Top shadow */
+    linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%) top,
+    /* Bottom shadow */
+    linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 25%) bottom,
+    /* Left shadow */
+    linear-gradient(to right, #000000 0%, rgba(0,0,0,0) 0%) left,
+    /* Right shadow */
+    linear-gradient(to left, #000000 0%, rgba(0,0,0,0) 0%) right, url('/assets/flashback-bg.svg');
+}
+
+.flashback-header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3rem;
+    font-size: 4rem;
+    transform: translateX(0.6rem);
+}
+
+@media (max-width: 1120px) {
+    .flashback-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1005px) {
+    .flashback-header {
+        margin-top: 4rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 905px) {
+    .flashback-header {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .flashback-header {
+        margin-top: 4.5rem;
+        font-size: 1.32rem;
+    }
+}
+
+@media (max-width: 805px) {
+    .flashback-header {
+        margin-top: 4.7rem;
+        font-size: 0.92rem;
+    }
+}
+
+.flashback-video {
+    display: flex;
+    justify-content: center;
+    margin-top: 4.5rem;
+    margin-top: 3rem;
+    padding: 0 6rem;
+
+    @media (max-width: 768px) {
+        padding: 0;
+    }
+}
+
+.AboutUsLeftStreak, .AboutUsRightStreak {
+    position: absolute;
+    margin-top: 5rem;
+    height: 35rem;
+}
+
+@media (max-width: 768px) {
+    .AboutUsLeftStreak, .AboutUsRightStreak {
+        display: none;
+    }
+}
+
+.AboutUsLeftStreak {
+    left: 6rem;
+}
+
+.AboutUsRightStreak {
+    right: 6rem;
+}
+
+.iframe-container {
+    position: relative;
+    width: 80%; 
+    max-width: 900px; 
+    aspect-ratio: 16 / 9; 
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iframe-container iframe {
+    position: relative;
+    width: calc(100% - 2rem); 
+    height: calc(100% - 2rem);
+    border: none;
+}
+
+.iframe-border {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    pointer-events: none;
+}

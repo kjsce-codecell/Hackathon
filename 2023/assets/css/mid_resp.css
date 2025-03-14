@@ -1,0 +1,14 @@
+/* For Tablets */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 60%;
+  }
+  .main-content img {
+    width: 90%;
+  }
+  .about-text {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+  }
+}

@@ -1,0 +1,363 @@
+.prizes-section {
+    min-height: 100vh;
+    padding: 4rem 0;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+    background: 
+    /* Top shadow */
+    linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%) top,
+    /* Bottom shadow */
+    linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 25%) bottom,
+    /* Main background */
+    url('/assets/desktop_prizes.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.prizes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 8rem;
+}
+
+.prizes-header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3rem;
+    transform: translateX(0.5rem);
+    font-size: 4rem;
+}
+
+.prizes-header h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 1120px) {
+    .prizes-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1005px) {
+    .prizes-header {
+        margin-top: 4rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 905px) {
+    .prizes-header {
+        margin-top: 4.5rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .prizes-header {
+        margin-top: 4.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 805px) {
+    .prizes-header {
+        margin-top: 4.7rem;
+        font-size: 1rem;
+    }
+}
+
+.prizes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    margin-top: 60px;
+}
+
+.prize-card {
+    border: none;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+}
+
+.prize-frame-border {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.prize-frame-border--top {
+    top: -5px;
+    left: -20px;
+    right: -20px;
+    height: 20px;
+    background-image: url('/sponsor/top-hori.svg');
+    background-repeat: repeat-x;
+    background-position: center top;
+    z-index: 4;
+}
+
+.prize-frame-border--bottom {
+    bottom: -5px;
+    left: -20px;
+    right: -20px;
+    height: 17px;
+    background-image: url('/sponsor/top-hori.svg');
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    transform: rotate(180deg);
+    z-index: 4;
+}
+
+.prize-frame-border--left {
+    top: -15px;
+    left: 0;
+    bottom: -15px;
+    width: 9px;
+    background-image: url('/sponsor/sides-ver.svg');
+    background-repeat: repeat-y;
+    background-size: 100%;
+    background-position: left center;
+    z-index: 4;
+}
+
+.prize-frame-border--right {
+    top: -15px;
+    right: 0;
+    bottom: -15px;
+    width: 9px;
+    background-image: url('/sponsor/sides-ver.svg');
+    background-repeat: repeat-y;
+    background-size: 100%;
+    background-position: right center;
+    transform: scaleX(-1);
+    z-index: 4;
+}
+
+.prize-card:hover {
+    transform: none;
+}
+
+.prize-card:hover span {
+    animation: none;
+}
+
+.prize-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(77, 28, 28, 0.8) 0%, rgba(77, 28, 28, 0) 100%);
+    border: 1px solid #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+.prize-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.prize-position {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.prize-amount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.prize-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+}
+
+.prize-image {
+    width: 48px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+.prize-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.prize-details > div:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.prize-details > div:first-child:hover {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.prize-category {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    padding: 15px 30px;
+    border: 1px solid #333;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: none;
+}
+
+.scramble-text {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+    min-width: 260px;
+}
+
+.scramble-text:hover {
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.PrizesLeftStreak, .PrizesRightStreak {
+    position: absolute;
+    margin-top: 5rem;
+    height: 35rem;
+}
+
+.PrizesLeftStreak {
+    left: 6rem;
+}
+
+.PrizesRightStreak {
+    right: 6rem;
+}
+
+@media (max-width: 1200px) {
+    .prizes-container {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 1173px) {
+    .prizes-section {
+        min-height: auto;
+        height: auto;
+        padding: 3rem 0;
+        background-image: 
+            /* Top shadow */
+            linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%),
+            /* Bottom shadow */
+            linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 25%),
+            /* Main background */
+            url('/assets/mobile_prizes.png');
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .prizes-container {
+        padding: 0 2rem;
+        margin: 2rem auto;
+    }
+    
+    .prizes-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 30px 0;
+    }
+
+    .prize-card {
+        min-height: auto;
+        margin: 5px 0;
+        padding: 15px;
+    }
+
+    .prize-category {
+        font-size: 18px;
+        padding: 8px;
+        margin-bottom: 15px;
+        height: 50px;
+    }
+
+    .prize-position {
+        font-size: 14px;
+    }
+
+    .prize-amount {
+        font-size: 24px;
+    }
+
+    .prize-details {
+        gap: 20px;
+    }
+    
+    .prize-details > div {
+        padding: 10px;
+    }
+    
+    .PrizesLeftStreak, .PrizesRightStreak {
+        display: none;
+    }
+
+    .prize-image {
+        width: 32px;
+    }
+}
+
+/* Match the Stats header font sizes for different mobile breakpoints */
+@media (max-width: 1000px) {
+    .prizes-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .prizes-header {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .prizes-header {
+        font-size: 2rem;
+    }
+}
