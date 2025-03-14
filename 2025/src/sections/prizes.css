@@ -152,6 +152,7 @@
 
 .scramble-text {
     display: inline-block;
+    font-size: 3rem;
     font-weight: bold;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     cursor: pointer;
@@ -206,14 +207,75 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-.prize-image-placeholder {
-    height: 200px;
-    background-color: #111;
-    margin: 20px 0;
+.prize-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.prize-amount {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%; /* Added to ensure full width */
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.prize-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.prize-trophy {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.prize-amount:hover .prize-trophy {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.prize-amount:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.first-prize {
+    border: 2px solid #FFD700;
+}
+
+.runner-up {
+    border: 2px solid #C0C0C0;
+}
+
+.prize-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.prize-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.runner-up .prize-value {
+    color: #C0C0C0;
+}
+
+.prize-image-placeholder {
+    display: none;
 }
 
 .prize-position {
@@ -253,9 +315,7 @@
     }
 
     .PrizesLeftStreak, .PrizesRightStreak {
-
         display: none;
-
     }
 
     .prizes-container {
@@ -263,4 +323,17 @@
         z-index: 2;
     }
 
+    .prize-amount {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .prize-info {
+        align-items: center;
+    }
+
+    .prize-trophy {
+        width: 60px;
+    }
 }

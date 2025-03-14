@@ -67,20 +67,52 @@ const Prizes = () => {
                 <div className="prizes-grid">
                     <div className="prize-card">
                         <div className="prize-category">
-                            <TextScramble text="CYBERSECURITY" />
+                            <TextScramble text="GajShield Track" />
+                        </div>
+                        <div className="prize-details">
+                            <div className="prize-amount first-prize">
+                                <div className="prize-info">
+                                    <div className="prize-label">1st Prize</div>
+                                    <div className="prize-value">₹50,000</div>
+                                </div>
+                                <img src="/assets/1stprize.png" alt="1st Prize Trophy" className="prize-trophy" />
+                            </div>
+                            <div className="prize-amount runner-up">
+                                <div className="prize-info">
+                                    <div className="prize-label">Runner Up</div>
+                                    <div className="prize-value">₹30,000</div>
+                                </div>
+                                <img src="/assets/2ndprize.png" alt="2nd Prize Trophy" className="prize-trophy" />
+                            </div>
                         </div>
                         <div className="prize-image-placeholder">
 
                         </div>
-                        <div className="prize-position">Winner</div>
+                        <div className="prize-position"></div>
                     </div>
                     <div className="prize-card">
                         <div className="prize-category">
-                            <TextScramble text="CYBERSECURITY" />
+                            <TextScramble text="Mystery Track" />
+                        </div>
+                        <div className="prize-details">
+                            <div className="prize-amount first-prize">
+                                <div className="prize-info">
+                                    <div className="prize-label">1st Prize</div>
+                                    <div className="prize-value">₹50,000</div>
+                                </div>
+                                <img src="/assets/1stprize.png" alt="1st Prize Trophy" className="prize-trophy" />
+                            </div>
+                            <div className="prize-amount runner-up">
+                                <div className="prize-info">
+                                    <div className="prize-label">Runner Up</div>
+                                    <div className="prize-value">₹30,000</div>
+                                </div>
+                                <img src="/assets/2ndprize.png" alt="2nd Prize Trophy" className="prize-trophy" />
+                            </div>
                         </div>
                         <div className="prize-image-placeholder">
                         </div>
-                        <div className="prize-position">Runner-up</div>
+                        <div className="prize-position"></div>
                     </div>
                 </div>
             </div>
