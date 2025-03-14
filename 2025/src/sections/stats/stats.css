@@ -37,7 +37,7 @@
 }
 
 /* Content positioning over the overlay */
-.stats-container > * {
+.stats-container>* {
   position: relative;
   z-index: 2;
 }
@@ -52,6 +52,7 @@
   text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
   opacity: 1;
 }
+
 .title-header-text {
   letter-spacing: 2px;
   color: #fff;
@@ -98,26 +99,31 @@
 }
 
 .top-row {
-  margin-bottom: 0px; /* Distance from central badge */
+  margin-bottom: 0px;
+  /* Distance from central badge */
 }
 
 .bottom-row {
-  margin-top: 0px; /* Distance from central badge */
+  margin-top: 0px;
+  /* Distance from central badge */
 }
 
 /* Central badge with gun icon - INCREASED SIZE */
 .central-badge-container {
   position: relative;
   width: 100%;
-  height: 260px; /* Increased from 200px */
+  height: 260px;
+  /* Increased from 200px */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .central-badge {
-  width: 220px; /* Increased from 150px */
-  height: 220px; /* Increased from 150px */
+  width: 220px;
+  /* Increased from 150px */
+  height: 220px;
+  /* Increased from 150px */
   z-index: 4;
 }
 
@@ -134,20 +140,25 @@
 /* Grey Gear - Outermost */
 .grey-gear {
   position: absolute;
-  width: 200px; /* Increased from 130px */
-  height: 200px; /* Increased from 130px */
+  width: 200px;
+  /* Increased from 130px */
+  height: 200px;
+  /* Increased from 130px */
   background-image: url("/assets/grey-gear.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  animation: none; /* Remove direct animation */
+  animation: none;
+  /* Remove direct animation */
 }
 
 /* Red Circle Outer */
 .red-circle-outer {
   position: absolute;
-  width: 180px; /* Increased from 120px */
-  height: 180px; /* Increased from 120px */
+  width: 180px;
+  /* Increased from 120px */
+  height: 180px;
+  /* Increased from 120px */
   background-image: url("/assets/red-circle.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -157,8 +168,10 @@
 /* Grey Circle */
 .grey-circle {
   position: absolute;
-  width: 160px; /* Increased from 110px */
-  height: 160px; /* Increased from 110px */
+  width: 160px;
+  /* Increased from 110px */
+  height: 160px;
+  /* Increased from 110px */
   background-image: url("/assets/grey-circle.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -168,20 +181,25 @@
 /* Red Gear */
 .red-gear {
   position: absolute;
-  width: 140px; /* Increased from 100px */
-  height: 140px; /* Increased from 100px */
+  width: 140px;
+  /* Increased from 100px */
+  height: 140px;
+  /* Increased from 100px */
   background-image: url("/assets/red-gear.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  animation: none; /* Remove direct animation */
+  animation: none;
+  /* Remove direct animation */
 }
 
 /* Red Circle Inner */
 .red-circle-inner {
   position: absolute;
-  width: 120px; /* Increased from 90px */
-  height: 120px; /* Increased from 90px */
+  width: 120px;
+  /* Increased from 90px */
+  height: 120px;
+  /* Increased from 90px */
   background-image: url("/assets/red-circle.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -190,8 +208,10 @@
 
 /* Gun Icon */
 .gun-icon {
-  width: 90px; /* Increased from 70px */
-  height: 90px; /* Increased from 70px */
+  width: 90px;
+  /* Increased from 70px */
+  height: 90px;
+  /* Increased from 70px */
   background-image: url("/assets/gun.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -213,17 +233,18 @@
 }
 
 .start-rotation .grey-gear {
-  animation: rotateClockwise 15s linear infinite;
+  animation: rotateClockwise 8s linear infinite;
 }
 
 .start-rotation .red-gear {
-  animation: rotateCounterClockwise 15s linear infinite;
+  animation: rotateCounterClockwise 8s linear infinite;
 }
 
 @keyframes rotateClockwise {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -233,6 +254,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(-360deg);
   }
@@ -363,7 +385,7 @@
   position: absolute;
   pointer-events: none;
   z-index: 2;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 /* Keep original values for large screens */
@@ -400,19 +422,24 @@
   .central-badge-container {
     height: 260px;
   }
+
   .stat-value {
     font-size: 3.5rem;
   }
+
   .stat-label {
     font-size: 1.5rem;
   }
+
   .connector {
     width: calc(12vw + 50px);
     height: calc(12vw + 50px);
   }
+
   .central-badge-container {
     height: 260px;
   }
+
   .top-left-connector {
     top: 10%;
     left: 31%;
@@ -439,9 +466,11 @@
   .stat-value {
     font-size: 4rem;
   }
+
   .stat-label {
     font-size: 1.5rem;
   }
+
   .connector {
     width: calc(12vw + 50px);
     height: calc(12vw + 40px);
@@ -473,17 +502,21 @@
   .central-badge-container {
     position: relative;
     width: 80%;
-    height: 200px; /* Increased from 200px */
+    height: 200px;
+    /* Increased from 200px */
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .stat-value {
     font-size: 3rem;
   }
+
   .stat-label {
     font-size: 1rem;
   }
+
   .connector {
     width: calc(12vw + 130px);
     height: calc(15vw + 40px);
@@ -515,12 +548,15 @@
     width: 40px;
     height: 40px;
   }
+
   .stat-value {
     font-size: 2.5rem;
   }
+
   .stat-label {
     font-size: 1rem;
   }
+
   .connector {
     width: calc(12vw + 150px);
     height: calc(15vw + 40px);
@@ -546,11 +582,13 @@
     right: 3.5%;
   }
 }
+
 @media (max-width: 376px) {
   .icon {
     width: 40px;
     height: 40px;
   }
+
   .connector {
     width: calc(12vw + 150px);
     height: calc(15vw + 40px);
@@ -576,21 +614,26 @@
     right: -0.5%;
   }
 }
+
 @media (max-width: 321px) {
   .icon {
     width: 30px;
     height: 30px;
   }
+
   .central-badge {
     height: 100px;
     width: 100px;
   }
+
   .stat-value {
     font-size: 2rem;
   }
+
   .stat-label {
     font-size: 1rem;
   }
+
   .connector {
     width: calc(12vw + 165px);
     height: calc(15vw + 40px);
@@ -657,6 +700,7 @@
     height: 120px;
   }
 }
+
 @media (max-width: 426px) {
   .central-badge-container {
     height: 260px;
@@ -697,6 +741,7 @@
     height: 80px;
   }
 }
+
 @media (max-width: 321px) {
   .central-badge-container {
     height: 240px;
@@ -737,56 +782,57 @@
     height: 60px;
   }
 }
+
 /* Add these styles to your stats.css file */
 
 @keyframes headerEntrance {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-20px) scale(0.95);
   }
+
+  60% {
+    transform: translateY(3px) scale(1.02);
+  }
+
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .stats.is-visible .title-header {
-  animation: headerEntrance 1s ease-out forwards;
+  animation: headerEntrance 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* Number animations remain the same */
+/* Number animations */
 .stat-number {
   display: inline-block;
   position: relative;
   opacity: 0;
-  transition: opacity 2.5s ease-out;
+  transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .stats.start-rotation .stat-number {
   opacity: 1;
 }
 
-/* Add a glow effect to the numbers when they appear */
-.stats.start-rotation .stat-value {
-  text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
-}
-
-/* Enhanced styling for number containers */
-.stat-value {
-  position: relative;
-  transition: text-shadow 2.5s ease-out;
-}
-
-/* Number pulse effect to match gun appearance */
+/* Enhanced number pulse effect */
 @keyframes numberPulse {
   0% {
     opacity: 0;
-    transform: scale(0.85);
+    transform: scale(0.9);
   }
-  70% {
-    opacity: 0.7;
+
+  60% {
+    opacity: 0.9;
     transform: scale(1.05);
   }
+
+  80% {
+    transform: scale(0.98);
+  }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -794,6 +840,38 @@
 }
 
 .stats.start-rotation .stat-number {
-  animation: numberPulse 2.5s ease-out forwards;
-  animation-delay: 5s; /* Match the gun's delay */
+  animation: numberPulse 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 1s;
+}
+
+/* Faster glow effect */
+.stats.start-rotation .stat-value {
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+  transition: text-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Faster hover effects */
+.stat-box:hover .stat-value {
+  transform: scale(1.05);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stat-box:hover .icon {
+  transform: rotate(5deg);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Faster transitions for all transformations */
+.stat-box,
+.stat-value,
+.icon {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Faster connector transitions */
+.connector {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.2s ease;
 }

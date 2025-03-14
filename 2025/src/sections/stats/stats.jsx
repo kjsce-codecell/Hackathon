@@ -45,21 +45,21 @@ const StatsPage = () => {
   const animateSequence = async () => {
     setShowHeader(true);
 
-    await controls.start("showRings");
-
+    // Start everything almost simultaneously for a more impactful entrance
     setStartRotation(true);
-
+    await controls.start("showRings");
     await controls.start("showConnectors");
 
+    // Reduce delay before showing numbers
     setTimeout(() => {
       setShowNumbers(true);
       startCountAnimation();
-    }, 100);
+    }, 50); // Reduced from 100
   };
 
   const startCountAnimation = () => {
-    const duration = 2500;
-    const interval = 20;
+    const duration = 1000; // Reduced from 1500
+    const interval = 16;
     const steps = duration / interval;
     let currentStep = 0;
 
@@ -67,7 +67,7 @@ const StatsPage = () => {
       currentStep++;
       const progress = currentStep / steps;
 
-      const easeOutProgress = 1 - Math.pow(1 - progress, 2);
+      const easeOutProgress = 1 - Math.pow(1 - progress, 3);
 
       setCounts({
         applications: Math.floor(easeOutProgress * 1700),
@@ -106,8 +106,8 @@ const StatsPage = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 2.5,
-        ease: "easeOut",
+        duration: 0.8, // Reduced from 1.2
+        ease: [0.34, 1.56, 0.64, 1],
       },
     },
   };
@@ -119,7 +119,7 @@ const StatsPage = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
+        duration: 0.4, // Reduced from 0.6
         ease: "easeOut",
       },
     },
@@ -164,8 +164,8 @@ const StatsPage = () => {
                     opacity: 1,
                     scale: 1,
                     transition: {
-                      duration: 3,
-                      ease: "easeOut",
+                      duration: 0.8, // Reduced from 1.5
+                      ease: [0.34, 1.56, 0.64, 1],
                     },
                   },
                 }}
@@ -230,7 +230,7 @@ const StatsPage = () => {
                       showRings: {
                         opacity: 1,
                         transition: {
-                          delay: index * 1,
+                          delay: index * 0.2, // Reduced from 0.4
                         },
                       },
                     }}
@@ -245,9 +245,9 @@ const StatsPage = () => {
                     showRings: {
                       opacity: 1,
                       transition: {
-                        delay: 5,
-                        duration: 2.5,
-                        ease: "easeOut",
+                        delay: 1, // Reduced from 2
+                        duration: 0.8, // Reduced from 1.2
+                        ease: [0.34, 1.56, 0.64, 1],
                       },
                     },
                   }}
