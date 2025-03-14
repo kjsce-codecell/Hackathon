@@ -12,7 +12,7 @@ const About = () => {
         <div className="about-content">
           <p className="about-content-text">
             <b>Listen up, partner.</b><br />
-            A 24-hour hackin’ showdown is comin’ up, on the 12th and 13th of April and it ain't for the faint of heart. No screens between ya, no hiding behind a keyboard—this here’s the real deal, face to face.<br /><br />
+            KJSSE CodeCell's 24-hour hackin’ showdown is comin’ up, on the 12th and 13th of April and it ain't for the faint of heart. No screens between ya, no hiding behind a keyboard—this here’s the real deal, face to face.<br /><br />
 
             Good grub? Check.<br />
             A place to rest yer boots? Got it.<br />
