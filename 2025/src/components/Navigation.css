@@ -173,6 +173,79 @@ html {
   opacity: 1;
 }
 
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .hero__nav a {
+    font-size: 0.9rem;
+  }
+
+  .nav-logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .hero__nav {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-logo {
+    margin-right: 1.5rem;
+  }
+
+  .hero__nav a {
+    font-size: 0.85rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (min-width: 849px) and (max-width: 991px) {
+  .nav-links {
+    gap: 0.7rem;
+  }
+
+  .hero__nav a {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo {
+    margin-right: 1rem;
+  }
+
+  .nav-logo img {
+    width: 90px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 848px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .hero__nav a {
+    font-size: 0.75rem;
+    padding: 3px 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo {
+    margin-right: 0.8rem;
+  }
+
+  .nav-logo img {
+    width: 80px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero__nav {
     padding: 1rem;
@@ -197,6 +270,7 @@ html {
     gap: 2.5rem;
     z-index: 10000;
     padding-left: 3rem;
+    padding-right: 2rem;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   }
 
@@ -214,6 +288,7 @@ html {
 
   .nav-links li {
     transform: none;
+    width: 100%;
   }
 
   .hero__nav a {
@@ -221,6 +296,8 @@ html {
     padding: 5px 15px;
     color: #000;
     font-weight: bold;
+    display: block;
+    width: 100%;
   }
 
   /* Override hover effects for mobile */
@@ -228,6 +305,22 @@ html {
     color: #000;
     transform: none;
     text-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    width: 85%;
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+
+  .hero__nav a {
+    font-size: 1.1rem;
+  }
+
+  .nav-logo img {
+    width: 70px;
   }
 }
 
