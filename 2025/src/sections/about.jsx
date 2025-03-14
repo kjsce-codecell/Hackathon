@@ -20,7 +20,7 @@ const About = () => {
 
             Round up yer crew, put them brains to work, and cook up somethin’ mighty impressive. Ain’t no better time to scheme, dream, and build somethin’ legendary.          
           </p>
-          <img src="/assets/desktop_prizes.png" className="about-border"></img>
+          {/* <img src="/assets/desktop_prizes.png" className="about-border"></img> */}
         </div>
     </section>
   );
