@@ -1,178 +1,301 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import "./stats.css";
 
 const StatsPage = () => {
-    const [counts, setCounts] = useState({
-        applications: 0,
-        colleges: 0,
-        teams: 0,
-        hackers: 0,
-    });
+  const [counts, setCounts] = useState({
+    applications: 0,
+    colleges: 0,
+    teams: 0,
+    hackers: 0,
+  });
+  const [isMobile, setIsMobile] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef(null);
+  const controls = useAnimation();
+  const [isInView, setIsInView] = useState(false);
+  const [startRotation, setStartRotation] = useState(false);
+  const [showNumbers, setShowNumbers] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
 
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        // Animate the counters
-        const duration = 2000; // 2 seconds for the animation
-        const interval = 20; // Update every 20ms
-        const steps = duration / interval;
-
-        let currentStep = 0;
-
-        const timer = setInterval(() => {
-            currentStep++;
-            const progress = currentStep / steps;
-
-            setCounts({
-                applications: Math.floor(progress * 1700),
-                colleges: Math.floor(progress * 100),
-                teams: Math.floor(progress * 40),
-                hackers: Math.floor(progress * 150),
-            });
-
-            if (currentStep >= steps) {
-                clearInterval(timer);
-                setCounts({
-                    applications: 1700,
-                    colleges: 100,
-                    teams: 40,
-                    hackers: 150,
-                });
-            }
-        }, interval);
-
-        return () => clearInterval(timer);
-    }, []);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        // Initial check
-        handleResize();
-
-        // Add event listener
-        window.addEventListener("resize", handleResize);
-
-        // Cleanup
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return (
-        <section className="stats">
-            <img
-                src="/assets/AboutUsRightStreak.svg"
-                className="AboutUsRightStreak"
-            />
-            <img
-                src="/assets/AboutUsLeftStreak.svg"
-                className="AboutUsLeftStreak"
-            />
-            <div className="stats-container">
-                <div className="title-container">
-                    <h1 className="title">STATS</h1>
-                </div>
-
-                <div className="stats-grid">
-                    <img
-                        src={
-                            isMobile
-                                ? "/assets/top-left-mob.svg"
-                                : "/assets/top-left.svg"
-                        }
-                        alt="connector"
-                        className="connector top-left-connector"
-                    />
-                    <img
-                        src={
-                            isMobile
-                                ? "/assets/top-right-mob.svg"
-                                : "/assets/top-right.svg"
-                        }
-                        alt="connector"
-                        className="connector top-right-connector"
-                    />
-                    <img
-                        src={
-                            isMobile
-                                ? "/assets/bottom-left-mob.svg"
-                                : "/assets/bottom-left.svg"
-                        }
-                        alt="connector"
-                        className="connector bottom-left-connector"
-                    />
-                    <img
-                        src={
-                            isMobile
-                                ? "/assets/bottom-right-mob.svg"
-                                : "/assets/bottom-right.svg"
-                        }
-                        alt="connector"
-                        className="connector bottom-right-connector"
-                    />
-
-                    {/* Top Row - Colleges and Applications */}
-                    <div className="stat-row top-row">
-                        <div className="stat-box">
-                            <div className="stat-value">
-                                <div className="icon document-icon"></div>
-                                {counts.applications}+
-                            </div>
-                            <div className="stat-label">APPLICATIONS</div>
-                        </div>
-
-                        <div className="stat-box">
-                            <div className="stat-value">
-                                {counts.colleges}+
-                                <div className="icon college-icon"></div>
-                            </div>
-                            <div className="stat-label">COLLEGES</div>
-                        </div>
-                    </div>
-
-                    {/* Middle - Central Badge with rotating gears */}
-                    <div className="central-badge-container">
-                        <div className="central-badge">
-                            <div className="rotating-gears">
-                                {/* Grey Gear - Outermost */}
-                                <div className="grey-gear rotate-clockwise"></div>
-                                {/* Red Circle */}
-                                <div className="red-circle-outer"></div>
-                                {/* Grey Circle */}
-                                <div className="grey-circle"></div>
-                                {/* Red Gear */}
-                                <div className="red-gear rotate-counter-clockwise"></div>
-                                {/* Inner Red Circle */}
-                                <div className="red-circle-inner"></div>
-                                {/* Gun Icon */}
-                                <div className="gun-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Bottom Row - Teams and Hackers */}
-                    <div className="stat-row bottom-row">
-                        <div className="stat-box">
-                            <div className="stat-value">
-                                <div className="icon team-icon"></div>
-                                {counts.teams}+
-                            </div>
-                            <div className="stat-label">TEAMS</div>
-                        </div>
-
-                        <div className="stat-box">
-                            <div className="stat-value">
-                                {counts.hackers}+
-                                <div className="icon hacker-icon"></div>
-                            </div>
-                            <div className="stat-label">HACKERS</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !hasAnimated) {
+          setIsInView(true);
+          animateSequence();
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 }
     );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateSequence = async () => {
+    setShowHeader(true);
+
+    await controls.start("showRings");
+
+    setStartRotation(true);
+
+    await controls.start("showConnectors");
+
+    setTimeout(() => {
+      setShowNumbers(true);
+      startCountAnimation();
+    }, 100);
+  };
+
+  const startCountAnimation = () => {
+    const duration = 2500;
+    const interval = 20;
+    const steps = duration / interval;
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+
+      const easeOutProgress = 1 - Math.pow(1 - progress, 2);
+
+      setCounts({
+        applications: Math.floor(easeOutProgress * 1700),
+        colleges: Math.floor(easeOutProgress * 100),
+        teams: Math.floor(easeOutProgress * 40),
+        hackers: Math.floor(easeOutProgress * 150),
+      });
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+        setCounts({
+          applications: 1700,
+          colleges: 100,
+          teams: 40,
+          hackers: 150,
+        });
+      }
+    }, interval);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 769);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const numberVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 2.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Header animation variants
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <section
+      className={`stats ${startRotation ? "start-rotation" : ""}`}
+      ref={sectionRef}
+    >
+      <img
+        src="/assets/AboutUsRightStreak.svg"
+        className="AboutUsRightStreak"
+      />
+      <img src="/assets/AboutUsLeftStreak.svg" className="AboutUsLeftStreak" />
+      <div className="stats-container">
+        <motion.header
+          className="title-header"
+          initial="hidden"
+          animate={showHeader ? "visible" : "hidden"}
+          variants={headerVariants}
+        >
+          <h1 className="title-header-text">STATS</h1>
+        </motion.header>
+
+        <div className="stats-grid">
+          {["top-left", "top-right", "bottom-left", "bottom-right"].map(
+            (position) => (
+              <motion.img
+                key={position}
+                src={
+                  isMobile
+                    ? `/assets/${position}-mob.svg`
+                    : `/assets/${position}.svg`
+                }
+                alt="connector"
+                className={`connector ${position}-connector`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={controls}
+                variants={{
+                  showConnectors: {
+                    opacity: 1,
+                    scale: 1,
+                    transition: {
+                      duration: 3,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+              />
+            )
+          )}
+
+          <motion.div
+            className="stat-row top-row"
+            initial={{ opacity: 0 }}
+            animate={showNumbers ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="stat-box">
+              <div className="stat-value">
+                <div className="icon document-icon"></div>
+                <motion.span
+                  className="stat-number"
+                  initial="hidden"
+                  animate={showNumbers ? "visible" : "hidden"}
+                  variants={numberVariants}
+                >
+                  {counts.applications}+
+                </motion.span>
+              </div>
+              <div className="stat-label">APPLICATIONS</div>
+            </div>
+
+            <div className="stat-box">
+              <div className="stat-value">
+                <motion.span
+                  className="stat-number"
+                  initial="hidden"
+                  animate={showNumbers ? "visible" : "hidden"}
+                  variants={numberVariants}
+                >
+                  {counts.colleges}+
+                </motion.span>
+                <div className="icon college-icon"></div>
+              </div>
+              <div className="stat-label">COLLEGES</div>
+            </div>
+          </motion.div>
+
+          <div className="central-badge-container">
+            <div className="central-badge">
+              <div className="rotating-gears">
+                {/* Render rings first */}
+                {[
+                  "grey-gear",
+                  "red-circle-outer",
+                  "grey-circle",
+                  "red-gear",
+                  "red-circle-inner",
+                ].map((item, index) => (
+                  <motion.div
+                    key={item}
+                    className={`${item}`}
+                    initial={{ opacity: 0 }}
+                    animate={controls}
+                    variants={{
+                      showRings: {
+                        opacity: 1,
+                        transition: {
+                          delay: index * 1,
+                        },
+                      },
+                    }}
+                  />
+                ))}
+                {/* Render gun separately with longer delay */}
+                <motion.div
+                  className="gun-icon"
+                  initial={{ opacity: 0 }}
+                  animate={controls}
+                  variants={{
+                    showRings: {
+                      opacity: 1,
+                      transition: {
+                        delay: 5,
+                        duration: 2.5,
+                        ease: "easeOut",
+                      },
+                    },
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <motion.div
+            className="stat-row bottom-row"
+            initial={{ opacity: 0 }}
+            animate={showNumbers ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="stat-box">
+              <div className="stat-value">
+                <div className="icon team-icon"></div>
+                <motion.span
+                  className="stat-number"
+                  initial="hidden"
+                  animate={showNumbers ? "visible" : "hidden"}
+                  variants={numberVariants}
+                >
+                  {counts.teams}+
+                </motion.span>
+              </div>
+              <div className="stat-label">TEAMS</div>
+            </div>
+
+            <div className="stat-box">
+              <div className="stat-value">
+                <motion.span
+                  className="stat-number"
+                  initial="hidden"
+                  animate={showNumbers ? "visible" : "hidden"}
+                  variants={numberVariants}
+                >
+                  {counts.hackers}+
+                </motion.span>
+                <div className="icon hacker-icon"></div>
+              </div>
+              <div className="stat-label">HACKERS</div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default StatsPage;

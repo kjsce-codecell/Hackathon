@@ -1,454 +1,799 @@
 .stats {
-    color: #fff;
-    /* padding: 0 0 5rem 0; */
-    background-image: url("/assets/statsbg.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+  color: #fff;
+  /* padding: 0 0 5rem 0; */
+  background-image: url("/assets/statsbg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 /* Main container */
 .stats-container {
-    background-size: cover;
-    /* min-height: 100%; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: "Western", "Rye", serif;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
+  background-size: cover;
+  /* min-height: 100%; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Western", "Rye", serif;
+  position: relative;
+  overflow: hidden;
+  /* padding: 20px; */
 }
 
 /* Add a dark red overlay for the color tint */
 .stats-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* height: 100%; */
-    /* background-color: rgba(139, 0, 0, 0.3); */
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  /* background-color: rgba(139, 0, 0, 0.3); */
+  z-index: 1;
 }
 
 /* Content positioning over the overlay */
 .stats-container > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
-/* Main title */
-.title-container {
-    /* margin-bottom: 40px; */
-    width: 80%;
-    text-align: center;
-    position: relative;
+.title-header {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  opacity: 1;
+}
+.title-header-text {
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
 }
 
-.title-container:before {
-    right: 100%;
-    margin-right: 15px;
+@media (max-width: 1000px) {
+  .title-header {
+    font-size: 3rem;
+  }
 }
 
-.title-container:after {
-    left: 100%;
-    margin-left: 15px;
+@media (max-width: 700px) {
+  .title-header {
+    font-size: 2rem;
+  }
 }
 
-.title {
-    font-size: 4rem;
-    letter-spacing: 6px;
-    margin: 20px 0;
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-    font-weight: 700;
+@media (max-width: 865px) {
+  .title-header {
+    font-size: 2.4rem;
+  }
 }
 
 /* Stats grid layout for both desktop and mobile */
 .stats-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    /* min-height: 800px; Add fixed height to maintain spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  /* min-height: 800px; Add fixed height to maintain spacing */
 }
 
 /* Stat rows */
 .stat-row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    position: relative;
-    z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  z-index: 3;
 }
 
 .top-row {
-    margin-bottom: 0px; /* Distance from central badge */
+  margin-bottom: 0px; /* Distance from central badge */
 }
 
 .bottom-row {
-    margin-top: 0px; /* Distance from central badge */
+  margin-top: 0px; /* Distance from central badge */
 }
 
 /* Central badge with gun icon - INCREASED SIZE */
 .central-badge-container {
-    position: relative;
-    width: 100%;
-    height: 260px; /* Increased from 200px */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 260px; /* Increased from 200px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .central-badge {
-    width: 220px; /* Increased from 150px */
-    height: 220px; /* Increased from 150px */
-    z-index: 4;
+  width: 220px; /* Increased from 150px */
+  height: 220px; /* Increased from 150px */
+  z-index: 4;
 }
 
 /* Rotating Gears Styles - New */
 .rotating-gears {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Grey Gear - Outermost */
 .grey-gear {
-    position: absolute;
-    width: 200px; /* Increased from 130px */
-    height: 200px; /* Increased from 130px */
-    background-image: url("/assets/grey-gear.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: absolute;
+  width: 200px; /* Increased from 130px */
+  height: 200px; /* Increased from 130px */
+  background-image: url("/assets/grey-gear.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: none; /* Remove direct animation */
 }
 
 /* Red Circle Outer */
 .red-circle-outer {
-    position: absolute;
-    width: 180px; /* Increased from 120px */
-    height: 180px; /* Increased from 120px */
-    background-image: url("/assets/red-circle.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: absolute;
+  width: 180px; /* Increased from 120px */
+  height: 180px; /* Increased from 120px */
+  background-image: url("/assets/red-circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Grey Circle */
 .grey-circle {
-    position: absolute;
-    width: 160px; /* Increased from 110px */
-    height: 160px; /* Increased from 110px */
-    background-image: url("/assets/grey-circle.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: absolute;
+  width: 160px; /* Increased from 110px */
+  height: 160px; /* Increased from 110px */
+  background-image: url("/assets/grey-circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Red Gear */
 .red-gear {
-    position: absolute;
-    width: 140px; /* Increased from 100px */
-    height: 140px; /* Increased from 100px */
-    background-image: url("/assets/red-gear.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: absolute;
+  width: 140px; /* Increased from 100px */
+  height: 140px; /* Increased from 100px */
+  background-image: url("/assets/red-gear.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: none; /* Remove direct animation */
 }
 
 /* Red Circle Inner */
 .red-circle-inner {
-    position: absolute;
-    width: 120px; /* Increased from 90px */
-    height: 120px; /* Increased from 90px */
-    background-image: url("/assets/red-circle.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: absolute;
+  width: 120px; /* Increased from 90px */
+  height: 120px; /* Increased from 90px */
+  background-image: url("/assets/red-circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Gun Icon */
 .gun-icon {
-    width: 90px; /* Increased from 70px */
-    height: 90px; /* Increased from 70px */
-    background-image: url("/assets/gun.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    z-index: 5;
+  width: 90px; /* Increased from 70px */
+  height: 90px; /* Increased from 70px */
+  background-image: url("/assets/gun.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 5;
 }
 
 /* Rotation animations */
-.rotate-clockwise {
-    animation: rotateClockwise 8s linear infinite;
+.rotate-clockwise,
+.rotate-counter-clockwise {
+  animation: none;
 }
 
-.rotate-counter-clockwise {
-    animation: rotateCounterClockwise 8s linear infinite;
+/* Add animation play state when visible */
+.stats.is-visible .rotate-clockwise,
+.stats.is-visible .rotate-counter-clockwise {
+  animation-play-state: running;
+}
+
+.start-rotation .grey-gear {
+  animation: rotateClockwise 15s linear infinite;
+}
+
+.start-rotation .red-gear {
+  animation: rotateCounterClockwise 15s linear infinite;
 }
 
 @keyframes rotateClockwise {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotateCounterClockwise {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 /* Stats boxes */
 .stat-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 40%;
 }
 
 /* Stats values */
 .stat-value {
-    display: flex;
-    align-items: center;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ff0000;
-    margin: 5px 0;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #ff0000;
+  margin: 5px 0;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 /* Stats labels */
 .stat-label {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    margin-top: 5px;
-    font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  font-weight: 600;
 }
 
 /* Icon placeholders */
 .icon {
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0px 10px;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0px 10px;
 }
 
 .document-icon {
-    background-image: url(/public/assets/application.svg);
+  background-image: url(/assets/application.svg);
 }
 
 .college-icon {
-    background-image: url(/public/assets/college.svg);
+  background-image: url(/assets/college.svg);
 }
 
 .team-icon {
-    background-image: url(/public/assets/registrations.svg);
+  background-image: url(/assets/registrations.svg);
 }
 
 .hacker-icon {
-    background-image: url(/public/assets/hacker.svg);
+  background-image: url(/assets/hacker.svg);
 }
 
 /* Border decoration */
 .stats-container::after {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    /* border: 1px solid rgba(255, 255, 255, 0.3); */
-    z-index: 1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Desktop styles */
-@media (min-width: 769px) {
-    .title {
-        font-size: 6rem;
-        letter-spacing: 10px;
-    }
+@media (min-width: 1026) {
+  .stat-value {
+    font-size: 4rem;
+  }
 
-    .stat-value {
-        font-size: 5rem;
-    }
+  .stat-label {
+    font-size: 2rem;
+  }
 
-    .stat-label {
-        font-size: 2rem;
-    }
+  .central-badge {
+    width: 280px;
+    height: 280px;
+  }
 
-    .icon {
-        width: 50px;
-        height: 50px;
-    }
+  .grey-gear {
+    width: 300px;
+    height: 300px;
+  }
 
-    .central-badge {
-        width: 280px;
-        height: 280px;
-    }
+  .red-circle-outer {
+    width: 230px;
+    height: 230px;
+  }
 
-    .grey-gear {
-        width: 280px;
-        height: 280px;
-    }
+  .grey-circle {
+    width: 200px;
+    height: 200px;
+  }
 
-    .red-circle-outer {
-        width: 230px;
-        height: 230px;
-    }
+  .red-gear {
+    width: 170px;
+    height: 170px;
+  }
 
-    .grey-circle {
-        width: 200px;
-        height: 200px;
-    }
+  .red-circle-inner {
+    width: 140px;
+    height: 140px;
+  }
 
-    .red-gear {
-        width: 170px;
-        height: 170px;
-    }
+  .gun-icon {
+    width: 110px;
+    height: 110px;
+  }
 
-    .red-circle-inner {
-        width: 140px;
-        height: 140px;
-    }
-
-    .gun-icon {
-        width: 110px;
-        height: 110px;
-    }
-
-    .line-top-left,
-    .line-top-right,
-    .line-bottom-left,
-    .line-bottom-right {
-        width: 20%;
-    }
+  .line-top-left,
+  .line-top-right,
+  .line-bottom-left,
+  .line-bottom-right {
+    width: 20%;
+  }
 }
+
 /* Replace the existing connector styles */
 .connector {
-    position: absolute;
-    pointer-events: none;
-    z-index: 2;
-    transition: all 0.3s ease;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
 /* Keep original values for large screens */
 .top-left-connector {
-    top: 8%;
-    left: 32%;
-    width: 200px;
-    height: 200px;
+  top: 10%;
+  left: 32%;
+  width: 240px;
+  height: 220px;
 }
 
 .top-right-connector {
-    top: 8%;
-    right: 32%;
-    width: 200px;
-    height: 200px;
+  top: 10%;
+  right: 32%;
+  width: 240px;
+  height: 220px;
 }
 
 .bottom-left-connector {
-    bottom: 8%;
-    left: 32%;
-    width: 200px;
-    height: 200px;
+  bottom: 10%;
+  left: 32%;
+  width: 240px;
+  height: 220px;
 }
 
 .bottom-right-connector {
-    bottom: 8%;
-    right: 32%;
-    width: 200px;
-    height: 200px;
+  bottom: 10%;
+  right: 32%;
+  width: 240px;
+  height: 220px;
 }
 
-/* Medium screens */
-@media (max-width: 1024) {
-    .connector {
-        width: calc(1vw);
-        height: calc(1vw);
-    }
+/* Medium screens - specific adjustments for 768px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .central-badge-container {
+    height: 260px;
+  }
+  .stat-value {
+    font-size: 3.5rem;
+  }
+  .stat-label {
+    font-size: 1.5rem;
+  }
+  .connector {
+    width: calc(12vw + 50px);
+    height: calc(12vw + 50px);
+  }
+  .central-badge-container {
+    height: 260px;
+  }
+  .top-left-connector {
+    top: 10%;
+    left: 31%;
+  }
 
-    .top-left-connector,
-    .top-right-connector {
-        top: 20%;
-    }
+  .top-right-connector {
+    top: 10%;
+    right: 32%;
+  }
 
-    .bottom-left-connector,
-    .bottom-right-connector {
-        bottom: 20%;
-    }
+  .bottom-left-connector {
+    bottom: 8%;
+    left: 32%;
+  }
+
+  .bottom-right-connector {
+    bottom: 8%;
+    right: 32%;
+  }
 }
 
 /* Small screens */
-@media (max-width: 768px) {
-    .connector {
-        width: calc(18vw + 60px);
-        height: calc(18vw);
-    }
+@media (max-width: 769px) {
+  .stat-value {
+    font-size: 4rem;
+  }
+  .stat-label {
+    font-size: 1.5rem;
+  }
+  .connector {
+    width: calc(12vw + 50px);
+    height: calc(12vw + 40px);
+  }
 
-    .top-left-connector {
-        top: 15%;
-        left: 28%;
-    }
+  .top-left-connector {
+    top: 25%;
+    left: 27%;
+  }
 
-    .top-right-connector {
-        top: 15%;
-        right: 28%;
-    }
+  .top-right-connector {
+    top: 25%;
+    right: 27.5%;
+  }
 
-    .bottom-left-connector {
-        bottom: 15%;
-        left: 26%;
-    }
+  .bottom-left-connector {
+    bottom: 25%;
+    left: 27%;
+  }
 
-    .bottom-right-connector {
-        bottom: 15%;
-        right: 26%;
-    }
+  .bottom-right-connector {
+    bottom: 25%;
+    right: 27%;
+  }
 }
 
 /* Extra small screens */
 @media (max-width: 576px) {
-    .connector {
-        width: calc(12vw + 130px);
-        height: calc(15vw + 40px);
-    }
+  .central-badge-container {
+    position: relative;
+    width: 80%;
+    height: 200px; /* Increased from 200px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stat-value {
+    font-size: 3rem;
+  }
+  .stat-label {
+    font-size: 1rem;
+  }
+  .connector {
+    width: calc(12vw + 130px);
+    height: calc(15vw + 40px);
+  }
 
-    .top-left-connector {
-        left: 25%;
-    }
+  .top-left-connector {
+    top: 25%;
+    left: 8%;
+  }
 
-    .top-right-connector {
-        right: 25%;
-    }
+  .top-right-connector {
+    top: 25%;
+    right: 8%;
+  }
 
-    .bottom-left-connector {
-        left: 23%;
-    }
+  .bottom-left-connector {
+    bottom: 25%;
+    left: 8%;
+  }
 
-    .bottom-right-connector {
-        right: 23%;
-    }
+  .bottom-right-connector {
+    bottom: 25%;
+    right: 8%;
+  }
+}
+
+@media (max-width: 426px) and (min-width: 321px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .stat-value {
+    font-size: 2.5rem;
+  }
+  .stat-label {
+    font-size: 1rem;
+  }
+  .connector {
+    width: calc(12vw + 150px);
+    height: calc(15vw + 40px);
+  }
+
+  .top-left-connector {
+    top: 25%;
+    left: 3.5%;
+  }
+
+  .top-right-connector {
+    top: 25%;
+    right: 4%;
+  }
+
+  .bottom-left-connector {
+    bottom: 25%;
+    left: 3.5%;
+  }
+
+  .bottom-right-connector {
+    bottom: 25%;
+    right: 3.5%;
+  }
+}
+@media (max-width: 376px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .connector {
+    width: calc(12vw + 150px);
+    height: calc(15vw + 40px);
+  }
+
+  .top-left-connector {
+    top: 25%;
+    left: -1%;
+  }
+
+  .top-right-connector {
+    top: 25%;
+    right: 0%;
+  }
+
+  .bottom-left-connector {
+    bottom: 25%;
+    left: -0.5%;
+  }
+
+  .bottom-right-connector {
+    bottom: 25%;
+    right: -0.5%;
+  }
+}
+@media (max-width: 321px) {
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  .central-badge {
+    height: 100px;
+    width: 100px;
+  }
+  .stat-value {
+    font-size: 2rem;
+  }
+  .stat-label {
+    font-size: 1rem;
+  }
+  .connector {
+    width: calc(12vw + 165px);
+    height: calc(15vw + 40px);
+  }
+
+  .top-left-connector {
+    top: 21%;
+    left: -4%;
+  }
+
+  .top-right-connector {
+    top: 21%;
+    right: -3.5%;
+  }
+
+  .bottom-left-connector {
+    bottom: 21%;
+    left: -4%;
+  }
+
+  .bottom-right-connector {
+    bottom: 21%;
+    right: -3.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .central-badge-container {
+    height: 300px;
+  }
+
+  .central-badge {
+    width: 280px;
+    height: 280px;
+  }
+
+  .grey-gear {
+    width: 260px;
+    height: 260px;
+  }
+
+  .red-circle-outer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .grey-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .red-gear {
+    width: 180px;
+    height: 180px;
+  }
+
+  .red-circle-inner {
+    width: 140px;
+    height: 140px;
+  }
+
+  .gun-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (max-width: 426px) {
+  .central-badge-container {
+    height: 260px;
+  }
+
+  .central-badge {
+    width: 240px;
+    height: 240px;
+  }
+
+  .grey-gear {
+    width: 220px;
+    height: 220px;
+  }
+
+  .red-circle-outer {
+    width: 180px;
+    height: 180px;
+  }
+
+  .grey-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .red-gear {
+    width: 140px;
+    height: 140px;
+  }
+
+  .red-circle-inner {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gun-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 321px) {
+  .central-badge-container {
+    height: 240px;
+  }
+
+  .central-badge {
+    width: 220px;
+    height: 220px;
+  }
+
+  .grey-gear {
+    width: 200px;
+    height: 200px;
+  }
+
+  .red-circle-outer {
+    width: 160px;
+    height: 160px;
+  }
+
+  .grey-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .red-gear {
+    width: 120px;
+    height: 120px;
+  }
+
+  .red-circle-inner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .gun-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Add these styles to your stats.css file */
+
+@keyframes headerEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats.is-visible .title-header {
+  animation: headerEntrance 1s ease-out forwards;
+}
+
+/* Number animations remain the same */
+.stat-number {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  transition: opacity 2.5s ease-out;
+}
+
+.stats.start-rotation .stat-number {
+  opacity: 1;
+}
+
+/* Add a glow effect to the numbers when they appear */
+.stats.start-rotation .stat-value {
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+}
+
+/* Enhanced styling for number containers */
+.stat-value {
+  position: relative;
+  transition: text-shadow 2.5s ease-out;
+}
+
+/* Number pulse effect to match gun appearance */
+@keyframes numberPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  70% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stats.start-rotation .stat-number {
+  animation: numberPulse 2.5s ease-out forwards;
+  animation-delay: 5s; /* Match the gun's delay */
 }
