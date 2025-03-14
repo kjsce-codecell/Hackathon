@@ -14,6 +14,10 @@ export default [
             {
                 src: "https://incred.email",
                 img: "/sponsor/currentsponsors/IncredLight.svg"
+            },
+            {
+                src: "https://ethindia.co/",
+                img: "/sponsor/currentsponsors/EthIndia.png"
             }
         ]
     },
@@ -23,15 +27,6 @@ export default [
             {
                 src: "https://devfolio.co/",
                 img: "/sponsor/currentsponsors/devfolio.png"
-            }
-        ]
-    },
-    {
-        title: "Bronze Partner",
-        sponsors: [
-            {
-                src: "https://ethindia.co/",
-                img: "/sponsor/currentsponsors/EthIndia.png"
             }
         ]
     },
