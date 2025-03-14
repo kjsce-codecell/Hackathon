@@ -333,6 +333,15 @@
     opacity: 0.9;
     background-size: 100% 100%;
   }
+
+  .apply-button-wrapper {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    z-index: 10;
+  }
 }
 
 /* Small Mobile Styles */
@@ -358,6 +367,10 @@
   .hero__background--horse {
     background-size: 75% auto;
     background-position: center 85%;
+  }
+
+  .apply-button-wrapper {
+    bottom: 1.5rem;
   }
 }
 
@@ -716,4 +729,11 @@
   100% {
     transform: translate(0, 0) scale(1);
   }
+}
+
+.apply-button-wrapper {
+  margin-top: 2rem;
+  opacity: 0;
+  animation: slideInUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.9s;
 }

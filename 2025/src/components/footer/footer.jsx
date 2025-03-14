@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './footer.css';
 
 const Footer = () => {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://apply.devfolio.co/v2/sdk.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
   return (
     <footer>
       <div className="outlaws">
@@ -17,7 +27,12 @@ const Footer = () => {
         <div className="logo">
           <div className="save-the-date">SAVE THE DATE</div>
           <div className="april-dates">APRIL 12 | 13</div>
-          <div className="register-now">REGISTER NOW</div>
+
+          <div
+            className="apply-button"
+            data-hackathon-slug="gajshield-kjsse-hack8"
+            data-button-theme="dark-inverted"
+          ></div>
           <div className="social-icons">
             <a href="https://www.facebook.com/kjscecodecell/" target="_blank" rel="noopener noreferrer">
               <img src="./FOOTER/facebook.svg" alt="Facebook" style={{ width: '30px', height: '30px' }} />
@@ -40,7 +55,7 @@ const Footer = () => {
         <div className="G">
           <img src="./FOOTER/MATURE_17.svg" alt="MATURE" />
         </div>
-        <div className="cclogo"> 
+        <div className="cclogo">
           <img src="./FOOTER/Logo.svg" alt="cclogo" />
         </div>
       </div>

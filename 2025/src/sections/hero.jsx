@@ -10,6 +10,17 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://apply.devfolio.co/v2/sdk.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
+  useEffect(() => {
     AOS.init({
       duration: 1500,
       once: true,
@@ -129,6 +140,17 @@ const Hero = () => {
             </span>
           </div>
         </h1>
+        <div
+          className="apply-button-wrapper animate-slide-in-delay-2"
+          data-aos="fade"
+          data-aos-delay="1200"
+        >
+          <div
+            className="apply-button"
+            data-hackathon-slug="gajshield-kjsse-hack8"
+            data-button-theme="dark-inverted"
+          ></div>
+        </div>
       </div>
     </section>
   );
