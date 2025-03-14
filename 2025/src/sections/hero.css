@@ -131,29 +131,40 @@
 }
 
 .gajshield {
-  font-size: 5.5rem;
+  font-size: 6rem;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 2px #fff;
+  -webkit-text-stroke: 6px #000;
   line-height: 0.9;
+  -webkit-text-stroke: 6px #000;
 }
 
 .kjsse {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-top: -0.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 2px #fff;
   line-height: 0.9;
+  -webkit-text-stroke: 6px #000;
 }
 
+.dates {
+  font-size: 4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: -0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 2px #000;
+  color: #fff;
+}
 
 .eight {
-  font-size: 11rem;
+  font-size: 13rem;
   font-weight: 900;
   color: #8b0000;
   -webkit-text-stroke: 3px #000;
@@ -192,22 +203,32 @@
   }
 
   .gajshield {
-    font-size: calc(3.5rem + 1.5vw);
+    font-size: calc(4rem + 1.5vw);
     letter-spacing: 2px;
     text-align: center;
+    -webkit-text-stroke: 4px #000;
   }
 
   .kjsse {
-    font-size: calc(3rem + 1.5vw);
+    font-size: calc(3.8rem + 1.5vw);
     letter-spacing: 2px;
     text-align: center;
     margin-top: -0.3rem;
+    -webkit-text-stroke: 4px #000;
+  }
+
+  .dates {
+    font-size: calc(2.5rem + 1vw);
+    -webkit-text-stroke: 2px #000;
+    margin-top: 1rem;
+    color: #fff;
   }
 
   .eight {
-    font-size: calc(6rem + 1.5vw);
+    font-size: calc(7rem + 1.5vw);
     margin: 0;
     margin-top: -0.5rem;
+    -webkit-text-stroke: 2.5px #000;
   }
 
   .hero__background--horse {
@@ -238,19 +259,29 @@
   }
 
   .gajshield {
-    font-size: calc(2.5rem + 1vw);
+    font-size: calc(3.2rem + 1vw);
     line-height: 1.1;
+    -webkit-text-stroke: 3px #000;
   }
 
   .kjsse {
-    font-size: calc(2.2rem + 1vw);
+    font-size: calc(3rem + 1vw);
     line-height: 1.1;
     margin-top: -0.2rem;
+    -webkit-text-stroke: 3px #000;
+  }
+
+  .dates {
+    font-size: calc(2rem + 1vw);
+    -webkit-text-stroke: 1.5px #000;
+    margin-top: 0.8rem;
+    color: #fff;
   }
 
   .eight {
-    font-size: calc(4rem + 1vw);
+    font-size: calc(5rem + 1vw);
     line-height: 1;
+    -webkit-text-stroke: 2px #000;
   }
 
   .hero__background--horse {
@@ -289,21 +320,28 @@
   }
 
   .gajshield {
-    font-size: calc(3rem + 1.5vw);
-    -webkit-text-stroke: 1.5px #fff;
+    font-size: calc(3.5rem + 1.5vw);
+    -webkit-text-stroke: 2.5px #000;
   }
 
   .kjsse {
-    font-size: calc(2.8rem + 1.5vw);
-    -webkit-text-stroke: 1.5px #fff;
+    font-size: calc(3.2rem + 1.5vw);
+    -webkit-text-stroke: 2.5px #000;
     margin-top: -0.2rem;
   }
 
+  .dates {
+    font-size: calc(2rem + 1vw);
+    -webkit-text-stroke: 1.5px #000;
+    margin-top: 0.5rem;
+    color: #fff;
+  }
+
   .eight {
-    font-size: calc(5.5rem + 1.5vw);
+    font-size: calc(6rem + 1.5vw);
     margin: 0;
     margin-top: 0.5rem;
-    -webkit-text-stroke: 1.5px #000;
+    -webkit-text-stroke: 2px #000;
   }
 
   .hero__background--horse {
@@ -352,16 +390,25 @@
   }
 
   .gajshield {
-    font-size: calc(2.6rem + 1.5vw);
+    font-size: calc(3rem + 1.5vw);
+    -webkit-text-stroke: 2px #000;
   }
 
   .kjsse {
-    font-size: calc(2.4rem + 1.5vw);
+    font-size: calc(2.8rem + 1.5vw);
+    -webkit-text-stroke: 2px #000;
+  }
+
+  .dates {
+    font-size: calc(1.8rem + 1vw);
+    -webkit-text-stroke: 1.2px #000;
+    margin-top: 0.5rem;
+    color: #fff;
   }
 
   .eight {
-    font-size: calc(4.8rem + 1.5vw);
-    margin-top: 0.3rem;
+    font-size: calc(5rem + 1.5vw);
+    -webkit-text-stroke: 1.5px #000;
   }
 
   .hero__background--horse {
@@ -382,16 +429,25 @@
   }
 
   .gajshield {
-    font-size: calc(2.2rem + 1.5vw);
+    font-size: calc(2.5rem + 1.5vw);
+    -webkit-text-stroke: 1.5px #000;
   }
 
   .kjsse {
-    font-size: calc(2rem + 1.5vw);
+    font-size: calc(2.3rem + 1.5vw);
+    -webkit-text-stroke: 1.5px #000;
+  }
+
+  .dates {
+    font-size: calc(1.5rem + 1vw);
+    -webkit-text-stroke: 1px #000;
+    margin-top: 0.3rem;
+    color: #fff;
   }
 
   .eight {
-    font-size: calc(4.2rem + 1.5vw);
-    margin-top: 0.2rem;
+    font-size: calc(4.5rem + 1.5vw);
+    -webkit-text-stroke: 1.2px #000;
   }
 
   .hero__background--horse {
@@ -413,17 +469,25 @@
   }
 
   .gajshield {
-    font-size: calc(2rem + 2vh);
+    font-size: calc(2.5rem + 2vh);
+    -webkit-text-stroke: 2px #000;
   }
 
   .kjsse {
-    font-size: calc(1.8rem + 2vh);
+    font-size: calc(2.3rem + 2vh);
+    -webkit-text-stroke: 2px #000;
+  }
+
+  .dates {
+    font-size: calc(1.5rem + 2vh);
+    -webkit-text-stroke: 1px #000;
+    margin-top: 0.3rem;
+    color: #fff;
   }
 
   .eight {
-    font-size: calc(3.5rem + 2vh);
-    margin-left: 0;
-    margin-top: 0;
+    font-size: calc(4rem + 2vh);
+    -webkit-text-stroke: 1.5px #000;
   }
 
   .hero__background--horse {
