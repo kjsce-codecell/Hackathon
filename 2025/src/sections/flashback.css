@@ -23,7 +23,7 @@
     align-items: start;
     margin-top: 3rem;
     font-size: 4rem;
-    transform: translateX(0.5rem);
+    transform: translateX(0.6rem);
 }
 
 @media (max-width: 1120px) {
@@ -49,14 +49,14 @@
 @media (max-width: 865px) {
     .flashback-header {
         margin-top: 4.5rem;
-        font-size: 1.4rem;
+        font-size: 1.32rem;
     }
 }
 
 @media (max-width: 805px) {
     .flashback-header {
         margin-top: 4.7rem;
-        font-size: 1rem;
+        font-size: 0.92rem;
     }
 }
 
