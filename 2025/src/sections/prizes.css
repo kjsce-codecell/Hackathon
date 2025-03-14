@@ -341,9 +341,23 @@
     .prize-image {
         width: 32px;
     }
-    
+}
+
+/* Match the Stats header font sizes for different mobile breakpoints */
+@media (max-width: 1000px) {
     .prizes-header {
-        font-size: 3.6rem;
-        margin-top: 1rem;
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .prizes-header {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .prizes-header {
+        font-size: 2rem;
     }
 }
