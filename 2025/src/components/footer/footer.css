@@ -136,6 +136,7 @@ footer::before {
   flex: 0 0 auto;
   width: 100px;
   margin-top: 80px;
+  margin-left: -55px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -143,7 +144,7 @@ footer::before {
 }
 
 .M img {
-  width: 175%;
+  width: 305%;
   height: auto;
 }
 
@@ -184,7 +185,7 @@ footer::before {
 
 /* APRIL 12 | 13 text */
 .april-dates {
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   margin-bottom: 15px;
   letter-spacing: 1px;
