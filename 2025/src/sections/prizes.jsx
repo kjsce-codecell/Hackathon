@@ -70,6 +70,7 @@ const Prizes = () => {
                             <TextScramble text="CYBERSECURITY" />
                         </div>
                         <div className="prize-image-placeholder">
+
                         </div>
                         <div className="prize-position">Winner</div>
                     </div>
