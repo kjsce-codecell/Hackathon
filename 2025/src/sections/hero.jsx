@@ -64,7 +64,7 @@ const Hero = () => {
     }, [handleMouseMove, handleScroll]);
 
     return (
-        <section className="hero">
+        <section className="hero" id="home">
             <div
                 className="hero__backgrounds"
                 style={{
@@ -87,9 +87,8 @@ const Hero = () => {
                     alt="Sky"
                     className="hero__background hero__background--sky"
                     style={{
-                        transform: `translate(${mousePosition.x * 0.05}px, ${
-                            mousePosition.y * 0.05
-                        }px)`,
+                        transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05
+                            }px)`,
                     }}
                 />
                 <img
@@ -97,9 +96,8 @@ const Hero = () => {
                     alt="Ground"
                     className="hero__background hero__background--ground"
                     style={{
-                        transform: `translate(${mousePosition.x * 0.08}px, ${
-                            mousePosition.y * 0.08 + scrollPosition * 0.4
-                        }px)`,
+                        transform: `translate(${mousePosition.x * 0.08}px, ${mousePosition.y * 0.08 + scrollPosition * 0.4
+                            }px)`,
                         transformOrigin: "bottom center",
                     }}
                     data-aos="slide-up"
@@ -108,9 +106,8 @@ const Hero = () => {
                 <div
                     className="hero__background hero__background--horse"
                     style={{
-                        transform: `translate(${mousePosition.x * 0.08}px, ${
-                            mousePosition.y * 0.08 + scrollPosition * 0.2
-                        }px)`,
+                        transform: `translate(${mousePosition.x * 0.08}px, ${mousePosition.y * 0.08 + scrollPosition * 0.2
+                            }px)`,
                         transformOrigin: "center center",
                     }}
                 ></div>
@@ -123,17 +120,15 @@ const Hero = () => {
             ></div>
             <Navigation
                 style={{
-                    transform: `translate(${mousePosition.x * 0.1}px, ${
-                        mousePosition.y * 0.1
-                    }px)`,
+                    transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1
+                        }px)`,
                 }}
             />
             <div
                 className="hero__content"
                 style={{
-                    transform: `translate(${mousePosition.x * 0.1}px, ${
-                        mousePosition.y * 0.1 - scrollPosition * 0.2
-                    }px)`,
+                    transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1 - scrollPosition * 0.2
+                        }px)`,
                 }}
             >
                 <h1 className="hero__title">

@@ -5,20 +5,20 @@ const ScrambleText = ({ text }) => {
     const [scrambledText, setScrambledText] = useState(text);
     const [isHovering, setIsHovering] = useState(false);
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    
+
     const scramble = useCallback(() => {
         let iterations = 0;
         const maxIterations = 10;
         const interval = setInterval(() => {
-            setScrambledText(prev => 
+            setScrambledText(prev =>
                 text.split('').map((char, index) => {
                     if (char === ' ') return ' ';
                     if (iterations > index) return char;
                     return characters[Math.floor(Math.random() * characters.length)];
                 }).join('')
             );
-            
-            iterations += 1/3;
+
+            iterations += 1 / 3;
             if (iterations >= maxIterations) {
                 clearInterval(interval);
                 setScrambledText(text);
@@ -36,7 +36,7 @@ const ScrambleText = ({ text }) => {
     }, [isHovering, scramble]);
 
     return (
-        <span 
+        <span
             className="scramble-text"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setScrambledText(text)}

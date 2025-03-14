@@ -129,6 +129,7 @@ const StatsPage = () => {
     <section
       className={`stats ${startRotation ? "start-rotation" : ""}`}
       ref={sectionRef}
+      id="stats"
     >
       <img
         src="/assets/AboutUsRightStreak.svg"

@@ -1,19 +1,17 @@
 .stats {
   color: #fff;
   /* padding: 0 0 5rem 0; */
-  background: 
-    /* Top shadow */ linear-gradient(
-        to bottom,
-        #000000 0%,
-        rgba(0, 0, 0, 0) 35%
-      )
-      top,
+  background:
+    /* Top shadow */
+    linear-gradient(to bottom,
+      #000000 0%,
+      rgba(0, 0, 0, 0) 35%) top,
     /* Bottom shadow */
-      linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0) 25%) bottom,
-    /* Left shadow */ linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 0%)
-      left,
-    /* Right shadow */ linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 0%)
-      right,
+    linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0) 25%) bottom,
+    /* Left shadow */
+    linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 0%) left,
+    /* Right shadow */
+    linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 0%) right,
     url("/assets/statsbg.svg");
   background-size: cover;
   background-position: center;
@@ -50,7 +48,7 @@
 }
 
 /* Content positioning over the overlay */
-.stats-container > * {
+.stats-container>* {
   position: relative;
   z-index: 2;
 }

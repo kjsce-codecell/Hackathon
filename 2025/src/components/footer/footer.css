@@ -1,5 +1,6 @@
 :root {
-  --brown: #fff;  /* Using white since it's a dark theme */
+  --brown: #fff;
+  /* Using white since it's a dark theme */
 }
 
 footer {
@@ -7,7 +8,7 @@ footer {
   width: 100%;
   background-color: #000;
   color: #fff;
-  font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+  /* font-family: 'Impact', 'Arial Narrow Bold', sans-serif; */
   overflow: hidden;
 }
 
@@ -58,6 +59,7 @@ footer::before {
   background-size: cover;
   z-index: 0;
 }
+
 .outlaws {
   position: relative;
   z-index: 1;
@@ -288,9 +290,10 @@ footer::before {
   .everything {
     align-items: center;
     padding: 0 20px 20px;
-    flex-direction: row; /* Maintain row direction */
+    flex-direction: row;
+    /* Maintain row direction */
   }
-  
+
   .social-icons {
     gap: 15px;
     flex-wrap: wrap;
@@ -310,9 +313,10 @@ footer::before {
   .G {
     display: none;
   }
+
   .logo {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     align-items: center;
     order: 2;
   }
