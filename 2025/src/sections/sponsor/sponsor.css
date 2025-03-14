@@ -291,13 +291,10 @@
 .sponsor__logo-placeholder {
   width: 120px;
   height: 120px;
-  background-color: rgba(243, 234, 234, 0.85);
-  border: 1px solid rgba(107, 2, 236, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  object-fit: contain;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
 }
 
 .sponsor__p {
@@ -357,19 +354,55 @@
   }
 
   .sponsor__button-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 1.5rem;
   }
   
   .sponsor__button {
     width: 200px;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .sponsor__frame {
+    height: 400px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 15px 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .sponsor__category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sponsor__frame::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    pointer-events: none;
   }
 }
 
-/* General responsive updates */
 @media (max-width: 1200px) {
   .sponsor__content {
     max-width: 95%;
@@ -400,7 +433,7 @@
   }
   
   .sponsor__title-container {
-    margin: 1.5rem 0 3rem;
+    margin: 1.5rem 0 2rem;
     flex-wrap: wrap;
   }
   
@@ -458,6 +491,28 @@
   .sponsor__frame-text {
     margin-bottom: 2rem;
   }
+  
+  .sponsor__title {
+    font-size: 2rem;
+    margin: 0 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .sponsor__container {
+    padding: 0 1rem;
+  }
+  
+  .sponsor__logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .sponsor__frame {
+    padding: 20px 1rem;
+    height: auto;
+    min-height: 300px;
+  }
 }
 
 /* Extra small devices */
@@ -494,5 +549,142 @@
   .sponsor__scroll-indicator {
     font-size: 1.5rem;
     bottom: -40px;
+  }
+  
+  .sponsor__title {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .sponsor__frame-text {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sponsor__frame {
+    padding: 15px 0.8rem;
+  }
+  
+  .sponsor__logo-item {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .sponsor__logo-placeholder {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .sponsor__button {
+    width: 140px;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    margin: 4px 0;
+  }
+  
+  .sponsor__button-container {
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+}
+
+/* Horizontal phone orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .sponsor {
+    height: auto;
+  }
+  
+  .sponsor__title {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .sponsor__frame {
+    height: auto;
+    max-height: 60vh;
+  }
+  
+  .sponsor__logos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .sponsor__logo-item {
+    margin: 0.5rem;
+    width: calc(50% - 1rem);
+  }
+}
+
+.sponsor__category {
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.sponsor__category-title {
+  font-family: "Chinese Rocks", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.sponsor__logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sponsor__logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsor__logo-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sponsor__logo-placeholder {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .sponsor__category-title {
+    font-size: 1.2rem;
+  }
+  
+  .sponsor__logo-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .sponsor__logos {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sponsor__logo-item {
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sponsor__logo-item a {
+    display: flex;
+    justify-content: center;
   }
 }
