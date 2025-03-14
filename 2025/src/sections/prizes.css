@@ -261,10 +261,6 @@
     position: absolute;
     margin-top: 5rem;
     height: 35rem;
-
-    @media (max-width: 768px) {
-        display: none;
-    }
 }
 
 .PrizesLeftStreak {
@@ -281,7 +277,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1173px) {
     .prizes-section {
         min-height: auto;
         height: auto;
@@ -305,104 +301,49 @@
     
     .prizes-grid {
         grid-template-columns: 1fr;
-        gap: 60px;
-        margin: 40px 0;
-    }
-
-    .prize-card {
-        min-height: auto;
-        margin: 10px 0;
-        padding: 20px;
-    }
-
-    .prize-category {
-        font-size: 24px;
-        padding: 10px;
-        margin-bottom: 20px;
-        height: 60px;
-    }
-
-    .prize-position {
-        font-size: 24px;
-    }
-
-    .prize-amount {
-        font-size: 40px;
-    }
-
-    .prize-details {
-        gap: 30px;
-    }
-    
-    .PrizesLeftStreak, .PrizesRightStreak {
-        position: absolute;
-        height: 100vh;
-        margin-top: 0;
-        width: auto;
-        max-width: 100%;
-        z-index: 1;
-        opacity: 0.8;
-    }
-
-    .PrizesLeftStreak {
-        left: 5%;
-        transform: translateY(0%);
-    }
-
-    .PrizesRightStreak {
-        right: 5%;
-        transform: translateY(0%);
-    }
-
-    .prize-image {
-        width: 56px;
-    }
-}
-
-@media (max-width: 480px) {
-    .prizes-section {
-        padding: 2rem 0;
-    }
-
-    .prizes-container {
-        padding: 0 1rem;
-        margin: 1rem auto;
-    }
-
-    .prizes-grid {
         gap: 40px;
         margin: 30px 0;
     }
 
     .prize-card {
+        min-height: auto;
         margin: 5px 0;
         padding: 15px;
     }
 
     .prize-category {
-        font-size: 20px;
+        font-size: 18px;
         padding: 8px;
         margin-bottom: 15px;
         height: 50px;
     }
 
     .prize-position {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .prize-amount {
-        font-size: 34px;
+        font-size: 24px;
     }
 
     .prize-details {
         gap: 20px;
     }
-
+    
     .prize-details > div {
         padding: 10px;
     }
+    
+    .PrizesLeftStreak, .PrizesRightStreak {
+        display: none;
+    }
 
     .prize-image {
-        width: 52px;
+        width: 32px;
+    }
+    
+    .prizes-header {
+        font-size: 3.6rem;
+        margin-top: 1rem;
     }
 }
