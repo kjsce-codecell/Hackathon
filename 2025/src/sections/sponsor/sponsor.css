@@ -55,13 +55,18 @@
   z-index: 2;
 }
 
+/* Update sponsor__title-container to match title-header */
 .sponsor__title-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  margin: 2rem 0 4rem;
+  align-items: start;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  opacity: 1;
   position: relative;
+  width: 100%;
 }
 
 .sponsor__left-streak, .sponsor__right-streak {
@@ -88,27 +93,32 @@
   flex: 1;
   max-width: 120px;
 }
-  
+
 .sponsor__title {
   font-family: "Chinese Rocks", sans-serif;
-  font-size: 6rem;
   font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #ffffff;
-  text-align: center;
-  margin-top: 3rem;
 }
 
 @media (max-width: 1120px) {
+  .sponsor__title-container {
+    font-size: 3rem;
+  }
   
   .sponsor__title {
-    font-size: 3rem;
-    margin-top: 5rem;
+    font-size: 4rem;
+    margin-top: 2.8rem;
   }
 }
 
 @media (max-width: 1005px) {
+  .sponsor__title-container {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+  }
+  
   .sponsor__title {
     font-size: 3rem;
     margin-top: 5rem;
@@ -117,24 +127,49 @@
 }
 
 @media (max-width: 905px) {
+  .sponsor__title-container {
+    font-size: 1.7rem;
+    margin-top: 4.5rem;
+  }
+  
   .sponsor__title {
     font-size: 2.2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 }
 
 @media (max-width: 865px) {
+  .sponsor__title-container {
+    font-size: 1.4rem;
+    margin-top: 4.5rem;
+  }
+  
   .sponsor__title {
     font-size: 2rem;
-    margin-top: 5.4rem;
+    margin-top: 3rem;
   }
 }
 
 @media (max-width: 805px) {
+  .sponsor__title-container {
+    font-size: 1rem;
+    margin-top: 4.7rem;
+  }
   
   .sponsor__title {
-    font-size: 1rem;
-    margin-top: 6rem;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+}
+
+/* Update mobile styles for title */
+@media (max-width: 768px) {
+  .sponsor__title-container {
+    margin: 1.5rem 0 2rem;
+  }
+  
+  .sponsor__title {
+    letter-spacing: 1.5px;
   }
 }
   
@@ -205,7 +240,6 @@
   -ms-overflow-style: none;
 }
 
-/* SVG Border Elements - updated with proper overlapping */
 .sponsor__frame-border {
   position: absolute;
   pointer-events: none;
@@ -487,8 +521,8 @@
   }
   
   .sponsor__logo-placeholder {
-    width: 120px;   /* Increased from 100px */
-    height: 120px;  /* Increased from 100px */
+    width: 120px;
+    height: 120px;
   }
   
   .sponsor__frame-text {
@@ -518,7 +552,6 @@
   }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
   .sponsor {
     padding: 0.8rem;
@@ -591,7 +624,6 @@
   }
 }
 
-/* Horizontal phone orientation */
 @media (max-height: 500px) and (orientation: landscape) {
   .sponsor {
     height: auto;
