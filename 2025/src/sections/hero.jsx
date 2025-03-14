@@ -139,6 +139,7 @@ const Hero = () => {
               8
             </span>
           </div>
+          <p className="dates">12 - 13 APRIL</p>
         </h1>
         <div
           className="apply-button-wrapper animate-slide-in-delay-2"
