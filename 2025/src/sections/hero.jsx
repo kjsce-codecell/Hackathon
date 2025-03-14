@@ -103,11 +103,11 @@ const Hero = () => {
           opacity: Math.min((scrollPosition / 1500) * 0.7, 0.7)
         }}
       ></div>
-      {/* <Navigation
+      <Navigation
         style={{
           transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)`
         }}
-      /> */}
+      />
       <div
         className="hero__content"
         style={{
