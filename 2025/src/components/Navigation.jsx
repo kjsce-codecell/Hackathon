@@ -2,35 +2,46 @@ import React, { useState, useEffect } from "react";
 import "./Navigation.css";
 
 const Navigation = ({ style }) => {
+  // Add mounting state to prevent animations on initial load
+  const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // Add useEffect to set mounted state after component mounts
+  useEffect(() => {
+    // Set mounted to true once component has mounted 
+    // to prevent any animations from running on initial load
+    setMounted(true);
+    
+    // Ensure menu is closed on page load
+    setIsMenuOpen(false);
+    setIsAnimating(false);
+  }, []);
+
   const toggleMenu = () => {
+    // Only allow toggles after component is mounted
+    if (!mounted) return;
+  
+    // Single animation flow - no multiple state changes
     if (isMenuOpen) {
-      // Closing the menu - remove classes in reverse order
+      // For closing: immediately set both states
       setIsMenuOpen(false);
-      // Let animation complete before removing overlay
-      setTimeout(() => {
-        setIsAnimating(false);
-      }, 400); // Match this with CSS animation duration
+      setIsAnimating(false);
     } else {
-      // Opening the menu - first trigger the overlay animation
+      // For opening: set both states at once
+      setIsMenuOpen(true);
       setIsAnimating(true);
-      // Wait for overlay to animate before showing menu
-      setTimeout(() => {
-        setIsMenuOpen(true);
-      }, 300); // Slightly shorter than the overlay animation
     }
   };
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    setHoveredItem(null); // Clear any hover state on click
+    setHoveredItem(null);
     
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      const offset = 100; // Adjust this value based on your navbar height
+      const offset = 100;
       const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
@@ -38,15 +49,13 @@ const Navigation = ({ style }) => {
         behavior: 'smooth'
       });
       
-      // Reset link state after scrolling
       setTimeout(() => {
-        // Remove any active/focus states from links
         document.activeElement.blur();
       }, 100);
     }
-    // Close mobile menu after clicking
+    
     if (isMenuOpen) {
-      toggleMenu(); // Use toggle function to ensure proper animation sequence
+      toggleMenu();
     }
   };
 
