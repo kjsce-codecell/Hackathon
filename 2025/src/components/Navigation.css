@@ -74,9 +74,36 @@ html {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* Ensure no underline appears on links in ANY state */
+.hero__nav a,
+.hero__nav a:link,
+.hero__nav a:visited,
+.hero__nav a:hover,
+.hero__nav a:active,
+.hero__nav a:focus,
+.hero__nav li.hovered a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Add this to remove any active state highlighting */
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+/* Override browser default focus styles */
+*:focus {
+  outline: none !important;
+}
+
+/* Main navigation link styles */
 .hero__nav a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -89,6 +116,58 @@ html {
 .hero__nav li {
   position: relative;
   overflow: visible;
+  transition: all 0.3s ease;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent; /* Remove default mobile tap highlight */
+}
+
+/* Add yellow glow to text on hovered class instead of hover pseudo-class */
+.hero__nav li.hovered a {
+  color: #fff;
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px #ffff00, 0 0 12px #ffff00, 0 0 16px #ffff00;
+  transition: all 0.3s ease, text-shadow 0.5s ease;
+  will-change: transform, text-shadow;
+}
+
+/* Mobile styles with touch effect */
+@media (max-width: 768px) {
+  /* Existing mobile styles */
+  .hero__nav a {
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    color: #000;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    transform: skewX(-5deg);
+    text-align: center;
+    transition: color 0.2s ease; /* Add transition for smooth color change */
+  }
+  
+  /* Add touch effect for mobile */
+  .hero__nav a:active {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add slight shadow for better contrast */
+  }
+  
+  /* Keep existing styles */
+  .hero__nav li.hovered a {
+    color: #000;
+    transform: skewX(-5deg);
+    text-shadow: none;
+    transition: none;
+  }
+  
+  /* Other mobile styles remain unchanged */
+}
+
+/* Ensure tap effect works on iOS Safari which can be picky */
+.hero__nav li {
+  position: relative;
+  overflow: visible;
+  transition: all 0.3s ease;
+  will-change: transform;
 }
 
 /* More realistic brush stroke effect that matches the image */
@@ -103,7 +182,7 @@ html {
   z-index: -1;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   /* Complex clip-path to create a brush stroke look with horizontal strokes and splatters */
   clip-path: polygon(
     /* Top straight section */
@@ -132,6 +211,9 @@ html {
     4% 99.25%, 0% 99.21%, 2% 99.18%,
     0% 99.15%, 5% 99.12%, 0% 99.1%
   );
+  pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 /* Create paint splatter dots */
@@ -142,6 +224,19 @@ html {
   height: 100%;
   left: -20%;
   top: 0;
+  /* Initially invisible background */
+  background: none;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.05s; /* Slight delay and matching curve */
+  pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Only show splatter dots when hovered */
+.hero__nav li.hovered::after {
+  opacity: 1;
   background: radial-gradient(circle at 10% 90%, #000 1px, transparent 3px),
               radial-gradient(circle at 15% 95%, #000 1px, transparent 3px),
               radial-gradient(circle at 20% 92%, #000 1px, transparent 2px),
@@ -152,25 +247,22 @@ html {
               radial-gradient(circle at 95% 87%, #000 1px, transparent 3px);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.5s ease;
 }
 
-/* Add yellow glow to text on hover */
-.hero__nav li:hover a {
-  color: #fff;
-  transform: translateY(-2px);
-  text-shadow: 0 0 8px #ffff00, 0 0 12px #ffff00, 0 0 16px #ffff00;
-  transition: all 0.3s ease, text-shadow 0.5s ease;
-}
-
-.hero__nav li:hover::before {
+.hero__nav li.hovered::before {
   transform: scaleY(1);
 }
 
-.hero__nav li:hover::after {
+.hero__nav li.hovered::after {
   opacity: 1;
+}
+
+/* Remove the original hover effects */
+/* These are the styles that are causing issues */
+.hero__nav li:hover a,
+.hero__nav li:hover::before,
+.hero__nav li:hover::after {
+  /* Empty rules to override the hover effects defined elsewhere */
 }
 
 @media (max-width: 1200px) {
@@ -289,22 +381,90 @@ html {
     width: 70%;
     height: 100vh;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    background: #ff0000;
-    transition: right 0.3s ease;
+    background: #d41936;
+    transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     gap: 2rem;
     z-index: 1000;
-    padding-left: 3rem;
+    padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 25vh;
     padding-bottom: 15vh;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: skewY(-12deg);
+    transform-origin: top right;
+    clip-path: polygon(
+      0 0, 
+      100% 0, 
+      100% 100%, 
+      0 100%,
+      0 0
+    );
   }
 
   .nav-links.active {
     right: 0;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links li {
+    transform: skewY(12deg) translateX(50%);
+    width: 100%;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.3, 1.33), opacity 0.3s ease;
+    text-align: center;
+  }
+
+  .nav-links.active li:nth-child(1) {
+    transform: skewY(12deg) translateX(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.active li:nth-child(2) {
+    transform: skewY(12deg) translateX(0);
+    opacity: 1;
+    transition-delay: 0.15s;
+  }
+
+  .nav-links.active li:nth-child(3) {
+    transform: skewY(12deg) translateX(0);
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.active li:nth-child(4) {
+    transform: skewY(12deg) translateX(0);
+    opacity: 1;
+    transition-delay: 0.25s;
+  }
+
+  .nav-links.active li:nth-child(5) {
+    transform: skewY(12deg) translateX(0);
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+
+  .nav-links.active li:nth-child(6) {
+    transform: skewY(12deg) translateX(0);
+    opacity: 1;
+    transition-delay: 0.35s;
+  }
+
+  @keyframes slideIn {
+    0% {
+      right: -100%;
+    }
+    100% {
+      right: 0;
+    }
+  }
+
+  .nav-links.active {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   .nav-logo {
@@ -315,33 +475,27 @@ html {
     width: 80px;
   }
 
-  .nav-links li {
-    transform: none;
-    width: 100%;
-  }
-
   .hero__nav a {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     padding: 5px 15px;
     color: #000;
     font-weight: bold;
     display: block;
     width: 100%;
+    transform: skewX(-5deg);
+    text-align: center;
+    transition: color 0.2s ease;
   }
 
-  /* Remove ALL hover effects for mobile */
-  .hero__nav li:hover a {
-    color: #000;
-    transform: none;
-    text-shadow: none;
-    transition: none;
+  .hero__nav a:active {
+    color: #fff !important;
   }
 
-  .hero__nav li:hover::before {
+  .hero__nav li.hovered::before {
     transform: scaleY(0);
   }
 
-  .hero__nav li:hover::after {
+  .hero__nav li.hovered::after {
     opacity: 0;
   }
 
@@ -353,7 +507,6 @@ html {
     transform: none;
   }
   
-  /* Completely disable the hover pseudo elements and transitions */
   .hero__nav li::before,
   .hero__nav li::after {
     display: none;
@@ -363,12 +516,12 @@ html {
 @media (max-width: 480px) {
   .nav-links {
     width: 85%;
-    padding-left: 2rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .hero__nav a {
-    font-size: 1.1rem;
+    font-size: 1.75rem;
   }
 
   .nav-logo img {
