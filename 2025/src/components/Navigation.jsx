@@ -19,6 +19,22 @@ const Navigation = ({ style }) => {
     setIsAnimating(false);
   }, []);
 
+  // Add useEffect to control body scroll when menu is open/closed
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Prevent body scrolling when menu is open
+      document.body.classList.add('menu-open');
+    } else {
+      // Re-enable body scrolling when menu is closed
+      document.body.classList.remove('menu-open');
+    }
+
+    // Cleanup function to ensure body scrolling is re-enabled when component unmounts
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     // Only allow toggles after component is mounted
     if (!mounted) return;
@@ -39,23 +55,45 @@ const Navigation = ({ style }) => {
     e.preventDefault();
     setHoveredItem(null);
     
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      const offset = 100;
-      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-      
-      setTimeout(() => {
-        document.activeElement.blur();
-      }, 100);
-    }
-    
+    // First, close the menu if it's open
     if (isMenuOpen) {
-      toggleMenu();
+      setIsMenuOpen(false);
+      setIsAnimating(false);
+      
+      // Give a small delay to allow the menu to close and body scroll to be re-enabled
+      setTimeout(() => {
+        // Then scroll to the target
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offset = 100;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+    
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          setTimeout(() => {
+            document.activeElement.blur();
+          }, 100);
+        }
+      }, 400); // Wait for the menu close animation to complete
+    } else {
+      // If menu is already closed, just scroll to target
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const offset = 100;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+  
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        setTimeout(() => {
+          document.activeElement.blur();
+        }, 100);
+      }
     }
   };
 

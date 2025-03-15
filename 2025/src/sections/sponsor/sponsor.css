@@ -102,6 +102,13 @@
   text-transform: uppercase;
 }
 
+/* Adding new title header text styles */
+.title-header-text {
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1120px) {
   .sponsor__title-container {
     font-size: 3rem;
@@ -168,8 +175,11 @@
     margin: 1.5rem 0 2rem;
   }
   
-  .sponsor__title {
-    letter-spacing: 1.5px;
+  .sponsor__title,
+  .sponsor__title.title-header-text {
+    font-size: 3rem; /* 48px converted to rem */
+    margin: 0 2rem;
+    letter-spacing: 2px;
   }
 }
   
@@ -587,8 +597,9 @@
     bottom: -40px;
   }
   
-  .sponsor__title {
-    font-size: 1.5rem;
+  .sponsor__title,
+  .sponsor__title.title-header-text {
+    font-size: 3rem; /* Keep consistent 48px size even on smaller phones */
     margin: 0 1rem;
   }
   

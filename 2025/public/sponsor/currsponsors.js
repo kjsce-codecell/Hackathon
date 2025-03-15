@@ -47,5 +47,14 @@ export default [
                 img: "/sponsor/currentsponsors/smaaash.png"
             }
         ]
+    },
+    {
+        title: "Voucher Partner",
+        sponsors: [
+            {
+                src: "https://interviewbuddy.net/",
+                img : "/sponsor/currentsponsors/interviewbuddy.png",
+            }
+        ]
     }
 ]
