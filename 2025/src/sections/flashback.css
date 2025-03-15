@@ -24,6 +24,7 @@
     margin-top: 3rem;
     font-size: 4rem;
     transform: translateX(0.6rem);
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
 }
 
 @media (max-width: 1120px) {
@@ -129,4 +130,22 @@
     width: calc(100% + 2rem);
     height: calc(100% + 2rem);
     pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+    .flashback-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 865px) {
+    .flashback-header {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .flashback-header {
+        font-size: 2rem;
+    }
 }
