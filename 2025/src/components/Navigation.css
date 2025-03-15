@@ -384,14 +384,14 @@ a:active, a:focus {
     align-items: center;
     justify-content: flex-start;
     background: #d41936;
-    transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     gap: 2rem;
     z-index: 1000;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 25vh;
     padding-bottom: 15vh;
-    transform: skewY(-12deg);
+    transform: skewY(-12deg) translateX(100%);
     transform-origin: top right;
     clip-path: polygon(
       0 0, 
@@ -400,71 +400,82 @@ a:active, a:focus {
       0 100%,
       0 0
     );
+    /* Add box-shadow for depth */
+    box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.4);
   }
 
   .nav-links.active {
     right: 0;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transform: skewY(-12deg) translateX(0);
+    animation: slideInMenu 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; /* Delay the menu animation */
   }
 
-  .nav-links li {
-    transform: skewY(12deg) translateX(50%);
-    width: 100%;
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.3, 1.33), opacity 0.3s ease;
-    text-align: center;
+  @keyframes slideInMenu {
+    0% {
+      transform: skewY(-12deg) translateX(100%);
+      box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+      transform: skewY(-12deg) translateX(0);
+      box-shadow: -15px 0px 35px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+  /* Add a pulsing glow to the hamburger when overlay is active */
+  .hamburger.open {
+    z-index: 10001;
+    animation: pulse 1.5s infinite alternate;
   }
 
+  @keyframes pulse {
+    0% {
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+    }
+    100% {
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+    }
+  }
+  
+  /* Modify the item animation timing to sequence with the menu animation */
   .nav-links.active li:nth-child(1) {
     transform: skewY(12deg) translateX(0);
     opacity: 1;
-    transition-delay: 0.1s;
+    transition-delay: 0.4s; /* Increased delay to wait for menu to appear */
   }
 
   .nav-links.active li:nth-child(2) {
     transform: skewY(12deg) translateX(0);
     opacity: 1;
-    transition-delay: 0.15s;
+    transition-delay: 0.45s;
   }
 
   .nav-links.active li:nth-child(3) {
     transform: skewY(12deg) translateX(0);
     opacity: 1;
-    transition-delay: 0.2s;
+    transition-delay: 0.5s;
   }
 
   .nav-links.active li:nth-child(4) {
     transform: skewY(12deg) translateX(0);
     opacity: 1;
-    transition-delay: 0.25s;
+    transition-delay: 0.55s;
   }
 
   .nav-links.active li:nth-child(5) {
     transform: skewY(12deg) translateX(0);
     opacity: 1;
-    transition-delay: 0.3s;
+    transition-delay: 0.6s;
   }
 
   .nav-links.active li:nth-child(6) {
     transform: skewY(12deg) translateX(0);
     opacity: 1;
-    transition-delay: 0.35s;
+    transition-delay: 0.65s;
   }
 
-  @keyframes slideIn {
-    0% {
-      right: -100%;
-    }
-    100% {
-      right: 0;
-    }
-  }
-
-  .nav-links.active {
-    right: 0;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  /* Ensure click on overlay closes menu */
+  .menu-overlay.active {
+    cursor: pointer;
   }
 
   .nav-logo {
@@ -511,6 +522,21 @@ a:active, a:focus {
   .hero__nav li::after {
     display: none;
   }
+
+  /* Add back the missing nav-links li styling */
+  .nav-links li {
+    transform: skewY(12deg) translateX(50%);
+    width: 100%;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.3, 1.33), opacity 0.3s ease;
+    text-align: center;
+  }
+
+  /* Modify the mobile menu animation for smoother sequencing */
+  .nav-links {
+    /* ... existing styles ... */
+  }
 }
 
 @media (max-width: 480px) {
@@ -535,5 +561,36 @@ a:active, a:focus {
   }
   100% {
     transform: translateY(-5px);
+  }
+}
+/* Black and white overlay effect */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  backdrop-filter: grayscale(0%);
+  pointer-events: none;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: fadeToBlackAndWhite 0.5s forwards;
+}
+
+@keyframes fadeToBlackAndWhite {
+  0% {
+    backdrop-filter: grayscale(0%);
+  }
+  100% {
+    backdrop-filter: grayscale(100%) brightness(0.8) contrast(1.2);
   }
 }
