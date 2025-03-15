@@ -1,6 +1,6 @@
 .prizes-section {
     min-height: 100vh;
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
     color: white;
     font-family: 'Orbitron', sans-serif;
     position: relative;
@@ -34,6 +34,7 @@
     margin-top: 3rem;
     transform: translateX(0.5rem);
     font-size: 4rem;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7); 
 }
 
 .prizes-header h1 {
@@ -281,7 +282,7 @@
     .prizes-section {
         min-height: auto;
         height: auto;
-        padding: 3rem 0;
+        /* padding: 3rem 0; */
         background-image: 
             /* Top shadow */
             linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 35%),
