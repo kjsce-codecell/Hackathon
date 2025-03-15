@@ -33,6 +33,9 @@
 }
 
 @media (max-width: 1005px) {
+    .flashback {
+        min-height: 60vh;
+    }
     .flashback-header {
         margin-top: 4rem;
         font-size: 2rem;
@@ -40,6 +43,9 @@
 }
 
 @media (max-width: 905px) {
+    .flashback {
+        min-height: 50vh;
+    }
     .flashback-header {
         margin-top: 4.5rem;
         font-size: 1.7rem;
@@ -47,6 +53,9 @@
 }
 
 @media (max-width: 865px) {
+    .flashback {
+        min-height: 40vh;
+    }
     .flashback-header {
         margin-top: 4.5rem;
         font-size: 1.32rem;
@@ -54,6 +63,9 @@
 }
 
 @media (max-width: 805px) {
+    .flashback {
+        min-height: 40vh;
+    }
     .flashback-header {
         margin-top: 4.7rem;
         font-size: 0.92rem;
