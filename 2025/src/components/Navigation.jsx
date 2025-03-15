@@ -166,6 +166,10 @@ const Navigation = ({ style }) => {
             <a href="#flashbacks" onClick={(e) => handleNavClick(e, '#flashbacks')}>Flashbacks</a>
           </li>
         </ul>
+
+        <div className="nav-logo-svu">
+          <img src="/assets/SVU_LOGO.svg" alt="CodeCell Logo" />
+        </div>
       </nav>
     </>
   );
