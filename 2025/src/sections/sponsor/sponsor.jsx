@@ -56,7 +56,7 @@ export default function Sponsor() {
       <div className="sponsor__outer-frame"></div>
       <div className="sponsor__content">
         <div className="sponsor__title-container">
-          <h1 className="sponsor__title">SPONSORS</h1>
+          <h1 className="sponsor__title title-header-text">SPONSORS</h1>
         </div>
         
         <div className="sponsor__container">
