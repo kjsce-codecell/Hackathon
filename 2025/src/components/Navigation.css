@@ -183,7 +183,8 @@ a:active, a:focus {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    animation: menuSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: menuSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Faster menu slide-in but starts after overlay */
+    animation-delay: 0.2s; /* Add delay to ensure overlay appears first */
   }
 
   @keyframes menuSlideIn {
@@ -225,13 +226,13 @@ a:active, a:focus {
     animation: menuItemAppear 0.45s ease-out forwards;
   }
 
-  /* Staggered animation delays */
-  .nav-links.active li:nth-child(1) { animation-delay: 0.3s; }
-  .nav-links.active li:nth-child(2) { animation-delay: 0.4s; }
-  .nav-links.active li:nth-child(3) { animation-delay: 0.5s; }
-  .nav-links.active li:nth-child(4) { animation-delay: 0.6s; }
-  .nav-links.active li:nth-child(5) { animation-delay: 0.7s; }
-  .nav-links.active li:nth-child(6) { animation-delay: 0.8s; }
+  /* Staggered animation delays - adjust to start sooner after menu appears */
+  .nav-links.active li:nth-child(1) { animation-delay: 0.3s; } /* First item appears sooner after menu starts */
+  .nav-links.active li:nth-child(2) { animation-delay: 0.35s; }
+  .nav-links.active li:nth-child(3) { animation-delay: 0.4s; }
+  .nav-links.active li:nth-child(4) { animation-delay: 0.45s; }
+  .nav-links.active li:nth-child(5) { animation-delay: 0.5s; }
+  .nav-links.active li:nth-child(6) { animation-delay: 0.55s; }
 
   @keyframes menuItemAppear {
     0% {
@@ -268,10 +269,11 @@ a:active, a:focus {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    animation: overlayAppear 0.6s forwards;
+    animation: overlayAppear 0.4s forwards; /* Slightly faster overlay effect */
     cursor: pointer;
     /* Show when active */
     display: block;
+    animation-delay: 0s; /* Ensure overlay starts immediately */
   }
 
   /* Non-active overlay gets hidden animation */
