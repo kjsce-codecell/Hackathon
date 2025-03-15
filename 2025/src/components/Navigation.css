@@ -2,6 +2,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Add the body class to prevent scrolling when menu is open */
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  -webkit-overflow-scrolling: none;
+  touch-action: none;
+}
+
 .hero__nav {
   position: relative;
   z-index: 9999;
