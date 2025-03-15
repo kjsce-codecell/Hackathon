@@ -1,5 +1,6 @@
 :root {
-  --brown: #fff;  /* Using white since it's a dark theme */
+  --brown: #fff;
+  /* Using white since it's a dark theme */
 }
 
 footer {
@@ -7,7 +8,7 @@ footer {
   width: 100%;
   background-color: #000;
   color: #fff;
-  font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+  /* font-family: 'Impact', 'Arial Narrow Bold', sans-serif; */
   overflow: hidden;
 }
 
@@ -58,6 +59,7 @@ footer::before {
   background-size: cover;
   z-index: 0;
 }
+
 .outlaws {
   position: relative;
   z-index: 1;
@@ -118,6 +120,7 @@ footer::before {
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 40px 30px;
+  margin: auto;
 }
 
 .G {
@@ -126,7 +129,7 @@ footer::before {
   width: 100px;
   margin-top: 10px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: block;
     width: 26%;
   }
@@ -136,14 +139,15 @@ footer::before {
   flex: 0 0 auto;
   width: 100px;
   margin-top: 80px;
+  margin-left: -55px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 }
 
 .M img {
-  width: 175%;
+  width: 305%;
   height: auto;
 }
 
@@ -159,7 +163,8 @@ footer::before {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding-left: 6%;
+  margin: auto;
 }
 
 /* OUT NOW text */
@@ -184,7 +189,7 @@ footer::before {
 
 /* APRIL 12 | 13 text */
 .april-dates {
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   margin-bottom: 15px;
   letter-spacing: 1px;
@@ -283,13 +288,14 @@ footer::before {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .everything {
     align-items: center;
     padding: 0 20px 20px;
-    flex-direction: row; /* Maintain row direction */
+    flex-direction: row;
+    /* Maintain row direction */
   }
-  
+
   .social-icons {
     gap: 15px;
     flex-wrap: wrap;
@@ -309,10 +315,8 @@ footer::before {
   .G {
     display: none;
   }
+
   .logo {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    order: 2;
+    padding-left: 0;
   }
 }

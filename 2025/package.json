@@ -13,8 +13,11 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@tailwindcss/vite": "^4.0.13",
     "aos": "^2.3.4",
+    "framer-motion": "^12.5.0",
+    "hack": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-microsoft-clarity": "^2.0.0",
     "tailwindcss": "^4.0.13"
   },
   "devDependencies": {

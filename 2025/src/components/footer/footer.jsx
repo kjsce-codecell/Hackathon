@@ -50,7 +50,7 @@ const Footer = () => {
               <img src="./FOOTER/linkedin.svg" alt="LinkedIn" style={{ width: '30px', height: '30px' }} />
             </a>
           </div>
-          <p>Made with <span>🤍;</span> by <a href="https://www.kjssecodecell.com/" target="_blank" rel="noopener noreferrer">KJSCE CodeCell</a> </p>
+          <p>Made with <span>🤍</span> by <a href="https://www.kjssecodecell.com/" target="_blank" rel="noopener noreferrer">KJSSE CodeCell</a> </p>
         </div>
         <div className="G">
           <img src="./FOOTER/MATURE_17.svg" alt="MATURE" />

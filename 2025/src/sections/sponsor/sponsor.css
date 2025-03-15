@@ -99,6 +99,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   color: #fff;
+
   text-transform: uppercase;
 }
 
@@ -106,6 +107,8 @@
 .title-header-text {
   letter-spacing: 2px;
   color: #fff;
+
+
   text-transform: uppercase;
 }
 
@@ -163,6 +166,7 @@
     margin-top: 4.7rem;
   }
   
+
   .sponsor__title {
     font-size: 1.5rem;
     margin-top: 3rem;
@@ -180,6 +184,22 @@
     font-size: 3rem; /* 48px converted to rem */
     margin: 0 2rem;
     letter-spacing: 2px;
+
+  .sponsor__title {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+}
+
+/* Update mobile styles for title */
+@media (max-width: 768px) {
+  .sponsor__title-container {
+    margin: 1.5rem 0 2rem;
+  }
+  
+  .sponsor__title {
+    letter-spacing: 1.5px;
+
   }
 }
   
@@ -597,9 +617,14 @@
     bottom: -40px;
   }
   
+
   .sponsor__title,
   .sponsor__title.title-header-text {
     font-size: 3rem; /* Keep consistent 48px size even on smaller phones */
+
+  .sponsor__title {
+    font-size: 1.5rem;
+
     margin: 0 1rem;
   }
   

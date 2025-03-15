@@ -1,37 +1,386 @@
-.hero__nav {
-  position: relative;
-  z-index: 6;
-  padding: 2rem;
-  animation: fadeFloat 6s infinite alternate ease-in-out;
+html {
+  scroll-behavior: smooth;
 }
 
-.hero__nav ul {
+.hero__nav {
+  position: relative;
+  z-index: 9999;
+  padding: 0.5rem 2rem;
+  margin-top: -0.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
 }
 
+.nav-logo {
+  margin-right: 3rem;
+  position: relative;
+  top: -0.25rem;
+}
+
+.nav-logo img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.1);
+}
+
+.hamburger {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  border-radius: 3px;
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 5px; }
+.hamburger span:nth-child(2) { top: 14px; }
+.hamburger span:nth-child(3) { top: 23px; }
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Ensure no underline appears on links in ANY state */
+.hero__nav a,
+.hero__nav a:link,
+.hero__nav a:visited,
+.hero__nav a:hover,
+.hero__nav a:active,
+.hero__nav a:focus,
+.hero__nav li.hovered a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Add this to remove any active state highlighting */
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+/* Override browser default focus styles */
+*:focus {
+  outline: none !important;
+}
+
+/* Main navigation link styles */
 .hero__nav a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 3px 10px;
+  z-index: 1;
 }
 
-.hero__nav a:hover {
-  color: #ffd700;
+.hero__nav li {
+  position: relative;
+  overflow: visible;
+  transition: all 0.3s ease;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent; /* Remove default mobile tap highlight */
 }
 
+/* Add yellow glow to text on hovered class instead of hover pseudo-class */
+.hero__nav li.hovered a {
+  color: #fff;
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px #ffff00, 0 0 12px #ffff00, 0 0 16px #ffff00;
+  transition: all 0.3s ease, text-shadow 0.5s ease;
+  will-change: transform, text-shadow;
+}
+
+/* Mobile styles with touch effect */
 @media (max-width: 768px) {
-  .hero__nav ul {
+  .hamburger {
+    display: block;
+    z-index: 10001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    justify-content: flex-start;
+    background: #d41936;
+    /* Remove transition completely */
+    transition: none;
+    gap: 2rem;
+    z-index: 1000;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 25vh;
+    padding-bottom: 15vh;
+    /* Starting state - ensure it's fully hidden */
+    transform: skewY(-12deg) translateX(100%);
+    transform-origin: top right;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+    box-shadow: none;
+    /* Optimize rendering */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* Force hidden initially to prevent flashing on page load */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Make sure nav isn't visible on page load */
+  .nav-links:not(.active) {
+    transform: skewY(-12deg) translateX(100%);
+    opacity: 0;
+    animation: none;
+    /* Important to prevent any browser default behavior */
+    visibility: hidden;
+  }
+
+  /* Only apply animations when active is explicitly added */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: menuSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Faster menu slide-in but starts after overlay */
+    animation-delay: 0.2s; /* Add delay to ensure overlay appears first */
+  }
+
+  @keyframes menuSlideIn {
+    0% {
+      transform: skewY(-12deg) translateX(100%);
+      box-shadow: none;
+    }
+    100% {
+      transform: skewY(-12deg) translateX(0%);
+      box-shadow: -15px 0px 35px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  @keyframes menuSlideOut {
+    0% {
+      transform: skewY(-12deg) translateX(0%);
+      box-shadow: -15px 0px 35px rgba(0, 0, 0, 0.6);
+    }
+    100% {
+      transform: skewY(-12deg) translateX(100%);
+      box-shadow: none;
+    }
+  }
+
+  /* Simplify menu item appearance */
+  .nav-links li {
+    transform: skewY(12deg) translateX(50px);
+    width: 100%;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    /* No transitions */
+    transition: none;
+    text-align: center;
+    will-change: transform, opacity;
+  }
+
+  /* Pure animation approach for menu items */
+  .nav-links.active li {
+    animation: menuItemAppear 0.45s ease-out forwards;
+  }
+
+  /* Staggered animation delays - adjust to start sooner after menu appears */
+  .nav-links.active li:nth-child(1) { animation-delay: 0.3s; } /* First item appears sooner after menu starts */
+  .nav-links.active li:nth-child(2) { animation-delay: 0.35s; }
+  .nav-links.active li:nth-child(3) { animation-delay: 0.4s; }
+  .nav-links.active li:nth-child(4) { animation-delay: 0.45s; }
+  .nav-links.active li:nth-child(5) { animation-delay: 0.5s; }
+  .nav-links.active li:nth-child(6) { animation-delay: 0.55s; }
+
+  @keyframes menuItemAppear {
+    0% {
+      transform: skewY(12deg) translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: skewY(12deg) translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Simplified black and white overlay */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    /* No transition */
+    transition: none;
+    backdrop-filter: grayscale(0%);
+    pointer-events: none;
+    will-change: opacity, backdrop-filter;
+    /* Force hidden initially */
+    display: none;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: overlayAppear 0.4s forwards; /* Slightly faster overlay effect */
+    cursor: pointer;
+    /* Show when active */
+    display: block;
+    animation-delay: 0s; /* Ensure overlay starts immediately */
+  }
+
+  /* Non-active overlay gets hidden animation */
+  .menu-overlay:not(.active) {
+    animation: overlayDisappear 0.25s forwards;
+  }
+
+  @keyframes overlayAppear {
+    0% {
+      opacity: 0;
+      backdrop-filter: grayscale(0%);
+    }
+    100% {
+      opacity: 1;
+      backdrop-filter: grayscale(100%) brightness(0.8) contrast(1.2);
+    }
+  }
+
+  @keyframes overlayDisappear {
+    0% {
+      opacity: 1;
+      backdrop-filter: grayscale(100%) brightness(0.8) contrast(1.2);
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      backdrop-filter: grayscale(0%);
+      visibility: hidden;
+    }
+  }
+
+  /* Keep existing hamburger pulse animation */
+  .hamburger.open {
+    z-index: 10001;
+    animation: pulse 1.5s infinite alternate;
+  }
+
+  /* Adding back the pulse animation keyframes */
+  @keyframes pulse {
+    0% {
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+    }
+    100% {
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+    }
+  }
+
+  /* Rest of your mobile styles */
+  .nav-logo {
+    margin-right: 0;
+  }
+
+  .nav-logo img {
+    width: 80px;
+  }
+
+  .hero__nav a {
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    color: #000;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    transform: skewX(-5deg);
+    text-align: center;
+    transition: color 0.2s ease;
+  }
+
+  .hero__nav a:active {
+    color: #fff !important;
+  }
+
+  .hero__nav li.hovered::before {
+    transform: scaleY(0);
+  }
+
+  .hero__nav li.hovered::after {
+    opacity: 0;
+  }
+
+  .hero__nav li a:hover {
+    color: #000;
+  }
+
+  .nav-logo img:hover {
+    transform: none;
+  }
+  
+  .hero__nav li::before,
+  .hero__nav li::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    width: 85%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero__nav a {
+    font-size: 1.75rem;
+  }
+
+  .nav-logo img {
+    width: 70px;
   }
 }
 
@@ -39,8 +388,38 @@
   0% {
     transform: translateY(0);
   }
-
   100% {
     transform: translateY(-5px);
+  }
+}
+/* Black and white overlay effect */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  backdrop-filter: grayscale(0%);
+  pointer-events: none;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: fadeToBlackAndWhite 0.5s forwards;
+}
+
+@keyframes fadeToBlackAndWhite {
+  0% {
+    backdrop-filter: grayscale(0%);
+  }
+  100% {
+    backdrop-filter: grayscale(100%) brightness(0.8) contrast(1.2);
   }
 }

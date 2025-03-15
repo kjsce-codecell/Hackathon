@@ -25,6 +25,7 @@
     margin-top: 3rem;
     font-size: 4rem;
     transform: translateX(0.5rem);
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
 }
 
 .AboutUsLeftStreak, .AboutUsRightStreak {
