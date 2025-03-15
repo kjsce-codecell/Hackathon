@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navigation.css";
 
 const Navigation = ({ style }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      // Closing the menu - remove classes in reverse order
+      setIsMenuOpen(false);
+      // Let animation complete before removing overlay
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 400); // Match this with CSS animation duration
+    } else {
+      // Opening the menu - first trigger the overlay animation
+      setIsAnimating(true);
+      // Wait for overlay to animate before showing menu
+      setTimeout(() => {
+        setIsMenuOpen(true);
+      }, 300); // Slightly shorter than the overlay animation
+    }
   };
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
+    setHoveredItem(null); // Clear any hover state on click
+    
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       const offset = 100; // Adjust this value based on your navbar height
@@ -19,35 +37,91 @@ const Navigation = ({ style }) => {
         top: targetPosition,
         behavior: 'smooth'
       });
+      
+      // Reset link state after scrolling
+      setTimeout(() => {
+        // Remove any active/focus states from links
+        document.activeElement.blur();
+      }, 100);
     }
-    setIsMenuOpen(false); // Close mobile menu after clicking
+    // Close mobile menu after clicking
+    if (isMenuOpen) {
+      toggleMenu(); // Use toggle function to ensure proper animation sequence
+    }
+  };
+
+  // Handle hover states manually
+  const handleMouseEnter = (index) => {
+    setHoveredItem(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
   };
 
   return (
-    <nav className="hero__nav" style={style}>
-      <div className="nav-logo">
-        <img src="/assets/cclogo.svg" alt="CodeCell Logo" />
-      </div>
+    <>
+      {/* Black and white overlay */}
+      <div className={`menu-overlay ${isAnimating ? 'active' : ''}`} onClick={toggleMenu}></div>
+      
+      <nav className="hero__nav" style={style}>
+        <div className="nav-logo">
+          <img src="/assets/cclogo.svg" alt="CodeCell Logo" />
+        </div>
 
-      <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-      <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        <li><a href="#home" onClick={(e) => handleNavClick(e, '#home')}>Home</a></li>
-        <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')}>About</a></li>
-        {/* <li><a href="#timeline" onClick={(e) => handleNavClick(e, '#timeline')}>Timeline</a></li> */}
-        <li><a href="#stats" onClick={(e) => handleNavClick(e, '#stats')}>Stats</a></li>
-        <li><a href="#prizes" onClick={(e) => handleNavClick(e, '#prizes')}>Prizes</a></li>
-        <li><a href="#sponsors" onClick={(e) => handleNavClick(e, '#sponsors')}>Sponsors</a></li>
-        <li><a href="#flashbacks" onClick={(e) => handleNavClick(e, '#flashbacks')}>Flashbacks</a></li>
-        {/* <li><a href="#faq" onClick={(e) => handleNavClick(e, '#faq')}>FAQ</a></li>
-        <li><a href="#team" onClick={(e) => handleNavClick(e, '#team')}>Team</a></li> */}
-      </ul>
-    </nav>
+        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <li 
+            className={hoveredItem === 0 ? 'hovered' : ''}
+            onMouseEnter={() => handleMouseEnter(0)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
+          </li>
+          <li 
+            className={hoveredItem === 1 ? 'hovered' : ''}
+            onMouseEnter={() => handleMouseEnter(1)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <a href="#about" onClick={(e) => handleNavClick(e, '#about')}>About</a>
+          </li>
+          <li 
+            className={hoveredItem === 2 ? 'hovered' : ''}
+            onMouseEnter={() => handleMouseEnter(2)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <a href="#stats" onClick={(e) => handleNavClick(e, '#stats')}>Stats</a>
+          </li>
+          <li 
+            className={hoveredItem === 3 ? 'hovered' : ''}
+            onMouseEnter={() => handleMouseEnter(3)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <a href="#prizes" onClick={(e) => handleNavClick(e, '#prizes')}>Prizes</a>
+          </li>
+          <li 
+            className={hoveredItem === 4 ? 'hovered' : ''}
+            onMouseEnter={() => handleMouseEnter(4)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <a href="#sponsors" onClick={(e) => handleNavClick(e, '#sponsors')}>Sponsors</a>
+          </li>
+          <li 
+            className={hoveredItem === 5 ? 'hovered' : ''}
+            onMouseEnter={() => handleMouseEnter(5)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <a href="#flashbacks" onClick={(e) => handleNavClick(e, '#flashbacks')}>Flashbacks</a>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };
 
-export default Navigation; 
+export default Navigation;
