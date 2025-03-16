@@ -20,7 +20,18 @@ const About = () => {
 
           Round up yer crew, put them brains to work, and cook up somethin’ mighty impressive. Ain’t no better time to scheme, dream, and build somethin’ legendary.
         </p>
-        <img src="/assets/desktop_prizes.png" className="about-border"></img>
+        <img src="/assets/about-below-model.svg" className="about-below-model"></img>
+        <div className="model">
+          <model-viewer
+          src="/model/gun-model.glb"
+          alt="Arthur Morgan Hat"
+          auto-rotate
+          disable-zoom
+          camera-controls
+          shadow-intensity="2"
+          style={{ width: "100%", height: "100%" }}
+        ></model-viewer>
+        </div>
       </div>
     </section>
   );

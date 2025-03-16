@@ -31,15 +31,6 @@ export default [
         ]
     },
     {
-        title: "Domain Partner",
-        sponsors: [
-            {
-                src: "https://gen.xyz/",
-                img: "/sponsor/currentsponsors/xyz.png"
-            }
-        ]
-    },
-    {
         title: "Entertainment Partner",
         sponsors: [
             {
@@ -48,6 +39,25 @@ export default [
             }
         ]
     },
+    {
+        title: "Energy Drink Partner",
+        sponsors: [
+            {
+                src: "https://blacksimba.co.in/",
+                img: "/sponsor/currentsponsors/blacksimbadrink.svg"
+            }
+        ]
+    },
+    {
+        title: "Domain Partner",
+        sponsors: [
+            {
+                src: "https://gen.xyz/",
+                img: "/sponsor/currentsponsors/xyz.png"
+            }
+        ]
+    },
+
     {
         title: "Voucher Partner",
         sponsors: [
