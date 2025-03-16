@@ -54,6 +54,7 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  overflow:hidden;
 }
 
 /* Update sponsor__title-container to match title-header */
