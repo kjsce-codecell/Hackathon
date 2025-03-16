@@ -16,7 +16,7 @@ const Footer = () => {
     <footer>
       <div className="outlaws">
         <div className="outlaws-image">
-          <img src=".\FOOTER\no_outlaw-cropped.svg" alt="text" />
+          <img src="./FOOTER/no_outlaw-cropped.svg" alt="text" />
           <h1>Code The Journey</h1>
         </div>
       </div>
