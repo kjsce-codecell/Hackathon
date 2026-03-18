@@ -263,7 +263,14 @@ class Bin {
     g.textAlign(LEFT, CENTER);
     g.noStroke();
     g.fill(levelColor);
-    g.textSize(16);
+    g.textFont("Courier");
+    const labelMaxW = rw * 0.18;
+    let labelSize = 16;
+    g.textSize(labelSize);
+    while (labelSize > 9 && g.textWidth(displayName) > labelMaxW) {
+      labelSize -= 1;
+      g.textSize(labelSize);
+    }
     g.text(
       displayName,
       this.x - rw * 0.45,
