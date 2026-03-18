@@ -973,14 +973,14 @@ label {
 }
 
 .perks-bento {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 3px;
-    max-width: 750px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 3px;
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 480px) {
@@ -1047,7 +1047,7 @@ label {
 }
 
 .bento-wide {
-    grid-column: 1 / 4;
+  grid-column: 1 / 4;
 }
 
 .bento-network-row {
@@ -1817,6 +1817,16 @@ a.team-card {
     .bento-wide {
         grid-column: 1 / -1;
     }
+  .bento-hero {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    text-align: center;
+    padding: 30px 16px;
+  }
+  
+  .bento-wide {
+    grid-column: 1 / -1;
+  }
 
     .bento-cell {
         padding: 24px 16px;
