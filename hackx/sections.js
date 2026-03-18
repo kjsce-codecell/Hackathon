@@ -2131,7 +2131,7 @@ void main() {
       white-space: nowrap;
     `;
     idleMsg.innerHTML =
-      '&gt; STILL HERE? THE HACKATHON WON\'T WAIT. <a href="https://hackx.codecell.io/register" target="_blank" style="color:#4fd1d9;pointer-events:auto;text-decoration:underline;">[REGISTER]</a>';
+      '&gt; STILL HERE? THE HACKATHON WON\'T WAIT.';
     document.body.appendChild(idleMsg);
 
     function resetIdle() {

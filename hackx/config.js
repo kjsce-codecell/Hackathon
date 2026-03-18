@@ -4,7 +4,7 @@ const HACKX_CONFIG = {
   tagline: 'CHANGING THE WORLD, ONE BIT AT A TIME',
   date: 'APRIL 11-12, 2026',
   location: 'KJ SOMAIYA SCHOOL OF ENGINEERING',
-  registerUrl: 'https://hackx.codecell.io/register',
+
   tracks: ['NEXUS', 'SPECTRA'],
 
   bootLines: [
