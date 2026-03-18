@@ -3,7 +3,7 @@ const HACKX_CONFIG = {
   eventName: 'HACK X',
   tagline: 'CHANGING THE WORLD, ONE BIT AT A TIME',
   date: 'APRIL 11-12, 2026',
-  location: 'KJ SOMAIYA COLLEGE OF ENGINEERING',
+  location: 'KJ SOMAIYA SCHOOL OF ENGINEERING',
   registerUrl: 'https://hackx.codecell.io/register',
   tracks: ['NEXUS', 'SPECTRA'],
 
@@ -11,7 +11,7 @@ const HACKX_CONFIG = {
     'CODECELL v10.0.0 // EST. 2016 // 10 YEARS',
     'HACK X PROTOCOL INIT...',
     '> APRIL 11-12 // 24HR HACKATHON',
-    '> KJ SOMAIYA COLLEGE OF ENGINEERING',
+    '> KJ SOMAIYA SCHOOL OF ENGINEERING',
     '> STATUS: ONLINE',
   ],
 
@@ -38,7 +38,7 @@ const HACKX_CONFIG = {
     'HACK X // APRIL 11-12 // REGISTER BEFORE APRIL 8',
     'CODECELL // 10 YEARS // CHANGING THE WORLD ONE BIT AT A TIME',
     'PRIZE POOL: ₹3,00,000+ // WHAT WILL YOU BUILD?',
-    'KJ SOMAIYA COLLEGE OF ENGINEERING // 24 HOURS // NO LIMITS',
+    'KJ SOMAIYA SCHOOL OF ENGINEERING // 24 HOURS // NO LIMITS',
     'YOUR REFINEMENT SCORE HAS BEEN NOTED',
     'CODECELL APPRECIATES YOUR DEDICATION',
     'THE DATA MUST FLOW',
@@ -59,6 +59,6 @@ const HACKX_CONFIG = {
     'QUANTUM',
   ],
 
-  shareUrl: 'hackx.codecell.io',
+  shareUrl: 'hack.kjsse.com',
   shareHashtags: '#HackX #CodeCell',
 };
