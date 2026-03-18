@@ -40,12 +40,12 @@ void main() {
   vec4 scan_line = vec4(vec3(pow(y_lines, opacity)), 1.0);
   vec4 scan_line_x = vec4(vec3(pow(x_lines, opacity)), 1.0);
 
-  // boosting the brightness, altering the hue to be more RED (CodeCell brand)
+  // Boost brightness and bias the CRT phosphor toward the site cyan palette.
   float avg = baseColor.r + baseColor.g + baseColor.b / 3.0;
   if (avg > 0.5) {
-    baseColor *= vec4(vec3(1.5, 0.3, 0.3), 1.0) * 8.0;
+    baseColor *= vec4(vec3(0.3, 1.4, 1.5), 1.0) * 8.0;
   } else {
-    baseColor *= vec4(vec3(1.8, 0.2, 0.25), 1.0) * 2.0;
+    baseColor *= vec4(vec3(0.2, 1.6, 1.8), 1.0) * 2.0;
   }
 
   baseColor *= scan_line;

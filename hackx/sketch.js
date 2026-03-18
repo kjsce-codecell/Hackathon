@@ -21,7 +21,7 @@ let startTime = 0;
 let secondsSpentRefining = 0;
 let lastRefiningTimeStored = 0;
 
-const emojis = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣'];
+const emojis = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
 
 // Info for "nope" state
 let nope = false;
@@ -51,10 +51,10 @@ let bootGlitchStart = 0;
 let bootFadeAlpha = 255;
 
 let revealing = false;
-let revealText = '';
+let revealText = "";
 let revealCharIndex = 0;
 let revealFrameCounter = 0;
-let revealPhase = 'shake';
+let revealPhase = "shake";
 let revealPhaseStart = 0;
 let revealsDone = [];
 
@@ -81,36 +81,47 @@ let dustParticles = [];
 let keyBuffer = [];
 let exitBuffer = [];
 let konamiBuffer = [];
-const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+const konamiCode = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a",
+];
 
 // for CRT Shader
 var shaderLayer, crtShader;
 var g; //p5 graphics instance
 var useShader;
 
-// Background and Foreground colours — RED CodeCell theme
+// Background and foreground colours — single-accent cyan theme.
 const mobilePalette = {
-  BG: '#0A0008',
-  FG: '#FF1744',
-  SELECT: '#FFEBEE',
+  BG: "#0A1628",
+  FG: "#4fd1d9",
+  SELECT: "#e0f4f4",
   LEVELS: {
-    'WO': '#FF1744',
-    'FC': '#FF6D00',
-    'DR': '#D500F9',
-    'MA': '#FFD600',
-  }
+    WO: "#4fd1d9",
+    FC: "#4fd1d9",
+    DR: "#4fd1d9",
+    MA: "#4fd1d9",
+  },
 };
 
 const shaderPalette = {
-  BG: '#111111',
-  FG: '#f66',
-  SELECT: '#fff',
+  BG: "#0A1628",
+  FG: "#3ab8c0",
+  SELECT: "#d0eef0",
   LEVELS: {
-    'WO': '#CC1133',
-    'FC': '#CC5500',
-    'DR': '#AA00CC',
-    'MA': '#CCAA00',
-  }
+    WO: "#3ab8c0",
+    FC: "#3ab8c0",
+    DR: "#3ab8c0",
+    MA: "#3ab8c0",
+  },
 };
 
 var palette = mobilePalette;
@@ -118,12 +129,15 @@ var palette = mobilePalette;
 // holds filename, initial bin levels, coordinates
 let macrodataFile;
 
-function preload() {
-  nopeImg = loadImage('images/nope.png');
-  completedImg = loadImage('images/100.png');
-  sharedImg = loadImage('images/clipboard.png');
+// Add image svg
+let logoImg;
 
-  crtShader = loadShader('shaders/crt.vert.glsl', 'shaders/crt.frag.glsl');
+function preload() {
+  nopeImg = loadImage("images/nope.png");
+  completedImg = loadImage("images/100.png");
+  sharedImg = loadImage("images/clipboard.png");
+  logoImg = loadImage('images/logo.svg')
+  crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
 }
 
 function startOver(resetFile = false) {
@@ -150,7 +164,7 @@ function startOver(resetFile = false) {
 
   if (resetFile) {
     macrodataFile.resetFile();
-    storeItem('secondsSpentRefining', 0);
+    storeItem("secondsSpentRefining", 0);
     secondsSpentRefining = 0;
     lastRefiningTimeStored = 0;
   }
@@ -183,7 +197,7 @@ var smaller;
 
 function setup() {
   const cnv = createCanvas(windowWidth, windowHeight);
-  cnv.parent('game-container');
+  cnv.parent("game-container");
   frameRate(30);
 
   // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
@@ -195,6 +209,11 @@ function setup() {
 
   // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
+  // If the site is using the global CRT curvature pass (sections.js),
+  // skip the game's local CRT shader to keep one continuous "screen".
+  if (typeof window !== "undefined" && window.__HACKX_GLOBAL_CRT__ === true) {
+    useShader = false;
+  }
 
   // The shader boosts colour values so we reset the palette if using shader
   if (useShader) {
@@ -207,13 +226,13 @@ function setup() {
   // p5 graphics element to draw our shader output to
   shaderLayer = createGraphics(g.width, g.height, WEBGL);
   shaderLayer.noStroke();
-  crtShader.setUniform('u_resolution', [g.width, g.height]);
+  crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
 
   // Always start fresh on page load
-  localStorage.removeItem('hackx-data');
-  localStorage.removeItem('secondsSpentRefining');
+  localStorage.removeItem("hackx-data");
+  localStorage.removeItem("secondsSpentRefining");
   macrodataFile = new MacrodataFile();
   secondsSpentRefining = 0;
 
@@ -224,18 +243,18 @@ function setup() {
   // Width for the share 100% button
   const shw = completedImg.width;
   const shh = completedImg.height;
-  shareDiv = createDiv('');
+  shareDiv = createDiv("");
   shareDiv.hide();
   shareDiv.position(g.width * 0.5 - shw * 0.5, g.height * 0.5 - shh * 0.5);
-  shareDiv.style('width', `${shw}px`);
-  shareDiv.style('height', `${shh}px`);
+  shareDiv.style("width", `${shw}px`);
+  shareDiv.style("height", `${shh}px`);
   shareDiv.mousePressed(function () {
-    let thenumbers = '';
+    let thenumbers = "";
     for (let r = 0; r < 5; r++) {
       for (let c = 0; c < 5; c++) {
         thenumbers += random(emojis);
       }
-      thenumbers += '\n';
+      thenumbers += "\n";
     }
     const timeStr = createTimeString(secondsSpentRefining);
     const msg = `Refined ${macrodataFile.fileName} in ${timeStr} for ${HACKX_CONFIG.orgName}.
@@ -243,7 +262,7 @@ ${HACKX_CONFIG.eventName} // ${HACKX_CONFIG.tagline}
 ${thenumbers}${HACKX_CONFIG.shareHashtags}
 ${HACKX_CONFIG.shareUrl}`;
 
-    console.log('copy to clipboard!');
+    console.log("copy to clipboard!");
     navigator.clipboard.writeText(msg);
     shared = true;
   });
@@ -276,11 +295,18 @@ function mousePressed() {
   if (booting) {
     booting = false;
     gameEnterStart = millis();
-    document.body.style.overflowY = 'auto';
+    document.body.style.overflowY = "auto";
     return;
   }
 
-  if (!refining && !completed && !shared && !booting && !revealing && !terminalOpen) {
+  if (
+    !refining &&
+    !completed &&
+    !shared &&
+    !booting &&
+    !revealing &&
+    !terminalOpen
+  ) {
     refineTX = mouseX;
     refineTY = mouseY;
     refineBX = mouseX;
@@ -339,14 +365,16 @@ let prevPercent;
 
 function draw() {
   g.colorMode(RGB);
+  const globalCrtActive =
+    typeof window !== "undefined" && window.__HACKX_GLOBAL_CRT__ === true;
 
   // Boot sequence gate
   if (booting) {
     drawBootSequence();
-    if (useShader) {
+    if (useShader && !globalCrtActive) {
       shaderLayer.rect(0, 0, g.width, g.height);
       shaderLayer.shader(crtShader);
-      crtShader.setUniform('u_tex', g);
+      crtShader.setUniform("u_tex", g);
       background(palette.BG);
       imageMode(CORNER);
       image(shaderLayer, 0, 0, g.width, g.height);
@@ -380,7 +408,7 @@ function draw() {
 
   // Milestone reveals
   if (percent >= 0.25) triggerReveal(25);
-  if (percent >= 0.50) triggerReveal(50);
+  if (percent >= 0.5) triggerReveal(50);
   if (percent >= 0.75) triggerReveal(75);
   if (percent >= 1.0) triggerReveal(100);
 
@@ -390,12 +418,15 @@ function draw() {
   }
 
   g.background(palette.BG);
-  g.textFont('Courier');
+  g.textFont("Courier");
 
   // Screen shake
   if (shakeAmount > 0) {
     g.push();
-    g.translate(random(-shakeAmount, shakeAmount), random(-shakeAmount, shakeAmount));
+    g.translate(
+      random(-shakeAmount, shakeAmount),
+      random(-shakeAmount, shakeAmount),
+    );
   }
 
   // Draw floating dust particles behind everything
@@ -419,7 +450,7 @@ function draw() {
 
   // Logo flash — "CODECELL INDUSTRIES"
   if (logoFlash) {
-    g.textFont('Courier');
+    g.textFont("Courier");
     g.textSize(smaller * 0.05);
     g.textAlign(CENTER, CENTER);
     g.fill(palette.FG);
@@ -479,7 +510,7 @@ function draw() {
 
     g.fill(palette.FG);
     g.noStroke();
-    g.textFont('Courier');
+    g.textFont("Courier");
     g.textSize(smaller * 0.028);
     g.textAlign(LEFT, TOP);
 
@@ -494,7 +525,12 @@ function draw() {
     // Blinking cursor at bottom
     if (frameCount % 20 < 10) {
       g.fill(palette.FG);
-      g.rect(tx, ty + tLines.length * tLineH + 10, smaller * 0.02, smaller * 0.003);
+      g.rect(
+        tx,
+        ty + tLines.length * tLineH + 10,
+        smaller * 0.02,
+        smaller * 0.003,
+      );
     }
   }
 
@@ -535,10 +571,10 @@ function draw() {
     g.blendMode(BLEND);
   }
 
-  if (useShader) {
+  if (useShader && !globalCrtActive) {
     shaderLayer.rect(0, 0, g.width, g.height);
     shaderLayer.shader(crtShader);
-    crtShader.setUniform('u_tex', g);
+    crtShader.setUniform("u_tex", g);
     background(palette.BG);
     imageMode(CORNER);
     image(shaderLayer, 0, 0, g.width, g.height);
@@ -550,26 +586,29 @@ function draw() {
     secondsSpentRefining += deltaTime / 1000;
     const roundedTime = round(secondsSpentRefining);
     if (roundedTime % 5 == 0 && roundedTime != lastRefiningTimeStored) {
-      storeItem('secondsSpentRefining', secondsSpentRefining);
+      storeItem("secondsSpentRefining", secondsSpentRefining);
       lastRefiningTimeStored = roundedTime;
     }
   }
-
 }
 
 function drawTop(percent) {
   const y = 30;
   const textSz = max(11, smaller * 0.02);
 
-  g.textFont('Courier');
+  g.textFont("Courier");
   g.noStroke();
 
-  // Left: CODECELL // HACK X
-  g.textSize(textSz);
-  g.textAlign(LEFT, TOP);
-  g.fill(palette.FG);
-  const label = smaller < 400 ? 'HACK X' : 'CODECELL // HACK X';
-  g.text(label, g.width * 0.04, y);
+  // Left: Logo
+  if (logoImg) {
+    g.imageMode(CENTER);
+    if (!useShader) g.tint(palette.FG);
+
+    let logoWidth = 100;
+    let logoHeight = 100;
+    // Align the center of the image with the center of the text vertically
+    g.image(logoImg, g.width * 0.04 + logoWidth / 2, y + textSz / 2, logoWidth, logoHeight);
+  }
 
   // Right: event info
   g.textAlign(RIGHT, TOP);
@@ -577,7 +616,11 @@ function drawTop(percent) {
   const c = color(palette.FG);
   c.setAlpha(180);
   g.fill(c);
-  g.text(HACKX_CONFIG.date + '  //  ' + HACKX_CONFIG.location, g.width * 0.96, y);
+  g.text(
+    HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location,
+    g.width * 0.96,
+    y,
+  );
 }
 
 function drawNumbers() {
@@ -666,14 +709,21 @@ function drawBottom() {
   g.fill(palette.FG);
   g.rect(0, g.height - 20, g.width, 20);
   g.fill(palette.BG);
-  g.textFont('Courier');
+  g.textFont("Courier");
   g.textAlign(CENTER, CENTER);
   g.textSize(max(8, baseSize * 0.6));
   let bottomText;
   if (smaller < 500) {
-    bottomText = HACKX_CONFIG.eventName + ' // ' + HACKX_CONFIG.date;
+    bottomText = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
   } else {
-    bottomText = HACKX_CONFIG.orgName + ' // ' + HACKX_CONFIG.eventName + ' // ' + HACKX_CONFIG.date + ' // ' + HACKX_CONFIG.shareUrl;
+    bottomText =
+      HACKX_CONFIG.orgName +
+      " // " +
+      HACKX_CONFIG.eventName +
+      " // " +
+      HACKX_CONFIG.date +
+      " // " +
+      HACKX_CONFIG.shareUrl;
   }
   g.text(bottomText, g.width * 0.5, g.height - 10);
 }
@@ -770,15 +820,15 @@ function toggleShader() {
 function drawCursor(xPos, yPos) {
   // prevents the cursor appearing in top left corner on page load
   if (xPos == 0 && yPos == 0) return;
-  g.push()
+  g.push();
   // this offset makes the box draw from point of cursor
-  g.translate(xPos+10, yPos+10);
+  g.translate(xPos + 10, yPos + 10);
   g.scale(1.2);
   g.fill(palette.BG);
   g.stroke(palette.FG);
   g.strokeWeight(3);
   g.beginShape();
-  g.rotate(-PI/5);
+  g.rotate(-PI / 5);
   g.vertex(0, -10);
   g.vertex(7.5, 10);
   g.vertex(0, 5);
@@ -789,12 +839,12 @@ function drawCursor(xPos, yPos) {
 
 function drawBootSequence() {
   g.background(palette.BG);
-  g.textFont('Courier');
+  g.textFont("Courier");
   g.fill(palette.FG);
   g.noStroke();
 
   const lines = HACKX_CONFIG.bootLines;
-  const totalChars = lines.join('').length + lines.length;
+  const totalChars = lines.join("").length + lines.length;
   const lineHeight = smaller * 0.05;
   const textSz = smaller * 0.035;
   g.textSize(textSz);
@@ -813,7 +863,7 @@ function drawBootSequence() {
   // Render typed text
   let charCount = 0;
   for (let i = 0; i < lines.length; i++) {
-    let displayLine = '';
+    let displayLine = "";
     for (let c = 0; c < lines[i].length; c++) {
       if (charCount < bootCharIndex) {
         displayLine += lines[i][c];
@@ -844,7 +894,12 @@ function drawBootSequence() {
       curLine = i + 1;
       curCol = 0;
     }
-    g.rect(startX + curCol * textSz * 0.6, startY + curLine * lineHeight, textSz * 0.6, textSz);
+    g.rect(
+      startX + curCol * textSz * 0.6,
+      startY + curLine * lineHeight,
+      textSz * 0.6,
+      textSz,
+    );
   }
 
   // Check if all text is typed
@@ -885,8 +940,8 @@ function drawBootSequence() {
       // End boot
       if (elapsed > 1000) {
         booting = false;
-    gameEnterStart = millis();
-    document.body.style.overflowY = 'auto';
+        gameEnterStart = millis();
+        document.body.style.overflowY = "auto";
       }
     }
   }
@@ -896,17 +951,17 @@ function drawReveal() {
   const elapsed = millis() - revealPhaseStart;
 
   switch (revealPhase) {
-    case 'shake':
+    case "shake":
       shakeAmount = 5;
       if (elapsed > 300) {
-        revealPhase = 'glitch';
+        revealPhase = "glitch";
         revealPhaseStart = millis();
         revealCharIndex = 0;
         revealFrameCounter = 0;
       }
       break;
 
-    case 'glitch':
+    case "glitch":
       for (let i = 0; i < 4; i++) {
         const sliceY = random(g.height);
         const sliceH = random(10, 50);
@@ -915,19 +970,19 @@ function drawReveal() {
         g.image(slice, offsetX, sliceY);
       }
       if (elapsed > 500) {
-        revealPhase = 'typing';
+        revealPhase = "typing";
         revealPhaseStart = millis();
       }
       break;
 
-    case 'typing': {
+    case "typing": {
       g.fill(0, 0, 0, 200);
       g.noStroke();
       g.rectMode(CORNER);
       g.rect(0, 0, g.width, g.height);
 
       g.fill(palette.FG);
-      g.textFont('Courier');
+      g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
 
@@ -937,15 +992,18 @@ function drawReveal() {
         revealCharIndex++;
       }
 
-      const displayText = revealText.substring(0, min(revealCharIndex, revealText.length));
+      const displayText = revealText.substring(
+        0,
+        min(revealCharIndex, revealText.length),
+      );
 
       // Word wrap
       const maxWidth = g.width * 0.8;
-      const words = displayText.split(' ');
-      let lines = [''];
+      const words = displayText.split(" ");
+      let lines = [""];
       let lineIdx = 0;
       for (const word of words) {
-        const testLine = lines[lineIdx] + (lines[lineIdx] ? ' ' : '') + word;
+        const testLine = lines[lineIdx] + (lines[lineIdx] ? " " : "") + word;
         if (g.textWidth(testLine) > maxWidth && lines[lineIdx]) {
           lineIdx++;
           lines[lineIdx] = word;
@@ -957,35 +1015,40 @@ function drawReveal() {
       const lineH = smaller * 0.06;
       const totalH = lines.length * lineH;
       for (let i = 0; i < lines.length; i++) {
-        g.text(lines[i], g.width * 0.5, g.height * 0.5 - totalH / 2 + i * lineH);
+        g.text(
+          lines[i],
+          g.width * 0.5,
+          g.height * 0.5 - totalH / 2 + i * lineH,
+        );
       }
 
       if (revealCharIndex >= revealText.length) {
         if (millis() - revealPhaseStart > 500) {
-          revealPhase = 'hold';
+          revealPhase = "hold";
           revealPhaseStart = millis();
         }
       }
       break;
     }
 
-    case 'hold': {
+    case "hold": {
       g.fill(0, 0, 0, 200);
       g.noStroke();
       g.rectMode(CORNER);
       g.rect(0, 0, g.width, g.height);
 
       g.fill(palette.FG);
-      g.textFont('Courier');
+      g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
 
-      const holdWords = revealText.split(' ');
-      let holdLines = [''];
+      const holdWords = revealText.split(" ");
+      let holdLines = [""];
       let hLineIdx = 0;
       const hMaxW = g.width * 0.8;
       for (const word of holdWords) {
-        const testLine = holdLines[hLineIdx] + (holdLines[hLineIdx] ? ' ' : '') + word;
+        const testLine =
+          holdLines[hLineIdx] + (holdLines[hLineIdx] ? " " : "") + word;
         if (g.textWidth(testLine) > hMaxW && holdLines[hLineIdx]) {
           hLineIdx++;
           holdLines[hLineIdx] = word;
@@ -996,17 +1059,21 @@ function drawReveal() {
       const hLineH = smaller * 0.06;
       const hTotalH = holdLines.length * hLineH;
       for (let i = 0; i < holdLines.length; i++) {
-        g.text(holdLines[i], g.width * 0.5, g.height * 0.5 - hTotalH / 2 + i * hLineH);
+        g.text(
+          holdLines[i],
+          g.width * 0.5,
+          g.height * 0.5 - hTotalH / 2 + i * hLineH,
+        );
       }
 
       if (elapsed > 3000) {
-        revealPhase = 'glitchout';
+        revealPhase = "glitchout";
         revealPhaseStart = millis();
       }
       break;
     }
 
-    case 'glitchout':
+    case "glitchout":
       for (let i = 0; i < 4; i++) {
         const sliceY = random(g.height);
         const sliceH = random(10, 50);
@@ -1015,7 +1082,7 @@ function drawReveal() {
         g.image(slice, offsetX, sliceY);
       }
       if (elapsed > 500) {
-        revealPhase = 'done';
+        revealPhase = "done";
         revealing = false;
         // If 100% reveal just ended, trigger completed state
         if (revealsDone.includes(100)) {
@@ -1046,7 +1113,7 @@ function triggerReveal(percent) {
   revealText = HACKX_CONFIG.reveals[percent].text;
   revealCharIndex = 0;
   revealFrameCounter = 0;
-  revealPhase = 'shake';
+  revealPhase = "shake";
   revealPhaseStart = millis();
   shakeAmount = 5;
   playMilestone();
@@ -1060,14 +1127,14 @@ function keyPressed() {
     if (terminalOpen) {
       exitBuffer.push(k);
       if (exitBuffer.length > 4) exitBuffer.shift();
-      if (exitBuffer.join('') === 'exit') {
+      if (exitBuffer.join("") === "exit") {
         terminalOpen = false;
         keyBuffer = [];
       }
     } else if (!booting && !revealing) {
       keyBuffer.push(k);
       if (keyBuffer.length > 5) keyBuffer.shift();
-      if (keyBuffer.join('') === 'hackx') {
+      if (keyBuffer.join("") === "hackx") {
         terminalOpen = true;
         exitBuffer = [];
       }
@@ -1078,7 +1145,10 @@ function keyPressed() {
   const konamiKey = key.length > 1 ? key : key.toLowerCase();
   konamiBuffer.push(konamiKey);
   if (konamiBuffer.length > 10) konamiBuffer.shift();
-  if (konamiBuffer.length === 10 && konamiBuffer.every((k, i) => k === konamiCode[i])) {
+  if (
+    konamiBuffer.length === 10 &&
+    konamiBuffer.every((k, i) => k === konamiCode[i])
+  ) {
     rainbowMode = true;
     rainbowModeStart = millis();
     konamiBuffer = [];
@@ -1088,8 +1158,8 @@ function keyPressed() {
 function windowResized(ev) {
   resizeCanvas(windowWidth, windowHeight);
   g.resizeCanvas(windowWidth, windowHeight);
-  shaderLayer.resizeCanvas(windowWidth, windowHeight)
-  crtShader.setUniform('u_resolution', [g.width, g.height]);
+  shaderLayer.resizeCanvas(windowWidth, windowHeight);
+  crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
   buffer = max(50, min(100, smaller * 0.12));
@@ -1105,7 +1175,7 @@ function windowResized(ev) {
 
   cols = floor(g.width / cellSize);
   rows = floor((g.height - buffer * 2) / cellSize);
-  let  wBuffer =  g.width - cols * cellSize;
+  let wBuffer = g.width - cols * cellSize;
 
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
