@@ -11,7 +11,6 @@
     <meta property="og:title" content="HACK X // CodeCell" />
     <meta property="og:description" content="The hackathon experience. Refine your data. Prove your worth." />
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="https://apply.devfolio.co/v2/sdk.js" async defer></script>
     <style>
         @font-face {
             font-family: "Geist Pixel";
@@ -62,7 +61,12 @@
                     <span>OPEN TO ALL</span>
                     <span>TEAM OF 2-4</span>
                 </div>
-                <div class="apply-button" data-hackathon-slug="hack-x" data-button-theme="dark-inverted"></div>
+                <div
+                    class="apply-button"
+                    data-hackathon-slug="hack-x"
+                    data-button-theme="dark"
+                    style="height: 44px; width: 312px"
+                ></div>
             </div>
             <div class="about-right">
                 <model-viewer
@@ -468,6 +472,7 @@
     <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="auto"></audio>
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
+    <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
     <div id="p5_loading" class="loadingclass">INITIALIZING HACK X...</div>
 </body>
 

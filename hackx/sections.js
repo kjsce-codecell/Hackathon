@@ -365,7 +365,6 @@
     initPrizeCounters();
     // initScrollProgressBar(); // removed — was showing blue line at top
     initAnnouncements();
-    initCursorGlow();
     // Clean interactions (pure CSS, no rAF loops)
     initHoverLineTrace();
     initRevealOnScroll();
