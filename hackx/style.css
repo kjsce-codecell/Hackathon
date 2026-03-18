@@ -1147,7 +1147,7 @@ a.team-card {
 
 /* ===== SPONSORS ===== */
 #sponsors-section {
-    border-top: 2px solid #4fd1d920;
+    border-top: 2px solid;
 }
 
 .sponsors-tiers {
@@ -1220,7 +1220,7 @@ a.team-card {
   padding: 50px 60px;
   font-size: 14px;
   min-width: 300px;
-  border-color: var(--gold);
+  border-color: #4fd1d925; /* Match other sponsor slots */
   color: var(--gold);
   opacity: 1;
 }
@@ -1232,27 +1232,9 @@ a.team-card {
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
-  filter: brightness(1.25) drop-shadow(0 0 8px #FFD60088);
-  border-radius: 8px;
+  border-radius: 0; /* Removed curve */
   display: inline-block;
 }
-
-.incred-zoom {
-  transform: scale(1.15) translateY(5px);
-  max-height: 55px !important;
-  max-width: 180px !important;
-  object-fit: contain !important;
-  display: inline-block;
-}
-
-.blacksimba-zoom {
-  transform: scale(1.25);
-  max-height: 38px !important;
-  max-width: 112px !important;
-  object-fit: contain !important;
-  display: inline-block;
-}
-
 
 .sponsor-slot.small {
     padding: 20px 24px;
@@ -1311,7 +1293,7 @@ a.team-card {
     display: flex;
     gap: 40px;
     width: max-content;
-    animation: marqueeScroll 30s linear infinite;
+    animation: marqueeScroll 60s linear infinite;
 }
 
 .past-sponsors-marquee span {
