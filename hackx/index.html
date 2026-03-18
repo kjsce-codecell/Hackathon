@@ -279,39 +279,109 @@
 
     <!-- SECTION 8: TIMELINE -->
     <section id="timeline-section" class="section">
-        <div class="section-content">
+        <div class="section-content timeline-content">
             <h1 class="glitch-text" data-text="// TIMELINE">// TIMELINE</h1>
-            <div class="timeline">
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">MAR 15</div>
-                    <div class="timeline-event">REGISTRATION OPENS</div>
+            <div class="timeline-hub" data-aos>
+                <div class="timeline-panels">
+                    <article class="timeline-panel timeline-panel-datebox">
+                        <div class="timeline-panel-label">DATE + DAY</div>
+                        <div class="timeline-panel-date" id="timeline-panel-date">APR 11-12</div>
+                        <div class="timeline-panel-day" id="timeline-panel-day">FRIDAY — SATURDAY</div>
+                    </article>
+
+                    <article class="timeline-panel timeline-panel-detailbox">
+                        <div class="timeline-panel-label">EVENT DETAILS</div>
+                        <div class="timeline-panel-title" id="timeline-panel-title">24 HOURS OF HACKING</div>
+                        <div class="timeline-panel-body" id="timeline-panel-body">
+11:00 AM — Hacking Period Starts
+01:00 PM — Lunch
+04:30 PM — Evening Snacks
+06:00 PM — Mentoring Round 1
+08:30 PM — Dinner
+12:00 AM — Midnight Snacks
+01:00 AM — Mentoring Round 2
+08:00 AM — Breakfast
+11:00 AM — Hacking Period Ends
+                        </div>
+                    </article>
                 </div>
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">APR 08</div>
-                    <div class="timeline-event">REGISTRATION CLOSES</div>
-                </div>
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">APR 11</div>
-                    <div class="timeline-event">OPENING CEREMONY</div>
-                </div>
-                <div class="timeline-item active" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">APR 11-12</div>
-                    <div class="timeline-event">24 HOURS OF HACKING</div>
-                </div>
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">APR 12</div>
-                    <div class="timeline-event">DEMOS & JUDGING</div>
-                </div>
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">APR 12</div>
-                    <div class="timeline-event">
-                        CLOSING CEREMONY & PRIZES
+
+                <div class="timeline-thread-wrap" id="timeline-thread-wrap">
+                    <svg class="timeline-thread-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path id="timeline-thread-path"></path>
+                    </svg>
+                    <div class="timeline-node-track" id="timeline-node-track">
+                    <button
+                        type="button"
+                        class="timeline-node"
+                        data-date="MAR 15"
+                        data-day="SATURDAY"
+                        data-title="REGISTRATION OPENS"
+                        data-detail="Participant applications go live. Build your team and lock your slot before the rush."
+                    >
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <span class="timeline-node-label">MAR 15</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="timeline-node"
+                        data-date="APR 08"
+                        data-day="WEDNESDAY"
+                        data-title="REGISTRATION CLOSES"
+                        data-detail="Final registration closes. Make sure your team, profile, and idea draft are submitted."
+                    >
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <span class="timeline-node-label">APR 08</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="timeline-node"
+                        data-date="APR 11"
+                        data-day="FRIDAY"
+                        data-title="OPENING CEREMONY"
+                        data-detail="08:30 AM — Reporting&#10;09:30 AM — Inauguration Ceremony in KJSSE Auditorium"
+                    >
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <span class="timeline-node-label">APR 11</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="timeline-node active"
+                        data-date="APR 11-12"
+                        data-day="FRIDAY — SATURDAY"
+                        data-title="24 HOURS OF HACKING"
+                        data-detail="11:00 AM — Hacking Period Starts&#10;01:00 PM — Lunch&#10;04:30 PM — Evening Snacks&#10;06:00 PM — Mentoring Round 1&#10;08:30 PM — Dinner&#10;12:00 AM — Midnight Snacks&#10;01:00 AM — Mentoring Round 2&#10;08:00 AM — Breakfast&#10;11:00 AM — Hacking Period Ends"
+                    >
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <span class="timeline-node-label">APR 11-12</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="timeline-node"
+                        data-date="APR 12"
+                        data-day="SATURDAY"
+                        data-title="DEMOS & JUDGING"
+                        data-detail="11:15 AM — Evaluation Round 1&#10;01:00 PM — Lunch&#10;03:30 PM — Final Evaluation Round"
+                    >
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <span class="timeline-node-label">APR 12</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="timeline-node"
+                        data-date="APR 12"
+                        data-day="SATURDAY"
+                        data-title="CLOSING CEREMONY & PRIZES"
+                        data-detail="04:30 PM — Evening Snacks&#10;05:30 PM — Prize Distribution & Closing Remarks"
+                    >
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <span class="timeline-node-label">APR 12</span>
+                    </button>
                     </div>
                 </div>
             </div>

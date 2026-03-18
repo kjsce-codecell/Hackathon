@@ -362,6 +362,7 @@
     initFooterCanvas();
     // Core (one-time CSS transitions, no jank)
     initScrollFadeIn();
+    initTimelineLineDraw();
     initPrizeCounters();
     // initScrollProgressBar(); // removed — was showing blue line at top
     initAnnouncements();
@@ -1122,13 +1123,27 @@ void main() {
     draw();
   }
 
-  // ===== SCROLL FADE-IN (smoother: 0.6s ease-out) =====
+  // ===== SCROLL REVEAL (timeline toggles in/out on viewport entry/exit) =====
   function initScrollFadeIn() {
-    const observer = new IntersectionObserver(
+    const timelineObserver = new IntersectionObserver(
       (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("visible", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    document
+      .querySelectorAll(".timeline-item")
+      .forEach((item) => timelineObserver.observe(item));
+
+    const statObserver = new IntersectionObserver(
+      (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -1136,8 +1151,8 @@ void main() {
     );
 
     document
-      .querySelectorAll(".timeline-item, .about-stat")
-      .forEach((item) => observer.observe(item));
+      .querySelectorAll(".about-stat")
+      .forEach((item) => statObserver.observe(item));
 
     document.querySelectorAll(".section-content").forEach((el) => {
       el.style.opacity = "0";
@@ -1424,41 +1439,131 @@ void main() {
       });
   }
 
-  // ===== SUBTLE-BUT-WILD: Timeline Line Draw on Scroll =====
-  // The timeline vertical line "draws" downward as you scroll through the section
+  // ===== TIMELINE: Bottom Thread + Pinch Nodes =====
   function initTimelineLineDraw() {
     const timelineSection = document.getElementById("timeline-section");
     if (!timelineSection) return;
 
-    const timelineLine = timelineSection.querySelector(".timeline-line");
-    if (!timelineLine) return;
+    const threadWrap = timelineSection.querySelector("#timeline-thread-wrap");
+    const threadSvg = timelineSection.querySelector(".timeline-thread-svg");
+    const nodeTrack = timelineSection.querySelector("#timeline-node-track");
+    const threadPath = timelineSection.querySelector("#timeline-thread-path");
+    const nodes = Array.from(timelineSection.querySelectorAll(".timeline-node"));
+    const panelDate = timelineSection.querySelector("#timeline-panel-date");
+    const panelDay = timelineSection.querySelector("#timeline-panel-day");
+    const panelTitle = timelineSection.querySelector("#timeline-panel-title");
+    const panelBody = timelineSection.querySelector("#timeline-panel-body");
 
-    // Store original height, then set to 0
-    const computedStyle = window.getComputedStyle(timelineLine);
-    const fullHeight = timelineLine.offsetHeight || timelineLine.scrollHeight;
-    timelineLine.style.height = "0px";
-    timelineLine.style.transition = "none";
-    timelineLine.style.overflow = "visible";
-
-    function update() {
-      const rect = timelineSection.getBoundingClientRect();
-      const sectionTop = rect.top;
-      const sectionHeight = rect.height;
-      const viewportHeight = window.innerHeight;
-
-      // Start drawing when section enters viewport, finish when section leaves
-      const scrollStart = viewportHeight * 0.8;
-      const scrollEnd = -sectionHeight * 0.2;
-      const progress = Math.max(
-        0,
-        Math.min(1, (scrollStart - sectionTop) / (scrollStart - scrollEnd)),
-      );
-
-      timelineLine.style.height = progress * fullHeight + "px";
-      requestAnimationFrame(update);
+    if (
+      !threadWrap ||
+      !threadSvg ||
+      !nodeTrack ||
+      !threadPath ||
+      !nodes.length ||
+      !panelDate ||
+      !panelDay ||
+      !panelTitle ||
+      !panelBody
+    ) {
+      return;
     }
 
-    requestAnimationFrame(update);
+    nodeTrack.style.setProperty("--node-count", String(nodes.length));
+
+    let activeIndex = nodes.findIndex((node) => node.classList.contains("active"));
+    if (activeIndex < 0) activeIndex = 0;
+
+    function setPanelContent(node) {
+      panelDate.textContent = node.dataset.date || "";
+      panelDay.textContent = node.dataset.day || "";
+      panelTitle.textContent = node.dataset.title || "";
+      panelBody.textContent = String(node.dataset.detail || "").replace(/\r\n?/g, "\n");
+      panelBody.scrollTop = 0;
+    }
+
+    function applyPinch(index) {
+      nodes.forEach((node, nodeIndex) => {
+        const distance = Math.abs(nodeIndex - index);
+        const liftPx = distance === 0 ? 64 : distance === 1 ? 28 : distance === 2 ? 10 : 0;
+        node.style.setProperty("--lift", `${liftPx}px`);
+        const isActive = nodeIndex === index;
+        node.classList.toggle("active", isActive);
+        node.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    function pointFromNode(node) {
+      const dot = node.querySelector(".timeline-node-dot") || node;
+      const wrapRect = threadWrap.getBoundingClientRect();
+      const dotRect = dot.getBoundingClientRect();
+      return {
+        x: dotRect.left + dotRect.width / 2 - wrapRect.left,
+        y: dotRect.top + dotRect.height / 2 - wrapRect.top,
+      };
+    }
+
+    function buildThreadPath(points) {
+      if (!points.length) return "";
+      if (points.length === 1) {
+        const point = points[0];
+        return `M ${point.x.toFixed(2)} ${point.y.toFixed(2)} L ${point.x.toFixed(2)} ${point.y.toFixed(2)}`;
+      }
+
+      let d = `M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
+      for (let index = 1; index < points.length; index += 1) {
+        const point = points[index];
+        d += ` L ${point.x.toFixed(2)} ${point.y.toFixed(2)}`;
+      }
+      return d;
+    }
+
+    function drawThread() {
+      const width = Math.max(1, threadWrap.clientWidth);
+      const height = Math.max(1, threadWrap.clientHeight);
+      threadSvg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+
+      const points = nodes.map((node) => pointFromNode(node));
+      if (!points.length) {
+        threadPath.setAttribute("d", "");
+        return;
+      }
+
+      const extendedPoints = [
+        { x: 0, y: points[0].y },
+        ...points,
+        { x: width, y: points[points.length - 1].y },
+      ];
+
+      threadPath.setAttribute("d", buildThreadPath(extendedPoints));
+    }
+
+    function setActive(index) {
+      activeIndex = index;
+      applyPinch(index);
+      setPanelContent(nodes[index]);
+      drawThread();
+    }
+
+    nodes.forEach((node, index) => {
+      node.addEventListener("mouseenter", () => setActive(index));
+      node.addEventListener("focus", () => setActive(index));
+      node.addEventListener("click", () => setActive(index));
+      node.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        setActive(index);
+      });
+    });
+
+    window.addEventListener("resize", drawThread, { passive: true });
+
+    function animateThread() {
+      drawThread();
+      requestAnimationFrame(animateThread);
+    }
+
+    setActive(activeIndex);
+    requestAnimationFrame(animateThread);
   }
 
   // ===== PERKS BG — Rising particles =====
@@ -2365,7 +2470,7 @@ void main() {
     setTimeout(pulse, 8000 + Math.random() * 4000);
   }
 
-  // ===== INTERACTION: Hover Line Trace — Cyan Border Trace =====
+  // ===== INTERACTION: Hover Traces — Lines + Timeline Box Draw =====
   function initHoverLineTrace() {
     const style = document.createElement("style");
     style.textContent = `
@@ -2379,20 +2484,111 @@ void main() {
       ._line-trace-wrap:hover ._line-trace {
         width: 100%;
       }
+
+      ._timeline-box-wrap {
+        position: relative;
+      }
+
+      ._timeline-box-trace {
+        position: absolute;
+        inset: -10px -14px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 160ms ease-out;
+      }
+
+      ._timeline-box-trace span {
+        position: absolute;
+        background: ${RED};
+        box-shadow: 0 0 10px rgba(${RED_RGB.join(",")}, 0.24);
+      }
+
+      ._timeline-box-trace ._trace-top,
+      ._timeline-box-trace ._trace-bottom {
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: scaleX(0);
+        transform-origin: var(--trace-origin, left);
+        transition: transform 260ms ease-out;
+      }
+
+      ._timeline-box-trace ._trace-top {
+        top: 0;
+      }
+
+      ._timeline-box-trace ._trace-bottom {
+        bottom: 0;
+      }
+
+      ._timeline-box-trace ._trace-left,
+      ._timeline-box-trace ._trace-right {
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 220ms ease-out 240ms;
+      }
+
+      ._timeline-box-trace ._trace-left {
+        left: 0;
+      }
+
+      ._timeline-box-trace ._trace-right {
+        right: 0;
+      }
+
+      ._timeline-box-wrap:hover ._timeline-box-trace {
+        opacity: 1;
+      }
+
+      ._timeline-box-wrap:hover ._timeline-box-trace ._trace-top,
+      ._timeline-box-wrap:hover ._timeline-box-trace ._trace-bottom {
+        transform: scaleX(1);
+      }
+
+      ._timeline-box-wrap:hover ._timeline-box-trace ._trace-left,
+      ._timeline-box-wrap:hover ._timeline-box-trace ._trace-right {
+        transform: scaleY(1);
+      }
     `;
     document.head.appendChild(style);
 
     document
-      .querySelectorAll(".readout-row, .prize-entry, .timeline-item")
+      .querySelectorAll(".readout-row, .prize-entry")
       .forEach((el) => {
         el.classList.add("_line-trace-wrap");
         if (el.style.position === "" || el.style.position === "static") {
           el.style.position = "relative";
         }
+        if (el.querySelector("._line-trace")) return;
         const line = document.createElement("div");
         line.className = "_line-trace";
         el.appendChild(line);
       });
+
+    document.querySelectorAll(".timeline-item").forEach((item) => {
+      item.classList.remove("_line-trace-wrap");
+      item.querySelectorAll("._line-trace").forEach((line) => line.remove());
+    });
+
+    document.querySelectorAll(".timeline-copy").forEach((copy) => {
+      copy.classList.add("_timeline-box-wrap");
+      if (copy.style.position === "" || copy.style.position === "static") {
+        copy.style.position = "relative";
+      }
+      if (copy.querySelector("._timeline-box-trace")) return;
+      const box = document.createElement("div");
+      box.className = "_timeline-box-trace";
+      box.innerHTML = `
+        <span class="_trace-top"></span>
+        <span class="_trace-right"></span>
+        <span class="_trace-bottom"></span>
+        <span class="_trace-left"></span>
+      `;
+      copy.appendChild(box);
+    });
   }
 
   // ===== INTERACTION: Reveal on Scroll — Glitch Text Entrance =====
