@@ -1219,12 +1219,16 @@ a.team-card {
 }
 
 .title-tier .sponsor-slot {
-  padding: 50px 60px;
+  padding: 0; /* Removed padding to ensure square shape */
   font-size: 14px;
-  min-width: 300px;
+  width: 200px; /* Set fixed width for square */
+  height: 200px; /* Set fixed height for square */
   border-color: #4fd1d925; /* Match other sponsor slots */
   color: var(--gold);
   opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gajshield-zoom {
