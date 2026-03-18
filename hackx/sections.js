@@ -1448,6 +1448,7 @@ void main() {
     const threadSvg = timelineSection.querySelector(".timeline-thread-svg");
     const nodeTrack = timelineSection.querySelector("#timeline-node-track");
     const threadPath = timelineSection.querySelector("#timeline-thread-path");
+    const timelinePanels = timelineSection.querySelector(".timeline-panels");
     const nodes = Array.from(timelineSection.querySelectorAll(".timeline-node"));
     const panelDate = timelineSection.querySelector("#timeline-panel-date");
     const panelDay = timelineSection.querySelector("#timeline-panel-day");
@@ -1472,6 +1473,7 @@ void main() {
 
     let activeIndex = nodes.findIndex((node) => node.classList.contains("active"));
     if (activeIndex < 0) activeIndex = 0;
+    let panelAnimationTimeout = null;
 
     function setPanelContent(node) {
       panelDate.textContent = node.dataset.date || "";
@@ -1479,6 +1481,25 @@ void main() {
       panelTitle.textContent = node.dataset.title || "";
       panelBody.textContent = String(node.dataset.detail || "").replace(/\r\n?/g, "\n");
       panelBody.scrollTop = 0;
+    }
+
+    function animatePanels(direction) {
+      if (!timelinePanels || direction === 0) return;
+
+      const animationClass = direction > 0 ? "panel-in-right" : "panel-in-left";
+
+      timelinePanels.classList.remove("panel-in-left", "panel-in-right");
+      void timelinePanels.offsetWidth;
+      timelinePanels.classList.add(animationClass);
+
+      if (panelAnimationTimeout) {
+        window.clearTimeout(panelAnimationTimeout);
+      }
+
+      panelAnimationTimeout = window.setTimeout(() => {
+        timelinePanels.classList.remove("panel-in-left", "panel-in-right");
+        panelAnimationTimeout = null;
+      }, 360);
     }
 
     function applyPinch(index) {
@@ -1509,11 +1530,23 @@ void main() {
         return `M ${point.x.toFixed(2)} ${point.y.toFixed(2)} L ${point.x.toFixed(2)} ${point.y.toFixed(2)}`;
       }
 
+      const tension = 0.25;
       let d = `M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
-      for (let index = 1; index < points.length; index += 1) {
-        const point = points[index];
-        d += ` L ${point.x.toFixed(2)} ${point.y.toFixed(2)}`;
+
+      for (let index = 0; index < points.length - 1; index += 1) {
+        const p0 = points[index - 1] || points[index];
+        const p1 = points[index];
+        const p2 = points[index + 1];
+        const p3 = points[index + 2] || p2;
+
+        const cp1x = p1.x + (p2.x - p0.x) * tension;
+        const cp1y = p1.y + (p2.y - p0.y) * tension;
+        const cp2x = p2.x - (p3.x - p1.x) * tension;
+        const cp2y = p2.y - (p3.y - p1.y) * tension;
+
+        d += ` C ${cp1x.toFixed(2)} ${cp1y.toFixed(2)} ${cp2x.toFixed(2)} ${cp2y.toFixed(2)} ${p2.x.toFixed(2)} ${p2.y.toFixed(2)}`;
       }
+
       return d;
     }
 
@@ -1537,10 +1570,14 @@ void main() {
       threadPath.setAttribute("d", buildThreadPath(extendedPoints));
     }
 
-    function setActive(index) {
+    function setActive(index, shouldAnimatePanels = true) {
+      const direction = index === activeIndex ? 0 : index > activeIndex ? 1 : -1;
       activeIndex = index;
       applyPinch(index);
       setPanelContent(nodes[index]);
+      if (shouldAnimatePanels && direction !== 0) {
+        animatePanels(direction);
+      }
       drawThread();
     }
 
@@ -1562,7 +1599,7 @@ void main() {
       requestAnimationFrame(animateThread);
     }
 
-    setActive(activeIndex);
+    setActive(activeIndex, false);
     requestAnimationFrame(animateThread);
   }
 

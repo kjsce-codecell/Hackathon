@@ -655,14 +655,26 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 12px;
+    gap: 16px;
 }
 
 .timeline-panels {
+    --timeline-panel-height: clamp(250px, 34vh, 340px);
+    --timeline-swap-duration: 320ms;
     display: grid;
     grid-template-columns: minmax(280px, 0.95fr) minmax(440px, 1.7fr);
     gap: 22px;
     align-items: stretch;
+    height: var(--timeline-panel-height);
+    flex: 0 0 var(--timeline-panel-height);
+}
+
+.timeline-panels.panel-in-left .timeline-panel {
+    animation: timelinePanelFadeInLeft var(--timeline-swap-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.timeline-panels.panel-in-right .timeline-panel {
+    animation: timelinePanelFadeInRight var(--timeline-swap-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .timeline-panel {
@@ -672,9 +684,42 @@ label {
         inset 0 0 36px #4fd1d908,
         0 0 22px #4fd1d914;
     padding: clamp(22px, 3vw, 36px);
-    height: clamp(250px, 34vh, 340px);
+    height: 100%;
+    min-height: 0;
     display: flex;
     flex-direction: column;
+    will-change: transform, opacity;
+}
+
+@keyframes timelinePanelFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes timelinePanelFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-panels.panel-in-left .timeline-panel,
+    .timeline-panels.panel-in-right .timeline-panel {
+        animation: none;
+    }
 }
 
 .timeline-panel-label {
@@ -685,12 +730,14 @@ label {
 }
 
 .timeline-panel-date {
-    font-size: clamp(46px, 6.2vw, 84px);
+    font-size: clamp(42px, 5.8vw, 74px);
     letter-spacing: 0.04em;
     color: var(--gold);
-    line-height: 1;
+    line-height: 1.02;
     margin-bottom: 16px;
     text-shadow: 0 0 22px #4fd1d92a;
+    white-space: nowrap;
+    min-height: 1.1em;
 }
 
 .timeline-panel-day {
@@ -724,7 +771,8 @@ label {
     width: 100%;
     height: clamp(104px, 14vh, 140px);
     overflow: hidden;
-    margin-top: 10px;
+    margin-top: 14px;
+    flex: 0 0 clamp(104px, 14vh, 140px);
 }
 
 .timeline-thread-svg {
@@ -1805,13 +1853,15 @@ a.team-card {
 
     .timeline-hub {
         min-height: clamp(400px, 58vh, 520px);
-        gap: 12px;
+        gap: 14px;
     }
 
     .timeline-panels {
+        --timeline-panel-height: auto;
         grid-template-columns: 1fr;
         gap: 14px;
-        transform: none;
+        height: auto;
+        flex: initial;
     }
 
     .timeline-panel-datebox,
@@ -1848,6 +1898,8 @@ a.team-card {
 
     .timeline-thread-wrap {
         height: 102px;
+        margin-top: 10px;
+        flex: initial;
     }
 
     .timeline-node-track {
@@ -1859,8 +1911,8 @@ a.team-card {
     }
 
     .timeline-node-dot {
-        width: 12px;
-        height: 12px;
+        width: 15px;
+        height: 15px;
     }
 
     .timeline-node-label {
@@ -2017,7 +2069,7 @@ a.team-card {
 
     .timeline-hub {
         min-height: 360px;
-        gap: 10px;
+        gap: 12px;
     }
 
     .timeline-panel {
@@ -2033,6 +2085,8 @@ a.team-card {
 
     .timeline-panel-date {
         font-size: clamp(34px, 11vw, 52px);
+        white-space: normal;
+        min-height: 0;
     }
 
     .timeline-panel-day {
@@ -2049,11 +2103,15 @@ a.team-card {
     .timeline-panel-body {
         font-size: 11px;
         line-height: 1.65;
+        flex: initial;
+        min-height: initial;
         max-height: 176px;
     }
 
     .timeline-thread-wrap {
         height: 92px;
+        margin-top: 8px;
+        flex: initial;
     }
 
     .timeline-node-track {
