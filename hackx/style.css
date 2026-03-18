@@ -1341,6 +1341,11 @@ a.team-card {
     cursor: pointer;
 }
 
+.footer-social-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .footer-social span {
     transition: color 0.3s;
 }
