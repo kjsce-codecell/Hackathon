@@ -381,6 +381,22 @@
     initMusicDanceExperience();
     initGlobalCrtCurvatureForSectionCanvases();
     initGlobalCustomCursor();
+
+    // Lock model-viewer orbit target so clicks/taps can't shift the origin,
+    // and add a point light at the top-right of the model.
+    const mv = document.querySelector("model-viewer.about-model");
+    if (mv) {
+      mv.addEventListener("load", () => {
+        const locked = mv.getCameraTarget();
+        const lockedStr = `${locked.x}m ${locked.y}m ${locked.z}m`;
+        mv.addEventListener("camera-change", () => {
+          const cur = mv.getCameraTarget();
+          if (cur.x !== locked.x || cur.y !== locked.y || cur.z !== locked.z) {
+            mv.cameraTarget = lockedStr;
+          }
+        });
+      });
+    }
   }
 
   // ===== LENIS SMOOTH SCROLL =====
@@ -768,7 +784,7 @@ void main() {
       dither: 0,
       curvature: 0, // avoid double-curving (global CRT pass handles it)
       tint: "#4fd1d9",
-        mouseReact: false,
+      mouseReact: false,
       mouseStrength: 0.5,
       pageLoadAnimation: true,
       brightness: 0.15,
@@ -2013,10 +2029,10 @@ void main() {
       const titleLabel = document.createElement('div');
       titleLabel.innerHTML = 'THE MUSIC<br>DANCE EXPERIENCE';
       titleLabel.style.cssText = `
-        color: #ff0000ff; font-family: 'Geist Pixel', 'Courier New', monospace; font-size: 75px;
+        color: #001affff; font-family: 'Geist Pixel', 'Courier New', monospace; font-size: 75px;
         text-align: center; pointer-events: none; font-weight : bold;
-        text-shadow: 0 0 20px #ff0000ff; padding: 20px 40px;
-        background: rgba(10, 0, 8, 1.0); border: 1px solid #ff0000ff;
+        text-shadow: 0 0 20px #001affff; padding: 20px 40px;
+        background: rgba(10, 0, 8, 1.0); border: 1px solid #001affff;
         letter-spacing: 4px; text-transform: uppercase;
       `;
       musicUIContainer.appendChild(titleLabel);
@@ -2024,10 +2040,10 @@ void main() {
       // Style stop button
       stopBtn.textContent = 'STOP THE MUSIC DANCE EXPERIENCE';
       stopBtn.style.cssText = `
-        color: #ff0000ff; font-family: 'Courier New', monospace; font-size: 18px;
+        color: #001affff; font-family: 'Courier New', monospace; font-size: 18px;
         text-align: center; cursor: pointer;
-        text-shadow: 0 0 20px #ff0000ff; padding: 20px 40px;
-        background: rgba(10, 0, 8, 0.85); border: 1px solid #ff0000ff;
+        text-shadow: 0 0 20px #001affff; padding: 20px 40px;
+        background: rgba(10, 0, 8, 0.85); border: 1px solid #001affff;
         letter-spacing: 4px; text-transform: uppercase;
         display: block;
       `;
