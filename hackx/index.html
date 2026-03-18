@@ -1,146 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>HACK X // CodeCell</title>
-    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
+    <meta name="viewport"
+        content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
     <meta charset="utf-8" />
     <meta name="description" content="HACK X by CodeCell — Changing the world, one bit at a time" />
+    <meta name="theme-color" content="#4fd1d9" />
     <meta property="og:title" content="HACK X // CodeCell" />
     <meta property="og:description" content="The hackathon experience. Refine your data. Prove your worth." />
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-      @font-face {
-        font-family: 'Geist Pixel';
-        src: url('https://raw.githubusercontent.com/vercel/geist-pixel-font/main/fonts/webfonts/GeistPixel-Square.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
+        @font-face {
+            font-family: "Geist Pixel";
+            src: url("https://raw.githubusercontent.com/vercel/geist-pixel-font/main/fonts/webfonts/GeistPixel-Square.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="manifest" href="manifest.json" />
-    <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
+    <script>
+        history.scrollRestoration = "manual";
+        window.scrollTo(0, 0);
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
+    <div class="vignette-overlay"></div>
     <!-- Fixed elements -->
     <div id="announcement-bar"></div>
     <a id="register-btn" href="https://hackx.codecell.io/register" target="_blank">REGISTER</a>
 
     <!-- SECTION 1: HERO — The Game -->
     <section id="hero-section" class="section">
-      <div id="game-container"></div>
-      <div id="scroll-hint">
-        <span>&#9660; SCROLL TO DECRYPT MORE &#9660;</span>
-      </div>
+        <div id="game-container"></div>
+        <div id="scroll-hint">
+            <span>&#9660; SCROLL TO DECRYPT MORE &#9660;</span>
+        </div>
     </section>
 
     <!-- SECTION 2: ABOUT -->
     <section id="about-section" class="section">
-      <canvas id="about-canvas"></canvas>
-      <div class="section-content about-layout">
-        <div class="about-left">
-          <h1 class="glitch-text" data-text="HACK X">HACK X</h1>
-          <p class="about-tagline">24-HOUR HACKATHON BY CODECELL</p>
-          <p class="about-desc">The boldest builders, designers, and dreamers converge to create something unprecedented. No sleep. No limits. Just code.</p>
-          <a href="https://hackx.codecell.io/register" target="_blank" class="about-cta">REGISTER BEFORE APRIL 8 →</a>
+        <canvas id="about-canvas"></canvas>
+        <div class="section-content about-layout">
+            <div class="about-left">
+                <h1 class="glitch-text" data-text="HACK X">HACK X</h1>
+                <p class="about-tagline">A 24-HOUR HACKATHON BY CODECELL</p>
+                <p class="about-desc">
+                    The boldest builders, designers, and dreamers converge
+                    to create something unprecedented. No sleep. No limits.
+                    Just code.
+                </p>
+                <div class="about-tags">
+                    <span>AI / ML</span>
+                    <span>WEB3</span>
+                    <span>OPEN TO ALL</span>
+                    <span>TEAM OF 2-4</span>
+                </div>
+                <div
+                    class="apply-button"
+                    data-hackathon-slug="hack-x"
+                    data-button-theme="dark"
+                    style="height: 44px; width: 312px"
+                ></div>
+            </div>
+            <div class="about-right">
+                <model-viewer
+                    class="about-model"
+                    src="3dmodel/3D%20Asset%20Final.glb"
+                    alt="Hack X 3D asset"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="20deg"
+                    shadow-intensity="0.6"
+                    exposure="1.1"
+                    environment-image="neutral"
+                    disable-zoom
+                ></model-viewer>
+            </div>
         </div>
-        <div class="about-right">
-          <div class="about-stat">
-            <div class="about-stat-value">APR 11-12</div>
-            <div class="about-stat-label">DATE</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-value">24 HRS</div>
-            <div class="about-stat-label">DURATION</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-value">KJ SOMAIYA</div>
-            <div class="about-stat-label">VENUE</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-value">₹3L+</div>
-            <div class="about-stat-label">PRIZES</div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- SECTION 3: TRACKS (hidden for now) -->
-    <section id="tracks-section" class="section" style="display:none">
-      <div class="section-content">
-        <h1 class="glitch-text" data-text="// TRACKS">// TRACKS</h1>
-        <div class="track-block" id="track-nexus">
-          <canvas id="nexus-canvas"></canvas>
-          <div class="track-content">
-            <div class="track-number">01</div>
-            <h2>NEXUS</h2>
-            <div class="track-subtitle">ARTIFICIAL INTELLIGENCE & ML</div>
-            <p>Build intelligent systems that push the boundaries of what machines can learn, predict, and create. From LLMs to computer vision — if it thinks, it belongs here.</p>
-            <div class="track-tags">
-              <span>LLMs</span><span>COMPUTER VISION</span><span>AGENTS</span><span>ML OPS</span>
+    <section id="tracks-section" class="section" style="display: none">
+        <div class="section-content">
+            <h1 class="glitch-text" data-text="// TRACKS">// TRACKS</h1>
+            <div class="track-block" id="track-nexus">
+                <canvas id="nexus-canvas"></canvas>
+                <div class="track-content">
+                    <div class="track-number">01</div>
+                    <h2>NEXUS</h2>
+                    <div class="track-subtitle">
+                        ARTIFICIAL INTELLIGENCE & ML
+                    </div>
+                    <p>
+                        Build intelligent systems that push the boundaries
+                        of what machines can learn, predict, and create.
+                        From LLMs to computer vision — if it thinks, it
+                        belongs here.
+                    </p>
+                    <div class="track-tags">
+                        <span>LLMs</span><span>COMPUTER VISION</span><span>AGENTS</span><span>ML OPS</span>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="track-block" id="track-spectra">
-          <canvas id="spectra-canvas"></canvas>
-          <div class="track-content">
-            <div class="track-number">02</div>
-            <h2>SPECTRA</h2>
-            <div class="track-subtitle">WEB3 & DECENTRALIZED SYSTEMS</div>
-            <p>Architect the decentralized future. Smart contracts, DeFi protocols, DAOs, and on-chain experiences — build what banks and corporations can't.</p>
-            <div class="track-tags">
-              <span>SMART CONTRACTS</span><span>DEFI</span><span>DAOS</span><span>ON-CHAIN</span>
+            <div class="track-block" id="track-spectra">
+                <canvas id="spectra-canvas"></canvas>
+                <div class="track-content">
+                    <div class="track-number">02</div>
+                    <h2>SPECTRA</h2>
+                    <div class="track-subtitle">
+                        WEB3 & DECENTRALIZED SYSTEMS
+                    </div>
+                    <p>
+                        Architect the decentralized future. Smart contracts,
+                        DeFi protocols, DAOs, and on-chain experiences —
+                        build what banks and corporations can't.
+                    </p>
+                    <div class="track-tags">
+                        <span>SMART CONTRACTS</span><span>DEFI</span><span>DAOS</span><span>ON-CHAIN</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- SECTION 4: PRIZES -->
     <section id="prizes-section" class="section">
-      <canvas id="prizes-canvas"></canvas>
-      <div class="section-content">
-        <h1 class="glitch-text" data-text="// PRIZES">// PRIZES</h1>
+        <canvas id="prizes-canvas"></canvas>
+        <div class="section-content">
+            <h1 class="glitch-text" data-text="// PRIZES">// PRIZES</h1>
 
-        <div class="prizes-layout">
-          <div class="prizes-pool">
-            <div class="prizes-pool-label">TOTAL PRIZE POOL</div>
-            <div class="prizes-pool-amount prize-amount" data-target="300000" data-prefix="₹">₹0</div>
-            <div class="prizes-pool-sub">+ GOODIES & SWAG FOR ALL</div>
-          </div>
+            <div class="prizes-layout">
+                <div class="prizes-pool">
+                    <div class="prizes-pool-label">TOTAL PRIZE POOL</div>
+                    <div class="prizes-pool-amount prize-amount" data-target="300000" data-prefix="₹">
+                        ₹0
+                    </div>
+                    <div class="prizes-pool-sub">
+                        + GOODIES & SWAG FOR ALL
+                    </div>
+                </div>
 
-          <div class="prizes-tracks">
-            <div class="prizes-track">
-              <div class="prizes-track-label">TRACK 1</div>
-              <div class="prizes-track-prizes">
-                <div class="prize-place">
-                  <div class="prize-place-rank">1ST</div>
-                  <div class="prize-place-amount prize-amount" data-target="100000" data-prefix="₹">₹0</div>
+                <div class="prizes-tracks">
+                    <div class="prizes-track">
+                        <div class="prizes-track-label">TRACK 1</div>
+                        <div class="prizes-track-prizes">
+                            <div class="prize-place">
+                                <div class="prize-place-rank">1ST</div>
+                                <div class="prize-place-amount prize-amount" data-target="100000" data-prefix="₹">
+                                    ₹0
+                                </div>
+                            </div>
+                            <div class="prize-place">
+                                <div class="prize-place-rank">2ND</div>
+                                <div class="prize-place-amount prize-amount" data-target="50000" data-prefix="₹">
+                                    ₹0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prizes-divider"></div>
+                    <div class="prizes-track">
+                        <div class="prizes-track-label">TRACK 2</div>
+                        <div class="prizes-track-prizes">
+                            <div class="prize-place">
+                                <div class="prize-place-rank">1ST</div>
+                                <div class="prize-place-amount prize-amount" data-target="100000" data-prefix="₹">
+                                    ₹0
+                                </div>
+                            </div>
+                            <div class="prize-place">
+                                <div class="prize-place-rank">2ND</div>
+                                <div class="prize-place-amount prize-amount" data-target="50000" data-prefix="₹">
+                                    ₹0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="prize-place">
-                  <div class="prize-place-rank">2ND</div>
-                  <div class="prize-place-amount prize-amount" data-target="50000" data-prefix="₹">₹0</div>
-                </div>
-              </div>
             </div>
-            <div class="prizes-divider"></div>
-            <div class="prizes-track">
-              <div class="prizes-track-label">TRACK 2</div>
-              <div class="prizes-track-prizes">
-                <div class="prize-place">
-                  <div class="prize-place-rank">1ST</div>
-                  <div class="prize-place-amount prize-amount" data-target="100000" data-prefix="₹">₹0</div>
-                </div>
-                <div class="prize-place">
-                  <div class="prize-place-rank">2ND</div>
-                  <div class="prize-place-amount prize-amount" data-target="50000" data-prefix="₹">₹0</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
-      </div>
     </section>
 
     <!-- SECTION 5: WHAT YOU GET -->
@@ -171,212 +215,249 @@
             <div class="bento-label">EVERYTHING ELSE IS ON US</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: THE TEAM -->
-    <section id="team-section" class="section">
-      <div class="section-content">
-        <h1 class="glitch-text" data-text="// THE TEAM">// THE TEAM</h1>
-        <p class="section-desc">36 people behind the scenes making Hack X happen. CodeCell's finest.</p>
-        <div class="team-counter">
-          <span class="team-number">36</span>
-          <span class="team-label">ORGANIZERS</span>
-        </div>
-        <div class="team-row-label">DEPARTMENT HEADS // SEVERED FLOOR</div>
-        <div class="team-marquee-wrap">
-          <div class="team-marquee" id="team-row-heads"></div>
-        </div>
-        <div class="team-row-label">MACRODATA REFINEMENT // O&D</div>
-        <div class="team-marquee-wrap reverse">
-          <div class="team-marquee" id="team-row-ty"></div>
-        </div>
-        <div class="team-row-label">OPTICS & DESIGN // WELLNESS</div>
-        <div class="team-marquee-wrap">
-          <div class="team-marquee" id="team-row-sy"></div>
-        </div>
-        <div class="team-row-label">NEW INNIES // PROBATIONARY</div>
-        <div class="team-marquee-wrap reverse">
-          <div class="team-marquee" id="team-row-fy"></div>
-        </div>
-        <div class="team-note">THE HUMANS BEHIND THE TERMINAL</div>
-      </div>
     </section>
 
     <!-- SECTION 7: SPONSORS -->
     <section id="sponsors-section" class="section">
-      <div class="section-content">
-        <h1 class="glitch-text" data-text="// SPONSORS">// SPONSORS</h1>
-        <p class="section-desc">Hack X is made possible by organizations that believe in the next generation of builders.</p>
-        <div class="sponsors-tiers">
-          <div class="sponsor-tier">
-            <div class="tier-label">TITLE SPONSOR</div>
-            <div class="sponsor-logos title-tier">
-              <div class="sponsor-slot">YOUR LOGO HERE</div>
+        <div class="section-content">
+            <h1 class="glitch-text" data-text="// SPONSORS">// SPONSORS</h1>
+            <p class="section-desc">
+                Hack X is made possible by organizations that believe in the
+                next generation of builders.
+            </p>
+            <div class="sponsors-tiers">
+                <div class="sponsor-tier">
+                    <div class="tier-label">TITLE SPONSOR</div>
+                    <div class="sponsor-logos title-tier">
+                        <div class="sponsor-slot">YOUR LOGO HERE</div>
+                    </div>
+                </div>
+                <div class="sponsor-tier">
+                    <div class="tier-label">GOLD SPONSORS</div>
+                    <div class="sponsor-logos gold-tier">
+                        <div class="sponsor-slot">OPEN</div>
+                        <div class="sponsor-slot">OPEN</div>
+                    </div>
+                </div>
+                <div class="sponsor-tier">
+                    <div class="tier-label">COMMUNITY PARTNERS</div>
+                    <div class="sponsor-logos community-tier">
+                        <div class="sponsor-slot small">OPEN</div>
+                        <div class="sponsor-slot small">OPEN</div>
+                        <div class="sponsor-slot small">OPEN</div>
+                        <div class="sponsor-slot small">OPEN</div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="sponsor-tier">
-            <div class="tier-label">GOLD SPONSORS</div>
-            <div class="sponsor-logos gold-tier">
-              <div class="sponsor-slot">OPEN</div>
-              <div class="sponsor-slot">OPEN</div>
+            <div class="sponsors-cta">
+                WANT TO SPONSOR?
+                <a href="mailto:codecell@somaiya.edu">CONTACT US →</a>
             </div>
-          </div>
-          <div class="sponsor-tier">
-            <div class="tier-label">COMMUNITY PARTNERS</div>
-            <div class="sponsor-logos community-tier">
-              <div class="sponsor-slot small">OPEN</div>
-              <div class="sponsor-slot small">OPEN</div>
-              <div class="sponsor-slot small">OPEN</div>
-              <div class="sponsor-slot small">OPEN</div>
-            </div>
-          </div>
-        </div>
-        <div class="sponsors-cta">
-          WANT TO SPONSOR? <a href="mailto:codecell@somaiya.edu">CONTACT US →</a>
-        </div>
 
-        <div class="past-sponsors">
-          <div class="past-sponsors-label">PAST SPONSORS & PARTNERS</div>
-          <div class="past-sponsors-marquee-wrap">
-            <div class="past-sponsors-marquee">
-              <span>GOOGLE</span>
-              <span>MICROSOFT</span>
-              <span>GITHUB</span>
-              <span>DEVFOLIO</span>
-              <span>POLYGON</span>
-              <span>FILECOIN</span>
-              <span>REPLIT</span>
-              <span>WOLFRAM</span>
-              <span>BALSAMIQ</span>
-              <span>XYZ DOMAINS</span>
-              <span>ECHO3D</span>
-              <span>TASKADE</span>
-              <!-- duplicate for seamless loop -->
-              <span>GOOGLE</span>
-              <span>MICROSOFT</span>
-              <span>GITHUB</span>
-              <span>DEVFOLIO</span>
-              <span>POLYGON</span>
-              <span>FILECOIN</span>
-              <span>REPLIT</span>
-              <span>WOLFRAM</span>
-              <span>BALSAMIQ</span>
-              <span>XYZ DOMAINS</span>
-              <span>ECHO3D</span>
-              <span>TASKADE</span>
+            <div class="past-sponsors">
+                <div class="past-sponsors-label">
+                    PAST SPONSORS & PARTNERS
+                </div>
+                <div class="past-sponsors-marquee-wrap">
+                    <div class="past-sponsors-marquee">
+                        <span>GOOGLE</span>
+                        <span>MICROSOFT</span>
+                        <span>GITHUB</span>
+                        <span>DEVFOLIO</span>
+                        <span>POLYGON</span>
+                        <span>FILECOIN</span>
+                        <span>REPLIT</span>
+                        <span>WOLFRAM</span>
+                        <span>BALSAMIQ</span>
+                        <span>XYZ DOMAINS</span>
+                        <span>ECHO3D</span>
+                        <span>TASKADE</span>
+                        <!-- duplicate for seamless loop -->
+                        <span>GOOGLE</span>
+                        <span>MICROSOFT</span>
+                        <span>GITHUB</span>
+                        <span>DEVFOLIO</span>
+                        <span>POLYGON</span>
+                        <span>FILECOIN</span>
+                        <span>REPLIT</span>
+                        <span>WOLFRAM</span>
+                        <span>BALSAMIQ</span>
+                        <span>XYZ DOMAINS</span>
+                        <span>ECHO3D</span>
+                        <span>TASKADE</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- SECTION 8: TIMELINE -->
     <section id="timeline-section" class="section">
-      <div class="section-content">
-        <h1 class="glitch-text" data-text="// TIMELINE">// TIMELINE</h1>
-        <div class="timeline">
-          <div class="timeline-item" data-aos>
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">MAR 15</div>
-            <div class="timeline-event">REGISTRATION OPENS</div>
-          </div>
-          <div class="timeline-item" data-aos>
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">APR 08</div>
-            <div class="timeline-event">REGISTRATION CLOSES</div>
-          </div>
-          <div class="timeline-item" data-aos>
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">APR 11</div>
-            <div class="timeline-event">OPENING CEREMONY</div>
-          </div>
-          <div class="timeline-item active" data-aos>
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">APR 11-12</div>
-            <div class="timeline-event">24 HOURS OF HACKING</div>
-          </div>
-          <div class="timeline-item" data-aos>
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">APR 12</div>
-            <div class="timeline-event">DEMOS & JUDGING</div>
-          </div>
-          <div class="timeline-item" data-aos>
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">APR 12</div>
-            <div class="timeline-event">CLOSING CEREMONY & PRIZES</div>
-          </div>
+        <div class="section-content">
+            <h1 class="glitch-text" data-text="// TIMELINE">// TIMELINE</h1>
+            <div class="timeline">
+                <div class="timeline-item" data-aos>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">MAR 15</div>
+                    <div class="timeline-event">REGISTRATION OPENS</div>
+                </div>
+                <div class="timeline-item" data-aos>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">APR 08</div>
+                    <div class="timeline-event">REGISTRATION CLOSES</div>
+                </div>
+                <div class="timeline-item" data-aos>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">APR 11</div>
+                    <div class="timeline-event">OPENING CEREMONY</div>
+                </div>
+                <div class="timeline-item active" data-aos>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">APR 11-12</div>
+                    <div class="timeline-event">24 HOURS OF HACKING</div>
+                </div>
+                <div class="timeline-item" data-aos>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">APR 12</div>
+                    <div class="timeline-event">DEMOS & JUDGING</div>
+                </div>
+                <div class="timeline-item" data-aos>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">APR 12</div>
+                    <div class="timeline-event">
+                        CLOSING CEREMONY & PRIZES
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- SECTION 6: FAQ -->
     <section id="faq-section" class="section">
-      <div class="section-content">
-        <h1 class="glitch-text" data-text="// FAQ">// FAQ</h1>
-        <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-              <span>WHO CAN PARTICIPATE?</span>
-              <span class="faq-toggle">+</span>
+        <div class="section-content">
+            <h1 class="glitch-text" data-text="// FAQ">// FAQ</h1>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>WHO CAN PARTICIPATE?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Anyone with a passion for building. Students,
+                        professionals, hobbyists — if you can code, design,
+                        or pitch, you're in. Teams of 2-4 members.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>DO I NEED A TEAM?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can register solo and find teammates at our team
+                        formation event on March 1st. Or bring your own
+                        squad. Max team size is 4.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>WHAT SHOULD I BUILD?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Anything that fits within our two tracks: NEXUS
+                        (AI/ML) or SPECTRA (Web3). We value creativity,
+                        technical depth, and real-world impact.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>IS IT FREE?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. Hack X is completely free. We provide the
+                        venue, food, WiFi, mentors, and ₹3L+ in prizes. You
+                        bring the code.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>WHAT DO I NEED TO BRING?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Your laptop, charger, and an unhinged desire to
+                        build something amazing in 24 hours. We handle the
+                        rest.
+                    </div>
+                </div>
             </div>
-            <div class="faq-answer">Anyone with a passion for building. Students, professionals, hobbyists — if you can code, design, or pitch, you're in. Teams of 2-4 members.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-              <span>DO I NEED A TEAM?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">You can register solo and find teammates at our team formation event on March 1st. Or bring your own squad. Max team size is 4.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-              <span>WHAT SHOULD I BUILD?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">Anything that fits within our two tracks: NEXUS (AI/ML) or SPECTRA (Web3). We value creativity, technical depth, and real-world impact.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-              <span>IS IT FREE?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">Yes. Hack X is completely free. We provide the venue, food, WiFi, mentors, and ₹3L+ in prizes. You bring the code.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-              <span>WHAT DO I NEED TO BRING?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">Your laptop, charger, and an unhinged desire to build something amazing in 24 hours. We handle the rest.</div>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- SECTION 6: THE TEAM -->
+    <section id="team-section" class="section">
+        <div class="section-content">
+            <h1 class="glitch-text" data-text="// THE TEAM">// THE TEAM</h1>
+            <p class="section-desc">
+                36 people behind the scenes making Hack X happen. CodeCell's
+                finest.
+            </p>
+            <div class="team-counter">
+                <span class="team-number">36</span>
+                <span class="team-label">ORGANIZERS</span>
+            </div>
+            <div class="team-row-label">
+                DEPARTMENT HEADS // SEVERED FLOOR
+            </div>
+            <div class="team-marquee-wrap">
+                <div class="team-marquee" id="team-row-heads"></div>
+            </div>
+            <div class="team-row-label">MACRODATA REFINEMENT // O&D</div>
+            <div class="team-marquee-wrap reverse">
+                <div class="team-marquee" id="team-row-ty"></div>
+            </div>
+            <div class="team-row-label">OPTICS & DESIGN // WELLNESS</div>
+            <div class="team-marquee-wrap">
+                <div class="team-marquee" id="team-row-sy"></div>
+            </div>
+            <div class="team-row-label">NEW INNIES // PROBATIONARY</div>
+            <div class="team-marquee-wrap reverse">
+                <div class="team-marquee" id="team-row-fy"></div>
+            </div>
+            <div class="team-note">THE HUMANS BEHIND THE TERMINAL</div>
+        </div>
     </section>
 
     <!-- SECTION 7: FOOTER -->
     <section id="footer-section">
-      <canvas id="footer-canvas"></canvas>
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="footer-logo">CODECELL</div>
-          <div class="footer-tagline">CHANGING THE WORLD, ONE BIT AT A TIME</div>
+        <canvas id="footer-canvas"></canvas>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">CODECELL</div>
+                <div class="footer-tagline">
+                    CHANGING THE WORLD, ONE BIT AT A TIME
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="https://hackx.codecell.io/register" target="_blank">REGISTER</a>
+                <a href="#about-section">ABOUT</a>
+                <a href="#prizes-section">PRIZES</a>
+                <a href="#perks-section">PERKS</a>
+                <a href="#team-section">TEAM</a>
+                <a href="#sponsors-section">SPONSORS</a>
+                <a href="#timeline-section">TIMELINE</a>
+                <a href="#faq-section">FAQ</a>
+            </div>
+            <div class="footer-social">
+                <span>TWITTER</span> · <span>DISCORD</span> ·
+                <span>GITHUB</span> · <span>INSTAGRAM</span>
+            </div>
+            <div class="footer-copy">
+                © 2026 CODECELL. ALL RIGHTS RESERVED. THE DATA MUST FLOW.
+            </div>
         </div>
-        <div class="footer-links">
-          <a href="https://hackx.codecell.io/register" target="_blank">REGISTER</a>
-          <a href="#about-section">ABOUT</a>
-          <a href="#prizes-section">PRIZES</a>
-          <a href="#perks-section">PERKS</a>
-          <a href="#team-section">TEAM</a>
-          <a href="#sponsors-section">SPONSORS</a>
-          <a href="#timeline-section">TIMELINE</a>
-          <a href="#faq-section">FAQ</a>
-        </div>
-        <div class="footer-social">
-          <span>TWITTER</span> · <span>DISCORD</span> · <span>GITHUB</span> · <span>INSTAGRAM</span>
-        </div>
-        <div class="footer-copy">© 2026 CODECELL. ALL RIGHTS RESERVED. THE DATA MUST FLOW.</div>
-      </div>
     </section>
 
     <!-- Scripts: config & audio first, then sketch (defines globals), then dependencies -->
@@ -388,7 +469,11 @@
     <script src="data.js"></script>
     <script src="utils.js"></script>
     <script src="macrodata.js"></script>
+    <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="auto"></audio>
+    <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
+    <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
     <div id="p5_loading" class="loadingclass">INITIALIZING HACK X...</div>
-  </body>
+</body>
+
 </html>
