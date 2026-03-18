@@ -784,12 +784,13 @@ label {
     padding: 22px 0;
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     font-size: 13px;
     letter-spacing: 2px;
     transition: all 0.3s ease;
     background: none;
+    text-align: left;
 }
 
 .faq-question::before {
