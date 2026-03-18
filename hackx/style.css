@@ -13,6 +13,7 @@ html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #4fd1d9 #0a1628;
+    font-size: 100%; /* Base font size for relative scaling */
 }
 
 body {
@@ -188,6 +189,7 @@ label {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 10vh 5vw; /* Relative padding */
 }
 
 .section canvas {
@@ -338,7 +340,7 @@ label {
 }
 
 .about-desc {
-    font-size: 14px;
+    font-size: calc(14px + 2px); /* Increased size by 2px */
     line-height: 1.8;
     color: var(--text);
     margin-bottom: 30px;
