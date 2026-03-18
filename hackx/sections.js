@@ -410,40 +410,450 @@
     });
   }
 
-  // ===== ABOUT: Binary Rain (SUBTLE — low alpha, slow fall) =====
+  // ===== ABOUT: FaultyTerminal (CRT scanline squares + flicker) =====
   function initAboutCanvas() {
     const canvas = document.getElementById("about-canvas");
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    const chars = "01アカサタナハマヤラワ{}[]<>/\\|=+-*&^%$#@!HACKXCODECEL";
-    let columns, drops;
 
-    function resize() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
-      columns = Math.floor(canvas.width / 14);
-      drops = new Array(columns).fill(1);
+    const fallback2D = () => {
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const chars =
+        "01アカサタナハマヤラワ{}[]<>/\\|=+-*&^%$#@!HACKXCODECEL";
+      let drops = [];
+      let columns = 0;
+
+      function resize2D() {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+        columns = Math.floor(canvas.width / 14);
+        drops = new Array(columns).fill(1);
+      }
+
+      function draw2D() {
+        ctx.fillStyle = "rgba(10, 22, 40, 0.04)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "rgba(79, 209, 217, 0.12)";
+        ctx.font = "12px Courier New";
+
+        for (let i = 0; i < drops.length; i++) {
+          const char = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillText(char, i * 14, drops[i] * 14);
+          if (drops[i] * 14 > canvas.height && Math.random() > 0.985)
+            drops[i] = 0;
+          if (Math.random() > 0.3) drops[i]++;
+        }
+        requestAnimationFrame(draw2D);
+      }
+
+      resize2D();
+      window.addEventListener("resize", resize2D);
+      draw2D();
+    };
+
+    // WebGL renderer (no React/ogl dependency): port of FaultyTerminal shaders.
+    const gl =
+      canvas.getContext("webgl", {
+        alpha: true,
+        antialias: false,
+        premultipliedAlpha: true,
+      }) || canvas.getContext("experimental-webgl");
+    if (!gl) return fallback2D();
+
+    const vertexShader = `
+attribute vec2 position;
+attribute vec2 uv;
+varying vec2 vUv;
+void main() {
+  vUv = uv;
+  gl_Position = vec4(position, 0.0, 1.0);
+}
+`;
+
+    const fragmentShader = `
+precision mediump float;
+
+varying vec2 vUv;
+
+uniform float iTime;
+uniform vec3  iResolution;
+uniform float uScale;
+
+uniform vec2  uGridMul;
+uniform float uDigitSize;
+uniform float uScanlineIntensity;
+uniform float uGlitchAmount;
+uniform float uFlickerAmount;
+uniform float uNoiseAmp;
+uniform float uChromaticAberration;
+uniform float uDither;
+uniform float uCurvature;
+uniform vec3  uTint;
+uniform vec2  uMouse;
+uniform float uMouseStrength;
+uniform float uUseMouse;
+uniform float uPageLoadProgress;
+uniform float uUsePageLoadAnimation;
+uniform float uBrightness;
+
+float time;
+
+float hash21(vec2 p){
+  p = fract(p * 234.56);
+  p += dot(p, p + 34.56);
+  return fract(p.x * p.y);
+}
+
+float noise(vec2 p)
+{
+  return sin(p.x * 10.0) * sin(p.y * (3.0 + sin(time * 0.090909))) + 0.2;
+}
+
+mat2 rotate(float angle)
+{
+  float c = cos(angle);
+  float s = sin(angle);
+  return mat2(c, -s, s, c);
+}
+
+float fbm(vec2 p)
+{
+  p *= 1.1;
+  float f = 0.0;
+  float amp = 0.5 * uNoiseAmp;
+  
+  mat2 modify0 = rotate(time * 0.02);
+  f += amp * noise(p);
+  p = modify0 * p * 2.0;
+  amp *= 0.454545;
+  
+  mat2 modify1 = rotate(time * 0.02);
+  f += amp * noise(p);
+  p = modify1 * p * 2.0;
+  amp *= 0.454545;
+  
+  mat2 modify2 = rotate(time * 0.08);
+  f += amp * noise(p);
+  
+  return f;
+}
+
+float pattern(vec2 p, out vec2 q, out vec2 r) {
+  vec2 offset1 = vec2(1.0);
+  vec2 offset0 = vec2(0.0);
+  mat2 rot01 = rotate(0.1 * time);
+  mat2 rot1 = rotate(0.1);
+  
+  q = vec2(fbm(p + offset1), fbm(rot01 * p + offset1));
+  r = vec2(fbm(rot1 * q + offset0), fbm(q + offset0));
+  return fbm(p + r);
+}
+
+float digit(vec2 p){
+    vec2 grid = uGridMul * 15.0;
+    vec2 s = floor(p * grid) / grid;
+    p = p * grid;
+    vec2 q, r;
+    float intensity = pattern(s * 0.1, q, r) * 1.3 - 0.03;
+    
+    if(uUseMouse > 0.5){
+        vec2 mouseWorld = uMouse * uScale;
+        float distToMouse = distance(s, mouseWorld);
+        float mouseInfluence = exp(-distToMouse * 8.0) * uMouseStrength * 10.0;
+        intensity += mouseInfluence;
+        
+        float ripple = sin(distToMouse * 20.0 - iTime * 5.0) * 0.1 * mouseInfluence;
+        intensity += ripple;
+    }
+    
+    if(uUsePageLoadAnimation > 0.5){
+        float cellRandom = fract(sin(dot(s, vec2(12.9898, 78.233))) * 43758.5453);
+        float cellDelay = cellRandom * 0.8;
+        float cellProgress = clamp((uPageLoadProgress - cellDelay) / 0.2, 0.0, 1.0);
+        
+        float fadeAlpha = smoothstep(0.0, 1.0, cellProgress);
+        intensity *= fadeAlpha;
+    }
+    
+    p = fract(p);
+    p *= uDigitSize;
+    
+    float px5 = p.x * 5.0;
+    float py5 = (1.0 - p.y) * 5.0;
+    float x = fract(px5);
+    float y = fract(py5);
+    
+    float i = floor(py5) - 2.0;
+    float j = floor(px5) - 2.0;
+    float n = i * i + j * j;
+    float f = n * 0.0625;
+    
+    float isOn = step(0.1, intensity - f);
+    float brightness = isOn * (0.2 + y * 0.8) * (0.75 + x * 0.25);
+    
+    return step(0.0, p.x) * step(p.x, 1.0) * step(0.0, p.y) * step(p.y, 1.0) * brightness;
+}
+
+float onOff(float a, float b, float c)
+{
+  return step(c, sin(iTime + a * cos(iTime * b))) * uFlickerAmount;
+}
+
+float displace(vec2 look)
+{
+    float y = look.y - mod(iTime * 0.25, 1.0);
+    float window = 1.0 / (1.0 + 50.0 * y * y);
+    return sin(look.y * 20.0 + iTime) * 0.0125 * onOff(4.0, 2.0, 0.8) * (1.0 + cos(iTime * 60.0)) * window;
+}
+
+vec3 getColor(vec2 p){
+    
+    float bar = step(mod(p.y + time * 20.0, 1.0), 0.2) * 0.4 + 1.0;
+    bar *= uScanlineIntensity;
+    
+    float displacement = displace(p);
+    p.x += displacement;
+
+    if (uGlitchAmount != 1.0) {
+      float extra = displacement * (uGlitchAmount - 1.0);
+      p.x += extra;
     }
 
-    function draw() {
-      ctx.fillStyle = "rgba(10, 22, 40, 0.04)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(79, 209, 217, 0.12)";
-      ctx.font = "12px Courier New";
+    float middle = digit(p);
+    
+    const float off = 0.002;
+    float sum = digit(p + vec2(-off, -off)) + digit(p + vec2(0.0, -off)) + digit(p + vec2(off, -off)) +
+                digit(p + vec2(-off, 0.0)) + digit(p + vec2(0.0, 0.0)) + digit(p + vec2(off, 0.0)) +
+                digit(p + vec2(-off, off)) + digit(p + vec2(0.0, off)) + digit(p + vec2(off, off));
+    
+    vec3 baseColor = vec3(0.9) * middle + sum * 0.1 * vec3(1.0) * bar;
+    return baseColor;
+}
 
-      for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(char, i * 14, drops[i] * 14);
-        if (drops[i] * 14 > canvas.height && Math.random() > 0.985)
-          drops[i] = 0;
-        if (Math.random() > 0.3) drops[i]++;
+vec2 barrel(vec2 uv){
+  vec2 c = uv * 2.0 - 1.0;
+  float r2 = dot(c, c);
+  c *= 1.0 + uCurvature * r2;
+  return c * 0.5 + 0.5;
+}
+
+void main() {
+    time = iTime * 0.333333;
+    vec2 uv = vUv;
+
+    if(uCurvature != 0.0){
+      uv = barrel(uv);
+    }
+    
+    vec2 p = uv * uScale;
+    vec3 col = getColor(p);
+
+    if(uChromaticAberration != 0.0){
+      vec2 ca = vec2(uChromaticAberration) / iResolution.xy;
+      col.r = getColor(p + ca).r;
+      col.b = getColor(p - ca).b;
+    }
+
+    col *= uTint;
+    col *= uBrightness;
+
+    if(uDither > 0.0){
+      float rnd = hash21(gl_FragCoord.xy);
+      col += (rnd - 0.5) * (uDither * 0.003922);
+    }
+
+    // Output transparency so this canvas doesn't become an opaque black overlay
+    // when multiple section canvases overlap during scroll.
+    float a = clamp(max(col.r, max(col.g, col.b)), 0.0, 1.0);
+    gl_FragColor = vec4(col, a);
+}
+`;
+
+    function compileShader(type, src) {
+      const sh = gl.createShader(type);
+      gl.shaderSource(sh, src);
+      gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+        const log = gl.getShaderInfoLog(sh);
+        gl.deleteShader(sh);
+        throw new Error(log || "Shader compile failed");
       }
+      return sh;
+    }
+
+    function createProgram(vsSrc, fsSrc) {
+      const vs = compileShader(gl.VERTEX_SHADER, vsSrc);
+      const fs = compileShader(gl.FRAGMENT_SHADER, fsSrc);
+      const p = gl.createProgram();
+      gl.attachShader(p, vs);
+      gl.attachShader(p, fs);
+      gl.linkProgram(p);
+      gl.deleteShader(vs);
+      gl.deleteShader(fs);
+      if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+        const log = gl.getProgramInfoLog(p);
+        gl.deleteProgram(p);
+        throw new Error(log || "Program link failed");
+      }
+      return p;
+    }
+
+    function hexToRgb01(hex) {
+      let h = String(hex || "").trim().replace("#", "");
+      if (h.length === 3) h = h.split("").map((c) => c + c).join("");
+      const num = parseInt(h, 16);
+      return [(num >> 16 & 255) / 255, (num >> 8 & 255) / 255, (num & 255) / 255];
+    }
+
+    let program;
+    try {
+      program = createProgram(vertexShader, fragmentShader);
+    } catch {
+      return fallback2D();
+    }
+
+    const quad = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+    // Interleaved: position(x,y), uv(u,v)
+    const data = new Float32Array([
+      -1, -1, 0, 0,
+      1, -1, 1, 0,
+      -1, 1, 0, 1,
+      -1, 1, 0, 1,
+      1, -1, 1, 0,
+      1, 1, 1, 1,
+    ]);
+    gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+
+    const aPos = gl.getAttribLocation(program, "position");
+    const aUv = gl.getAttribLocation(program, "uv");
+
+    const u = {
+      iTime: gl.getUniformLocation(program, "iTime"),
+      iResolution: gl.getUniformLocation(program, "iResolution"),
+      uScale: gl.getUniformLocation(program, "uScale"),
+      uGridMul: gl.getUniformLocation(program, "uGridMul"),
+      uDigitSize: gl.getUniformLocation(program, "uDigitSize"),
+      uScanlineIntensity: gl.getUniformLocation(program, "uScanlineIntensity"),
+      uGlitchAmount: gl.getUniformLocation(program, "uGlitchAmount"),
+      uFlickerAmount: gl.getUniformLocation(program, "uFlickerAmount"),
+      uNoiseAmp: gl.getUniformLocation(program, "uNoiseAmp"),
+      uChromaticAberration: gl.getUniformLocation(program, "uChromaticAberration"),
+      uDither: gl.getUniformLocation(program, "uDither"),
+      uCurvature: gl.getUniformLocation(program, "uCurvature"),
+      uTint: gl.getUniformLocation(program, "uTint"),
+      uMouse: gl.getUniformLocation(program, "uMouse"),
+      uMouseStrength: gl.getUniformLocation(program, "uMouseStrength"),
+      uUseMouse: gl.getUniformLocation(program, "uUseMouse"),
+      uPageLoadProgress: gl.getUniformLocation(program, "uPageLoadProgress"),
+      uUsePageLoadAnimation: gl.getUniformLocation(program, "uUsePageLoadAnimation"),
+      uBrightness: gl.getUniformLocation(program, "uBrightness"),
+    };
+
+    const dprCap = 2;
+    let dpr = Math.min(window.devicePixelRatio || 1, dprCap);
+
+    // Match the snippet defaults used in your pasted code.
+    const params = {
+      scale: 1.5,
+      gridMul: [2, 1],
+      digitSize: 1.2,
+      timeScale: 0.5,
+      pause: false,
+      scanlineIntensity: 0.5,
+      glitchAmount: 1,
+      flickerAmount: 1,
+      noiseAmp: 1,
+      chromaticAberration: 0,
+      dither: 0,
+      curvature: 0, // avoid double-curving (global CRT pass handles it)
+      tint: "#4fd1d9",
+        mouseReact: false,
+      mouseStrength: 0.5,
+      pageLoadAnimation: true,
+      brightness: 0.15,
+    };
+
+    let mouse = { x: 0.5, y: 0.5 };
+    let useMouse = 0;
+    if (typeof window !== "undefined" && typeof window.isTouchScreenDevice === "function") {
+      useMouse = window.isTouchScreenDevice() ? 0 : 1;
+    } else {
+      const coarsePointer =
+        window.matchMedia && window.matchMedia("(pointer:coarse)").matches;
+      useMouse = coarsePointer ? 0 : 1;
+    }
+    useMouse = useMouse && params.mouseReact ? 1 : 0;
+
+    let loadStart = 0;
+    let timeOffset = Math.random() * 100;
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, dprCap);
+      canvas.width = Math.max(1, Math.floor(canvas.parentElement.offsetWidth * dpr));
+      canvas.height = Math.max(1, Math.floor(canvas.parentElement.offsetHeight * dpr));
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.clearColor(0, 0, 0, 0);
+
+      gl.useProgram(program);
+      gl.uniform3f(u.iResolution, canvas.width, canvas.height, canvas.width / canvas.height);
+      gl.uniform1f(u.uScale, params.scale);
+      gl.uniform2f(u.uGridMul, params.gridMul[0], params.gridMul[1]);
+      gl.uniform1f(u.uDigitSize, params.digitSize);
+      gl.uniform1f(u.uScanlineIntensity, params.scanlineIntensity);
+      gl.uniform1f(u.uGlitchAmount, params.glitchAmount);
+      gl.uniform1f(u.uFlickerAmount, params.flickerAmount);
+      gl.uniform1f(u.uNoiseAmp, params.noiseAmp);
+      gl.uniform1f(u.uChromaticAberration, params.chromaticAberration);
+      gl.uniform1f(u.uDither, params.dither);
+      gl.uniform1f(u.uCurvature, params.curvature);
+      const tintRGB = hexToRgb01(params.tint);
+      gl.uniform3f(u.uTint, tintRGB[0], tintRGB[1], tintRGB[2]);
+      gl.uniform1f(u.uMouseStrength, params.mouseStrength);
+      gl.uniform1f(u.uUseMouse, useMouse);
+      gl.uniform1f(u.uUsePageLoadAnimation, params.pageLoadAnimation ? 1 : 0);
+      gl.uniform1f(u.uBrightness, params.brightness);
+    }
+
+    function draw(now) {
+      if (!loadStart && params.pageLoadAnimation) loadStart = now;
+      const t = (now * 0.001 + timeOffset) * params.timeScale;
+
+      gl.useProgram(program);
+
+      gl.uniform1f(u.iTime, params.pause ? t : t);
+      gl.uniform2f(u.uMouse, mouse.x, mouse.y);
+
+      if (params.pageLoadAnimation) {
+        const progress = Math.min((now - loadStart) / 2000, 1);
+        gl.uniform1f(u.uPageLoadProgress, progress);
+      } else {
+        gl.uniform1f(u.uPageLoadProgress, 1);
+      }
+
+      gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+      const stride = 16; // 4 floats * 4 bytes
+      gl.enableVertexAttribArray(aPos);
+      gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, stride, 0);
+      gl.enableVertexAttribArray(aUv);
+      gl.vertexAttribPointer(aUv, 2, gl.FLOAT, false, stride, 8);
+
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
       requestAnimationFrame(draw);
     }
 
+    function onMove(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = 1 - (e.clientY - rect.top) / rect.height;
+      mouse.x = x;
+      mouse.y = y;
+    }
+
+    canvas.addEventListener("mousemove", onMove, { passive: true });
     resize();
     window.addEventListener("resize", resize);
-    draw();
+    requestAnimationFrame(draw);
   }
 
   // ===== NEXUS: Neural Network Nodes =====
@@ -1721,7 +2131,7 @@
       white-space: nowrap;
     `;
     idleMsg.innerHTML =
-      '&gt; STILL HERE? THE HACKATHON WON\'T WAIT. <a href="https://hackx.codecell.io/register" target="_blank" style="color:#4fd1d9;pointer-events:auto;text-decoration:underline;">[REGISTER]</a>';
+      '&gt; STILL HERE? THE HACKATHON WON\'T WAIT.';
     document.body.appendChild(idleMsg);
 
     function resetIdle() {
