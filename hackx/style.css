@@ -13,6 +13,7 @@ html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #4fd1d9 #0a1628;
+    font-size: 100%; /* Base font size for relative scaling */
 }
 
 body {
@@ -188,6 +189,7 @@ label {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 10vh 5vw; /* Relative padding */
 }
 
 .section canvas {
@@ -214,6 +216,36 @@ label {
     position: relative;
     display: block;
     padding: 0;
+}
+
+/* CRT low-res TV border on hero */
+#hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(255,23,68,0.04) 2px,
+    rgba(255,23,68,0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+#hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #FF174440;
+  box-shadow:
+    0 0 0 1px #FF174420,
+    inset 0 0 40px rgba(255,23,68,0.05),
+    0 0 20px rgba(255,23,68,0.15);
+  pointer-events: none;
+  z-index: 2;
+  animation: crt-flicker 8s infinite;
 }
 
 #game-container {
@@ -308,7 +340,7 @@ label {
 }
 
 .about-desc {
-    font-size: 14px;
+    font-size: calc(14px + 2px); /* Increased size by 2px */
     line-height: 1.8;
     color: var(--text);
     margin-bottom: 30px;
@@ -1123,7 +1155,7 @@ a.team-card {
 
 /* ===== SPONSORS ===== */
 #sponsors-section {
-    border-top: 2px solid #4fd1d920;
+    border-top: 2px solid;
 }
 
 .sponsors-tiers {
@@ -1151,6 +1183,14 @@ a.team-card {
     flex-wrap: wrap;
 }
 
+.sponsor-logos.gold-tier,
+.sponsor-logos.community-tier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .sponsor-slot {
     border: 1px dashed #4fd1d925;
     padding: 30px 40px;
@@ -1162,17 +1202,50 @@ a.team-card {
     transition: border-color 0.3s ease;
 }
 
+.sponsor-slot img {
+  max-height: 48px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.sponsor-slot.small img {
+  max-height: 30px;
+  max-width: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+
 .sponsor-slot:hover {
     border-color: #4fd1d950;
 }
 
 .title-tier .sponsor-slot {
-    padding: 50px 60px;
-    font-size: 14px;
-    min-width: 300px;
-    border-color: var(--gold);
-    color: var(--gold);
-    opacity: 0.5;
+  padding: 0; /* Removed padding to ensure square shape */
+  font-size: 14px;
+  width: 200px; /* Set fixed width for square */
+  height: 200px; /* Set fixed height for square */
+  border-color: #4fd1d925; /* Match other sponsor slots */
+  color: var(--gold);
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gajshield-zoom {
+  transform: scale(1.7);
+  max-height: 70px !important;
+  max-width: 220px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 0; /* Removed curve */
+  display: inline-block;
 }
 
 .sponsor-slot.small {
@@ -1232,7 +1305,7 @@ a.team-card {
     display: flex;
     gap: 40px;
     width: max-content;
-    animation: marqueeScroll 30s linear infinite;
+    animation: marqueeScroll 60s linear infinite;
 }
 
 .past-sponsors-marquee span {
@@ -1245,6 +1318,36 @@ a.team-card {
 
 .past-sponsors-marquee span:hover {
     color: #4fd1d970;
+}
+
+.past-sponsors-marquee img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+}
+
+.past-sponsors-marquee img:hover {
+  opacity: 0.85;
+  filter: brightness(1.1);
+}
+
+.past-sponsors-marquee img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+}
+
+.past-sponsors-marquee img:hover {
+  opacity: 0.85;
+  filter: brightness(1.1);
 }
 
 /* ===== FOOTER ===== */
@@ -1366,6 +1469,194 @@ a.team-card {
     letter-spacing: 3px;
     color: #4fd1d970;
     text-transform: uppercase;
+}
+
+
+/* ===== NAVBAR ===== */
+@keyframes crt-flicker {
+  0%, 100% { opacity: 1; }
+  94% { opacity: 1; }
+  95% { opacity: 0.85; }
+  96% { opacity: 1; }
+  98% { opacity: 0.9; }
+  99% { opacity: 1; }
+}
+
+.site-nav {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-14px);
+  width: min(1120px, calc(100% - 32px));
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 9px 16px;
+  /* CRT bezel: sharp corners, hard red border, deep black bg */
+  border: 1px solid #FF1744;
+  border-radius: 0;
+  background: #0A0008;
+  box-shadow:
+    0 0 0 1px #FF174430,
+    0 0 14px #FF174430,
+    inset 0 0 20px #0A0008;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  animation: crt-flicker 8s infinite;
+  overflow: visible;
+}
+
+/* Scanline overlay */
+.site-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    #FF17440A 2px,
+    #FF17440A 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top phosphor glow line */
+.site-nav::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #FF174460 20%, #FF1744 50%, #FF174460 80%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.site-nav.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.site-nav > * {
+  position: relative;
+  z-index: 1;
+}
+
+.site-nav-brand {
+  color: var(--red);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: 'Geist Pixel', 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  image-rendering: pixelated;
+  text-shadow: 0 0 6px #FF174480, 0 0 16px #FF174430;
+  transition: text-shadow 0.2s ease;
+}
+
+.site-nav-brand::before {
+  content: '> ';
+  color: #FF174470;
+}
+
+.site-nav-brand:hover {
+  text-shadow: 0 0 10px #FF1744CC, 0 0 24px #FF174460;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.site-nav-links a {
+  color: #D4C4C4A0;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Geist Pixel', 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  image-rendering: pixelated;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, text-shadow 0.15s ease;
+}
+
+.site-nav-links a:hover {
+  color: var(--red);
+  border-color: #FF174450;
+  background: #FF174410;
+  text-shadow: 0 0 6px #FF174460;
+}
+
+.site-nav-links a:focus-visible {
+  outline: none;
+  border-color: #FF174480;
+  box-shadow: 0 0 0 1px #FF174450;
+}
+
+.site-nav-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px #FF174450;
+}
+
+.site-nav-toggle {
+  display: none;
+  border: 1px solid #FF174460;
+  border-radius: 0;
+  background: transparent;
+  color: var(--red);
+  width: 36px;
+  height: 32px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.site-nav-toggle:hover {
+  background: #FF174412;
+  box-shadow: 0 0 8px #FF174440;
+}
+
+.site-nav-toggle span {
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--red);
+  box-shadow: 0 0 3px #FF174480;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-nav.is-open .site-nav-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.site-nav.is-open .site-nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.site-nav.is-open .site-nav-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* ===== FIXED ELEMENTS ===== */
