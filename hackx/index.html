@@ -19,6 +19,59 @@
             font-style: normal;
             font-display: swap;
         }
+
+        /* ── LOADER OVERLAY ─────────────────────────────────────────── */
+        #p5_loading {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            z-index: 99999;
+            /* font matches the site's Geist Pixel theme */
+            font-family: "Geist Pixel", "Courier New", monospace;
+        }
+
+        /* Loading text label */
+        #p5_loading > div:first-child {
+            color: #b0baff;
+            font-size: 12px;
+            letter-spacing: 0.3em;
+            opacity: 0.6;
+            animation: loader-pulse 1.4s ease-in-out infinite;
+        }
+
+        @keyframes loader-pulse {
+            0%, 100% { opacity: 0.3; }
+            50%       { opacity: 0.8; }
+        }
+
+        /*
+         * Sprite element.
+         * Sheet: 2000 × 1800 px  →  10 cols × 9 rows  →  200 × 200 px per frame.
+         * We display it at 160 × 160 px (80% of native) — crisp on all screens.
+         */
+        #loader-sprite {
+            /* rendered display size */
+            --fw: 160px;
+            --fh: 160px;
+
+            width:  var(--fw);
+            height: var(--fh);
+            overflow: hidden;
+
+            background-image: url("loader.png");
+            /* scale the full sheet to 10× and 9× the display frame size */
+            background-size: calc(var(--fw) * 10) calc(var(--fh) * 9);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="manifest" href="manifest.json" />
@@ -476,7 +529,91 @@
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
-    <div id="p5_loading" class="loadingclass">INITIALIZING HACK X...</div>
+
+    <!--
+        LOADER OVERLAY
+        ─────────────────────────────────────────────────────────────────
+        Sheet: loader.png  →  2000 × 1800 px  →  10 cols × 9 rows
+        Each native frame: 200 × 200 px
+        Displayed at:      160 × 160 px  (crisp, no sub-pixel blur)
+        Total frames:      90  (indices 0–89)
+        ─────────────────────────────────────────────────────────────────
+    -->
+    <div id="p5_loading" class="loadingclass">
+        <div>INITIALIZING HACK X...</div>
+        <div id="loader-sprite" aria-hidden="true"></div>
+    </div>
+
+    <script>
+        (function () {
+            // ── Sprite sheet constants ──────────────────────────────────
+            const COLS        = 10;
+            const ROWS        = 9;
+            const TOTAL       = 90;       // 10 × 9 frames
+
+            // Native frame size in the PNG (2000 / 10, 1800 / 9)
+            const NATIVE_FW   = 200;
+            const NATIVE_FH   = 200;
+
+            // Display size — 80% of native keeps it sharp on all screens
+            const DISPLAY_FW  = 160;      // px rendered on screen
+            const DISPLAY_FH  = 160;
+
+            const ANIM_FPS    = 60;       // smooth 24 fps coin spin
+            const MS_PER_FRAME = 1000 / ANIM_FPS;
+
+            // ── DOM ─────────────────────────────────────────────────────
+            const container = document.getElementById("p5_loading");
+            const sprite    = document.getElementById("loader-sprite");
+            if (!container || !sprite) return;
+
+            // Apply display dimensions & full-sheet background-size via JS
+            // (matches the CSS vars set in <style> above — belt-and-suspenders)
+            sprite.style.width            = DISPLAY_FW + "px";
+            sprite.style.height           = DISPLAY_FH + "px";
+            sprite.style.backgroundSize   = `${DISPLAY_FW * COLS}px ${DISPLAY_FH * ROWS}px`;
+
+            // ── Animation loop ──────────────────────────────────────────
+            let frame       = 0;
+            let accumulated = 0;
+            let lastTime    = null;
+            let rafId;
+
+            function step(now) {
+                if (lastTime === null) lastTime = now;
+
+                const delta = Math.min(now - lastTime, 200); // cap at 200 ms (tab-switch safety)
+                lastTime    = now;
+                accumulated += delta;
+
+                while (accumulated >= MS_PER_FRAME) {
+                    accumulated -= MS_PER_FRAME;
+                    frame = (frame + 1) % TOTAL;
+                }
+
+                const col = frame % COLS;
+                const row = Math.floor(frame / COLS);
+                sprite.style.backgroundPosition =
+                    `${-col * DISPLAY_FW}px ${-row * DISPLAY_FH}px`;
+
+                rafId = requestAnimationFrame(step);
+            }
+
+            rafId = requestAnimationFrame(step);
+
+            // ── Public API ──────────────────────────────────────────────
+            // Call window.__hideLoader() from sketch.js / sections.js
+            // once your p5 sketch and assets are ready.
+            window.__hideLoader = function () {
+                cancelAnimationFrame(rafId);
+                container.style.transition = "opacity 0.5s ease";
+                container.style.opacity    = "0";
+                setTimeout(() => {
+                    container.style.display = "none";
+                }, 520);
+            };
+        })();
+    </script>
 </body>
 
 </html>
