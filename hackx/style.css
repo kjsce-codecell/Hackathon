@@ -2070,10 +2070,8 @@ a.team-card {
 
     .about-right {
         width: 100%;
-    }
-
-    .about-right {
-        display: block;
+        display: flex;
+        justify-content: center;
     }
 
     .about-model {

@@ -205,7 +205,7 @@ function setup() {
 
   // Scale buffer for mobile
   smaller = min(g.width, g.height);
-  buffer = max(50, min(100, smaller * 0.12));
+  buffer = max(70, min(100, smaller * 0.12));
 
   // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
@@ -604,8 +604,8 @@ function drawTop(percent) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(palette.FG);
 
-    let logoWidth = 100;
-    let logoHeight = 100;
+    let logoWidth = g.width < 500 ? 50 : 100;
+    let logoHeight = g.width < 500 ? 50 : 100;
     // Align the center of the image with the center of the text vertically
     g.image(logoImg, g.width * 0.04 + logoWidth / 2, y + textSz / 2, logoWidth, logoHeight);
   }
@@ -616,8 +616,11 @@ function drawTop(percent) {
   const c = color(palette.FG);
   c.setAlpha(180);
   g.fill(c);
+  const headerText = g.width < 500
+    ? HACKX_CONFIG.date
+    : HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location;
   g.text(
-    HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location,
+    headerText,
     g.width * 0.96,
     y,
   );
@@ -846,11 +849,11 @@ function drawBootSequence() {
   const lines = HACKX_CONFIG.bootLines;
   const totalChars = lines.join("").length + lines.length;
   const lineHeight = smaller * 0.05;
-  const textSz = smaller * 0.035;
+  const textSz = g.width < 500 ? smaller * 0.025 : smaller * 0.035;
   g.textSize(textSz);
   g.textAlign(LEFT, TOP);
 
-  const startX = g.width * 0.1;
+  const startX = g.width < 500 ? g.width * 0.05 : g.width * 0.1;
   const startY = g.height * 0.3;
 
   // Typing effect: increment char index every 3rd frame (~100ms at 30fps)
@@ -1162,7 +1165,7 @@ function windowResized(ev) {
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-  buffer = max(50, min(100, smaller * 0.12));
+  buffer = max(70, min(100, smaller * 0.12));
 
   sharedImg.resize(smaller * 0.5, 0);
   nopeImg.resize(smaller * 0.5, 0);
