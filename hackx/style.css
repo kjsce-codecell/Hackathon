@@ -801,10 +801,10 @@ label {
 .timeline-thread-wrap {
     position: relative;
     width: 100%;
-    height: clamp(104px, 14vh, 140px);
-    overflow: hidden;
+    height: clamp(120px, 16vh, 156px);
+    overflow: visible;
     margin-top: 14px;
-    flex: 0 0 clamp(104px, 14vh, 140px);
+    flex: 0 0 clamp(120px, 16vh, 156px);
 }
 
 .timeline-thread-svg {
@@ -1449,7 +1449,7 @@ a.team-card {
     display: flex;
     gap: 40px;
     width: max-content;
-    animation: marqueeScroll 60s linear infinite;
+    animation: marqueeScroll 120s linear infinite;
     will-change: transform;
 }
 
@@ -2195,9 +2195,10 @@ a.team-card {
     }
 
     .timeline-thread-wrap {
-        height: 102px;
+        height: 116px;
         margin-top: 10px;
         flex: initial;
+        overflow: visible;
     }
 
     .timeline-node-track {
@@ -2407,9 +2408,10 @@ a.team-card {
     }
 
     .timeline-thread-wrap {
-        height: 92px;
+        height: 110px;
         margin-top: 8px;
         flex: initial;
+        overflow: visible;
     }
 
     .timeline-node-track {
@@ -2422,8 +2424,8 @@ a.team-card {
     }
 
     .timeline-node-label {
-        font-size: 9px;
-        letter-spacing: 1px;
+        font-size: 8px;
+        letter-spacing: 0.8px;
     }
 
     .timeline-panels {
