@@ -313,6 +313,9 @@ function mousePressed() {
     refineBY = mouseY;
     refining = true;
     nope = false;
+    // Lock touch-action so drag gestures don't scroll
+    var cnv = document.querySelector('#game-container>canvas:first-of-type');
+    if (cnv) cnv.classList.add('touch-locked');
   }
 }
 
@@ -323,6 +326,9 @@ function mouseDragged() {
 
 function mouseReleased() {
   refining = false;
+  // Unlock touch-action so scrolling works again
+  var cnv = document.querySelector('#game-container>canvas:first-of-type');
+  if (cnv) cnv.classList.remove('touch-locked');
   let countRed = 0;
   let total = 0;
   let refinery = [];

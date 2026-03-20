@@ -259,8 +259,13 @@ label {
 
 #game-container>canvas:first-of-type {
     display: block;
-    touch-action: none;
+    touch-action: pan-y;
     cursor: none;
+}
+
+/* Lock touch while actively interacting with the game */
+#game-container>canvas:first-of-type.touch-locked {
+    touch-action: none;
 }
 
 #scroll-hint {
