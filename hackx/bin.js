@@ -247,35 +247,36 @@ class Bin {
     g.stroke(levelColor);
     g.noFill();
 
-    // Draw the outline of the progress bar
-    g.rect(
-      this.x - rw * 0.25,
-      y - buffer + i * buffer * 0.35,
-      rw * 0.7,
-      buffer * 0.15
-    );
-    // Draw the filled bar inside of the progress bar.
-    g.fill(levelColor);
-    let w = (rw * 0.7 * this.levels[level]) / this.levelGoal;
-    g.rect(this.x - rw * 0.25, y - buffer + i * buffer * 0.35, w, buffer * 0.15);
-
     // Draw the label for the progress bar using display name.
     g.textAlign(LEFT, CENTER);
     g.noStroke();
     g.fill(levelColor);
     g.textFont("Courier");
-    const labelMaxW = rw * 0.18;
-    let labelSize = 16;
-    g.textSize(labelSize);
-    while (labelSize > 9 && g.textWidth(displayName) > labelMaxW) {
-      labelSize -= 1;
-      g.textSize(labelSize);
-    }
+    g.textSize(min(14, buffer * 0.14));
+    const labelW = g.textWidth(displayName);
+    const barX = this.x - rw * 0.45 + labelW + rw * 0.04;
+    const barW = this.x + rw * 0.45 - barX;
+
     g.text(
       displayName,
       this.x - rw * 0.45,
       y - buffer + i * buffer * 0.35 + buffer * 0.075
     );
+
+    // Draw the outline of the progress bar
+    g.rectMode(CORNER);
+    g.stroke(levelColor);
+    g.noFill();
+    g.rect(
+      barX,
+      y - buffer + i * buffer * 0.35,
+      barW,
+      buffer * 0.15
+    );
+    // Draw the filled bar inside of the progress bar.
+    g.fill(levelColor);
+    let w = (barW * this.levels[level]) / this.levelGoal;
+    g.rect(barX, y - buffer + i * buffer * 0.35, w, buffer * 0.15);
   }
 
   drawBinLids(rw, buffer) {
