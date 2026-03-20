@@ -312,6 +312,8 @@ function mousePressed() {
     booting = false;
     gameEnterStart = millis();
     document.body.style.overflowY = "auto";
+    const hint = document.getElementById("scroll-hint");
+    if (hint) hint.style.opacity = "1";
     return;
   }
 
@@ -937,6 +939,8 @@ function drawBootSequence() {
       booting = false;
       gameEnterStart = millis();
       document.body.style.overflowY = "auto";
+      const hint = document.getElementById("scroll-hint");
+      if (hint) hint.style.opacity = "1";
     }
   }
 }
