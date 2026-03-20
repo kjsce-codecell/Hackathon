@@ -1177,6 +1177,7 @@ label {
     gap: 12px;
     width: max-content;
     animation: marqueeScroll 40s linear infinite;
+    will-change: transform;
 }
 
 .team-marquee-wrap.reverse .team-marquee {
@@ -1449,6 +1450,7 @@ a.team-card {
     gap: 40px;
     width: max-content;
     animation: marqueeScroll 60s linear infinite;
+    will-change: transform;
 }
 
 .past-sponsors-marquee span {
@@ -2108,16 +2110,6 @@ a.team-card {
     .bento-wide {
         grid-column: 1 / -1;
     }
-  .bento-hero {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    text-align: center;
-    padding: 30px 16px;
-  }
-  
-  .bento-wide {
-    grid-column: 1 / -1;
-  }
 
     .bento-cell {
         padding: 24px 16px;

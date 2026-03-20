@@ -2,6 +2,26 @@
 (function () {
   "use strict";
 
+  // Visibility-aware rAF: pauses canvas animations when their section is off-screen
+  var _visMap = new Map();
+  var _visObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { _visMap.set(e.target, e.isIntersecting); });
+  }, { rootMargin: '100px' });
+
+  function visibleRAF(sectionEl, drawFn) {
+    if (!_visMap.has(sectionEl)) {
+      _visMap.set(sectionEl, false);
+      _visObs.observe(sectionEl);
+    }
+    function loop() {
+      if (_visMap.get(sectionEl)) {
+        drawFn();
+      }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  }
+
   const RED = "#4fd1d9";
   const DARK = "#0a1628";
   const RED_RGB = [79, 209, 217];
@@ -369,6 +389,7 @@
     // Clean interactions (pure CSS, no rAF loops)
     initHoverLineTrace();
     initRevealOnScroll();
+    initFaqAccessibility();
     initTeamGrid();
     initPerksBgCanvas();
     // Easter eggs (hidden, zero perf cost until triggered)
@@ -460,12 +481,11 @@
             drops[i] = 0;
           if (Math.random() > 0.3) drops[i]++;
         }
-        requestAnimationFrame(draw2D);
       }
 
       resize2D();
       window.addEventListener("resize", resize2D);
-      draw2D();
+      visibleRAF(canvas.closest('.section') || canvas.parentElement, draw2D);
     };
 
     // WebGL renderer (no React/ogl dependency): port of FaultyTerminal shaders.
@@ -856,7 +876,6 @@ void main() {
       gl.vertexAttribPointer(aUv, 2, gl.FLOAT, false, stride, 8);
 
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      requestAnimationFrame(draw);
     }
 
     function onMove(e) {
@@ -870,7 +889,7 @@ void main() {
     canvas.addEventListener("mousemove", onMove, { passive: true });
     resize();
     window.addEventListener("resize", resize);
-    requestAnimationFrame(draw);
+    visibleRAF(canvas.closest('.section') || canvas.parentElement, draw);
   }
 
   // ===== NEXUS: Neural Network Nodes =====
@@ -931,13 +950,11 @@ void main() {
         ctx.fillStyle = `rgba(${RED_RGB.join(",")}, ${glow})`;
         ctx.fill();
       });
-
-      requestAnimationFrame(draw);
     }
 
     resize();
     window.addEventListener("resize", resize);
-    draw();
+    visibleRAF(canvas.closest('.section') || canvas.parentElement, draw);
   }
 
   // ===== SPECTRA: Orbiting Blockchain Nodes =====
@@ -1017,13 +1034,11 @@ void main() {
           });
         }
       });
-
-      requestAnimationFrame(draw);
     }
 
     resize();
     window.addEventListener("resize", resize);
-    draw();
+    visibleRAF(canvas.closest('.section') || canvas.parentElement, draw);
   }
 
   // ===== PRIZES: Floating ASCII =====
@@ -1068,13 +1083,11 @@ void main() {
         ctx.fillStyle = `rgba(${RED_RGB.join(",")}, ${f.alpha})`;
         ctx.fillText(f.char, f.x, f.y);
       });
-
-      requestAnimationFrame(draw);
     }
 
     resize();
     window.addEventListener("resize", resize);
-    draw();
+    visibleRAF(canvas.closest('.section') || canvas.parentElement, draw);
   }
 
   // ===== FOOTER: Particle Field =====
@@ -1114,13 +1127,11 @@ void main() {
         ctx.fillStyle = `rgba(${RED_RGB.join(",")}, ${p.alpha})`;
         ctx.fill();
       });
-
-      requestAnimationFrame(draw);
     }
 
     resize();
     window.addEventListener("resize", resize);
-    draw();
+    visibleRAF(canvas.closest('section') || canvas.parentElement, draw);
   }
 
   // ===== SCROLL REVEAL (timeline toggles in/out on viewport entry/exit) =====
@@ -1638,12 +1649,11 @@ void main() {
         ctx.fillStyle = `rgba(79, 209, 217, ${d.alpha})`;
         ctx.fill();
       });
-      requestAnimationFrame(draw);
     }
 
     resize();
     window.addEventListener("resize", resize);
-    draw();
+    visibleRAF(canvas.closest('.section') || canvas.parentElement, draw);
   }
 
   // ===== (unused) PERKS INTERACTIVE =====
@@ -2075,6 +2085,7 @@ void main() {
   // ===== EASTER EGG: Music Dance Experience =====
   function initMusicDanceExperience() {
     const audio = document.getElementById("secretMusic");
+    if (!audio.src || !audio.src.endsWith('.mp3')) audio.src = 'audio-assets/shakey-jake.mp3';
     audio.volume = 0.3;
     const stopBtn = document.getElementById("stopMusicBtn");
     if (!audio || !stopBtn) return;
@@ -2508,6 +2519,20 @@ void main() {
   }
 
   // ===== INTERACTION: Hover Traces — Lines + Timeline Box Draw =====
+  function initFaqAccessibility() {
+    document.querySelectorAll('.faq-question').forEach(function(el) {
+      function toggle() {
+        var item = el.parentElement;
+        var open = item.classList.toggle('open');
+        el.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      el.addEventListener('click', toggle);
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
+  }
+
   function initHoverLineTrace() {
     const style = document.createElement("style");
     style.textContent = `
