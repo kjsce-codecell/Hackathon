@@ -276,6 +276,7 @@ label {
     text-transform: uppercase;
     animation: bounce 2s infinite;
     pointer-events: none;
+    white-space: nowrap;
 }
 
 /* ===== GLITCH TEXT ===== */
