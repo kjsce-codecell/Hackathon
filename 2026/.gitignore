@@ -1,0 +1,13 @@
+.DS_Store
+node_modules/
+package.json
+package-lock.json
+.superpowers/
+complete/
+main-level/
+docs/superpowers/
+images/lumon-anim.gif
+images/lumon-globe.png
+images/lumon.png
+images/mde.gif
+images/modal_blank.psd

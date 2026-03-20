@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "HACK X // CodeCell",
+  "short_name": "HackX",
+  "start_url": "/",
+  "display": "standalone",
+  "Scope": "/",
+  "background_color": "#0a1628",
+  "theme_color": "#4fd1d9",
+  "description": "HACK X — Where Code Meets Chaos",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

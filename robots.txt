@@ -1,3 +1,9 @@
 User-agent: *
-Disallow: 
-Sitemap: https://devopia.kjsce.com/sitemap.xml
+Allow: /
+Disallow: /hackx/
+Disallow: /complete/
+Disallow: /tests/
+Disallow: /shaders/
+Disallow: /docs/
+
+Sitemap: https://hack.kjsse.com/sitemap.xml
