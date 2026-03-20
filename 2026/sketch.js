@@ -44,13 +44,11 @@ let shareDiv;
 let booting = true;
 let gameEnterAnim = 0; // 0 to 1 fade-in after boot
 let gameEnterStart = 0;
+let bootCharIndex = 0;
 let bootFrameCounter = 0;
 let bootGlitching = false;
 let bootGlitchStart = 0;
 let bootFadeAlpha = 255;
-let bootSpriteFrame = 0;
-let bootSpriteImg;
-let bootSpriteLoops = 0;
 
 let revealing = false;
 let revealText = "";
@@ -139,7 +137,6 @@ function preload() {
   completedImg = loadImage("images/100.png");
   sharedImg = loadImage("images/clipboard.png");
   logoImg = loadImage('images/logo.svg')
-  bootSpriteImg = loadImage("images/blue_spritesheet.png");
   crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
 }
 
@@ -199,19 +196,6 @@ var zoff = 0;
 var smaller;
 
 function setup() {
-  // Chroma-key the magenta background out of the boot spritesheet
-  bootSpriteImg.loadPixels();
-  for (let i = 0; i < bootSpriteImg.pixels.length; i += 4) {
-    const r = bootSpriteImg.pixels[i];
-    const g_ = bootSpriteImg.pixels[i + 1];
-    const b = bootSpriteImg.pixels[i + 2];
-    // Pink/magenta background: high red, low green, high-ish blue
-    if (r > 180 && g_ < 100 && b > 100) {
-      bootSpriteImg.pixels[i + 3] = 0; // set alpha to 0
-    }
-  }
-  bootSpriteImg.updatePixels();
-
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("game-container");
   frameRate(30);
@@ -221,7 +205,7 @@ function setup() {
 
   // Scale buffer for mobile
   smaller = min(g.width, g.height);
-  buffer = max(70, min(100, smaller * 0.12));
+  buffer = max(50, min(100, smaller * 0.12));
 
   // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
@@ -312,8 +296,6 @@ function mousePressed() {
     booting = false;
     gameEnterStart = millis();
     document.body.style.overflowY = "auto";
-    const hint = document.getElementById("scroll-hint");
-    if (hint) hint.style.opacity = "1";
     return;
   }
 
@@ -331,6 +313,9 @@ function mousePressed() {
     refineBY = mouseY;
     refining = true;
     nope = false;
+    // Lock touch-action so drag gestures don't scroll
+    var cnv = document.querySelector('#game-container>canvas:first-of-type');
+    if (cnv) cnv.classList.add('touch-locked');
   }
 }
 
@@ -341,6 +326,9 @@ function mouseDragged() {
 
 function mouseReleased() {
   refining = false;
+  // Unlock touch-action so scrolling works again
+  var cnv = document.querySelector('#game-container>canvas:first-of-type');
+  if (cnv) cnv.classList.remove('touch-locked');
   let countRed = 0;
   let total = 0;
   let refinery = [];
@@ -622,8 +610,8 @@ function drawTop(percent) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(palette.FG);
 
-    let logoWidth = g.width < 500 ? 50 : 100;
-    let logoHeight = g.width < 500 ? 50 : 100;
+    let logoWidth = 100;
+    let logoHeight = 100;
     // Align the center of the image with the center of the text vertically
     g.image(logoImg, g.width * 0.04 + logoWidth / 2, y + textSz / 2, logoWidth, logoHeight);
   }
@@ -634,11 +622,8 @@ function drawTop(percent) {
   const c = color(palette.FG);
   c.setAlpha(180);
   g.fill(c);
-  const headerText = g.width < 500
-    ? HACKX_CONFIG.date
-    : HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location;
   g.text(
-    headerText,
+    HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location,
     g.width * 0.96,
     y,
   );
@@ -860,87 +845,110 @@ function drawCursor(xPos, yPos) {
 
 function drawBootSequence() {
   g.background(palette.BG);
-
-  // Spritesheet: 10 columns, 9 rows, 1080x1080 per frame, 89 usable frames
-  const spriteCols = 10;
-  const spriteRows = 9;
-  const frameW = 1080;
-  const frameH = 1080;
-  const totalFrames = 89;
-
-  // Advance frame every other draw call (~15fps at 30fps)
-  bootFrameCounter++;
-  if (bootFrameCounter >= 2) {
-    bootFrameCounter = 0;
-    bootSpriteFrame++;
-    if (bootSpriteFrame >= totalFrames) {
-      bootSpriteFrame = 0;
-      bootSpriteLoops++;
-    }
-  }
-
-  // Source rectangle in spritesheet
-  const col = bootSpriteFrame % spriteCols;
-  const row = floor(bootSpriteFrame / spriteCols);
-  const sx = col * frameW;
-  const sy = row * frameH;
-
-  // Draw centred, fitting within screen
-  const displaySize = min(g.width, g.height) * 0.35;
-  const dx = (g.width - displaySize) / 2;
-  const dy = (g.height - displaySize) / 2;
-
-  g.imageMode(CORNER);
-  g.image(bootSpriteImg, dx, dy, displaySize, displaySize, sx, sy, frameW, frameH);
-
-  // "INITIALIZING HACK X..." text below sprite
+  g.textFont("Courier");
   g.fill(palette.FG);
   g.noStroke();
-  g.textFont("Courier");
-  g.textSize(smaller * 0.03);
-  g.textAlign(CENTER, TOP);
-  g.text("INITIALIZING HACK X...", g.width / 2, dy + displaySize + 20);
 
-  // After 2 full loops, start glitch + fade out
-  if (bootSpriteLoops >= 2) {
+  const lines = HACKX_CONFIG.bootLines;
+  const totalChars = lines.join("").length + lines.length;
+  const lineHeight = smaller * 0.05;
+  const textSz = smaller * 0.035;
+  g.textSize(textSz);
+  g.textAlign(LEFT, TOP);
+
+  const startX = g.width * 0.1;
+  const startY = g.height * 0.3;
+
+  // Typing effect: increment char index every 3rd frame (~100ms at 30fps)
+  bootFrameCounter++;
+  if (bootFrameCounter >= 1) {
+    bootFrameCounter = 0;
+    bootCharIndex++;
+  }
+
+  // Render typed text
+  let charCount = 0;
+  for (let i = 0; i < lines.length; i++) {
+    let displayLine = "";
+    for (let c = 0; c < lines[i].length; c++) {
+      if (charCount < bootCharIndex) {
+        displayLine += lines[i][c];
+        charCount++;
+      } else {
+        break;
+      }
+    }
+    if (displayLine.length > 0) {
+      g.text(displayLine, startX, startY + i * lineHeight);
+    }
+    charCount++; // count the newline
+    if (charCount > bootCharIndex) break;
+  }
+
+  // Blinking cursor
+  if (frameCount % 15 < 8) {
+    let curCharCount = 0;
+    let curLine = 0;
+    let curCol = 0;
+    for (let i = 0; i < lines.length; i++) {
+      if (curCharCount + lines[i].length >= bootCharIndex) {
+        curLine = i;
+        curCol = bootCharIndex - curCharCount;
+        break;
+      }
+      curCharCount += lines[i].length + 1;
+      curLine = i + 1;
+      curCol = 0;
+    }
+    g.rect(
+      startX + curCol * textSz * 0.6,
+      startY + curLine * lineHeight,
+      textSz * 0.6,
+      textSz,
+    );
+  }
+
+  // Check if all text is typed
+  if (bootCharIndex >= totalChars) {
     if (!bootGlitching) {
       bootGlitching = true;
       bootGlitchStart = millis();
     }
 
     const elapsed = millis() - bootGlitchStart;
-
-    // Glitch effect: random horizontal slices
-    if (elapsed > 200 && elapsed < 600) {
-      for (let i = 0; i < 5; i++) {
-        const sliceY = random(g.height);
-        const sliceH = random(10, 40);
-        const offsetX = random(-30, 30);
-        const slice = g.get(0, sliceY, g.width, sliceH);
-        g.image(slice, offsetX, sliceY);
+    if (elapsed > 400) {
+      // Glitch effect: random horizontal slices
+      if (elapsed < 800) {
+        for (let i = 0; i < 5; i++) {
+          const sliceY = random(g.height);
+          const sliceH = random(10, 40);
+          const offsetX = random(-30, 30);
+          const slice = g.get(0, sliceY, g.width, sliceH);
+          g.image(slice, offsetX, sliceY);
+        }
       }
-    }
 
-    // Brightness flicker
-    if (elapsed > 200 && elapsed < 600 && frameCount % 3 === 0) {
-      g.fill(255, 255, 255, random(20, 80));
-      g.rectMode(CORNER);
-      g.rect(0, 0, g.width, g.height);
-    }
+      // Brightness flicker during glitch
+      if (elapsed > 400 && elapsed < 800 && frameCount % 3 === 0) {
+        g.fill(255, 255, 255, random(20, 80));
+        g.rectMode(CORNER);
+        g.rect(0, 0, g.width, g.height);
+      }
 
-    // Fade out
-    if (elapsed > 500) {
-      bootFadeAlpha = map(elapsed, 500, 800, 255, 0);
-      bootFadeAlpha = constrain(bootFadeAlpha, 0, 255);
-    }
+      // Fade out
+      if (elapsed > 700) {
+        bootFadeAlpha = map(elapsed, 700, 1000, 255, 0);
+        bootFadeAlpha = constrain(bootFadeAlpha, 0, 255);
+        const c = color(palette.FG);
+        g.fill(red(c), green(c), blue(c), bootFadeAlpha);
+      }
 
-    // End boot
-    if (elapsed > 800) {
-      booting = false;
-      gameEnterStart = millis();
-      document.body.style.overflowY = "auto";
-      const hint = document.getElementById("scroll-hint");
-      if (hint) hint.style.opacity = "1";
+      // End boot
+      if (elapsed > 1000) {
+        booting = false;
+        gameEnterStart = millis();
+        document.body.style.overflowY = "auto";
+      }
     }
   }
 }
@@ -1160,7 +1168,7 @@ function windowResized(ev) {
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-  buffer = max(70, min(100, smaller * 0.12));
+  buffer = max(50, min(100, smaller * 0.12));
 
   sharedImg.resize(smaller * 0.5, 0);
   nopeImg.resize(smaller * 0.5, 0);

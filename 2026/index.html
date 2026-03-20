@@ -25,61 +25,7 @@
             font-style: normal;
             font-display: swap;
         }
-
-        /* ── LOADER OVERLAY ─────────────────────────────────────────── */
-        #p5_loading {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            z-index: 99999;
-            /* font matches the site's Geist Pixel theme */
-            font-family: "Geist Pixel", "Courier New", monospace;
-        }
-
-        /* Loading text label */
-        #p5_loading > div:first-child {
-            color: #b0baff;
-            font-size: 12px;
-            letter-spacing: 0.3em;
-            opacity: 0.6;
-            animation: loader-pulse 1.4s ease-in-out infinite;
-        }
-
-        @keyframes loader-pulse {
-            0%, 100% { opacity: 0.3; }
-            50%       { opacity: 0.8; }
-        }
-
-        /*
-         * Sprite element.
-         * Sheet: 2000 × 1800 px  →  10 cols × 9 rows  →  200 × 200 px per frame.
-         * We display it at 160 × 160 px (80% of native) — crisp on all screens.
-         */
-        #loader-sprite {
-            /* rendered display size */
-            --fw: 160px;
-            --fh: 160px;
-
-            width:  var(--fw);
-            height: var(--fh);
-            overflow: hidden;
-
-            background-image: url("loader.png");
-            /* scale the full sheet to 10× and 9× the display frame size */
-            background-size: calc(var(--fw) * 10) calc(var(--fh) * 9);
-            background-repeat: no-repeat;
-            background-position: 0 0;
-
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
     </style>
-    <link rel="preload" as="image" href="images/blue_spritesheet.png" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="manifest" href="manifest.json" />
     <script>
@@ -292,7 +238,7 @@
           </div>
         </div>
         <div class="sponsors-cta">
-          WANT TO SPONSOR? <a href="mailto:codecell.engg@somaiya.edu">CONTACT US →</a>
+          WANT TO SPONSOR? <a href="mailto:codecell@somaiya.edu">CONTACT US →</a>
         </div>
 
         <div class="past-sponsors">
@@ -559,63 +505,63 @@
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>What happens at a Hackathon?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">Participants will spend 24 hours working in teams of one to four people to build or code projects they are excited about. During the event, there will be mentorship rounds to help and mini-events to guide the participants along the way. Participants only need to bring their ideas and their laptops, as we will provide everything they need to make their ideas come to life.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>Who can participate?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">Anyone with an interest in technology, coding, or innovation can participate! Whether you're a beginner or an experienced developer, there's a place for you at our hackathon.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>Do I need to know how to code?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">While having some coding experience is helpful, it's not mandatory. We welcome participants with diverse skill sets, including designers, project managers, and those who are just starting their coding journey.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>What should I bring?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">All participants are required to carry their own laptops and college identity cards.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>What do people normally make?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">Hacks can fall into categories such as Web Development, Blockchain, Android, iOS, AI/ML, AR/VR, and Game Development. Participants can combine any of these categories since this is an open innovation hackathon.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>Where will the hackathon be held?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">The hackathon will be held at <a href="https://maps.app.goo.gl/EX4KawzmC1qf9HG98" target="_blank" rel="noopener noreferrer">K.J. Somaiya College of Engineering, Vidyavihar, Mumbai.</a></div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>What if I have never been to a hackathon before?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">Don't worry, we're open to students of all skill levels. We offer talks, and mentors to help you with your project. Hackathons are an excellent opportunity to learn new skills in a short amount of time. Just come with an eagerness to learn and enthusiasm to meet lots of awesome people.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>What is the required team size?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">Teams of 3 - 4 members are allowed.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <span>What is the Code of Conduct?</span>
-                        <span class="faq-toggle"></span>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">The appropriate code of conduct is linked <a href="https://drive.google.com/file/d/1EDjvC7DpBDr_j6EsBHBwd-XgZ6KS4_Hi/view" target="_blank" rel="noopener noreferrer">here</a>.</div>
                     </div>
@@ -709,10 +655,7 @@
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
-    <div id="p5_loading" class="loadingclass">
-        <div class="loader-sprite"></div>
-        <span class="loader-text">INITIALIZING HACK X...</span>
-    </div>
+    <div id="p5_loading" class="loadingclass">INITIALIZING HACK X...</div>
 </body>
 
 </html>
