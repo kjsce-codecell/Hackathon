@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git stash:*)",
+      "Bash(node --check /Users/kumartanay/Hackathon/hackx/sections.js)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}

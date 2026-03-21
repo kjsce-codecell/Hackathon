@@ -147,8 +147,7 @@ class Bin {
   }
 
   writeIndex() {
-    const isMobile = smaller < 500;
-    g.textSize(isMobile ? 12 : 18);
+    g.textSize(18);
     g.textFont('Arial');
     g.textAlign(CENTER, CENTER);
     g.fill(palette.FG);
@@ -253,7 +252,7 @@ class Bin {
     g.noStroke();
     g.fill(levelColor);
     g.textFont("Courier");
-    g.textSize(min(smaller < 500 ? 10 : 14, buffer * 0.14));
+    g.textSize(min(14, buffer * 0.14));
     const labelW = g.textWidth(displayName);
     const barX = this.x - rw * 0.45 + labelW + rw * 0.04;
     const barW = this.x + rw * 0.45 - barX;

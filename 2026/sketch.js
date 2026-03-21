@@ -44,11 +44,13 @@ let shareDiv;
 let booting = true;
 let gameEnterAnim = 0; // 0 to 1 fade-in after boot
 let gameEnterStart = 0;
-let bootCharIndex = 0;
 let bootFrameCounter = 0;
 let bootGlitching = false;
 let bootGlitchStart = 0;
 let bootFadeAlpha = 255;
+let bootSpriteFrame = 0;
+let bootSpriteImg;
+let bootSpriteLoops = 0;
 
 let revealing = false;
 let revealText = "";
@@ -137,6 +139,7 @@ function preload() {
   completedImg = loadImage("images/100.png");
   sharedImg = loadImage("images/clipboard.png");
   logoImg = loadImage('images/logo.svg')
+  bootSpriteImg = loadImage("images/blue_spritesheet.png");
   crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
 }
 
@@ -195,26 +198,30 @@ function startOver(resetFile = false) {
 var zoff = 0;
 var smaller;
 
-function getVisibleHeight() {
-  // On mobile, window.innerHeight reflects the actual visible area
-  // (accounts for browser chrome / address bar). Prefer it over windowHeight.
-  return window.visualViewport
-    ? Math.round(window.visualViewport.height)
-    : window.innerHeight;
-}
-
 function setup() {
-  const vh = getVisibleHeight() || windowHeight;
-  const cnv = createCanvas(windowWidth, vh);
+  // Chroma-key the magenta background out of the boot spritesheet
+  bootSpriteImg.loadPixels();
+  for (let i = 0; i < bootSpriteImg.pixels.length; i += 4) {
+    const r = bootSpriteImg.pixels[i];
+    const g_ = bootSpriteImg.pixels[i + 1];
+    const b = bootSpriteImg.pixels[i + 2];
+    // Pink/magenta background: high red, low green, high-ish blue
+    if (r > 180 && g_ < 100 && b > 100) {
+      bootSpriteImg.pixels[i + 3] = 0; // set alpha to 0
+    }
+  }
+  bootSpriteImg.updatePixels();
+
+  const cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("game-container");
   frameRate(30);
 
   // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
-  g = createGraphics(windowWidth, vh);
+  g = createGraphics(windowWidth, windowHeight);
 
   // Scale buffer for mobile
   smaller = min(g.width, g.height);
-  buffer = max(40, min(100, smaller * 0.10));
+  buffer = max(70, min(100, smaller * 0.12));
 
   // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
@@ -245,10 +252,9 @@ function setup() {
   macrodataFile = new MacrodataFile();
   secondsSpentRefining = 0;
 
-  const imgScale = isTouchScreenDevice() ? 0.4 : 0.5;
-  sharedImg.resize(smaller * imgScale, 0);
-  nopeImg.resize(smaller * imgScale, 0);
-  completedImg.resize(smaller * imgScale, 0);
+  sharedImg.resize(smaller * 0.5, 0);
+  nopeImg.resize(smaller * 0.5, 0);
+  completedImg.resize(smaller * 0.5, 0);
 
   // Width for the share 100% button
   const shw = completedImg.width;
@@ -277,9 +283,8 @@ ${HACKX_CONFIG.shareUrl}`;
     shared = true;
   });
 
-  // Initialize dust particles — fewer on mobile for performance
-  const dustCount = isTouchScreenDevice() ? 20 : 50;
-  for (let i = 0; i < dustCount; i++) {
+  // Initialize dust particles
+  for (let i = 0; i < 50; i++) {
     dustParticles.push({
       x: random(g.width),
       y: random(g.height),
@@ -291,14 +296,6 @@ ${HACKX_CONFIG.shareUrl}`;
   }
 
   startOver();
-
-  // On mobile, the visual viewport changes when the address bar hides/shows.
-  // Trigger p5's windowResized so the canvas stays correctly sized.
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener("resize", () => {
-      windowResized();
-    });
-  }
 }
 
 function mousePressed() {
@@ -315,6 +312,8 @@ function mousePressed() {
     booting = false;
     gameEnterStart = millis();
     document.body.style.overflowY = "auto";
+    const hint = document.getElementById("scroll-hint");
+    if (hint) hint.style.opacity = "1";
     return;
   }
 
@@ -332,9 +331,6 @@ function mousePressed() {
     refineBY = mouseY;
     refining = true;
     nope = false;
-    // Lock touch-action so drag gestures don't scroll
-    var cnv = document.querySelector('#game-container>canvas:first-of-type');
-    if (cnv) cnv.classList.add('touch-locked');
   }
 }
 
@@ -345,9 +341,6 @@ function mouseDragged() {
 
 function mouseReleased() {
   refining = false;
-  // Unlock touch-action so scrolling works again
-  var cnv = document.querySelector('#game-container>canvas:first-of-type');
-  if (cnv) cnv.classList.remove('touch-locked');
   let countRed = 0;
   let total = 0;
   let refinery = [];
@@ -384,37 +377,6 @@ function mouseReleased() {
     }
     nopeTime = millis();
   }
-}
-
-// --- Explicit touch handlers for reliable mobile interaction ---
-// Scrolling is managed via the CSS touch-action class toggled in
-// mousePressed / mouseReleased. These handlers just sync touch
-// coordinates to p5's mouseX/mouseY and must ALWAYS return true
-// so the browser's default scroll behaviour is never blocked.
-function touchStarted() {
-  if (!isTouchScreenDevice()) return true;
-  if (touches.length > 0) {
-    mouseX = touches[0].x;
-    mouseY = touches[0].y;
-  }
-  mousePressed();
-  return true;
-}
-
-function touchMoved() {
-  if (!isTouchScreenDevice()) return true;
-  if (touches.length > 0) {
-    mouseX = touches[0].x;
-    mouseY = touches[0].y;
-  }
-  mouseDragged();
-  return true;
-}
-
-function touchEnded() {
-  if (!isTouchScreenDevice()) return true;
-  mouseReleased();
-  return true;
 }
 
 let prevPercent;
@@ -488,8 +450,8 @@ function draw() {
   // Draw floating dust particles behind everything
   drawDustParticles();
 
-  // Mouse trail particles — skip on touch devices to avoid stale position artifacts
-  if (!isTouchScreenDevice() && mouseX > 0 && mouseY > 0 && !booting) {
+  // Mouse trail particles
+  if (mouseX > 0 && mouseY > 0 && !booting) {
     mouseTrail.push({ x: mouseX, y: mouseY, alpha: 150, size: random(2, 5) });
     if (mouseTrail.length > 30) mouseTrail.shift();
   }
@@ -655,31 +617,31 @@ function drawTop(percent) {
   g.textFont("Courier");
   g.noStroke();
 
-  // Left: Logo — scale down on mobile
+  // Left: Logo
   if (logoImg) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(palette.FG);
 
-    let logoWidth = smaller < 500 ? 60 : 100;
-    let logoHeight = logoWidth;
+    let logoWidth = g.width < 500 ? 50 : 100;
+    let logoHeight = g.width < 500 ? 50 : 100;
+    // Align the center of the image with the center of the text vertically
     g.image(logoImg, g.width * 0.04 + logoWidth / 2, y + textSz / 2, logoWidth, logoHeight);
   }
 
-  // Right: event info — shorter on mobile
+  // Right: event info
   g.textAlign(RIGHT, TOP);
-  g.textSize(max(8, smaller * 0.015));
+  g.textSize(max(9, smaller * 0.015));
   const c = color(palette.FG);
   c.setAlpha(180);
   g.fill(c);
-  if (smaller < 500) {
-    g.text(HACKX_CONFIG.date, g.width * 0.96, y);
-  } else {
-    g.text(
-      HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location,
-      g.width * 0.96,
-      y,
-    );
-  }
+  const headerText = g.width < 500
+    ? HACKX_CONFIG.date
+    : HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location;
+  g.text(
+    headerText,
+    g.width * 0.96,
+    y,
+  );
 }
 
 function drawNumbers() {
@@ -717,12 +679,10 @@ function drawNumbers() {
 
       let d = dist(mouseX, mouseY, num.x, num.y);
 
-      // Numbers flee from cursor — smaller radius & force on mobile
-      const fleeRadius = isTouchScreenDevice() ? g.width * 0.08 : g.width * 0.15;
-      const fleeForce = isTouchScreenDevice() ? 1.5 : 3;
-      if (d < fleeRadius) {
+      // Numbers flee from cursor more dramatically
+      if (d < g.width * 0.15) {
         let angle = atan2(num.y - mouseY, num.x - mouseX);
-        let force = map(d, 0, fleeRadius, fleeForce, 0);
+        let force = map(d, 0, g.width * 0.15, 3, 0);
         num.x += cos(angle) * force;
         num.y += sin(angle) * force;
       } else {
@@ -767,13 +727,12 @@ function drawBottom() {
 
   // Bottom bar — event info instead of hex coordinates
   g.rectMode(CORNER);
-  const barH = smaller < 500 ? 16 : 20;
   g.fill(palette.FG);
-  g.rect(0, g.height - barH, g.width, barH);
+  g.rect(0, g.height - 20, g.width, 20);
   g.fill(palette.BG);
   g.textFont("Courier");
   g.textAlign(CENTER, CENTER);
-  g.textSize(max(7, smaller < 500 ? baseSize * 0.5 : baseSize * 0.6));
+  g.textSize(max(8, baseSize * 0.6));
   let bottomText;
   if (smaller < 500) {
     bottomText = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
@@ -787,7 +746,7 @@ function drawBottom() {
       " // " +
       HACKX_CONFIG.shareUrl;
   }
-  g.text(bottomText, g.width * 0.5, g.height - barH / 2);
+  g.text(bottomText, g.width * 0.5, g.height - 10);
 }
 
 function drawBinned() {
@@ -880,8 +839,6 @@ function toggleShader() {
 }
 
 function drawCursor(xPos, yPos) {
-  // No custom cursor on touch devices
-  if (isTouchScreenDevice()) return;
   // prevents the cursor appearing in top left corner on page load
   if (xPos == 0 && yPos == 0) return;
   g.push();
@@ -903,111 +860,87 @@ function drawCursor(xPos, yPos) {
 
 function drawBootSequence() {
   g.background(palette.BG);
-  g.textFont("Courier");
+
+  // Spritesheet: 10 columns, 9 rows, 1080x1080 per frame, 89 usable frames
+  const spriteCols = 10;
+  const spriteRows = 9;
+  const frameW = 1080;
+  const frameH = 1080;
+  const totalFrames = 89;
+
+  // Advance frame every other draw call (~15fps at 30fps)
+  bootFrameCounter++;
+  if (bootFrameCounter >= 2) {
+    bootFrameCounter = 0;
+    bootSpriteFrame++;
+    if (bootSpriteFrame >= totalFrames) {
+      bootSpriteFrame = 0;
+      bootSpriteLoops++;
+    }
+  }
+
+  // Source rectangle in spritesheet
+  const col = bootSpriteFrame % spriteCols;
+  const row = floor(bootSpriteFrame / spriteCols);
+  const sx = col * frameW;
+  const sy = row * frameH;
+
+  // Draw centred, fitting within screen
+  const displaySize = min(g.width, g.height) * 0.35;
+  const dx = (g.width - displaySize) / 2;
+  const dy = (g.height - displaySize) / 2;
+
+  g.imageMode(CORNER);
+  g.image(bootSpriteImg, dx, dy, displaySize, displaySize, sx, sy, frameW, frameH);
+
+  // "INITIALIZING HACK X..." text below sprite
   g.fill(palette.FG);
   g.noStroke();
+  g.textFont("Courier");
+  g.textSize(smaller * 0.03);
+  g.textAlign(CENTER, TOP);
+  g.text("INITIALIZING HACK X...", g.width / 2, dy + displaySize + 20);
 
-  const lines = HACKX_CONFIG.bootLines;
-  const totalChars = lines.join("").length + lines.length;
-  const isMobile = isTouchScreenDevice();
-  const lineHeight = isMobile ? smaller * 0.04 : smaller * 0.05;
-  const textSz = isMobile ? max(10, smaller * 0.025) : smaller * 0.035;
-  g.textSize(textSz);
-  g.textAlign(LEFT, TOP);
-
-  const startX = isMobile ? g.width * 0.06 : g.width * 0.1;
-  const startY = isMobile ? g.height * 0.25 : g.height * 0.3;
-
-  // Typing effect: increment char index every 3rd frame (~100ms at 30fps)
-  bootFrameCounter++;
-  if (bootFrameCounter >= 1) {
-    bootFrameCounter = 0;
-    bootCharIndex++;
-  }
-
-  // Render typed text
-  let charCount = 0;
-  for (let i = 0; i < lines.length; i++) {
-    let displayLine = "";
-    for (let c = 0; c < lines[i].length; c++) {
-      if (charCount < bootCharIndex) {
-        displayLine += lines[i][c];
-        charCount++;
-      } else {
-        break;
-      }
-    }
-    if (displayLine.length > 0) {
-      g.text(displayLine, startX, startY + i * lineHeight);
-    }
-    charCount++; // count the newline
-    if (charCount > bootCharIndex) break;
-  }
-
-  // Blinking cursor
-  if (frameCount % 15 < 8) {
-    let curCharCount = 0;
-    let curLine = 0;
-    let curCol = 0;
-    for (let i = 0; i < lines.length; i++) {
-      if (curCharCount + lines[i].length >= bootCharIndex) {
-        curLine = i;
-        curCol = bootCharIndex - curCharCount;
-        break;
-      }
-      curCharCount += lines[i].length + 1;
-      curLine = i + 1;
-      curCol = 0;
-    }
-    g.rect(
-      startX + curCol * textSz * 0.6,
-      startY + curLine * lineHeight,
-      textSz * 0.6,
-      textSz,
-    );
-  }
-
-  // Check if all text is typed
-  if (bootCharIndex >= totalChars) {
+  // After 2 full loops, start glitch + fade out
+  if (bootSpriteLoops >= 2) {
     if (!bootGlitching) {
       bootGlitching = true;
       bootGlitchStart = millis();
     }
 
     const elapsed = millis() - bootGlitchStart;
-    if (elapsed > 400) {
-      // Glitch effect: random horizontal slices
-      if (elapsed < 800) {
-        for (let i = 0; i < 5; i++) {
-          const sliceY = random(g.height);
-          const sliceH = random(10, 40);
-          const offsetX = random(-30, 30);
-          const slice = g.get(0, sliceY, g.width, sliceH);
-          g.image(slice, offsetX, sliceY);
-        }
-      }
 
-      // Brightness flicker during glitch
-      if (elapsed > 400 && elapsed < 800 && frameCount % 3 === 0) {
-        g.fill(255, 255, 255, random(20, 80));
-        g.rectMode(CORNER);
-        g.rect(0, 0, g.width, g.height);
+    // Glitch effect: random horizontal slices
+    if (elapsed > 200 && elapsed < 600) {
+      for (let i = 0; i < 5; i++) {
+        const sliceY = random(g.height);
+        const sliceH = random(10, 40);
+        const offsetX = random(-30, 30);
+        const slice = g.get(0, sliceY, g.width, sliceH);
+        g.image(slice, offsetX, sliceY);
       }
+    }
 
-      // Fade out
-      if (elapsed > 700) {
-        bootFadeAlpha = map(elapsed, 700, 1000, 255, 0);
-        bootFadeAlpha = constrain(bootFadeAlpha, 0, 255);
-        const c = color(palette.FG);
-        g.fill(red(c), green(c), blue(c), bootFadeAlpha);
-      }
+    // Brightness flicker
+    if (elapsed > 200 && elapsed < 600 && frameCount % 3 === 0) {
+      g.fill(255, 255, 255, random(20, 80));
+      g.rectMode(CORNER);
+      g.rect(0, 0, g.width, g.height);
+    }
 
-      // End boot
-      if (elapsed > 1000) {
-        booting = false;
-        gameEnterStart = millis();
-        document.body.style.overflowY = "auto";
-      }
+    // Fade out
+    if (elapsed > 500) {
+      bootFadeAlpha = map(elapsed, 500, 800, 255, 0);
+      bootFadeAlpha = constrain(bootFadeAlpha, 0, 255);
+    }
+
+    // End boot
+    if (elapsed > 800) {
+      booting = false;
+      gameEnterStart = millis();
+      document.body.style.overflowY = "auto";
+      const hint = document.getElementById("scroll-hint");
+      if (hint) hint.style.opacity = "1";
     }
   }
 }
@@ -1221,19 +1154,17 @@ function keyPressed() {
 }
 
 function windowResized(ev) {
-  const vh = getVisibleHeight() || windowHeight;
-  resizeCanvas(windowWidth, vh);
-  g.resizeCanvas(windowWidth, vh);
-  shaderLayer.resizeCanvas(windowWidth, vh);
+  resizeCanvas(windowWidth, windowHeight);
+  g.resizeCanvas(windowWidth, windowHeight);
+  shaderLayer.resizeCanvas(windowWidth, windowHeight);
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-  buffer = max(40, min(100, smaller * 0.10));
+  buffer = max(70, min(100, smaller * 0.12));
 
-  const imgSc = isTouchScreenDevice() ? 0.4 : 0.5;
-  sharedImg.resize(smaller * imgSc, 0);
-  nopeImg.resize(smaller * imgSc, 0);
-  completedImg.resize(smaller * imgSc, 0);
+  sharedImg.resize(smaller * 0.5, 0);
+  nopeImg.resize(smaller * 0.5, 0);
+  completedImg.resize(smaller * 0.5, 0);
 
   refined.forEach((bin) => bin.resize(g.width / refined.length));
 
