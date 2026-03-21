@@ -2051,6 +2051,55 @@ a.team-card {
     pointer-events: none;
 }
 
+/* ===== ABOUT RESPONSIVE (max 980px) ===== */
+@media (max-width: 980px) {
+    .about-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-model {
+        width: min(520px, 96vw);
+        height: min(520px, 96vw);
+        margin: 0 auto;
+    }
+
+    .about-left .glitch-text {
+        text-align: center;
+    }
+
+    .about-tagline,
+    .about-desc {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .about-desc {
+        margin: 0 auto;
+    }
+
+    .about-left .apply-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-cta {
+        display: block;
+        text-align: center;
+    }
+
+    .about-stat-value {
+        font-size: clamp(16px, 4vw, 22px);
+    }
+}
+
 /* ===== TABLET (max 768px) ===== */
 @media (max-width: 768px) {
     /* Softer vignette on mobile so edges of the game stay visible */
@@ -2076,41 +2125,6 @@ a.team-card {
         font-size: clamp(32px, 9vw, 64px);
         letter-spacing: 0.1em;
         margin-bottom: 30px;
-    }
-
-    /* About */
-    .about-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .about-right {
-        width: 100%;
-        display: block;
-    }
-
-    .about-model {
-        width: min(520px, 96vw);
-        height: min(520px, 96vw);
-        margin: 0 auto;
-    }
-
-    .about-left .glitch-text {
-        text-align: center;
-    }
-
-    .about-tagline,
-    .about-desc {
-        text-align: center;
-    }
-
-    .about-cta {
-        display: block;
-        text-align: center;
-    }
-
-    .about-stat-value {
-        font-size: clamp(16px, 4vw, 22px);
     }
 
     /* Perks */
