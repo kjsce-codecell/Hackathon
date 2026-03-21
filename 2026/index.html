@@ -642,15 +642,15 @@
         </div>
     </section>
 
-    <!-- Scripts: config & audio first, then sketch (defines globals), then dependencies -->
+    <!-- Scripts: dependencies first, then sketch last (p5 calls setup() on load) -->
     <script src="config.js"></script>
     <script src="audio.js"></script>
-    <script src="sketch.js"></script>
     <script src="osn.js"></script>
     <script src="bin.js"></script>
     <script src="data.js"></script>
     <script src="utils.js"></script>
     <script src="macrodata.js"></script>
+    <script src="sketch.js"></script>
     <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="auto"></audio>
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>

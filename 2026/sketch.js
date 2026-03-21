@@ -195,17 +195,26 @@ function startOver(resetFile = false) {
 var zoff = 0;
 var smaller;
 
+function getVisibleHeight() {
+  // On mobile, window.innerHeight reflects the actual visible area
+  // (accounts for browser chrome / address bar). Prefer it over windowHeight.
+  return window.visualViewport
+    ? Math.round(window.visualViewport.height)
+    : window.innerHeight;
+}
+
 function setup() {
-  const cnv = createCanvas(windowWidth, windowHeight);
+  const vh = getVisibleHeight() || windowHeight;
+  const cnv = createCanvas(windowWidth, vh);
   cnv.parent("game-container");
   frameRate(30);
 
   // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
-  g = createGraphics(windowWidth, windowHeight);
+  g = createGraphics(windowWidth, vh);
 
   // Scale buffer for mobile
   smaller = min(g.width, g.height);
-  buffer = max(50, min(100, smaller * 0.12));
+  buffer = max(40, min(100, smaller * 0.10));
 
   // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
@@ -236,9 +245,10 @@ function setup() {
   macrodataFile = new MacrodataFile();
   secondsSpentRefining = 0;
 
-  sharedImg.resize(smaller * 0.5, 0);
-  nopeImg.resize(smaller * 0.5, 0);
-  completedImg.resize(smaller * 0.5, 0);
+  const imgScale = isTouchScreenDevice() ? 0.4 : 0.5;
+  sharedImg.resize(smaller * imgScale, 0);
+  nopeImg.resize(smaller * imgScale, 0);
+  completedImg.resize(smaller * imgScale, 0);
 
   // Width for the share 100% button
   const shw = completedImg.width;
@@ -267,8 +277,9 @@ ${HACKX_CONFIG.shareUrl}`;
     shared = true;
   });
 
-  // Initialize dust particles
-  for (let i = 0; i < 50; i++) {
+  // Initialize dust particles — fewer on mobile for performance
+  const dustCount = isTouchScreenDevice() ? 20 : 50;
+  for (let i = 0; i < dustCount; i++) {
     dustParticles.push({
       x: random(g.width),
       y: random(g.height),
@@ -280,6 +291,14 @@ ${HACKX_CONFIG.shareUrl}`;
   }
 
   startOver();
+
+  // On mobile, the visual viewport changes when the address bar hides/shows.
+  // Trigger p5's windowResized so the canvas stays correctly sized.
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", () => {
+      windowResized();
+    });
+  }
 }
 
 function mousePressed() {
@@ -367,6 +386,37 @@ function mouseReleased() {
   }
 }
 
+// --- Explicit touch handlers for reliable mobile interaction ---
+// Scrolling is managed via the CSS touch-action class toggled in
+// mousePressed / mouseReleased. These handlers just sync touch
+// coordinates to p5's mouseX/mouseY and must ALWAYS return true
+// so the browser's default scroll behaviour is never blocked.
+function touchStarted() {
+  if (!isTouchScreenDevice()) return true;
+  if (touches.length > 0) {
+    mouseX = touches[0].x;
+    mouseY = touches[0].y;
+  }
+  mousePressed();
+  return true;
+}
+
+function touchMoved() {
+  if (!isTouchScreenDevice()) return true;
+  if (touches.length > 0) {
+    mouseX = touches[0].x;
+    mouseY = touches[0].y;
+  }
+  mouseDragged();
+  return true;
+}
+
+function touchEnded() {
+  if (!isTouchScreenDevice()) return true;
+  mouseReleased();
+  return true;
+}
+
 let prevPercent;
 
 function draw() {
@@ -438,8 +488,8 @@ function draw() {
   // Draw floating dust particles behind everything
   drawDustParticles();
 
-  // Mouse trail particles
-  if (mouseX > 0 && mouseY > 0 && !booting) {
+  // Mouse trail particles — skip on touch devices to avoid stale position artifacts
+  if (!isTouchScreenDevice() && mouseX > 0 && mouseY > 0 && !booting) {
     mouseTrail.push({ x: mouseX, y: mouseY, alpha: 150, size: random(2, 5) });
     if (mouseTrail.length > 30) mouseTrail.shift();
   }
@@ -605,28 +655,31 @@ function drawTop(percent) {
   g.textFont("Courier");
   g.noStroke();
 
-  // Left: Logo
+  // Left: Logo — scale down on mobile
   if (logoImg) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(palette.FG);
 
-    let logoWidth = 100;
-    let logoHeight = 100;
-    // Align the center of the image with the center of the text vertically
+    let logoWidth = smaller < 500 ? 60 : 100;
+    let logoHeight = logoWidth;
     g.image(logoImg, g.width * 0.04 + logoWidth / 2, y + textSz / 2, logoWidth, logoHeight);
   }
 
-  // Right: event info
+  // Right: event info — shorter on mobile
   g.textAlign(RIGHT, TOP);
-  g.textSize(max(9, smaller * 0.015));
+  g.textSize(max(8, smaller * 0.015));
   const c = color(palette.FG);
   c.setAlpha(180);
   g.fill(c);
-  g.text(
-    HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location,
-    g.width * 0.96,
-    y,
-  );
+  if (smaller < 500) {
+    g.text(HACKX_CONFIG.date, g.width * 0.96, y);
+  } else {
+    g.text(
+      HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location,
+      g.width * 0.96,
+      y,
+    );
+  }
 }
 
 function drawNumbers() {
@@ -664,10 +717,12 @@ function drawNumbers() {
 
       let d = dist(mouseX, mouseY, num.x, num.y);
 
-      // Numbers flee from cursor more dramatically
-      if (d < g.width * 0.15) {
+      // Numbers flee from cursor — smaller radius & force on mobile
+      const fleeRadius = isTouchScreenDevice() ? g.width * 0.08 : g.width * 0.15;
+      const fleeForce = isTouchScreenDevice() ? 1.5 : 3;
+      if (d < fleeRadius) {
         let angle = atan2(num.y - mouseY, num.x - mouseX);
-        let force = map(d, 0, g.width * 0.15, 3, 0);
+        let force = map(d, 0, fleeRadius, fleeForce, 0);
         num.x += cos(angle) * force;
         num.y += sin(angle) * force;
       } else {
@@ -712,12 +767,13 @@ function drawBottom() {
 
   // Bottom bar — event info instead of hex coordinates
   g.rectMode(CORNER);
+  const barH = smaller < 500 ? 16 : 20;
   g.fill(palette.FG);
-  g.rect(0, g.height - 20, g.width, 20);
+  g.rect(0, g.height - barH, g.width, barH);
   g.fill(palette.BG);
   g.textFont("Courier");
   g.textAlign(CENTER, CENTER);
-  g.textSize(max(8, baseSize * 0.6));
+  g.textSize(max(7, smaller < 500 ? baseSize * 0.5 : baseSize * 0.6));
   let bottomText;
   if (smaller < 500) {
     bottomText = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
@@ -731,7 +787,7 @@ function drawBottom() {
       " // " +
       HACKX_CONFIG.shareUrl;
   }
-  g.text(bottomText, g.width * 0.5, g.height - 10);
+  g.text(bottomText, g.width * 0.5, g.height - barH / 2);
 }
 
 function drawBinned() {
@@ -824,6 +880,8 @@ function toggleShader() {
 }
 
 function drawCursor(xPos, yPos) {
+  // No custom cursor on touch devices
+  if (isTouchScreenDevice()) return;
   // prevents the cursor appearing in top left corner on page load
   if (xPos == 0 && yPos == 0) return;
   g.push();
@@ -851,13 +909,14 @@ function drawBootSequence() {
 
   const lines = HACKX_CONFIG.bootLines;
   const totalChars = lines.join("").length + lines.length;
-  const lineHeight = smaller * 0.05;
-  const textSz = smaller * 0.035;
+  const isMobile = isTouchScreenDevice();
+  const lineHeight = isMobile ? smaller * 0.04 : smaller * 0.05;
+  const textSz = isMobile ? max(10, smaller * 0.025) : smaller * 0.035;
   g.textSize(textSz);
   g.textAlign(LEFT, TOP);
 
-  const startX = g.width * 0.1;
-  const startY = g.height * 0.3;
+  const startX = isMobile ? g.width * 0.06 : g.width * 0.1;
+  const startY = isMobile ? g.height * 0.25 : g.height * 0.3;
 
   // Typing effect: increment char index every 3rd frame (~100ms at 30fps)
   bootFrameCounter++;
@@ -1162,17 +1221,19 @@ function keyPressed() {
 }
 
 function windowResized(ev) {
-  resizeCanvas(windowWidth, windowHeight);
-  g.resizeCanvas(windowWidth, windowHeight);
-  shaderLayer.resizeCanvas(windowWidth, windowHeight);
+  const vh = getVisibleHeight() || windowHeight;
+  resizeCanvas(windowWidth, vh);
+  g.resizeCanvas(windowWidth, vh);
+  shaderLayer.resizeCanvas(windowWidth, vh);
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-  buffer = max(50, min(100, smaller * 0.12));
+  buffer = max(40, min(100, smaller * 0.10));
 
-  sharedImg.resize(smaller * 0.5, 0);
-  nopeImg.resize(smaller * 0.5, 0);
-  completedImg.resize(smaller * 0.5, 0);
+  const imgSc = isTouchScreenDevice() ? 0.4 : 0.5;
+  sharedImg.resize(smaller * imgSc, 0);
+  nopeImg.resize(smaller * imgSc, 0);
+  completedImg.resize(smaller * imgSc, 0);
 
   refined.forEach((bin) => bin.resize(g.width / refined.length));
 
