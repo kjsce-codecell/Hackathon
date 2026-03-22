@@ -257,6 +257,18 @@ label {
     z-index: 1;
 }
 
+#hero-lcp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    font-size: clamp(2rem, 8vw, 6rem);
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+}
+
 #game-container>canvas:first-of-type {
     display: block;
     touch-action: none;

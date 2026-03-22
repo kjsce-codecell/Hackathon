@@ -41,8 +41,8 @@ let sharedTime = 0;
 let shareDiv;
 
 // Hack X states
-let booting = true;
-let gameEnterAnim = 0; // 0 to 1 fade-in after boot
+let booting = false;
+let gameEnterAnim = 1; // skip boot, game ready immediately
 let gameEnterStart = 0;
 let bootFrameCounter = 0;
 let bootGlitching = false;
@@ -135,12 +135,29 @@ let macrodataFile;
 let logoImg;
 
 function preload() {
-  nopeImg = loadImage("images/nope.png");
-  completedImg = loadImage("images/100.png");
-  sharedImg = loadImage("images/clipboard.png");
-  logoImg = loadImage('images/logo.svg')
-  bootSpriteImg = loadImage("images/blue_spritesheet.png");
+  // Only the CRT shader is needed before setup — everything else lazy-loads
   crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
+}
+
+// Lazy-load non-critical images after setup (not needed during boot)
+let _lazyImagesLoaded = false;
+function lazyLoadImages() {
+  if (_lazyImagesLoaded) return;
+  _lazyImagesLoaded = true;
+  nopeImg = loadImage("images/nope.png", img => { img.resize(min(windowWidth, windowHeight) * 0.5, 0); });
+  completedImg = loadImage("images/100.png", img => {
+    img.resize(min(windowWidth, windowHeight) * 0.5, 0);
+    // Update shareDiv dimensions once image is ready
+    if (shareDiv) {
+      const shw = img.width;
+      const shh = img.height;
+      shareDiv.position(windowWidth * 0.5 - shw * 0.5, windowHeight * 0.5 - shh * 0.5);
+      shareDiv.style("width", shw + "px");
+      shareDiv.style("height", shh + "px");
+    }
+  });
+  sharedImg = loadImage("images/clipboard.png", img => { img.resize(min(windowWidth, windowHeight) * 0.5, 0); });
+  logoImg = loadImage('images/logo.svg');
 }
 
 function startOver(resetFile = false) {
@@ -235,24 +252,26 @@ function setup() {
 
   smaller = min(g.width, g.height);
 
+  // No boot sequence — enable scroll and hint immediately
+  document.body.style.overflowY = "auto";
+  const hint = document.getElementById("scroll-hint");
+  if (hint) hint.style.opacity = "1";
+
   // Always start fresh on page load
   localStorage.removeItem("hackx-data");
   localStorage.removeItem("secondsSpentRefining");
   macrodataFile = new MacrodataFile();
   secondsSpentRefining = 0;
 
-  sharedImg.resize(smaller * 0.5, 0);
-  nopeImg.resize(smaller * 0.5, 0);
-  completedImg.resize(smaller * 0.5, 0);
-
-  // Width for the share 100% button
-  const shw = completedImg.width;
-  const shh = completedImg.height;
+  // Share div — dimensions updated once completedImg lazy-loads
   shareDiv = createDiv("");
   shareDiv.hide();
-  shareDiv.position(g.width * 0.5 - shw * 0.5, g.height * 0.5 - shh * 0.5);
-  shareDiv.style("width", `${shw}px`);
-  shareDiv.style("height", `${shh}px`);
+  shareDiv.position(g.width * 0.5 - 100, g.height * 0.5 - 100);
+  shareDiv.style("width", "200px");
+  shareDiv.style("height", "200px");
+
+  // Kick off lazy loading of non-critical images
+  lazyLoadImages();
   shareDiv.mousePressed(function () {
     let thenumbers = "";
     for (let r = 0; r < 5; r++) {
@@ -468,7 +487,7 @@ function draw() {
     }
   }
 
-  if (nope) {
+  if (nope && nopeImg) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(nopeImg, g.width * 0.5, g.height * 0.5);
@@ -477,13 +496,13 @@ function draw() {
     }
   }
 
-  if (completed) {
+  if (completed && completedImg) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(completedImg, g.width * 0.5, g.height * 0.5);
   }
 
-  if (shared) {
+  if (shared && sharedImg) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(sharedImg, g.width * 0.5, g.height * 0.5);
@@ -1151,9 +1170,9 @@ function windowResized(ev) {
   smaller = min(g.width, g.height);
   buffer = max(70, min(100, smaller * 0.12));
 
-  sharedImg.resize(smaller * 0.5, 0);
-  nopeImg.resize(smaller * 0.5, 0);
-  completedImg.resize(smaller * 0.5, 0);
+  if (sharedImg) sharedImg.resize(smaller * 0.5, 0);
+  if (nopeImg) nopeImg.resize(smaller * 0.5, 0);
+  if (completedImg) completedImg.resize(smaller * 0.5, 0);
 
   refined.forEach((bin) => bin.resize(g.width / refined.length));
 

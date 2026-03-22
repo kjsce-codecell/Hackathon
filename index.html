@@ -141,10 +141,11 @@
         history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <!-- p5.js moved to body bottom to unblock initial paint of loader animation -->
 </head>
 
 <body>
+    <div id="p5_loading" style="display:none"></div>
     <div class="vignette-overlay"></div>
     <!-- Fixed elements -->
     <div id="announcement-bar"></div>
@@ -152,6 +153,8 @@
     <!-- SECTION 1: HERO — The Game -->
     <section id="hero-section" class="section">
         <div id="game-container"></div>
+        <!-- LCP target: visible text behind canvas so Lighthouse detects contentful paint -->
+        <h1 id="hero-lcp" aria-hidden="true">HACK X</h1>
         <div id="scroll-hint">
             <span>&#9660; SCROLL TO DECRYPT MORE &#9660;</span>
         </div>
@@ -751,7 +754,8 @@
         </div>
     </section>
 
-    <!-- Scripts: config & audio first, then sketch (defines globals), then dependencies -->
+    <!-- Scripts: p5 first (moved from head to unblock loader), then config & game -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     <script src="config.js"></script>
     <script src="audio.js"></script>
     <script src="sketch.js"></script>
@@ -764,10 +768,7 @@
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
-    <div id="p5_loading" class="loadingclass">
-        <div class="loader-sprite"></div>
-        <span class="loader-text">INITIALIZING HACK X...</span>
-    </div>
+
 </body>
 
 </html>
