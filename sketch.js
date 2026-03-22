@@ -199,18 +199,7 @@ var zoff = 0;
 var smaller;
 
 function setup() {
-  // Chroma-key the magenta background out of the boot spritesheet
-  bootSpriteImg.loadPixels();
-  for (let i = 0; i < bootSpriteImg.pixels.length; i += 4) {
-    const r = bootSpriteImg.pixels[i];
-    const g_ = bootSpriteImg.pixels[i + 1];
-    const b = bootSpriteImg.pixels[i + 2];
-    // Pink/magenta background: high red, low green, high-ish blue
-    if (r > 180 && g_ < 100 && b > 100) {
-      bootSpriteImg.pixels[i + 3] = 0; // set alpha to 0
-    }
-  }
-  bootSpriteImg.updatePixels();
+  // Magenta background pre-removed from spritesheet at build time
 
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("game-container");
@@ -861,11 +850,11 @@ function drawCursor(xPos, yPos) {
 function drawBootSequence() {
   g.background(palette.BG);
 
-  // Spritesheet: 10 columns, 9 rows, 1080x1080 per frame, 89 usable frames
+  // Spritesheet: 10 columns, 9 rows, 400x400 per frame, 89 usable frames
   const spriteCols = 10;
   const spriteRows = 9;
-  const frameW = 1080;
-  const frameH = 1080;
+  const frameW = 400;
+  const frameH = 400;
   const totalFrames = 89;
 
   // Advance frame every other draw call (~15fps at 30fps)

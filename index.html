@@ -90,7 +90,7 @@
     <!-- Preconnect to external origins for faster resource loading -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
+    <!-- raw.githubusercontent.com connection handled by font preload below -->
     <link rel="dns-prefetch" href="https://apply.devfolio.co" />
     <!-- Preload critical font -->
     <link rel="preload" href="https://raw.githubusercontent.com/vercel/geist-pixel-font/main/fonts/webfonts/GeistPixel-Square.woff2" as="font" type="font/woff2" crossorigin />
@@ -132,38 +132,16 @@
             50%       { opacity: 0.8; }
         }
 
-        /*
-         * Sprite element.
-         * Sheet: 2000 × 1800 px  →  10 cols × 9 rows  →  200 × 200 px per frame.
-         * We display it at 160 × 160 px (80% of native) — crisp on all screens.
-         */
-        #loader-sprite {
-            /* rendered display size */
-            --fw: 160px;
-            --fh: 160px;
-
-            width:  var(--fw);
-            height: var(--fh);
-            overflow: hidden;
-
-            background-image: url("loader.png");
-            /* scale the full sheet to 10× and 9× the display frame size */
-            background-size: calc(var(--fw) * 10) calc(var(--fh) * 9);
-            background-repeat: no-repeat;
-            background-position: 0 0;
-
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
+        /* #loader-sprite removed — unused (actual loader uses .loader-sprite class) */
     </style>
-    <link rel="preload" as="image" href="images/blue_spritesheet.png" />
+    <!-- blue_spritesheet loaded by p5 preload(), no need to double-preload -->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="manifest" href="manifest.json" />
     <script>
         history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 </head>
 
 <body>
@@ -782,7 +760,7 @@
     <script src="data.js"></script>
     <script src="utils.js"></script>
     <script src="macrodata.js"></script>
-    <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="auto"></audio>
+    <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="none"></audio>
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
