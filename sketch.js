@@ -202,7 +202,7 @@ function setup() {
   g = createGraphics(windowWidth, windowHeight);
 
   smaller = min(g.width, g.height);
-  buffer = max(70, min(100, smaller * 0.12));
+  buffer = max(100, min(130, smaller * 0.16));
 
   useShader = !isTouchScreenDevice();
   if (typeof window !== "undefined" && window.__HACKX_GLOBAL_CRT__ === true) {
@@ -224,6 +224,16 @@ function setup() {
   document.body.style.overflowY = "auto";
   var hint = document.getElementById("scroll-hint");
   if (hint) hint.style.opacity = "1";
+
+  // Populate bottom bar text
+  var bottomBar = document.getElementById("game-bottom-bar");
+  if (bottomBar) {
+    if (smaller < 500) {
+      bottomBar.textContent = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
+    } else {
+      bottomBar.textContent = HACKX_CONFIG.orgName + " // " + HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date + " // " + HACKX_CONFIG.shareUrl;
+    }
+  }
 
   // Hide the boot loader
   var bl = document.getElementById("boot-loader");
@@ -716,31 +726,7 @@ function drawBottom() {
     g.pop();
   }
 
-  // Bottom bar — event info instead of hex coordinates
-  g.rectMode(CORNER);
-  const barH = smaller < 500 ? 32 : 26;
-  g.fill(palette.FG);
-  g.rect(0, g.height - barH, g.width, barH);
-  g.fill(palette.BG);
-  g.textFont("Courier");
-  g.textAlign(CENTER, CENTER);
-  g.textStyle(BOLD);
-  g.textSize(max(12, baseSize * 0.7));
-  let bottomText;
-  if (smaller < 500) {
-    bottomText = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
-  } else {
-    bottomText =
-      HACKX_CONFIG.orgName +
-      " // " +
-      HACKX_CONFIG.eventName +
-      " // " +
-      HACKX_CONFIG.date +
-      " // " +
-      HACKX_CONFIG.shareUrl;
-  }
-  g.text(bottomText, g.width * 0.5, g.height - barH / 2);
-  g.textStyle(NORMAL);
+  // Bottom bar is rendered as HTML overlay (#game-bottom-bar)
 }
 
 function drawBinned() {
@@ -1154,7 +1140,7 @@ function windowResized(ev) {
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-  buffer = max(70, min(100, smaller * 0.12));
+  buffer = max(100, min(130, smaller * 0.16));
 
   if (sharedImg && sharedImg.width) sharedImg.resize(smaller * 0.5, 0);
   if (nopeImg && nopeImg.width) nopeImg.resize(smaller * 0.5, 0);
@@ -1182,5 +1168,15 @@ function windowResized(ev) {
   for (let i = 0; i < dustParticles.length; i++) {
     dustParticles[i].x = random(g.width);
     dustParticles[i].y = random(g.height);
+  }
+
+  // Update bottom bar text on resize
+  var bottomBar = document.getElementById("game-bottom-bar");
+  if (bottomBar) {
+    if (smaller < 500) {
+      bottomBar.textContent = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
+    } else {
+      bottomBar.textContent = HACKX_CONFIG.orgName + " // " + HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date + " // " + HACKX_CONFIG.shareUrl;
+    }
   }
 }

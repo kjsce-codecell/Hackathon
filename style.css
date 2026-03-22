@@ -21,7 +21,7 @@ body {
     color: #4fd1d9;
     font-family: "Geist Pixel", "Courier New", Courier, monospace;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     letter-spacing: 0.04em;
     --accent: #4fd1d9;
     --red: var(--accent);
@@ -275,9 +275,28 @@ label {
     cursor: none;
 }
 
+#game-bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background: var(--cyan);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0A1628;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
 #scroll-hint {
     position: absolute;
-    bottom: 40px;
+    bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -2306,7 +2325,13 @@ a.team-card {
     #scroll-hint {
         font-size: 9px;
         letter-spacing: 3px;
-        bottom: 30px;
+        bottom: 34px;
+    }
+
+    #game-bottom-bar {
+        height: 24px;
+        font-size: 11px;
+        letter-spacing: 1px;
     }
 }
 
