@@ -1074,7 +1074,7 @@ function drawReveal() {
         if (revealsDone.includes(100)) {
           completed = true;
           completedTime = millis() - startTime;
-          shareDiv.show();
+          // shareDiv.show();
         }
       }
       break;
