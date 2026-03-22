@@ -967,10 +967,8 @@ function drawReveal() {
       g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
-      if (smaller < 500) {
-        g.stroke(palette.FG);
-        g.strokeWeight(1.2);
-      }
+      g.stroke(palette.FG);
+      g.strokeWeight(smaller < 500 ? 2.5 : 1.5);
 
       revealFrameCounter++;
       if (revealFrameCounter >= 3) {
@@ -1027,10 +1025,8 @@ function drawReveal() {
       g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
-      if (smaller < 500) {
-        g.stroke(palette.FG);
-        g.strokeWeight(1.2);
-      }
+      g.stroke(palette.FG);
+      g.strokeWeight(smaller < 500 ? 2.5 : 1.5);
 
       const holdWords = revealText.split(" ");
       let holdLines = [""];
