@@ -91,7 +91,13 @@ class Data {
       g.fill(col);
       g.stroke(col);
     }
+    if (g.width < 500) {
+      g.strokeWeight(0.8);
+    }
     g.text(this.num, this.x, this.y);
+    if (g.width < 500) {
+      g.strokeWeight(1);
+    }
     if (typeof rainbowMode !== 'undefined' && rainbowMode) {
       g.colorMode(RGB);
     }

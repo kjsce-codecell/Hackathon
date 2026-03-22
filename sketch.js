@@ -634,6 +634,10 @@ function drawTop(percent) {
   g.textSize(max(14, smaller * 0.022));
   g.textStyle(BOLD);
   g.fill(palette.FG);
+  if (g.width < 500) {
+    g.stroke(palette.FG);
+    g.strokeWeight(1);
+  }
   const headerText = g.width < 500
     ? HACKX_CONFIG.date
     : HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location;
@@ -963,6 +967,10 @@ function drawReveal() {
       g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
+      if (smaller < 500) {
+        g.stroke(palette.FG);
+        g.strokeWeight(1.2);
+      }
 
       revealFrameCounter++;
       if (revealFrameCounter >= 3) {
@@ -1019,6 +1027,10 @@ function drawReveal() {
       g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
+      if (smaller < 500) {
+        g.stroke(palette.FG);
+        g.strokeWeight(1.2);
+      }
 
       const holdWords = revealText.split(" ");
       let holdLines = [""];
