@@ -439,8 +439,8 @@ label {
     grid-template-columns: 1fr 1fr;
     gap: 4px;
     flex-shrink: 0;
-    width: 340px;
-    overflow: hidden;
+    width: 420px;
+    overflow: visible;
 }
 
 .about-model {
