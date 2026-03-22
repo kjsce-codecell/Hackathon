@@ -22,6 +22,7 @@ body {
     font-family: "Geist Pixel", "Courier New", Courier, monospace;
     overflow-x: hidden;
     overflow-y: auto;
+    overflow-y: auto;
     letter-spacing: 0.04em;
     --accent: #4fd1d9;
     --red: var(--accent);
@@ -269,8 +270,21 @@ label {
     pointer-events: none;
 }
 
+#hero-lcp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    font-size: clamp(2rem, 8vw, 6rem);
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+}
+
 #game-container>canvas:first-of-type {
     display: block;
+    touch-action: pan-y;
     touch-action: pan-y;
     cursor: none;
 }
@@ -294,8 +308,28 @@ label {
     pointer-events: none;
 }
 
+#game-bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background: var(--cyan);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0A1628;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
 #scroll-hint {
     position: absolute;
+    bottom: 32px;
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
@@ -439,8 +473,8 @@ label {
     grid-template-columns: 1fr 1fr;
     gap: 4px;
     flex-shrink: 0;
-    width: 340px;
-    overflow: hidden;
+    width: 420px;
+    overflow: visible;
 }
 
 .about-model {
@@ -449,6 +483,7 @@ label {
     border: none;
     background: transparent;
     box-shadow: none;
+    overflow: hidden;
     overflow: hidden;
 }
 
@@ -1919,6 +1954,7 @@ a.team-card {
 }
 
 /* loader removed */
+/* loader removed */
 
 /* ===== MICRO INTERACTIONS ===== */
 .track-block,
@@ -2327,6 +2363,13 @@ a.team-card {
     #scroll-hint {
         font-size: 9px;
         letter-spacing: 3px;
+        bottom: 34px;
+    }
+
+    #game-bottom-bar {
+        height: 24px;
+        font-size: 11px;
+        letter-spacing: 1px;
         bottom: 34px;
     }
 
