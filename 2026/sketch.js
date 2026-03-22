@@ -317,6 +317,9 @@ function mousePressed() {
     return;
   }
 
+  // Check mobile scroll button before game interaction
+  if (_handleScrollBtnClick()) return;
+
   if (
     !refining &&
     !completed &&
@@ -747,6 +750,60 @@ function drawBottom() {
       HACKX_CONFIG.shareUrl;
   }
   g.text(bottomText, g.width * 0.5, g.height - 10);
+
+  // Mobile-only scroll-down button drawn in the gap between numbers grid and bins
+  if (isTouchScreenDevice() && !booting) {
+    var gridBottom = buffer + rows * cellSize;
+    var binTop = g.height - buffer;
+    var btnY = (gridBottom + binTop) * 0.5;
+    var btnX = g.width * 0.5;
+    var btnW = 70;
+    var btnH = 18;
+
+    // Subtle pulsing opacity
+    var pulse = map(sin(millis() * 0.003), -1, 1, 0.35, 0.7);
+
+    g.push();
+    g.rectMode(CENTER);
+    g.stroke(palette.FG);
+    g.strokeWeight(1);
+    g.noFill();
+
+    // Draw button outline
+    var c = color(palette.FG);
+    c.setAlpha(pulse * 255);
+    g.stroke(c);
+    g.rect(btnX, btnY, btnW, btnH, 3);
+
+    // Draw chevron ▼
+    g.noStroke();
+    g.fill(c);
+    g.textFont("Courier");
+    g.textSize(9);
+    g.textAlign(CENTER, CENTER);
+    g.text("\u25BC", btnX, btnY);
+    g.pop();
+
+    // Store hit area for click detection
+    _scrollBtnBounds = { x: btnX - btnW / 2, y: btnY - btnH / 2, w: btnW, h: btnH };
+  }
+}
+
+var _scrollBtnBounds = null;
+
+function _handleScrollBtnClick() {
+  if (!_scrollBtnBounds) return false;
+  if (
+    mouseX >= _scrollBtnBounds.x &&
+    mouseX <= _scrollBtnBounds.x + _scrollBtnBounds.w &&
+    mouseY >= _scrollBtnBounds.y &&
+    mouseY <= _scrollBtnBounds.y + _scrollBtnBounds.h
+  ) {
+    var about = document.getElementById("about-section");
+    if (about) about.scrollIntoView({ behavior: "smooth" });
+    return true;
+  }
+  return false;
 }
 
 function drawBinned() {
