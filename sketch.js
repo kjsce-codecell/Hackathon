@@ -42,7 +42,7 @@ let shareDiv;
 
 // Hack X states
 let booting = false;
-let gameEnterAnim = 1; // skip boot, game ready immediately
+let gameEnterAnim = 1; // skip boot — game ready immediately
 let gameEnterStart = 0;
 let bootFrameCounter = 0;
 let bootGlitching = false;
@@ -135,29 +135,8 @@ let macrodataFile;
 let logoImg;
 
 function preload() {
-  // Only the CRT shader is needed before setup — everything else lazy-loads
+  // Only load the CRT shader — everything else lazy-loads after setup
   crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
-}
-
-// Lazy-load non-critical images after setup (not needed during boot)
-let _lazyImagesLoaded = false;
-function lazyLoadImages() {
-  if (_lazyImagesLoaded) return;
-  _lazyImagesLoaded = true;
-  nopeImg = loadImage("images/nope.png", img => { img.resize(min(windowWidth, windowHeight) * 0.5, 0); });
-  completedImg = loadImage("images/100.png", img => {
-    img.resize(min(windowWidth, windowHeight) * 0.5, 0);
-    // Update shareDiv dimensions once image is ready
-    if (shareDiv) {
-      const shw = img.width;
-      const shh = img.height;
-      shareDiv.position(windowWidth * 0.5 - shw * 0.5, windowHeight * 0.5 - shh * 0.5);
-      shareDiv.style("width", shw + "px");
-      shareDiv.style("height", shh + "px");
-    }
-  });
-  sharedImg = loadImage("images/clipboard.png", img => { img.resize(min(windowWidth, windowHeight) * 0.5, 0); });
-  logoImg = loadImage('images/logo.svg');
 }
 
 function startOver(resetFile = false) {
@@ -216,46 +195,40 @@ var zoff = 0;
 var smaller;
 
 function setup() {
-  // Magenta background pre-removed from spritesheet at build time
-
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("game-container");
   frameRate(30);
 
-  // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
   g = createGraphics(windowWidth, windowHeight);
 
-  // Scale buffer for mobile
   smaller = min(g.width, g.height);
   buffer = max(70, min(100, smaller * 0.12));
 
-  // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
-  // If the site is using the global CRT curvature pass (sections.js),
-  // skip the game's local CRT shader to keep one continuous "screen".
   if (typeof window !== "undefined" && window.__HACKX_GLOBAL_CRT__ === true) {
     useShader = false;
   }
-
-  // The shader boosts colour values so we reset the palette if using shader
   if (useShader) {
     palette = shaderPalette;
   }
 
-  // force pixel density to 1 to improve perf on retina screens
   pixelDensity(1);
 
-  // p5 graphics element to draw our shader output to
   shaderLayer = createGraphics(g.width, g.height, WEBGL);
   shaderLayer.noStroke();
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
 
-  // No boot sequence — enable scroll and hint immediately
+  // Enable scroll immediately (no boot gate)
   document.body.style.overflowY = "auto";
-  const hint = document.getElementById("scroll-hint");
+  var hint = document.getElementById("scroll-hint");
   if (hint) hint.style.opacity = "1";
+
+  // Hide the boot loader
+  var bl = document.getElementById("boot-loader");
+  if (bl) bl.classList.add("hide");
+  setTimeout(function() { if (bl) bl.remove(); }, 400);
 
   // Always start fresh on page load
   localStorage.removeItem("hackx-data");
@@ -263,15 +236,25 @@ function setup() {
   macrodataFile = new MacrodataFile();
   secondsSpentRefining = 0;
 
-  // Share div — dimensions updated once completedImg lazy-loads
+  // Lazy-load non-critical images (not needed until gameplay events)
+  nopeImg = loadImage("images/nope.png", function(img) { img.resize(smaller * 0.5, 0); });
+  completedImg = loadImage("images/100.png", function(img) {
+    img.resize(smaller * 0.5, 0);
+    if (shareDiv) {
+      shareDiv.position(g.width * 0.5 - img.width * 0.5, g.height * 0.5 - img.height * 0.5);
+      shareDiv.style("width", img.width + "px");
+      shareDiv.style("height", img.height + "px");
+    }
+  });
+  sharedImg = loadImage("images/clipboard.png", function(img) { img.resize(smaller * 0.5, 0); });
+  logoImg = loadImage("images/logo.svg");
+  bootSpriteImg = loadImage("images/blue_spritesheet.png");
+
   shareDiv = createDiv("");
   shareDiv.hide();
   shareDiv.position(g.width * 0.5 - 100, g.height * 0.5 - 100);
   shareDiv.style("width", "200px");
   shareDiv.style("height", "200px");
-
-  // Kick off lazy loading of non-critical images
-  lazyLoadImages();
   shareDiv.mousePressed(function () {
     let thenumbers = "";
     for (let r = 0; r < 5; r++) {
@@ -487,7 +470,7 @@ function draw() {
     }
   }
 
-  if (nope && nopeImg) {
+  if (nope && nopeImg && nopeImg.width) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(nopeImg, g.width * 0.5, g.height * 0.5);
@@ -496,13 +479,13 @@ function draw() {
     }
   }
 
-  if (completed && completedImg) {
+  if (completed && completedImg && completedImg.width) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(completedImg, g.width * 0.5, g.height * 0.5);
   }
 
-  if (shared && sharedImg) {
+  if (shared && sharedImg && sharedImg.width) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(sharedImg, g.width * 0.5, g.height * 0.5);
@@ -638,18 +621,18 @@ function drawTop(percent) {
 
   // Right: event info
   g.textAlign(RIGHT, TOP);
-  g.textSize(max(9, smaller * 0.015));
-  const c = color(palette.FG);
-  c.setAlpha(180);
-  g.fill(c);
+  g.textSize(max(14, smaller * 0.022));
+  g.textStyle(BOLD);
+  g.fill(palette.FG);
   const headerText = g.width < 500
     ? HACKX_CONFIG.date
     : HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location;
   g.text(
     headerText,
-    g.width * 0.96,
+    g.width - 14,
     y,
   );
+  g.textStyle(NORMAL);
 }
 
 function drawNumbers() {
@@ -735,12 +718,14 @@ function drawBottom() {
 
   // Bottom bar — event info instead of hex coordinates
   g.rectMode(CORNER);
+  const barH = smaller < 500 ? 32 : 26;
   g.fill(palette.FG);
-  g.rect(0, g.height - 20, g.width, 20);
+  g.rect(0, g.height - barH, g.width, barH);
   g.fill(palette.BG);
   g.textFont("Courier");
   g.textAlign(CENTER, CENTER);
-  g.textSize(max(8, baseSize * 0.6));
+  g.textStyle(BOLD);
+  g.textSize(max(12, baseSize * 0.7));
   let bottomText;
   if (smaller < 500) {
     bottomText = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
@@ -754,7 +739,8 @@ function drawBottom() {
       " // " +
       HACKX_CONFIG.shareUrl;
   }
-  g.text(bottomText, g.width * 0.5, g.height - 10);
+  g.text(bottomText, g.width * 0.5, g.height - barH / 2);
+  g.textStyle(NORMAL);
 }
 
 function drawBinned() {
@@ -869,11 +855,11 @@ function drawCursor(xPos, yPos) {
 function drawBootSequence() {
   g.background(palette.BG);
 
-  // Spritesheet: 10 columns, 9 rows, 400x400 per frame, 89 usable frames
+  // Spritesheet: 10 columns, 9 rows, 1080x1080 per frame, 89 usable frames
   const spriteCols = 10;
   const spriteRows = 9;
-  const frameW = 400;
-  const frameH = 400;
+  const frameW = 1080;
+  const frameH = 1080;
   const totalFrames = 89;
 
   // Advance frame every other draw call (~15fps at 30fps)
@@ -1170,9 +1156,9 @@ function windowResized(ev) {
   smaller = min(g.width, g.height);
   buffer = max(70, min(100, smaller * 0.12));
 
-  if (sharedImg) sharedImg.resize(smaller * 0.5, 0);
-  if (nopeImg) nopeImg.resize(smaller * 0.5, 0);
-  if (completedImg) completedImg.resize(smaller * 0.5, 0);
+  if (sharedImg && sharedImg.width) sharedImg.resize(smaller * 0.5, 0);
+  if (nopeImg && nopeImg.width) nopeImg.resize(smaller * 0.5, 0);
+  if (completedImg && completedImg.width) completedImg.resize(smaller * 0.5, 0);
 
   refined.forEach((bin) => bin.resize(g.width / refined.length));
 
