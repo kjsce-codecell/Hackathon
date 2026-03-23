@@ -13,7 +13,9 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#4fd1d9" />
     <link rel="canonical" href="https://hack.kjsse.com/" />
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="images/icon.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="images/icon.png" />
 
     <!-- Open Graph -->
@@ -29,6 +31,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="HACK X // CodeCell" />
     <meta property="og:locale" content="en_IN" />
+    <!-- OG Logo (secondary image — used by some crawlers as site icon) -->
+    <meta property="og:image" content="https://hack.kjsse.com/images/icon-512.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="HACK X Logo" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,6 +45,9 @@
         content="24-hour hackathon at KJ Somaiya, Mumbai. ₹3L+ prizes, 200+ participants. AI/ML & Web3 tracks." />
     <meta name="twitter:image" content="https://hack.kjsse.com/open-graph.png" />
     <meta name="twitter:image:alt" content="HACK X — 24-Hour Hackathon by CodeCell" />
+
+    <!-- Telegram -->
+    <meta name="telegram:channel" content="@hackx" />
 
     <!-- Geo & Language -->
     <meta name="geo.region" content="IN-MH" />
@@ -78,7 +89,13 @@
         "@type": "Organization",
         "name": "CodeCell — KJ Somaiya College of Engineering",
         "url": "https://hack.kjsse.com/",
-        "email": "codecell.engg@somaiya.edu"
+        "email": "codecell.engg@somaiya.edu",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hack.kjsse.com/images/icon-512.png",
+          "width": 512,
+          "height": 512
+        }
       },
       "offers": {
         "@type": "Offer",
