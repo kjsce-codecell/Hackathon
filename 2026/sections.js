@@ -87,6 +87,7 @@
     let mouseX = -9999;
     let mouseY = -9999;
     let hide = false;
+    let dirty = true;
 
     function isInsideHero(x, y) {
       const hero = document.getElementById("hero-section");
@@ -101,6 +102,7 @@
         mouseX = e.clientX;
         mouseY = e.clientY;
         hide = isInsideHero(mouseX, mouseY);
+        dirty = true;
       },
       { passive: true },
     );
@@ -110,11 +112,14 @@
       () => {
         mouseX = -9999;
         mouseY = -9999;
+        dirty = true;
       },
       { passive: true },
     );
 
     function draw() {
+      if (!dirty) { requestAnimationFrame(draw); return; }
+      dirty = false;
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       if (!hide && mouseX >= 0 && mouseY >= 0) {
         ctx.save();
@@ -408,6 +413,14 @@
     // and add a point light at the top-right of the model.
     const mv = document.querySelector("model-viewer.about-model");
     if (mv) {
+      // On touch devices, disable camera-controls so vertical scroll isn't captured
+      const isTouch = (typeof window.isTouchScreenDevice === "function")
+        ? window.isTouchScreenDevice()
+        : (window.matchMedia && window.matchMedia("(pointer:coarse)").matches);
+      if (isTouch) {
+        mv.removeAttribute("camera-controls");
+      }
+
       mv.addEventListener("load", () => {
         const locked = mv.getCameraTarget();
         const lockedStr = `${locked.x}m ${locked.y}m ${locked.z}m`;

@@ -139,7 +139,7 @@ function preload() {
   completedImg = loadImage("images/100.png");
   sharedImg = loadImage("images/clipboard.png");
   logoImg = loadImage('images/logo.svg')
-  bootSpriteImg = loadImage("images/blue_spritesheet.png");
+  bootSpriteImg = loadImage("images/blue_spritesheet.webp");
   crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
 }
 
@@ -861,11 +861,11 @@ function drawCursor(xPos, yPos) {
 function drawBootSequence() {
   g.background(palette.BG);
 
-  // Spritesheet: 10 columns, 9 rows, 1080x1080 per frame, 89 usable frames
+  // Spritesheet: 10 columns, 9 rows, 540x540 per frame (optimized), 89 usable frames
   const spriteCols = 10;
   const spriteRows = 9;
-  const frameW = 1080;
-  const frameH = 1080;
+  const frameW = 540;
+  const frameH = 540;
   const totalFrames = 89;
 
   // Advance frame every other draw call (~15fps at 30fps)
@@ -901,8 +901,15 @@ function drawBootSequence() {
   g.textAlign(CENTER, TOP);
   g.text("INITIALIZING HACK X...", g.width / 2, dy + displaySize + 20);
 
-  // After 2 full loops, start glitch + fade out
-  if (bootSpriteLoops >= 2) {
+  // Skip hint
+  g.fill(palette.FG);
+  g.textSize(smaller * 0.018);
+  const skipAlpha = map(sin(millis() * 0.003), -1, 1, 80, 200);
+  g.fill(red(palette.FG), green(palette.FG), blue(palette.FG), skipAlpha);
+  g.text("[ CLICK / TAP TO SKIP ]", g.width / 2, dy + displaySize + 50);
+
+  // After 1 full loop, start glitch + fade out
+  if (bootSpriteLoops >= 1) {
     if (!bootGlitching) {
       bootGlitching = true;
       bootGlitchStart = millis();

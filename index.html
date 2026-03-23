@@ -3,90 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>HACK X — 24-Hour Hackathon by CodeCell | KJ Somaiya | April 11-12, 2026</title>
+    <title>HACK X // CodeCell</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="HACK X by CodeCell — A 24-hour hackathon at KJ Somaiya College of Engineering, Mumbai. April 11-12, 2026. Prize pool of ₹3 Lakhs+. 200+ participants. Tracks: AI/ML, Web3. Register now!" />
-    <meta name="keywords" content="HACK X, hackathon, CodeCell, KJ Somaiya, KJSCE, hackathon Mumbai, 24 hour hackathon, hackathon 2026, coding competition, AI ML hackathon, Web3 hackathon, student hackathon, tech event Mumbai, programming contest, hack x codecell, somaiya hackathon, hackathon registration, coding marathon, developer event, innovation challenge" />
-    <meta name="author" content="CodeCell — KJ Somaiya College of Engineering" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="HACK X by CodeCell — A 24-hour hackathon at KJ Somaiya College of Engineering, April 11-12 2026. Prize pool of 3 Lakhs+. Changing the world, one bit at a time." />
     <meta name="theme-color" content="#4fd1d9" />
-    <link rel="canonical" href="https://hack.kjsse.com/" />
-    <link rel="icon" type="image/png" sizes="192x192" href="images/icon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="images/icon.png" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="HACK X — 24-Hour Hackathon by CodeCell | April 11-12, 2026" />
-    <meta property="og:description" content="A 24-hour hackathon at KJ Somaiya College of Engineering, Mumbai. ₹3 Lakhs+ prize pool. 200+ participants. AI/ML & Web3 tracks. Register now!" />
-    <meta property="og:image" content="https://hack.kjsse.com/open-graph.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="HACK X — 24-Hour Hackathon by CodeCell at KJ Somaiya" />
-    <meta property="og:url" content="https://hack.kjsse.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="HACK X // CodeCell" />
-    <meta property="og:locale" content="en_IN" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HACK X — 24-Hour Hackathon by CodeCell | April 2026" />
-    <meta name="twitter:description" content="24-hour hackathon at KJ Somaiya, Mumbai. ₹3L+ prizes, 200+ participants. AI/ML & Web3 tracks." />
-    <meta name="twitter:image" content="https://hack.kjsse.com/open-graph.png" />
-    <meta name="twitter:image:alt" content="HACK X — 24-Hour Hackathon by CodeCell" />
-
-    <!-- Geo & Language -->
-    <meta name="geo.region" content="IN-MH" />
-    <meta name="geo.placename" content="Mumbai" />
-    <meta name="geo.position" content="19.0728;72.8990" />
-    <meta name="ICBM" content="19.0728, 72.8990" />
-    <meta http-equiv="content-language" content="en-IN" />
-
-    <!-- Structured Data (Event + Organization) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "HACK X — 24-Hour Hackathon by CodeCell",
-      "description": "A 24-hour hackathon at KJ Somaiya College of Engineering, Mumbai. Prize pool of ₹3 Lakhs+. Tracks: AI/ML (Nexus) & Web3 (Spectra).",
-      "startDate": "2026-04-11T11:00:00+05:30",
-      "endDate": "2026-04-12T11:00:00+05:30",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "KJ Somaiya College of Engineering",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Vidyavihar",
-          "addressLocality": "Mumbai",
-          "addressRegion": "Maharashtra",
-          "postalCode": "400077",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 19.0728,
-          "longitude": 72.8990
-        }
-      },
-      "image": "https://hack.kjsse.com/open-graph.png",
-      "organizer": {
-        "@type": "Organization",
-        "name": "CodeCell — KJ Somaiya College of Engineering",
-        "url": "https://hack.kjsse.com/",
-        "email": "codecell.engg@somaiya.edu"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://hack.kjsse.com/"
-      },
-      "maximumAttendeeCapacity": 200,
-      "url": "https://hack.kjsse.com/"
-    }
-    </script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <meta property="og:title" content="HACK X // CodeCell" />
+    <meta property="og:description" content="The hackathon experience. Refine your data. Prove your worth." />
     <!-- Preconnect to external origins for faster resource loading -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" crossorigin />
@@ -137,7 +59,7 @@
          * Sheet: 2000 × 1800 px  →  10 cols × 9 rows  →  200 × 200 px per frame.
          * We display it at 160 × 160 px (80% of native) — crisp on all screens.
          */
-        #loader-sprite {
+        .loader-sprite {
             /* rendered display size */
             --fw: 160px;
             --fh: 160px;
@@ -146,7 +68,7 @@
             height: var(--fh);
             overflow: hidden;
 
-            background-image: url("loader.png");
+            background-image: url("loader.webp");
             /* scale the full sheet to 10× and 9× the display frame size */
             background-size: calc(var(--fw) * 10) calc(var(--fh) * 9);
             background-repeat: no-repeat;
@@ -156,14 +78,14 @@
             image-rendering: crisp-edges;
         }
     </style>
-    <link rel="preload" as="image" href="images/blue_spritesheet.png" />
+    <!-- blue_spritesheet loaded by p5 preload(), no need to preload in head -->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="manifest" href="manifest.json" />
     <script>
         history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 </head>
 
 <body>
@@ -645,7 +567,14 @@
                         <span>Who can participate?</span>
                         <span class="faq-toggle"></span>
                     </div>
-                    <div class="faq-answer">Anyone with an interest in technology, coding, or innovation can participate! Whether you're a beginner or an experienced developer, there's a place for you at our hackathon.</div>
+                    <div class="faq-answer">HACK X is exclusively for students — hosted by students, built for students. Whether you're a beginner or an experienced developer, if you're currently enrolled in a college or university, there's a place for you at our hackathon. A valid college ID is required for participation.</div>
+                    </div>
+                    <div class="faq-item">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                        <span>Is this hackathon only for students?</span>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">Yes! HACK X is a student-only hackathon — by the students, for the students. It is organized entirely by CodeCell, a student committee at K.J. Somaiya College of Engineering. All participants must be currently enrolled students and carry a valid college identity card.</div>
                     </div>
                     <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
@@ -782,7 +711,8 @@
     <script src="data.js"></script>
     <script src="utils.js"></script>
     <script src="macrodata.js"></script>
-    <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="auto"></audio>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="none"></audio>
     <button id="stopMusicBtn">STOP MUSIC</button>
     <script src="sections.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>

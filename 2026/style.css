@@ -1888,7 +1888,7 @@ a.team-card {
 .loader-sprite {
     width: 35vmin;
     height: 35vmin;
-    background: url("images/blue_spritesheet.png") no-repeat 0 0;
+    background: url("images/blue_spritesheet.webp") no-repeat 0 0;
     background-size: 350vmin 315vmin;
     animation: spriteAnim 2.5s steps(1) infinite;
 }
@@ -2186,6 +2186,7 @@ a.team-card {
         width: min(520px, 96vw);
         height: min(520px, 96vw);
         margin: 0 auto;
+        touch-action: pan-y;
     }
 
     .about-left .glitch-text {
