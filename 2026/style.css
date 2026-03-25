@@ -14,6 +14,7 @@ html {
     scrollbar-width: thin;
     scrollbar-color: #4fd1d9 #0a1628;
     font-size: 100%; /* Base font size for relative scaling */
+    overscroll-behavior-y: contain;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
     --text-dim: #5a8a94;
     --bg: #0a1628;
     cursor: none;
+    overscroll-behavior-y: contain;
 }
 
 /* Hide system cursor across interactive elements */
