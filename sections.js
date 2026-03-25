@@ -2961,12 +2961,8 @@ void main() {
     ];
 
     function makeCard(member) {
-      const card = document.createElement("a");
+      const card = document.createElement("div");
       card.className = "team-card";
-      card.href = member.profile;
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
-      card.setAttribute("aria-label", "Open " + member.name + " profile");
 
       card.innerHTML = `
         <div class="team-photo">
