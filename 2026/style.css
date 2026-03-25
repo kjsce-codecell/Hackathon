@@ -21,7 +21,7 @@ body {
     color: #4fd1d9;
     font-family: "Geist Pixel", "Courier New", Courier, monospace;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     letter-spacing: 0.04em;
     --accent: #4fd1d9;
     --red: var(--accent);
@@ -259,7 +259,7 @@ label {
 
 #game-container>canvas:first-of-type {
     display: block;
-    touch-action: none;
+    touch-action: pan-y;
     cursor: none;
 }
 
