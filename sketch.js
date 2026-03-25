@@ -41,8 +41,8 @@ let sharedTime = 0;
 let shareDiv;
 
 // Hack X states
-let booting = false;
-let gameEnterAnim = 1; // skip boot — game ready immediately
+let booting = true;
+let gameEnterAnim = 0; // 0 to 1 fade-in after boot
 let gameEnterStart = 0;
 let bootFrameCounter = 0;
 let bootGlitching = false;
@@ -135,7 +135,11 @@ let macrodataFile;
 let logoImg;
 
 function preload() {
-  // Only load the CRT shader — everything else lazy-loads after setup
+  nopeImg = loadImage("images/nope.png");
+  completedImg = loadImage("images/100.png");
+  sharedImg = loadImage("images/clipboard.png");
+  logoImg = loadImage('images/logo.svg')
+  bootSpriteImg = loadImage("images/blue_spritesheet.webp");
   crtShader = loadShader("shaders/crt.vert.glsl", "shaders/crt.frag.glsl");
 }
 
@@ -195,50 +199,52 @@ var zoff = 0;
 var smaller;
 
 function setup() {
+  // Chroma-key the magenta background out of the boot spritesheet
+  bootSpriteImg.loadPixels();
+  for (let i = 0; i < bootSpriteImg.pixels.length; i += 4) {
+    const r = bootSpriteImg.pixels[i];
+    const g_ = bootSpriteImg.pixels[i + 1];
+    const b = bootSpriteImg.pixels[i + 2];
+    // Pink/magenta background: high red, low green, high-ish blue
+    if (r > 180 && g_ < 100 && b > 100) {
+      bootSpriteImg.pixels[i + 3] = 0; // set alpha to 0
+    }
+  }
+  bootSpriteImg.updatePixels();
+
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("game-container");
   frameRate(30);
 
+  // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
   g = createGraphics(windowWidth, windowHeight);
 
+  // Scale buffer for mobile
   smaller = min(g.width, g.height);
-  buffer = max(100, min(130, smaller * 0.16));
+  buffer = max(70, min(100, smaller * 0.12));
 
+  // We don't want to use shader on mobile
   useShader = !isTouchScreenDevice();
+  // If the site is using the global CRT curvature pass (sections.js),
+  // skip the game's local CRT shader to keep one continuous "screen".
   if (typeof window !== "undefined" && window.__HACKX_GLOBAL_CRT__ === true) {
     useShader = false;
   }
+
+  // The shader boosts colour values so we reset the palette if using shader
   if (useShader) {
     palette = shaderPalette;
   }
 
+  // force pixel density to 1 to improve perf on retina screens
   pixelDensity(1);
 
+  // p5 graphics element to draw our shader output to
   shaderLayer = createGraphics(g.width, g.height, WEBGL);
   shaderLayer.noStroke();
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-
-  // Enable scroll immediately (no boot gate)
-  document.body.style.overflowY = "auto";
-  var hint = document.getElementById("scroll-hint");
-  if (hint) hint.style.opacity = "1";
-
-  // Populate bottom bar text
-  var bottomBar = document.getElementById("game-bottom-bar");
-  if (bottomBar) {
-    if (smaller < 500) {
-      bottomBar.textContent = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
-    } else {
-      bottomBar.textContent = HACKX_CONFIG.orgName + " // " + HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date + " // " + HACKX_CONFIG.shareUrl;
-    }
-  }
-
-  // Hide the boot loader
-  var bl = document.getElementById("boot-loader");
-  if (bl) bl.classList.add("hide");
-  setTimeout(function() { if (bl) bl.remove(); }, 400);
 
   // Always start fresh on page load
   localStorage.removeItem("hackx-data");
@@ -246,25 +252,18 @@ function setup() {
   macrodataFile = new MacrodataFile();
   secondsSpentRefining = 0;
 
-  // Lazy-load non-critical images (not needed until gameplay events)
-  nopeImg = loadImage("images/nope.png", function(img) { img.resize(smaller * 0.5, 0); });
-  completedImg = loadImage("images/100.png", function(img) {
-    img.resize(smaller * 0.5, 0);
-    if (shareDiv) {
-      shareDiv.position(g.width * 0.5 - img.width * 0.5, g.height * 0.5 - img.height * 0.5);
-      shareDiv.style("width", img.width + "px");
-      shareDiv.style("height", img.height + "px");
-    }
-  });
-  sharedImg = loadImage("images/clipboard.png", function(img) { img.resize(smaller * 0.5, 0); });
-  logoImg = loadImage("images/logo.svg");
-  bootSpriteImg = loadImage("images/blue_spritesheet.png");
+  sharedImg.resize(smaller * 0.5, 0);
+  nopeImg.resize(smaller * 0.5, 0);
+  completedImg.resize(smaller * 0.5, 0);
 
+  // Width for the share 100% button
+  const shw = completedImg.width;
+  const shh = completedImg.height;
   shareDiv = createDiv("");
   shareDiv.hide();
-  shareDiv.position(g.width * 0.5 - 100, g.height * 0.5 - 100);
-  shareDiv.style("width", "200px");
-  shareDiv.style("height", "200px");
+  shareDiv.position(g.width * 0.5 - shw * 0.5, g.height * 0.5 - shh * 0.5);
+  shareDiv.style("width", `${shw}px`);
+  shareDiv.style("height", `${shh}px`);
   shareDiv.mousePressed(function () {
     let thenumbers = "";
     for (let r = 0; r < 5; r++) {
@@ -480,7 +479,7 @@ function draw() {
     }
   }
 
-  if (nope && nopeImg && nopeImg.width) {
+  if (nope) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(nopeImg, g.width * 0.5, g.height * 0.5);
@@ -489,13 +488,13 @@ function draw() {
     }
   }
 
-  if (completed && completedImg && completedImg.width) {
+  if (completed) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(completedImg, g.width * 0.5, g.height * 0.5);
   }
 
-  if (shared && sharedImg && sharedImg.width) {
+  if (shared) {
     g.imageMode(CENTER);
     if (!useShader) g.tint(mobilePalette.FG);
     g.image(sharedImg, g.width * 0.5, g.height * 0.5);
@@ -631,22 +630,18 @@ function drawTop(percent) {
 
   // Right: event info
   g.textAlign(RIGHT, TOP);
-  g.textSize(max(14, smaller * 0.022));
-  g.textStyle(BOLD);
-  g.fill(palette.FG);
-  if (g.width < 500) {
-    g.stroke(palette.FG);
-    g.strokeWeight(1);
-  }
+  g.textSize(max(9, smaller * 0.015));
+  const c = color(palette.FG);
+  c.setAlpha(180);
+  g.fill(c);
   const headerText = g.width < 500
     ? HACKX_CONFIG.date
     : HACKX_CONFIG.date + "  //  " + HACKX_CONFIG.location;
   g.text(
     headerText,
-    g.width - 14,
+    g.width * 0.96,
     y,
   );
-  g.textStyle(NORMAL);
 }
 
 function drawNumbers() {
@@ -730,7 +725,28 @@ function drawBottom() {
     g.pop();
   }
 
-  // Bottom bar is rendered as HTML overlay (#game-bottom-bar)
+  // Bottom bar — event info instead of hex coordinates
+  g.rectMode(CORNER);
+  g.fill(palette.FG);
+  g.rect(0, g.height - 20, g.width, 20);
+  g.fill(palette.BG);
+  g.textFont("Courier");
+  g.textAlign(CENTER, CENTER);
+  g.textSize(max(8, baseSize * 0.6));
+  let bottomText;
+  if (smaller < 500) {
+    bottomText = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
+  } else {
+    bottomText =
+      HACKX_CONFIG.orgName +
+      " // " +
+      HACKX_CONFIG.eventName +
+      " // " +
+      HACKX_CONFIG.date +
+      " // " +
+      HACKX_CONFIG.shareUrl;
+  }
+  g.text(bottomText, g.width * 0.5, g.height - 10);
 }
 
 function drawBinned() {
@@ -845,11 +861,11 @@ function drawCursor(xPos, yPos) {
 function drawBootSequence() {
   g.background(palette.BG);
 
-  // Spritesheet: 10 columns, 9 rows, 1080x1080 per frame, 89 usable frames
+  // Spritesheet: 10 columns, 9 rows, 540x540 per frame (optimized), 89 usable frames
   const spriteCols = 10;
   const spriteRows = 9;
-  const frameW = 1080;
-  const frameH = 1080;
+  const frameW = 540;
+  const frameH = 540;
   const totalFrames = 89;
 
   // Advance frame every other draw call (~15fps at 30fps)
@@ -885,8 +901,15 @@ function drawBootSequence() {
   g.textAlign(CENTER, TOP);
   g.text("INITIALIZING HACK X...", g.width / 2, dy + displaySize + 20);
 
-  // After 2 full loops, start glitch + fade out
-  if (bootSpriteLoops >= 2) {
+  // Skip hint
+  g.fill(palette.FG);
+  g.textSize(smaller * 0.018);
+  const skipAlpha = map(sin(millis() * 0.003), -1, 1, 80, 200);
+  g.fill(red(palette.FG), green(palette.FG), blue(palette.FG), skipAlpha);
+  g.text("[ CLICK / TAP TO SKIP ]", g.width / 2, dy + displaySize + 50);
+
+  // After 1 full loop, start glitch + fade out
+  if (bootSpriteLoops >= 1) {
     if (!bootGlitching) {
       bootGlitching = true;
       bootGlitchStart = millis();
@@ -967,8 +990,6 @@ function drawReveal() {
       g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
-      g.stroke(palette.FG);
-      g.strokeWeight(smaller < 500 ? 2.5 : 1.5);
 
       revealFrameCounter++;
       if (revealFrameCounter >= 3) {
@@ -1025,8 +1046,6 @@ function drawReveal() {
       g.textFont("Courier");
       g.textSize(smaller * 0.035);
       g.textAlign(CENTER, CENTER);
-      g.stroke(palette.FG);
-      g.strokeWeight(smaller < 500 ? 2.5 : 1.5);
 
       const holdWords = revealText.split(" ");
       let holdLines = [""];
@@ -1074,7 +1093,7 @@ function drawReveal() {
         if (revealsDone.includes(100)) {
           completed = true;
           completedTime = millis() - startTime;
-          // shareDiv.show();
+          shareDiv.show();
         }
       }
       break;
@@ -1148,11 +1167,11 @@ function windowResized(ev) {
   crtShader.setUniform("u_resolution", [g.width, g.height]);
 
   smaller = min(g.width, g.height);
-  buffer = max(100, min(130, smaller * 0.16));
+  buffer = max(70, min(100, smaller * 0.12));
 
-  if (sharedImg && sharedImg.width) sharedImg.resize(smaller * 0.5, 0);
-  if (nopeImg && nopeImg.width) nopeImg.resize(smaller * 0.5, 0);
-  if (completedImg && completedImg.width) completedImg.resize(smaller * 0.5, 0);
+  sharedImg.resize(smaller * 0.5, 0);
+  nopeImg.resize(smaller * 0.5, 0);
+  completedImg.resize(smaller * 0.5, 0);
 
   refined.forEach((bin) => bin.resize(g.width / refined.length));
 
@@ -1176,15 +1195,5 @@ function windowResized(ev) {
   for (let i = 0; i < dustParticles.length; i++) {
     dustParticles[i].x = random(g.width);
     dustParticles[i].y = random(g.height);
-  }
-
-  // Update bottom bar text on resize
-  var bottomBar = document.getElementById("game-bottom-bar");
-  if (bottomBar) {
-    if (smaller < 500) {
-      bottomBar.textContent = HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date;
-    } else {
-      bottomBar.textContent = HACKX_CONFIG.orgName + " // " + HACKX_CONFIG.eventName + " // " + HACKX_CONFIG.date + " // " + HACKX_CONFIG.shareUrl;
-    }
   }
 }
