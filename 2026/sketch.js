@@ -12,7 +12,7 @@ var cols, rows;
 
 // Info for refining
 let refining = false;
-let refineTX, refinteTY, refineBX, refineBY;
+let refineTX, refineTY, refineBX, refineBY;
 
 // Logo text replaces lumon image
 const logoTextWidth = 180;
@@ -214,10 +214,12 @@ function setup() {
 
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("game-container");
+  cnv.drawingContext.willReadFrequently = true;
   frameRate(30);
 
   // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
   g = createGraphics(windowWidth, windowHeight);
+  g.drawingContext.willReadFrequently = true;
 
   // Scale buffer for mobile
   smaller = min(g.width, g.height);
