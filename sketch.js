@@ -41,8 +41,8 @@ let sharedTime = 0;
 let shareDiv;
 
 // Hack X states
-let booting = true;
-let gameEnterAnim = 0; // 0 to 1 fade-in after boot
+let booting = false;
+let gameEnterAnim = 1; // skip boot — game ready immediately
 let gameEnterStart = 0;
 let bootFrameCounter = 0;
 let bootGlitching = false;
@@ -216,6 +216,13 @@ function setup() {
   cnv.parent("game-container");
   cnv.drawingContext.willReadFrequently = true;
   frameRate(30);
+
+  // Hide the HTML boot-loader overlay and enable scrolling
+  const bootLoader = document.getElementById("boot-loader");
+  if (bootLoader) bootLoader.classList.add("hide");
+  document.body.style.overflowY = "auto";
+  const hint = document.getElementById("scroll-hint");
+  if (hint) hint.style.opacity = "1";
 
   // create a downscaled graphics buffer to draw to, we'll upscale after applying crt shader
   g = createGraphics(windowWidth, windowHeight);
