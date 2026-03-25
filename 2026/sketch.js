@@ -83,6 +83,7 @@ let dustParticles = [];
 const TOUCH_TAP_SLOP = 12;
 let touchGestureActive = false;
 let touchGestureMoved = false;
+let touchRefining = false;
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -416,6 +417,7 @@ function completeRefineSelection() {
 function touchStarted() {
   touchGestureActive = true;
   touchGestureMoved = false;
+  touchRefining = false;
 
   if (touches.length > 0) {
     touchStartX = touches[0].x;
@@ -434,8 +436,39 @@ function touchMoved() {
 
   const deltaX = touches[0].x - touchStartX;
   const deltaY = touches[0].y - touchStartY;
-  if (Math.hypot(deltaX, deltaY) > TOUCH_TAP_SLOP) {
-    touchGestureMoved = true;
+  const distance = Math.hypot(deltaX, deltaY);
+
+  if (touchRefining) {
+    refineBX = touches[0].x;
+    refineBY = touches[0].y;
+    return false;
+  }
+
+  if (distance <= TOUCH_TAP_SLOP) {
+    return true;
+  }
+
+  touchGestureMoved = true;
+
+  const isHorizontalIntent = Math.abs(deltaX) >= Math.abs(deltaY);
+  if (
+    isHorizontalIntent &&
+    !refining &&
+    !completed &&
+    !shared &&
+    !booting &&
+    !revealing &&
+    !terminalOpen
+  ) {
+    refineTX = touchStartX;
+    refineTY = touchStartY;
+    refineBX = touches[0].x;
+    refineBY = touches[0].y;
+    refining = true;
+    touchRefining = true;
+    nope = false;
+    playClick();
+    return false;
   }
 
   return true;
@@ -444,9 +477,18 @@ function touchMoved() {
 function touchEnded() {
   if (!touchGestureActive) return true;
 
+  if (touchRefining) {
+    touchGestureActive = false;
+    touchGestureMoved = false;
+    touchRefining = false;
+    completeRefineSelection();
+    return false;
+  }
+
   const wasTap = !touchGestureMoved;
   touchGestureActive = false;
   touchGestureMoved = false;
+  touchRefining = false;
 
   if (wasTap) {
     handlePrimaryPress({ allowRefine: false, x: touchStartX, y: touchStartY });
