@@ -1,5 +1,6 @@
 const keys = ['WO', 'FC', 'DR', 'MA'];
 const keyDisplayNames = { WO: 'CODE', FC: 'DESIGN', DR: 'PITCH', MA: 'SHIP' };
+const keyDisplayNamesMobile = { WO: 'CD', FC: 'DS', DR: 'PT', MA: 'SH' };
 const maxLidAngle = 45;
 const closedLidAngle = 180;
 const maxShowTime = 1000;
@@ -147,24 +148,44 @@ class Bin {
   }
 
   writeIndex() {
-    g.textSize(18);
+    const isMobile = g.width < 500;
+    g.textSize(isMobile ? 16 : 18);
     g.textFont('Arial');
+    g.textStyle(BOLD);
     g.textAlign(CENTER, CENTER);
     g.fill(palette.FG);
-    g.noStroke();
+    if (isMobile) {
+      g.stroke(palette.FG);
+      g.strokeWeight(1.5);
+    } else {
+      g.noStroke();
+    }
     g.text(nf(this.i, 2, 0), this.x, this.y);
+    g.textStyle(NORMAL);
+    g.noStroke();
   }
 
   writePercentage(perc, rw, buffer) {
+    const isMobile = g.width < 500;
     g.textAlign(LEFT, CENTER);
-    g.stroke(palette.FG);
-    g.strokeWeight(2);
-    g.fill(palette.BG);
+    g.textStyle(BOLD);
+    if (isMobile) {
+      g.fill(palette.FG);
+      g.stroke(palette.FG);
+      g.strokeWeight(1);
+      g.textSize(max(10, buffer * 0.1));
+    } else {
+      g.stroke(palette.FG);
+      g.strokeWeight(2);
+      g.fill(palette.BG);
+    }
     g.text(
       `${floor(nf(100 * perc, 2, 0))}%`,
       this.x - rw * 0.45,
       this.y + buffer * 0.3
     );
+    g.textStyle(NORMAL);
+    g.noStroke();
   }
 
   drawLevels(rw, buffer) {
@@ -240,43 +261,74 @@ class Bin {
 
   drawLevel(i, y, rw, buffer) {
     const level = keys[i - 1];
-    const displayName = keyDisplayNames[level];
+    const isMobile = g.width < 500;
+    const displayName = isMobile ? keyDisplayNamesMobile[level] : keyDisplayNames[level];
     const levelColor = palette.LEVELS[level];
 
     g.rectMode(CORNER);
     g.stroke(levelColor);
     g.noFill();
 
-    // Draw the label for the progress bar using display name.
-    g.textAlign(LEFT, CENTER);
-    g.noStroke();
-    g.fill(levelColor);
-    g.textFont("Courier");
-    g.textSize(min(14, buffer * 0.14));
-    const labelW = g.textWidth(displayName);
-    const barX = this.x - rw * 0.45 + labelW + rw * 0.04;
-    const barW = this.x + rw * 0.45 - barX;
+    if (isMobile) {
+      // Mobile: label above a full-width bar, bold and readable
+      const rowH = buffer * 0.35;
+      const rowY = y - buffer + i * rowH;
 
-    g.text(
-      displayName,
-      this.x - rw * 0.45,
-      y - buffer + i * buffer * 0.35 + buffer * 0.075
-    );
+      g.textAlign(CENTER, TOP);
+      g.fill(levelColor);
+      g.stroke(levelColor);
+      g.strokeWeight(1.5);
+      g.textFont("Arial");
+      g.textStyle(BOLD);
+      g.textSize(max(10, buffer * 0.1));
+      g.text(displayName, this.x, rowY);
+      g.noStroke();
 
-    // Draw the outline of the progress bar
-    g.rectMode(CORNER);
-    g.stroke(levelColor);
-    g.noFill();
-    g.rect(
-      barX,
-      y - buffer + i * buffer * 0.35,
-      barW,
-      buffer * 0.15
-    );
-    // Draw the filled bar inside of the progress bar.
-    g.fill(levelColor);
-    let w = (barW * this.levels[level]) / this.levelGoal;
-    g.rect(barX, y - buffer + i * buffer * 0.35, w, buffer * 0.15);
+      // Progress bar below label
+      const barY = rowY + buffer * 0.12;
+      const barH = buffer * 0.1;
+      const barX = this.x - rw * 0.45;
+      const barW = rw * 0.9;
+      g.stroke(levelColor);
+      g.noFill();
+      g.rect(barX, barY, barW, barH);
+      g.fill(levelColor);
+      g.noStroke();
+      let w = (barW * this.levels[level]) / this.levelGoal;
+      g.rect(barX, barY, w, barH);
+      g.textStyle(NORMAL);
+    } else {
+      // Desktop: label + bar side by side (unchanged)
+      g.textAlign(LEFT, CENTER);
+      g.noStroke();
+      g.fill(levelColor);
+      g.textFont("Courier");
+      g.textSize(min(14, buffer * 0.14));
+      const labelW = g.textWidth(displayName);
+      const barX = this.x - rw * 0.45 + labelW + rw * 0.04;
+      const barW = this.x + rw * 0.45 - barX;
+
+      g.text(
+        displayName,
+        this.x - rw * 0.45,
+        y - buffer + i * buffer * 0.35 + buffer * 0.075
+      );
+
+      // Draw the outline of the progress bar
+      g.rectMode(CORNER);
+      g.stroke(levelColor);
+      g.noFill();
+      g.rect(
+        barX,
+        y - buffer + i * buffer * 0.35,
+        barW,
+        buffer * 0.15
+      );
+      // Draw the filled bar inside of the progress bar.
+      g.fill(levelColor);
+      let w = (barW * this.levels[level]) / this.levelGoal;
+      g.rect(barX, y - buffer + i * buffer * 0.35, w, buffer * 0.15);
+    }
   }
 
   drawBinLids(rw, buffer) {
