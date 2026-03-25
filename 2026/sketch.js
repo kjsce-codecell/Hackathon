@@ -79,6 +79,13 @@ let mouseTrail = [];
 // Floating dust particles (background ambiance)
 let dustParticles = [];
 
+// Touch input state
+const TOUCH_TAP_SLOP = 12;
+let touchGestureActive = false;
+let touchGestureMoved = false;
+let touchStartX = 0;
+let touchStartY = 0;
+
 // Input buffers
 let keyBuffer = [];
 let exitBuffer = [];
@@ -308,13 +315,19 @@ ${HACKX_CONFIG.shareUrl}`;
 }
 
 function mousePressed() {
+  if (isTouchScreenDevice()) return;
+  handlePrimaryPress();
+}
+
+function handlePrimaryPress({ allowRefine = true, x = mouseX, y = mouseY } = {}) {
+  let acted = false;
   initAudio();
-  playClick();
 
   // Logo click detection — progress bar left area where "CODECELL" label is
-  if (mouseX < g.width * 0.3 && mouseY < 55) {
+  if (x < g.width * 0.3 && y < 55) {
     logoFlash = true;
     logoFlashStart = millis();
+    acted = true;
   }
 
   if (booting) {
@@ -323,10 +336,9 @@ function mousePressed() {
     document.body.style.overflowY = "auto";
     const hint = document.getElementById("scroll-hint");
     if (hint) hint.style.opacity = "1";
-    return;
-  }
-
-  if (
+    acted = true;
+  } else if (
+    allowRefine &&
     !refining &&
     !completed &&
     !shared &&
@@ -334,21 +346,34 @@ function mousePressed() {
     !revealing &&
     !terminalOpen
   ) {
-    refineTX = mouseX;
-    refineTY = mouseY;
-    refineBX = mouseX;
-    refineBY = mouseY;
+    refineTX = x;
+    refineTY = y;
+    refineBX = x;
+    refineBY = y;
     refining = true;
     nope = false;
+    acted = true;
   }
+
+  if (acted) {
+    playClick();
+  }
+
+  return acted;
 }
 
 function mouseDragged() {
+  if (isTouchScreenDevice()) return;
   refineBX = mouseX;
   refineBY = mouseY;
 }
 
 function mouseReleased() {
+  if (isTouchScreenDevice()) return;
+  completeRefineSelection();
+}
+
+function completeRefineSelection() {
   refining = false;
   let countRed = 0;
   let total = 0;
@@ -386,6 +411,48 @@ function mouseReleased() {
     }
     nopeTime = millis();
   }
+}
+
+function touchStarted() {
+  touchGestureActive = true;
+  touchGestureMoved = false;
+
+  if (touches.length > 0) {
+    touchStartX = touches[0].x;
+    touchStartY = touches[0].y;
+  } else {
+    touchStartX = mouseX;
+    touchStartY = mouseY;
+  }
+
+  initAudio();
+  return true;
+}
+
+function touchMoved() {
+  if (!touchGestureActive || touches.length === 0) return true;
+
+  const deltaX = touches[0].x - touchStartX;
+  const deltaY = touches[0].y - touchStartY;
+  if (Math.hypot(deltaX, deltaY) > TOUCH_TAP_SLOP) {
+    touchGestureMoved = true;
+  }
+
+  return true;
+}
+
+function touchEnded() {
+  if (!touchGestureActive) return true;
+
+  const wasTap = !touchGestureMoved;
+  touchGestureActive = false;
+  touchGestureMoved = false;
+
+  if (wasTap) {
+    handlePrimaryPress({ allowRefine: false, x: touchStartX, y: touchStartY });
+  }
+
+  return true;
 }
 
 let prevPercent;
