@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Photos | Hack X</title>
+    <link rel="preload" href="https://raw.githubusercontent.com/vercel/geist-pixel-font/main/fonts/webfonts/GeistPixel-Square.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face {
+            font-family: "Geist Pixel";
+            src: url("https://raw.githubusercontent.com/vercel/geist-pixel-font/main/fonts/webfonts/GeistPixel-Square.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg: #0a1628;
+            --text: #9dc2cc;
+            --text-muted: #6f99a6;
+            --accent: #4fd1d9;
+            --line: #4fd1d94a;
+            --card: #0d1f35c7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 14% 10%, #1a2f4e 0%, transparent 30%),
+                radial-gradient(circle at 86% 0%, #0c2943 0%, transparent 28%),
+                linear-gradient(180deg, #08101d 0%, var(--bg) 45%, #08101d 100%);
+            color: var(--text);
+            font-family: "Geist Pixel", "Courier New", monospace;
+            letter-spacing: 0.05em;
+        }
+
+        .photos-wrap {
+            width: min(1180px, 92vw);
+            margin: 0 auto;
+            padding: 40px 0 60px;
+        }
+
+        .photos-header {
+            border: 1px solid var(--line);
+            background: linear-gradient(180deg, #0f2540b8 0%, #0a162899 100%);
+            padding: 24px;
+            margin-bottom: 22px;
+            box-shadow: 0 0 20px #4fd1d91a;
+        }
+
+        .photos-title {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: clamp(26px, 4vw, 44px);
+            line-height: 1.1;
+            text-shadow: 0 0 18px #4fd1d942;
+            margin-bottom: 8px;
+        }
+
+        .photos-subtitle {
+            color: var(--text-muted);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .years-nav {
+            position: sticky;
+            top: 12px;
+            z-index: 5;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px;
+            border: 1px solid var(--line);
+            background: #0b1b2ed9;
+            backdrop-filter: blur(6px);
+            margin-bottom: 20px;
+        }
+
+        .year-btn {
+            border: 1px solid var(--line);
+            background: #10263f;
+            color: var(--text);
+            padding: 9px 12px;
+            font: inherit;
+            font-size: 11px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+        }
+
+        .year-btn:hover,
+        .year-btn:focus-visible {
+            border-color: var(--accent);
+            box-shadow: 0 0 12px #4fd1d949;
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        .year-btn.is-active {
+            color: #06212a;
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 16px #4fd1d95e;
+        }
+
+        .year-heading {
+            color: var(--accent);
+            font-size: clamp(18px, 2.8vw, 28px);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .photo-card {
+            border: 1px solid var(--line);
+            background: var(--card);
+            overflow: hidden;
+            box-shadow: 0 0 16px #4fd1d91a;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+        }
+
+        .photo-media {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            background: #071220;
+        }
+
+        .photo-meta {
+            padding: 10px;
+            border-top: 1px solid var(--line);
+            color: var(--text-muted);
+            font-size: 10px;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        .empty-state {
+            border: 1px dashed var(--line);
+            background: #0f213780;
+            color: var(--text-muted);
+            padding: 26px;
+            font-size: 11px;
+            line-height: 1.9;
+            text-transform: uppercase;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            border: 1px solid var(--line);
+            padding: 8px 12px;
+            font-size: 10px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+    </style>
+</head>
+<body>
+    <main id="photos-page" class="photos-wrap">
+        <a class="back-link" href="index.html">Back to Hack X</a>
+
+        <header class="photos-header">
+            <h1 class="photos-title">Team Memories Archive</h1>
+            <p class="photos-subtitle">Browse each year's photo wall from 2026 back to 2018.</p>
+        </header>
+
+        <nav id="years-nav" class="years-nav" aria-label="Year navigation"></nav>
+
+        <section aria-live="polite">
+            <h2 id="year-heading" class="year-heading"></h2>
+            <div id="photo-grid" class="photo-grid"></div>
+        </section>
+    </main>
+
+    <script src="team-photo.js"></script>
+</body>
+</html>

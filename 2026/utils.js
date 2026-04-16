@@ -30,3 +30,4 @@ const createTimeString = (seconds) => {
   const ssms = hhmm[2].split('.');
   return `${hhmm[0]}h ${hhmm[1]}m ${ssms[0]}s ${ssms[1]}ms`;
 }
+

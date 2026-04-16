@@ -25,6 +25,14 @@
             font-display: swap;
         }
 
+        /* Styles for the teams photos section */
+        #photos-page{
+            display: hidden;
+            width: 100vw;
+            height: 100vh;
+
+        }
+
         /* ── LOADER OVERLAY ─────────────────────────────────────────── */
         #p5_loading {
             position: fixed;
@@ -702,6 +710,11 @@
         </div>
     </section>
 
+    <!-- Special Team only Photos section -->
+     <section id = "photos-page">
+
+     </section>
+
     <!-- Scripts: config & audio first, then sketch (defines globals), then dependencies -->
     <script src="config.js"></script>
     <script src="audio.js"></script>
@@ -714,8 +727,10 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <audio id="secretMusic" src="audio-assets/shakey-jake.mp3" preload="none"></audio>
     <button id="stopMusicBtn">STOP MUSIC</button>
+    <script src ="team-photo.js"></script>
     <script src="sections.js"></script>
     <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
+    
     <div id="p5_loading" class="loadingclass">
         <div class="loader-sprite"></div>
         <span class="loader-text">INITIALIZING HACK X...</span>
